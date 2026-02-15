@@ -1,0 +1,24 @@
+{
+  "itemGroup.atomiccompression.title": "Atomic Compression",
+
+  "block.atomiccompression.bungerite_ore": "Bungerite Ore",
+  "block.atomiccompression.atomic_ore": "Atomic Ore",
+  "block.atomiccompression.dense_basalt": "Dense Basalt",
+  "block.atomiccompression.bungerite_block": "Block of Bungerite",
+
+  "item.atomiccompression.bungerite_ore": "Bungerite Ore",
+  "item.atomiccompression.atomic_ore": "Atomic Ore",
+  "item.atomiccompression.dense_basalt": "Dense Basalt",
+  "item.atomiccompression.raw_bungerite": "Raw Bungerite",
+  "item.atomiccompression.bungerite_ingot": "Bungerite Ingot",
+
+  "entity.minecraft.villager.atomiccompression.compressionist": "Compressionist",
+
+  "atomiccompression.configuration.title": "Atomic Compression Config",
+  "atomiccompression.configuration.section.atomiccompression.common.toml": "Atomic Compression Config",
+  "atomiccompression.configuration.section.atomiccompression.common.toml.title": "Atomic Compression Config",
+  "atomiccompression.configuration.items": "Item List",
+  "atomiccompression.configuration.logDirtBlock": "Log Dirt Block",
+  "atomiccompression.configuration.magicNumberIntroduction": "Magic Number Text",
+  "atomiccompression.configuration.magicNumber": "Magic Number"
+}

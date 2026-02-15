@@ -1,0 +1,4 @@
+// 1.21.11	2026-02-15T22:51:43.2698783	Loot Tables
+3775c9c3401e2dccd1063a8e03fef0388a31a9b9 data/atomiccompression/loot_table/blocks/atomic_ore.json
+d3b19fba119f380fbf893bf12511fe7864ad4f6e data/atomiccompression/loot_table/blocks/bungerite_ore.json
+5a931a41cbf5538282342438bb17e10b94393063 data/atomiccompression/loot_table/blocks/dense_basalt.json

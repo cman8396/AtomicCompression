@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "atomiccompression:block/atomic_ore_top",
+    "side": "atomiccompression:block/atomic_ore_side"
+  }
+}
