@@ -1,9 +1,9 @@
 {
-  "feature": "atomiccompression:bungerite_ore",
+  "feature": "atomiccompression:atomic_ore_nether_placed",
   "placement": [
     {
       "type": "minecraft:count",
-      "count": 8
+      "count": 10
     },
     {
       "type": "minecraft:in_square"

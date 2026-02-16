@@ -12,35 +12,39 @@ import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
-import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
 
 public class AtomicConfiguredFeatures {
 
-    public static final ResourceKey<ConfiguredFeature<?, ?>> BUNGERITE_ORE_KEY = registerKey("bungerite_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> ATOMIC_ORE_KEY = registerKey("atomic_ore_placed");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> DENSE_BASALT_KEY = registerKey("dense_basalt_placed");
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> BUNGERITE_ORE_KEY = registerKey("bungerite_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ATOMIC_ORE_NETHER_KEY = registerKey("atomic_ore_nether_placed");
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ATOMIC_ORE_END_KEY = registerKey("atomic_ore_end_placed");
 
 //    public static final ResourceKey<ConfiguredFeature<?, ?>> BLOODWOOD_KEY = registerKey("bloodwood");
 //    public static final ResourceKey<ConfiguredFeature<?, ?>> GOJI_BERRY_BUSH_KEY = registerKey("goji_berry_bush");
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
+        RuleTest stoneReplaceables = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
         RuleTest netherrackReplaceables = new BlockMatchTest(Blocks.NETHERRACK);
-        RuleTest netherReplaceables = new TagMatchTest(BlockTags.BASE_STONE_NETHER);
+        RuleTest endReplaceables = new BlockMatchTest(Blocks.END_STONE);
 
-//        RuleTest stoneReplaceables = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
-//        RuleTest base = new TagMatchTest(BlockTags.BASE_STONE_NETHER);
-//        RuleTest endReplaceables = new BlockMatchTest(Blocks.END_STONE);
+
+        register(context, ATOMIC_ORE_KEY, Feature.ORE, new OreConfiguration(stoneReplaceables,
+                AtomicBlocks.ATOMIC_ORE.get().defaultBlockState(), 10));
 
         register(context, BUNGERITE_ORE_KEY, Feature.ORE, new OreConfiguration(netherrackReplaceables,
-                AtomicBlocks.BUNGERITE_ORE.get().defaultBlockState(), 9));
+                AtomicBlocks.BUNGERITE_ORE.get().defaultBlockState(), 6));
+        register(context, ATOMIC_ORE_NETHER_KEY, Feature.ORE, new OreConfiguration(netherrackReplaceables,
+                AtomicBlocks.ATOMIC_ORE_NETHER.get().defaultBlockState(), 10));
 
-        register(context, ATOMIC_ORE_KEY, Feature.ORE, new OreConfiguration(netherReplaceables,
-                AtomicBlocks.ATOMIC_ORE.get().defaultBlockState(), 6));
-        register(context, DENSE_BASALT_KEY, Feature.ORE, new OreConfiguration(netherReplaceables,
-                AtomicBlocks.DENSE_BASALT.get().defaultBlockState(), 8));
+        register(context, ATOMIC_ORE_END_KEY, Feature.ORE, new OreConfiguration(endReplaceables,
+                AtomicBlocks.ATOMIC_ORE_END.get().defaultBlockState(), 10));
+
 
 //        List<OreConfiguration.TargetBlockState> overworldBismuthOres = List.of(
 //                OreConfiguration.target(stoneReplaceables, AtomicBlocks.BISMUTH_ORE.get().defaultBlockState()),

@@ -1,16 +1,7 @@
 {
   "variants": {
-    "axis=x": {
-      "model": "atomiccompression:block/atomic_ore",
-      "x": 90,
-      "y": 90
-    },
-    "axis=y": {
+    "": {
       "model": "atomiccompression:block/atomic_ore"
-    },
-    "axis=z": {
-      "model": "atomiccompression:block/atomic_ore",
-      "x": 90
     }
   }
 }

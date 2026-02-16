@@ -1,7 +1,9 @@
 {
   "values": [
-    "atomiccompression:bungerite_ore",
     "atomiccompression:atomic_ore",
+    "atomiccompression:bungerite_ore",
+    "atomiccompression:atomic_ore_nether",
+    "atomiccompression:atomic_ore_end",
     "atomiccompression:dense_basalt"
   ]
 }

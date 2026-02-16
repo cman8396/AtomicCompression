@@ -18,19 +18,30 @@ import java.util.function.Function;
 public class AtomicBlocks {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(AtomicCompression.MOD_ID);
 
+    /* STONE ORES */
+    public static final DeferredBlock<Block> ATOMIC_ORE = registerBlock("atomic_ore",
+            (properties) -> new DropExperienceBlock(UniformInt.of(2, 5),
+                    properties.strength(12f, 1000f).requiresCorrectToolForDrops().sound(SoundType.BASALT)));
 
-    //region blocks
+    /* NETHER ORES */
     public static final DeferredBlock<Block> BUNGERITE_ORE = registerBlock("bungerite_ore",
             (properties) -> new DropExperienceBlock(UniformInt.of(3, 6),
                     properties.strength(12f, 1000f).requiresCorrectToolForDrops().ignitedByLava().sound(SoundType.NETHER_GOLD_ORE)));
-    public static final DeferredBlock<Block> ATOMIC_ORE = registerBlock("atomic_ore",
-            (properties) -> new DropExperienceBlock(UniformInt.of(1, 7),
+    public static final DeferredBlock<Block> ATOMIC_ORE_NETHER = registerBlock("atomic_ore_nether",
+            (properties) -> new DropExperienceBlock(UniformInt.of(2, 5),
                     properties.strength(12f, 1000f).requiresCorrectToolForDrops().sound(SoundType.BASALT)));
 
+    /* END ORES */
+    public static final DeferredBlock<Block> ATOMIC_ORE_END = registerBlock("atomic_ore_end",
+            (properties) -> new DropExperienceBlock(UniformInt.of(2, 5),
+                    properties.strength(12f, 1000f).requiresCorrectToolForDrops().sound(SoundType.BASALT)));
+
+    /* UTILITY BLOCKS */
     public static final DeferredBlock<Block> DENSE_BASALT = registerBlock("dense_basalt",
             (properties) -> new Block(
                     properties.strength(2.5f, 5f).requiresCorrectToolForDrops().sound(SoundType.BASALT)));
-    //endregion
+
+
 
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Function<BlockBehaviour.Properties, T> function) {

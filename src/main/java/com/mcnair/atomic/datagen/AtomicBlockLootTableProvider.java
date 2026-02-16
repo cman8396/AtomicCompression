@@ -28,11 +28,21 @@ public class AtomicBlockLootTableProvider extends BlockLootSubProvider {
     @Override
     protected void generate() {
 
-        add(AtomicBlocks.BUNGERITE_ORE.get(),
-                block -> createOreDrop(AtomicBlocks.BUNGERITE_ORE.get(), AtomicItems.RAW_BUNGERITE.get()));
+        /* STONE ORES */
         add(AtomicBlocks.ATOMIC_ORE.get(),
                 block -> createMultipleOreDrops(AtomicBlocks.ATOMIC_ORE.get(), AtomicItems.RAW_BUNGERITE.get(), 4, 9));
 
+        /* NETHER ORES */
+        add(AtomicBlocks.BUNGERITE_ORE.get(),
+                block -> createOreDrop(AtomicBlocks.BUNGERITE_ORE.get(), AtomicItems.RAW_BUNGERITE.get()));
+        add(AtomicBlocks.ATOMIC_ORE_NETHER.get(),
+                block -> createMultipleOreDrops(AtomicBlocks.ATOMIC_ORE_NETHER.get(), AtomicItems.RAW_BUNGERITE.get(), 4, 9));
+
+        /* END ORES */
+        add(AtomicBlocks.ATOMIC_ORE_END.get(),
+                block -> createMultipleOreDrops(AtomicBlocks.ATOMIC_ORE_END.get(), AtomicItems.RAW_BUNGERITE.get(), 4, 9));
+
+        /* UTILITY BLOCKS */
         add(AtomicBlocks.DENSE_BASALT.get(),
                 block -> createMultipleOreDrops(AtomicBlocks.DENSE_BASALT.get(), Items.BASALT, 3, 5));
 

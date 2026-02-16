@@ -2,15 +2,15 @@
   "type": "minecraft:ore",
   "config": {
     "discard_chance_on_air_exposure": 0.0,
-    "size": 8,
+    "size": 10,
     "targets": [
       {
         "state": {
-          "Name": "atomiccompression:dense_basalt"
+          "Name": "atomiccompression:atomic_ore_end"
         },
         "target": {
-          "predicate_type": "minecraft:tag_match",
-          "tag": "minecraft:base_stone_nether"
+          "block": "minecraft:end_stone",
+          "predicate_type": "minecraft:block_match"
         }
       }
     ]
