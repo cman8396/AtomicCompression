@@ -14,18 +14,34 @@ public class AtomicItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(AtomicCompression.MOD_ID);
 
 
-    //region items
+    /* BLOCK DROPS */
     public static final DeferredItem<Item> RAW_BUNGERITE = ITEMS.register(
             "raw_bungerite",
             registryName -> new Item(new Item.Properties()
                     .setId(ResourceKey.create(Registries.ITEM, registryName))
             ));
+    public static final DeferredItem<Item> ATOMIC_SHARD = ITEMS.register(
+            "atomic_shard",
+            registryName -> new Item(new Item.Properties()
+                    .setId(ResourceKey.create(Registries.ITEM, registryName))
+            ));
+    public static final DeferredItem<Item> EMPOWERED_ATOMIC_SHARD = ITEMS.register(
+            "empowered_atomic_shard",
+            registryName -> new Item(new Item.Properties()
+                    .setId(ResourceKey.create(Registries.ITEM, registryName))
+            ));
+
+    /* REFINED ITEMS */
     public static final DeferredItem<Item> BUNGERITE_INGOT = ITEMS.register(
             "bungerite_ingot",
             registryName -> new Item(new Item.Properties()
                     .setId(ResourceKey.create(Registries.ITEM, registryName))
             ));
     //endregion
+
+    /* INTERMEDIATE ITEMS */
+
+
 
 
     public static void register(IEventBus eventBus) {

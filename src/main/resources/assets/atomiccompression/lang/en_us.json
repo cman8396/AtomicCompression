@@ -1,16 +1,19 @@
 {
   "itemGroup.atomiccompression.title": "Atomic Compression",
 
-  "block.atomiccompression.bungerite_ore": "Bungerite Ore",
   "block.atomiccompression.atomic_ore": "Atomic Ore",
+  "block.atomiccompression.atomic_ore_nether": "Nether Atomic Ore",
+  "block.atomiccompression.atomic_ore_end": "End Atomic Ore",
+  "block.atomiccompression.bungerite_ore": "Bungerite Ore",
+
   "block.atomiccompression.dense_basalt": "Dense Basalt",
   "block.atomiccompression.bungerite_block": "Block of Bungerite",
 
-  "item.atomiccompression.bungerite_ore": "Bungerite Ore",
-  "item.atomiccompression.atomic_ore": "Atomic Ore",
-  "item.atomiccompression.dense_basalt": "Dense Basalt",
+  "item.atomiccompression.atomic_shard": "Atomic Shard",
+  "item.atomiccompression.empowered_atomic_shard": "Empowered Atomic Shard",
   "item.atomiccompression.raw_bungerite": "Raw Bungerite",
   "item.atomiccompression.bungerite_ingot": "Bungerite Ingot",
+  "item.atomiccompression.bungerite_nugget": "Bungerite Nugget",
 
   "entity.minecraft.villager.atomiccompression.compressionist": "Compressionist",
 
