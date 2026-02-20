@@ -30,19 +30,23 @@ public class AtomicBlockLootTableProvider extends BlockLootSubProvider {
 
         /* OVERWORLD ORES */
         add(AtomicBlocks.ATOMIC_ORE.get(),
-                block -> createOreDrop(AtomicBlocks.ATOMIC_ORE.get(), AtomicItems.ATOMIC_SHARD.get()));
+                block -> createSingleItemTableWithSilkTouch(AtomicBlocks.ATOMIC_ORE.get(), AtomicItems.ATOMIC_SHARD.get()));
 
 
         /* NETHER ORES */
         add(AtomicBlocks.BUNGERITE_ORE.get(),
-                block -> createOreDrop(AtomicBlocks.BUNGERITE_ORE.get(), AtomicItems.RAW_BUNGERITE.get()));
+                block -> createSingleItemTableWithSilkTouch(AtomicBlocks.BUNGERITE_ORE.get(), AtomicItems.RAW_BUNGERITE.get()));
         add(AtomicBlocks.ATOMIC_ORE_NETHER.get(),
-                block -> createOreDrop(AtomicBlocks.ATOMIC_ORE_NETHER.get(), AtomicItems.ATOMIC_SHARD.get()));
+                block -> createSingleItemTableWithSilkTouch(AtomicBlocks.ATOMIC_ORE_NETHER.get(), AtomicItems.ATOMIC_SHARD.get()));
 
 
         /* END ORES */
         add(AtomicBlocks.ATOMIC_ORE_END.get(),
-                block -> createOreDrop(AtomicBlocks.ATOMIC_ORE_END.get(), AtomicItems.ATOMIC_SHARD.get()));
+                block -> createSingleItemTableWithSilkTouch(AtomicBlocks.ATOMIC_ORE_END.get(), AtomicItems.ATOMIC_SHARD.get()));
+
+
+        /* UTILITY BLOCKS */
+        dropSelf(AtomicBlocks.DENSE_BASALT.get());
 
 
 

@@ -1,6 +1,6 @@
-// 1.21.11	2026-02-16T22:00:04.8038462	Loot Tables
-3775c9c3401e2dccd1063a8e03fef0388a31a9b9 data/atomiccompression/loot_table/blocks/atomic_ore.json
-8ea13e8bfbbf41534992d83dcfbefe530b7a9ebd data/atomiccompression/loot_table/blocks/atomic_ore_end.json
-466825976a973b07acc4d17cc910a2a2452205b1 data/atomiccompression/loot_table/blocks/atomic_ore_nether.json
-d3b19fba119f380fbf893bf12511fe7864ad4f6e data/atomiccompression/loot_table/blocks/bungerite_ore.json
-5a931a41cbf5538282342438bb17e10b94393063 data/atomiccompression/loot_table/blocks/dense_basalt.json
+// 1.21.11	2026-02-20T19:20:24.9441968	Loot Tables
+058cdff29d7ddaf5041cd2a92e67ab12d606bd8f data/atomiccompression/loot_table/blocks/atomic_ore.json
+fb1c985ea16cebe29a24e209dd51d9c0d0079f3c data/atomiccompression/loot_table/blocks/atomic_ore_end.json
+405011c7caeb580dcc11b177f89410b441d427b6 data/atomiccompression/loot_table/blocks/atomic_ore_nether.json
+32d90f8b377d7d5c235411eef2abd435dec586a9 data/atomiccompression/loot_table/blocks/bungerite_ore.json
+ae15ba577ff1de2b45c82e33b52dbfd0cd201997 data/atomiccompression/loot_table/blocks/dense_basalt.json
