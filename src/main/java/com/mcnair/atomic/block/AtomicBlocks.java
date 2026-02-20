@@ -39,6 +39,9 @@ public class AtomicBlocks {
                     properties.strength(12f, 1000f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
 
     /* UTILITY BLOCKS */
+    public static final DeferredBlock<Block> ATOMIC_GLASS = registerBlock("atomic_glass",
+            (properties) -> new Block(
+                    properties.strength(0.3f).noOcclusion().sound(SoundType.GLASS)));
     public static final DeferredBlock<Block> DENSE_BASALT = registerBlock("dense_basalt",
             (properties) -> new Block(
                     properties.strength(2.5f, 5f).requiresCorrectToolForDrops().sound(SoundType.BASALT)));
