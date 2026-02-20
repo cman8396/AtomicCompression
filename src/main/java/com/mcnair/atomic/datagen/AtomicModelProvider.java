@@ -26,7 +26,7 @@ public class AtomicModelProvider extends ModelProvider {
 
         // items
         itemModels.generateFlatItem(AtomicItems.RAW_BUNGERITE.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(AtomicItems.BUNGERITE_INGOT.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(AtomicItems.REFINED_BUNGERITE.get(), ModelTemplates.FLAT_ITEM);
 
 //        itemModels.generateFlatItem(AtomicItems.RADISH.get(), ModelTemplates.FLAT_ITEM);
 //        itemModels.generateFlatItem(AtomicItems.FROSTFIRE_ICE.get(), ModelTemplates.FLAT_ITEM);

@@ -35,7 +35,7 @@ public class AtomicCreativeTabs {
                         output.accept(AtomicItems.ATOMIC_SHARD.get());
                         output.accept(AtomicItems.EMPOWERED_ATOMIC_SHARD.get());
                         output.accept(AtomicItems.RAW_BUNGERITE.get());
-                        output.accept(AtomicItems.BUNGERITE_INGOT.get());
+                        output.accept(AtomicItems.REFINED_BUNGERITE.get());
 
                     }).build()
     );

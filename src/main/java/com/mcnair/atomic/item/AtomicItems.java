@@ -32,8 +32,8 @@ public class AtomicItems {
             ));
 
     /* REFINED ITEMS */
-    public static final DeferredItem<Item> BUNGERITE_INGOT = ITEMS.register(
-            "bungerite_ingot",
+    public static final DeferredItem<Item> REFINED_BUNGERITE = ITEMS.register(
+            "refined_bungerite",
             registryName -> new Item(new Item.Properties()
                     .setId(ResourceKey.create(Registries.ITEM, registryName))
             ));

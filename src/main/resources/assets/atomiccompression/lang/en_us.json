@@ -14,8 +14,8 @@
   "item.atomiccompression.atomic_shard": "Atomic Shard",
   "item.atomiccompression.empowered_atomic_shard": "Empowered Atomic Shard",
   "item.atomiccompression.raw_bungerite": "Raw Bungerite",
-  "item.atomiccompression.bungerite_ingot": "Bungerite Ingot",
-  "item.atomiccompression.bungerite_nugget": "Bungerite Nugget",
+  "item.atomiccompression.refined_bungerite": "Refined Bungerite",
+  "item.atomiccompression.refined_bungerite_nugget": "Refined Bungerite Nugget",
 
   "entity.minecraft.villager.atomiccompression.compressionist": "Compressionist",
 
