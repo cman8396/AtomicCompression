@@ -23,14 +23,14 @@ public class AtomicBlocks {
             (properties) -> new DropExperienceBlock(UniformInt.of(3, 6),
                     properties.strength(12f, 1000f).requiresCorrectToolForDrops().ignitedByLava().sound(SoundType.NETHER_GOLD_ORE)));
     public static final DeferredBlock<Block> ATOMIC_ORE = registerBlock("atomic_ore",
-            (properties) -> new DropExperienceBlock(UniformInt.of(2, 5),
-                    properties.strength(12f, 1000f).requiresCorrectToolForDrops().sound(SoundType.BASALT)));
+            (properties) -> new DropExperienceBlock(UniformInt.of(5, 7),
+                    properties.strength(12f, 1000f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
     public static final DeferredBlock<Block> ATOMIC_ORE_NETHER = registerBlock("atomic_ore_nether",
-            (properties) -> new DropExperienceBlock(UniformInt.of(2, 5),
-                    properties.strength(12f, 1000f).requiresCorrectToolForDrops().sound(SoundType.BASALT)));
+            (properties) -> new DropExperienceBlock(UniformInt.of(5, 7),
+                    properties.strength(12f, 1000f).requiresCorrectToolForDrops().sound(SoundType.NETHER_GOLD_ORE)));
     public static final DeferredBlock<Block> ATOMIC_ORE_END = registerBlock("atomic_ore_end",
-            (properties) -> new DropExperienceBlock(UniformInt.of(2, 5),
-                    properties.strength(12f, 1000f).requiresCorrectToolForDrops().sound(SoundType.BASALT)));
+            (properties) -> new DropExperienceBlock(UniformInt.of(5, 7),
+                    properties.strength(12f, 1000f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
 
     /* UTILITY BLOCKS */
     public static final DeferredBlock<Block> DENSE_BASALT = registerBlock("dense_basalt",

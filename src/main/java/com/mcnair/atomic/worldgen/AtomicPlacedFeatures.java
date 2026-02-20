@@ -26,15 +26,15 @@ public class AtomicPlacedFeatures {
         var endFullHeightSpawnRange = HeightRangePlacement.uniform(VerticalAnchor.absolute(7), VerticalAnchor.absolute(120));
 
         register(context, ATOMIC_ORE_PLACED_KEY, configuredFeatures.getOrThrow(AtomicConfiguredFeatures.ATOMIC_ORE_KEY),
-                AtomicOrePlacement.commonOrePlacement(10, HeightRangePlacement.uniform(VerticalAnchor.absolute(-50), VerticalAnchor.absolute(90))));
+                AtomicOrePlacement.commonOrePlacement(2, HeightRangePlacement.uniform(VerticalAnchor.absolute(-50), VerticalAnchor.absolute(90))));
 
         register(context, BUNGERITE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(AtomicConfiguredFeatures.BUNGERITE_ORE_KEY),
                 AtomicOrePlacement.commonOrePlacement(6, netherFullHeightSpawnRange));
         register(context, ATOMIC_ORE_NETHER_PLACED_KEY, configuredFeatures.getOrThrow(AtomicConfiguredFeatures.ATOMIC_ORE_NETHER_KEY),
-                AtomicOrePlacement.commonOrePlacement(10, netherFullHeightSpawnRange));
+                AtomicOrePlacement.commonOrePlacement(2, netherFullHeightSpawnRange));
 
         register(context, ATOMIC_ORE_END_PLACED_KEY, configuredFeatures.getOrThrow(AtomicConfiguredFeatures.ATOMIC_ORE_END_KEY),
-                AtomicOrePlacement.commonOrePlacement(10, endFullHeightSpawnRange));
+                AtomicOrePlacement.commonOrePlacement(2, endFullHeightSpawnRange));
 
 
 //        register(context, BLOODWOOD_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.BLOODWOOD_KEY),

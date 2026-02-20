@@ -28,23 +28,23 @@ public class AtomicBlockLootTableProvider extends BlockLootSubProvider {
     @Override
     protected void generate() {
 
-        /* STONE ORES */
+        /* OVERWORLD ORES */
         add(AtomicBlocks.ATOMIC_ORE.get(),
-                block -> createMultipleOreDrops(AtomicBlocks.ATOMIC_ORE.get(), AtomicItems.RAW_BUNGERITE.get(), 4, 9));
+                block -> createOreDrop(AtomicBlocks.ATOMIC_ORE.get(), AtomicItems.ATOMIC_SHARD.get()));
+
 
         /* NETHER ORES */
         add(AtomicBlocks.BUNGERITE_ORE.get(),
                 block -> createOreDrop(AtomicBlocks.BUNGERITE_ORE.get(), AtomicItems.RAW_BUNGERITE.get()));
         add(AtomicBlocks.ATOMIC_ORE_NETHER.get(),
-                block -> createMultipleOreDrops(AtomicBlocks.ATOMIC_ORE_NETHER.get(), AtomicItems.RAW_BUNGERITE.get(), 4, 9));
+                block -> createOreDrop(AtomicBlocks.ATOMIC_ORE_NETHER.get(), AtomicItems.ATOMIC_SHARD.get()));
+
 
         /* END ORES */
         add(AtomicBlocks.ATOMIC_ORE_END.get(),
-                block -> createMultipleOreDrops(AtomicBlocks.ATOMIC_ORE_END.get(), AtomicItems.RAW_BUNGERITE.get(), 4, 9));
+                block -> createOreDrop(AtomicBlocks.ATOMIC_ORE_END.get(), AtomicItems.ATOMIC_SHARD.get()));
 
-        /* UTILITY BLOCKS */
-        add(AtomicBlocks.DENSE_BASALT.get(),
-                block -> createMultipleOreDrops(AtomicBlocks.DENSE_BASALT.get(), Items.BASALT, 3, 5));
+
 
 
 //        dropSelf(ModBlocks.BISMUTH_BLOCK.get());

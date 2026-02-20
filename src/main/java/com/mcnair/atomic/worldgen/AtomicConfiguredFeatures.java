@@ -35,15 +35,15 @@ public class AtomicConfiguredFeatures {
 
 
         register(context, ATOMIC_ORE_KEY, Feature.ORE, new OreConfiguration(stoneReplaceables,
-                AtomicBlocks.ATOMIC_ORE.get().defaultBlockState(), 10));
+                AtomicBlocks.ATOMIC_ORE.get().defaultBlockState(), 2));
 
         register(context, BUNGERITE_ORE_KEY, Feature.ORE, new OreConfiguration(netherrackReplaceables,
                 AtomicBlocks.BUNGERITE_ORE.get().defaultBlockState(), 6));
         register(context, ATOMIC_ORE_NETHER_KEY, Feature.ORE, new OreConfiguration(netherrackReplaceables,
-                AtomicBlocks.ATOMIC_ORE_NETHER.get().defaultBlockState(), 10));
+                AtomicBlocks.ATOMIC_ORE_NETHER.get().defaultBlockState(), 2));
 
         register(context, ATOMIC_ORE_END_KEY, Feature.ORE, new OreConfiguration(endReplaceables,
-                AtomicBlocks.ATOMIC_ORE_END.get().defaultBlockState(), 10));
+                AtomicBlocks.ATOMIC_ORE_END.get().defaultBlockState(), 2));
 
 
 //        List<OreConfiguration.TargetBlockState> overworldBismuthOres = List.of(
