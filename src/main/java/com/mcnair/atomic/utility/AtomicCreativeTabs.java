@@ -40,6 +40,7 @@ public class AtomicCreativeTabs {
                         output.accept(AtomicItems.SULFUR_DUST.get());
                         output.accept(AtomicItems.SALTPETER_DUST.get());
                         output.accept(AtomicItems.REFINED_BUNGERITE.get());
+                        output.accept(AtomicItems.REFINED_BUNGERITE_NUGGET.get());
 
                     }).build()
     );

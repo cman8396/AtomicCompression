@@ -53,6 +53,11 @@ public class AtomicItems {
             registryName -> new Item(new Item.Properties()
                     .setId(ResourceKey.create(Registries.ITEM, registryName))
             ));
+    public static final DeferredItem<Item> REFINED_BUNGERITE_NUGGET = ITEMS.register(
+            "refined_bungerite_nugget",
+            registryName -> new Item(new Item.Properties()
+                    .setId(ResourceKey.create(Registries.ITEM, registryName))
+            ));
     //endregion
 
 
