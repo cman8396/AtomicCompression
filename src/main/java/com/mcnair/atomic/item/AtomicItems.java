@@ -1,10 +1,8 @@
 package com.mcnair.atomic.item;
 
 import com.mcnair.atomic.AtomicCompression;
-import com.mcnair.atomic.block.AtomicBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
