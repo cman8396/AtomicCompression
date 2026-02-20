@@ -15,6 +15,16 @@ public class AtomicItems {
 
 
     /* BLOCK DROPS */
+    public static final DeferredItem<Item> RAW_SULFUR = ITEMS.register(
+            "raw_sulfur",
+            registryName -> new Item(new Item.Properties()
+                    .setId(ResourceKey.create(Registries.ITEM, registryName))
+            ));
+    public static final DeferredItem<Item> RAW_SALTPETER = ITEMS.register(
+            "raw_saltpeter",
+            registryName -> new Item(new Item.Properties()
+                    .setId(ResourceKey.create(Registries.ITEM, registryName))
+            ));
     public static final DeferredItem<Item> RAW_BUNGERITE = ITEMS.register(
             "raw_bungerite",
             registryName -> new Item(new Item.Properties()
@@ -25,13 +35,9 @@ public class AtomicItems {
             registryName -> new Item(new Item.Properties()
                     .setId(ResourceKey.create(Registries.ITEM, registryName))
             ));
-    public static final DeferredItem<Item> EMPOWERED_ATOMIC_SHARD = ITEMS.register(
-            "empowered_atomic_shard",
-            registryName -> new Item(new Item.Properties()
-                    .setId(ResourceKey.create(Registries.ITEM, registryName))
-            ));
 
-    /* REFINED ITEMS */
+
+    /* INTERMEDIATE ITEMS */
     public static final DeferredItem<Item> REFINED_BUNGERITE = ITEMS.register(
             "refined_bungerite",
             registryName -> new Item(new Item.Properties()
@@ -39,9 +45,13 @@ public class AtomicItems {
             ));
     //endregion
 
-    /* INTERMEDIATE ITEMS */
 
-
+    /* FINISHED ITEMS */
+    public static final DeferredItem<Item> EMPOWERED_ATOMIC_SHARD = ITEMS.register(
+            "empowered_atomic_shard",
+            registryName -> new Item(new Item.Properties()
+                    .setId(ResourceKey.create(Registries.ITEM, registryName))
+            ));
 
 
     public static void register(IEventBus eventBus) {

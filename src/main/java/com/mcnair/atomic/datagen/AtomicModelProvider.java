@@ -24,9 +24,21 @@ public class AtomicModelProvider extends ModelProvider {
     @Override
     protected void registerModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
 
-        // items
+
+        /* BLOCK DROPS */
+        itemModels.generateFlatItem(AtomicItems.RAW_SULFUR.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(AtomicItems.RAW_SALTPETER.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(AtomicItems.RAW_BUNGERITE.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(AtomicItems.ATOMIC_SHARD.get(), ModelTemplates.FLAT_ITEM);
+
+
+        /* INTERMEDIATE ITEMS */
         itemModels.generateFlatItem(AtomicItems.REFINED_BUNGERITE.get(), ModelTemplates.FLAT_ITEM);
+
+
+        /* FINISHED ITEMS */
+        itemModels.generateFlatItem(AtomicItems.EMPOWERED_ATOMIC_SHARD.get(), ModelTemplates.FLAT_ITEM);
+
 
 //        itemModels.generateFlatItem(AtomicItems.RADISH.get(), ModelTemplates.FLAT_ITEM);
 //        itemModels.generateFlatItem(AtomicItems.FROSTFIRE_ICE.get(), ModelTemplates.FLAT_ITEM);

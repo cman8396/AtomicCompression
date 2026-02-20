@@ -31,9 +31,9 @@ public class AtomicBlockLootTableProvider extends BlockLootSubProvider {
 
         /* OVERWORLD ORES */
         add(AtomicBlocks.SULFUR_ORE.get(),
-                block -> createMultipleOreDrops(AtomicBlocks.SULFUR_ORE.get(), AtomicItems.ATOMIC_SHARD.get(), 3, 5));
+                block -> createMultipleOreDrops(AtomicBlocks.SULFUR_ORE.get(), AtomicItems.RAW_SULFUR.get(), 3, 5));
         add(AtomicBlocks.SALTPETER_ORE.get(),
-                block -> createMultipleOreDrops(AtomicBlocks.SALTPETER_ORE.get(), AtomicItems.ATOMIC_SHARD.get(), 3, 5));
+                block -> createMultipleOreDrops(AtomicBlocks.SALTPETER_ORE.get(), AtomicItems.RAW_SALTPETER.get(), 3, 5));
         add(AtomicBlocks.ATOMIC_ORE.get(),
                 block -> createSingleItemTableWithSilkTouch(AtomicBlocks.ATOMIC_ORE.get(), AtomicItems.ATOMIC_SHARD.get()));
 

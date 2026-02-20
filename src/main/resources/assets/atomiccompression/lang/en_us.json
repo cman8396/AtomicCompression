@@ -11,6 +11,8 @@
   "block.atomiccompression.dense_basalt": "Dense Basalt",
   "block.atomiccompression.bungerite_block": "Block of Bungerite",
 
+  "item.atomiccompression.raw_sulfur": "Raw Sulfur",
+  "item.atomiccompression.raw_saltpeter": "Raw Saltpeter",
   "item.atomiccompression.atomic_shard": "Atomic Shard",
   "item.atomiccompression.empowered_atomic_shard": "Empowered Atomic Shard",
   "item.atomiccompression.raw_bungerite": "Raw Bungerite",
