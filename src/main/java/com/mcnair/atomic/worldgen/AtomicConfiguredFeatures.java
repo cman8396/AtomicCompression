@@ -18,6 +18,8 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
 
 public class AtomicConfiguredFeatures {
 
+    public static final ResourceKey<ConfiguredFeature<?, ?>> SULFUR_ORE_KEY = registerKey("sulfurc_ore_placed");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> SALTPETER_ORE_KEY = registerKey("saltpeter_ore_placed");
     public static final ResourceKey<ConfiguredFeature<?, ?>> ATOMIC_ORE_KEY = registerKey("atomic_ore_placed");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> BUNGERITE_ORE_KEY = registerKey("bungerite_ore");
@@ -30,10 +32,15 @@ public class AtomicConfiguredFeatures {
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
         RuleTest stoneReplaceables = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
+        RuleTest deepslateReplaceables = new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
         RuleTest netherrackReplaceables = new BlockMatchTest(Blocks.NETHERRACK);
         RuleTest endReplaceables = new BlockMatchTest(Blocks.END_STONE);
 
 
+        register(context, SULFUR_ORE_KEY, Feature.ORE, new OreConfiguration(stoneReplaceables,
+                AtomicBlocks.SULFUR_ORE.get().defaultBlockState(), 9));
+        register(context, SALTPETER_ORE_KEY, Feature.ORE, new OreConfiguration(stoneReplaceables,
+                AtomicBlocks.SALTPETER_ORE.get().defaultBlockState(), 9));
         register(context, ATOMIC_ORE_KEY, Feature.ORE, new OreConfiguration(stoneReplaceables,
                 AtomicBlocks.ATOMIC_ORE.get().defaultBlockState(), 2));
 

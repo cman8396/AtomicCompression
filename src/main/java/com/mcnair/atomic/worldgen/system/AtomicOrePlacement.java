@@ -9,11 +9,11 @@ public class AtomicOrePlacement {
         return List.of(pCountPlacement, InSquarePlacement.spread(), pHeightRange, BiomeFilter.biome());
     }
 
-    public static List<PlacementModifier> commonOrePlacement(int pCount, PlacementModifier pHeightRange) {
-        return orePlacement(CountPlacement.of(pCount), pHeightRange);
+    public static List<PlacementModifier> commonOrePlacement(int placementCount, PlacementModifier placementHeightRange) {
+        return orePlacement(CountPlacement.of(placementCount), placementHeightRange);
     }
 
-    public static List<PlacementModifier> rareOrePlacement(int pChance, PlacementModifier pHeightRange) {
-        return orePlacement(RarityFilter.onAverageOnceEvery(pChance), pHeightRange);
+    public static List<PlacementModifier> rareOrePlacement(int placementChance, PlacementModifier placementHeightRange) {
+        return orePlacement(RarityFilter.onAverageOnceEvery(placementChance), placementHeightRange);
     }
 }
