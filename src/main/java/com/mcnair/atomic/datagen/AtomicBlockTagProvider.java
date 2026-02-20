@@ -18,15 +18,17 @@ public class AtomicBlockTagProvider extends BlockTagsProvider {
     protected void addTags(HolderLookup.Provider provider) {
 
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
+                .add(AtomicBlocks.SULFUR_ORE.get())
+                .add(AtomicBlocks.SALTPETER_ORE.get())
                 .add(AtomicBlocks.ATOMIC_ORE.get())
                 .add(AtomicBlocks.BUNGERITE_ORE.get())
                 .add(AtomicBlocks.ATOMIC_ORE_NETHER.get())
                 .add(AtomicBlocks.ATOMIC_ORE_END.get())
                 .add(AtomicBlocks.DENSE_BASALT.get());
-//                .add(AtomicBlocks.BISMUTH_BLOCK.get())
-//                .add(AtomicBlocks.BISMUTH_ORE.get())
-//                .add(AtomicBlocks.BISMUTH_LAMP.get())
-//                .add(AtomicBlocks.BISMUTH_DEEPSLATE_ORE.get());
+
+        tag(BlockTags.NEEDS_STONE_TOOL)
+                .add(AtomicBlocks.SULFUR_ORE.get())
+                .add(AtomicBlocks.SALTPETER_ORE.get());
 
         tag(BlockTags.NEEDS_IRON_TOOL)
                 .add(AtomicBlocks.ATOMIC_ORE.get())

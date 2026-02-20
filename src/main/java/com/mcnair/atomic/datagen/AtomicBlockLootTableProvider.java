@@ -6,6 +6,7 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.BlockLootSubProvider;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -29,6 +30,10 @@ public class AtomicBlockLootTableProvider extends BlockLootSubProvider {
     protected void generate() {
 
         /* OVERWORLD ORES */
+        add(AtomicBlocks.SULFUR_ORE.get(),
+                block -> createMultipleOreDrops(AtomicBlocks.SULFUR_ORE.get(), AtomicItems.ATOMIC_SHARD.get(), 3, 5));
+        add(AtomicBlocks.SALTPETER_ORE.get(),
+                block -> createMultipleOreDrops(AtomicBlocks.SALTPETER_ORE.get(), AtomicItems.ATOMIC_SHARD.get(), 3, 5));
         add(AtomicBlocks.ATOMIC_ORE.get(),
                 block -> createSingleItemTableWithSilkTouch(AtomicBlocks.ATOMIC_ORE.get(), AtomicItems.ATOMIC_SHARD.get()));
 
