@@ -19,6 +19,12 @@ public class AtomicBlocks {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(AtomicCompression.MOD_ID);
 
     /* ORE BLOCKS */
+    public static final DeferredBlock<Block> SULFUR_ORE = registerBlock("sulfur_ore",
+            (properties) -> new DropExperienceBlock(UniformInt.of(1, 3),
+                    properties.strength(1.5f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> SALTPETER_ORE = registerBlock("saltpeter_ore",
+            (properties) -> new DropExperienceBlock(UniformInt.of(1, 3),
+                    properties.strength(1.5f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
     public static final DeferredBlock<Block> BUNGERITE_ORE = registerBlock("bungerite_ore",
             (properties) -> new DropExperienceBlock(UniformInt.of(3, 6),
                     properties.strength(12f, 1000f).requiresCorrectToolForDrops().ignitedByLava().sound(SoundType.NETHER_GOLD_ORE)));
