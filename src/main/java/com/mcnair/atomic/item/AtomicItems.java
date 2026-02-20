@@ -15,6 +15,11 @@ public class AtomicItems {
 
 
     /* BLOCK DROPS */
+    public static final DeferredItem<Item> ATOMIC_SHARD = ITEMS.register(
+            "atomic_shard",
+            registryName -> new Item(new Item.Properties()
+                    .setId(ResourceKey.create(Registries.ITEM, registryName))
+            ));
     public static final DeferredItem<Item> RAW_SULFUR = ITEMS.register(
             "raw_sulfur",
             registryName -> new Item(new Item.Properties()
@@ -30,14 +35,19 @@ public class AtomicItems {
             registryName -> new Item(new Item.Properties()
                     .setId(ResourceKey.create(Registries.ITEM, registryName))
             ));
-    public static final DeferredItem<Item> ATOMIC_SHARD = ITEMS.register(
-            "atomic_shard",
-            registryName -> new Item(new Item.Properties()
-                    .setId(ResourceKey.create(Registries.ITEM, registryName))
-            ));
 
 
     /* INTERMEDIATE ITEMS */
+    public static final DeferredItem<Item> SULFUR_DUST = ITEMS.register(
+            "sulfur_dust",
+            registryName -> new Item(new Item.Properties()
+                    .setId(ResourceKey.create(Registries.ITEM, registryName))
+            ));
+    public static final DeferredItem<Item> SALTPETER_DUST = ITEMS.register(
+            "saltpeter_dust",
+            registryName -> new Item(new Item.Properties()
+                    .setId(ResourceKey.create(Registries.ITEM, registryName))
+            ));
     public static final DeferredItem<Item> REFINED_BUNGERITE = ITEMS.register(
             "refined_bungerite",
             registryName -> new Item(new Item.Properties()
