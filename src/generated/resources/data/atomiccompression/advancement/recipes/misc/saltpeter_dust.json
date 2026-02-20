@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_raw_saltpeter": {
+      "conditions": {
+        "items": [
+          {
+            "items": "atomiccompression:raw_saltpeter"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "atomiccompression:saltpeter_dust"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_raw_saltpeter"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "atomiccompression:saltpeter_dust"
+    ]
+  }
+}

@@ -1,8 +1,9 @@
-// 1.21.11	2026-02-20T20:36:38.7708368	Loot Tables
+// 1.21.11	2026-02-20T22:54:15.3293895	Loot Tables
+3800be696db042a7d39a9475a76624d1d31eab1a data/atomiccompression/loot_table/blocks/atomic_glass.json
 058cdff29d7ddaf5041cd2a92e67ab12d606bd8f data/atomiccompression/loot_table/blocks/atomic_ore.json
 fb1c985ea16cebe29a24e209dd51d9c0d0079f3c data/atomiccompression/loot_table/blocks/atomic_ore_end.json
 405011c7caeb580dcc11b177f89410b441d427b6 data/atomiccompression/loot_table/blocks/atomic_ore_nether.json
 32d90f8b377d7d5c235411eef2abd435dec586a9 data/atomiccompression/loot_table/blocks/bungerite_ore.json
 ae15ba577ff1de2b45c82e33b52dbfd0cd201997 data/atomiccompression/loot_table/blocks/dense_basalt.json
-8ba82f1f789297ffd781b142ae660fc353efc1c4 data/atomiccompression/loot_table/blocks/saltpeter_ore.json
-a415475a258264af29cf841e5bbb6c976dcb598f data/atomiccompression/loot_table/blocks/sulfur_ore.json
+b9a1e04ee30db98f15f87734f61f0dda552ab67b data/atomiccompression/loot_table/blocks/saltpeter_ore.json
+d1283610275e7dd92a34f6698f8d9c2fa3cc1dda data/atomiccompression/loot_table/blocks/sulfur_ore.json

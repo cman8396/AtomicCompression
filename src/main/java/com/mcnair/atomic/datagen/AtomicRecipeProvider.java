@@ -1,12 +1,15 @@
 package com.mcnair.atomic.datagen;
 
 import com.mcnair.atomic.AtomicCompression;
+import com.mcnair.atomic.block.AtomicBlocks;
+import com.mcnair.atomic.item.AtomicItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
 
@@ -37,28 +40,63 @@ public class AtomicRecipeProvider extends RecipeProvider {
 
     @Override
     protected void buildRecipes() {
-//        List<ItemLike> BISMUTH_SMELTABLES = List.of(AtomicItems.RAW_BISMUTH,
-//                AtomicBlocks.BISMUTH_ORE, AtomicBlocks.BISMUTH_DEEPSLATE_ORE);
-//
-//        shaped(RecipeCategory.MISC, AtomicBlocks.BISMUTH_BLOCK.get())
-//                .pattern("BBB")
-//                .pattern("BBB")
-//                .pattern("BBB")
-//                .define('B', AtomicItems.BISMUTH.get())
-//                .unlockedBy("has_bismuth", has(AtomicItems.BISMUTH)).save(output);
-//
-//        shapeless(RecipeCategory.MISC, AtomicItems.BISMUTH.get(), 9)
-//                .requires(AtomicBlocks.BISMUTH_BLOCK)
-//                .unlockedBy("has_bismuth_block", has(AtomicBlocks.BISMUTH_BLOCK)).save(output);
-//
-//        shapeless(RecipeCategory.MISC, AtomicItems.BISMUTH.get(), 18)
-//                .requires(AtomicBlocks.MAGIC_BLOCK)
-//                .unlockedBy("has_magic_block", has(AtomicBlocks.MAGIC_BLOCK))
-//                .save(output, "tutorialmod:bismuth_from_magic_block");
-//
-//        oreSmelting(output, BISMUTH_SMELTABLES, RecipeCategory.MISC, AtomicItems.BISMUTH.get(), 0.25f, 200, "bismuth");
-//        oreBlasting(output, BISMUTH_SMELTABLES, RecipeCategory.MISC, AtomicItems.BISMUTH.get(), 0.25f, 100, "bismuth");
-//
+
+        /* SHAPELESS RECIPES */
+        shapeless(RecipeCategory.MISC, Items.BASALT, 9)
+                .requires(AtomicBlocks.DENSE_BASALT)
+                .unlockedBy("has_dense_basalt", has(AtomicBlocks.DENSE_BASALT))
+                .save(output);
+        shapeless(RecipeCategory.MISC, Items.GUNPOWDER, 3)
+                .requires(AtomicItems.SULFUR_DUST)
+                .requires(AtomicItems.SALTPETER_DUST)
+                .requires(Ingredient.of(Items.CHARCOAL, Items.COAL))
+                .unlockedBy("has_sulfur_dust", has(AtomicItems.SULFUR_DUST))
+                .unlockedBy("has_saltpeter_dust", has(AtomicItems.SALTPETER_DUST))
+                .save(output);
+
+        shapeless(RecipeCategory.MISC, AtomicItems.SULFUR_DUST, 1)
+                .requires(AtomicItems.RAW_SULFUR)
+                .unlockedBy("has_raw_sulfur", has(AtomicItems.RAW_SULFUR))
+                .save(output);
+        shapeless(RecipeCategory.MISC, AtomicItems.SALTPETER_DUST, 1)
+                .requires(AtomicItems.RAW_SALTPETER)
+                .unlockedBy("has_raw_saltpeter", has(AtomicItems.RAW_SALTPETER))
+                .save(output);
+
+        /* SHAPED RECIPES */
+        shaped(RecipeCategory.MISC, AtomicBlocks.ATOMIC_GLASS.get())
+                .pattern("GGG")
+                .pattern("GEG")
+                .pattern("GGG")
+                .define('G', Items.GLASS)
+                .define('E', AtomicItems.EMPOWERED_ATOMIC_SHARD.get())
+                .unlockedBy("has_empowered_atomic_shard", has(AtomicItems.EMPOWERED_ATOMIC_SHARD))
+                .save(output);
+        shaped(RecipeCategory.MISC, AtomicBlocks.DENSE_BASALT.get())
+                .pattern("BBB")
+                .pattern("BBB")
+                .pattern("BBB")
+                .define('B', Items.BASALT)
+                .unlockedBy("has_basalt", has(Items.BASALT))
+                .save(output);
+
+        shaped(RecipeCategory.MISC, AtomicItems.EMPOWERED_ATOMIC_SHARD.get())
+                .pattern("GGG")
+                .pattern("GAG")
+                .pattern("GGG")
+                .define('G', Items.GUNPOWDER)
+                .define('A', AtomicItems.ATOMIC_SHARD.get())
+                .unlockedBy("has_atomic_shard", has(AtomicItems.ATOMIC_SHARD))
+                .save(output);
+
+        /* SMELTING RECIPES */
+        List<ItemLike> BUNGERITE_SMELTABLES = List.of(AtomicItems.RAW_BUNGERITE, AtomicBlocks.BUNGERITE_ORE);
+        oreSmelting(output, BUNGERITE_SMELTABLES, RecipeCategory.MISC, AtomicItems.REFINED_BUNGERITE.get(), 0.3f, 200, "bungerite");
+        oreBlasting(output, BUNGERITE_SMELTABLES, RecipeCategory.MISC, AtomicItems.REFINED_BUNGERITE.get(), 0.3f, 100, "bungerite");
+
+
+
+
 //        stairBuilder(AtomicBlocks.BISMUTH_STAIRS.get(), Ingredient.of(AtomicItems.BISMUTH)).group("bismuth")
 //                .unlockedBy("has_bismuth", has(AtomicItems.BISMUTH)).save(output);
 //        slab(RecipeCategory.BUILDING_BLOCKS, AtomicBlocks.BISMUTH_SLAB.get(), AtomicItems.BISMUTH.get());
@@ -84,20 +122,20 @@ public class AtomicRecipeProvider extends RecipeProvider {
     }
 
     protected void oreSmelting(RecipeOutput recipeOutput, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult,
-                                      float pExperience, int pCookingTIme, String pGroup) {
+                               float pExperience, int pCookingTIme, String pGroup) {
         oreCooking(recipeOutput, RecipeSerializer.SMELTING_RECIPE, SmeltingRecipe::new, pIngredients, pCategory, pResult,
                 pExperience, pCookingTIme, pGroup, "_from_smelting");
     }
 
     protected void oreBlasting(RecipeOutput recipeOutput, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult,
-                                      float pExperience, int pCookingTime, String pGroup) {
+                               float pExperience, int pCookingTime, String pGroup) {
         oreCooking(recipeOutput, RecipeSerializer.BLASTING_RECIPE, BlastingRecipe::new, pIngredients, pCategory, pResult,
                 pExperience, pCookingTime, pGroup, "_from_blasting");
     }
 
     protected <T extends AbstractCookingRecipe> void oreCooking(RecipeOutput recipeOutput, RecipeSerializer<T> pCookingSerializer, AbstractCookingRecipe.Factory<T> factory,
-                                                                       List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTime, String pGroup, String pRecipeName) {
-        for(ItemLike itemlike : pIngredients) {
+                                                                List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTime, String pGroup, String pRecipeName) {
+        for (ItemLike itemlike : pIngredients) {
             SimpleCookingRecipeBuilder.generic(Ingredient.of(itemlike), pCategory, pResult, pExperience, pCookingTime, pCookingSerializer, factory).group(pGroup).unlockedBy(getHasName(itemlike), has(itemlike))
                     .save(recipeOutput, AtomicCompression.MOD_ID + ":" + getItemName(pResult) + pRecipeName + "_" + getItemName(itemlike));
         }

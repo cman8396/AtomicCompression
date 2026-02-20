@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": "atomiccompression:empowered_atomic_shard",
+    "G": "minecraft:glass"
+  },
+  "pattern": [
+    "GGG",
+    "GEG",
+    "GGG"
+  ],
+  "result": {
+    "count": 1,
+    "id": "atomiccompression:atomic_glass"
+  }
+}

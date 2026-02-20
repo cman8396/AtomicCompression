@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "atomiccompression:raw_sulfur"
+  ],
+  "result": {
+    "count": 1,
+    "id": "atomiccompression:sulfur_dust"
+  }
+}

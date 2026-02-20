@@ -50,8 +50,7 @@ public class AtomicBlockLootTableProvider extends BlockLootSubProvider {
 
         /* UTILITY BLOCKS */
         dropSelf(AtomicBlocks.DENSE_BASALT.get());
-
-
+        add(AtomicBlocks.ATOMIC_GLASS.get(), block -> noDrop());
 
 
 //        dropSelf(ModBlocks.BISMUTH_BLOCK.get());

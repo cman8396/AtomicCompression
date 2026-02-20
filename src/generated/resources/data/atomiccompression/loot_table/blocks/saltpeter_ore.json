@@ -49,7 +49,7 @@
                   "function": "minecraft:explosion_decay"
                 }
               ],
-              "name": "atomiccompression:atomic_shard"
+              "name": "atomiccompression:raw_saltpeter"
             }
           ]
         }

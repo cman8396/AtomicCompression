@@ -1,1 +1,13 @@
-// 1.21.11	2026-02-15T22:51:43.2683528	My Recipes
+// 1.21.11	2026-02-20T22:54:15.3265023	My Recipes
+c8a65fd47c18a2562a08f106051e6169ec426e7b data/atomiccompression/advancement/recipes/misc/atomic_glass.json
+01356cee12368579d6d4636cebe65b50968d05a3 data/atomiccompression/advancement/recipes/misc/dense_basalt.json
+a21acdff70c1dd7c1839630ff4f6969838761afb data/atomiccompression/advancement/recipes/misc/empowered_atomic_shard.json
+bef6094f0293bb04fca6e4ffebcc9f0afc4006a8 data/atomiccompression/advancement/recipes/misc/saltpeter_dust.json
+be8a7a8260ff27a5c17431b9949156240fc3a17d data/atomiccompression/advancement/recipes/misc/sulfur_dust.json
+3ad69a1e057c410c23e379c0a9f14a5da9393189 data/atomiccompression/recipe/atomic_glass.json
+871f41b02510e137464db789265c0bf8c64a4e6e data/atomiccompression/recipe/dense_basalt.json
+aa01712e5a0ebee27cc0426f4f525f021307e2c6 data/atomiccompression/recipe/empowered_atomic_shard.json
+81542fbd8ca61843c0f8a3df2adb61f297659d19 data/atomiccompression/recipe/saltpeter_dust.json
+fcf65bfb63a6561458ed550d1bfec22df7b7185d data/atomiccompression/recipe/sulfur_dust.json
+3cbf5b7b8feafe8599e0b3a33676c8add00dbe2c data/minecraft/advancement/recipes/misc/gunpowder.json
+f3154c3ac9524c525744609a6a9568e382ec2983 data/minecraft/recipe/gunpowder.json
