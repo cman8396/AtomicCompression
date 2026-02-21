@@ -70,6 +70,11 @@ public class AtomicItems {
             registryName -> new Item(new Item.Properties()
                     .setId(ResourceKey.create(Registries.ITEM, registryName))
             ));
+    public static final DeferredItem<Item> BUNGERITE_ALLOY_NUGGET = ITEMS.register(
+            "bungerite_alloy_nugget",
+            registryName -> new Item(new Item.Properties()
+                    .setId(ResourceKey.create(Registries.ITEM, registryName))
+            ));
 
 
     public static void register(IEventBus eventBus) {
