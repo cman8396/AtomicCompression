@@ -75,6 +75,11 @@ public class AtomicItems {
             registryName -> new Item(new Item.Properties()
                     .setId(ResourceKey.create(Registries.ITEM, registryName))
             ));
+    public static final DeferredItem<Item> LEAD_NUGGET = ITEMS.register(
+            "lead_nugget",
+            registryName -> new Item(new Item.Properties()
+                    .setId(ResourceKey.create(Registries.ITEM, registryName))
+            ));
     public static final DeferredItem<Item> BUNGERITE_ALLOY_INGOT = ITEMS.register(
             "bungerite_alloy_ingot",
             registryName -> new Item(new Item.Properties()

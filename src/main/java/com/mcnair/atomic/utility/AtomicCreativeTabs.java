@@ -36,14 +36,15 @@ public class AtomicCreativeTabs {
                         output.accept(AtomicItems.ATOMIC_SHARD.get());
                         output.accept(AtomicItems.RAW_SULFUR.get());
                         output.accept(AtomicItems.RAW_SALTPETER.get());
-                        output.accept(AtomicItems.RAW_BUNGERITE.get());
                         output.accept(AtomicItems.RAW_LEAD.get());
+                        output.accept(AtomicItems.RAW_BUNGERITE.get());
                         output.accept(AtomicItems.SULFUR_DUST.get());
                         output.accept(AtomicItems.SALTPETER_DUST.get());
                         output.accept(AtomicItems.EMPOWERED_ATOMIC_SHARD.get());
-                        output.accept(AtomicItems.REFINED_BUNGERITE.get());
                         output.accept(AtomicItems.LEAD_INGOT.get());
+                        output.accept(AtomicItems.REFINED_BUNGERITE.get());
                         output.accept(AtomicItems.BUNGERITE_ALLOY_INGOT.get());
+                        output.accept(AtomicItems.LEAD_NUGGET.get());
                         output.accept(AtomicItems.REFINED_BUNGERITE_NUGGET.get());
                         output.accept(AtomicItems.BUNGERITE_ALLOY_NUGGET.get());
 
