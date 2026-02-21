@@ -41,13 +41,13 @@ public class AtomicBlockLootTableProvider extends BlockLootSubProvider {
         /* NETHER ORES */
         add(AtomicBlocks.BUNGERITE_ORE.get(),
                 block -> createSingleItemTableWithSilkTouch(AtomicBlocks.BUNGERITE_ORE.get(), AtomicItems.RAW_BUNGERITE.get()));
-        add(AtomicBlocks.ATOMIC_ORE_NETHER.get(),
-                block -> createSingleItemTableWithSilkTouch(AtomicBlocks.ATOMIC_ORE_NETHER.get(), AtomicItems.ATOMIC_SHARD.get()));
+        add(AtomicBlocks.NETHER_ATOMIC_ORE.get(),
+                block -> createSingleItemTableWithSilkTouch(AtomicBlocks.NETHER_ATOMIC_ORE.get(), AtomicItems.ATOMIC_SHARD.get()));
 
 
         /* END ORES */
-        add(AtomicBlocks.ATOMIC_ORE_END.get(),
-                block -> createSingleItemTableWithSilkTouch(AtomicBlocks.ATOMIC_ORE_END.get(), AtomicItems.ATOMIC_SHARD.get()));
+        add(AtomicBlocks.END_ATOMIC_ORE.get(),
+                block -> createSingleItemTableWithSilkTouch(AtomicBlocks.END_ATOMIC_ORE.get(), AtomicItems.ATOMIC_SHARD.get()));
 
 
         /* UTILITY BLOCKS */

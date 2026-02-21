@@ -24,9 +24,9 @@ public class AtomicConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> ATOMIC_ORE_KEY = registerKey("atomic_ore_placed");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> BUNGERITE_ORE_KEY = registerKey("bungerite_ore");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> ATOMIC_ORE_NETHER_KEY = registerKey("atomic_ore_nether_placed");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> NETHER_ATOMIC_ORE_KEY = registerKey("nether_atomic_ore_placed");
 
-    public static final ResourceKey<ConfiguredFeature<?, ?>> ATOMIC_ORE_END_KEY = registerKey("atomic_ore_end_placed");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> END_ATOMIC_ORE_KEY = registerKey("end_atomic_ore_placed");
 
 //    public static final ResourceKey<ConfiguredFeature<?, ?>> BLOODWOOD_KEY = registerKey("bloodwood");
 //    public static final ResourceKey<ConfiguredFeature<?, ?>> GOJI_BERRY_BUSH_KEY = registerKey("goji_berry_bush");
@@ -51,12 +51,12 @@ public class AtomicConfiguredFeatures {
 
         register(context, BUNGERITE_ORE_KEY, Feature.ORE, new OreConfiguration(netherrackReplaceables,
                 AtomicBlocks.BUNGERITE_ORE.get().defaultBlockState(), 6));
-        register(context, ATOMIC_ORE_NETHER_KEY, Feature.ORE, new OreConfiguration(netherrackReplaceables,
-                AtomicBlocks.ATOMIC_ORE_NETHER.get().defaultBlockState(), 2));
+        register(context, NETHER_ATOMIC_ORE_KEY, Feature.ORE, new OreConfiguration(netherrackReplaceables,
+                AtomicBlocks.NETHER_ATOMIC_ORE.get().defaultBlockState(), 2));
 
 
-        register(context, ATOMIC_ORE_END_KEY, Feature.ORE, new OreConfiguration(endReplaceables,
-                AtomicBlocks.ATOMIC_ORE_END.get().defaultBlockState(), 2));
+        register(context, END_ATOMIC_ORE_KEY, Feature.ORE, new OreConfiguration(endReplaceables,
+                AtomicBlocks.END_ATOMIC_ORE.get().defaultBlockState(), 2));
 
 
 

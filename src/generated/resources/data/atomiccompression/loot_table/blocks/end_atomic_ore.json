@@ -26,7 +26,7 @@
                   }
                 }
               ],
-              "name": "atomiccompression:atomic_ore_nether"
+              "name": "atomiccompression:end_atomic_ore"
             },
             {
               "type": "minecraft:item",
@@ -43,5 +43,5 @@
       "rolls": 1.0
     }
   ],
-  "random_sequence": "atomiccompression:blocks/atomic_ore_nether"
+  "random_sequence": "atomiccompression:blocks/end_atomic_ore"
 }

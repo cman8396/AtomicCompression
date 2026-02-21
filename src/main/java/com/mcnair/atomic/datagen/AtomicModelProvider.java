@@ -79,8 +79,8 @@ public class AtomicModelProvider extends ModelProvider {
         blockModels.createTrivialCube(AtomicBlocks.LEAD_ORE.get());
         blockModels.createTrivialCube(AtomicBlocks.ATOMIC_ORE.get());
         blockModels.createTrivialCube(AtomicBlocks.BUNGERITE_ORE.get());
-        blockModels.createTrivialCube(AtomicBlocks.ATOMIC_ORE_NETHER.get());
-        blockModels.createTrivialCube(AtomicBlocks.ATOMIC_ORE_END.get());
+        blockModels.createTrivialCube(AtomicBlocks.NETHER_ATOMIC_ORE.get());
+        blockModels.createTrivialCube(AtomicBlocks.END_ATOMIC_ORE.get());
         blockModels.createGenericCube(AtomicBlocks.DENSE_BASALT.get());
 
 

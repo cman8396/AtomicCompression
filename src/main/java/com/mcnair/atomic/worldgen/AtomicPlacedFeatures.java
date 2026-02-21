@@ -19,8 +19,8 @@ public class AtomicPlacedFeatures {
     public static final ResourceKey<PlacedFeature> LEAD_ORE_PLACED_KEY = registerKey("lead_ore_placed");
     public static final ResourceKey<PlacedFeature> ATOMIC_ORE_PLACED_KEY = registerKey("atomic_ore_placed");
     public static final ResourceKey<PlacedFeature> BUNGERITE_ORE_PLACED_KEY = registerKey("bungerite_ore_placed");
-    public static final ResourceKey<PlacedFeature> ATOMIC_ORE_NETHER_PLACED_KEY = registerKey("atomic_ore_nether_placed");
-    public static final ResourceKey<PlacedFeature> ATOMIC_ORE_END_PLACED_KEY = registerKey("atomic_ore_end_placed");
+    public static final ResourceKey<PlacedFeature> NETHER_ATOMIC_ORE_PLACED_KEY = registerKey("nether_atomic_ore_placed");
+    public static final ResourceKey<PlacedFeature> END_ATOMIC_ORE_PLACED_KEY = registerKey("end_atomic_ore_placed");
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
@@ -41,11 +41,11 @@ public class AtomicPlacedFeatures {
 
         register(context, BUNGERITE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(AtomicConfiguredFeatures.BUNGERITE_ORE_KEY),
                 AtomicOrePlacement.commonOrePlacement(6, netherFullHeightSpawnRange));
-        register(context, ATOMIC_ORE_NETHER_PLACED_KEY, configuredFeatures.getOrThrow(AtomicConfiguredFeatures.ATOMIC_ORE_NETHER_KEY),
+        register(context, NETHER_ATOMIC_ORE_PLACED_KEY, configuredFeatures.getOrThrow(AtomicConfiguredFeatures.NETHER_ATOMIC_ORE_KEY),
                 AtomicOrePlacement.rareOrePlacement(32, netherFullHeightSpawnRange));
 
 
-        register(context, ATOMIC_ORE_END_PLACED_KEY, configuredFeatures.getOrThrow(AtomicConfiguredFeatures.ATOMIC_ORE_END_KEY),
+        register(context, END_ATOMIC_ORE_PLACED_KEY, configuredFeatures.getOrThrow(AtomicConfiguredFeatures.END_ATOMIC_ORE_KEY),
                 AtomicOrePlacement.rareOrePlacement(32, endFullHeightSpawnRange));
 
 

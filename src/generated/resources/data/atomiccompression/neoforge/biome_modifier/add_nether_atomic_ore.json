@@ -1,6 +1,6 @@
 {
   "type": "neoforge:add_features",
   "biomes": "#minecraft:is_nether",
-  "features": "atomiccompression:atomic_ore_nether_placed",
+  "features": "atomiccompression:nether_atomic_ore_placed",
   "step": "underground_ores"
 }

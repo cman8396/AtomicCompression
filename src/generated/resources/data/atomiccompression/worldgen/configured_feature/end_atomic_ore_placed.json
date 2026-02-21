@@ -6,10 +6,10 @@
     "targets": [
       {
         "state": {
-          "Name": "atomiccompression:atomic_ore_nether"
+          "Name": "atomiccompression:end_atomic_ore"
         },
         "target": {
-          "block": "minecraft:netherrack",
+          "block": "minecraft:end_stone",
           "predicate_type": "minecraft:block_match"
         }
       }

@@ -1,7 +1,7 @@
 {
   "values": [
     "atomiccompression:atomic_ore",
-    "atomiccompression:atomic_ore_nether",
-    "atomiccompression:atomic_ore_end"
+    "atomiccompression:nether_atomic_ore",
+    "atomiccompression:end_atomic_ore"
   ]
 }

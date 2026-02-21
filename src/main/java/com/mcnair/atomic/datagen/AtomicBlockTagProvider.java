@@ -23,8 +23,8 @@ public class AtomicBlockTagProvider extends BlockTagsProvider {
                 .add(AtomicBlocks.LEAD_ORE.get())
                 .add(AtomicBlocks.ATOMIC_ORE.get())
                 .add(AtomicBlocks.BUNGERITE_ORE.get())
-                .add(AtomicBlocks.ATOMIC_ORE_NETHER.get())
-                .add(AtomicBlocks.ATOMIC_ORE_END.get())
+                .add(AtomicBlocks.NETHER_ATOMIC_ORE.get())
+                .add(AtomicBlocks.END_ATOMIC_ORE.get())
                 .add(AtomicBlocks.DENSE_BASALT.get());
 
         tag(BlockTags.NEEDS_STONE_TOOL)
@@ -34,8 +34,8 @@ public class AtomicBlockTagProvider extends BlockTagsProvider {
 
         tag(BlockTags.NEEDS_IRON_TOOL)
                 .add(AtomicBlocks.ATOMIC_ORE.get())
-                .add(AtomicBlocks.ATOMIC_ORE_NETHER.get())
-                .add(AtomicBlocks.ATOMIC_ORE_END.get());
+                .add(AtomicBlocks.NETHER_ATOMIC_ORE.get())
+                .add(AtomicBlocks.END_ATOMIC_ORE.get());
 
         tag(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(AtomicBlocks.BUNGERITE_ORE.get());

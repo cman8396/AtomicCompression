@@ -30,8 +30,8 @@ public class AtomicCreativeTabs {
                         output.accept(AtomicBlocks.LEAD_ORE.get());
                         output.accept(AtomicBlocks.ATOMIC_ORE.get());
                         output.accept(AtomicBlocks.BUNGERITE_ORE.get());
-                        output.accept(AtomicBlocks.ATOMIC_ORE_NETHER.get());
-                        output.accept(AtomicBlocks.ATOMIC_ORE_END.get());
+                        output.accept(AtomicBlocks.NETHER_ATOMIC_ORE.get());
+                        output.accept(AtomicBlocks.END_ATOMIC_ORE.get());
 
                         // items
                         output.accept(AtomicItems.ATOMIC_SHARD.get());

@@ -1,5 +1,5 @@
 {
-  "feature": "atomiccompression:atomic_ore_end_placed",
+  "feature": "atomiccompression:nether_atomic_ore_placed",
   "placement": [
     {
       "type": "minecraft:rarity_filter",

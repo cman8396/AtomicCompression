@@ -1,5 +1,5 @@
-// 1.21.11	2026-02-21T00:55:17.055986	Tags for minecraft:block mod id atomiccompression
-3754c2d36f206d98a466db09bfb9f7793f348e6d data/minecraft/tags/block/mineable/pickaxe.json
+// 1.21.11	2026-02-21T15:14:29.002601	Tags for minecraft:block mod id atomiccompression
+e13cef00d4f8002eb65eaf39624d7eaaec2418c5 data/minecraft/tags/block/mineable/pickaxe.json
 ca5ec11bdb663c0c9e35acbdb563198f31539732 data/minecraft/tags/block/needs_diamond_tool.json
-d568c42b395411c897c3fbd20a4a3be70f29ce61 data/minecraft/tags/block/needs_iron_tool.json
+b40edb82e54d45bbe2bc5bafb7c45e35f39eb825 data/minecraft/tags/block/needs_iron_tool.json
 71cfe796608c7910cddbb2f321eebe1257f4b5cf data/minecraft/tags/block/needs_stone_tool.json
