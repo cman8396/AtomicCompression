@@ -26,9 +26,13 @@ public class AtomicCreativeTabs {
                         output.accept(AtomicBlocks.ATOMIC_GLASS.get());
                         output.accept(AtomicBlocks.DENSE_BASALT.get());
                         output.accept(AtomicBlocks.SULFUR_ORE.get());
+                        output.accept(AtomicBlocks.DEEPSLATE_SULFUR_ORE.get());
                         output.accept(AtomicBlocks.SALTPETER_ORE.get());
+                        output.accept(AtomicBlocks.DEEPSLATE_SALTPETER_ORE.get());
                         output.accept(AtomicBlocks.LEAD_ORE.get());
+                        output.accept(AtomicBlocks.DEEPSLATE_LEAD_ORE.get());
                         output.accept(AtomicBlocks.ATOMIC_ORE.get());
+                        output.accept(AtomicBlocks.DEEPSLATE_ATOMIC_ORE.get());
                         output.accept(AtomicBlocks.BUNGERITE_ORE.get());
                         output.accept(AtomicBlocks.NETHER_ATOMIC_ORE.get());
                         output.accept(AtomicBlocks.END_ATOMIC_ORE.get());

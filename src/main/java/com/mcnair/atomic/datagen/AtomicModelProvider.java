@@ -74,14 +74,14 @@ public class AtomicModelProvider extends ModelProvider {
 //        itemModels.generateFlatItem(AtomicItems.RADIATION_STAFF.get(), ModelTemplates.FLAT_ITEM);
 //
 //        /* BLOCKS */
-        blockModels.createTrivialCube(AtomicBlocks.SULFUR_ORE.get());
-        blockModels.createTrivialCube(AtomicBlocks.SALTPETER_ORE.get());
-        blockModels.createTrivialCube(AtomicBlocks.LEAD_ORE.get());
-        blockModels.createTrivialCube(AtomicBlocks.ATOMIC_ORE.get());
-        blockModels.createTrivialCube(AtomicBlocks.BUNGERITE_ORE.get());
-        blockModels.createTrivialCube(AtomicBlocks.NETHER_ATOMIC_ORE.get());
-        blockModels.createTrivialCube(AtomicBlocks.END_ATOMIC_ORE.get());
-        blockModels.createGenericCube(AtomicBlocks.DENSE_BASALT.get());
+//        blockModels.createTrivialCube(AtomicBlocks.SULFUR_ORE.get());
+//        blockModels.createTrivialCube(AtomicBlocks.SALTPETER_ORE.get());
+//        blockModels.createTrivialCube(AtomicBlocks.LEAD_ORE.get());
+//        blockModels.createTrivialCube(AtomicBlocks.ATOMIC_ORE.get());
+//        blockModels.createTrivialCube(AtomicBlocks.BUNGERITE_ORE.get());
+//        blockModels.createTrivialCube(AtomicBlocks.NETHER_ATOMIC_ORE.get());
+//        blockModels.createTrivialCube(AtomicBlocks.END_ATOMIC_ORE.get());
+//        blockModels.createGenericCube(AtomicBlocks.DENSE_BASALT.get());
 
 
 //        blockModels.createRotatableColumn(AtomicBlocks.DENSE_BASALT.get());

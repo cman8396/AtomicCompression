@@ -1,6 +1,7 @@
 {
   "values": [
     "atomiccompression:atomic_ore",
+    "atomiccompression:deepslate_atomic_ore",
     "atomiccompression:nether_atomic_ore",
     "atomiccompression:end_atomic_ore"
   ]

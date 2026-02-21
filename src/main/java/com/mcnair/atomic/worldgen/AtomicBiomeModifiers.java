@@ -14,9 +14,13 @@ import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
 public class AtomicBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_SULFUR_ORE = registerKey("add_sulfur_ore");
+    public static final ResourceKey<BiomeModifier> ADD_DEEPSLATE_SULFUR_ORE = registerKey("add_deepslate_sulfur_ore");
     public static final ResourceKey<BiomeModifier> ADD_SALTPETER_ORE = registerKey("add_saltpeter_ore");
+    public static final ResourceKey<BiomeModifier> ADD_DEEPSLATE_SALTPETER_ORE = registerKey("add_deepslate_saltpeter_ore");
     public static final ResourceKey<BiomeModifier> ADD_LEAD_ORE = registerKey("add_lead_ore");
+    public static final ResourceKey<BiomeModifier> ADD_DEEPSLATE_LEAD_ORE = registerKey("add_deepslate_lead_ore");
     public static final ResourceKey<BiomeModifier> ADD_ATOMIC_ORE = registerKey("add_atomic_ore");
+    public static final ResourceKey<BiomeModifier> ADD_DEEPSLATE_ATOMIC_ORE = registerKey("add_deepslate_atomic_ore");
 
     public static final ResourceKey<BiomeModifier> ADD_BUNGERITE_ORE = registerKey("add_bungerite_ore");
     public static final ResourceKey<BiomeModifier> ADD_NETHER_ATOMIC_ORE = registerKey("add_nether_atomic_ore");
@@ -38,17 +42,33 @@ public class AtomicBiomeModifiers {
                 biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
                 HolderSet.direct(placedFeatures.getOrThrow(AtomicPlacedFeatures.SULFUR_ORE_PLACED_KEY)),
                 GenerationStep.Decoration.UNDERGROUND_ORES));
+        context.register(ADD_DEEPSLATE_SULFUR_ORE, new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
+                HolderSet.direct(placedFeatures.getOrThrow(AtomicPlacedFeatures.DEEPSLATE_SULFUR_ORE_PLACED_KEY)),
+                GenerationStep.Decoration.UNDERGROUND_ORES));
         context.register(ADD_SALTPETER_ORE, new BiomeModifiers.AddFeaturesBiomeModifier(
                 biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
                 HolderSet.direct(placedFeatures.getOrThrow(AtomicPlacedFeatures.SALTPETER_ORE_PLACED_KEY)),
+                GenerationStep.Decoration.UNDERGROUND_ORES));
+        context.register(ADD_DEEPSLATE_SALTPETER_ORE, new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
+                HolderSet.direct(placedFeatures.getOrThrow(AtomicPlacedFeatures.DEEPSLATE_SALTPETER_ORE_PLACED_KEY)),
                 GenerationStep.Decoration.UNDERGROUND_ORES));
         context.register(ADD_LEAD_ORE, new BiomeModifiers.AddFeaturesBiomeModifier(
                 biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
                 HolderSet.direct(placedFeatures.getOrThrow(AtomicPlacedFeatures.LEAD_ORE_PLACED_KEY)),
                 GenerationStep.Decoration.UNDERGROUND_ORES));
+        context.register(ADD_DEEPSLATE_LEAD_ORE, new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
+                HolderSet.direct(placedFeatures.getOrThrow(AtomicPlacedFeatures.DEEPSLATE_LEAD_ORE_PLACED_KEY)),
+                GenerationStep.Decoration.UNDERGROUND_ORES));
         context.register(ADD_ATOMIC_ORE, new BiomeModifiers.AddFeaturesBiomeModifier(
                 biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
                 HolderSet.direct(placedFeatures.getOrThrow(AtomicPlacedFeatures.ATOMIC_ORE_PLACED_KEY)),
+                GenerationStep.Decoration.UNDERGROUND_ORES));
+        context.register(ADD_DEEPSLATE_ATOMIC_ORE, new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
+                HolderSet.direct(placedFeatures.getOrThrow(AtomicPlacedFeatures.DEEPSLATE_ATOMIC_ORE_PLACED_KEY)),
                 GenerationStep.Decoration.UNDERGROUND_ORES));
 
 

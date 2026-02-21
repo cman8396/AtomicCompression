@@ -19,9 +19,13 @@ public class AtomicBlockTagProvider extends BlockTagsProvider {
 
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(AtomicBlocks.SULFUR_ORE.get())
+                .add(AtomicBlocks.DEEPSLATE_SULFUR_ORE.get())
                 .add(AtomicBlocks.SALTPETER_ORE.get())
+                .add(AtomicBlocks.DEEPSLATE_SALTPETER_ORE.get())
                 .add(AtomicBlocks.LEAD_ORE.get())
+                .add(AtomicBlocks.DEEPSLATE_LEAD_ORE.get())
                 .add(AtomicBlocks.ATOMIC_ORE.get())
+                .add(AtomicBlocks.DEEPSLATE_ATOMIC_ORE.get())
                 .add(AtomicBlocks.BUNGERITE_ORE.get())
                 .add(AtomicBlocks.NETHER_ATOMIC_ORE.get())
                 .add(AtomicBlocks.END_ATOMIC_ORE.get())
@@ -29,11 +33,15 @@ public class AtomicBlockTagProvider extends BlockTagsProvider {
 
         tag(BlockTags.NEEDS_STONE_TOOL)
                 .add(AtomicBlocks.SULFUR_ORE.get())
+                .add(AtomicBlocks.DEEPSLATE_SULFUR_ORE.get())
                 .add(AtomicBlocks.SALTPETER_ORE.get())
-                .add(AtomicBlocks.LEAD_ORE.get());
+                .add(AtomicBlocks.DEEPSLATE_SALTPETER_ORE.get())
+                .add(AtomicBlocks.LEAD_ORE.get())
+                .add(AtomicBlocks.DEEPSLATE_LEAD_ORE.get());
 
         tag(BlockTags.NEEDS_IRON_TOOL)
                 .add(AtomicBlocks.ATOMIC_ORE.get())
+                .add(AtomicBlocks.DEEPSLATE_ATOMIC_ORE.get())
                 .add(AtomicBlocks.NETHER_ATOMIC_ORE.get())
                 .add(AtomicBlocks.END_ATOMIC_ORE.get());
 

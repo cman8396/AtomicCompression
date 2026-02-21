@@ -19,9 +19,13 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
 public class AtomicConfiguredFeatures {
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> SULFUR_ORE_KEY = registerKey("sulfurc_ore_placed");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> DEEPSLATE_SULFUR_ORE_KEY = registerKey("deepslate_sulfurc_ore_placed");
     public static final ResourceKey<ConfiguredFeature<?, ?>> SALTPETER_ORE_KEY = registerKey("saltpeter_ore_placed");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> DEEPSLATE_SALTPETER_ORE_KEY = registerKey("deepslate_saltpeter_ore_placed");
     public static final ResourceKey<ConfiguredFeature<?, ?>> LEAD_ORE_KEY = registerKey("lead_ore_placed");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> DEEPSLATE_LEAD_ORE_KEY = registerKey("deepslate_lead_ore_placed");
     public static final ResourceKey<ConfiguredFeature<?, ?>> ATOMIC_ORE_KEY = registerKey("atomic_ore_placed");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> DEEPSLATE_ATOMIC_ORE_KEY = registerKey("deepslate_atomic_ore_placed");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> BUNGERITE_ORE_KEY = registerKey("bungerite_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> NETHER_ATOMIC_ORE_KEY = registerKey("nether_atomic_ore_placed");
@@ -41,12 +45,20 @@ public class AtomicConfiguredFeatures {
 
         register(context, SULFUR_ORE_KEY, Feature.ORE, new OreConfiguration(stoneReplaceables,
                 AtomicBlocks.SULFUR_ORE.get().defaultBlockState(), 9));
+        register(context, DEEPSLATE_SULFUR_ORE_KEY, Feature.ORE, new OreConfiguration(deepslateReplaceables,
+                AtomicBlocks.DEEPSLATE_SULFUR_ORE.get().defaultBlockState(), 9));
         register(context, SALTPETER_ORE_KEY, Feature.ORE, new OreConfiguration(stoneReplaceables,
                 AtomicBlocks.SALTPETER_ORE.get().defaultBlockState(), 6));
+        register(context, DEEPSLATE_SALTPETER_ORE_KEY, Feature.ORE, new OreConfiguration(deepslateReplaceables,
+                AtomicBlocks.DEEPSLATE_SALTPETER_ORE.get().defaultBlockState(), 6));
         register(context, LEAD_ORE_KEY, Feature.ORE, new OreConfiguration(stoneReplaceables,
                 AtomicBlocks.LEAD_ORE.get().defaultBlockState(), 9));
+        register(context, DEEPSLATE_LEAD_ORE_KEY, Feature.ORE, new OreConfiguration(deepslateReplaceables,
+                AtomicBlocks.DEEPSLATE_LEAD_ORE.get().defaultBlockState(), 9));
         register(context, ATOMIC_ORE_KEY, Feature.ORE, new OreConfiguration(stoneReplaceables,
                 AtomicBlocks.ATOMIC_ORE.get().defaultBlockState(), 2));
+        register(context, DEEPSLATE_ATOMIC_ORE_KEY, Feature.ORE, new OreConfiguration(deepslateReplaceables,
+                AtomicBlocks.DEEPSLATE_ATOMIC_ORE.get().defaultBlockState(), 2));
 
 
         register(context, BUNGERITE_ORE_KEY, Feature.ORE, new OreConfiguration(netherrackReplaceables,

@@ -1,7 +1,10 @@
 {
   "values": [
     "atomiccompression:sulfur_ore",
+    "atomiccompression:deepslate_sulfur_ore",
     "atomiccompression:saltpeter_ore",
-    "atomiccompression:lead_ore"
+    "atomiccompression:deepslate_saltpeter_ore",
+    "atomiccompression:lead_ore",
+    "atomiccompression:deepslate_lead_ore"
   ]
 }
