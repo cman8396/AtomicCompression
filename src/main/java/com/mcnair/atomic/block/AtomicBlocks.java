@@ -21,18 +21,21 @@ public class AtomicBlocks {
     public static final DeferredBlock<Block> SALTPETER_ORE = registerBlock("saltpeter_ore",
             (properties) -> new DropExperienceBlock(UniformInt.of(1, 3),
                     properties.strength(1.5f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> LEAD_ORE = registerBlock("lead_ore",
+            (properties) -> new DropExperienceBlock(UniformInt.of(1, 3),
+                    properties.strength(1.5f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
     public static final DeferredBlock<Block> ATOMIC_ORE = registerBlock("atomic_ore",
             (properties) -> new DropExperienceBlock(UniformInt.of(5, 7),
-                    properties.strength(12f, 1000f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+                    properties.strength(9f, 1000f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
     public static final DeferredBlock<Block> BUNGERITE_ORE = registerBlock("bungerite_ore",
             (properties) -> new DropExperienceBlock(UniformInt.of(3, 6),
-                    properties.strength(12f, 1000f).requiresCorrectToolForDrops().ignitedByLava().sound(SoundType.NETHER_GOLD_ORE)));
+                    properties.strength(9f, 1000f).requiresCorrectToolForDrops().ignitedByLava().sound(SoundType.NETHER_GOLD_ORE)));
     public static final DeferredBlock<Block> ATOMIC_ORE_NETHER = registerBlock("atomic_ore_nether",
             (properties) -> new DropExperienceBlock(UniformInt.of(5, 7),
-                    properties.strength(12f, 1000f).requiresCorrectToolForDrops().sound(SoundType.NETHER_GOLD_ORE)));
+                    properties.strength(9f, 1000f).requiresCorrectToolForDrops().sound(SoundType.NETHER_GOLD_ORE)));
     public static final DeferredBlock<Block> ATOMIC_ORE_END = registerBlock("atomic_ore_end",
             (properties) -> new DropExperienceBlock(UniformInt.of(5, 7),
-                    properties.strength(12f, 1000f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+                    properties.strength(9f, 1000f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
 
     /* UTILITY BLOCKS */
     public static final DeferredBlock<Block> ATOMIC_GLASS = registerBlock("atomic_glass",

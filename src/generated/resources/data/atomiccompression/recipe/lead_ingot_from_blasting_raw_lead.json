@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.2,
+  "group": "lead",
+  "ingredient": "atomiccompression:raw_lead",
+  "result": {
+    "count": 1,
+    "id": "atomiccompression:lead_ingot"
+  }
+}

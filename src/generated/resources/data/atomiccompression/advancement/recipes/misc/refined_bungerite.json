@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "atomiccompression:refined_bungerite"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_translation{key='item.atomiccompression.refined_bungerite_nugget', args=[]}": {
+      "conditions": {
+        "items": [
+          {
+            "items": "atomiccompression:refined_bungerite_nugget"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_translation{key='item.atomiccompression.refined_bungerite_nugget', args=[]}"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "atomiccompression:refined_bungerite"
+    ]
+  }
+}

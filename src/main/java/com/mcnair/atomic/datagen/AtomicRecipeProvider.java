@@ -63,6 +63,7 @@ public class AtomicRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_raw_saltpeter", has(AtomicItems.RAW_SALTPETER))
                 .save(output);
 
+
         /* SHAPED RECIPES */
         shaped(RecipeCategory.MISC, AtomicBlocks.ATOMIC_GLASS.get())
                 .pattern("GGG")
@@ -89,11 +90,20 @@ public class AtomicRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_atomic_shard", has(AtomicItems.ATOMIC_SHARD))
                 .save(output);
 
-        /* SMELTING RECIPES */
-        List<ItemLike> BUNGERITE_SMELTABLES = List.of(AtomicItems.RAW_BUNGERITE, AtomicBlocks.BUNGERITE_ORE);
-        oreSmelting(output, BUNGERITE_SMELTABLES, RecipeCategory.MISC, AtomicItems.REFINED_BUNGERITE.get(), 0.3f, 200, "bungerite");
-        oreBlasting(output, BUNGERITE_SMELTABLES, RecipeCategory.MISC, AtomicItems.REFINED_BUNGERITE.get(), 0.3f, 100, "bungerite");
 
+        /* SMELTING RECIPES */
+        List<ItemLike> leadSmeltables = List.of(AtomicItems.RAW_LEAD, AtomicBlocks.LEAD_ORE);
+        oreSmelting(output, leadSmeltables, RecipeCategory.MISC, AtomicItems.LEAD_INGOT.get(), 0.2f, 200, "lead");
+        oreBlasting(output, leadSmeltables, RecipeCategory.MISC, AtomicItems.LEAD_INGOT.get(), 0.2f, 100, "lead");
+        List<ItemLike> bungeriteSmeltables = List.of(AtomicItems.RAW_BUNGERITE, AtomicBlocks.BUNGERITE_ORE);
+        oreSmelting(output, bungeriteSmeltables, RecipeCategory.MISC, AtomicItems.REFINED_BUNGERITE.get(), 0.3f, 200, "bungerite");
+        oreBlasting(output, bungeriteSmeltables, RecipeCategory.MISC, AtomicItems.REFINED_BUNGERITE.get(), 0.3f, 100, "bungerite");
+
+
+        /* NUGGET CONVERSION */
+        nuggetRecipe(output, AtomicItems.LEAD_NUGGET, AtomicItems.LEAD_INGOT, RecipeCategory.MISC);
+        nuggetRecipe(output, AtomicItems.REFINED_BUNGERITE_NUGGET, AtomicItems.REFINED_BUNGERITE, RecipeCategory.MISC);
+        nuggetRecipe(output, AtomicItems.BUNGERITE_ALLOY_NUGGET, AtomicItems.BUNGERITE_ALLOY_INGOT, RecipeCategory.MISC);
 
 
 
@@ -119,6 +129,23 @@ public class AtomicRecipeProvider extends RecipeProvider {
         // Throws error
         // trimSmithing(AtomicItems.KAUPEN_SMITHING_TEMPLATE.get(), ResourceKey.create(Registries.TRIM_PATTERN, Identifier.fromNamespaceAndPath(TutorialMod.MOD_ID, "kaupen")),
         //         ResourceKey.create(Registries.RECIPE, Identifier.fromNamespaceAndPath(TutorialMod.MOD_ID, "kaupen")));
+    }
+
+    protected void nuggetRecipe(RecipeOutput recipeOutput, ItemLike nuggetItem, ItemLike ingotItem, RecipeCategory pCategory) {
+        // Create ingot > nugget recipe
+        shapeless(pCategory, nuggetItem, 9)
+                .requires(ingotItem)
+                .unlockedBy("has_" + ingotItem.asItem().getName(), has(ingotItem))
+                .save(recipeOutput);
+
+        // Create nugget > ingot recipe
+        shaped(pCategory, ingotItem)
+                .pattern("NNN")
+                .pattern("NNN")
+                .pattern("NNN")
+                .define('N', nuggetItem)
+                .unlockedBy("has_" + nuggetItem.asItem().getName(), has(nuggetItem))
+                .save(recipeOutput);
     }
 
     protected void oreSmelting(RecipeOutput recipeOutput, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult,

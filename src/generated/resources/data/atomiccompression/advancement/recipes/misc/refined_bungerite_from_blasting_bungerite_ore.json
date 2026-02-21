@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_bungerite_ore": {
+      "conditions": {
+        "items": [
+          {
+            "items": "atomiccompression:bungerite_ore"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "atomiccompression:refined_bungerite_from_blasting_bungerite_ore"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_bungerite_ore"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "atomiccompression:refined_bungerite_from_blasting_bungerite_ore"
+    ]
+  }
+}

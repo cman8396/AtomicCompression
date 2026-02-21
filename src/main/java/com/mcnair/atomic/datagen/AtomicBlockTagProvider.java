@@ -20,6 +20,7 @@ public class AtomicBlockTagProvider extends BlockTagsProvider {
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(AtomicBlocks.SULFUR_ORE.get())
                 .add(AtomicBlocks.SALTPETER_ORE.get())
+                .add(AtomicBlocks.LEAD_ORE.get())
                 .add(AtomicBlocks.ATOMIC_ORE.get())
                 .add(AtomicBlocks.BUNGERITE_ORE.get())
                 .add(AtomicBlocks.ATOMIC_ORE_NETHER.get())
@@ -28,7 +29,8 @@ public class AtomicBlockTagProvider extends BlockTagsProvider {
 
         tag(BlockTags.NEEDS_STONE_TOOL)
                 .add(AtomicBlocks.SULFUR_ORE.get())
-                .add(AtomicBlocks.SALTPETER_ORE.get());
+                .add(AtomicBlocks.SALTPETER_ORE.get())
+                .add(AtomicBlocks.LEAD_ORE.get());
 
         tag(BlockTags.NEEDS_IRON_TOOL)
                 .add(AtomicBlocks.ATOMIC_ORE.get())

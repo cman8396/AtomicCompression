@@ -4,7 +4,10 @@
   "ingredients": [
     "atomiccompression:sulfur_dust",
     "atomiccompression:saltpeter_dust",
-    "minecraft:charcoal"
+    [
+      "minecraft:charcoal",
+      "minecraft:coal"
+    ]
   ],
   "result": {
     "count": 3,

@@ -76,6 +76,7 @@ public class AtomicModelProvider extends ModelProvider {
 //        /* BLOCKS */
         blockModels.createTrivialCube(AtomicBlocks.SULFUR_ORE.get());
         blockModels.createTrivialCube(AtomicBlocks.SALTPETER_ORE.get());
+        blockModels.createTrivialCube(AtomicBlocks.LEAD_ORE.get());
         blockModels.createTrivialCube(AtomicBlocks.ATOMIC_ORE.get());
         blockModels.createTrivialCube(AtomicBlocks.BUNGERITE_ORE.get());
         blockModels.createTrivialCube(AtomicBlocks.ATOMIC_ORE_NETHER.get());

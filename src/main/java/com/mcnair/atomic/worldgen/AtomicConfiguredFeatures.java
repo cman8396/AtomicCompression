@@ -20,6 +20,7 @@ public class AtomicConfiguredFeatures {
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> SULFUR_ORE_KEY = registerKey("sulfurc_ore_placed");
     public static final ResourceKey<ConfiguredFeature<?, ?>> SALTPETER_ORE_KEY = registerKey("saltpeter_ore_placed");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> LEAD_ORE_KEY = registerKey("lead_ore_placed");
     public static final ResourceKey<ConfiguredFeature<?, ?>> ATOMIC_ORE_KEY = registerKey("atomic_ore_placed");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> BUNGERITE_ORE_KEY = registerKey("bungerite_ore");
@@ -31,6 +32,7 @@ public class AtomicConfiguredFeatures {
 //    public static final ResourceKey<ConfiguredFeature<?, ?>> GOJI_BERRY_BUSH_KEY = registerKey("goji_berry_bush");
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
+
         RuleTest stoneReplaceables = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
         RuleTest deepslateReplaceables = new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
         RuleTest netherrackReplaceables = new BlockMatchTest(Blocks.NETHERRACK);
@@ -40,17 +42,23 @@ public class AtomicConfiguredFeatures {
         register(context, SULFUR_ORE_KEY, Feature.ORE, new OreConfiguration(stoneReplaceables,
                 AtomicBlocks.SULFUR_ORE.get().defaultBlockState(), 9));
         register(context, SALTPETER_ORE_KEY, Feature.ORE, new OreConfiguration(stoneReplaceables,
-                AtomicBlocks.SALTPETER_ORE.get().defaultBlockState(), 9));
+                AtomicBlocks.SALTPETER_ORE.get().defaultBlockState(), 6));
+        register(context, LEAD_ORE_KEY, Feature.ORE, new OreConfiguration(stoneReplaceables,
+                AtomicBlocks.LEAD_ORE.get().defaultBlockState(), 9));
         register(context, ATOMIC_ORE_KEY, Feature.ORE, new OreConfiguration(stoneReplaceables,
                 AtomicBlocks.ATOMIC_ORE.get().defaultBlockState(), 2));
+
 
         register(context, BUNGERITE_ORE_KEY, Feature.ORE, new OreConfiguration(netherrackReplaceables,
                 AtomicBlocks.BUNGERITE_ORE.get().defaultBlockState(), 6));
         register(context, ATOMIC_ORE_NETHER_KEY, Feature.ORE, new OreConfiguration(netherrackReplaceables,
                 AtomicBlocks.ATOMIC_ORE_NETHER.get().defaultBlockState(), 2));
 
+
         register(context, ATOMIC_ORE_END_KEY, Feature.ORE, new OreConfiguration(endReplaceables,
                 AtomicBlocks.ATOMIC_ORE_END.get().defaultBlockState(), 2));
+
+
 
 
 //        List<OreConfiguration.TargetBlockState> overworldBismuthOres = List.of(

@@ -16,6 +16,7 @@ import java.util.List;
 public class AtomicPlacedFeatures {
     public static final ResourceKey<PlacedFeature> SULFUR_ORE_PLACED_KEY = registerKey("sulfur_ore_placed");
     public static final ResourceKey<PlacedFeature> SALTPETER_ORE_PLACED_KEY = registerKey("saltpeter_ore_placed");
+    public static final ResourceKey<PlacedFeature> LEAD_ORE_PLACED_KEY = registerKey("lead_ore_placed");
     public static final ResourceKey<PlacedFeature> ATOMIC_ORE_PLACED_KEY = registerKey("atomic_ore_placed");
     public static final ResourceKey<PlacedFeature> BUNGERITE_ORE_PLACED_KEY = registerKey("bungerite_ore_placed");
     public static final ResourceKey<PlacedFeature> ATOMIC_ORE_NETHER_PLACED_KEY = registerKey("atomic_ore_nether_placed");
@@ -26,20 +27,28 @@ public class AtomicPlacedFeatures {
 
         var netherFullHeightSpawnRange = HeightRangePlacement.uniform(VerticalAnchor.absolute(7), VerticalAnchor.absolute(120));
         var endFullHeightSpawnRange = HeightRangePlacement.uniform(VerticalAnchor.absolute(7), VerticalAnchor.absolute(120));
+
+
         register(context, SULFUR_ORE_PLACED_KEY, configuredFeatures.getOrThrow(AtomicConfiguredFeatures.SULFUR_ORE_KEY),
                 AtomicOrePlacement.commonOrePlacement(9, HeightRangePlacement.uniform(VerticalAnchor.absolute(-50), VerticalAnchor.absolute(90))));
         register(context, SALTPETER_ORE_PLACED_KEY, configuredFeatures.getOrThrow(AtomicConfiguredFeatures.SALTPETER_ORE_KEY),
                 AtomicOrePlacement.commonOrePlacement(9, HeightRangePlacement.uniform(VerticalAnchor.absolute(-50), VerticalAnchor.absolute(90))));
+        register(context, LEAD_ORE_PLACED_KEY, configuredFeatures.getOrThrow(AtomicConfiguredFeatures.LEAD_ORE_KEY),
+                AtomicOrePlacement.commonOrePlacement(16, HeightRangePlacement.uniform(VerticalAnchor.absolute(-50), VerticalAnchor.absolute(90))));
         register(context, ATOMIC_ORE_PLACED_KEY, configuredFeatures.getOrThrow(AtomicConfiguredFeatures.ATOMIC_ORE_KEY),
                 AtomicOrePlacement.rareOrePlacement(32, HeightRangePlacement.uniform(VerticalAnchor.absolute(-50), VerticalAnchor.absolute(90))));
+
 
         register(context, BUNGERITE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(AtomicConfiguredFeatures.BUNGERITE_ORE_KEY),
                 AtomicOrePlacement.commonOrePlacement(6, netherFullHeightSpawnRange));
         register(context, ATOMIC_ORE_NETHER_PLACED_KEY, configuredFeatures.getOrThrow(AtomicConfiguredFeatures.ATOMIC_ORE_NETHER_KEY),
                 AtomicOrePlacement.rareOrePlacement(32, netherFullHeightSpawnRange));
 
+
         register(context, ATOMIC_ORE_END_PLACED_KEY, configuredFeatures.getOrThrow(AtomicConfiguredFeatures.ATOMIC_ORE_END_KEY),
                 AtomicOrePlacement.rareOrePlacement(32, endFullHeightSpawnRange));
+
+
 
 
 //        register(context, BLOODWOOD_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.BLOODWOOD_KEY),
