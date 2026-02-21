@@ -3,15 +3,15 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "atomiccompression:lead_nugget"
+        "recipe": "minecraft:solidblock_gunpowder_block_to_gunpowder"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "has_translation{key='item.atomiccompression.lead_ingot', args=[]}": {
+    "has_translation{key='block.atomiccompression.gunpowder_block', args=[]}": {
       "conditions": {
         "items": [
           {
-            "items": "atomiccompression:lead_ingot"
+            "items": "atomiccompression:gunpowder_block"
           }
         ]
       },
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_translation{key='item.atomiccompression.lead_ingot', args=[]}"
+      "has_translation{key='block.atomiccompression.gunpowder_block', args=[]}"
     ]
   ],
   "rewards": {
     "recipes": [
-      "atomiccompression:lead_nugget"
+      "minecraft:solidblock_gunpowder_block_to_gunpowder"
     ]
   }
 }

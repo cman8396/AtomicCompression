@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "atomiccompression:refined_bungerite_nugget"
+        "recipe": "minecraft:solidblock_refined_bungerite_to_refined_bungerite_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "atomiccompression:refined_bungerite_nugget"
+      "minecraft:solidblock_refined_bungerite_to_refined_bungerite_block"
     ]
   }
 }

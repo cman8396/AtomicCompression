@@ -41,6 +41,7 @@ public class AtomicRecipeProvider extends RecipeProvider {
     @Override
     protected void buildRecipes() {
 
+
         /* SHAPELESS RECIPES */
         shapeless(RecipeCategory.MISC, Items.BASALT, 9)
                 .requires(AtomicBlocks.DENSE_BASALT)
@@ -102,10 +103,20 @@ public class AtomicRecipeProvider extends RecipeProvider {
 
 
         /* NUGGET CONVERSION */
-        nuggetRecipe(output, AtomicItems.LEAD_NUGGET, AtomicItems.LEAD_INGOT, RecipeCategory.MISC);
-        nuggetRecipe(output, AtomicItems.REFINED_BUNGERITE_NUGGET, AtomicItems.REFINED_BUNGERITE, RecipeCategory.MISC);
-        nuggetRecipe(output, AtomicItems.BUNGERITE_ALLOY_NUGGET, AtomicItems.BUNGERITE_ALLOY_INGOT, RecipeCategory.MISC);
+        nuggetIngotRecipe(output, AtomicItems.LEAD_NUGGET, AtomicItems.LEAD_INGOT, RecipeCategory.MISC);
+        nuggetIngotRecipe(output, AtomicItems.REFINED_BUNGERITE_NUGGET, AtomicItems.REFINED_BUNGERITE, RecipeCategory.MISC);
+        nuggetIngotRecipe(output, AtomicItems.BUNGERITE_ALLOY_NUGGET, AtomicItems.BUNGERITE_ALLOY_INGOT, RecipeCategory.MISC);
 
+
+        /* SOLID BLOCK CONVERSION */
+        solidBlockRecipe(output, Items.GUNPOWDER, AtomicBlocks.GUNPOWDER_BLOCK, RecipeCategory.MISC);
+        solidBlockRecipe(output, AtomicItems.RAW_SULFUR, AtomicBlocks.RAW_SULFUR_BLOCK, RecipeCategory.MISC);
+        solidBlockRecipe(output, AtomicItems.RAW_SALTPETER, AtomicBlocks.RAW_SALTPETER_BLOCK, RecipeCategory.MISC);
+        solidBlockRecipe(output, AtomicItems.SULFUR_DUST, AtomicBlocks.SULFUR_DUST_BLOCK, RecipeCategory.MISC);
+        solidBlockRecipe(output, AtomicItems.SALTPETER_DUST, AtomicBlocks.SALTPETER_DUST_BLOCK, RecipeCategory.MISC);
+        solidBlockRecipe(output, AtomicItems.LEAD_INGOT, AtomicBlocks.LEAD_BLOCK, RecipeCategory.MISC);
+        solidBlockRecipe(output, AtomicItems.REFINED_BUNGERITE, AtomicBlocks.REFINED_BUNGERITE_BLOCK, RecipeCategory.MISC);
+        solidBlockRecipe(output, AtomicItems.BUNGERITE_ALLOY_INGOT, AtomicBlocks.BUNGERITE_ALLOY_BLOCK, RecipeCategory.MISC);
 
 
 //        stairBuilder(AtomicBlocks.BISMUTH_STAIRS.get(), Ingredient.of(AtomicItems.BISMUTH)).group("bismuth")
@@ -132,12 +143,29 @@ public class AtomicRecipeProvider extends RecipeProvider {
         //         ResourceKey.create(Registries.RECIPE, Identifier.fromNamespaceAndPath(TutorialMod.MOD_ID, "kaupen")));
     }
 
-    protected void nuggetRecipe(RecipeOutput recipeOutput, ItemLike nuggetItem, ItemLike ingotItem, RecipeCategory pCategory) {
+    protected void solidBlockRecipe(RecipeOutput recipeOutput, ItemLike ingotItem, ItemLike blockItem, RecipeCategory pCategory) {
+        // Create ingot > nugget recipe
+        shapeless(pCategory, ingotItem, 9)
+                .requires(blockItem)
+                .unlockedBy("has_" + blockItem.asItem().getName(), has(blockItem))
+                .save(recipeOutput, "solidblock_" + getItemName(blockItem) + "_to_" + getItemName(ingotItem));
+
+        // Create nugget > ingot recipe
+        shaped(pCategory, blockItem)
+                .pattern("NNN")
+                .pattern("NNN")
+                .pattern("NNN")
+                .define('N', ingotItem)
+                .unlockedBy("has_" + ingotItem.asItem().getName(), has(ingotItem))
+                .save(recipeOutput, "solidblock_" + getItemName(ingotItem) + "_to_" + getItemName(blockItem));
+    }
+
+    protected void nuggetIngotRecipe(RecipeOutput recipeOutput, ItemLike nuggetItem, ItemLike ingotItem, RecipeCategory pCategory) {
         // Create ingot > nugget recipe
         shapeless(pCategory, nuggetItem, 9)
                 .requires(ingotItem)
                 .unlockedBy("has_" + ingotItem.asItem().getName(), has(ingotItem))
-                .save(recipeOutput);
+                .save(recipeOutput, "nuggetrecipe_" + getItemName(ingotItem) + "_to_" + getItemName(nuggetItem));
 
         // Create nugget > ingot recipe
         shaped(pCategory, ingotItem)
@@ -146,7 +174,7 @@ public class AtomicRecipeProvider extends RecipeProvider {
                 .pattern("NNN")
                 .define('N', nuggetItem)
                 .unlockedBy("has_" + nuggetItem.asItem().getName(), has(nuggetItem))
-                .save(recipeOutput);
+                .save(recipeOutput, "nuggetrecipe_" + getItemName(nuggetItem) + "_to_" + getItemName(ingotItem));
     }
 
     protected void oreSmelting(RecipeOutput recipeOutput, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult,

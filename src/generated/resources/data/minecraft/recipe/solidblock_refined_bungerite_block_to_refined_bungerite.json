@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "atomiccompression:refined_bungerite_block"
+  ],
+  "result": {
+    "count": 9,
+    "id": "atomiccompression:refined_bungerite"
+  }
+}

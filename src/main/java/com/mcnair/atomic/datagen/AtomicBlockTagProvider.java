@@ -17,6 +17,11 @@ public class AtomicBlockTagProvider extends BlockTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
 
+        tag(BlockTags.MINEABLE_WITH_SHOVEL)
+                .add(AtomicBlocks.GUNPOWDER_BLOCK.get())
+                .add(AtomicBlocks.SULFUR_DUST_BLOCK.get())
+                .add(AtomicBlocks.SALTPETER_DUST_BLOCK.get());
+
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(AtomicBlocks.SULFUR_ORE.get())
                 .add(AtomicBlocks.DEEPSLATE_SULFUR_ORE.get())
@@ -29,15 +34,23 @@ public class AtomicBlockTagProvider extends BlockTagsProvider {
                 .add(AtomicBlocks.BUNGERITE_ORE.get())
                 .add(AtomicBlocks.NETHER_ATOMIC_ORE.get())
                 .add(AtomicBlocks.END_ATOMIC_ORE.get())
-                .add(AtomicBlocks.DENSE_BASALT.get());
+                .add(AtomicBlocks.DENSE_BASALT.get())
+                .add(AtomicBlocks.RAW_SULFUR_BLOCK.get())
+                .add(AtomicBlocks.RAW_SALTPETER_BLOCK.get())
+                .add(AtomicBlocks.LEAD_BLOCK.get())
+                .add(AtomicBlocks.REFINED_BUNGERITE_BLOCK.get())
+                .add(AtomicBlocks.BUNGERITE_ALLOY_BLOCK.get());
 
         tag(BlockTags.NEEDS_STONE_TOOL)
                 .add(AtomicBlocks.SULFUR_ORE.get())
                 .add(AtomicBlocks.DEEPSLATE_SULFUR_ORE.get())
+                .add(AtomicBlocks.RAW_SULFUR_BLOCK.get())
                 .add(AtomicBlocks.SALTPETER_ORE.get())
                 .add(AtomicBlocks.DEEPSLATE_SALTPETER_ORE.get())
+                .add(AtomicBlocks.RAW_SALTPETER_BLOCK.get())
                 .add(AtomicBlocks.LEAD_ORE.get())
-                .add(AtomicBlocks.DEEPSLATE_LEAD_ORE.get());
+                .add(AtomicBlocks.DEEPSLATE_LEAD_ORE.get())
+                .add(AtomicBlocks.LEAD_BLOCK.get());
 
         tag(BlockTags.NEEDS_IRON_TOOL)
                 .add(AtomicBlocks.ATOMIC_ORE.get())
@@ -46,7 +59,9 @@ public class AtomicBlockTagProvider extends BlockTagsProvider {
                 .add(AtomicBlocks.END_ATOMIC_ORE.get());
 
         tag(BlockTags.NEEDS_DIAMOND_TOOL)
-                .add(AtomicBlocks.BUNGERITE_ORE.get());
+                .add(AtomicBlocks.BUNGERITE_ORE.get())
+                .add(AtomicBlocks.REFINED_BUNGERITE_BLOCK.get())
+                .add(AtomicBlocks.BUNGERITE_ALLOY_BLOCK.get());
 
 //        tag(BlockTags.FENCES).add(AtomicBlocks.BISMUTH_FENCE.get());
 //        tag(BlockTags.FENCE_GATES).add(AtomicBlocks.BISMUTH_FENCE_GATE.get());

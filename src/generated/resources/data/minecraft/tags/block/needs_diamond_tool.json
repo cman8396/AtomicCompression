@@ -1,5 +1,7 @@
 {
   "values": [
-    "atomiccompression:bungerite_ore"
+    "atomiccompression:bungerite_ore",
+    "atomiccompression:refined_bungerite_block",
+    "atomiccompression:bungerite_alloy_block"
   ]
 }

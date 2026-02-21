@@ -3,15 +3,15 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "atomiccompression:bungerite_alloy_ingot"
+        "recipe": "minecraft:solidblock_raw_saltpeter_block_to_raw_saltpeter"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "has_translation{key='item.atomiccompression.bungerite_alloy_nugget', args=[]}": {
+    "has_translation{key='block.atomiccompression.raw_saltpeter_block', args=[]}": {
       "conditions": {
         "items": [
           {
-            "items": "atomiccompression:bungerite_alloy_nugget"
+            "items": "atomiccompression:raw_saltpeter_block"
           }
         ]
       },
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_translation{key='item.atomiccompression.bungerite_alloy_nugget', args=[]}"
+      "has_translation{key='block.atomiccompression.raw_saltpeter_block', args=[]}"
     ]
   ],
   "rewards": {
     "recipes": [
-      "atomiccompression:bungerite_alloy_ingot"
+      "minecraft:solidblock_raw_saltpeter_block_to_raw_saltpeter"
     ]
   }
 }

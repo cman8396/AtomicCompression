@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:solidblock_sulfur_dust_to_sulfur_dust_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_translation{key='item.atomiccompression.sulfur_dust', args=[]}": {
+      "conditions": {
+        "items": [
+          {
+            "items": "atomiccompression:sulfur_dust"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_translation{key='item.atomiccompression.sulfur_dust', args=[]}"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:solidblock_sulfur_dust_to_sulfur_dust_block"
+    ]
+  }
+}

@@ -59,8 +59,16 @@ public class AtomicBlockLootTableProvider extends BlockLootSubProvider {
 
 
         /* UTILITY BLOCKS */
-        dropSelf(AtomicBlocks.DENSE_BASALT.get());
         add(AtomicBlocks.ATOMIC_GLASS.get(), block -> noDrop());
+        dropSelf(AtomicBlocks.DENSE_BASALT.get());
+        dropSelf(AtomicBlocks.GUNPOWDER_BLOCK.get());
+        dropSelf(AtomicBlocks.RAW_SULFUR_BLOCK.get());
+        dropSelf(AtomicBlocks.RAW_SALTPETER_BLOCK.get());
+        dropSelf(AtomicBlocks.SULFUR_DUST_BLOCK.get());
+        dropSelf(AtomicBlocks.SALTPETER_DUST_BLOCK.get());
+        dropSelf(AtomicBlocks.LEAD_BLOCK.get());
+        dropSelf(AtomicBlocks.REFINED_BUNGERITE_BLOCK.get());
+        dropSelf(AtomicBlocks.BUNGERITE_ALLOY_BLOCK.get());
 
 
 //        dropSelf(ModBlocks.BISMUTH_BLOCK.get());

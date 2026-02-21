@@ -2,6 +2,7 @@ package com.mcnair.atomic.block;
 
 import com.mcnair.atomic.AtomicCompression;
 import com.mcnair.atomic.item.AtomicItems;
+import net.minecraft.util.ColorRGBA;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.*;
@@ -9,6 +10,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
+
 import java.util.function.Function;
 
 public class AtomicBlocks {
@@ -49,15 +51,38 @@ public class AtomicBlocks {
             (properties) -> new DropExperienceBlock(UniformInt.of(5, 7),
                     properties.strength(9f, 1000f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
 
+
     /* UTILITY BLOCKS */
     public static final DeferredBlock<Block> ATOMIC_GLASS = registerBlock("atomic_glass",
             (properties) -> new Block(
                     properties.strength(0.3f).noOcclusion().sound(SoundType.GLASS)));
     public static final DeferredBlock<Block> DENSE_BASALT = registerBlock("dense_basalt",
             (properties) -> new RotatedPillarBlock(
-                    properties.strength(2.5f, 5f).requiresCorrectToolForDrops().sound(SoundType.BASALT)));
-
-
+                    properties.strength(1.75f, 6f).requiresCorrectToolForDrops().sound(SoundType.BASALT)));
+    public static final DeferredBlock<Block> GUNPOWDER_BLOCK = registerBlock("gunpowder_block",
+            (properties) -> new ColoredFallingBlock(new ColorRGBA(-8356741),
+                    properties.strength(0.6f).sound(SoundType.SAND)));
+    public static final DeferredBlock<Block> RAW_SULFUR_BLOCK = registerBlock("raw_sulfur_block",
+            (properties) -> new Block(
+                    properties.strength(4f, 6f).sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> RAW_SALTPETER_BLOCK = registerBlock("raw_saltpeter_block",
+            (properties) -> new Block(
+                    properties.strength(4f, 6f).sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> SULFUR_DUST_BLOCK = registerBlock("sulfur_dust_block",
+            (properties) -> new Block(
+                    properties.strength(4f, 6f).sound(SoundType.GRAVEL)));
+    public static final DeferredBlock<Block> SALTPETER_DUST_BLOCK = registerBlock("saltpeter_dust_block",
+            (properties) -> new Block(
+                    properties.strength(4f, 6f).sound(SoundType.GRAVEL)));
+    public static final DeferredBlock<Block> LEAD_BLOCK = registerBlock("lead_block",
+            (properties) -> new Block(
+                    properties.strength(5f, 6f).sound(SoundType.IRON)));
+    public static final DeferredBlock<Block> REFINED_BUNGERITE_BLOCK = registerBlock("refined_bungerite_block",
+            (properties) -> new Block(
+                    properties.strength(5f, 6f).sound(SoundType.IRON)));
+    public static final DeferredBlock<Block> BUNGERITE_ALLOY_BLOCK = registerBlock("bungerite_alloy_block",
+            (properties) -> new Block(
+                    properties.strength(50f, 1200f).sound(SoundType.NETHERITE_BLOCK)));
 
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Function<BlockBehaviour.Properties, T> function) {

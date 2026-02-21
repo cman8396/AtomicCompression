@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:solidblock_saltpeter_dust_to_saltpeter_dust_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_translation{key='item.atomiccompression.saltpeter_dust', args=[]}": {
+      "conditions": {
+        "items": [
+          {
+            "items": "atomiccompression:saltpeter_dust"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_translation{key='item.atomiccompression.saltpeter_dust', args=[]}"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:solidblock_saltpeter_dust_to_saltpeter_dust_block"
+    ]
+  }
+}

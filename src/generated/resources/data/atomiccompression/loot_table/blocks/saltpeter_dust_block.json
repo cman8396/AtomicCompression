@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "atomiccompression:saltpeter_dust_block"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "atomiccompression:blocks/saltpeter_dust_block"
+}
