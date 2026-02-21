@@ -33,6 +33,11 @@ public class AtomicItems {
             registryName -> new Item(new Item.Properties()
                     .setId(ResourceKey.create(Registries.ITEM, registryName))
             ));
+    public static final DeferredItem<Item> RAW_LEAD = ITEMS.register(
+            "raw_lead",
+            registryName -> new Item(new Item.Properties()
+                    .setId(ResourceKey.create(Registries.ITEM, registryName))
+            ));
 
 
     /* INTERMEDIATE ITEMS */
