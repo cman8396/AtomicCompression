@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:solidblock_raw_bungerite_block_to_raw_bungerite"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_translation{key='block.atomiccompression.raw_bungerite_block', args=[]}": {
+      "conditions": {
+        "items": [
+          {
+            "items": "atomiccompression:raw_bungerite_block"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_translation{key='block.atomiccompression.raw_bungerite_block', args=[]}"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:solidblock_raw_bungerite_block_to_raw_bungerite"
+    ]
+  }
+}

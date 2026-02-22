@@ -8,6 +8,7 @@
     "atomiccompression:raw_saltpeter_block",
     "atomiccompression:lead_ore",
     "atomiccompression:deepslate_lead_ore",
-    "atomiccompression:lead_block"
+    "atomiccompression:lead_block",
+    "atomiccompression:raw_lead_block"
   ]
 }

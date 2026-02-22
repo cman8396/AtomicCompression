@@ -68,6 +68,12 @@ public class AtomicBlocks {
     public static final DeferredBlock<Block> RAW_SALTPETER_BLOCK = registerBlock("raw_saltpeter_block",
             (properties) -> new Block(
                     properties.strength(4f, 6f).sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> RAW_LEAD_BLOCK = registerBlock("raw_lead_block",
+            (properties) -> new Block(
+                    properties.strength(5f, 6f).sound(SoundType.IRON)));
+    public static final DeferredBlock<Block> RAW_BUNGERITE_BLOCK = registerBlock("raw_bungerite_block",
+            (properties) -> new Block(
+                    properties.strength(5f, 6f).sound(SoundType.IRON)));
     public static final DeferredBlock<Block> SULFUR_DUST_BLOCK = registerBlock("sulfur_dust_block",
             (properties) -> new Block(
                     properties.strength(4f, 6f).sound(SoundType.GRAVEL)));
@@ -83,6 +89,14 @@ public class AtomicBlocks {
     public static final DeferredBlock<Block> BUNGERITE_ALLOY_BLOCK = registerBlock("bungerite_alloy_block",
             (properties) -> new Block(
                     properties.strength(50f, 1200f).sound(SoundType.NETHERITE_BLOCK)));
+    public static final DeferredBlock<Block> ATOMIC_BLOCK = registerBlock("atomic_block",
+            (properties) -> new Block(
+                    properties.strength(5f, 6f).sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> EMPOWERED_ATOMIC_BLOCK = registerBlock("empowered_atomic_block",
+            (properties) -> new Block(
+                    properties.strength(5f, 6f).sound(SoundType.STONE)));
+
+
 
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Function<BlockBehaviour.Properties, T> function) {

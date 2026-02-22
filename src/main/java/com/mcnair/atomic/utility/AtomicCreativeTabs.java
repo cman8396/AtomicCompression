@@ -39,11 +39,15 @@ public class AtomicCreativeTabs {
                         output.accept(AtomicBlocks.GUNPOWDER_BLOCK.get());
                         output.accept(AtomicBlocks.RAW_SULFUR_BLOCK.get());
                         output.accept(AtomicBlocks.RAW_SALTPETER_BLOCK.get());
+                        output.accept(AtomicBlocks.RAW_LEAD_BLOCK.get());
+                        output.accept(AtomicBlocks.RAW_BUNGERITE_BLOCK.get());
                         output.accept(AtomicBlocks.SULFUR_DUST_BLOCK.get());
                         output.accept(AtomicBlocks.SALTPETER_DUST_BLOCK.get());
                         output.accept(AtomicBlocks.LEAD_BLOCK.get());
                         output.accept(AtomicBlocks.REFINED_BUNGERITE_BLOCK.get());
                         output.accept(AtomicBlocks.BUNGERITE_ALLOY_BLOCK.get());
+                        output.accept(AtomicBlocks.ATOMIC_BLOCK.get());
+                        output.accept(AtomicBlocks.EMPOWERED_ATOMIC_BLOCK.get());
 
                         // items
                         output.accept(AtomicItems.RAW_SULFUR.get());

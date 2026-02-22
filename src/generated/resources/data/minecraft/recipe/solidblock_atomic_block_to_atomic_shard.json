@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "atomiccompression:atomic_block"
+  ],
+  "result": {
+    "count": 9,
+    "id": "atomiccompression:atomic_shard"
+  }
+}

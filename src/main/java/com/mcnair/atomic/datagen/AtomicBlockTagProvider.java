@@ -37,9 +37,13 @@ public class AtomicBlockTagProvider extends BlockTagsProvider {
                 .add(AtomicBlocks.DENSE_BASALT.get())
                 .add(AtomicBlocks.RAW_SULFUR_BLOCK.get())
                 .add(AtomicBlocks.RAW_SALTPETER_BLOCK.get())
+                .add(AtomicBlocks.RAW_LEAD_BLOCK.get())
+                .add(AtomicBlocks.RAW_BUNGERITE_BLOCK.get())
                 .add(AtomicBlocks.LEAD_BLOCK.get())
                 .add(AtomicBlocks.REFINED_BUNGERITE_BLOCK.get())
-                .add(AtomicBlocks.BUNGERITE_ALLOY_BLOCK.get());
+                .add(AtomicBlocks.BUNGERITE_ALLOY_BLOCK.get())
+                .add(AtomicBlocks.ATOMIC_BLOCK.get())
+                .add(AtomicBlocks.EMPOWERED_ATOMIC_BLOCK.get());
 
         tag(BlockTags.NEEDS_STONE_TOOL)
                 .add(AtomicBlocks.SULFUR_ORE.get())
@@ -50,16 +54,20 @@ public class AtomicBlockTagProvider extends BlockTagsProvider {
                 .add(AtomicBlocks.RAW_SALTPETER_BLOCK.get())
                 .add(AtomicBlocks.LEAD_ORE.get())
                 .add(AtomicBlocks.DEEPSLATE_LEAD_ORE.get())
-                .add(AtomicBlocks.LEAD_BLOCK.get());
+                .add(AtomicBlocks.LEAD_BLOCK.get())
+                .add(AtomicBlocks.RAW_LEAD_BLOCK.get());
 
         tag(BlockTags.NEEDS_IRON_TOOL)
                 .add(AtomicBlocks.ATOMIC_ORE.get())
                 .add(AtomicBlocks.DEEPSLATE_ATOMIC_ORE.get())
                 .add(AtomicBlocks.NETHER_ATOMIC_ORE.get())
-                .add(AtomicBlocks.END_ATOMIC_ORE.get());
+                .add(AtomicBlocks.END_ATOMIC_ORE.get())
+                .add(AtomicBlocks.ATOMIC_BLOCK.get())
+                .add(AtomicBlocks.EMPOWERED_ATOMIC_BLOCK.get());
 
         tag(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(AtomicBlocks.BUNGERITE_ORE.get())
+                .add(AtomicBlocks.RAW_BUNGERITE_BLOCK.get())
                 .add(AtomicBlocks.REFINED_BUNGERITE_BLOCK.get())
                 .add(AtomicBlocks.BUNGERITE_ALLOY_BLOCK.get());
 

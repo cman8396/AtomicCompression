@@ -14,8 +14,12 @@
     "atomiccompression:dense_basalt",
     "atomiccompression:raw_sulfur_block",
     "atomiccompression:raw_saltpeter_block",
+    "atomiccompression:raw_lead_block",
+    "atomiccompression:raw_bungerite_block",
     "atomiccompression:lead_block",
     "atomiccompression:refined_bungerite_block",
-    "atomiccompression:bungerite_alloy_block"
+    "atomiccompression:bungerite_alloy_block",
+    "atomiccompression:atomic_block",
+    "atomiccompression:empowered_atomic_block"
   ]
 }

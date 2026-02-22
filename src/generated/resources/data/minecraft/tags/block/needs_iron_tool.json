@@ -3,6 +3,8 @@
     "atomiccompression:atomic_ore",
     "atomiccompression:deepslate_atomic_ore",
     "atomiccompression:nether_atomic_ore",
-    "atomiccompression:end_atomic_ore"
+    "atomiccompression:end_atomic_ore",
+    "atomiccompression:atomic_block",
+    "atomiccompression:empowered_atomic_block"
   ]
 }

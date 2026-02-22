@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "atomiccompression:block/empowered_atomic_block"
+    }
+  }
+}
