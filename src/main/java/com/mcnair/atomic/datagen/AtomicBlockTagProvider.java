@@ -82,11 +82,11 @@ public class AtomicBlockTagProvider extends BlockTagsProvider {
 //        tag(AtomicTags.Blocks.INCORRECT_FOR_BISMUTH_TOOL)
 //                .addTag(BlockTags.INCORRECT_FOR_IRON_TOOL)
 //                .remove(AtomicTags.Blocks.NEEDS_BISMUTH_TOOL);
-//
-//        this.tag(BlockTags.LOGS_THAT_BURN)
-//                .add(AtomicBlocks.BLOODWOOD_LOG.get())
-//                .add(AtomicBlocks.BLOODWOOD_WOOD.get())
-//                .add(AtomicBlocks.STRIPPED_BLOODWOOD_LOG.get())
-//                .add(AtomicBlocks.STRIPPED_BLOODWOOD_WOOD.get());
+
+        this.tag(BlockTags.LOGS_THAT_BURN)
+                .add(AtomicBlocks.ASHENWOOD_LOG.get())
+                .add(AtomicBlocks.ASHENWOOD_WOOD.get())
+                .add(AtomicBlocks.STRIPPED_ASHENWOOD_LOG.get())
+                .add(AtomicBlocks.STRIPPED_ASHENWOOD_WOOD.get());
     }
 }

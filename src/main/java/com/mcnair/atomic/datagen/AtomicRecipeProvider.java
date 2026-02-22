@@ -72,12 +72,18 @@ public class AtomicRecipeProvider extends RecipeProvider {
 
 
         /* SHAPED RECIPES */
-        shaped(RecipeCategory.MISC, AtomicBlocks.ATOMIC_GLASS.get())
+        shaped(RecipeCategory.MISC, AtomicBlocks.ATOMIC_GLASS.get(),8)
                 .pattern("GGG")
                 .pattern("GEG")
                 .pattern("GGG")
                 .define('G', Items.GLASS)
                 .define('E', AtomicItems.EMPOWERED_ATOMIC_SHARD.get())
+                .unlockedBy("has_empowered_atomic_shard", has(AtomicItems.EMPOWERED_ATOMIC_SHARD))
+                .save(output);
+        shaped(RecipeCategory.MISC, AtomicBlocks.ATOMIC_GLASS_PANE.get(),16)
+                .pattern("GGG")
+                .pattern("GGG")
+                .define('G', AtomicBlocks.ATOMIC_GLASS)
                 .unlockedBy("has_empowered_atomic_shard", has(AtomicItems.EMPOWERED_ATOMIC_SHARD))
                 .save(output);
         shaped(RecipeCategory.MISC, AtomicBlocks.DENSE_BASALT.get())

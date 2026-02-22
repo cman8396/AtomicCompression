@@ -1,16 +1,28 @@
 package com.mcnair.atomic.block;
 
 import com.mcnair.atomic.AtomicCompression;
+import com.mcnair.atomic.block.custom.AtomicLeavesBlock;
+import com.mcnair.atomic.block.custom.AtomicLogsBlock;
+import com.mcnair.atomic.block.custom.AtomicPlanksBlock;
+import com.mcnair.atomic.block.custom.AtomicSaplingBlock;
 import com.mcnair.atomic.item.AtomicItems;
+import com.mcnair.atomic.worldgen.tree.AtomicTreeGrower;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.util.ColorRGBA;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
+import java.util.List;
 import java.util.function.Function;
 
 public class AtomicBlocks {
@@ -54,7 +66,10 @@ public class AtomicBlocks {
 
     /* UTILITY BLOCKS */
     public static final DeferredBlock<Block> ATOMIC_GLASS = registerBlock("atomic_glass",
-            (properties) -> new Block(
+            (properties) -> new TransparentBlock(
+                    properties.strength(0.3f).noOcclusion().sound(SoundType.GLASS)));
+    public static final DeferredBlock<Block> ATOMIC_GLASS_PANE = registerBlock("atomic_glass_pane",
+            (properties) -> new IronBarsBlock(
                     properties.strength(0.3f).noOcclusion().sound(SoundType.GLASS)));
     public static final DeferredBlock<Block> DENSE_BASALT = registerBlock("dense_basalt",
             (properties) -> new RotatedPillarBlock(
@@ -95,6 +110,35 @@ public class AtomicBlocks {
     public static final DeferredBlock<Block> EMPOWERED_ATOMIC_BLOCK = registerBlock("empowered_atomic_block",
             (properties) -> new Block(
                     properties.strength(5f, 6f).sound(SoundType.STONE)));
+
+
+    /* ASHENWOOD BLOCKS */
+    public static final DeferredBlock<Block> ASHENWOOD_LOG = registerBlock("ashenwood_log",
+            (properties) -> new AtomicLogsBlock(
+                    properties.strength(2.0f).sound(SoundType.CHERRY_WOOD).ignitedByLava()));
+    public static final DeferredBlock<Block> ASHENWOOD_WOOD = registerBlock("ashenwood_wood",
+            (properties) -> new AtomicLogsBlock(
+                    properties.strength(2.0f).sound(SoundType.CHERRY_WOOD).ignitedByLava()));
+    public static final DeferredBlock<Block> STRIPPED_ASHENWOOD_LOG = registerBlock("stripped_ashenwood_log",
+            (properties) -> new AtomicLogsBlock(
+                    properties.strength(2.0f).sound(SoundType.CHERRY_WOOD).ignitedByLava()));
+    public static final DeferredBlock<Block> STRIPPED_ASHENWOOD_WOOD = registerBlock("stripped_ashenwood_wood",
+            (properties) -> new AtomicLogsBlock(
+                    properties.strength(2.0f).sound(SoundType.CHERRY_WOOD).ignitedByLava()));
+    public static final DeferredBlock<Block> ASHENWOOD_PLANKS = registerBlock("ashenwood_planks",
+            (properties) -> new AtomicPlanksBlock(
+                    properties.strength(2.0f).sound(SoundType.CHERRY_WOOD).ignitedByLava()));
+    public static final DeferredBlock<Block> ASHENWOOD_LEAVES = registerBlock("ashenwood_leaves",
+            (properties) -> new AtomicLeavesBlock(0.01f, ParticleTypes.CHERRY_LEAVES,
+                    properties.strength(0.2F).sound(SoundType.CHERRY_LEAVES).ignitedByLava()
+                            .mapColor(MapColor.PLANT).randomTicks().noOcclusion()
+                            .isValidSpawn(Blocks::ocelotOrParrot).pushReaction(PushReaction.DESTROY)));
+    public static final DeferredBlock<Block> ASHENWOOD_SAPLING = registerBlock("ashenwood_sapling",
+            (properties) -> new AtomicSaplingBlock(AtomicTreeGrower.ASHENWOOD,
+                    properties.instabreak().sound(SoundType.GRASS)
+                            .mapColor(MapColor.PLANT).randomTicks().noCollision()
+                            .pushReaction(PushReaction.DESTROY)));
+
 
 
 

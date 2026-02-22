@@ -1,10 +1,13 @@
 package com.mcnair.atomic.worldgen;
 
 import com.mcnair.atomic.AtomicCompression;
+import com.mcnair.atomic.block.AtomicBlocks;
 import com.mcnair.atomic.worldgen.system.AtomicOrePlacement;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.data.worldgen.placement.PlacementUtils;
+import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
@@ -27,6 +30,10 @@ public class AtomicPlacedFeatures {
     public static final ResourceKey<PlacedFeature> NETHER_ATOMIC_ORE_PLACED_KEY = registerKey("nether_atomic_ore_placed");
 
     public static final ResourceKey<PlacedFeature> END_ATOMIC_ORE_PLACED_KEY = registerKey("end_atomic_ore_placed");
+
+
+    public static final ResourceKey<PlacedFeature> ASHENWOOD_PLACED_KEY = registerKey("ashenwood_placed");
+
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
@@ -63,12 +70,10 @@ public class AtomicPlacedFeatures {
                 AtomicOrePlacement.rareOrePlacement(32, endFullHeightSpawnRange));
 
 
+        register(context, ASHENWOOD_PLACED_KEY, configuredFeatures.getOrThrow(AtomicConfiguredFeatures.ASHENWOOD_KEY),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.1f, 1),
+                        AtomicBlocks.ASHENWOOD_SAPLING.get()));
 
-
-//        register(context, BLOODWOOD_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.BLOODWOOD_KEY),
-//                VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2),
-//                        ModBlocks.BLOODWOOD_SAPLING.get()));
-//
 //        register(context, GOJI_BERRY_BUSH_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.GOJI_BERRY_BUSH_KEY),
 //                List.of(RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));
     }

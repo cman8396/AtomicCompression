@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column",
-  "textures": {
-    "end": "atomiccompression:block/dense_basalt_top",
-    "side": "atomiccompression:block/dense_basalt_side"
-  }
-}

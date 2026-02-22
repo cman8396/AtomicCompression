@@ -4,6 +4,15 @@ import com.mcnair.atomic.utility.AtomicCreativeTabs;
 import com.mcnair.atomic.block.AtomicBlocks;
 import com.mcnair.atomic.item.AtomicItems;
 import com.mcnair.atomic.villager.AtomicVillagers;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.chunk.ChunkSectionLayer;
+import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
+import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -48,15 +57,62 @@ public class AtomicCompression {
     }
 
     // Add the example block item to the building blocks tab
-    //    private void addCreative(BuildCreativeModeTabContentsEvent event) {
-    //        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-    //            event.accept(EXAMPLE_BLOCK_ITEM);
-    //        }
-    //    }
+//    private void addCreative(BuildCreativeModeTabContentsEvent event) {
+//        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+//            event.accept(ModItems.BISMUTH);
+//            event.accept(ModItems.RAW_BISMUTH);
+//        }
+//
+//        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+//            event.accept(ModBlocks.BISMUTH_BLOCK);
+//            event.accept(ModBlocks.BISMUTH_ORE);
+//        }
+//    }
 
-    // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
         LOGGER.info("Atomic Compression > Server Started");
     }
+
+
+    // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
+    @EventBusSubscriber(modid = MOD_ID, value = Dist.CLIENT)
+    public static class ClientModEvents {
+        @SubscribeEvent
+        public static void onClientSetup(FMLClientSetupEvent event) {
+
+            ItemBlockRenderTypes.setRenderLayer(AtomicBlocks.ATOMIC_GLASS.get(),ChunkSectionLayer.CUTOUT);
+            ItemBlockRenderTypes.setRenderLayer(AtomicBlocks.ATOMIC_GLASS_PANE.get(),ChunkSectionLayer.CUTOUT);
+
+            ItemBlockRenderTypes.setRenderLayer(AtomicBlocks.ASHENWOOD_SAPLING.get(), ChunkSectionLayer.CUTOUT);
+
+//            EntityRenderers.register(ModEntities.GECKO.get(), GeckoRenderer::new);
+//            EntityRenderers.register(ModEntities.TOMAHAWK.get(), TomahawkProjectileRenderer::new);
+//
+//            EntityRenderers.register(ModEntities.CHAIR_ENTITY.get(), ChairRenderer::new);
+
+//            ItemBlockRenderTypes.setRenderLayer(ModBlocks.GOJI_BERRY_BUSH.get(), ChunkSectionLayer.CUTOUT);
+//            ItemBlockRenderTypes.setRenderLayer(ModBlocks.RADISH_CROP.get(), ChunkSectionLayer.CUTOUT);
+
+//            ItemBlockRenderTypes.setRenderLayer(ModBlocks.BISMUTH_DOOR.get(), ChunkSectionLayer.CUTOUT);
+//            ItemBlockRenderTypes.setRenderLayer(ModBlocks.BISMUTH_TRAPDOOR.get(), ChunkSectionLayer.CUTOUT);
+        }
+
+//        @SubscribeEvent
+//        public static void registerParticleFactories(RegisterParticleProvidersEvent event) {
+//            event.registerSpriteSet(ModParticles.BISMUTH_PARTICLES.get(), BismuthParticles.Provider::new);
+//        }
+
+//        @SubscribeEvent
+//        public static void registerBER(EntityRenderersEvent.RegisterRenderers event) {
+//            event.registerBlockEntityRenderer(ModBlockEntities.PEDESTAL_BE.get(), PedestalBlockEntityRenderer::new);
+//        }
+
+//        @SubscribeEvent
+//        public static void registerScreens(RegisterMenuScreensEvent event) {
+//            event.register(ModMenuTypes.PEDESTAL_MENU.get(), PedestalScreen::new);
+//            event.register(ModMenuTypes.GROWTH_CHAMBER_MENU.get(), GrowthChamberScreen::new);
+//        }
+    }
+
 }

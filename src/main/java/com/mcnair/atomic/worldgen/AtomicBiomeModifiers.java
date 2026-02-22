@@ -7,6 +7,7 @@ import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BiomeTags;
+import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.neoforged.neoforge.common.world.BiomeModifier;
 import net.neoforged.neoforge.common.world.BiomeModifiers;
@@ -28,7 +29,9 @@ public class AtomicBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_END_ATOMIC_ORE = registerKey("add_end_atomic_ore");
 
 
-//    public static final ResourceKey<BiomeModifier> ADD_TREE_BLOODWOOD = registerKey("add_tree_bloodwood");
+    public static final ResourceKey<BiomeModifier> ADD_TREE_ASHENWOOD = registerKey("add_tree_ashenwood");
+
+
 //    public static final ResourceKey<BiomeModifier> ADD_GOJI_BERRY_BUSH = registerKey("add_goji_berry_bush");
 //    public static final ResourceKey<BiomeModifier> SPAWN_GECKO = registerKey("spawn_gecko");
 
@@ -88,28 +91,28 @@ public class AtomicBiomeModifiers {
                 GenerationStep.Decoration.UNDERGROUND_ORES));
 
 
+        context.register(ADD_TREE_ASHENWOOD, new BiomeModifiers.AddFeaturesBiomeModifier(
+                HolderSet.direct(
+                        biomes.getOrThrow(Biomes.PLAINS),
+                        biomes.getOrThrow(Biomes.FOREST),
+                        biomes.getOrThrow(Biomes.BIRCH_FOREST),
+                        biomes.getOrThrow(Biomes.CRIMSON_FOREST),
+                        biomes.getOrThrow(Biomes.CHERRY_GROVE),
+                        biomes.getOrThrow(Biomes.SAVANNA)
+                ), HolderSet.direct(placedFeatures.getOrThrow(AtomicPlacedFeatures.ASHENWOOD_PLACED_KEY)),
+                GenerationStep.Decoration.VEGETAL_DECORATION));
 
-
-//        context.register(ADD_BISMUTH_ORE, new BiomeModifiers.AddFeaturesBiomeModifier(
-//                biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
-//                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.BISMUTH_ORE_PLACED_KEY)),
-//                GenerationStep.Decoration.UNDERGROUND_ORES));
 
         // Example for individual Biomes!
-        // context.register(ADD_BISMUTH_ORE, new BiomeModifiers.AddFeaturesBiomeModifier(
-        //         HolderSet.direct(biomes.getOrThrow(Biomes.PLAINS), biomes.getOrThrow(Biomes.SAVANNA)),
-        //         HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.BISMUTH_ORE_PLACED_KEY)),
-        //         GenerationStep.Decoration.UNDERGROUND_ORES));
+//         context.register(ADD_BISMUTH_ORE, new BiomeModifiers.AddFeaturesBiomeModifier(
+//                 HolderSet.direct(biomes.getOrThrow(Biomes.PLAINS), biomes.getOrThrow(Biomes.SAVANNA)),
+//                 HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.BISMUTH_ORE_PLACED_KEY)),
+//                 GenerationStep.Decoration.UNDERGROUND_ORES));
 
 //        context.register(ADD_END_BISMUTH_ORE, new BiomeModifiers.AddFeaturesBiomeModifier(
 //                biomes.getOrThrow(BiomeTags.IS_END),
 //                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.END_BISMUTH_ORE_PLACED_KEY)),
 //                GenerationStep.Decoration.UNDERGROUND_ORES));
-//
-//        context.register(ADD_TREE_BLOODWOOD, new BiomeModifiers.AddFeaturesBiomeModifier(
-//                HolderSet.direct(biomes.getOrThrow(Biomes.PLAINS), biomes.getOrThrow(Biomes.SAVANNA)),
-//                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.BLOODWOOD_PLACED_KEY)),
-//                GenerationStep.Decoration.VEGETAL_DECORATION));
 //
 //        context.register(ADD_GOJI_BERRY_BUSH, new BiomeModifiers.AddFeaturesBiomeModifier(
 //                HolderSet.direct(biomes.getOrThrow(Biomes.FOREST)),

@@ -1,4 +1,5 @@
-// 1.21.11	2026-02-22T11:10:07.2522324	Tags for minecraft:block mod id atomiccompression
+// 1.21.11	2026-02-22T17:31:45.7320535	Tags for minecraft:block mod id atomiccompression
+d9118eb20aca2e5bd35ea2d085dac5f7a44157ce data/minecraft/tags/block/logs_that_burn.json
 8c56ecaaf99c97007355a00419687cd30ee2f43b data/minecraft/tags/block/mineable/pickaxe.json
 9d9b196c79700e158ac070fc455dcdf889b5f83f data/minecraft/tags/block/mineable/shovel.json
 20682ca9a1bfdc11ebd14794604559c7253df667 data/minecraft/tags/block/needs_diamond_tool.json

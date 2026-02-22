@@ -59,7 +59,8 @@ public class AtomicBlockLootTableProvider extends BlockLootSubProvider {
 
 
         /* UTILITY BLOCKS */
-        add(AtomicBlocks.ATOMIC_GLASS.get(), block -> noDrop());
+        dropWhenSilkTouch(AtomicBlocks.ATOMIC_GLASS.get());
+        dropWhenSilkTouch(AtomicBlocks.ATOMIC_GLASS_PANE.get());
         dropSelf(AtomicBlocks.DENSE_BASALT.get());
         dropSelf(AtomicBlocks.GUNPOWDER_BLOCK.get());
         dropSelf(AtomicBlocks.RAW_SULFUR_BLOCK.get());
@@ -74,6 +75,15 @@ public class AtomicBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(AtomicBlocks.ATOMIC_BLOCK.get());
         dropSelf(AtomicBlocks.EMPOWERED_ATOMIC_BLOCK.get());
 
+
+        /* ASHENWOOD BLOCKS */
+        dropSelf(AtomicBlocks.ASHENWOOD_LOG.get());
+        dropSelf(AtomicBlocks.ASHENWOOD_WOOD.get());
+        dropSelf(AtomicBlocks.STRIPPED_ASHENWOOD_LOG.get());
+        dropSelf(AtomicBlocks.STRIPPED_ASHENWOOD_WOOD.get());
+        dropSelf(AtomicBlocks.ASHENWOOD_PLANKS.get());
+        dropSelf(AtomicBlocks.ASHENWOOD_SAPLING.get());
+        add(AtomicBlocks.ASHENWOOD_LEAVES.get(), block -> createLeavesDrops(block, AtomicBlocks.ASHENWOOD_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 
 
 
@@ -128,16 +138,6 @@ public class AtomicBlockLootTableProvider extends BlockLootSubProvider {
 //                                .apply(ApplyBonusCount.addUniformBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE)))
 //                )));
 
-//        this.dropSelf(ModBlocks.BLOODWOOD_LOG.get());
-//        this.dropSelf(ModBlocks.BLOODWOOD_WOOD.get());
-//        this.dropSelf(ModBlocks.STRIPPED_BLOODWOOD_LOG.get());
-//        this.dropSelf(ModBlocks.STRIPPED_BLOODWOOD_WOOD.get());
-//        this.dropSelf(ModBlocks.BLOODWOOD_PLANKS.get());
-//        this.dropSelf(ModBlocks.BLOODWOOD_SAPLING.get());
-
-//        this.add(ModBlocks.BLOODWOOD_LEAVES.get(), block ->
-//                createLeavesDrops(block, ModBlocks.BLOODWOOD_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
-//
 //        this.dropSelf(ModBlocks.CHAIR.get());
 //        // this.dropSelf(ModBlocks.PEDESTAL.get());
 //        this.dropSelf(ModBlocks.GROWTH_CHAMBER.get());

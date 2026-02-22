@@ -33,6 +33,15 @@
   "block.atomiccompression.atomic_block": "Atomic Block",
   "block.atomiccompression.empowered_atomic_block": "Empowered Atomic Block",
 
+  "block.atomiccompression.ashenwood_log": "Ashenwood Log",
+  "block.atomiccompression.ashenwood_wood": "Ashenwood Wood",
+  "block.atomiccompression.stripped_ashenwood_log": "Stripped Ashenwood Log",
+  "block.atomiccompression.stripped_ashenwood_wood": "Stripped Ashenwood Wood",
+  "block.atomiccompression.ashenwood_planks": "Ashenwood Planks",
+  "block.atomiccompression.ashenwood_leaves": "Ashenwood Leaves",
+
+  "block.atomiccompression.ashenwood_sapling": "Ashenwood Sapling",
+
 
   "item.atomiccompression.atomic_shard": "Atomic Shard",
   "item.atomiccompression.raw_sulfur": "Raw Sulfur",

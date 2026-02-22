@@ -23,7 +23,7 @@ public class DataGenerators {
         PackOutput packOutput = generator.getPackOutput();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
-        generator.addProvider(true , new LootTableProvider(packOutput, Collections.emptySet(),
+        generator.addProvider(true, new LootTableProvider(packOutput, Collections.emptySet(),
                 List.of(new LootTableProvider.SubProviderEntry(AtomicBlockLootTableProvider::new, LootContextParamSets.BLOCK)), lookupProvider));
         generator.addProvider(true, new AtomicRecipeProvider.Runner(packOutput, lookupProvider));
 
@@ -33,7 +33,7 @@ public class DataGenerators {
 
         generator.addProvider(true, new AtomicDataMapProvider(packOutput, lookupProvider));
 
-//        generator.addProvider(true, new AtomicModelProvider(packOutput));
+        generator.addProvider(true, new AtomicModelProvider(packOutput));
 
         generator.addProvider(true, new AtomicDatapackProvider(packOutput, lookupProvider));
         generator.addProvider(true, new AtomicGlobalLootModifierProvider(packOutput, lookupProvider));
@@ -55,7 +55,7 @@ public class DataGenerators {
 
         generator.addProvider(true, new AtomicDataMapProvider(packOutput, lookupProvider));
 
-//        generator.addProvider(true, new AtomicModelProvider(packOutput));
+        generator.addProvider(true, new AtomicModelProvider(packOutput));
 
         generator.addProvider(true, new AtomicDatapackProvider(packOutput, lookupProvider));
         generator.addProvider(true, new AtomicGlobalLootModifierProvider(packOutput, lookupProvider));

@@ -1,6 +1,7 @@
 package com.mcnair.atomic.datagen;
 
 import com.mcnair.atomic.AtomicCompression;
+import com.mcnair.atomic.block.AtomicBlocks;
 import com.mcnair.atomic.item.AtomicItems;
 import com.mcnair.atomic.utility.AtomicTags;
 import net.minecraft.core.HolderLookup;
@@ -48,13 +49,13 @@ public class AtomicItemTagProvider extends ItemTagsProvider {
         this.tag(ItemTags.TRIM_MATERIALS)
                 .add(AtomicItems.BUNGERITE_ALLOY_INGOT.get());
 
-//        this.tag(ItemTags.LOGS_THAT_BURN)
-//                .add(AtomicBlocks.BLOODWOOD_LOG.get().asItem())
-//                .add(AtomicBlocks.BLOODWOOD_WOOD.get().asItem())
-//                .add(AtomicBlocks.STRIPPED_BLOODWOOD_LOG.get().asItem())
-//                .add(AtomicBlocks.STRIPPED_BLOODWOOD_WOOD.get().asItem());
-//
-//        this.tag(ItemTags.PLANKS)
-//                .add(AtomicBlocks.BLOODWOOD_PLANKS.asItem());
+        this.tag(ItemTags.LOGS_THAT_BURN)
+                .add(AtomicBlocks.ASHENWOOD_LOG.get().asItem())
+                .add(AtomicBlocks.ASHENWOOD_WOOD.get().asItem())
+                .add(AtomicBlocks.STRIPPED_ASHENWOOD_LOG.get().asItem())
+                .add(AtomicBlocks.STRIPPED_ASHENWOOD_WOOD.get().asItem());
+
+        this.tag(ItemTags.PLANKS)
+                .add(AtomicBlocks.ASHENWOOD_PLANKS.asItem());
     }
 }

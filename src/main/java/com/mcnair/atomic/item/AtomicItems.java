@@ -32,13 +32,13 @@ public class AtomicItems {
             registryName -> new Item(new Item.Properties()
                     .setId(ResourceKey.create(Registries.ITEM, registryName))
             ));
-    public static final DeferredItem<Item> RAW_BUNGERITE = ITEMS.register(
-            "raw_bungerite",
+    public static final DeferredItem<Item> RAW_LEAD = ITEMS.register(
+            "raw_lead",
             registryName -> new Item(new Item.Properties()
                     .setId(ResourceKey.create(Registries.ITEM, registryName))
             ));
-    public static final DeferredItem<Item> RAW_LEAD = ITEMS.register(
-            "raw_lead",
+    public static final DeferredItem<Item> RAW_BUNGERITE = ITEMS.register(
+            "raw_bungerite",
             registryName -> new Item(new Item.Properties()
                     .setId(ResourceKey.create(Registries.ITEM, registryName))
             ));
@@ -65,7 +65,6 @@ public class AtomicItems {
             registryName -> new Item(new Item.Properties()
                     .setId(ResourceKey.create(Registries.ITEM, registryName))
             ));
-    //endregion
 
 
     /* FINISHED ITEMS */
@@ -131,8 +130,6 @@ public class AtomicItems {
 
 //    public static final DeferredItem<HammerItem> BISMUTH_HAMMER = ITEMS.registerItem("bungerite_alloy_hammer",
 //            (properties) -> new HammerItem(properties.pickaxe(AtomicToolTiers.BISMUTH, 7F, -3.5f)));
-
-
 
 
     public static void register(IEventBus eventBus) {

@@ -7,11 +7,18 @@ import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
+import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.FancyFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.ForkingTrunkPlacer;
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
@@ -32,7 +39,7 @@ public class AtomicConfiguredFeatures {
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> END_ATOMIC_ORE_KEY = registerKey("end_atomic_ore_placed");
 
-//    public static final ResourceKey<ConfiguredFeature<?, ?>> BLOODWOOD_KEY = registerKey("bloodwood");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ASHENWOOD_KEY = registerKey("ashenwood_placed");
 //    public static final ResourceKey<ConfiguredFeature<?, ?>> GOJI_BERRY_BUSH_KEY = registerKey("goji_berry_bush");
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
@@ -42,7 +49,7 @@ public class AtomicConfiguredFeatures {
         RuleTest netherrackReplaceables = new BlockMatchTest(Blocks.NETHERRACK);
         RuleTest endReplaceables = new BlockMatchTest(Blocks.END_STONE);
 
-
+        /* ORES */
         register(context, SULFUR_ORE_KEY, Feature.ORE, new OreConfiguration(stoneReplaceables,
                 AtomicBlocks.SULFUR_ORE.get().defaultBlockState(), 9));
         register(context, DEEPSLATE_SULFUR_ORE_KEY, Feature.ORE, new OreConfiguration(deepslateReplaceables,
@@ -60,17 +67,28 @@ public class AtomicConfiguredFeatures {
         register(context, DEEPSLATE_ATOMIC_ORE_KEY, Feature.ORE, new OreConfiguration(deepslateReplaceables,
                 AtomicBlocks.DEEPSLATE_ATOMIC_ORE.get().defaultBlockState(), 2));
 
-
         register(context, BUNGERITE_ORE_KEY, Feature.ORE, new OreConfiguration(netherrackReplaceables,
                 AtomicBlocks.BUNGERITE_ORE.get().defaultBlockState(), 6));
         register(context, NETHER_ATOMIC_ORE_KEY, Feature.ORE, new OreConfiguration(netherrackReplaceables,
                 AtomicBlocks.NETHER_ATOMIC_ORE.get().defaultBlockState(), 2));
 
-
         register(context, END_ATOMIC_ORE_KEY, Feature.ORE, new OreConfiguration(endReplaceables,
                 AtomicBlocks.END_ATOMIC_ORE.get().defaultBlockState(), 2));
 
 
+        /* TREES */
+        register(context, ASHENWOOD_KEY, Feature.TREE,
+                new TreeConfiguration.TreeConfigurationBuilder(
+                        BlockStateProvider.simple(AtomicBlocks.ASHENWOOD_LOG.get()),
+                        new ForkingTrunkPlacer(5, 2, 2),
+                        BlockStateProvider.simple(AtomicBlocks.ASHENWOOD_LEAVES.get()),
+                        new FancyFoliagePlacer(ConstantInt.of(2), ConstantInt.of(3), 3),
+                        new TwoLayersFeatureSize(1, 0, 2)
+                )
+                        .dirt(BlockStateProvider.simple(Blocks.DIRT))
+                        .ignoreVines()
+//                        .decorators()
+                        .build());
 
 
 //        List<OreConfiguration.TargetBlockState> overworldBismuthOres = List.of(
@@ -82,17 +100,7 @@ public class AtomicConfiguredFeatures {
 //                AtomicBlocks.BISMUTH_NETHER_ORE.get().defaultBlockState(), 9));
 //        register(context, END_BISMUTH_ORE_KEY, Feature.ORE, new OreConfiguration(endReplaceables,
 //                AtomicBlocks.BISMUTH_END_ORE.get().defaultBlockState(), 9));
-//
-//
-//        register(context, BLOODWOOD_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
-//                BlockStateProvider.simple(AtomicBlocks.BLOODWOOD_LOG.get()),
-//                new ForkingTrunkPlacer(4, 4, 3),
-//
-//                BlockStateProvider.simple(AtomicBlocks.BLOODWOOD_LEAVES.get()),
-//                new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(3), 3),
-//
-//                new TwoLayersFeatureSize(1, 0, 2)).dirt(BlockStateProvider.simple(Blocks.NETHERRACK)).build());
-//
+
 //        register(context, GOJI_BERRY_BUSH_KEY, Feature.RANDOM_PATCH,
 //                FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
 //                        new SimpleBlockConfiguration(BlockStateProvider.simple(AtomicBlocks.GOJI_BERRY_BUSH.get()
