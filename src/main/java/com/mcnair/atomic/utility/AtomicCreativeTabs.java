@@ -22,7 +22,7 @@ public class AtomicCreativeTabs {
                     .icon(() -> AtomicItems.RAW_BUNGERITE.get().getDefaultInstance())
                     .displayItems((parameters, output) -> {
 
-                        // blocks
+                        /* ADD BLOCK */
                         output.accept(AtomicBlocks.ATOMIC_GLASS.get());
                         output.accept(AtomicBlocks.DENSE_BASALT.get());
                         output.accept(AtomicBlocks.SULFUR_ORE.get());
@@ -49,7 +49,7 @@ public class AtomicCreativeTabs {
                         output.accept(AtomicBlocks.ATOMIC_BLOCK.get());
                         output.accept(AtomicBlocks.EMPOWERED_ATOMIC_BLOCK.get());
 
-                        // items
+                        /* ADD ITEMS */
                         output.accept(AtomicItems.RAW_SULFUR.get());
                         output.accept(AtomicItems.RAW_SALTPETER.get());
                         output.accept(AtomicItems.RAW_LEAD.get());
@@ -64,6 +64,12 @@ public class AtomicCreativeTabs {
                         output.accept(AtomicItems.BUNGERITE_ALLOY_NUGGET.get());
                         output.accept(AtomicItems.ATOMIC_SHARD.get());
                         output.accept(AtomicItems.EMPOWERED_ATOMIC_SHARD.get());
+
+                        output.accept(AtomicItems.BUNGERITE_ALLOY_SWORD.get());
+                        output.accept(AtomicItems.BUNGERITE_ALLOY_SHOVEL.get());
+                        output.accept(AtomicItems.BUNGERITE_ALLOY_PICKAXE.get());
+                        output.accept(AtomicItems.BUNGERITE_ALLOY_AXE.get());
+                        output.accept(AtomicItems.BUNGERITE_ALLOY_HOE.get());
 
                     }).build()
     );

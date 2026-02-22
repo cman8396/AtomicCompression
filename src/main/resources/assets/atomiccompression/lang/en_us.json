@@ -1,6 +1,10 @@
 {
   "itemGroup.atomiccompression.title": "Atomic Compression",
 
+
+  "entity.minecraft.villager.atomiccompression.compressionist": "Compressionist",
+
+
   "block.atomiccompression.sulfur_ore": "Sulfur Ore",
   "block.atomiccompression.deepslate_sulfur_ore": "Deepslate Sulfur Ore",
   "block.atomiccompression.saltpeter_ore": "Saltpeter Ore",
@@ -29,6 +33,7 @@
   "block.atomiccompression.atomic_block": "Atomic Block",
   "block.atomiccompression.empowered_atomic_block": "Empowered Atomic Block",
 
+
   "item.atomiccompression.atomic_shard": "Atomic Shard",
   "item.atomiccompression.raw_sulfur": "Raw Sulfur",
   "item.atomiccompression.raw_saltpeter": "Raw Saltpeter",
@@ -44,7 +49,13 @@
   "item.atomiccompression.refined_bungerite_nugget": "Refined Bungerite Nugget",
   "item.atomiccompression.bungerite_alloy_nugget": "Bungerite Alloy Nugget",
 
-  "entity.minecraft.villager.atomiccompression.compressionist": "Compressionist",
+  "item.atomiccompression.bungerite_alloy_sword": "Bungerite Alloy Sword",
+  "item.atomiccompression.bungerite_alloy_shovel": "Bungerite Alloy Shovel",
+  "item.atomiccompression.bungerite_alloy_pickaxe": "Bungerite Alloy Pickaxe",
+  "item.atomiccompression.bungerite_alloy_axe": "Bungerite Alloy Axe",
+  "item.atomiccompression.bungerite_alloy_hoe": "Bungerite Alloy Hoe",
+
+
 
   "atomiccompression.configuration.title": "Atomic Compression Config",
   "atomiccompression.configuration.section.atomiccompression.common.toml": "Atomic Compression Config",

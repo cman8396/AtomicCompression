@@ -1,0 +1,46 @@
+
+TOOLS:
+
+basalt tool shaft
+atomic tool shaft
+obsidian shard
+atomic stabalizer
+
+
+Atomic Stabalizer
+OLO
+L L
+OLO
+lead nugget
+obsidian shard
+
+
+Atomic Tool Shaft
+  B
+AEA
+B
+basalt tool shaft
+atomic stabalizer
+empowered atomic shard
+
+basalt tool shaft
+ D
+ D
+ D
+dense basalt
+
+
+Tools are:
+bungerite alloy ingots
+atomic tool shaft x2
+
+
+
+
+
+
+
+
+
+
+

@@ -37,7 +37,6 @@ public class AtomicRecipeProvider extends RecipeProvider {
         }
     }
 
-
     @Override
     protected void buildRecipes() {
 
@@ -62,6 +61,13 @@ public class AtomicRecipeProvider extends RecipeProvider {
         shapeless(RecipeCategory.MISC, AtomicItems.SALTPETER_DUST, 1)
                 .requires(AtomicItems.RAW_SALTPETER)
                 .unlockedBy("has_raw_saltpeter", has(AtomicItems.RAW_SALTPETER))
+                .save(output);
+
+        shapeless(RecipeCategory.MISC, AtomicItems.BUNGERITE_ALLOY_INGOT, 1)
+                .requires(AtomicItems.REFINED_BUNGERITE)
+                .requires(Items.NETHERITE_INGOT)
+                .unlockedBy("has_refined_bungerite", has(AtomicItems.REFINED_BUNGERITE))
+                .unlockedBy("has_netherite_ingot", has(Items.NETHERITE_INGOT))
                 .save(output);
 
 
@@ -147,6 +153,7 @@ public class AtomicRecipeProvider extends RecipeProvider {
         //         ResourceKey.create(Registries.RECIPE, Identifier.fromNamespaceAndPath(TutorialMod.MOD_ID, "kaupen")));
     }
 
+
     protected void solidBlockRecipe(RecipeOutput recipeOutput, ItemLike ingotItem, ItemLike blockItem, RecipeCategory pCategory) {
         // Create ingot > nugget recipe
         shapeless(pCategory, ingotItem, 9)
@@ -181,20 +188,17 @@ public class AtomicRecipeProvider extends RecipeProvider {
                 .save(recipeOutput, "nuggetrecipe_" + getItemName(nuggetItem) + "_to_" + getItemName(ingotItem));
     }
 
-    protected void oreSmelting(RecipeOutput recipeOutput, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult,
-                               float pExperience, int pCookingTIme, String pGroup) {
+    protected void oreSmelting(RecipeOutput recipeOutput, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTIme, String pGroup) {
         oreCooking(recipeOutput, RecipeSerializer.SMELTING_RECIPE, SmeltingRecipe::new, pIngredients, pCategory, pResult,
                 pExperience, pCookingTIme, pGroup, "_from_smelting");
     }
 
-    protected void oreBlasting(RecipeOutput recipeOutput, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult,
-                               float pExperience, int pCookingTime, String pGroup) {
+    protected void oreBlasting(RecipeOutput recipeOutput, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTime, String pGroup) {
         oreCooking(recipeOutput, RecipeSerializer.BLASTING_RECIPE, BlastingRecipe::new, pIngredients, pCategory, pResult,
                 pExperience, pCookingTime, pGroup, "_from_blasting");
     }
 
-    protected <T extends AbstractCookingRecipe> void oreCooking(RecipeOutput recipeOutput, RecipeSerializer<T> pCookingSerializer, AbstractCookingRecipe.Factory<T> factory,
-                                                                List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTime, String pGroup, String pRecipeName) {
+    protected <T extends AbstractCookingRecipe> void oreCooking(RecipeOutput recipeOutput, RecipeSerializer<T> pCookingSerializer, AbstractCookingRecipe.Factory<T> factory, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTime, String pGroup, String pRecipeName) {
         for (ItemLike itemlike : pIngredients) {
             SimpleCookingRecipeBuilder.generic(Ingredient.of(itemlike), pCategory, pResult, pExperience, pCookingTime, pCookingSerializer, factory).group(pGroup).unlockedBy(getHasName(itemlike), has(itemlike))
                     .save(recipeOutput, AtomicCompression.MOD_ID + ":" + getItemName(pResult) + pRecipeName + "_" + getItemName(itemlike));
