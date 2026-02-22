@@ -1,0 +1,13 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": [
+    "minecraft:plains",
+    "minecraft:forest",
+    "minecraft:birch_forest",
+    "minecraft:crimson_forest",
+    "minecraft:cherry_grove",
+    "minecraft:savanna"
+  ],
+  "features": "atomiccompression:ashenwood_placed",
+  "step": "vegetal_decoration"
+}

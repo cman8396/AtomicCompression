@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "atomiccompression:block/raw_bungerite_block"
+  }
+}

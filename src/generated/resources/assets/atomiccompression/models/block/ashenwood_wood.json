@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "atomiccompression:block/ashenwood_log",
+    "side": "atomiccompression:block/ashenwood_log"
+  }
+}

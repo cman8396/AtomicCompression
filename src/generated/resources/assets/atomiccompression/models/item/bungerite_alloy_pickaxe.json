@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "atomiccompression:item/bungerite_alloy_pickaxe"
+  }
+}

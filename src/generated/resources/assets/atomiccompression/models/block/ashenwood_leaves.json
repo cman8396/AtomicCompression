@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "atomiccompression:block/ashenwood_leaves"
+  }
+}
