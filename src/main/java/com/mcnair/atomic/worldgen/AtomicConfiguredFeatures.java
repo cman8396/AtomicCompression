@@ -1,9 +1,12 @@
 package com.mcnair.atomic.worldgen;
 
+import com.google.common.collect.ImmutableList;
 import com.mcnair.atomic.AtomicCompression;
 import com.mcnair.atomic.block.AtomicBlocks;
+import com.mcnair.atomic.worldgen.tree.AtomicTreeConfiguration;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.data.worldgen.features.TreeFeatures;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BlockTags;
@@ -16,8 +19,11 @@ import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguratio
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.DarkOakFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FancyFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.RandomSpreadFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.feature.treedecorators.PaleMossDecorator;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.ForkingTrunkPlacer;
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
@@ -78,17 +84,7 @@ public class AtomicConfiguredFeatures {
 
         /* TREES */
         register(context, ASHENWOOD_KEY, Feature.TREE,
-                new TreeConfiguration.TreeConfigurationBuilder(
-                        BlockStateProvider.simple(AtomicBlocks.ASHENWOOD_LOG.get()),
-                        new ForkingTrunkPlacer(5, 2, 2),
-                        BlockStateProvider.simple(AtomicBlocks.ASHENWOOD_LEAVES.get()),
-                        new FancyFoliagePlacer(ConstantInt.of(2), ConstantInt.of(3), 3),
-                        new TwoLayersFeatureSize(1, 0, 2)
-                )
-                        .dirt(BlockStateProvider.simple(Blocks.DIRT))
-                        .ignoreVines()
-//                        .decorators()
-                        .build());
+                AtomicTreeConfiguration.createAshenwood().forceDirt().build());
 
 
 //        List<OreConfiguration.TargetBlockState> overworldBismuthOres = List.of(

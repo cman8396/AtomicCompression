@@ -1,5 +1,6 @@
-// 1.21.11	2026-02-22T18:26:30.5946547	Loot Tables
+// 1.21.11	2026-02-23T22:48:55.8915624	Loot Tables
 5b6a8b7b6aac1946f7c51d68fee7297694d7da06 data/atomiccompression/loot_table/blocks/ashenwood_leaves.json
+86994b7f1bd824cfa98c356d563e1c8b5a7ac316 data/atomiccompression/loot_table/blocks/ashenwood_leaves_flowering.json
 a707d1758a01faf5ba150cfd8b0e05c151673926 data/atomiccompression/loot_table/blocks/ashenwood_log.json
 72ec82ca7fd3d51d6621273d92fc2c68bc4efdfc data/atomiccompression/loot_table/blocks/ashenwood_planks.json
 0c09454e6af6b8fb99665af376fa7a29fbf1e1e2 data/atomiccompression/loot_table/blocks/ashenwood_sapling.json

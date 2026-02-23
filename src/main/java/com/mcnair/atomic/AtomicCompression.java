@@ -100,7 +100,7 @@ public class AtomicCompression {
 
 //        @SubscribeEvent
 //        public static void registerParticleFactories(RegisterParticleProvidersEvent event) {
-//            event.registerSpriteSet(ModParticles.BISMUTH_PARTICLES.get(), BismuthParticles.Provider::new);
+//            event.registerSpriteSet(AtomicParticles.ATOMIC_PARTICLES.get(), AtomicAtomicParticles.Provider::new);
 //        }
 
 //        @SubscribeEvent

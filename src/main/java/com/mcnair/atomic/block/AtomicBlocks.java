@@ -129,7 +129,12 @@ public class AtomicBlocks {
             (properties) -> new AtomicPlanksBlock(
                     properties.strength(2.0f).sound(SoundType.CHERRY_WOOD).ignitedByLava()));
     public static final DeferredBlock<Block> ASHENWOOD_LEAVES = registerBlock("ashenwood_leaves",
-            (properties) -> new AtomicLeavesBlock(0.01f, ParticleTypes.CHERRY_LEAVES,
+            (properties) -> new AtomicLeavesBlock(0.02f, ParticleTypes.SMOKE,
+                    properties.strength(0.2F).sound(SoundType.CHERRY_LEAVES).ignitedByLava()
+                            .mapColor(MapColor.PLANT).randomTicks().noOcclusion()
+                            .isValidSpawn(Blocks::ocelotOrParrot).pushReaction(PushReaction.DESTROY)));
+    public static final DeferredBlock<Block> ASHENWOOD_LEAVES_FLOWERING = registerBlock("ashenwood_leaves_flowering",
+            (properties) -> new AtomicLeavesBlock(0.02f, ParticleTypes.SMOKE,
                     properties.strength(0.2F).sound(SoundType.CHERRY_LEAVES).ignitedByLava()
                             .mapColor(MapColor.PLANT).randomTicks().noOcclusion()
                             .isValidSpawn(Blocks::ocelotOrParrot).pushReaction(PushReaction.DESTROY)));

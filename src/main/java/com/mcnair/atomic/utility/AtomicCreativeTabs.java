@@ -59,6 +59,7 @@ public class AtomicCreativeTabs {
                         output.accept(AtomicBlocks.ASHENWOOD_PLANKS.get());
                         output.accept(AtomicBlocks.ASHENWOOD_SAPLING.get());
                         output.accept(AtomicBlocks.ASHENWOOD_LEAVES.get());
+                        output.accept(AtomicBlocks.ASHENWOOD_LEAVES_FLOWERING.get());
 
 
                         /* ADD ITEMS */
