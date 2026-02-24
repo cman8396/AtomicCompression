@@ -1,10 +1,10 @@
 package com.mcnair.atomic.block;
 
 import com.mcnair.atomic.AtomicCompression;
-import com.mcnair.atomic.block.custom.AtomicLeavesBlock;
-import com.mcnair.atomic.block.custom.AtomicLogsBlock;
-import com.mcnair.atomic.block.custom.AtomicPlanksBlock;
-import com.mcnair.atomic.block.custom.AtomicSaplingBlock;
+import com.mcnair.atomic.block.custom.extensions.AtomicLeavesBlock;
+import com.mcnair.atomic.block.custom.extensions.AtomicLogsBlock;
+import com.mcnair.atomic.block.custom.extensions.AtomicPlanksBlock;
+import com.mcnair.atomic.block.custom.extensions.AtomicSaplingBlock;
 import com.mcnair.atomic.item.AtomicItems;
 import com.mcnair.atomic.worldgen.tree.AtomicTreeGrower;
 import net.minecraft.core.BlockPos;
