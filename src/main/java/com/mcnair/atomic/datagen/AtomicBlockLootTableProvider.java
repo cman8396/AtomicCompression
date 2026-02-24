@@ -87,6 +87,8 @@ public class AtomicBlockLootTableProvider extends BlockLootSubProvider {
         add(AtomicBlocks.ASHENWOOD_LEAVES_FLOWERING.get(), block -> createLeavesDrops(block, AtomicBlocks.ASHENWOOD_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 
 
+        /* ENTITIES */
+        dropSelf(AtomicBlocks.EXPLOSIVE_COMPACTOR.get());
 
 //        dropSelf(ModBlocks.BISMUTH_BLOCK.get());
 //        // dropSelf(ModBlocks.MAGIC_BLOCK.get());

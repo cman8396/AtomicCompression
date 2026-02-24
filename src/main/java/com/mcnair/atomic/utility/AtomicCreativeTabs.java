@@ -61,6 +61,8 @@ public class AtomicCreativeTabs {
                         output.accept(AtomicBlocks.ASHENWOOD_LEAVES.get());
                         output.accept(AtomicBlocks.ASHENWOOD_LEAVES_FLOWERING.get());
 
+                        output.accept(AtomicBlocks.EXPLOSIVE_COMPACTOR.get());
+
 
                         /* ADD ITEMS */
                         output.accept(AtomicItems.RAW_SULFUR.get());

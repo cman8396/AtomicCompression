@@ -1,5 +1,9 @@
 package com.mcnair.atomic;
 
+import com.mcnair.atomic.block.entity.AtomicBlockEntities;
+import com.mcnair.atomic.recipe.AtomicRecipes;
+import com.mcnair.atomic.screen.AtomicMenuTypes;
+import com.mcnair.atomic.screen.custom.ExplosiveCompactorScreen;
 import com.mcnair.atomic.utility.AtomicCreativeTabs;
 import com.mcnair.atomic.block.AtomicBlocks;
 import com.mcnair.atomic.item.AtomicItems;
@@ -45,9 +49,15 @@ public class AtomicCompression {
         // Register registry classes.
         AtomicBlocks.register(modEventBus);
         AtomicItems.register(modEventBus);
+
         AtomicCreativeTabs.register(modEventBus);
 
         AtomicVillagers.register(modEventBus);
+
+        AtomicBlockEntities.register(modEventBus);
+
+        AtomicMenuTypes.register(modEventBus);
+        AtomicRecipes.register(modEventBus);
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
@@ -55,19 +65,6 @@ public class AtomicCompression {
 
         Config.ITEM_STRINGS.get().forEach((item) -> LOGGER.info("ITEM >> {}", item));
     }
-
-    // Add the example block item to the building blocks tab
-//    private void addCreative(BuildCreativeModeTabContentsEvent event) {
-//        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-//            event.accept(ModItems.BISMUTH);
-//            event.accept(ModItems.RAW_BISMUTH);
-//        }
-//
-//        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-//            event.accept(ModBlocks.BISMUTH_BLOCK);
-//            event.accept(ModBlocks.BISMUTH_ORE);
-//        }
-//    }
 
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
@@ -108,11 +105,10 @@ public class AtomicCompression {
 //            event.registerBlockEntityRenderer(ModBlockEntities.PEDESTAL_BE.get(), PedestalBlockEntityRenderer::new);
 //        }
 
-//        @SubscribeEvent
-//        public static void registerScreens(RegisterMenuScreensEvent event) {
-//            event.register(ModMenuTypes.PEDESTAL_MENU.get(), PedestalScreen::new);
-//            event.register(ModMenuTypes.GROWTH_CHAMBER_MENU.get(), GrowthChamberScreen::new);
-//        }
+        @SubscribeEvent
+        public static void registerScreens(RegisterMenuScreensEvent event) {
+            event.register(AtomicMenuTypes.EXPLOSIVE_COMPACTOR_MENU.get(), ExplosiveCompactorScreen::new);
+        }
     }
 
 }

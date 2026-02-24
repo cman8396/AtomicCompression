@@ -1,6 +1,7 @@
 package com.mcnair.atomic.block;
 
 import com.mcnair.atomic.AtomicCompression;
+import com.mcnair.atomic.block.custom.ExplosiveCompactorBlock;
 import com.mcnair.atomic.block.custom.extensions.AtomicLeavesBlock;
 import com.mcnair.atomic.block.custom.extensions.AtomicLogsBlock;
 import com.mcnair.atomic.block.custom.extensions.AtomicPlanksBlock;
@@ -144,6 +145,10 @@ public class AtomicBlocks {
                             .mapColor(MapColor.PLANT).randomTicks().noCollision()
                             .pushReaction(PushReaction.DESTROY)));
 
+
+
+    /* ENTITIES */
+    public static final DeferredBlock<Block> EXPLOSIVE_COMPACTOR = registerBlock("explosive_compactor", ExplosiveCompactorBlock::new);
 
 
 

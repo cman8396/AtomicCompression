@@ -116,6 +116,8 @@ public class AtomicModelProvider extends ModelProvider {
         blockModels.createTintedLeaves(AtomicBlocks.ASHENWOOD_LEAVES.get(), TexturedModel.LEAVES, -12012264);
         blockModels.createTintedLeaves(AtomicBlocks.ASHENWOOD_LEAVES_FLOWERING.get(), TexturedModel.LEAVES, -12012264);
 
+        /* ENTITIES */
+        blockModels.createTrivialCube(AtomicBlocks.EXPLOSIVE_COMPACTOR.get());
 
 
 //        blockModels.family(AtomicBlocks.BISMUTH_BLOCK.get())
