@@ -1,20 +1,11 @@
-package com.mcnair.atomic.block.custom;
+package com.mcnair.atomic.block.custom.extensions;
 
-import com.mcnair.atomic.block.AtomicBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleOptions;
-import net.minecraft.world.item.AxeItem;
-import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.UntintedParticleLeavesBlock;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
-import net.neoforged.neoforge.common.ItemAbility;
-
-import javax.annotation.Nullable;
 
 public class AtomicLeavesBlock extends UntintedParticleLeavesBlock {
     public AtomicLeavesBlock(float leafParticleChance, ParticleOptions leafParticle, Properties properties) {

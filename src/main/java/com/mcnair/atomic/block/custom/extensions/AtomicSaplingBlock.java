@@ -1,4 +1,4 @@
-package com.mcnair.atomic.block.custom;
+package com.mcnair.atomic.block.custom.extensions;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
