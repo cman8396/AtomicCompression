@@ -13,8 +13,8 @@ public class AtomicBlockEntities {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES =
             DeferredRegister.create(BuiltInRegistries.BLOCK_ENTITY_TYPE, AtomicCompression.MOD_ID);
 
-    public static final Supplier<BlockEntityType<ExplosiveCompactorBlockEntity>> EXPLOSIVE_COMPACTOR_BE =
-            BLOCK_ENTITIES.register("explosive_compactor_be", () -> new BlockEntityType<>(ExplosiveCompactorBlockEntity::new, AtomicBlocks.EXPLOSIVE_COMPACTOR.get()));
+//    public static final Supplier<BlockEntityType<ExplosiveCompactorBlockEntity>> EXPLOSIVE_COMPACTOR_BE =
+//            BLOCK_ENTITIES.register("explosive_compactor_be", () -> new BlockEntityType<>(ExplosiveCompactorBlockEntity::new, AtomicBlocks.EXPLOSIVE_COMPACTOR.get()));
 
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);

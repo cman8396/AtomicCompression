@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "atomiccompression:block/ashenwood_planks",
+    "side": "atomiccompression:block/ashenwood_planks",
+    "top": "atomiccompression:block/ashenwood_planks"
+  }
+}

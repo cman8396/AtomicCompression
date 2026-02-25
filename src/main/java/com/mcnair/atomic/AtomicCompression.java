@@ -3,20 +3,16 @@ package com.mcnair.atomic;
 import com.mcnair.atomic.block.entity.AtomicBlockEntities;
 import com.mcnair.atomic.recipe.AtomicRecipes;
 import com.mcnair.atomic.screen.AtomicMenuTypes;
-import com.mcnair.atomic.screen.custom.ExplosiveCompactorScreen;
 import com.mcnair.atomic.utility.AtomicCreativeTabs;
 import com.mcnair.atomic.block.AtomicBlocks;
 import com.mcnair.atomic.item.AtomicItems;
 import com.mcnair.atomic.villager.AtomicVillagers;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.chunk.ChunkSectionLayer;
-import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
-import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
-import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -83,6 +79,9 @@ public class AtomicCompression {
 
             ItemBlockRenderTypes.setRenderLayer(AtomicBlocks.ASHENWOOD_SAPLING.get(), ChunkSectionLayer.CUTOUT);
 
+            ItemBlockRenderTypes.setRenderLayer(AtomicBlocks.ASHENWOOD_DOOR.get(), ChunkSectionLayer.CUTOUT);
+            ItemBlockRenderTypes.setRenderLayer(AtomicBlocks.ASHENWOOD_TRAPDOOR.get(), ChunkSectionLayer.CUTOUT);
+
 //            EntityRenderers.register(ModEntities.GECKO.get(), GeckoRenderer::new);
 //            EntityRenderers.register(ModEntities.TOMAHAWK.get(), TomahawkProjectileRenderer::new);
 //
@@ -90,9 +89,6 @@ public class AtomicCompression {
 
 //            ItemBlockRenderTypes.setRenderLayer(ModBlocks.GOJI_BERRY_BUSH.get(), ChunkSectionLayer.CUTOUT);
 //            ItemBlockRenderTypes.setRenderLayer(ModBlocks.RADISH_CROP.get(), ChunkSectionLayer.CUTOUT);
-
-//            ItemBlockRenderTypes.setRenderLayer(ModBlocks.BISMUTH_DOOR.get(), ChunkSectionLayer.CUTOUT);
-//            ItemBlockRenderTypes.setRenderLayer(ModBlocks.BISMUTH_TRAPDOOR.get(), ChunkSectionLayer.CUTOUT);
         }
 
 //        @SubscribeEvent
@@ -107,7 +103,7 @@ public class AtomicCompression {
 
         @SubscribeEvent
         public static void registerScreens(RegisterMenuScreensEvent event) {
-            event.register(AtomicMenuTypes.EXPLOSIVE_COMPACTOR_MENU.get(), ExplosiveCompactorScreen::new);
+//            event.register(AtomicMenuTypes.EXPLOSIVE_COMPACTOR_MENU.get(), ExplosiveCompactorScreen::new);
         }
     }
 

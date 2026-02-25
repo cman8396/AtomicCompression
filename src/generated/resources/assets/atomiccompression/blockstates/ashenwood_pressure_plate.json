@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "atomiccompression:block/ashenwood_pressure_plate"
+    },
+    "powered=true": {
+      "model": "atomiccompression:block/ashenwood_pressure_plate_down"
+    }
+  }
+}

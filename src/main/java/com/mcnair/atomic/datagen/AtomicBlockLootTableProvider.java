@@ -81,14 +81,24 @@ public class AtomicBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(AtomicBlocks.ASHENWOOD_WOOD.get());
         dropSelf(AtomicBlocks.STRIPPED_ASHENWOOD_LOG.get());
         dropSelf(AtomicBlocks.STRIPPED_ASHENWOOD_WOOD.get());
-        dropSelf(AtomicBlocks.ASHENWOOD_PLANKS.get());
         dropSelf(AtomicBlocks.ASHENWOOD_SAPLING.get());
         add(AtomicBlocks.ASHENWOOD_LEAVES.get(), block -> createLeavesDrops(block, AtomicBlocks.ASHENWOOD_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         add(AtomicBlocks.ASHENWOOD_LEAVES_FLOWERING.get(), block -> createLeavesDrops(block, AtomicBlocks.ASHENWOOD_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        dropSelf(AtomicBlocks.ASHENWOOD_PLANKS.get());
+        dropSelf(AtomicBlocks.ASHENWOOD_STAIRS.get());
+        add(AtomicBlocks.ASHENWOOD_SLAB.get(), block -> createSlabItemTable(AtomicBlocks.ASHENWOOD_SLAB.get()));
+        dropSelf(AtomicBlocks.ASHENWOOD_PRESSURE_PLATE.get());
+        dropSelf(AtomicBlocks.ASHENWOOD_BUTTON.get());
+        dropSelf(AtomicBlocks.ASHENWOOD_FENCE.get());
+        dropSelf(AtomicBlocks.ASHENWOOD_FENCE_GATE.get());
+        dropSelf(AtomicBlocks.ASHENWOOD_WALL.get());
+        add(AtomicBlocks.ASHENWOOD_DOOR.get(), block -> createDoorTable(AtomicBlocks.ASHENWOOD_DOOR.get()));
+        dropSelf(AtomicBlocks.ASHENWOOD_TRAPDOOR.get());
+
 
 
         /* ENTITIES */
-        dropSelf(AtomicBlocks.EXPLOSIVE_COMPACTOR.get());
+//        dropSelf(AtomicBlocks.EXPLOSIVE_COMPACTOR.get());
 
 //        dropSelf(ModBlocks.BISMUTH_BLOCK.get());
 //        // dropSelf(ModBlocks.MAGIC_BLOCK.get());

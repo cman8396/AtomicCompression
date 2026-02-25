@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/fence_side",
+  "textures": {
+    "texture": "atomiccompression:block/ashenwood_planks"
+  }
+}

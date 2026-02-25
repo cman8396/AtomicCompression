@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "ashenwood",
+  "key": {
+    "#": "atomiccompression:ashenwood_planks"
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "id": "atomiccompression:ashenwood_stairs"
+  }
+}

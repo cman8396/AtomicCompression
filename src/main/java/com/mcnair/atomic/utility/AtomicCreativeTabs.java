@@ -19,7 +19,7 @@ public class AtomicCreativeTabs {
             () -> CreativeModeTab.builder()
                     .title(Component.translatable("itemGroup.atomiccompression.title"))
                     .withTabsBefore(CreativeModeTabs.BUILDING_BLOCKS)
-                    .icon(() -> AtomicItems.RAW_BUNGERITE.get().getDefaultInstance())
+                    .icon(() -> AtomicItems.BUNGERITE_ALLOY_INGOT.get().getDefaultInstance())
                     .displayItems((parameters, output) -> {
 
                         /* ADD BLOCKS */
@@ -56,12 +56,21 @@ public class AtomicCreativeTabs {
                         output.accept(AtomicBlocks.ASHENWOOD_WOOD.get());
                         output.accept(AtomicBlocks.STRIPPED_ASHENWOOD_LOG.get());
                         output.accept(AtomicBlocks.STRIPPED_ASHENWOOD_WOOD.get());
-                        output.accept(AtomicBlocks.ASHENWOOD_PLANKS.get());
                         output.accept(AtomicBlocks.ASHENWOOD_SAPLING.get());
                         output.accept(AtomicBlocks.ASHENWOOD_LEAVES.get());
                         output.accept(AtomicBlocks.ASHENWOOD_LEAVES_FLOWERING.get());
+                        output.accept(AtomicBlocks.ASHENWOOD_PLANKS.get());
+                        output.accept(AtomicBlocks.ASHENWOOD_STAIRS.get());
+                        output.accept(AtomicBlocks.ASHENWOOD_SLAB.get());
+                        output.accept(AtomicBlocks.ASHENWOOD_PRESSURE_PLATE.get());
+                        output.accept(AtomicBlocks.ASHENWOOD_BUTTON.get());
+                        output.accept(AtomicBlocks.ASHENWOOD_FENCE.get());
+                        output.accept(AtomicBlocks.ASHENWOOD_FENCE_GATE.get());
+                        output.accept(AtomicBlocks.ASHENWOOD_WALL.get());
+                        output.accept(AtomicBlocks.ASHENWOOD_DOOR.get());
+                        output.accept(AtomicBlocks.ASHENWOOD_TRAPDOOR.get());
 
-                        output.accept(AtomicBlocks.EXPLOSIVE_COMPACTOR.get());
+//                        output.accept(AtomicBlocks.EXPLOSIVE_COMPACTOR.get());
 
 
                         /* ADD ITEMS */

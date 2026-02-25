@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "atomiccompression:block/ashenwood_planks"
+  }
+}

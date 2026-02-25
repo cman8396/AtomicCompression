@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "atomiccompression:explosive_compactor"
+          "name": "atomiccompression:ashenwood_wall"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "atomiccompression:blocks/explosive_compactor"
+  "random_sequence": "atomiccompression:blocks/ashenwood_wall"
 }

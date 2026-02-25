@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "atomiccompression:block/ashenwood_slab"
+    },
+    "type=double": {
+      "model": "atomiccompression:block/ashenwood_planks"
+    },
+    "type=top": {
+      "model": "atomiccompression:block/ashenwood_slab_top"
+    }
+  }
+}

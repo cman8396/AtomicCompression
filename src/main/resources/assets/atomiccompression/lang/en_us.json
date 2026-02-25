@@ -37,13 +37,25 @@
   "block.atomiccompression.ashenwood_wood": "Ashenwood Wood",
   "block.atomiccompression.stripped_ashenwood_log": "Stripped Ashenwood Log",
   "block.atomiccompression.stripped_ashenwood_wood": "Stripped Ashenwood Wood",
-  "block.atomiccompression.ashenwood_planks": "Ashenwood Planks",
   "block.atomiccompression.ashenwood_leaves": "Ashenwood Leaves",
   "block.atomiccompression.ashenwood_leaves_flowering": "Flowering Ashenwood Leaves",
-
+  
   "block.atomiccompression.ashenwood_sapling": "Ashenwood Sapling",
+  
+  "block.atomiccompression.ashenwood_planks": "Ashenwood Planks",
+  "block.atomiccompression.ashenwood_stairs": "Ashenwood Stairs",
+  "block.atomiccompression.ashenwood_slab": "Ashenwood Slab",
+  "block.atomiccompression.ashenwood_pressure_plate": "Ashenwood Pressure Plate",
+  "block.atomiccompression.ashenwood_button": "Ashenwood Button",
+  "block.atomiccompression.ashenwood_fence": "Ashenwood Fence",
+  "block.atomiccompression.ashenwood_fence_gate": "Ashenwood Fence Gate",
+  "block.atomiccompression.ashenwood_wall": "Ashenwood Wall",
+  "block.atomiccompression.ashenwood_door": "Ashenwood Door",
+  "block.atomiccompression.ashenwood_trapdoor": "Ashenwood Trapdoor",
 
   "block.atomiccompression.explosive_compactor": "Explosive Compactor",
+
+
 
   "item.atomiccompression.atomic_shard": "Atomic Shard",
   "item.atomiccompression.raw_sulfur": "Raw Sulfur",

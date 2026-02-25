@@ -1,7 +1,6 @@
 package com.mcnair.atomic.block;
 
 import com.mcnair.atomic.AtomicCompression;
-import com.mcnair.atomic.block.custom.ExplosiveCompactorBlock;
 import com.mcnair.atomic.block.custom.extensions.AtomicLeavesBlock;
 import com.mcnair.atomic.block.custom.extensions.AtomicLogsBlock;
 import com.mcnair.atomic.block.custom.extensions.AtomicPlanksBlock;
@@ -17,6 +16,8 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.bus.api.IEventBus;
@@ -126,9 +127,6 @@ public class AtomicBlocks {
     public static final DeferredBlock<Block> STRIPPED_ASHENWOOD_WOOD = registerBlock("stripped_ashenwood_wood",
             (properties) -> new AtomicLogsBlock(
                     properties.strength(2.0f).sound(SoundType.CHERRY_WOOD).ignitedByLava()));
-    public static final DeferredBlock<Block> ASHENWOOD_PLANKS = registerBlock("ashenwood_planks",
-            (properties) -> new AtomicPlanksBlock(
-                    properties.strength(2.0f).sound(SoundType.CHERRY_WOOD).ignitedByLava()));
     public static final DeferredBlock<Block> ASHENWOOD_LEAVES = registerBlock("ashenwood_leaves",
             (properties) -> new AtomicLeavesBlock(0.02f, ParticleTypes.SMOKE,
                     properties.strength(0.2F).sound(SoundType.CHERRY_LEAVES).ignitedByLava()
@@ -145,10 +143,32 @@ public class AtomicBlocks {
                             .mapColor(MapColor.PLANT).randomTicks().noCollision()
                             .pushReaction(PushReaction.DESTROY)));
 
+    public static final DeferredBlock<Block> ASHENWOOD_PLANKS = registerBlock("ashenwood_planks",
+            (properties) -> new AtomicPlanksBlock(
+                    properties.strength(2f).sound(SoundType.CHERRY_WOOD).ignitedByLava()));
+    public static final DeferredBlock<StairBlock> ASHENWOOD_STAIRS = registerBlock("ashenwood_stairs",
+            (properties) -> new StairBlock(AtomicBlocks.ASHENWOOD_PLANKS.get().defaultBlockState(),
+                    properties.strength(2f).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<SlabBlock> ASHENWOOD_SLAB = registerBlock("ashenwood_slab",
+            (properties) -> new SlabBlock(properties.strength(2f).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<PressurePlateBlock> ASHENWOOD_PRESSURE_PLATE = registerBlock("ashenwood_pressure_plate",
+            (properties) -> new PressurePlateBlock(BlockSetType.OAK, properties.strength(2f).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<ButtonBlock> ASHENWOOD_BUTTON = registerBlock("ashenwood_button",
+            (properties) -> new ButtonBlock(BlockSetType.OAK, 20, properties.strength(2f).requiresCorrectToolForDrops().noCollision()));
+    public static final DeferredBlock<FenceBlock> ASHENWOOD_FENCE = registerBlock("ashenwood_fence",
+            (properties) -> new FenceBlock(properties.strength(2f).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<FenceGateBlock> ASHENWOOD_FENCE_GATE = registerBlock("ashenwood_fence_gate",
+            (properties) -> new FenceGateBlock(WoodType.OAK, properties.strength(2f).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<WallBlock> ASHENWOOD_WALL = registerBlock("ashenwood_wall",
+            (properties) -> new WallBlock(properties.strength(2f).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<DoorBlock> ASHENWOOD_DOOR = registerBlock("ashenwood_door",
+            (properties) -> new DoorBlock(BlockSetType.OAK, properties.strength(2f).requiresCorrectToolForDrops().noOcclusion()));
+    public static final DeferredBlock<TrapDoorBlock> ASHENWOOD_TRAPDOOR = registerBlock("ashenwood_trapdoor",
+            (properties) -> new TrapDoorBlock(BlockSetType.OAK, properties.strength(2f).requiresCorrectToolForDrops().noOcclusion()));
 
 
     /* ENTITIES */
-    public static final DeferredBlock<Block> EXPLOSIVE_COMPACTOR = registerBlock("explosive_compactor", ExplosiveCompactorBlock::new);
+
 
 
 

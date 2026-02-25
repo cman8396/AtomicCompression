@@ -3,26 +3,29 @@ package com.mcnair.atomic.datagen;
 import com.mcnair.atomic.AtomicCompression;
 import com.mcnair.atomic.block.AtomicBlocks;
 import com.mcnair.atomic.item.AtomicItems;
-import com.mcnair.atomic.item.AtomicToolTiers;
-import com.mcnair.atomic.item.custom.PickaxeItem;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
-import net.minecraft.client.data.models.model.ModelTemplates;
-import net.minecraft.client.data.models.model.TexturedModel;
+import net.minecraft.client.data.models.MultiVariant;
+import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
+import net.minecraft.client.data.models.blockstates.PropertyDispatch;
+import net.minecraft.client.data.models.model.*;
+import net.minecraft.client.renderer.block.model.Variant;
+import net.minecraft.client.renderer.block.model.VariantMutator;
+import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
-import net.minecraft.resources.ResourceKey;
-import net.minecraft.world.item.AxeItem;
-import net.minecraft.world.item.HoeItem;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ShovelItem;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.neoforged.neoforge.registries.DeferredItem;
+import net.minecraft.world.level.block.HorizontalDirectionalBlock;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 
 import java.util.stream.Stream;
+
+import static net.minecraft.client.data.models.BlockModelGenerators.*;
+import static net.minecraft.client.data.models.model.TextureMapping.getBlockTexture;
 
 public class AtomicModelProvider extends ModelProvider {
     public AtomicModelProvider(PackOutput output) {
@@ -59,7 +62,6 @@ public class AtomicModelProvider extends ModelProvider {
         itemModels.generateFlatItem(AtomicItems.BUNGERITE_ALLOY_PICKAXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModels.generateFlatItem(AtomicItems.BUNGERITE_ALLOY_AXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModels.generateFlatItem(AtomicItems.BUNGERITE_ALLOY_HOE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
-
 
 
 //        itemModels.generateTrimmableItem(AtomicItems.BISMUTH_HELMET.get(), ModArmorMaterials.BISMUTH, ItemModelGenerators.TRIM_PREFIX_HELMET, false);
@@ -111,25 +113,23 @@ public class AtomicModelProvider extends ModelProvider {
         /* ASHENWOOD BLOCKS */
         blockModels.woodProvider(AtomicBlocks.ASHENWOOD_LOG.get()).logWithHorizontal(AtomicBlocks.ASHENWOOD_LOG.get()).wood(AtomicBlocks.ASHENWOOD_WOOD.get());
         blockModels.woodProvider(AtomicBlocks.STRIPPED_ASHENWOOD_LOG.get()).logWithHorizontal(AtomicBlocks.STRIPPED_ASHENWOOD_LOG.get()).wood(AtomicBlocks.STRIPPED_ASHENWOOD_WOOD.get());
-        blockModels.createTrivialCube(AtomicBlocks.ASHENWOOD_PLANKS.get());
         blockModels.createCrossBlock(AtomicBlocks.ASHENWOOD_SAPLING.get(), BlockModelGenerators.PlantType.TINTED);
         blockModels.createTintedLeaves(AtomicBlocks.ASHENWOOD_LEAVES.get(), TexturedModel.LEAVES, -12012264);
         blockModels.createTintedLeaves(AtomicBlocks.ASHENWOOD_LEAVES_FLOWERING.get(), TexturedModel.LEAVES, -12012264);
+        blockModels.family(AtomicBlocks.ASHENWOOD_PLANKS.get())
+                .stairs(AtomicBlocks.ASHENWOOD_STAIRS.get())
+                .slab(AtomicBlocks.ASHENWOOD_SLAB.get())
+                .pressurePlate(AtomicBlocks.ASHENWOOD_PRESSURE_PLATE.get())
+                .button(AtomicBlocks.ASHENWOOD_BUTTON.get())
+                .fence(AtomicBlocks.ASHENWOOD_FENCE.get())
+                .fenceGate(AtomicBlocks.ASHENWOOD_FENCE_GATE.get())
+                .wall(AtomicBlocks.ASHENWOOD_WALL.get())
+                .door(AtomicBlocks.ASHENWOOD_DOOR.get())
+                .trapdoor(AtomicBlocks.ASHENWOOD_TRAPDOOR.get());
 
         /* ENTITIES */
-        blockModels.createTrivialCube(AtomicBlocks.EXPLOSIVE_COMPACTOR.get());
 
 
-//        blockModels.family(AtomicBlocks.BISMUTH_BLOCK.get())
-//                .fence(AtomicBlocks.BISMUTH_FENCE.get())
-//                .fenceGate(AtomicBlocks.BISMUTH_FENCE_GATE.get())
-//                .wall(AtomicBlocks.BISMUTH_WALL.get())
-//                .stairs(AtomicBlocks.BISMUTH_STAIRS.get())
-//                .slab(AtomicBlocks.BISMUTH_SLAB.get())
-//                .button(AtomicBlocks.BISMUTH_BUTTON.get())
-//                .pressurePlate(AtomicBlocks.BISMUTH_PRESSURE_PLATE.get())
-//                .door(AtomicBlocks.BISMUTH_DOOR.get())
-//                .trapdoor(AtomicBlocks.BISMUTH_TRAPDOOR.get());
 //
 //        blockModels.createCropBlock(AtomicBlocks.RADISH_CROP.get(), RadishCropBlock.AGE,  0, 1, 2, 3);
 //        blockModels.createCropBlock(AtomicBlocks.GOJI_BERRY_BUSH.get(), GojiBerryBushBlock.AGE,  0, 1, 2, 3);

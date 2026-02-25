@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button_pressed",
+  "textures": {
+    "texture": "atomiccompression:block/ashenwood_planks"
+  }
+}

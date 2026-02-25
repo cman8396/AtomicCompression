@@ -135,24 +135,25 @@ public class AtomicRecipeProvider extends RecipeProvider {
         solidBlockRecipe(output, AtomicItems.EMPOWERED_ATOMIC_SHARD, AtomicBlocks.EMPOWERED_ATOMIC_BLOCK, RecipeCategory.MISC);
 
 
-//        stairBuilder(AtomicBlocks.BISMUTH_STAIRS.get(), Ingredient.of(AtomicItems.BISMUTH)).group("bismuth")
-//                .unlockedBy("has_bismuth", has(AtomicItems.BISMUTH)).save(output);
-//        slab(RecipeCategory.BUILDING_BLOCKS, AtomicBlocks.BISMUTH_SLAB.get(), AtomicItems.BISMUTH.get());
-//
-//        buttonBuilder(AtomicBlocks.BISMUTH_BUTTON.get(), Ingredient.of(AtomicItems.BISMUTH.get())).group("bismuth")
-//                .unlockedBy("has_bismuth", has(AtomicItems.BISMUTH.get())).save(output);
-//        pressurePlate(AtomicBlocks.BISMUTH_PRESSURE_PLATE.get(), AtomicItems.BISMUTH.get());
-//
-//        fenceBuilder(AtomicBlocks.BISMUTH_FENCE.get(), Ingredient.of(AtomicItems.BISMUTH.get())).group("bismuth")
-//                .unlockedBy("has_bismuth", has(AtomicItems.BISMUTH.get())).save(output);
-//        fenceGateBuilder(AtomicBlocks.BISMUTH_FENCE_GATE.get(), Ingredient.of(AtomicItems.BISMUTH.get())).group("bismuth")
-//                .unlockedBy("has_bismuth", has(AtomicItems.BISMUTH.get())).save(output);
-//        wall(RecipeCategory.BUILDING_BLOCKS, AtomicBlocks.BISMUTH_WALL.get(), AtomicItems.BISMUTH.get());
-//
-//        doorBuilder(AtomicBlocks.BISMUTH_DOOR.get(), Ingredient.of(AtomicItems.BISMUTH.get())).group("bismuth")
-//                .unlockedBy("has_bismuth", has(AtomicItems.BISMUTH.get())).save(output);
-//        trapdoorBuilder(AtomicBlocks.BISMUTH_TRAPDOOR.get(), Ingredient.of(AtomicItems.BISMUTH.get())).group("bismuth")
-//                .unlockedBy("has_bismuth", has(AtomicItems.BISMUTH.get())).save(output);
+        /* ASHENWOOD VARIOUS ITEMS */
+        stairBuilder(AtomicBlocks.ASHENWOOD_STAIRS.get(), Ingredient.of(AtomicBlocks.ASHENWOOD_PLANKS)).group("ashenwood")
+                .unlockedBy("has_planks", has(AtomicBlocks.ASHENWOOD_PLANKS)).save(output);
+        slab(RecipeCategory.BUILDING_BLOCKS, AtomicBlocks.ASHENWOOD_SLAB.get(), AtomicBlocks.ASHENWOOD_PLANKS.get());
+        buttonBuilder(AtomicBlocks.ASHENWOOD_BUTTON.get(), Ingredient.of(AtomicBlocks.ASHENWOOD_PLANKS.get())).group("ashenwood")
+                .unlockedBy("has_planks", has(AtomicBlocks.ASHENWOOD_PLANKS.get())).save(output);
+        pressurePlate(AtomicBlocks.ASHENWOOD_PRESSURE_PLATE.get(), AtomicBlocks.ASHENWOOD_PLANKS.get());
+        fenceBuilder(AtomicBlocks.ASHENWOOD_FENCE.get(), Ingredient.of(AtomicBlocks.ASHENWOOD_PLANKS.get())).group("ashenwood")
+                .unlockedBy("has_planks", has(AtomicBlocks.ASHENWOOD_PLANKS.get())).save(output);
+        fenceGateBuilder(AtomicBlocks.ASHENWOOD_FENCE_GATE.get(), Ingredient.of(AtomicBlocks.ASHENWOOD_PLANKS.get())).group("ashenwood")
+                .unlockedBy("has_planks", has(AtomicBlocks.ASHENWOOD_PLANKS.get())).save(output);
+        wall(RecipeCategory.BUILDING_BLOCKS, AtomicBlocks.ASHENWOOD_WALL.get(), AtomicBlocks.ASHENWOOD_PLANKS.get());
+        doorBuilder(AtomicBlocks.ASHENWOOD_DOOR.get(), Ingredient.of(AtomicBlocks.ASHENWOOD_PLANKS.get())).group("ashenwood")
+                .unlockedBy("has_planks", has(AtomicBlocks.ASHENWOOD_PLANKS.get())).save(output);
+        trapdoorBuilder(AtomicBlocks.ASHENWOOD_TRAPDOOR.get(), Ingredient.of(AtomicBlocks.ASHENWOOD_PLANKS.get())).group("ashenwood")
+                .unlockedBy("has_planks", has(AtomicBlocks.ASHENWOOD_PLANKS.get())).save(output);
+
+
+
 
         // Throws error
         // trimSmithing(AtomicItems.KAUPEN_SMITHING_TEMPLATE.get(), ResourceKey.create(Registries.TRIM_PATTERN, Identifier.fromNamespaceAndPath(TutorialMod.MOD_ID, "kaupen")),

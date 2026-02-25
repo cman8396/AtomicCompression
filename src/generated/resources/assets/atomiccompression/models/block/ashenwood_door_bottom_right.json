@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_right",
+  "textures": {
+    "bottom": "atomiccompression:block/ashenwood_door_bottom",
+    "top": "atomiccompression:block/ashenwood_door_top"
+  }
+}
