@@ -1,13 +1,10 @@
 package com.mcnair.atomic.block.entity;
 
 import com.mcnair.atomic.AtomicCompression;
-import com.mcnair.atomic.block.AtomicBlocks;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
-
-import java.util.function.Supplier;
 
 public class AtomicBlockEntities {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES =

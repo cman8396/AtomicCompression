@@ -36,27 +36,33 @@ public class AtomicModelProvider extends ModelProvider {
     protected void registerModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
 
 
-        /* RAW ITEMS */
+        /* BLOCK DROPS */
         itemModels.generateFlatItem(AtomicItems.ATOMIC_SHARD.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(AtomicItems.RAW_SULFUR.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(AtomicItems.RAW_SALTPETER.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(AtomicItems.RAW_LEAD.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(AtomicItems.RAW_BUNGERITE.get(), ModelTemplates.FLAT_ITEM);
 
-        /* PROCESSED ITEMS */
-        itemModels.generateFlatItem(AtomicItems.EMPOWERED_ATOMIC_SHARD.get(), ModelTemplates.FLAT_ITEM);
+        /* BLOCK DROPS - INTERMEDIATE ITEMS */
         itemModels.generateFlatItem(AtomicItems.SULFUR_DUST.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(AtomicItems.SALTPETER_DUST.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(AtomicItems.LEAD_INGOT.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(AtomicItems.REFINED_BUNGERITE.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(AtomicItems.BUNGERITE_ALLOY_INGOT.get(), ModelTemplates.FLAT_ITEM);
 
-        /* NUGGETS */
+        /* BLOCK DROPS - FINISHED ITEMS */
+        itemModels.generateFlatItem(AtomicItems.EMPOWERED_ATOMIC_SHARD.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(AtomicItems.LEAD_INGOT.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(AtomicItems.LEAD_NUGGET.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(AtomicItems.REFINED_BUNGERITE.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(AtomicItems.REFINED_BUNGERITE_NUGGET.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(AtomicItems.BUNGERITE_ALLOY_INGOT.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(AtomicItems.BUNGERITE_ALLOY_NUGGET.get(), ModelTemplates.FLAT_ITEM);
 
-        /* BUNGERITE TOOLS */
+        /* CRAFTING INGREDIENTS */
+        itemModels.generateFlatItem(AtomicItems.OBSIDIAN_SHARD.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(AtomicItems.BASALT_TOOL_SHAFT.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(AtomicItems.ATOMIC_TOOL_SHAFT.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(AtomicItems.ATOMIC_STABILIZER.get(), ModelTemplates.FLAT_ITEM);
+
+        /* TOOLS */
         itemModels.generateFlatItem(AtomicItems.BUNGERITE_ALLOY_SWORD.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModels.generateFlatItem(AtomicItems.BUNGERITE_ALLOY_SHOVEL.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModels.generateFlatItem(AtomicItems.BUNGERITE_ALLOY_PICKAXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);

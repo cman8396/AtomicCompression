@@ -12,6 +12,7 @@ import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Blocks;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -93,6 +94,34 @@ public class AtomicRecipeProvider extends RecipeProvider {
                 .define('B', Items.BASALT)
                 .unlockedBy("has_basalt", has(Items.BASALT))
                 .save(output);
+        shaped(RecipeCategory.MISC, AtomicItems.BASALT_TOOL_SHAFT.get())
+                .pattern("D")
+                .pattern("D")
+                .pattern("D")
+                .define('D', AtomicBlocks.DENSE_BASALT.get())
+                .unlockedBy("has_dense_basalt", has(AtomicBlocks.DENSE_BASALT))
+                .save(output);
+        shaped(RecipeCategory.MISC, AtomicItems.ATOMIC_STABILIZER.get())
+                .pattern("OLO")
+                .pattern("L L")
+                .pattern("OLO")
+                .define('L', AtomicItems.LEAD_NUGGET.get())
+                .define('O', AtomicItems.OBSIDIAN_SHARD.get())
+                .unlockedBy("has_dense_basalt", has(AtomicBlocks.DENSE_BASALT))
+                .save(output);
+        shaped(RecipeCategory.MISC, AtomicItems.ATOMIC_TOOL_SHAFT.get())
+                .pattern(" B ")
+                .pattern("AEA")
+                .pattern(" B ")
+                .define('B', AtomicItems.BASALT_TOOL_SHAFT.get())
+                .define('A', AtomicItems.ATOMIC_STABILIZER.get())
+                .define('E', AtomicItems.EMPOWERED_ATOMIC_SHARD.get())
+                .unlockedBy("has_dense_basalt", has(AtomicBlocks.DENSE_BASALT))
+                .unlockedBy("has_lead_ingot", has(AtomicItems.LEAD_INGOT))
+                .unlockedBy("has_obsidian_shard", has(AtomicItems.OBSIDIAN_SHARD))
+                .unlockedBy("has_empowered_atomic_shard", has(AtomicItems.EMPOWERED_ATOMIC_SHARD))
+                .unlockedBy("has_atomic_shard", has(AtomicItems.ATOMIC_SHARD))
+                .save(output);
 
         shaped(RecipeCategory.MISC, AtomicItems.EMPOWERED_ATOMIC_SHARD.get())
                 .pattern("GGG")
@@ -121,6 +150,7 @@ public class AtomicRecipeProvider extends RecipeProvider {
 
 
         /* SOLID BLOCK CONVERSION */
+        solidBlockRecipe(output, AtomicItems.OBSIDIAN_SHARD, Blocks.OBSIDIAN, RecipeCategory.MISC);
         solidBlockRecipe(output, Items.GUNPOWDER, AtomicBlocks.GUNPOWDER_BLOCK, RecipeCategory.MISC);
         solidBlockRecipe(output, AtomicItems.RAW_SULFUR, AtomicBlocks.RAW_SULFUR_BLOCK, RecipeCategory.MISC);
         solidBlockRecipe(output, AtomicItems.RAW_SALTPETER, AtomicBlocks.RAW_SALTPETER_BLOCK, RecipeCategory.MISC);

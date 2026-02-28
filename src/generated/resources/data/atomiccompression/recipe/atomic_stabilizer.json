@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "L": "atomiccompression:lead_nugget",
+    "O": "atomiccompression:obsidian_shard"
+  },
+  "pattern": [
+    "OLO",
+    "L L",
+    "OLO"
+  ],
+  "result": {
+    "count": 1,
+    "id": "atomiccompression:atomic_stabilizer"
+  }
+}

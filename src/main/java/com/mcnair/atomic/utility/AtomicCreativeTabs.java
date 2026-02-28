@@ -93,6 +93,11 @@ public class AtomicCreativeTabs {
                         output.accept(AtomicItems.ATOMIC_SHARD.get());
                         output.accept(AtomicItems.EMPOWERED_ATOMIC_SHARD.get());
 
+                        output.accept(AtomicItems.OBSIDIAN_SHARD.get());
+                        output.accept(AtomicItems.BASALT_TOOL_SHAFT.get());
+                        output.accept(AtomicItems.ATOMIC_TOOL_SHAFT.get());
+                        output.accept(AtomicItems.ATOMIC_STABILIZER.get());
+
                         output.accept(AtomicItems.BUNGERITE_ALLOY_SWORD.get());
                         output.accept(AtomicItems.BUNGERITE_ALLOY_SHOVEL.get());
                         output.accept(AtomicItems.BUNGERITE_ALLOY_PICKAXE.get());
