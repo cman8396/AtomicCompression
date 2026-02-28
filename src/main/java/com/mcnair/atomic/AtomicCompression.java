@@ -1,6 +1,7 @@
 package com.mcnair.atomic;
 
 import com.mcnair.atomic.block.entity.AtomicBlockEntities;
+import com.mcnair.atomic.particle.AtomicParticles;
 import com.mcnair.atomic.recipe.AtomicRecipes;
 import com.mcnair.atomic.screen.AtomicMenuTypes;
 import com.mcnair.atomic.utility.AtomicCreativeTabs;
@@ -13,6 +14,7 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
+import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -93,7 +95,7 @@ public class AtomicCompression {
 
 //        @SubscribeEvent
 //        public static void registerParticleFactories(RegisterParticleProvidersEvent event) {
-//            event.registerSpriteSet(AtomicParticles.ATOMIC_PARTICLES.get(), AtomicAtomicParticles.Provider::new);
+//            event.registerSpriteSet(AtomicParticles.ASHENWOOD_LEAVES.get(), AtomicAtomicParticle.Provider::new);
 //        }
 
 //        @SubscribeEvent

@@ -6,8 +6,10 @@ import com.mcnair.atomic.block.custom.extensions.AtomicLogsBlock;
 import com.mcnair.atomic.block.custom.extensions.AtomicPlanksBlock;
 import com.mcnair.atomic.block.custom.extensions.AtomicSaplingBlock;
 import com.mcnair.atomic.item.AtomicItems;
+import com.mcnair.atomic.particle.AtomicParticles;
 import com.mcnair.atomic.worldgen.tree.AtomicTreeGrower;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ColorParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.util.ColorRGBA;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -128,12 +130,12 @@ public class AtomicBlocks {
             (properties) -> new AtomicLogsBlock(
                     properties.strength(2.0f).sound(SoundType.CHERRY_WOOD).ignitedByLava()));
     public static final DeferredBlock<Block> ASHENWOOD_LEAVES = registerBlock("ashenwood_leaves",
-            (properties) -> new AtomicLeavesBlock(0.02f, ParticleTypes.SMOKE,
+            (properties) -> new AtomicLeavesBlock(0.05f, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 118f,127f,118f),
                     properties.strength(0.2F).sound(SoundType.CHERRY_LEAVES).ignitedByLava()
                             .mapColor(MapColor.PLANT).randomTicks().noOcclusion()
                             .isValidSpawn(Blocks::ocelotOrParrot).pushReaction(PushReaction.DESTROY)));
     public static final DeferredBlock<Block> ASHENWOOD_LEAVES_FLOWERING = registerBlock("ashenwood_leaves_flowering",
-            (properties) -> new AtomicLeavesBlock(0.02f, ParticleTypes.SMOKE,
+            (properties) -> new AtomicLeavesBlock(0.05f, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 118f,127f,118f),
                     properties.strength(0.2F).sound(SoundType.CHERRY_LEAVES).ignitedByLava()
                             .mapColor(MapColor.PLANT).randomTicks().noOcclusion()
                             .isValidSpawn(Blocks::ocelotOrParrot).pushReaction(PushReaction.DESTROY)));
