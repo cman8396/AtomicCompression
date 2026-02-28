@@ -99,6 +99,7 @@ public class AtomicCreativeTabs {
                         output.accept(AtomicItems.ATOMIC_STABILIZER.get());
 
                         output.accept(AtomicItems.BUNGERITE_ALLOY_SWORD.get());
+                        output.accept(AtomicItems.BUNGERITE_ALLOY_SPEAR.get());
                         output.accept(AtomicItems.BUNGERITE_ALLOY_SHOVEL.get());
                         output.accept(AtomicItems.BUNGERITE_ALLOY_PICKAXE.get());
                         output.accept(AtomicItems.BUNGERITE_ALLOY_AXE.get());

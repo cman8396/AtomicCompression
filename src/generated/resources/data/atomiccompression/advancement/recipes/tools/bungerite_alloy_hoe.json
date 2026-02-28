@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_atomic_tool_shaft": {
+      "conditions": {
+        "items": [
+          {
+            "items": "atomiccompression:atomic_tool_shaft"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_bungerite_alloy_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": "atomiccompression:bungerite_alloy_ingot"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "atomiccompression:bungerite_alloy_hoe"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_bungerite_alloy_ingot",
+      "has_atomic_tool_shaft"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "atomiccompression:bungerite_alloy_hoe"
+    ]
+  }
+}

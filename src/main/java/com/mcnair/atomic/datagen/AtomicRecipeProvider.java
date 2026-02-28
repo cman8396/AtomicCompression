@@ -41,7 +41,6 @@ public class AtomicRecipeProvider extends RecipeProvider {
     @Override
     protected void buildRecipes() {
 
-
         /* SHAPELESS RECIPES */
         shapeless(RecipeCategory.MISC, Items.BASALT, 9)
                 .requires(AtomicBlocks.DENSE_BASALT)
@@ -73,7 +72,7 @@ public class AtomicRecipeProvider extends RecipeProvider {
 
 
         /* SHAPED RECIPES */
-        shaped(RecipeCategory.MISC, AtomicBlocks.ATOMIC_GLASS.get(),8)
+        shaped(RecipeCategory.MISC, AtomicBlocks.ATOMIC_GLASS.get(), 8)
                 .pattern("GGG")
                 .pattern("GEG")
                 .pattern("GGG")
@@ -81,7 +80,7 @@ public class AtomicRecipeProvider extends RecipeProvider {
                 .define('E', AtomicItems.EMPOWERED_ATOMIC_SHARD.get())
                 .unlockedBy("has_empowered_atomic_shard", has(AtomicItems.EMPOWERED_ATOMIC_SHARD))
                 .save(output);
-        shaped(RecipeCategory.MISC, AtomicBlocks.ATOMIC_GLASS_PANE.get(),16)
+        shaped(RecipeCategory.MISC, AtomicBlocks.ATOMIC_GLASS_PANE.get(), 16)
                 .pattern("GGG")
                 .pattern("GGG")
                 .define('G', AtomicBlocks.ATOMIC_GLASS)
@@ -122,7 +121,6 @@ public class AtomicRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_empowered_atomic_shard", has(AtomicItems.EMPOWERED_ATOMIC_SHARD))
                 .unlockedBy("has_atomic_shard", has(AtomicItems.ATOMIC_SHARD))
                 .save(output);
-
         shaped(RecipeCategory.MISC, AtomicItems.EMPOWERED_ATOMIC_SHARD.get())
                 .pattern("GGG")
                 .pattern("GAG")
@@ -165,22 +163,12 @@ public class AtomicRecipeProvider extends RecipeProvider {
         solidBlockRecipe(output, AtomicItems.EMPOWERED_ATOMIC_SHARD, AtomicBlocks.EMPOWERED_ATOMIC_BLOCK, RecipeCategory.MISC);
 
 
-        /* ASHENWOOD VARIOUS ITEMS */
-        stairBuilder(AtomicBlocks.ASHENWOOD_STAIRS.get(), Ingredient.of(AtomicBlocks.ASHENWOOD_PLANKS)).group("ashenwood")
-                .unlockedBy("has_planks", has(AtomicBlocks.ASHENWOOD_PLANKS)).save(output);
-        slab(RecipeCategory.BUILDING_BLOCKS, AtomicBlocks.ASHENWOOD_SLAB.get(), AtomicBlocks.ASHENWOOD_PLANKS.get());
-        buttonBuilder(AtomicBlocks.ASHENWOOD_BUTTON.get(), Ingredient.of(AtomicBlocks.ASHENWOOD_PLANKS.get())).group("ashenwood")
-                .unlockedBy("has_planks", has(AtomicBlocks.ASHENWOOD_PLANKS.get())).save(output);
-        pressurePlate(AtomicBlocks.ASHENWOOD_PRESSURE_PLATE.get(), AtomicBlocks.ASHENWOOD_PLANKS.get());
-        fenceBuilder(AtomicBlocks.ASHENWOOD_FENCE.get(), Ingredient.of(AtomicBlocks.ASHENWOOD_PLANKS.get())).group("ashenwood")
-                .unlockedBy("has_planks", has(AtomicBlocks.ASHENWOOD_PLANKS.get())).save(output);
-        fenceGateBuilder(AtomicBlocks.ASHENWOOD_FENCE_GATE.get(), Ingredient.of(AtomicBlocks.ASHENWOOD_PLANKS.get())).group("ashenwood")
-                .unlockedBy("has_planks", has(AtomicBlocks.ASHENWOOD_PLANKS.get())).save(output);
-        wall(RecipeCategory.BUILDING_BLOCKS, AtomicBlocks.ASHENWOOD_WALL.get(), AtomicBlocks.ASHENWOOD_PLANKS.get());
-        doorBuilder(AtomicBlocks.ASHENWOOD_DOOR.get(), Ingredient.of(AtomicBlocks.ASHENWOOD_PLANKS.get())).group("ashenwood")
-                .unlockedBy("has_planks", has(AtomicBlocks.ASHENWOOD_PLANKS.get())).save(output);
-        trapdoorBuilder(AtomicBlocks.ASHENWOOD_TRAPDOOR.get(), Ingredient.of(AtomicBlocks.ASHENWOOD_PLANKS.get())).group("ashenwood")
-                .unlockedBy("has_planks", has(AtomicBlocks.ASHENWOOD_PLANKS.get())).save(output);
+        /* TOOLS */
+        allTools(output, AtomicItems.BUNGERITE_ALLOY_INGOT, AtomicItems.ATOMIC_TOOL_SHAFT, AtomicItems.BUNGERITE_ALLOY_SWORD, AtomicItems.BUNGERITE_ALLOY_SPEAR, AtomicItems.BUNGERITE_ALLOY_PICKAXE, AtomicItems.BUNGERITE_ALLOY_AXE, AtomicItems.BUNGERITE_ALLOY_SHOVEL, AtomicItems.BUNGERITE_ALLOY_HOE);
+
+
+        /* WOODEN ITEMS */
+        allWoodenObjects(output, "ashenwood", AtomicBlocks.ASHENWOOD_PLANKS, AtomicBlocks.ASHENWOOD_STAIRS, AtomicBlocks.ASHENWOOD_SLAB, AtomicBlocks.ASHENWOOD_BUTTON, AtomicBlocks.ASHENWOOD_PRESSURE_PLATE, AtomicBlocks.ASHENWOOD_FENCE, AtomicBlocks.ASHENWOOD_FENCE_GATE, AtomicBlocks.ASHENWOOD_WALL, AtomicBlocks.ASHENWOOD_DOOR, AtomicBlocks.ASHENWOOD_TRAPDOOR);
 
 
 
@@ -190,6 +178,27 @@ public class AtomicRecipeProvider extends RecipeProvider {
         //         ResourceKey.create(Registries.RECIPE, Identifier.fromNamespaceAndPath(TutorialMod.MOD_ID, "kaupen")));
     }
 
+    protected void allTools(RecipeOutput recipeOutput, ItemLike ingotItem, ItemLike stickItem, ItemLike swordItem, ItemLike spearItem, ItemLike pickaxeItem, ItemLike axeItem, ItemLike shovelItem, ItemLike hoeItem ) {
+        shaped(RecipeCategory.COMBAT, swordItem).pattern("I").pattern("I").pattern("S").define('I', ingotItem).define('S', stickItem).unlockedBy("has_"+getItemName(ingotItem), has(ingotItem)).unlockedBy("has_"+getItemName(stickItem), has(stickItem)).save(output);
+        shaped(RecipeCategory.COMBAT, spearItem).pattern("  I").pattern(" S ").pattern("S  ").define('I', ingotItem).define('S', stickItem).unlockedBy("has_"+getItemName(ingotItem), has(ingotItem)).unlockedBy("has_"+getItemName(stickItem), has(stickItem)).save(output);
+
+        shaped(RecipeCategory.TOOLS, pickaxeItem).pattern("III").pattern(" S ").pattern(" S ").define('I', ingotItem).define('S', stickItem).unlockedBy("has_"+getItemName(ingotItem), has(ingotItem)).unlockedBy("has_"+getItemName(stickItem), has(stickItem)).save(output);
+        shaped(RecipeCategory.TOOLS, axeItem).pattern("I").pattern("S").pattern("S").define('I', ingotItem).define('S', stickItem).unlockedBy("has_"+getItemName(ingotItem), has(ingotItem)).unlockedBy("has_"+getItemName(stickItem), has(stickItem)).save(output);
+        shaped(RecipeCategory.TOOLS, shovelItem).pattern("II").pattern("IS").pattern(" S").define('I', ingotItem).define('S', stickItem).unlockedBy("has_"+getItemName(ingotItem), has(ingotItem)).unlockedBy("has_"+getItemName(stickItem), has(stickItem)).save(output);
+        shaped(RecipeCategory.TOOLS, hoeItem).pattern("II").pattern(" S").pattern(" S").define('I', ingotItem).define('S', stickItem).unlockedBy("has_"+getItemName(ingotItem), has(ingotItem)).unlockedBy("has_"+getItemName(stickItem), has(stickItem)).save(output);
+    }
+
+    protected void allWoodenObjects(RecipeOutput recipeOutput, String group, ItemLike plankItem, ItemLike stairItem, ItemLike slabItem, ItemLike buttonItem, ItemLike pressurePlateItem, ItemLike fenceItem, ItemLike fenceGateItem, ItemLike wallItem, ItemLike doorItem, ItemLike trapdoorItem) {
+        stairBuilder(stairItem, Ingredient.of(plankItem)).group(group).unlockedBy("has_planks", has(plankItem)).save(recipeOutput);
+        slab(RecipeCategory.BUILDING_BLOCKS, slabItem, plankItem);
+        buttonBuilder(buttonItem, Ingredient.of(plankItem)).group(group).unlockedBy("has_planks", has(plankItem)).save(recipeOutput);
+        pressurePlate(pressurePlateItem, plankItem);
+        fenceBuilder(fenceItem, Ingredient.of(plankItem)).group(group).unlockedBy("has_planks", has(plankItem)).save(recipeOutput);
+        fenceGateBuilder(fenceGateItem, Ingredient.of(plankItem)).group(group).unlockedBy("has_planks", has(plankItem)).save(recipeOutput);
+        wall(RecipeCategory.BUILDING_BLOCKS, wallItem, plankItem);
+        doorBuilder(doorItem, Ingredient.of(plankItem)).group(group).unlockedBy("has_planks", has(plankItem)).save(recipeOutput);
+        trapdoorBuilder(trapdoorItem, Ingredient.of(plankItem)).group(group).unlockedBy("has_planks", has(plankItem)).save(recipeOutput);
+    }
 
     protected void solidBlockRecipe(RecipeOutput recipeOutput, ItemLike ingotItem, ItemLike blockItem, RecipeCategory pCategory) {
         // Create ingot > nugget recipe

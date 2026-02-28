@@ -31,6 +31,8 @@ public class AtomicItemTagProvider extends ItemTagsProvider {
 
         tag(ItemTags.SWORDS)
                 .add(AtomicItems.BUNGERITE_ALLOY_SWORD.get());
+        tag(ItemTags.SPEARS)
+                .add(AtomicItems.BUNGERITE_ALLOY_SPEAR.get());
         tag(ItemTags.PICKAXES)
                 .add(AtomicItems.BUNGERITE_ALLOY_PICKAXE.get());
         tag(ItemTags.SHOVELS)

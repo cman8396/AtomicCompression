@@ -64,6 +64,7 @@ public class AtomicModelProvider extends ModelProvider {
 
         /* TOOLS */
         itemModels.generateFlatItem(AtomicItems.BUNGERITE_ALLOY_SWORD.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateSpear(AtomicItems.BUNGERITE_ALLOY_SPEAR.get());
         itemModels.generateFlatItem(AtomicItems.BUNGERITE_ALLOY_SHOVEL.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModels.generateFlatItem(AtomicItems.BUNGERITE_ALLOY_PICKAXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModels.generateFlatItem(AtomicItems.BUNGERITE_ALLOY_AXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);

@@ -1,4 +1,4 @@
-// 1.21.11	2026-02-22T17:31:45.735115	Tags for minecraft:item mod id atomiccompression
+// 1.21.11	2026-02-28T21:10:15.2013298	Tags for minecraft:item mod id atomiccompression
 b2aff78501eff51e23253dc8530d02056b395777 data/atomiccompression/tags/item/bungerite_alloy_repairable.json
 365f817a877a234063d623305d49526133afd168 data/minecraft/tags/item/axes.json
 548de33cab10a9f092d5f757ae7051ad336cf411 data/minecraft/tags/item/hoes.json
@@ -6,5 +6,6 @@ d9118eb20aca2e5bd35ea2d085dac5f7a44157ce data/minecraft/tags/item/logs_that_burn
 d9f41a024a0ff8fb9ecb33e7ee52117138a4146e data/minecraft/tags/item/pickaxes.json
 9366751260f59abaad2a059daedbe1e75650b5ea data/minecraft/tags/item/planks.json
 5907c5291ae28ab34140baeaaaf2fd48124bfd12 data/minecraft/tags/item/shovels.json
+6619ad475328b600f5db38266932888768e67dff data/minecraft/tags/item/spears.json
 708740d2e0fca9f7bf5c1fc09507c30f06da092a data/minecraft/tags/item/swords.json
 b2aff78501eff51e23253dc8530d02056b395777 data/minecraft/tags/item/trim_materials.json
