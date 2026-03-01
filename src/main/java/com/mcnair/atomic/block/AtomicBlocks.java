@@ -1,23 +1,16 @@
 package com.mcnair.atomic.block;
 
 import com.mcnair.atomic.AtomicCompression;
-import com.mcnair.atomic.block.custom.extensions.AtomicLeavesBlock;
-import com.mcnair.atomic.block.custom.extensions.AtomicLogsBlock;
-import com.mcnair.atomic.block.custom.extensions.AtomicPlanksBlock;
-import com.mcnair.atomic.block.custom.extensions.AtomicSaplingBlock;
+import com.mcnair.atomic.block.blocks.extensions.*;
 import com.mcnair.atomic.item.AtomicItems;
-import com.mcnair.atomic.particle.AtomicParticles;
 import com.mcnair.atomic.worldgen.tree.AtomicTreeGrower;
-import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ColorParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.util.ColorRGBA;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
@@ -26,7 +19,6 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-import java.util.List;
 import java.util.function.Function;
 
 public class AtomicBlocks {
@@ -108,11 +100,11 @@ public class AtomicBlocks {
     public static final DeferredBlock<Block> BUNGERITE_ALLOY_BLOCK = registerBlock("bungerite_alloy_block",
             (properties) -> new Block(
                     properties.strength(50f, 1200f).sound(SoundType.NETHERITE_BLOCK)));
-    public static final DeferredBlock<Block> ATOMIC_BLOCK = registerBlock("atomic_block",
-            (properties) -> new Block(
+    public static final DeferredBlock<AtomicShardBlock> ATOMIC_BLOCK = registerBlock("atomic_block",
+            (properties) -> new AtomicShardBlock(
                     properties.strength(5f, 6f).sound(SoundType.STONE)));
-    public static final DeferredBlock<Block> EMPOWERED_ATOMIC_BLOCK = registerBlock("empowered_atomic_block",
-            (properties) -> new Block(
+    public static final DeferredBlock<AtomicShardBlock> EMPOWERED_ATOMIC_BLOCK = registerBlock("empowered_atomic_block",
+            (properties) -> new AtomicShardBlock(
                     properties.strength(5f, 6f).sound(SoundType.STONE)));
 
 

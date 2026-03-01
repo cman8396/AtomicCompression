@@ -19,6 +19,7 @@
   "block.atomiccompression.end_atomic_ore": "End Atomic Ore",
 
   "block.atomiccompression.atomic_glass": "Atomic Glass",
+  "block.atomiccompression.atomic_glass_pane": "Atomic Glass Pane",
   "block.atomiccompression.dense_basalt": "Dense Basalt",
   "block.atomiccompression.gunpowder_block": "Block of Gunpowder",
   "block.atomiccompression.raw_sulfur_block": "Block of Raw Sulfur",

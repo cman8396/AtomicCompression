@@ -1,5 +1,6 @@
-// 1.21.11	2026-02-28T21:10:15.2013298	Tags for minecraft:item mod id atomiccompression
+// 1.21.11	2026-02-28T23:18:50.1409603	Tags for minecraft:item mod id atomiccompression
 b2aff78501eff51e23253dc8530d02056b395777 data/atomiccompression/tags/item/bungerite_alloy_repairable.json
+098de68b8d9e48214ecaa7ed0fa90a0a3dcdb156 data/atomiccompression/tags/item/transformable_items.json
 365f817a877a234063d623305d49526133afd168 data/minecraft/tags/item/axes.json
 548de33cab10a9f092d5f757ae7051ad336cf411 data/minecraft/tags/item/hoes.json
 d9118eb20aca2e5bd35ea2d085dac5f7a44157ce data/minecraft/tags/item/logs_that_burn.json

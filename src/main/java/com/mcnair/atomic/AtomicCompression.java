@@ -1,6 +1,7 @@
 package com.mcnair.atomic;
 
 import com.mcnair.atomic.block.entity.AtomicBlockEntities;
+import com.mcnair.atomic.particle.particles.ShardParticles;
 import com.mcnair.atomic.particle.AtomicParticles;
 import com.mcnair.atomic.recipe.AtomicRecipes;
 import com.mcnair.atomic.screen.AtomicMenuTypes;
@@ -48,6 +49,8 @@ public class AtomicCompression {
         AtomicBlocks.register(modEventBus);
         AtomicItems.register(modEventBus);
 
+        AtomicParticles.register(modEventBus);
+
         AtomicCreativeTabs.register(modEventBus);
 
         AtomicVillagers.register(modEventBus);
@@ -55,6 +58,7 @@ public class AtomicCompression {
         AtomicBlockEntities.register(modEventBus);
 
         AtomicMenuTypes.register(modEventBus);
+
         AtomicRecipes.register(modEventBus);
     }
 
@@ -93,10 +97,10 @@ public class AtomicCompression {
 //            ItemBlockRenderTypes.setRenderLayer(ModBlocks.RADISH_CROP.get(), ChunkSectionLayer.CUTOUT);
         }
 
-//        @SubscribeEvent
-//        public static void registerParticleFactories(RegisterParticleProvidersEvent event) {
-//            event.registerSpriteSet(AtomicParticles.ASHENWOOD_LEAVES.get(), AtomicAtomicParticle.Provider::new);
-//        }
+        @SubscribeEvent
+        public static void registerParticleFactories(RegisterParticleProvidersEvent event) {
+            event.registerSpriteSet(AtomicParticles.SHARD_PARTICLES.get(), ShardParticles.Provider::new);
+        }
 
 //        @SubscribeEvent
 //        public static void registerBER(EntityRenderersEvent.RegisterRenderers event) {

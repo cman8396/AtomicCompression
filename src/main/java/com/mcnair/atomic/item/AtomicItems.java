@@ -1,7 +1,7 @@
 package com.mcnair.atomic.item;
 
 import com.mcnair.atomic.AtomicCompression;
-import com.mcnair.atomic.item.custom.PickaxeItem;
+import com.mcnair.atomic.item.extensions.PickaxeItem;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.*;

@@ -1,15 +1,14 @@
-package com.mcnair.atomic.block.custom.extensions;
+package com.mcnair.atomic.block.blocks.extensions;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.block.UntintedParticleLeavesBlock;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class AtomicLeavesBlock extends UntintedParticleLeavesBlock {
-    public AtomicLeavesBlock(float leafParticleChance, ParticleOptions leafParticle, Properties properties) {
-        super(leafParticleChance, leafParticle, properties);
+public class AtomicPlanksBlock extends Block {
+    public AtomicPlanksBlock(Properties properties) {
+        super(properties);
     }
 
     @Override
@@ -19,11 +18,11 @@ public class AtomicLeavesBlock extends UntintedParticleLeavesBlock {
 
     @Override
     public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-        return 40;
+        return 15;
     }
 
     @Override
     public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-        return 20;
+        return 4;
     }
 }

@@ -7,6 +7,7 @@ import com.mcnair.atomic.utility.AtomicTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.data.ItemTagsProvider;
 
 import java.util.concurrent.CompletableFuture;
@@ -19,12 +20,9 @@ public class AtomicItemTagProvider extends ItemTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
 
-//        tag(AtomicTags.Items.TRANSFORMABLE_ITEMS)
-//                .add(AtomicItems.BISMUTH.get())
-//                .add(AtomicItems.RAW_BISMUTH.get())
-//                .add(Items.COAL)
-//                .add(Items.STICK)
-//                .add(Items.COMPASS);
+        tag(AtomicTags.Items.TRANSFORMABLE_ITEMS)
+                .add(Blocks.GRASS_BLOCK.asItem())
+                .add(Blocks.DIRT.asItem());
 
         tag(AtomicTags.Items.BUNGERITE_ALLOY_REPAIRABLE)
                 .add(AtomicItems.BUNGERITE_ALLOY_INGOT.get());
