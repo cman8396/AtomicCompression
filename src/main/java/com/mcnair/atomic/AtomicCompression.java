@@ -1,6 +1,7 @@
 package com.mcnair.atomic;
 
 import com.mcnair.atomic.block.entity.AtomicBlockEntities;
+import com.mcnair.atomic.particle.particles.BadParticles;
 import com.mcnair.atomic.particle.particles.ShardParticles;
 import com.mcnair.atomic.particle.AtomicParticles;
 import com.mcnair.atomic.recipe.AtomicRecipes;
@@ -100,6 +101,7 @@ public class AtomicCompression {
         @SubscribeEvent
         public static void registerParticleFactories(RegisterParticleProvidersEvent event) {
             event.registerSpriteSet(AtomicParticles.SHARD_PARTICLES.get(), ShardParticles.Provider::new);
+            event.registerSpriteSet(AtomicParticles.BAD_PARTICLES.get(), BadParticles.Provider::new);
         }
 
 //        @SubscribeEvent
