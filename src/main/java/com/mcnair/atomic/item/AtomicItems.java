@@ -24,18 +24,18 @@ public class AtomicItems {
     public static final DeferredItem<Item> SALTPETER_DUST = ITEMS.register("saltpeter_dust", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
 
     /* BLOCK DROPS - FINISHED ITEMS */
-    public static final DeferredItem<Item> EMPOWERED_ATOMIC_SHARD = ITEMS.register("empowered_atomic_shard", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
+    public static final DeferredItem<Item> EMPOWERED_ATOMIC_SHARD = ITEMS.register("empowered_atomic_shard", registryName -> new Item(new Item.Properties().rarity(Rarity.RARE).setId(ResourceKey.create(Registries.ITEM, registryName))));
     public static final DeferredItem<Item> LEAD_INGOT = ITEMS.register("lead_ingot", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
     public static final DeferredItem<Item> LEAD_NUGGET = ITEMS.register("lead_nugget", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
-    public static final DeferredItem<Item> REFINED_BUNGERITE = ITEMS.register("refined_bungerite", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
-    public static final DeferredItem<Item> REFINED_BUNGERITE_NUGGET = ITEMS.register("refined_bungerite_nugget", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
-    public static final DeferredItem<Item> BUNGERITE_ALLOY_INGOT = ITEMS.register("bungerite_alloy_ingot", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
-    public static final DeferredItem<Item> BUNGERITE_ALLOY_NUGGET = ITEMS.register("bungerite_alloy_nugget", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
+    public static final DeferredItem<Item> REFINED_BUNGERITE = ITEMS.register("refined_bungerite", registryName -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON).setId(ResourceKey.create(Registries.ITEM, registryName))));
+    public static final DeferredItem<Item> REFINED_BUNGERITE_NUGGET = ITEMS.register("refined_bungerite_nugget", registryName -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON).setId(ResourceKey.create(Registries.ITEM, registryName))));
+    public static final DeferredItem<Item> BUNGERITE_ALLOY_INGOT = ITEMS.register("bungerite_alloy_ingot", registryName -> new Item(new Item.Properties().rarity(Rarity.RARE).setId(ResourceKey.create(Registries.ITEM, registryName))));
+    public static final DeferredItem<Item> BUNGERITE_ALLOY_NUGGET = ITEMS.register("bungerite_alloy_nugget", registryName -> new Item(new Item.Properties().rarity(Rarity.RARE).setId(ResourceKey.create(Registries.ITEM, registryName))));
 
     /* CRAFTING INGREDIENTS */
-    public static final DeferredItem<Item> OBSIDIAN_SHARD = ITEMS.register("obsidian_shard", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
+    public static final DeferredItem<Item> OBSIDIAN_CHUNK = ITEMS.register("obsidian_chunk", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
     public static final DeferredItem<Item> BASALT_TOOL_SHAFT = ITEMS.register("basalt_tool_shaft", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
-    public static final DeferredItem<Item> ATOMIC_TOOL_SHAFT = ITEMS.register("atomic_tool_shaft", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
+    public static final DeferredItem<Item> ATOMIC_TOOL_SHAFT = ITEMS.register("atomic_tool_shaft", registryName -> new Item(new Item.Properties().rarity(Rarity.RARE).setId(ResourceKey.create(Registries.ITEM, registryName))));
     public static final DeferredItem<Item> ATOMIC_STABILIZER = ITEMS.register("atomic_stabilizer", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
 
     /* TOOLS */

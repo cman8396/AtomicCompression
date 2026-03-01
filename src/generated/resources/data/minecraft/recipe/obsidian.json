@@ -2,12 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "N": "atomiccompression:obsidian_shard"
+    "C": "atomiccompression:obsidian_chunk"
   },
   "pattern": [
-    "NNN",
-    "NNN",
-    "NNN"
+    "CC",
+    "CC"
   ],
   "result": {
     "count": 1,

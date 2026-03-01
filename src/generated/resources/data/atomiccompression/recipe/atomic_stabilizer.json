@@ -2,8 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "L": "atomiccompression:lead_nugget",
-    "O": "atomiccompression:obsidian_shard"
+    "L": "atomiccompression:lead_ingot",
+    "O": "atomiccompression:obsidian_chunk"
   },
   "pattern": [
     "OLO",

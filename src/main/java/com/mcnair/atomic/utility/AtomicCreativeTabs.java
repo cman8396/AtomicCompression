@@ -93,7 +93,7 @@ public class AtomicCreativeTabs {
                         output.accept(AtomicItems.ATOMIC_SHARD.get());
                         output.accept(AtomicItems.EMPOWERED_ATOMIC_SHARD.get());
 
-                        output.accept(AtomicItems.OBSIDIAN_SHARD.get());
+                        output.accept(AtomicItems.OBSIDIAN_CHUNK.get());
                         output.accept(AtomicItems.BASALT_TOOL_SHAFT.get());
                         output.accept(AtomicItems.ATOMIC_TOOL_SHAFT.get());
                         output.accept(AtomicItems.ATOMIC_STABILIZER.get());

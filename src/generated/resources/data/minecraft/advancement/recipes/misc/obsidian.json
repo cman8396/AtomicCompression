@@ -1,21 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_dense_basalt": {
+    "has_obsidian": {
       "conditions": {
         "items": [
           {
-            "items": "atomiccompression:dense_basalt"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "has_lead_ingot": {
-      "conditions": {
-        "items": [
-          {
-            "items": "atomiccompression:lead_ingot"
+            "items": "minecraft:obsidian"
           }
         ]
       },
@@ -33,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "atomiccompression:atomic_stabilizer"
+        "recipe": "minecraft:obsidian"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -41,14 +31,13 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_dense_basalt",
-      "has_obsidian_chunk",
-      "has_lead_ingot"
+      "has_obsidian",
+      "has_obsidian_chunk"
     ]
   ],
   "rewards": {
     "recipes": [
-      "atomiccompression:atomic_stabilizer"
+      "minecraft:obsidian"
     ]
   }
 }

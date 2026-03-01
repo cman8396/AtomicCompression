@@ -6,25 +6,14 @@ import com.mcnair.atomic.item.AtomicItems;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
-import net.minecraft.client.data.models.MultiVariant;
-import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
-import net.minecraft.client.data.models.blockstates.PropertyDispatch;
 import net.minecraft.client.data.models.model.*;
-import net.minecraft.client.renderer.block.model.Variant;
-import net.minecraft.client.renderer.block.model.VariantMutator;
-import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
 import net.minecraft.data.PackOutput;
-import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.HorizontalDirectionalBlock;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.EnumProperty;
 
 import java.util.stream.Stream;
 
-import static net.minecraft.client.data.models.BlockModelGenerators.*;
 import static net.minecraft.client.data.models.model.TextureMapping.getBlockTexture;
 
 public class AtomicModelProvider extends ModelProvider {
@@ -57,7 +46,7 @@ public class AtomicModelProvider extends ModelProvider {
         itemModels.generateFlatItem(AtomicItems.BUNGERITE_ALLOY_NUGGET.get(), ModelTemplates.FLAT_ITEM);
 
         /* CRAFTING INGREDIENTS */
-        itemModels.generateFlatItem(AtomicItems.OBSIDIAN_SHARD.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(AtomicItems.OBSIDIAN_CHUNK.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(AtomicItems.BASALT_TOOL_SHAFT.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(AtomicItems.ATOMIC_TOOL_SHAFT.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(AtomicItems.ATOMIC_STABILIZER.get(), ModelTemplates.FLAT_ITEM);

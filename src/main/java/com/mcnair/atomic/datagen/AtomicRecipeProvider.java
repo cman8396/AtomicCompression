@@ -46,6 +46,10 @@ public class AtomicRecipeProvider extends RecipeProvider {
                 .requires(AtomicBlocks.DENSE_BASALT)
                 .unlockedBy("has_dense_basalt", has(AtomicBlocks.DENSE_BASALT))
                 .save(output);
+        shapeless(RecipeCategory.MISC, AtomicItems.OBSIDIAN_CHUNK, 4)
+                .requires(Blocks.OBSIDIAN)
+                .unlockedBy("has_obsidian", has(Blocks.OBSIDIAN))
+                .save(output);
         shapeless(RecipeCategory.MISC, Items.GUNPOWDER, 3)
                 .requires(AtomicItems.SULFUR_DUST)
                 .requires(AtomicItems.SALTPETER_DUST)
@@ -72,6 +76,13 @@ public class AtomicRecipeProvider extends RecipeProvider {
 
 
         /* SHAPED RECIPES */
+        shaped(RecipeCategory.MISC, Blocks.OBSIDIAN)
+                .pattern("CC")
+                .pattern("CC")
+                .define('C', AtomicItems.OBSIDIAN_CHUNK.get())
+                .unlockedBy("has_obsidian", has(Blocks.OBSIDIAN))
+                .unlockedBy("has_obsidian_chunk", has(AtomicItems.OBSIDIAN_CHUNK))
+                .save(output);
         shaped(RecipeCategory.MISC, AtomicBlocks.ATOMIC_GLASS.get(), 8)
                 .pattern("GGG")
                 .pattern("GEG")
@@ -104,9 +115,11 @@ public class AtomicRecipeProvider extends RecipeProvider {
                 .pattern("OLO")
                 .pattern("L L")
                 .pattern("OLO")
-                .define('L', AtomicItems.LEAD_NUGGET.get())
-                .define('O', AtomicItems.OBSIDIAN_SHARD.get())
+                .define('L', AtomicItems.LEAD_INGOT.get())
+                .define('O', AtomicItems.OBSIDIAN_CHUNK.get())
                 .unlockedBy("has_dense_basalt", has(AtomicBlocks.DENSE_BASALT))
+                .unlockedBy("has_obsidian_chunk", has(AtomicItems.OBSIDIAN_CHUNK))
+                .unlockedBy("has_lead_ingot", has(AtomicItems.LEAD_INGOT))
                 .save(output);
         shaped(RecipeCategory.MISC, AtomicItems.ATOMIC_TOOL_SHAFT.get())
                 .pattern(" B ")
@@ -117,7 +130,7 @@ public class AtomicRecipeProvider extends RecipeProvider {
                 .define('E', AtomicItems.EMPOWERED_ATOMIC_SHARD.get())
                 .unlockedBy("has_dense_basalt", has(AtomicBlocks.DENSE_BASALT))
                 .unlockedBy("has_lead_ingot", has(AtomicItems.LEAD_INGOT))
-                .unlockedBy("has_obsidian_shard", has(AtomicItems.OBSIDIAN_SHARD))
+                .unlockedBy("has_obsidian_chunk", has(AtomicItems.OBSIDIAN_CHUNK))
                 .unlockedBy("has_empowered_atomic_shard", has(AtomicItems.EMPOWERED_ATOMIC_SHARD))
                 .unlockedBy("has_atomic_shard", has(AtomicItems.ATOMIC_SHARD))
                 .save(output);
@@ -148,7 +161,6 @@ public class AtomicRecipeProvider extends RecipeProvider {
 
 
         /* SOLID BLOCK CONVERSION */
-        solidBlockRecipe(output, AtomicItems.OBSIDIAN_SHARD, Blocks.OBSIDIAN, RecipeCategory.MISC);
         solidBlockRecipe(output, Items.GUNPOWDER, AtomicBlocks.GUNPOWDER_BLOCK, RecipeCategory.MISC);
         solidBlockRecipe(output, AtomicItems.RAW_SULFUR, AtomicBlocks.RAW_SULFUR_BLOCK, RecipeCategory.MISC);
         solidBlockRecipe(output, AtomicItems.RAW_SALTPETER, AtomicBlocks.RAW_SALTPETER_BLOCK, RecipeCategory.MISC);
@@ -171,21 +183,19 @@ public class AtomicRecipeProvider extends RecipeProvider {
         allWoodenObjects(output, "ashenwood", AtomicBlocks.ASHENWOOD_PLANKS, AtomicBlocks.ASHENWOOD_STAIRS, AtomicBlocks.ASHENWOOD_SLAB, AtomicBlocks.ASHENWOOD_BUTTON, AtomicBlocks.ASHENWOOD_PRESSURE_PLATE, AtomicBlocks.ASHENWOOD_FENCE, AtomicBlocks.ASHENWOOD_FENCE_GATE, AtomicBlocks.ASHENWOOD_WALL, AtomicBlocks.ASHENWOOD_DOOR, AtomicBlocks.ASHENWOOD_TRAPDOOR);
 
 
-
-
         // Throws error
         // trimSmithing(AtomicItems.KAUPEN_SMITHING_TEMPLATE.get(), ResourceKey.create(Registries.TRIM_PATTERN, Identifier.fromNamespaceAndPath(TutorialMod.MOD_ID, "kaupen")),
         //         ResourceKey.create(Registries.RECIPE, Identifier.fromNamespaceAndPath(TutorialMod.MOD_ID, "kaupen")));
     }
 
-    protected void allTools(RecipeOutput recipeOutput, ItemLike ingotItem, ItemLike stickItem, ItemLike swordItem, ItemLike spearItem, ItemLike pickaxeItem, ItemLike axeItem, ItemLike shovelItem, ItemLike hoeItem ) {
-        shaped(RecipeCategory.COMBAT, swordItem).pattern("I").pattern("I").pattern("S").define('I', ingotItem).define('S', stickItem).unlockedBy("has_"+getItemName(ingotItem), has(ingotItem)).unlockedBy("has_"+getItemName(stickItem), has(stickItem)).save(output);
-        shaped(RecipeCategory.COMBAT, spearItem).pattern("  I").pattern(" S ").pattern("S  ").define('I', ingotItem).define('S', stickItem).unlockedBy("has_"+getItemName(ingotItem), has(ingotItem)).unlockedBy("has_"+getItemName(stickItem), has(stickItem)).save(output);
+    protected void allTools(RecipeOutput recipeOutput, ItemLike ingotItem, ItemLike stickItem, ItemLike swordItem, ItemLike spearItem, ItemLike pickaxeItem, ItemLike axeItem, ItemLike shovelItem, ItemLike hoeItem) {
+        shaped(RecipeCategory.COMBAT, swordItem).pattern("I").pattern("I").pattern("S").define('I', ingotItem).define('S', stickItem).unlockedBy("has_" + getItemName(ingotItem), has(ingotItem)).unlockedBy("has_" + getItemName(stickItem), has(stickItem)).save(output);
+        shaped(RecipeCategory.COMBAT, spearItem).pattern("  I").pattern(" S ").pattern("S  ").define('I', ingotItem).define('S', stickItem).unlockedBy("has_" + getItemName(ingotItem), has(ingotItem)).unlockedBy("has_" + getItemName(stickItem), has(stickItem)).save(output);
 
-        shaped(RecipeCategory.TOOLS, pickaxeItem).pattern("III").pattern(" S ").pattern(" S ").define('I', ingotItem).define('S', stickItem).unlockedBy("has_"+getItemName(ingotItem), has(ingotItem)).unlockedBy("has_"+getItemName(stickItem), has(stickItem)).save(output);
-        shaped(RecipeCategory.TOOLS, axeItem).pattern("I").pattern("S").pattern("S").define('I', ingotItem).define('S', stickItem).unlockedBy("has_"+getItemName(ingotItem), has(ingotItem)).unlockedBy("has_"+getItemName(stickItem), has(stickItem)).save(output);
-        shaped(RecipeCategory.TOOLS, shovelItem).pattern("II").pattern("IS").pattern(" S").define('I', ingotItem).define('S', stickItem).unlockedBy("has_"+getItemName(ingotItem), has(ingotItem)).unlockedBy("has_"+getItemName(stickItem), has(stickItem)).save(output);
-        shaped(RecipeCategory.TOOLS, hoeItem).pattern("II").pattern(" S").pattern(" S").define('I', ingotItem).define('S', stickItem).unlockedBy("has_"+getItemName(ingotItem), has(ingotItem)).unlockedBy("has_"+getItemName(stickItem), has(stickItem)).save(output);
+        shaped(RecipeCategory.TOOLS, pickaxeItem).pattern("III").pattern(" S ").pattern(" S ").define('I', ingotItem).define('S', stickItem).unlockedBy("has_" + getItemName(ingotItem), has(ingotItem)).unlockedBy("has_" + getItemName(stickItem), has(stickItem)).save(output);
+        shaped(RecipeCategory.TOOLS, axeItem).pattern("I").pattern("S").pattern("S").define('I', ingotItem).define('S', stickItem).unlockedBy("has_" + getItemName(ingotItem), has(ingotItem)).unlockedBy("has_" + getItemName(stickItem), has(stickItem)).save(output);
+        shaped(RecipeCategory.TOOLS, shovelItem).pattern("II").pattern("IS").pattern(" S").define('I', ingotItem).define('S', stickItem).unlockedBy("has_" + getItemName(ingotItem), has(ingotItem)).unlockedBy("has_" + getItemName(stickItem), has(stickItem)).save(output);
+        shaped(RecipeCategory.TOOLS, hoeItem).pattern("II").pattern(" S").pattern(" S").define('I', ingotItem).define('S', stickItem).unlockedBy("has_" + getItemName(ingotItem), has(ingotItem)).unlockedBy("has_" + getItemName(stickItem), has(stickItem)).save(output);
     }
 
     protected void allWoodenObjects(RecipeOutput recipeOutput, String group, ItemLike plankItem, ItemLike stairItem, ItemLike slabItem, ItemLike buttonItem, ItemLike pressurePlateItem, ItemLike fenceItem, ItemLike fenceGateItem, ItemLike wallItem, ItemLike doorItem, ItemLike trapdoorItem) {

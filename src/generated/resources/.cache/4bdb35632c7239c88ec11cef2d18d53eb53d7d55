@@ -1,4 +1,4 @@
-// 1.21.11	2026-02-28T21:12:44.4034456	Model Definitions - atomiccompression
+// 1.21.11	2026-03-01T02:01:01.0338292	Model Definitions - atomiccompression
 a091d89fa96a671d02735f5ecbd6d977cbd1215f assets/atomiccompression/blockstates/ashenwood_button.json
 e2b7a39f0d6a62e13cf68f8693ed19757faa0097 assets/atomiccompression/blockstates/ashenwood_door.json
 9d5b1ffd773648795c52b422aba3c333507dc4b1 assets/atomiccompression/blockstates/ashenwood_fence.json
@@ -89,7 +89,7 @@ e675050b55818459c49dd3b4314dfbe29346068a assets/atomiccompression/items/lead_ing
 ba72cf74a65006555c39cda9ac2720209db6aa9f assets/atomiccompression/items/lead_nugget.json
 26aaabdb74a88899eedc8e88156d28f3ce64373f assets/atomiccompression/items/lead_ore.json
 24e66dc1b6c3047da72af973efa3c4b266f0030d assets/atomiccompression/items/nether_atomic_ore.json
-2f061263de3ac639f884476acf3ec81ff90a2dfc assets/atomiccompression/items/obsidian_shard.json
+aaf1e80a991a2dda18fcf73ad998349f721399b6 assets/atomiccompression/items/obsidian_chunk.json
 4286bc97cddfa7d89e48a3f09812800b35c3b27b assets/atomiccompression/items/raw_bungerite.json
 2ad3503f57d9b47b1322d0fccf7f815130013919 assets/atomiccompression/items/raw_bungerite_block.json
 93d95935657c827fcf62c5c619f9819cb7f26b83 assets/atomiccompression/items/raw_lead.json
@@ -199,7 +199,7 @@ a9269afe0856c0f7f99b8a961ece283a9cef7a01 assets/atomiccompression/models/item/bu
 fd98a12a889135547c1d373b23a5fffd0c0135ff assets/atomiccompression/models/item/empowered_atomic_shard.json
 4233a6129d741c9cb4142855aadcda1aa063d658 assets/atomiccompression/models/item/lead_ingot.json
 733b4ca5efea7919eddf808364ba4ed77eea8e09 assets/atomiccompression/models/item/lead_nugget.json
-06677d325cd81088859c65d502fc493ba7718602 assets/atomiccompression/models/item/obsidian_shard.json
+e74fdadc21ed6490eb0a2fabe1ded2cdcdac174a assets/atomiccompression/models/item/obsidian_chunk.json
 d7d5b85a7045f23ca8fb839b426151201d03d34c assets/atomiccompression/models/item/raw_bungerite.json
 491d579061f3d3c0cc7b58eeb60d360823d493fb assets/atomiccompression/models/item/raw_lead.json
 0bdaeda3c2558a20c61578181dd45cec2d5ed912 assets/atomiccompression/models/item/raw_saltpeter.json

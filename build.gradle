@@ -18,7 +18,18 @@ version = mod_version
 group = mod_group_id
 
 repositories {
-    // Add here additional repositories if required by some of the dependencies below.
+
+    //JEI
+    maven {
+        name = "JEI maven"
+        url = uri("https://dvs1.progwml6.com/files/maven")
+    }
+
+    // location of a maven mirror for JEI files, as a fallback
+    maven {
+        name = "ModMaven"
+        url = "https://modmaven.dev"
+    }
 }
 
 base {
@@ -133,6 +144,10 @@ dependencies {
     // For more info:
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
+
+    // JEI
+    compileOnlyApi(("mezz.jei:jei-${mc_version}-neoforge-api:${jei_version}"))
+    runtimeOnly(("mezz.jei:jei-${mc_version}-neoforge:${jei_version}"))
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.

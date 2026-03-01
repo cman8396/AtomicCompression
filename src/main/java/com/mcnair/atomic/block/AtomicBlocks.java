@@ -100,11 +100,11 @@ public class AtomicBlocks {
     public static final DeferredBlock<Block> BUNGERITE_ALLOY_BLOCK = registerBlock("bungerite_alloy_block",
             (properties) -> new Block(
                     properties.strength(50f, 1200f).sound(SoundType.NETHERITE_BLOCK)));
-    public static final DeferredBlock<AtomicShardBlock> ATOMIC_BLOCK = registerBlock("atomic_block",
-            (properties) -> new AtomicShardBlock(
+    public static final DeferredBlock<Block> ATOMIC_BLOCK = registerBlock("atomic_block",
+            (properties) -> new Block(
                     properties.strength(5f, 6f).sound(SoundType.STONE)));
-    public static final DeferredBlock<AtomicShardBlock> EMPOWERED_ATOMIC_BLOCK = registerBlock("empowered_atomic_block",
-            (properties) -> new AtomicShardBlock(
+    public static final DeferredBlock<Block> EMPOWERED_ATOMIC_BLOCK = registerBlock("empowered_atomic_block",
+            (properties) -> new Block(
                     properties.strength(5f, 6f).sound(SoundType.STONE)));
 
 
