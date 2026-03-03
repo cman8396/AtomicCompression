@@ -13,6 +13,8 @@ public class AtomicTags {
         public static final TagKey<Block> NEEDS_BUNGERITE_ALLOY_TOOL = createTag("needs_bungerite_alloy_tool");
         public static final TagKey<Block> INCORRECT_FOR_BUNGERITE_ALLOY_TOOL = createTag("incorrect_for_bungerite_alloy_tool");
 
+        public static final TagKey<Block> MACHINE = createTag("machine");
+
         private static TagKey<Block> createTag(String name) {
             return BlockTags.create(Identifier.fromNamespaceAndPath(AtomicCompression.MOD_ID, name));
         }

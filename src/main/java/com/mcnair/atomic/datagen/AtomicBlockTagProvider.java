@@ -2,6 +2,7 @@ package com.mcnair.atomic.datagen;
 
 import com.mcnair.atomic.AtomicCompression;
 import com.mcnair.atomic.block.AtomicBlocks;
+import com.mcnair.atomic.utility.AtomicTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
@@ -71,10 +72,24 @@ public class AtomicBlockTagProvider extends BlockTagsProvider {
                 .add(AtomicBlocks.REFINED_BUNGERITE_BLOCK.get())
                 .add(AtomicBlocks.BUNGERITE_ALLOY_BLOCK.get());
 
-//        tag(BlockTags.FENCES).add(AtomicBlocks.BISMUTH_FENCE.get());
-//        tag(BlockTags.FENCE_GATES).add(AtomicBlocks.BISMUTH_FENCE_GATE.get());
-//        tag(BlockTags.WALLS).add(AtomicBlocks.BISMUTH_WALL.get());
-//
+        tag(BlockTags.FENCES).
+                add(AtomicBlocks.ASHENWOOD_FENCE.get());
+
+        tag(BlockTags.FENCE_GATES)
+                .add(AtomicBlocks.ASHENWOOD_FENCE_GATE.get());
+
+        tag(BlockTags.WALLS)
+                .add(AtomicBlocks.ASHENWOOD_WALL.get());
+
+        tag(AtomicTags.Blocks.MACHINE)
+                .add(AtomicBlocks.EXPLOSIVE_COMPACTOR.get());
+
+        tag(BlockTags.LOGS_THAT_BURN)
+                .add(AtomicBlocks.ASHENWOOD_LOG.get())
+                .add(AtomicBlocks.ASHENWOOD_WOOD.get())
+                .add(AtomicBlocks.STRIPPED_ASHENWOOD_LOG.get())
+                .add(AtomicBlocks.STRIPPED_ASHENWOOD_WOOD.get());
+
 //        tag(AtomicTags.Blocks.NEEDS_BISMUTH_TOOL)
 //                .add(AtomicBlocks.BISMUTH_LAMP.get())
 //                .addTag(BlockTags.NEEDS_IRON_TOOL);
@@ -83,10 +98,5 @@ public class AtomicBlockTagProvider extends BlockTagsProvider {
 //                .addTag(BlockTags.INCORRECT_FOR_IRON_TOOL)
 //                .remove(AtomicTags.Blocks.NEEDS_BISMUTH_TOOL);
 
-        this.tag(BlockTags.LOGS_THAT_BURN)
-                .add(AtomicBlocks.ASHENWOOD_LOG.get())
-                .add(AtomicBlocks.ASHENWOOD_WOOD.get())
-                .add(AtomicBlocks.STRIPPED_ASHENWOOD_LOG.get())
-                .add(AtomicBlocks.STRIPPED_ASHENWOOD_WOOD.get());
     }
 }

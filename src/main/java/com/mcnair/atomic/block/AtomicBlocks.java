@@ -1,7 +1,8 @@
 package com.mcnair.atomic.block;
 
 import com.mcnair.atomic.AtomicCompression;
-import com.mcnair.atomic.block.blocks.extensions.*;
+import com.mcnair.atomic.block.custom.ExplosiveCompactorBlock;
+import com.mcnair.atomic.block.extensions.*;
 import com.mcnair.atomic.item.AtomicItems;
 import com.mcnair.atomic.worldgen.tree.AtomicTreeGrower;
 import net.minecraft.core.particles.ColorParticleOption;
@@ -162,6 +163,7 @@ public class AtomicBlocks {
 
 
     /* ENTITIES */
+    public static final DeferredBlock<Block> EXPLOSIVE_COMPACTOR = registerBlock("explosive_compactor", ExplosiveCompactorBlock::new);
 
 
 

@@ -1,6 +1,7 @@
 package com.mcnair.atomic.recipe;
 
 import com.mcnair.atomic.AtomicCompression;
+import com.mcnair.atomic.recipe.recipes.ExplosiveCompactorRecipe;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
@@ -13,6 +14,7 @@ public class AtomicRecipes {
             DeferredRegister.create(Registries.RECIPE_SERIALIZER, AtomicCompression.MOD_ID);
     public static final DeferredRegister<RecipeType<?>> TYPES =
             DeferredRegister.create(Registries.RECIPE_TYPE, AtomicCompression.MOD_ID);
+
 
     public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<ExplosiveCompactorRecipe>> EXPLOSIVE_COMPACTOR_SERIALIZER =
             SERIALIZERS.register("explosive_compactor", ExplosiveCompactorRecipe.Serializer::new);

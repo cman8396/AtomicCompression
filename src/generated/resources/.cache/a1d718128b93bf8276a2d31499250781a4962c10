@@ -1,7 +1,11 @@
-// 1.21.11	2026-02-22T17:31:45.7320535	Tags for minecraft:block mod id atomiccompression
+// 1.21.11	2026-03-03T19:17:11.731675	Tags for minecraft:block mod id atomiccompression
+e9672bc0c5cdab9cc0ac720252771e3dfc718e8d data/atomiccompression/tags/block/machine.json
+9a7a1250d774f6cab78aac59d1a95f33cf6248b2 data/minecraft/tags/block/fences.json
+6ca499145b9f45117e4a1c01827f014419abaf58 data/minecraft/tags/block/fence_gates.json
 d9118eb20aca2e5bd35ea2d085dac5f7a44157ce data/minecraft/tags/block/logs_that_burn.json
 8c56ecaaf99c97007355a00419687cd30ee2f43b data/minecraft/tags/block/mineable/pickaxe.json
 9d9b196c79700e158ac070fc455dcdf889b5f83f data/minecraft/tags/block/mineable/shovel.json
 20682ca9a1bfdc11ebd14794604559c7253df667 data/minecraft/tags/block/needs_diamond_tool.json
 5ec0472f73637808551954b572191c8a04c267f5 data/minecraft/tags/block/needs_iron_tool.json
 1b2e2fc9af5276da263c1b0213118f1d6763928f data/minecraft/tags/block/needs_stone_tool.json
+6989ac3827cf4352df4e4d80e709a58ec678e909 data/minecraft/tags/block/walls.json

@@ -105,6 +105,8 @@ public class AtomicCreativeTabs {
                         output.accept(AtomicItems.BUNGERITE_ALLOY_AXE.get());
                         output.accept(AtomicItems.BUNGERITE_ALLOY_HOE.get());
 
+                        output.accept(AtomicBlocks.EXPLOSIVE_COMPACTOR.get());
+
                     }).build()
     );
 

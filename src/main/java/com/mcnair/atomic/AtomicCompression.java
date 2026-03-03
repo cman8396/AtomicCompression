@@ -1,11 +1,12 @@
 package com.mcnair.atomic;
 
-import com.mcnair.atomic.block.entity.AtomicBlockEntities;
+import com.mcnair.atomic.block.AtomicBlockEntities;
 import com.mcnair.atomic.particle.particles.BadParticles;
 import com.mcnair.atomic.particle.particles.ShardParticles;
 import com.mcnair.atomic.particle.AtomicParticles;
 import com.mcnair.atomic.recipe.AtomicRecipes;
 import com.mcnair.atomic.screen.AtomicMenuTypes;
+import com.mcnair.atomic.screen.custom.ExplosiveCompactorScreen;
 import com.mcnair.atomic.utility.AtomicCreativeTabs;
 import com.mcnair.atomic.block.AtomicBlocks;
 import com.mcnair.atomic.item.AtomicItems;
@@ -57,7 +58,6 @@ public class AtomicCompression {
         AtomicVillagers.register(modEventBus);
 
         AtomicBlockEntities.register(modEventBus);
-
         AtomicMenuTypes.register(modEventBus);
 
         AtomicRecipes.register(modEventBus);
@@ -65,8 +65,6 @@ public class AtomicCompression {
 
     private void commonSetup(FMLCommonSetupEvent event) {
         LOGGER.info("Atomic Compression > Started");
-
-        Config.ITEM_STRINGS.get().forEach((item) -> LOGGER.info("ITEM >> {}", item));
     }
 
     @SubscribeEvent
@@ -88,14 +86,6 @@ public class AtomicCompression {
 
             ItemBlockRenderTypes.setRenderLayer(AtomicBlocks.ASHENWOOD_DOOR.get(), ChunkSectionLayer.CUTOUT);
             ItemBlockRenderTypes.setRenderLayer(AtomicBlocks.ASHENWOOD_TRAPDOOR.get(), ChunkSectionLayer.CUTOUT);
-
-//            EntityRenderers.register(ModEntities.GECKO.get(), GeckoRenderer::new);
-//            EntityRenderers.register(ModEntities.TOMAHAWK.get(), TomahawkProjectileRenderer::new);
-//
-//            EntityRenderers.register(ModEntities.CHAIR_ENTITY.get(), ChairRenderer::new);
-
-//            ItemBlockRenderTypes.setRenderLayer(ModBlocks.GOJI_BERRY_BUSH.get(), ChunkSectionLayer.CUTOUT);
-//            ItemBlockRenderTypes.setRenderLayer(ModBlocks.RADISH_CROP.get(), ChunkSectionLayer.CUTOUT);
         }
 
         @SubscribeEvent
@@ -111,7 +101,7 @@ public class AtomicCompression {
 
         @SubscribeEvent
         public static void registerScreens(RegisterMenuScreensEvent event) {
-//            event.register(AtomicMenuTypes.EXPLOSIVE_COMPACTOR_MENU.get(), ExplosiveCompactorScreen::new);
+            event.register(AtomicMenuTypes.EXPLOSIVE_COMPACTOR_MENU.get(), ExplosiveCompactorScreen::new);
         }
     }
 

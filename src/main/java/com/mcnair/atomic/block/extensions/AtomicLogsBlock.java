@@ -1,4 +1,4 @@
-package com.mcnair.atomic.block.blocks.extensions;
+package com.mcnair.atomic.block.extensions;
 
 import com.mcnair.atomic.block.AtomicBlocks;
 import net.minecraft.core.BlockPos;

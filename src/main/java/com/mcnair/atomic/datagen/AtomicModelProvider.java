@@ -124,7 +124,7 @@ public class AtomicModelProvider extends ModelProvider {
                 .trapdoor(AtomicBlocks.ASHENWOOD_TRAPDOOR.get());
 
         /* ENTITIES */
-
+        blockModels.createTrivialCube(AtomicBlocks.EXPLOSIVE_COMPACTOR.get());
 
 //
 //        blockModels.createCropBlock(AtomicBlocks.RADISH_CROP.get(), RadishCropBlock.AGE,  0, 1, 2, 3);

@@ -1,12 +1,10 @@
-package com.mcnair.atomic.block.blocks.extensions;
+package com.mcnair.atomic.block.extensions;
 
 import com.mcnair.atomic.particle.AtomicParticles;
 import com.mcnair.atomic.utility.AtomicTags;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.util.ParticleUtils;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.item.ItemEntity;

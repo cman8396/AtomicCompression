@@ -1,5 +1,6 @@
-package com.mcnair.atomic.recipe;
+package com.mcnair.atomic.recipe.recipes;
 
+import com.mcnair.atomic.recipe.AtomicRecipes;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.HolderLookup;
@@ -12,7 +13,7 @@ import net.minecraft.world.level.Level;
 
 public record ExplosiveCompactorRecipe(Ingredient inputItem, ItemStack output) implements Recipe<ExplosiveCompactorRecipeInput> {
     // inputItem & output ==> Read From JSON File!
-    // ExplosiveCompactorRecipeInput --> INVENTORY of the Block Entity
+    // GrowthChamberRecipeInput --> INVENTORY of the Block Entity
 
     public NonNullList<Ingredient> getIngredients() {
         NonNullList<Ingredient> list = NonNullList.create();
@@ -21,16 +22,16 @@ public record ExplosiveCompactorRecipe(Ingredient inputItem, ItemStack output) i
     }
 
     @Override
-    public boolean matches(ExplosiveCompactorRecipeInput ExplosiveCompactorRecipeInput, Level level) {
+    public boolean matches(ExplosiveCompactorRecipeInput growthChamberRecipeInput, Level level) {
         if (level.isClientSide()) {
             return false;
         }
 
-        return inputItem.test(ExplosiveCompactorRecipeInput.getItem(0));
+        return inputItem.test(growthChamberRecipeInput.getItem(0));
     }
 
     @Override
-    public ItemStack assemble(ExplosiveCompactorRecipeInput ExplosiveCompactorRecipeInput, HolderLookup.Provider provider) {
+    public ItemStack assemble(ExplosiveCompactorRecipeInput growthChamberRecipeInput, HolderLookup.Provider provider) {
         return output.copy();
     }
 
