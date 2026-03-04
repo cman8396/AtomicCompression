@@ -1,4 +1,4 @@
-package com.mcnair.atomic.datagen;
+package com.mcnair.atomic.datagen.tags;
 
 import com.mcnair.atomic.AtomicCompression;
 import com.mcnair.atomic.block.AtomicBlocks;
@@ -40,22 +40,25 @@ public class AtomicItemTagProvider extends ItemTagsProvider {
         tag(ItemTags.HOES)
                 .add(AtomicItems.BUNGERITE_ALLOY_HOE.get());
 
-//        this.tag(ItemTags.TRIMMABLE_ARMOR)
+//        tag(ItemTags.TRIMMABLE_ARMOR)
 //                .add(AtomicItems.BISMUTH_HELMET.get())
 //                .add(AtomicItems.BISMUTH_CHESTPLATE.get())
 //                .add(AtomicItems.BISMUTH_LEGGINGS.get())
 //                .add(AtomicItems.BISMUTH_BOOTS.get());
 
-        this.tag(ItemTags.TRIM_MATERIALS)
+        tag(ItemTags.TRIM_MATERIALS)
                 .add(AtomicItems.BUNGERITE_ALLOY_INGOT.get());
 
-        this.tag(ItemTags.LOGS_THAT_BURN)
+        tag(ItemTags.LOGS_THAT_BURN)
                 .add(AtomicBlocks.ASHENWOOD_LOG.get().asItem())
                 .add(AtomicBlocks.ASHENWOOD_WOOD.get().asItem())
                 .add(AtomicBlocks.STRIPPED_ASHENWOOD_LOG.get().asItem())
                 .add(AtomicBlocks.STRIPPED_ASHENWOOD_WOOD.get().asItem());
 
-        this.tag(ItemTags.PLANKS)
+        tag(ItemTags.PLANKS)
                 .add(AtomicBlocks.ASHENWOOD_PLANKS.asItem());
+
+        tag(ItemTags.WOODEN_DOORS)
+                .add(AtomicBlocks.ASHENWOOD_DOOR.asItem());
     }
 }

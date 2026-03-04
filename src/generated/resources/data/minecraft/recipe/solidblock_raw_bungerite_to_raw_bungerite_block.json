@@ -2,12 +2,12 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "N": "atomiccompression:raw_bungerite"
+    "I": "atomiccompression:raw_bungerite"
   },
   "pattern": [
-    "NNN",
-    "NNN",
-    "NNN"
+    "III",
+    "III",
+    "III"
   ],
   "result": {
     "count": 1,

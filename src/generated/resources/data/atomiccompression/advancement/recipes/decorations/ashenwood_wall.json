@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "atomiccompression:ashenwood_slab"
+        "recipe": "atomiccompression:ashenwood_wall"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "atomiccompression:ashenwood_slab"
+      "atomiccompression:ashenwood_wall"
     ]
   }
 }

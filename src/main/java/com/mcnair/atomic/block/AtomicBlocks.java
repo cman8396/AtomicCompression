@@ -19,6 +19,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
+import javax.annotation.Nullable;
 import java.util.function.Function;
 
 public class AtomicBlocks {
@@ -122,12 +123,12 @@ public class AtomicBlocks {
             (properties) -> new AtomicLogsBlock(
                     properties.strength(2.0f).sound(SoundType.CHERRY_WOOD).ignitedByLava()));
     public static final DeferredBlock<Block> ASHENWOOD_LEAVES = registerBlock("ashenwood_leaves",
-            (properties) -> new AtomicLeavesBlock(0.05f, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 118f,127f,118f),
+            (properties) -> new AtomicLeavesBlock(0.05f, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 118f, 127f, 118f),
                     properties.strength(0.2F).sound(SoundType.CHERRY_LEAVES).ignitedByLava()
                             .mapColor(MapColor.PLANT).randomTicks().noOcclusion()
                             .isValidSpawn(Blocks::ocelotOrParrot).pushReaction(PushReaction.DESTROY)));
     public static final DeferredBlock<Block> ASHENWOOD_LEAVES_FLOWERING = registerBlock("ashenwood_leaves_flowering",
-            (properties) -> new AtomicLeavesBlock(0.05f, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 118f,127f,118f),
+            (properties) -> new AtomicLeavesBlock(0.05f, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 118f, 127f, 118f),
                     properties.strength(0.2F).sound(SoundType.CHERRY_LEAVES).ignitedByLava()
                             .mapColor(MapColor.PLANT).randomTicks().noOcclusion()
                             .isValidSpawn(Blocks::ocelotOrParrot).pushReaction(PushReaction.DESTROY)));
@@ -162,9 +163,6 @@ public class AtomicBlocks {
 
 
     /* ENTITIES */
-
-
-
 
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Function<BlockBehaviour.Properties, T> function) {

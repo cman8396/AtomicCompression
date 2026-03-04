@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_planks": {
+    "has_log": {
       "conditions": {
         "items": [
           {
-            "items": "atomiccompression:ashenwood_planks"
+            "items": "atomiccompression:ashenwood_log"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "atomiccompression:ashenwood_slab"
+        "recipe": "atomiccompression:ashenwood_wood"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_planks"
+      "has_log"
     ]
   ],
   "rewards": {
     "recipes": [
-      "atomiccompression:ashenwood_slab"
+      "atomiccompression:ashenwood_wood"
     ]
   }
 }

@@ -1,4 +1,4 @@
-package com.mcnair.atomic.datagen;
+package com.mcnair.atomic.datagen.provider;
 
 import com.mcnair.atomic.block.AtomicBlocks;
 import com.mcnair.atomic.item.AtomicItems;
@@ -20,7 +20,7 @@ import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import java.util.Set;
 
 public class AtomicBlockLootTableProvider extends BlockLootSubProvider {
-    protected AtomicBlockLootTableProvider(HolderLookup.Provider registries) {
+    public AtomicBlockLootTableProvider(HolderLookup.Provider registries) {
         super(Set.of(), FeatureFlags.REGISTRY.allFlags(), registries);
     }
 

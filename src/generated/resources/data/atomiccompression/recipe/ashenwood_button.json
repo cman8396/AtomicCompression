@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shapeless",
   "category": "redstone",
-  "group": "ashenwood",
+  "group": "wooden_button",
   "ingredients": [
     "atomiccompression:ashenwood_planks"
   ],

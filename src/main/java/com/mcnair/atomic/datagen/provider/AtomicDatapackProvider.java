@@ -1,4 +1,4 @@
-package com.mcnair.atomic.datagen;
+package com.mcnair.atomic.datagen.provider;
 
 import com.mcnair.atomic.AtomicCompression;
 import com.mcnair.atomic.worldgen.AtomicBiomeModifiers;

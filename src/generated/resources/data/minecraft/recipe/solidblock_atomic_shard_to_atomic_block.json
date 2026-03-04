@@ -2,12 +2,12 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "N": "atomiccompression:atomic_shard"
+    "I": "atomiccompression:atomic_shard"
   },
   "pattern": [
-    "NNN",
-    "NNN",
-    "NNN"
+    "III",
+    "III",
+    "III"
   ],
   "result": {
     "count": 1,

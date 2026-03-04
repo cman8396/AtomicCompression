@@ -1,14 +1,18 @@
-package com.mcnair.atomic.datagen;
+package com.mcnair.atomic.datagen.provider;
 
 import com.mcnair.atomic.AtomicCompression;
 import com.mcnair.atomic.block.AtomicBlocks;
+import com.mcnair.atomic.datagen.extensions.AtomicBlockFamilies;
 import com.mcnair.atomic.item.AtomicItems;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.data.BlockFamily;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
+import net.minecraft.world.flag.FeatureFlagSet;
+import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
@@ -40,40 +44,6 @@ public class AtomicRecipeProvider extends RecipeProvider {
 
     @Override
     protected void buildRecipes() {
-
-        /* SHAPELESS RECIPES */
-        shapeless(RecipeCategory.MISC, Items.BASALT, 9)
-                .requires(AtomicBlocks.DENSE_BASALT)
-                .unlockedBy("has_dense_basalt", has(AtomicBlocks.DENSE_BASALT))
-                .save(output);
-        shapeless(RecipeCategory.MISC, AtomicItems.OBSIDIAN_CHUNK, 4)
-                .requires(Blocks.OBSIDIAN)
-                .unlockedBy("has_obsidian", has(Blocks.OBSIDIAN))
-                .save(output);
-        shapeless(RecipeCategory.MISC, Items.GUNPOWDER, 3)
-                .requires(AtomicItems.SULFUR_DUST)
-                .requires(AtomicItems.SALTPETER_DUST)
-                .requires(Ingredient.of(Items.CHARCOAL, Items.COAL))
-                .unlockedBy("has_sulfur_dust", has(AtomicItems.SULFUR_DUST))
-                .unlockedBy("has_saltpeter_dust", has(AtomicItems.SALTPETER_DUST))
-                .save(output);
-
-        shapeless(RecipeCategory.MISC, AtomicItems.SULFUR_DUST, 1)
-                .requires(AtomicItems.RAW_SULFUR)
-                .unlockedBy("has_raw_sulfur", has(AtomicItems.RAW_SULFUR))
-                .save(output);
-        shapeless(RecipeCategory.MISC, AtomicItems.SALTPETER_DUST, 1)
-                .requires(AtomicItems.RAW_SALTPETER)
-                .unlockedBy("has_raw_saltpeter", has(AtomicItems.RAW_SALTPETER))
-                .save(output);
-
-        shapeless(RecipeCategory.MISC, AtomicItems.BUNGERITE_ALLOY_INGOT, 1)
-                .requires(AtomicItems.REFINED_BUNGERITE)
-                .requires(Items.NETHERITE_INGOT)
-                .unlockedBy("has_refined_bungerite", has(AtomicItems.REFINED_BUNGERITE))
-                .unlockedBy("has_netherite_ingot", has(Items.NETHERITE_INGOT))
-                .save(output);
-
 
         /* SHAPED RECIPES */
         shaped(RecipeCategory.MISC, Blocks.OBSIDIAN)
@@ -144,6 +114,50 @@ public class AtomicRecipeProvider extends RecipeProvider {
                 .save(output);
 
 
+        /* SHAPELESS RECIPES */
+        oneToManyRecipe(output, AtomicBlocks.DENSE_BASALT, Items.BASALT, 9);
+        oneToManyRecipe(output, Items.OBSIDIAN, AtomicItems.OBSIDIAN_CHUNK, 4);
+
+        oneToOneRecipe(output, AtomicItems.RAW_SULFUR, AtomicItems.SULFUR_DUST);
+        oneToOneRecipe(output, AtomicItems.RAW_SALTPETER, AtomicItems.SALTPETER_DUST);
+
+        shapeless(RecipeCategory.MISC, Items.GUNPOWDER, 3)
+                .requires(AtomicItems.SULFUR_DUST)
+                .requires(AtomicItems.SALTPETER_DUST)
+                .requires(Ingredient.of(Items.CHARCOAL, Items.COAL))
+                .unlockedBy("has_sulfur_dust", has(AtomicItems.SULFUR_DUST))
+                .unlockedBy("has_saltpeter_dust", has(AtomicItems.SALTPETER_DUST))
+                .save(output);
+
+        shapeless(RecipeCategory.MISC, AtomicItems.BUNGERITE_ALLOY_INGOT, 1)
+                .requires(AtomicItems.REFINED_BUNGERITE)
+                .requires(Items.NETHERITE_INGOT)
+                .unlockedBy("has_refined_bungerite", has(AtomicItems.REFINED_BUNGERITE))
+                .unlockedBy("has_netherite_ingot", has(Items.NETHERITE_INGOT))
+                .save(output);
+
+
+        /* NUGGET CONVERSION */
+        nuggetIngotRecipe(output, AtomicItems.LEAD_NUGGET, AtomicItems.LEAD_INGOT, RecipeCategory.MISC);
+        nuggetIngotRecipe(output, AtomicItems.REFINED_BUNGERITE_NUGGET, AtomicItems.REFINED_BUNGERITE, RecipeCategory.MISC);
+        nuggetIngotRecipe(output, AtomicItems.BUNGERITE_ALLOY_NUGGET, AtomicItems.BUNGERITE_ALLOY_INGOT, RecipeCategory.MISC);
+
+
+        /* SOLID BLOCK CONVERSION */
+        ingotBlockRecipe(output, Items.GUNPOWDER, AtomicBlocks.GUNPOWDER_BLOCK, RecipeCategory.MISC);
+        ingotBlockRecipe(output, AtomicItems.RAW_SULFUR, AtomicBlocks.RAW_SULFUR_BLOCK, RecipeCategory.MISC);
+        ingotBlockRecipe(output, AtomicItems.RAW_SALTPETER, AtomicBlocks.RAW_SALTPETER_BLOCK, RecipeCategory.MISC);
+        ingotBlockRecipe(output, AtomicItems.RAW_LEAD, AtomicBlocks.RAW_LEAD_BLOCK, RecipeCategory.MISC);
+        ingotBlockRecipe(output, AtomicItems.RAW_BUNGERITE, AtomicBlocks.RAW_BUNGERITE_BLOCK, RecipeCategory.MISC);
+        ingotBlockRecipe(output, AtomicItems.SULFUR_DUST, AtomicBlocks.SULFUR_DUST_BLOCK, RecipeCategory.MISC);
+        ingotBlockRecipe(output, AtomicItems.SALTPETER_DUST, AtomicBlocks.SALTPETER_DUST_BLOCK, RecipeCategory.MISC);
+        ingotBlockRecipe(output, AtomicItems.LEAD_INGOT, AtomicBlocks.LEAD_BLOCK, RecipeCategory.MISC);
+        ingotBlockRecipe(output, AtomicItems.REFINED_BUNGERITE, AtomicBlocks.REFINED_BUNGERITE_BLOCK, RecipeCategory.MISC);
+        ingotBlockRecipe(output, AtomicItems.BUNGERITE_ALLOY_INGOT, AtomicBlocks.BUNGERITE_ALLOY_BLOCK, RecipeCategory.MISC);
+        ingotBlockRecipe(output, AtomicItems.ATOMIC_SHARD, AtomicBlocks.ATOMIC_BLOCK, RecipeCategory.MISC);
+        ingotBlockRecipe(output, AtomicItems.EMPOWERED_ATOMIC_SHARD, AtomicBlocks.EMPOWERED_ATOMIC_BLOCK, RecipeCategory.MISC);
+
+
         /* SMELTING RECIPES */
         List<ItemLike> leadSmeltables = List.of(AtomicItems.RAW_LEAD, AtomicBlocks.LEAD_ORE, AtomicBlocks.DEEPSLATE_LEAD_ORE);
         oreSmelting(output, leadSmeltables, RecipeCategory.MISC, AtomicItems.LEAD_INGOT.get(), 0.2f, 200, "lead");
@@ -154,33 +168,17 @@ public class AtomicRecipeProvider extends RecipeProvider {
         oreBlasting(output, bungeriteSmeltables, RecipeCategory.MISC, AtomicItems.REFINED_BUNGERITE.get(), 0.3f, 100, "bungerite");
 
 
-        /* NUGGET CONVERSION */
-        nuggetIngotRecipe(output, AtomicItems.LEAD_NUGGET, AtomicItems.LEAD_INGOT, RecipeCategory.MISC);
-        nuggetIngotRecipe(output, AtomicItems.REFINED_BUNGERITE_NUGGET, AtomicItems.REFINED_BUNGERITE, RecipeCategory.MISC);
-        nuggetIngotRecipe(output, AtomicItems.BUNGERITE_ALLOY_NUGGET, AtomicItems.BUNGERITE_ALLOY_INGOT, RecipeCategory.MISC);
-
-
-        /* SOLID BLOCK CONVERSION */
-        solidBlockRecipe(output, Items.GUNPOWDER, AtomicBlocks.GUNPOWDER_BLOCK, RecipeCategory.MISC);
-        solidBlockRecipe(output, AtomicItems.RAW_SULFUR, AtomicBlocks.RAW_SULFUR_BLOCK, RecipeCategory.MISC);
-        solidBlockRecipe(output, AtomicItems.RAW_SALTPETER, AtomicBlocks.RAW_SALTPETER_BLOCK, RecipeCategory.MISC);
-        solidBlockRecipe(output, AtomicItems.RAW_LEAD, AtomicBlocks.RAW_LEAD_BLOCK, RecipeCategory.MISC);
-        solidBlockRecipe(output, AtomicItems.RAW_BUNGERITE, AtomicBlocks.RAW_BUNGERITE_BLOCK, RecipeCategory.MISC);
-        solidBlockRecipe(output, AtomicItems.SULFUR_DUST, AtomicBlocks.SULFUR_DUST_BLOCK, RecipeCategory.MISC);
-        solidBlockRecipe(output, AtomicItems.SALTPETER_DUST, AtomicBlocks.SALTPETER_DUST_BLOCK, RecipeCategory.MISC);
-        solidBlockRecipe(output, AtomicItems.LEAD_INGOT, AtomicBlocks.LEAD_BLOCK, RecipeCategory.MISC);
-        solidBlockRecipe(output, AtomicItems.REFINED_BUNGERITE, AtomicBlocks.REFINED_BUNGERITE_BLOCK, RecipeCategory.MISC);
-        solidBlockRecipe(output, AtomicItems.BUNGERITE_ALLOY_INGOT, AtomicBlocks.BUNGERITE_ALLOY_BLOCK, RecipeCategory.MISC);
-        solidBlockRecipe(output, AtomicItems.ATOMIC_SHARD, AtomicBlocks.ATOMIC_BLOCK, RecipeCategory.MISC);
-        solidBlockRecipe(output, AtomicItems.EMPOWERED_ATOMIC_SHARD, AtomicBlocks.EMPOWERED_ATOMIC_BLOCK, RecipeCategory.MISC);
-
-
         /* TOOLS */
         allTools(output, AtomicItems.BUNGERITE_ALLOY_INGOT, AtomicItems.ATOMIC_TOOL_SHAFT, AtomicItems.BUNGERITE_ALLOY_SWORD, AtomicItems.BUNGERITE_ALLOY_SPEAR, AtomicItems.BUNGERITE_ALLOY_PICKAXE, AtomicItems.BUNGERITE_ALLOY_AXE, AtomicItems.BUNGERITE_ALLOY_SHOVEL, AtomicItems.BUNGERITE_ALLOY_HOE);
 
 
         /* WOODEN ITEMS */
-        allWoodenObjects(output, "ashenwood", AtomicBlocks.ASHENWOOD_PLANKS, AtomicBlocks.ASHENWOOD_STAIRS, AtomicBlocks.ASHENWOOD_SLAB, AtomicBlocks.ASHENWOOD_BUTTON, AtomicBlocks.ASHENWOOD_PRESSURE_PLATE, AtomicBlocks.ASHENWOOD_FENCE, AtomicBlocks.ASHENWOOD_FENCE_GATE, AtomicBlocks.ASHENWOOD_WALL, AtomicBlocks.ASHENWOOD_DOOR, AtomicBlocks.ASHENWOOD_TRAPDOOR);
+        generateRecipesForBlockFamilies(FeatureFlagSet.of(FeatureFlags.VANILLA)); //generates all recipes for wood block families
+        woodBlockProcessing(output, AtomicBlocks.ASHENWOOD_PLANKS, AtomicBlocks.ASHENWOOD_LOG, AtomicBlocks.ASHENWOOD_WOOD);
+
+
+
+//        allWoodenObjects(output, "ashenwood", AtomicBlocks.ASHENWOOD_PLANKS, AtomicBlocks.ASHENWOOD_STAIRS, AtomicBlocks.ASHENWOOD_SLAB, AtomicBlocks.ASHENWOOD_BUTTON, AtomicBlocks.ASHENWOOD_PRESSURE_PLATE, AtomicBlocks.ASHENWOOD_FENCE, AtomicBlocks.ASHENWOOD_FENCE_GATE, AtomicBlocks.ASHENWOOD_WALL, AtomicBlocks.ASHENWOOD_DOOR, AtomicBlocks.ASHENWOOD_TRAPDOOR);
 
 
         // Throws error
@@ -189,13 +187,44 @@ public class AtomicRecipeProvider extends RecipeProvider {
     }
 
     protected void allTools(RecipeOutput recipeOutput, ItemLike ingotItem, ItemLike stickItem, ItemLike swordItem, ItemLike spearItem, ItemLike pickaxeItem, ItemLike axeItem, ItemLike shovelItem, ItemLike hoeItem) {
-        shaped(RecipeCategory.COMBAT, swordItem).pattern("I").pattern("I").pattern("S").define('I', ingotItem).define('S', stickItem).unlockedBy("has_" + getItemName(ingotItem), has(ingotItem)).unlockedBy("has_" + getItemName(stickItem), has(stickItem)).save(output);
-        shaped(RecipeCategory.COMBAT, spearItem).pattern("  I").pattern(" S ").pattern("S  ").define('I', ingotItem).define('S', stickItem).unlockedBy("has_" + getItemName(ingotItem), has(ingotItem)).unlockedBy("has_" + getItemName(stickItem), has(stickItem)).save(output);
+        shaped(RecipeCategory.COMBAT, swordItem).pattern("I").pattern("I").pattern("S").define('I', ingotItem).define('S', stickItem).unlockedBy("has_" + getItemName(ingotItem), has(ingotItem)).unlockedBy("has_" + getItemName(stickItem), has(stickItem)).save(recipeOutput);
+        shaped(RecipeCategory.COMBAT, spearItem).pattern("  I").pattern(" S ").pattern("S  ").define('I', ingotItem).define('S', stickItem).unlockedBy("has_" + getItemName(ingotItem), has(ingotItem)).unlockedBy("has_" + getItemName(stickItem), has(stickItem)).save(recipeOutput);
 
-        shaped(RecipeCategory.TOOLS, pickaxeItem).pattern("III").pattern(" S ").pattern(" S ").define('I', ingotItem).define('S', stickItem).unlockedBy("has_" + getItemName(ingotItem), has(ingotItem)).unlockedBy("has_" + getItemName(stickItem), has(stickItem)).save(output);
-        shaped(RecipeCategory.TOOLS, axeItem).pattern("I").pattern("S").pattern("S").define('I', ingotItem).define('S', stickItem).unlockedBy("has_" + getItemName(ingotItem), has(ingotItem)).unlockedBy("has_" + getItemName(stickItem), has(stickItem)).save(output);
-        shaped(RecipeCategory.TOOLS, shovelItem).pattern("II").pattern("IS").pattern(" S").define('I', ingotItem).define('S', stickItem).unlockedBy("has_" + getItemName(ingotItem), has(ingotItem)).unlockedBy("has_" + getItemName(stickItem), has(stickItem)).save(output);
-        shaped(RecipeCategory.TOOLS, hoeItem).pattern("II").pattern(" S").pattern(" S").define('I', ingotItem).define('S', stickItem).unlockedBy("has_" + getItemName(ingotItem), has(ingotItem)).unlockedBy("has_" + getItemName(stickItem), has(stickItem)).save(output);
+        shaped(RecipeCategory.TOOLS, pickaxeItem).pattern("III").pattern(" S ").pattern(" S ").define('I', ingotItem).define('S', stickItem).unlockedBy("has_" + getItemName(ingotItem), has(ingotItem)).unlockedBy("has_" + getItemName(stickItem), has(stickItem)).save(recipeOutput);
+        shaped(RecipeCategory.TOOLS, axeItem).pattern("I").pattern("S").pattern("S").define('I', ingotItem).define('S', stickItem).unlockedBy("has_" + getItemName(ingotItem), has(ingotItem)).unlockedBy("has_" + getItemName(stickItem), has(stickItem)).save(recipeOutput);
+        shaped(RecipeCategory.TOOLS, shovelItem).pattern("II").pattern("IS").pattern(" S").define('I', ingotItem).define('S', stickItem).unlockedBy("has_" + getItemName(ingotItem), has(ingotItem)).unlockedBy("has_" + getItemName(stickItem), has(stickItem)).save(recipeOutput);
+        shaped(RecipeCategory.TOOLS, hoeItem).pattern("II").pattern(" S").pattern(" S").define('I', ingotItem).define('S', stickItem).unlockedBy("has_" + getItemName(ingotItem), has(ingotItem)).unlockedBy("has_" + getItemName(stickItem), has(stickItem)).save(recipeOutput);
+    }
+
+    protected void oneToOneRecipe(RecipeOutput recipeOutput, ItemLike inputItem, ItemLike outputItem) {
+        shapeless(RecipeCategory.MISC, outputItem, 1)
+                .requires(inputItem)
+                .unlockedBy("has_" + inputItem.asItem().getName(), has(inputItem))
+                .unlockedBy("has_" + outputItem.asItem().getName(), has(outputItem))
+                .save(recipeOutput);
+    }
+
+    protected void oneToManyRecipe(RecipeOutput recipeOutput, ItemLike inputItem, ItemLike outputItem, int resultCount) {
+        shapeless(RecipeCategory.MISC, outputItem, resultCount)
+                .requires(inputItem)
+                .unlockedBy("has_" + inputItem.asItem().getName(), has(inputItem))
+                .unlockedBy("has_" + outputItem.asItem().getName(), has(outputItem))
+                .save(recipeOutput);
+    }
+
+    // Thanks to BiomesOPlenty <3
+    protected void generateRecipesForBlockFamilies(FeatureFlagSet flags) {
+        AtomicBlockFamilies.getAllFamilies().filter(BlockFamily::shouldGenerateRecipe).forEach((family) -> generateRecipes(family, flags));
+    }
+
+    protected void woodBlockProcessing(RecipeOutput recipeOutput, ItemLike plankItem, ItemLike logItem, ItemLike woodItem) {
+        shapeless(RecipeCategory.BUILDING_BLOCKS, plankItem, 4)
+                .requires(logItem)
+                .unlockedBy("has_logs", has(logItem))
+                .group("planks")
+                .save(recipeOutput);
+
+        woodFromLogs(woodItem, logItem);
     }
 
     protected void allWoodenObjects(RecipeOutput recipeOutput, String group, ItemLike plankItem, ItemLike stairItem, ItemLike slabItem, ItemLike buttonItem, ItemLike pressurePlateItem, ItemLike fenceItem, ItemLike fenceGateItem, ItemLike wallItem, ItemLike doorItem, ItemLike trapdoorItem) {
@@ -210,19 +239,19 @@ public class AtomicRecipeProvider extends RecipeProvider {
         trapdoorBuilder(trapdoorItem, Ingredient.of(plankItem)).group(group).unlockedBy("has_planks", has(plankItem)).save(recipeOutput);
     }
 
-    protected void solidBlockRecipe(RecipeOutput recipeOutput, ItemLike ingotItem, ItemLike blockItem, RecipeCategory pCategory) {
-        // Create ingot > nugget recipe
+    protected void ingotBlockRecipe(RecipeOutput recipeOutput, ItemLike ingotItem, ItemLike blockItem, RecipeCategory pCategory) {
+        // Create block > ingot recipe
         shapeless(pCategory, ingotItem, 9)
                 .requires(blockItem)
                 .unlockedBy("has_" + blockItem.asItem().getName(), has(blockItem))
                 .save(recipeOutput, "solidblock_" + getItemName(blockItem) + "_to_" + getItemName(ingotItem));
 
-        // Create nugget > ingot recipe
+        // Create ingot > block recipe
         shaped(pCategory, blockItem)
-                .pattern("NNN")
-                .pattern("NNN")
-                .pattern("NNN")
-                .define('N', ingotItem)
+                .pattern("III")
+                .pattern("III")
+                .pattern("III")
+                .define('I', ingotItem)
                 .unlockedBy("has_" + ingotItem.asItem().getName(), has(ingotItem))
                 .save(recipeOutput, "solidblock_" + getItemName(ingotItem) + "_to_" + getItemName(blockItem));
     }
