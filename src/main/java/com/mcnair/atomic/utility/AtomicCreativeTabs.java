@@ -70,9 +70,6 @@ public class AtomicCreativeTabs {
                         output.accept(AtomicBlocks.ASHENWOOD_DOOR.get());
                         output.accept(AtomicBlocks.ASHENWOOD_TRAPDOOR.get());
 
-//                        output.accept(AtomicBlocks.EXPLOSIVE_COMPACTOR.get());
-
-
                         /* ADD ITEMS */
                         output.accept(AtomicItems.RAW_SULFUR.get());
                         output.accept(AtomicItems.RAW_SALTPETER.get());
@@ -105,7 +102,6 @@ public class AtomicCreativeTabs {
                         output.accept(AtomicItems.BUNGERITE_ALLOY_AXE.get());
                         output.accept(AtomicItems.BUNGERITE_ALLOY_HOE.get());
 
-                        output.accept(AtomicBlocks.EXPLOSIVE_COMPACTOR.get());
 
                     }).build()
     );

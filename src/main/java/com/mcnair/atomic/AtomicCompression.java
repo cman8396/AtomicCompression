@@ -1,12 +1,10 @@
 package com.mcnair.atomic;
 
-import com.mcnair.atomic.block.AtomicBlockEntities;
 import com.mcnair.atomic.particle.particles.BadParticles;
 import com.mcnair.atomic.particle.particles.ShardParticles;
 import com.mcnair.atomic.particle.AtomicParticles;
 import com.mcnair.atomic.recipe.AtomicRecipes;
 import com.mcnair.atomic.screen.AtomicMenuTypes;
-import com.mcnair.atomic.screen.custom.ExplosiveCompactorScreen;
 import com.mcnair.atomic.utility.AtomicCreativeTabs;
 import com.mcnair.atomic.block.AtomicBlocks;
 import com.mcnair.atomic.item.AtomicItems;
@@ -57,7 +55,7 @@ public class AtomicCompression {
 
         AtomicVillagers.register(modEventBus);
 
-        AtomicBlockEntities.register(modEventBus);
+//        AtomicBlockEntities.register(modEventBus);
         AtomicMenuTypes.register(modEventBus);
 
         AtomicRecipes.register(modEventBus);
@@ -99,10 +97,10 @@ public class AtomicCompression {
 //            event.registerBlockEntityRenderer(ModBlockEntities.PEDESTAL_BE.get(), PedestalBlockEntityRenderer::new);
 //        }
 
-        @SubscribeEvent
-        public static void registerScreens(RegisterMenuScreensEvent event) {
-            event.register(AtomicMenuTypes.EXPLOSIVE_COMPACTOR_MENU.get(), ExplosiveCompactorScreen::new);
-        }
+//        @SubscribeEvent
+//        public static void registerScreens(RegisterMenuScreensEvent event) {
+//            event.register(AtomicMenuTypes.EXPLOSIVE_COMPACTOR_MENU.get(), ExplosiveCompactorScreen::new);
+//        }
     }
 
 }

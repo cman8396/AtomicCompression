@@ -6,14 +6,20 @@ import com.mcnair.atomic.item.AtomicItems;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
+import net.minecraft.client.data.models.MultiVariant;
+import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
 import net.minecraft.client.data.models.model.*;
+import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.core.Holder;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
 import java.util.stream.Stream;
 
+import static net.minecraft.client.data.models.BlockModelGenerators.*;
 import static net.minecraft.client.data.models.model.TextureMapping.getBlockTexture;
 
 public class AtomicModelProvider extends ModelProvider {
@@ -124,9 +130,8 @@ public class AtomicModelProvider extends ModelProvider {
                 .trapdoor(AtomicBlocks.ASHENWOOD_TRAPDOOR.get());
 
         /* ENTITIES */
-        blockModels.createTrivialCube(AtomicBlocks.EXPLOSIVE_COMPACTOR.get());
 
-//
+
 //        blockModels.createCropBlock(AtomicBlocks.RADISH_CROP.get(), RadishCropBlock.AGE,  0, 1, 2, 3);
 //        blockModels.createCropBlock(AtomicBlocks.GOJI_BERRY_BUSH.get(), GojiBerryBushBlock.AGE,  0, 1, 2, 3);
 //
@@ -137,17 +142,26 @@ public class AtomicModelProvider extends ModelProvider {
 //                        .with(BlockModelGenerators.createBooleanModelDispatch(BismuthLampBlock.CLICKED,
 //                                BlockModelGenerators.plainVariant(blockModels.createSuffixedVariant(AtomicBlocks.BISMUTH_LAMP.get(), "_on", ModelTemplates.CUBE_ALL, TextureMapping::cube)),
 //                                BlockModelGenerators.plainVariant(TexturedModel.CUBE.create(AtomicBlocks.BISMUTH_LAMP.get(), blockModels.modelOutput)))));
+
+
+    }
+
+    public void machineBlock(Block block, TexturedModel.Provider modelProvider, BlockModelGenerators blockModels) {
+        MultiVariant multivariant = plainVariant(modelProvider.create(block, blockModels.modelOutput));
+        Identifier identifier = TextureMapping.getBlockTexture(block, "_front_on");
+        MultiVariant multivariant1 = plainVariant(modelProvider.get(block).updateTextures((map) -> map.put(TextureSlot.FRONT, identifier)).createWithSuffix(block, "_on", blockModels.modelOutput));
+        blockModels.blockStateOutput.accept(MultiVariantGenerator.dispatch(block).with(createBooleanModelDispatch(BlockStateProperties.LIT, multivariant1, multivariant)).with(ROTATION_HORIZONTAL_FACING));
     }
 
     @Override
     protected Stream<? extends Holder<Block>> getKnownBlocks() {
         return AtomicBlocks.BLOCKS.getEntries().stream();
-        //.filter(x -> !x.is(AtomicBlocks.PEDESTAL) && !x.is(AtomicBlocks.CHAIR));
+        //.filter(x -> !x.is(AtomicBlocks.EXPLOSIVE_COMPACTOR));
     }
 
     @Override
     protected Stream<? extends Holder<Item>> getKnownItems() {
         return AtomicItems.ITEMS.getEntries().stream();
-        //.filter(x -> x.get() != AtomicBlocks.PEDESTAL.asItem() && x.get() != AtomicBlocks.CHAIR.asItem() && !x.is(AtomicItems.TOMAHAWK));
+        //.filter(x -> x.get() != AtomicBlocks.EXPLOSIVE_COMPACTOR.asItem());
     }
 }

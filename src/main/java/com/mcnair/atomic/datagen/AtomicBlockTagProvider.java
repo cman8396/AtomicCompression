@@ -81,8 +81,6 @@ public class AtomicBlockTagProvider extends BlockTagsProvider {
         tag(BlockTags.WALLS)
                 .add(AtomicBlocks.ASHENWOOD_WALL.get());
 
-        tag(AtomicTags.Blocks.MACHINE)
-                .add(AtomicBlocks.EXPLOSIVE_COMPACTOR.get());
 
         tag(BlockTags.LOGS_THAT_BURN)
                 .add(AtomicBlocks.ASHENWOOD_LOG.get())
