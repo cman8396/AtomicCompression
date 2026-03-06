@@ -1,4 +1,4 @@
-// 1.21.11	2026-03-04T22:11:23.3284578	Model Definitions
+// 1.21.11	2026-03-05T16:59:07.1702923	Model Definitions
 a091d89fa96a671d02735f5ecbd6d977cbd1215f assets/atomiccompression/blockstates/ashenwood_button.json
 e2b7a39f0d6a62e13cf68f8693ed19757faa0097 assets/atomiccompression/blockstates/ashenwood_door.json
 9d5b1ffd773648795c52b422aba3c333507dc4b1 assets/atomiccompression/blockstates/ashenwood_fence.json
@@ -83,6 +83,7 @@ f1bb483bd1e179227c76f39c32ee494f7e7b4a61 assets/atomiccompression/items/dense_ba
 5dacad2d101ba9a5143d19402090ad851075ed44 assets/atomiccompression/items/empowered_atomic_block.json
 477a2913366fae4cde28dd853acb93fd51899758 assets/atomiccompression/items/empowered_atomic_shard.json
 916040c240f561f51eaa203a2cf4e3340f8af056 assets/atomiccompression/items/end_atomic_ore.json
+c49dd9ba642d356e8de03d08c070f8b6d08d1841 assets/atomiccompression/items/explosive_compactor.json
 dff1dcb413acbcf6da87236a17eacdb8aca44721 assets/atomiccompression/items/gunpowder_block.json
 983d2be7857eb8b6b169ea28b15061b0213b23a5 assets/atomiccompression/items/lead_block.json
 e675050b55818459c49dd3b4314dfbe29346068a assets/atomiccompression/items/lead_ingot.json

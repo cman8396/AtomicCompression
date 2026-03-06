@@ -19,12 +19,16 @@ import java.util.function.Consumer;
     public class AtomicBlockModelGenerators extends BlockModelGenerators
     {
         final Map<Block, TexturedModel> texturedModels = ImmutableMap.<Block, TexturedModel>builder()
+                .put(AtomicBlocks.EXPLOSIVE_COMPACTOR.get(), TexturedModel.ORIENTABLE_ONLY_TOP.get(AtomicBlocks.EXPLOSIVE_COMPACTOR.get()).updateTextures(mapping -> {
+                    mapping.put(TextureSlot.FRONT, TextureMapping.getBlockTexture(AtomicBlocks.EXPLOSIVE_COMPACTOR.get(), "_front"));
+                    mapping.put(TextureSlot.TOP, TextureMapping.getBlockTexture(AtomicBlocks.EXPLOSIVE_COMPACTOR.get(), "_top"));
+                    mapping.put(TextureSlot.BOTTOM, TextureMapping.getBlockTexture(AtomicBlocks.EXPLOSIVE_COMPACTOR.get(),"_bottom"));
+                    mapping.put(TextureSlot.BACK, TextureMapping.getBlockTexture(AtomicBlocks.EXPLOSIVE_COMPACTOR.get(),"_back"));
+                    mapping.put(TextureSlot.SIDE, TextureMapping.getBlockTexture(AtomicBlocks.EXPLOSIVE_COMPACTOR.get(),"_side"));
+                }))
+
 //                .put(BOPBlocks.WHITE_SANDSTONE, TexturedModel.TOP_BOTTOM_WITH_WALL.get(BOPBlocks.WHITE_SANDSTONE))
 //                .put(BOPBlocks.SMOOTH_WHITE_SANDSTONE, TexturedModel.createAllSame(TextureMapping.getBlockTexture(BOPBlocks.WHITE_SANDSTONE, "_top")))
-//                .put(BOPBlocks.CUT_WHITE_SANDSTONE, TexturedModel.COLUMN.get(BOPBlocks.CUT_WHITE_SANDSTONE).updateTextures(p_386968_ -> {
-//                    p_386968_.put(TextureSlot.END, TextureMapping.getBlockTexture(BOPBlocks.WHITE_SANDSTONE, "_top"));
-//                    p_386968_.put(TextureSlot.SIDE, TextureMapping.getBlockTexture(BOPBlocks.CUT_WHITE_SANDSTONE));
-//                }))
 //                .put(BOPBlocks.CHISELED_WHITE_SANDSTONE, TexturedModel.COLUMN.get(BOPBlocks.CHISELED_WHITE_SANDSTONE).updateTextures(p_386968_ -> {
 //                    p_386968_.put(TextureSlot.END, TextureMapping.getBlockTexture(BOPBlocks.WHITE_SANDSTONE, "_top"));
 //                    p_386968_.put(TextureSlot.SIDE, TextureMapping.getBlockTexture(BOPBlocks.CHISELED_WHITE_SANDSTONE));

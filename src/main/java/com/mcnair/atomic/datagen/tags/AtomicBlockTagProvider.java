@@ -2,6 +2,7 @@ package com.mcnair.atomic.datagen.tags;
 
 import com.mcnair.atomic.AtomicCompression;
 import com.mcnair.atomic.block.AtomicBlocks;
+import com.mcnair.atomic.utility.AtomicTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
@@ -89,6 +90,9 @@ public class AtomicBlockTagProvider extends BlockTagsProvider {
 
         tag(BlockTags.WOODEN_DOORS)
                 .add(AtomicBlocks.ASHENWOOD_DOOR.get());
+
+        tag(AtomicTags.Blocks.MACHINE)
+                .add(AtomicBlocks.EXPLOSIVE_COMPACTOR.get());
 
 //        tag(AtomicTags.Blocks.NEEDS_BISMUTH_TOOL)
 //                .add(AtomicBlocks.BISMUTH_LAMP.get())
