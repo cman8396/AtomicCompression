@@ -1,25 +1,25 @@
+<p align="center">
+    <img alt="Logo" src="https://github.com/cman8396/AtomicCompression/blob/7db23aafb2c9af07ea61d129dc052faa8e6cd402/logo.png?raw=true" width="50%">
+</p>
 
-Installation information
-=======
+# [WORK IN PROGRESS]
 
-This template repository can be directly cloned to get you started with a new
-mod. Simply create a new repository cloned from this one, by following the
-instructions provided by [GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+## About
 
-Once you have your clone, simply open the repository in the IDE of your choice. The usual recommendation for an IDE is either IntelliJ IDEA or Eclipse.
+Atomic Compression is a hobby project which attempts to add various new blocks and items to Minecraft centered around
+compression through explosions.
 
-If at any point you are missing libraries in your IDE, or you've run into problems you can
-run `gradlew --refresh-dependencies` to refresh the local cache. `gradlew clean` to reset everything 
-{this does not affect your code} and then start the process again.
+## Contributing
 
-Mapping Names:
-============
-By default, the MDK is configured to use the official mapping names from Mojang for methods and fields 
-in the Minecraft codebase. These names are covered by a specific license. All modders should be aware of this
-license. For the latest license text, refer to the mapping file itself, or the reference copy here:
-https://github.com/NeoForged/NeoForm/blob/main/Mojang.md
+Feel free to contribute or give feedback :)
 
-Additional Resources: 
-==========
-Community Documentation: https://docs.neoforged.net/  
-NeoForged Discord: https://discord.neoforged.net/
+### On a Personal Note
+
+Please note that I am not a java developer, I'm just working on this out of curiosity and intrigue at the possibilities.
+Since I don't know what I'm doing I've been taking inspiration from other mods to help me learn, and I'll do my best to
+credit anything that I borrow.
+
+Some notable inspirations
+are [Biomes O' Plenty](https://github.com/Glitchfiend/BiomesOPlenty), [Modular Force Field System](https://github.com/BuiltBrokenModding/MFFS_Classic), [Malum](https://github.com/SammySemicolon/Malum-Mod/), [EnergizedPower](https://github.com/JDDev0/EnergizedPower),
+and [Industrial
+Foregoing](https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing). You guys are awesome!

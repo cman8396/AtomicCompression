@@ -1,10 +1,6 @@
 {
   "itemGroup.atomiccompression.title": "Atomic Compression",
 
-
-  "entity.minecraft.villager.atomiccompression.compressionist": "Compressionist",
-
-
   "block.atomiccompression.sulfur_ore": "Sulfur Ore",
   "block.atomiccompression.deepslate_sulfur_ore": "Deepslate Sulfur Ore",
   "block.atomiccompression.saltpeter_ore": "Saltpeter Ore",
@@ -87,11 +83,10 @@
 
 
 
+  "entity.minecraft.villager.atomiccompression.compressionist": "Compressionist",
+
   "atomiccompression.configuration.title": "Atomic Compression Config",
   "atomiccompression.configuration.section.atomiccompression.common.toml": "Atomic Compression Config",
   "atomiccompression.configuration.section.atomiccompression.common.toml.title": "Atomic Compression Config",
-  "atomiccompression.configuration.items": "Item List",
-  "atomiccompression.configuration.logDirtBlock": "Log Dirt Block",
-  "atomiccompression.configuration.magicNumberIntroduction": "Magic Number Text",
-  "atomiccompression.configuration.magicNumber": "Magic Number"
+  "atomiccompression.configuration.items": "Item List"
 }
