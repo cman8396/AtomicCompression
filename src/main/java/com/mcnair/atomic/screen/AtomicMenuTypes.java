@@ -2,6 +2,8 @@ package com.mcnair.atomic.screen;
 
 import com.mcnair.atomic.AtomicCompression;
 import com.mcnair.atomic.screen.custom.ExplosiveCompactorMenu;
+import com.mcnair.atomic.screen.custom.ExplosiveRefinerMenu;
+import com.mcnair.atomic.screen.custom.ExplosiveSeparatorMenu;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
@@ -18,6 +20,13 @@ public class AtomicMenuTypes {
 
     public static final DeferredHolder<MenuType<?>, MenuType<ExplosiveCompactorMenu>> EXPLOSIVE_COMPACTOR_MENU =
             registerMenuType("explosive_compactor_menu", ExplosiveCompactorMenu::new);
+    public static final DeferredHolder<MenuType<?>, MenuType<ExplosiveSeparatorMenu>> EXPLOSIVE_SEPARATOR_MENU =
+            registerMenuType("explosive_separator_menu", ExplosiveSeparatorMenu::new);
+    public static final DeferredHolder<MenuType<?>, MenuType<ExplosiveRefinerMenu>> EXPLOSIVE_REFINER_MENU =
+            registerMenuType("explosive_refiner_menu", ExplosiveRefinerMenu::new);
+
+
+
 
     private static <T extends AbstractContainerMenu>DeferredHolder<MenuType<?>, MenuType<T>> registerMenuType(String name, IContainerFactory<T> factory) {
         return MENUS.register(name, () -> IMenuTypeExtension.create(factory));

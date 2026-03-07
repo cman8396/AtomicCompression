@@ -3,6 +3,8 @@ package com.mcnair.atomic.blockentity;
 import com.mcnair.atomic.AtomicCompression;
 import com.mcnair.atomic.block.AtomicBlocks;
 import com.mcnair.atomic.blockentity.custom.ExplosiveCompactorBlockEntity;
+import com.mcnair.atomic.blockentity.custom.ExplosiveRefinerBlockEntity;
+import com.mcnair.atomic.blockentity.custom.ExplosiveSeparatorBlockEntity;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.entity.SmokerBlockEntity;
@@ -19,6 +21,12 @@ import java.util.function.Supplier;
         public static final Supplier<BlockEntityType<ExplosiveCompactorBlockEntity>> EXPLOSIVE_COMPACTOR =
                 BLOCK_ENTITIES.register("explosive_compactor", () -> new BlockEntityType<>(
                         ExplosiveCompactorBlockEntity::new, AtomicBlocks.EXPLOSIVE_COMPACTOR.get()));
+        public static final Supplier<BlockEntityType<ExplosiveSeparatorBlockEntity>> EXPLOSIVE_SEPARATOR =
+                BLOCK_ENTITIES.register("explosive_separator", () -> new BlockEntityType<>(
+                        ExplosiveSeparatorBlockEntity::new, AtomicBlocks.EXPLOSIVE_SEPARATOR.get()));
+        public static final Supplier<BlockEntityType<ExplosiveRefinerBlockEntity>> EXPLOSIVE_REFINER =
+                BLOCK_ENTITIES.register("explosive_refiner", () -> new BlockEntityType<>(
+                        ExplosiveRefinerBlockEntity::new, AtomicBlocks.EXPLOSIVE_REFINER.get()));
 
 
         public static void register(IEventBus modEventBus) {

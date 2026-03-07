@@ -1,5 +1,7 @@
 {
   "values": [
-    "atomiccompression:explosive_compactor"
+    "atomiccompression:explosive_compactor",
+    "atomiccompression:explosive_separator",
+    "atomiccompression:explosive_refiner"
   ]
 }

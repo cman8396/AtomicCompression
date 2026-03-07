@@ -86,6 +86,8 @@ public class AtomicBlockModelGenerators extends BlockModelGenerators {
 
         /* ENTITIES */
         createMachine(AtomicBlocks.EXPLOSIVE_COMPACTOR.get(), AtomicBlockModelGeneratorsTemplates.MACHINE.TEXTURED_MODEL);
+        createMachine(AtomicBlocks.EXPLOSIVE_SEPARATOR.get(), AtomicBlockModelGeneratorsTemplates.MACHINE.TEXTURED_MODEL);
+        createMachine(AtomicBlocks.EXPLOSIVE_REFINER.get(), AtomicBlockModelGeneratorsTemplates.MACHINE.TEXTURED_MODEL);
 
 
 //        this.createCropBlock(AtomicBlocks.RADISH_CROP.get(), RadishCropBlock.AGE,  0, 1, 2, 3);

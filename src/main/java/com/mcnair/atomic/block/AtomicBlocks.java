@@ -2,6 +2,8 @@ package com.mcnair.atomic.block;
 
 import com.mcnair.atomic.AtomicCompression;
 import com.mcnair.atomic.block.custom.ExplosiveCompactorBlock;
+import com.mcnair.atomic.block.custom.ExplosiveRefinerBlock;
+import com.mcnair.atomic.block.custom.ExplosiveSeparatorBlock;
 import com.mcnair.atomic.block.extensions.*;
 import com.mcnair.atomic.item.AtomicItems;
 import com.mcnair.atomic.worldgen.tree.AtomicTreeGrower;
@@ -170,6 +172,10 @@ public class AtomicBlocks {
     /* ENTITIES */
     public static final DeferredBlock<Block> EXPLOSIVE_COMPACTOR = registerBlock("explosive_compactor",
             (properties) -> new ExplosiveCompactorBlock(properties.strength(3.5F).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> EXPLOSIVE_SEPARATOR = registerBlock("explosive_separator",
+            (properties) -> new ExplosiveSeparatorBlock(properties.strength(3.5F).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> EXPLOSIVE_REFINER = registerBlock("explosive_refiner",
+            (properties) -> new ExplosiveRefinerBlock(properties.strength(3.5F).requiresCorrectToolForDrops().sound(SoundType.STONE)));
 
 
 
