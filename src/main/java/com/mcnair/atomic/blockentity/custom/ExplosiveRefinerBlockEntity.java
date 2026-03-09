@@ -34,7 +34,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Optional;
 
 public class ExplosiveRefinerBlockEntity extends BlockEntity implements MenuProvider {
-    public final ItemStackHandler itemHandler = new ItemStackHandler(2) {
+    public final ItemStackHandler itemHandler = new ItemStackHandler(7) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -73,14 +73,14 @@ public class ExplosiveRefinerBlockEntity extends BlockEntity implements MenuProv
 
             @Override
             public int getCount() {
-                return 2;
+                return 7;
             }
         };
     }
 
     @Override
     public Component getDisplayName() {
-        return Component.translatable("block.tutorialmod.growth_chamber");
+        return Component.translatable("block.atomiccompression.explosive_refiner");
     }
 
     @Nullable
@@ -107,8 +107,8 @@ public class ExplosiveRefinerBlockEntity extends BlockEntity implements MenuProv
     @Override
     protected void saveAdditional(ValueOutput output) {
         itemHandler.serialize(output);
-        output.putInt("growth_chamber.progress", progress);
-        output.putInt("growth_chamber.max_progress", maxProgress);
+        output.putInt("explosive_refiner.progress", progress);
+        output.putInt("explosive_refiner.max_progress", maxProgress);
 
         super.saveAdditional(output);
     }
@@ -118,8 +118,8 @@ public class ExplosiveRefinerBlockEntity extends BlockEntity implements MenuProv
         super.loadAdditional(input);
 
         itemHandler.deserialize(input);
-        progress = input.getIntOr("growth_chamber.progress", 0);
-        maxProgress = input.getIntOr("growth_chamber.max_progress", 0);
+        progress = input.getIntOr("explosive_refiner.progress", 0);
+        maxProgress = input.getIntOr("explosive_refiner.max_progress", 0);
     }
 
     public void tick(Level level, BlockPos blockPos, BlockState blockState) {

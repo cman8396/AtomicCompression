@@ -33,7 +33,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Optional;
 
 public class ExplosiveCompactorBlockEntity extends BlockEntity implements MenuProvider {
-    public final ItemStackHandler itemHandler = new ItemStackHandler(2) {
+    public final ItemStackHandler itemHandler = new ItemStackHandler(7) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -72,14 +72,14 @@ public class ExplosiveCompactorBlockEntity extends BlockEntity implements MenuPr
 
             @Override
             public int getCount() {
-                return 2;
+                return 7;
             }
         };
     }
 
     @Override
     public Component getDisplayName() {
-        return Component.translatable("block.tutorialmod.growth_chamber");
+        return Component.translatable("block.atomiccompression.explosive_compactor");
     }
 
     @Nullable
@@ -106,8 +106,8 @@ public class ExplosiveCompactorBlockEntity extends BlockEntity implements MenuPr
     @Override
     protected void saveAdditional(ValueOutput output) {
         itemHandler.serialize(output);
-        output.putInt("growth_chamber.progress", progress);
-        output.putInt("growth_chamber.max_progress", maxProgress);
+        output.putInt("explosive_compactor.progress", progress);
+        output.putInt("explosive_compactor.max_progress", maxProgress);
 
         super.saveAdditional(output);
     }
@@ -117,8 +117,8 @@ public class ExplosiveCompactorBlockEntity extends BlockEntity implements MenuPr
         super.loadAdditional(input);
 
         itemHandler.deserialize(input);
-        progress = input.getIntOr("growth_chamber.progress", 0);
-        maxProgress = input.getIntOr("growth_chamber.max_progress", 0);
+        progress = input.getIntOr("explosive_compactor.progress", 0);
+        maxProgress = input.getIntOr("explosive_compactor.max_progress", 0);
     }
 
     public void tick(Level level, BlockPos blockPos, BlockState blockState) {
