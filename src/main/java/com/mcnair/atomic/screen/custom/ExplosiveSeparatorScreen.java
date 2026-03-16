@@ -13,6 +13,7 @@ public class ExplosiveSeparatorScreen extends AbstractContainerScreen<ExplosiveS
             Identifier.fromNamespaceAndPath(AtomicCompression.MOD_ID,"textures/gui/explosive_separator.png");
     private static final Identifier ARROW_TEXTURE =
             Identifier.fromNamespaceAndPath(AtomicCompression.MOD_ID,"textures/gui/arrow_progress.png");
+    // 54,54
 
     public ExplosiveSeparatorScreen(ExplosiveSeparatorMenu menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title);

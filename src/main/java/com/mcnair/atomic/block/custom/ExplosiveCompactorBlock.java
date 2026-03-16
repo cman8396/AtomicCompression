@@ -75,7 +75,6 @@ public class ExplosiveCompactorBlock extends AbstractMachineBlock {
             return null;
         }
 
-        return createTickerHelper(blockEntityType, AtomicBlockEntities.EXPLOSIVE_COMPACTOR.get(),
-                (level1, blockPos, blockState, blockEntity) -> blockEntity.tick(level1, blockPos, blockState));
+        return createTickerHelper(blockEntityType, AtomicBlockEntities.EXPLOSIVE_COMPACTOR.get(), ExplosiveCompactorBlockEntity::tick);
     }
 }

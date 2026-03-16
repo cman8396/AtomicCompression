@@ -176,7 +176,10 @@ public class AtomicRecipeProvider extends RecipeProvider {
         generateRecipesForBlockFamilies(FeatureFlagSet.of(FeatureFlags.VANILLA)); //generates all recipes for wood block families
         woodBlockProcessing(output, AtomicBlocks.ASHENWOOD_PLANKS, AtomicBlocks.ASHENWOOD_LOG, AtomicBlocks.ASHENWOOD_WOOD);
 
-
+//        addCrystalGrowthChamberRecipe(output, ingredientOf(Tags.Items.GEMS_AMETHYST),
+//                new OutputItemStackWithPercentages(new ItemStack(Items.AMETHYST_SHARD), new double[] {
+//                        1., 1., .67, .5, .25, .125
+//                }), 16000);
 
 //        allWoodenObjects(output, "ashenwood", AtomicBlocks.ASHENWOOD_PLANKS, AtomicBlocks.ASHENWOOD_STAIRS, AtomicBlocks.ASHENWOOD_SLAB, AtomicBlocks.ASHENWOOD_BUTTON, AtomicBlocks.ASHENWOOD_PRESSURE_PLATE, AtomicBlocks.ASHENWOOD_FENCE, AtomicBlocks.ASHENWOOD_FENCE_GATE, AtomicBlocks.ASHENWOOD_WALL, AtomicBlocks.ASHENWOOD_DOOR, AtomicBlocks.ASHENWOOD_TRAPDOOR);
 
@@ -185,6 +188,19 @@ public class AtomicRecipeProvider extends RecipeProvider {
         // trimSmithing(AtomicItems.KAUPEN_SMITHING_TEMPLATE.get(), ResourceKey.create(Registries.TRIM_PATTERN, Identifier.fromNamespaceAndPath(TutorialMod.MOD_ID, "kaupen")),
         //         ResourceKey.create(Registries.RECIPE, Identifier.fromNamespaceAndPath(TutorialMod.MOD_ID, "kaupen")));
     }
+
+//    private void addCrystalGrowthChamberRecipe(RecipeOutput recipeOutput, Ingredient input, OutputItemStackWithPercentages output,
+//                                               int ticks) {
+//        addCrystalGrowthChamberRecipe(recipeOutput, new IngredientWithCount(input), output, ticks);
+//    }
+//    private void addCrystalGrowthChamberRecipe(RecipeOutput recipeOutput, IngredientWithCount input, OutputItemStackWithPercentages output,
+//                                               int ticks) {
+//        Identifier recipeId = EPAPI.id("crystal_growing/" +
+//                getItemName(output.output().getItem()));
+//
+//        CrystalGrowthChamberRecipe recipe = new CrystalGrowthChamberRecipe(output, input, ticks);
+//        recipeOutput.accept(getKey(recipeId), recipe, null);
+//    }
 
     protected void allTools(RecipeOutput recipeOutput, ItemLike ingotItem, ItemLike stickItem, ItemLike swordItem, ItemLike spearItem, ItemLike pickaxeItem, ItemLike axeItem, ItemLike shovelItem, ItemLike hoeItem) {
         shaped(RecipeCategory.COMBAT, swordItem).pattern("I").pattern("I").pattern("S").define('I', ingotItem).define('S', stickItem).unlockedBy("has_" + getItemName(ingotItem), has(ingotItem)).unlockedBy("has_" + getItemName(stickItem), has(stickItem)).save(recipeOutput);

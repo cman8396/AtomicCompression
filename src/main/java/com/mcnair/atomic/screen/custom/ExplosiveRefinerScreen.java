@@ -13,6 +13,7 @@ public class ExplosiveRefinerScreen extends AbstractContainerScreen<ExplosiveRef
             Identifier.fromNamespaceAndPath(AtomicCompression.MOD_ID,"textures/gui/explosive_refiner.png");
     private static final Identifier ARROW_TEXTURE =
             Identifier.fromNamespaceAndPath(AtomicCompression.MOD_ID,"textures/gui/arrow_progress.png");
+    // 44,54
 
     public ExplosiveRefinerScreen(ExplosiveRefinerMenu menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title);

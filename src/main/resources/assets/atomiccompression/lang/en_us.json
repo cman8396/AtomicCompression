@@ -83,12 +83,21 @@
   "item.atomiccompression.bungerite_alloy_axe": "Bungerite Alloy Axe",
   "item.atomiccompression.bungerite_alloy_hoe": "Bungerite Alloy Hoe",
 
-
+  "tooltip.atomiccompression.machines.fuel": "Ignitable Fuel",
+  "tooltip.atomiccompression.machines.ignition_source": "Ignition Source",
+  "tooltip.atomiccompression.machines.casing_upgrade": "Machine Upgrade",
 
   "entity.minecraft.villager.atomiccompression.compressionist": "Compressionist",
 
-  "atomiccompression.configuration.title": "Atomic Compression Config",
   "atomiccompression.configuration.section.atomiccompression.common.toml": "Atomic Compression Config",
   "atomiccompression.configuration.section.atomiccompression.common.toml.title": "Atomic Compression Config",
-  "atomiccompression.configuration.items": "Item List"
+
+  "atomiccompression.configuration.title": "Atomic Compression Config",
+
+  "atomiccompression.configuration.fuelConversion_Gunpowders": "Gunpowder > Fuel Conversion Amount",
+  "atomiccompression.configuration.craftingFuelCost_Base": "Base Crafting Fuel Cost",
+
+  "atomiccompression.configuration.explosive_compactor": "Explosive Compactor",
+  "atomiccompression.configuration.craftingDurationTicks_Base": "Base Crafting Duration (in ticks)",
+  "atomiccompression.configuration.craftingDurationModifier_base": "Base Crafting Duration Modifier"
 }

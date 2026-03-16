@@ -1,10 +1,12 @@
 package com.mcnair.atomic.screen.custom;
 
-import com.mcnair.atomic.AtomicCompression;
 import com.mcnair.atomic.block.AtomicBlocks;
 import com.mcnair.atomic.blockentity.custom.ExplosiveCompactorBlockEntity;
 import com.mcnair.atomic.screen.AtomicMenuTypes;
 import com.mcnair.atomic.screen.helpers.MenuHelpers;
+import com.mcnair.atomic.utility.AtomicTags;
+import com.mcnair.atomic.utility.inventory.slot.OutputOnlySlot;
+import com.mcnair.atomic.utility.inventory.slot.TagLimitedSlot;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -12,7 +14,7 @@ import net.minecraft.world.inventory.*;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.neoforged.neoforge.items.SlotItemHandler;
+import net.neoforged.neoforge.transfer.item.ResourceHandlerSlot;
 
 public class ExplosiveCompactorMenu extends AbstractContainerMenu {
     public final ExplosiveCompactorBlockEntity blockEntity;
@@ -34,22 +36,19 @@ public class ExplosiveCompactorMenu extends AbstractContainerMenu {
         addPlayerHotbar(inv);
 
         /* UTILITY SLOTS */
-        // Powder
-        this.addSlot(new SlotItemHandler(blockEntity.itemHandler, 0, 152, 55));
-        // Ignition
-        this.addSlot(new SlotItemHandler(blockEntity.itemHandler, 1, 152, 35));
-        // Casing
-        this.addSlot(new SlotItemHandler(blockEntity.itemHandler, 2, 152, 15));
+        this.addSlot(new TagLimitedSlot(blockEntity.itemHandler, blockEntity.itemHandler::set, 0, 152, 55, AtomicTags.Values.GUNPOWDERS));
+        this.addSlot(new TagLimitedSlot(blockEntity.itemHandler, blockEntity.itemHandler::set, 1, 152, 35, AtomicTags.Values.MACHINE_IGNITION));
+        this.addSlot(new TagLimitedSlot(blockEntity.itemHandler, blockEntity.itemHandler::set, 2, 152, 15, AtomicTags.Values.MACHINE_CASINGS));
 
         /* PROCESSING SLOTS */
         // Input Left
-        this.addSlot(new SlotItemHandler(blockEntity.itemHandler, 3, 54, 34));
+        this.addSlot(new ResourceHandlerSlot(blockEntity.itemHandler, blockEntity.itemHandler::set, 3, 34, 34));
         // Input Right
-        this.addSlot(new SlotItemHandler(blockEntity.itemHandler, 4, 34, 34));
+        this.addSlot(new ResourceHandlerSlot(blockEntity.itemHandler, blockEntity.itemHandler::set, 4, 54, 34));
         // Output Primary
-        this.addSlot(new SlotItemHandler(blockEntity.itemHandler, 5, 104, 34));
+        this.addSlot(new OutputOnlySlot(blockEntity.itemHandler, blockEntity.itemHandler::set, 5, 104, 34));
         // Output Secondary
-        this.addSlot(new SlotItemHandler(blockEntity.itemHandler, 6, 104, 58));
+        this.addSlot(new OutputOnlySlot(blockEntity.itemHandler, blockEntity.itemHandler::set, 6, 104, 58));
 
         addDataSlots(data);
     }
@@ -66,9 +65,26 @@ public class ExplosiveCompactorMenu extends AbstractContainerMenu {
         return maxProgress != 0 && progress != 0 ? progress * arrowPixelSize / maxProgress : 0;
     }
 
+    public int getScaledStoragePowder() {
+        int powder = this.data.get(2);
+        int maxPowder = this.data.get(3);
+        int texturePixelSize = 48;
+
+        return texturePixelSize - (maxPowder != 0 && powder != 0 ? powder * texturePixelSize / maxPowder : 0);
+    }
+
+    public int getDataPowder() {
+        return this.data.get(2);
+    }
+
+    public int getDataMaxPowder() {
+        return this.data.get(3);
+    }
+
 
     // THIS YOU HAVE TO DEFINE!
-    private static final int THIS_INVENTORY_SLOT_COUNT = 3;  // must be the number of slots you have!
+    private static final int THIS_INVENTORY_SLOT_COUNT = 7;  // must be the number of slots you have!
+
     @Override
     public ItemStack quickMoveStack(Player playerIn, int pIndex) {
         Slot sourceSlot = slots.get(pIndex);
@@ -107,7 +123,6 @@ public class ExplosiveCompactorMenu extends AbstractContainerMenu {
         return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),
                 pPlayer, AtomicBlocks.EXPLOSIVE_COMPACTOR.get());
     }
-
 
     public void addPlayerInventory(Inventory playerInventory) {
         for (int i = 0; i < 3; ++i) {

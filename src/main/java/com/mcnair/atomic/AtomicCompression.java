@@ -20,6 +20,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
+import net.neoforged.neoforge.common.ModConfigSpec;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -44,7 +45,7 @@ public class AtomicCompression {
         modEventBus.addListener(this::commonSetup);
 
         // Register configs.
-        modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+        modContainer.registerConfig(ModConfig.Type.COMMON, AtomicConfig.SPEC);
 
         // NOTE: Remove this if there are no @SubscribeEvent-annotated functions in this class.
         NeoForge.EVENT_BUS.register(this);

@@ -1,10 +1,15 @@
 package com.mcnair.atomic.blockentity.custom;
 
+import com.mcnair.atomic.AtomicConfig;
 import com.mcnair.atomic.blockentity.AtomicBlockEntities;
 import com.mcnair.atomic.recipe.AtomicRecipes;
+import com.mcnair.atomic.recipe.base.MachineBaseRecipeInputHelper;
+import com.mcnair.atomic.recipe.base.input.InputItemWithCount;
 import com.mcnair.atomic.recipe.recipes.ExplosiveCompactorRecipe;
-import com.mcnair.atomic.recipe.recipes.ExplosiveCompactorRecipeInput;
 import com.mcnair.atomic.screen.custom.ExplosiveCompactorMenu;
+import com.mcnair.atomic.utility.AtomicTags;
+import com.mcnair.atomic.utility.inventory.InventoryUtils;
+import com.mcnair.atomic.utility.inventory.AtomicItemStackProvider;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
@@ -13,6 +18,7 @@ import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.Container;
 import net.minecraft.world.Containers;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.SimpleContainer;
@@ -22,42 +28,51 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeHolder;
+import net.minecraft.world.item.crafting.RecipeInput;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
-import net.neoforged.neoforge.items.ItemStackHandler;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 
+/*
+ * Inspiration for recipes from EnergizedPower <3
+ * https://github.com/JDDev0/EnergizedPower
+ */
+
 public class ExplosiveCompactorBlockEntity extends BlockEntity implements MenuProvider {
-    public final ItemStackHandler itemHandler = new ItemStackHandler(7) {
-        @Override
-        protected void onContentsChanged(int slot) {
-            setChanged();
-            if(!level.isClientSide()) {
-                level.sendBlockUpdated(getBlockPos(), getBlockState(), getBlockState(), 3);
-            }
-        }
+    public final AtomicItemStackProvider itemHandler = new AtomicItemStackProvider(7) {
     };
 
-    private static final int INPUT_SLOT = 0;
-    private static final int OUTPUT_SLOT = 1;
+    public static final float RECIPE_DURATION_MULTIPLIER = 1;
+
+    private static final int[] UTILITY_SLOTS = new int[]{0, 1, 2};
+    private static final int[] INPUT_SLOTS = new int[]{3, 4};
+    private static final int[] OUTPUT_SLOTS = new int[]{5, 6};
 
     protected final ContainerData data;
     private int progress = 0;
-    private int maxProgress = 72;
+    private int maxProgress = 0;
+    private int powder = 0;
+    private int maxPowder = 256;
+    private int fuelMode = 0;
 
     public ExplosiveCompactorBlockEntity(BlockPos pos, BlockState blockState) {
         super(AtomicBlockEntities.EXPLOSIVE_COMPACTOR.get(), pos, blockState);
+
         data = new ContainerData() {
             @Override
             public int get(int i) {
                 return switch (i) {
                     case 0 -> ExplosiveCompactorBlockEntity.this.progress;
                     case 1 -> ExplosiveCompactorBlockEntity.this.maxProgress;
+                    case 2 -> ExplosiveCompactorBlockEntity.this.powder;
+                    case 3 -> ExplosiveCompactorBlockEntity.this.maxPowder;
+                    case 4 -> ExplosiveCompactorBlockEntity.this.fuelMode;
                     default -> 0;
                 };
             }
@@ -65,16 +80,49 @@ public class ExplosiveCompactorBlockEntity extends BlockEntity implements MenuPr
             @Override
             public void set(int i, int value) {
                 switch (i) {
-                    case 0: ExplosiveCompactorBlockEntity.this.progress = value;
-                    case 1: ExplosiveCompactorBlockEntity.this.maxProgress = value;
+                    case 0:
+                        ExplosiveCompactorBlockEntity.this.progress = value;
+                    case 1:
+                        ExplosiveCompactorBlockEntity.this.maxProgress = value;
+                    case 2:
+                        ExplosiveCompactorBlockEntity.this.powder = value;
+                    case 3:
+                        ExplosiveCompactorBlockEntity.this.maxPowder = value;
+                    case 4:
+                        ExplosiveCompactorBlockEntity.this.fuelMode = value;
                 }
             }
 
             @Override
             public int getCount() {
-                return 7;
+                return 5;
             }
         };
+    }
+
+    @Override
+    protected void saveAdditional(ValueOutput output) {
+        itemHandler.serialize(output);
+
+        output.putInt("entity.progress", progress);
+        output.putInt("entity.max_progress", maxProgress);
+        output.putInt("entity.powder", powder);
+        output.putInt("entity.max_powder", maxPowder);
+        output.putInt("entity.fuel_mode", fuelMode);
+
+        super.saveAdditional(output);
+    }
+
+    @Override
+    protected void loadAdditional(ValueInput input) {
+        super.loadAdditional(input);
+
+        itemHandler.deserialize(input);
+        progress = input.getIntOr("entity.progress", 0);
+        maxProgress = input.getIntOr("entity.max_progress", 0);
+        powder = input.getIntOr("entity.powder", 0);
+        maxPowder = input.getIntOr("entity.max_powder", 0);
+        fuelMode = input.getIntOr("entity.fuel_mode", 0);
     }
 
     @Override
@@ -89,8 +137,8 @@ public class ExplosiveCompactorBlockEntity extends BlockEntity implements MenuPr
     }
 
     public void drops() {
-        SimpleContainer inventory = new SimpleContainer(itemHandler.getSlots());
-        for (int i = 0; i < itemHandler.getSlots(); i++) {
+        SimpleContainer inventory = new SimpleContainer(itemHandler.slotCount);
+        for (int i = 0; i < itemHandler.slotCount; i++) {
             inventory.setItem(i, itemHandler.getStackInSlot(i));
         }
 
@@ -103,85 +151,272 @@ public class ExplosiveCompactorBlockEntity extends BlockEntity implements MenuPr
         super.preRemoveSideEffects(pos, state);
     }
 
-    @Override
-    protected void saveAdditional(ValueOutput output) {
-        itemHandler.serialize(output);
-        output.putInt("explosive_compactor.progress", progress);
-        output.putInt("explosive_compactor.max_progress", maxProgress);
-
-        super.saveAdditional(output);
+    private void resetProgress() {
+        // Reset the crafting progress to the default.
+        progress = 0;
+        maxProgress = 0;
     }
 
-    @Override
-    protected void loadAdditional(ValueInput input) {
-        super.loadAdditional(input);
+    private void loadMachineConfigData() {
+        int ticks = AtomicConfig.machineExplosiveCompactor_CraftingDurationTicks_Base.getAsInt();
+        double modifier = AtomicConfig.machineExplosiveCompactor_CraftingDurationModifier_Base.getAsDouble();
+        int tickDeduction = (int) Math.abs(ticks * modifier);
 
-        itemHandler.deserialize(input);
-        progress = input.getIntOr("explosive_compactor.progress", 0);
-        maxProgress = input.getIntOr("explosive_compactor.max_progress", 0);
+        maxProgress = Math.max(1, ticks - tickDeduction);
     }
 
-    public void tick(Level level, BlockPos blockPos, BlockState blockState) {
-        if(hasRecipe()) {
-            increaseCraftingProgress();
-            setChanged(level, blockPos, blockState);
+    public static void tick(Level level, BlockPos blockPos, BlockState state, ExplosiveCompactorBlockEntity blockEntity) {
+        if (level.isClientSide())
+            return;
 
-            if(hasCraftingFinished()) {
-                craftItem();
-                resetProgress();
+        blockEntity.fuelSlotToInternalTank();
+        blockEntity.loadMachineConfigData();
+
+        // Ensure the block has an actual recipe before attempting anything else.
+        if (blockEntity.validRecipe()) {
+            Optional<RecipeHolder<ExplosiveCompactorRecipe>> recipe = blockEntity.getCurrentRecipe();
+            if (recipe.isEmpty())
+                return;
+
+            // Check if there is enough fuel for the recipe to complete.
+            if (blockEntity.hasIgnitionSource(false) && blockEntity.hasEnoughFuel(blockEntity.powder, recipe.get().value().getCost())) {
+
+                //Reset progress for invalid values
+                if (blockEntity.progress < 0 || blockEntity.maxProgress < 0) {
+                    blockEntity.resetProgress();
+                    setChanged(level, blockPos, state);
+                    return;
+                }
+
+                // If current progress is at limit, craft the item, if not increase progress.
+                if (blockEntity.progress >= blockEntity.maxProgress) {
+                    blockEntity.hasIgnitionSource(true);
+                    blockEntity.reduceFuelForCraft(blockEntity, recipe.get().value().getCost());
+
+                    setChanged(level, blockPos, state);
+
+                    blockEntity.craftItem(recipe.get());
+                } else
+                    blockEntity.progress++;
+
+                blockEntity.onBlockActive();
+
+                setChanged(level, blockPos, state);
+            } else {
+                // Undo progress if not enough fuel.
+                blockEntity.resetProgress();
+                blockEntity.onBlockInactive();
+
+                setChanged(level, blockPos, state);
             }
         } else {
-            resetProgress();
+            // Undo progress if no valid recipe.
+            blockEntity.resetProgress();
+            blockEntity.onBlockInactive();
+
+            setChanged(level, blockPos, state);
         }
     }
 
-    private void craftItem() {
-        Optional<RecipeHolder<ExplosiveCompactorRecipe>> recipe = getCurrentRecipe();
-        ItemStack output = recipe.get().value().output();
-
-        itemHandler.extractItem(INPUT_SLOT, 1, false);
-        itemHandler.setStackInSlot(OUTPUT_SLOT, new ItemStack(output.getItem(),
-                itemHandler.getStackInSlot(OUTPUT_SLOT).getCount() + output.getCount()));
+    private boolean hasEnoughFuel(int currentFuel, int recipeCost) {
+        int cost = recipeCost > 0 ? recipeCost : AtomicConfig.machineAll_CraftingFuelCost_Base.getAsInt();
+        return (currentFuel >= cost);
     }
 
-    private void resetProgress() {
-        progress = 0;
-        maxProgress = 72;
-    }
+    private boolean hasIgnitionSource(boolean applyDamage) {
+        // Get item stack in the ignition slot.
+        ItemStack itemStack = itemHandler.getStackInSlot(UTILITY_SLOTS[1]);
+        if (!itemStack.isEmpty() && AtomicTags.Helpers.doesItemStackTagMatch(AtomicTags.Values.MACHINE_IGNITION, itemStack)) {
 
-    private boolean hasCraftingFinished() {
-        return this.progress >= this.maxProgress;
-    }
+            // If the item in the slot is damageable, damage it.
+            if (applyDamage && itemStack.isDamageableItem()) {
+                int newDamageValue = itemStack.getDamageValue() + 1;
 
-    private void increaseCraftingProgress() {
-        progress++;
-    }
+                if (newDamageValue >= itemStack.getMaxDamage()) {
+                    itemHandler.setStackInSlot(UTILITY_SLOTS[1], ItemStack.EMPTY);
+                } else {
+                    itemStack.setDamageValue(newDamageValue);
+                    itemHandler.setStackInSlot(1, itemStack);
+                }
+            }
 
-    private boolean hasRecipe() {
-        Optional<RecipeHolder<ExplosiveCompactorRecipe>> recipe = getCurrentRecipe();
-        if(recipe.isEmpty()) {
+            return true;
+        } else {
             return false;
         }
+    }
 
-        ItemStack output = recipe.get().value().output();
-        return canInsertAmountIntoOutputSlot(output.getCount()) && canInsertItemIntoOutputSlot(output);
+    private void onBlockActive() {
+        if (level.getBlockState(getBlockPos()).hasProperty(BlockStateProperties.LIT) &&
+                !level.getBlockState(getBlockPos()).getValue(BlockStateProperties.LIT)) {
+            level.setBlock(getBlockPos(), getBlockState().setValue(BlockStateProperties.LIT, true), 3);
+        }
+    }
+
+    private void onBlockInactive() {
+        if (level.getBlockState(getBlockPos()).hasProperty(BlockStateProperties.LIT) &&
+                level.getBlockState(getBlockPos()).getValue(BlockStateProperties.LIT)) {
+            level.setBlock(getBlockPos(), getBlockState().setValue(BlockStateProperties.LIT, false), 3);
+        }
+    }
+
+    /*
+     * Note: Might refactor to use the INPUT_SLOTS array instead of standard loop for, as this isn't very readable.
+     */
+    protected void craftItem(RecipeHolder<ExplosiveCompactorRecipe> recipe) {
+        if (level == null || !validRecipe())
+            return;
+
+        // Slot offset because utility slots could be before input slots.
+        int slotOffset = INPUT_SLOTS[0];
+
+        // Get the allowed inputs for the recipe.
+        InputItemWithCount[] inputs = recipe.value().getInputs();
+
+        // Check if the output slots can accept the recipe result
+        if (!InventoryUtils.canOutputSlotsAcceptRecipeOutput(recipe, itemHandler, OUTPUT_SLOTS))
+            return;
+
+        // Get the number of ingredients for the recipe, as they could be different. Might be redundant?
+        int ingredientCount = 0;
+        for (InputItemWithCount inputItem : inputs)
+            ingredientCount += inputItem.input().getValues().size();
+
+
+        boolean[] slotHasItem = new boolean[ingredientCount];
+        // Array to indicate whether an input slot has items in.
+        for (int i = 0; i < ingredientCount; i++)
+            slotHasItem[i] = itemHandler.getStackInSlot(slotOffset + i).isEmpty();
+
+
+        int len = Math.min(inputs.length, ingredientCount);
+        // Loop through each recipe input item...
+        for (int i = 0; i < len; i++) {
+
+            // Get this input item.
+            InputItemWithCount input = inputs[i];
+
+            int slotCheckIndex = -1;
+            int countToRemove = Integer.MAX_VALUE;
+
+            // Loop through each ingredient...
+            for (int j = 0; j < ingredientCount; j++) {
+
+                // If the slot is empty, skip the slot.
+                if (slotHasItem[j])
+                    continue;
+
+                // Get item in slot.
+                ItemStack item = itemHandler.getStackInSlot(slotOffset + j);
+
+                // Check and set the slot to remove from, and the count to remove.
+                if (
+                        (slotCheckIndex == -1 || item.getCount() < countToRemove) &&
+                                input.input().test(item) &&
+                                item.getCount() >= input.count()
+                ) {
+                    slotCheckIndex = j;
+                    countToRemove = item.getCount();
+                }
+            }
+
+            // The ingredient didn't match the item in the slot.
+            // This should never be true!
+            if (slotCheckIndex == -1)
+                return;
+
+            // Set the slot has an item in.
+            slotHasItem[slotCheckIndex] = true;
+
+            // Extract the number of items in the recipe from the correct slot.
+            itemHandler.extractItem(slotOffset + slotCheckIndex, input.count());
+        }
+
+        // Get the output items from the recipe.
+        ItemStack[] recipeOutputItems = recipe.value().generateOutputs(level.random);
+
+        // Get the slot index for the primary and secondary slots.
+        int primarySlotIndex = OUTPUT_SLOTS[0];
+        int secondarySlotIndex = OUTPUT_SLOTS[1];
+
+        // Update the primary slot with thew
+        itemHandler.setStackInSlot(
+                primarySlotIndex,
+                recipeOutputItems[0].copyWithCount(itemHandler.getStackInSlot(primarySlotIndex).getCount() + recipeOutputItems[0].getCount())
+        );
+
+        // Do the same for the secondary slot only if the recipe output allows.
+        if (!recipeOutputItems[1].isEmpty())
+            itemHandler.setStackInSlot(
+                    secondarySlotIndex,
+                    recipeOutputItems[1].copyWithCount(itemHandler.getStackInSlot(secondarySlotIndex).getCount() + recipeOutputItems[1].getCount())
+            );
+
+        // Reset the progress, ready for the next crafting cycle.
+        resetProgress();
+    }
+
+    private boolean validRecipe() {
+        if (level == null)
+            return false;
+
+        SimpleContainer inventory = parseInventory();
+        Optional<RecipeHolder<ExplosiveCompactorRecipe>> recipe = getRecipeFor(inventory);
+
+        return recipe.isPresent() && InventoryUtils.canOutputSlotsAcceptRecipeOutput(recipe.get(), itemHandler, OUTPUT_SLOTS);
+    }
+
+    private RecipeInput getRecipeInput(Container inventory) {
+        return new MachineBaseRecipeInputHelper(inventory);
+    }
+
+    private Optional<RecipeHolder<ExplosiveCompactorRecipe>> getRecipeFor(Container inventory) {
+        if (!(level instanceof ServerLevel serverLevel))
+            return Optional.empty();
+
+        return serverLevel.recipeAccess().getRecipeFor(AtomicRecipes.EXPLOSIVE_COMPACTOR_TYPE.get(), getRecipeInput(inventory), level);
     }
 
     private Optional<RecipeHolder<ExplosiveCompactorRecipe>> getCurrentRecipe() {
-        return ((ServerLevel) this.level).recipeAccess()
-                .getRecipeFor(AtomicRecipes.EXPLOSIVE_COMPACTOR_TYPE.get(), new ExplosiveCompactorRecipeInput(itemHandler.getStackInSlot(INPUT_SLOT)), level);
+        return getRecipeFor(parseInventory());
     }
 
-    private boolean canInsertItemIntoOutputSlot(ItemStack output) {
-        return itemHandler.getStackInSlot(OUTPUT_SLOT).isEmpty() ||
-                itemHandler.getStackInSlot(OUTPUT_SLOT).getItem() == output.getItem();
+    private SimpleContainer parseInventory() {
+        /*
+         * Converts the actual block entity inventory to a new inventory that only contains the input slots.
+         * This is used to find the recipe we're working with.
+         */
+        SimpleContainer inventory = new SimpleContainer(INPUT_SLOTS.length);
+        for (int i = 0; i < INPUT_SLOTS.length; i++)
+            inventory.setItem(i, itemHandler.getStackInSlot(INPUT_SLOTS[i]));
+
+        return inventory;
     }
 
-    private boolean canInsertAmountIntoOutputSlot(int count) {
-        int maxCount = itemHandler.getStackInSlot(OUTPUT_SLOT).isEmpty() ? 64 : itemHandler.getStackInSlot(OUTPUT_SLOT).getMaxStackSize();
-        int currentCount = itemHandler.getStackInSlot(OUTPUT_SLOT).getCount();
+    private void reduceFuelForCraft(ExplosiveCompactorBlockEntity blockEntity, int recipeCost) {
+        int cost = recipeCost > 0 ? recipeCost : AtomicConfig.machineAll_CraftingFuelCost_Base.getAsInt();
+        blockEntity.powder = blockEntity.powder - cost;
+    }
 
-        return maxCount >= currentCount + count;
+    private void fuelSlotToInternalTank() {
+        // Get item stack in the fuel slot.
+        ItemStack itemStack = itemHandler.getStackInSlot(UTILITY_SLOTS[0]);
+        if (!itemStack.isEmpty() && AtomicTags.Helpers.doesItemStackTagMatch(AtomicTags.Values.GUNPOWDERS, itemStack)) {
+
+            int fuelPerGunpowder = AtomicConfig.machineAll_FuelConversion_Gunpowders.getAsInt();
+            int remainingCapacity = (maxPowder - powder) / fuelPerGunpowder;
+            int countToRemove = Math.min(remainingCapacity, itemStack.getCount());
+
+            if (countToRemove <= 0) return;
+
+            // Remove the items from the slot and add to the powder count.
+            itemHandler.extractItem(UTILITY_SLOTS[0], countToRemove);
+            powder += countToRemove * fuelPerGunpowder;
+        }
+    }
+
+    private void internalTankToFuelSlot() {
+
     }
 
     @Override
