@@ -32,16 +32,61 @@ public class AtomicConfig {
 
 
     /* EXPLOSIVE COMPACTOR */
+    public static final ModConfigSpec.IntValue machineExplosiveCompactor_FuelTankCapacity_Base = BUILDER
+            .comment("Capacity of blocks internal fuel tank. When no casing/upgrade is present.")
+            .defineInRange("machine.explosive_compactor.fuelTankCapacity_base", 256, 0, Integer.MAX_VALUE);
+
+    public static final ModConfigSpec.IntValue machineExplosiveCompactor_FuelTankCapacity_RefinedBungerite = BUILDER
+            .comment("Capacity of blocks internal fuel tank. When Refined Bungerite casing/upgrade is present.")
+            .defineInRange("machine.explosive_compactor.fuelTankCapacity_RefinedBungerite", 1024, 0, Integer.MAX_VALUE);
+
     public static final ModConfigSpec.IntValue machineExplosiveCompactor_CraftingDurationTicks_Base = BUILDER
             .comment("Base number of ticks for crafting recipe to complete.")
             .defineInRange("machine.explosive_compactor.craftingDurationTicks_Base", 80, 1, Integer.MAX_VALUE);
 
     public static final ModConfigSpec.DoubleValue machineExplosiveCompactor_CraftingDurationModifier_Base = BUILDER
             .comment("""
-                    Base crafting duration modifier. Used when no casing/upgrade is present.
+                    Crafting duration modifier. When no casing/upgrade is present.
                     CraftingDuration = BaseCraftingDuration - (BaseCraftingDuration * THIS_VALUE).
                     """)
-            .defineInRange("machine.explosive_compactor.craftingDurationModifier_base", 0.0, 0.0, Integer.MAX_VALUE);
+            .defineInRange("machine.explosive_compactor.craftingDurationModifier_base", 0.0, 0.0, 1.0);
+
+    public static final ModConfigSpec.DoubleValue machineExplosiveCompactor_CraftingDurationModifier_RefinedBungerite = BUILDER
+            .comment("""
+                    Crafting duration modifier. When Refined Bungerite casing/upgrade is present.
+                    CraftingDuration = BaseCraftingDuration - (BaseCraftingDuration * THIS_VALUE).
+                    """)
+            .defineInRange("machine.explosive_compactor.craftingDurationModifier_RefinedBungerite", 0.22, 0.0, 1.0);
+
+    public static final ModConfigSpec.DoubleValue machineExplosiveCompactor_ChanceToSaveIgnitionSource_Base = BUILDER
+            .comment("""
+                    Chance for machine to not use ignition source durability. When no casing/upgrade is present.
+                    0.0 = No chance to save. 1.0 = No durability used.
+                    """)
+            .defineInRange("machine.explosive_compactor.chanceToSaveIgnitionSource_base", 0.0, 0.0, 1.0);
+
+    public static final ModConfigSpec.DoubleValue machineExplosiveCompactor_ChanceToSaveIgnitionSource_RefinedBungerite = BUILDER
+            .comment("""
+                    Chance for machine to not use ignition source durability. When Refined Bungerite casing/upgrade is present.
+                    0.0 = No chance to save. 1.0 = No durability used.
+                    """)
+            .defineInRange("machine.explosive_compactor.chanceToSaveIgnitionSource_RefinedBungerite", 0.50, 0.0, 1.0);
+
+    public static final ModConfigSpec.DoubleValue machineExplosiveCompactor_ChanceToSaveFuel_Base = BUILDER
+            .comment("""
+                    Chance for machine to not use fuel. When no casing/upgrade is present.
+                    0.0 = No chance to save. 1.0 = No fuel used.
+                    """)
+            .defineInRange("machine.explosive_compactor.chanceToSaveFuel_base", 0.0, 0.0, 1.0);
+
+    public static final ModConfigSpec.DoubleValue machineExplosiveCompactor_ChanceToSaveFuel_RefinedBungerite = BUILDER
+            .comment("""
+                    Chance for machine to not use fuel. When Refined Bungerite casing/upgrade is present.
+                    0.0 = No chance to save. 1.0 = No fuel used.
+                    """)
+            .defineInRange("machine.explosive_compactor.chanceToSaveFuel_RefinedBungerite", 0.50, 0.0, 1.0);
+
+
 
 
 //    public static final ModConfigSpec.BooleanValue LOG_DIRT_BLOCK = BUILDER

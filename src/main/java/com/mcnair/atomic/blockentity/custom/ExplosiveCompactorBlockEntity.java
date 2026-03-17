@@ -1,5 +1,6 @@
 package com.mcnair.atomic.blockentity.custom;
 
+import com.mcnair.atomic.AtomicCompression;
 import com.mcnair.atomic.AtomicConfig;
 import com.mcnair.atomic.blockentity.AtomicBlockEntities;
 import com.mcnair.atomic.recipe.AtomicRecipes;
@@ -18,6 +19,7 @@ import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.Container;
 import net.minecraft.world.Containers;
 import net.minecraft.world.MenuProvider;
@@ -45,7 +47,7 @@ import java.util.Optional;
  */
 
 public class ExplosiveCompactorBlockEntity extends BlockEntity implements MenuProvider {
-    public final AtomicItemStackProvider itemHandler = new AtomicItemStackProvider(7) {
+    public final AtomicItemStackProvider itemHandler = new AtomicItemStackProvider(8) {
     };
 
     public static final float RECIPE_DURATION_MULTIPLIER = 1;
@@ -57,9 +59,8 @@ public class ExplosiveCompactorBlockEntity extends BlockEntity implements MenuPr
     protected final ContainerData data;
     private int progress = 0;
     private int maxProgress = 0;
-    private int powder = 0;
-    private int maxPowder = 256;
-    private int fuelMode = 0;
+    private int fuel = 0;
+    private int fuelCapacity = 256;
 
     public ExplosiveCompactorBlockEntity(BlockPos pos, BlockState blockState) {
         super(AtomicBlockEntities.EXPLOSIVE_COMPACTOR.get(), pos, blockState);
@@ -70,9 +71,8 @@ public class ExplosiveCompactorBlockEntity extends BlockEntity implements MenuPr
                 return switch (i) {
                     case 0 -> ExplosiveCompactorBlockEntity.this.progress;
                     case 1 -> ExplosiveCompactorBlockEntity.this.maxProgress;
-                    case 2 -> ExplosiveCompactorBlockEntity.this.powder;
-                    case 3 -> ExplosiveCompactorBlockEntity.this.maxPowder;
-                    case 4 -> ExplosiveCompactorBlockEntity.this.fuelMode;
+                    case 2 -> ExplosiveCompactorBlockEntity.this.fuel;
+                    case 3 -> ExplosiveCompactorBlockEntity.this.fuelCapacity;
                     default -> 0;
                 };
             }
@@ -85,11 +85,9 @@ public class ExplosiveCompactorBlockEntity extends BlockEntity implements MenuPr
                     case 1:
                         ExplosiveCompactorBlockEntity.this.maxProgress = value;
                     case 2:
-                        ExplosiveCompactorBlockEntity.this.powder = value;
+                        ExplosiveCompactorBlockEntity.this.fuel = value;
                     case 3:
-                        ExplosiveCompactorBlockEntity.this.maxPowder = value;
-                    case 4:
-                        ExplosiveCompactorBlockEntity.this.fuelMode = value;
+                        ExplosiveCompactorBlockEntity.this.fuelCapacity = value;
                 }
             }
 
@@ -106,9 +104,8 @@ public class ExplosiveCompactorBlockEntity extends BlockEntity implements MenuPr
 
         output.putInt("entity.progress", progress);
         output.putInt("entity.max_progress", maxProgress);
-        output.putInt("entity.powder", powder);
-        output.putInt("entity.max_powder", maxPowder);
-        output.putInt("entity.fuel_mode", fuelMode);
+        output.putInt("entity.fuel", fuel);
+        output.putInt("entity.fuel_capacity", fuelCapacity);
 
         super.saveAdditional(output);
     }
@@ -120,9 +117,8 @@ public class ExplosiveCompactorBlockEntity extends BlockEntity implements MenuPr
         itemHandler.deserialize(input);
         progress = input.getIntOr("entity.progress", 0);
         maxProgress = input.getIntOr("entity.max_progress", 0);
-        powder = input.getIntOr("entity.powder", 0);
-        maxPowder = input.getIntOr("entity.max_powder", 0);
-        fuelMode = input.getIntOr("entity.fuel_mode", 0);
+        fuel = input.getIntOr("entity.fuel", 0);
+        fuelCapacity = input.getIntOr("entity.fuel_capacity", 0);
     }
 
     @Override
@@ -136,6 +132,13 @@ public class ExplosiveCompactorBlockEntity extends BlockEntity implements MenuPr
         return new ExplosiveCompactorMenu(i, inventory, this, this.data);
     }
 
+    @Override
+    public void preRemoveSideEffects(BlockPos pos, BlockState state) {
+        drops();
+        super.preRemoveSideEffects(pos, state);
+    }
+
+
     public void drops() {
         SimpleContainer inventory = new SimpleContainer(itemHandler.slotCount);
         for (int i = 0; i < itemHandler.slotCount; i++) {
@@ -145,12 +148,6 @@ public class ExplosiveCompactorBlockEntity extends BlockEntity implements MenuPr
         Containers.dropContents(this.level, this.worldPosition, inventory);
     }
 
-    @Override
-    public void preRemoveSideEffects(BlockPos pos, BlockState state) {
-        drops();
-        super.preRemoveSideEffects(pos, state);
-    }
-
     private void resetProgress() {
         // Reset the crafting progress to the default.
         progress = 0;
@@ -158,11 +155,53 @@ public class ExplosiveCompactorBlockEntity extends BlockEntity implements MenuPr
     }
 
     private void loadMachineConfigData() {
+        fuelCapacity = getCasingDataFuelTankCapacity();
+
         int ticks = AtomicConfig.machineExplosiveCompactor_CraftingDurationTicks_Base.getAsInt();
-        double modifier = AtomicConfig.machineExplosiveCompactor_CraftingDurationModifier_Base.getAsDouble();
+        double modifier = getCasingDataCraftingDurationModifier();
         int tickDeduction = (int) Math.abs(ticks * modifier);
 
         maxProgress = Math.max(1, ticks - tickDeduction);
+    }
+
+    private int getCasingDataFuelTankCapacity() {
+        if (getCasingType() == "refined_bungerite") {
+            return AtomicConfig.machineExplosiveCompactor_FuelTankCapacity_RefinedBungerite.getAsInt();
+        } else {
+            return AtomicConfig.machineExplosiveCompactor_FuelTankCapacity_Base.getAsInt();
+        }
+    }
+
+    public double getCasingDataCraftingDurationModifier() {
+        if (getCasingType() == "refined_bungerite") {
+            return AtomicConfig.machineExplosiveCompactor_CraftingDurationModifier_RefinedBungerite.getAsDouble();
+        } else {
+            return AtomicConfig.machineExplosiveCompactor_CraftingDurationModifier_Base.getAsDouble();
+        }
+    }
+
+    public double getCasingDataChanceToSaveIgnitionSource() {
+        if (getCasingType() == "refined_bungerite") {
+            return AtomicConfig.machineExplosiveCompactor_ChanceToSaveIgnitionSource_RefinedBungerite.getAsDouble();
+        } else {
+            return AtomicConfig.machineExplosiveCompactor_ChanceToSaveIgnitionSource_Base.getAsDouble();
+        }
+    }
+
+    public double getCasingDataChanceToSaveFuel() {
+        if (getCasingType() == "refined_bungerite") {
+            return AtomicConfig.machineExplosiveCompactor_ChanceToSaveFuel_RefinedBungerite.getAsDouble();
+        } else {
+            return AtomicConfig.machineExplosiveCompactor_ChanceToSaveFuel_Base.getAsDouble();
+        }
+    }
+
+    public String getCasingType() {
+        ItemStack stackInCasingSlot = itemHandler.getStackInSlot(UTILITY_SLOTS[2]);
+        if (AtomicTags.Helpers.doesItemStackTagMatch(AtomicTags.Values.MACHINE_CASING_REFINED_BUNGERITE, stackInCasingSlot))
+            return "refined_bungerite";
+        else
+            return "none";
     }
 
     public static void tick(Level level, BlockPos blockPos, BlockState state, ExplosiveCompactorBlockEntity blockEntity) {
@@ -179,7 +218,7 @@ public class ExplosiveCompactorBlockEntity extends BlockEntity implements MenuPr
                 return;
 
             // Check if there is enough fuel for the recipe to complete.
-            if (blockEntity.hasIgnitionSource(false) && blockEntity.hasEnoughFuel(blockEntity.powder, recipe.get().value().getCost())) {
+            if (blockEntity.hasIgnitionSource(false) && blockEntity.hasEnoughFuel(blockEntity.fuel, recipe.get().value().getCost())) {
 
                 //Reset progress for invalid values
                 if (blockEntity.progress < 0 || blockEntity.maxProgress < 0) {
@@ -227,16 +266,17 @@ public class ExplosiveCompactorBlockEntity extends BlockEntity implements MenuPr
         // Get item stack in the ignition slot.
         ItemStack itemStack = itemHandler.getStackInSlot(UTILITY_SLOTS[1]);
         if (!itemStack.isEmpty() && AtomicTags.Helpers.doesItemStackTagMatch(AtomicTags.Values.MACHINE_IGNITION, itemStack)) {
-
             // If the item in the slot is damageable, damage it.
             if (applyDamage && itemStack.isDamageableItem()) {
-                int newDamageValue = itemStack.getDamageValue() + 1;
+                if (!rollForChance(getCasingDataChanceToSaveIgnitionSource())) {
+                    int newDamageValue = itemStack.getDamageValue() + 1;
 
-                if (newDamageValue >= itemStack.getMaxDamage()) {
-                    itemHandler.setStackInSlot(UTILITY_SLOTS[1], ItemStack.EMPTY);
-                } else {
-                    itemStack.setDamageValue(newDamageValue);
-                    itemHandler.setStackInSlot(1, itemStack);
+                    if (newDamageValue >= itemStack.getMaxDamage()) {
+                        itemHandler.setStackInSlot(UTILITY_SLOTS[1], ItemStack.EMPTY);
+                    } else {
+                        itemStack.setDamageValue(newDamageValue);
+                        itemHandler.setStackInSlot(1, itemStack);
+                    }
                 }
             }
 
@@ -259,6 +299,7 @@ public class ExplosiveCompactorBlockEntity extends BlockEntity implements MenuPr
             level.setBlock(getBlockPos(), getBlockState().setValue(BlockStateProperties.LIT, false), 3);
         }
     }
+
 
     /*
      * Note: Might refactor to use the INPUT_SLOTS array instead of standard loop for, as this isn't very readable.
@@ -393,9 +434,12 @@ public class ExplosiveCompactorBlockEntity extends BlockEntity implements MenuPr
         return inventory;
     }
 
+
     private void reduceFuelForCraft(ExplosiveCompactorBlockEntity blockEntity, int recipeCost) {
-        int cost = recipeCost > 0 ? recipeCost : AtomicConfig.machineAll_CraftingFuelCost_Base.getAsInt();
-        blockEntity.powder = blockEntity.powder - cost;
+        if (!rollForChance(getCasingDataChanceToSaveFuel())) {
+            int cost = recipeCost > 0 ? recipeCost : AtomicConfig.machineAll_CraftingFuelCost_Base.getAsInt();
+            blockEntity.fuel = blockEntity.fuel - cost;
+        }
     }
 
     private void fuelSlotToInternalTank() {
@@ -404,20 +448,22 @@ public class ExplosiveCompactorBlockEntity extends BlockEntity implements MenuPr
         if (!itemStack.isEmpty() && AtomicTags.Helpers.doesItemStackTagMatch(AtomicTags.Values.GUNPOWDERS, itemStack)) {
 
             int fuelPerGunpowder = AtomicConfig.machineAll_FuelConversion_Gunpowders.getAsInt();
-            int remainingCapacity = (maxPowder - powder) / fuelPerGunpowder;
+            int remainingCapacity = (fuelCapacity - fuel) / fuelPerGunpowder;
             int countToRemove = Math.min(remainingCapacity, itemStack.getCount());
 
             if (countToRemove <= 0) return;
 
             // Remove the items from the slot and add to the powder count.
             itemHandler.extractItem(UTILITY_SLOTS[0], countToRemove);
-            powder += countToRemove * fuelPerGunpowder;
+            fuel += countToRemove * fuelPerGunpowder;
         }
     }
 
-    private void internalTankToFuelSlot() {
-
+    public boolean rollForChance(double percentage) {
+        assert level != null;
+        return (level.random.nextDouble() <= percentage);
     }
+
 
     @Override
     public CompoundTag getUpdateTag(HolderLookup.Provider pRegistries) {

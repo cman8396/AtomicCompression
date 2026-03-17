@@ -36,19 +36,19 @@ public class ExplosiveCompactorMenu extends AbstractContainerMenu {
         addPlayerHotbar(inv);
 
         /* UTILITY SLOTS */
-        this.addSlot(new TagLimitedSlot(blockEntity.itemHandler, blockEntity.itemHandler::set, 0, 152, 55, AtomicTags.Values.GUNPOWDERS));
-        this.addSlot(new TagLimitedSlot(blockEntity.itemHandler, blockEntity.itemHandler::set, 1, 152, 35, AtomicTags.Values.MACHINE_IGNITION));
-        this.addSlot(new TagLimitedSlot(blockEntity.itemHandler, blockEntity.itemHandler::set, 2, 152, 15, AtomicTags.Values.MACHINE_CASINGS));
+        this.addSlot(new TagLimitedSlot(blockEntity.itemHandler, blockEntity.itemHandler::set, 0, 152, 60, AtomicTags.Values.GUNPOWDERS));
+        this.addSlot(new TagLimitedSlot(blockEntity.itemHandler, blockEntity.itemHandler::set, 1, 8, 36, AtomicTags.Values.MACHINE_IGNITION));
+        this.addSlot(new TagLimitedSlot(blockEntity.itemHandler, blockEntity.itemHandler::set, 2, 8, 16, AtomicTags.Values.MACHINE_CASING));
 
         /* PROCESSING SLOTS */
         // Input Left
-        this.addSlot(new ResourceHandlerSlot(blockEntity.itemHandler, blockEntity.itemHandler::set, 3, 34, 34));
+        this.addSlot(new ResourceHandlerSlot(blockEntity.itemHandler, blockEntity.itemHandler::set, 3, 43, 36));
         // Input Right
-        this.addSlot(new ResourceHandlerSlot(blockEntity.itemHandler, blockEntity.itemHandler::set, 4, 54, 34));
+        this.addSlot(new ResourceHandlerSlot(blockEntity.itemHandler, blockEntity.itemHandler::set, 4, 63, 36));
         // Output Primary
-        this.addSlot(new OutputOnlySlot(blockEntity.itemHandler, blockEntity.itemHandler::set, 5, 104, 34));
+        this.addSlot(new OutputOnlySlot(blockEntity.itemHandler, blockEntity.itemHandler::set, 5, 113, 36));
         // Output Secondary
-        this.addSlot(new OutputOnlySlot(blockEntity.itemHandler, blockEntity.itemHandler::set, 6, 104, 58));
+        this.addSlot(new OutputOnlySlot(blockEntity.itemHandler, blockEntity.itemHandler::set, 6, 113, 60));
 
         addDataSlots(data);
     }
@@ -73,12 +73,20 @@ public class ExplosiveCompactorMenu extends AbstractContainerMenu {
         return texturePixelSize - (maxPowder != 0 && powder != 0 ? powder * texturePixelSize / maxPowder : 0);
     }
 
-    public int getDataPowder() {
+    public int getCurrentFuel() {
         return this.data.get(2);
     }
 
-    public int getDataMaxPowder() {
+    public int getCurrentFuelCapacity() {
         return this.data.get(3);
+    }
+
+    public String getCasingType(){
+        return blockEntity.getCasingType();
+    }
+
+    public double[] getModifierValues() {
+        return new double[]{blockEntity.getCasingDataCraftingDurationModifier(), blockEntity.getCasingDataChanceToSaveIgnitionSource(), blockEntity.getCasingDataChanceToSaveFuel()};
     }
 
 

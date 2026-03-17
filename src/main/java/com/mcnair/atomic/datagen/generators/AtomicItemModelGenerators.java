@@ -55,6 +55,9 @@ public class AtomicItemModelGenerators extends ItemModelGenerators {
         this.generateFlatItem(AtomicItems.BUNGERITE_ALLOY_AXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         this.generateFlatItem(AtomicItems.BUNGERITE_ALLOY_HOE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
 
+        /* MACHINE CASINGS */
+        this.generateFlatItem(AtomicItems.REFINED_BUNGERITE_MACHINE_CASING.get(), ModelTemplates.FLAT_ITEM);
+
 
 //        itemModels.generateTrimmableItem(AtomicItems.BISMUTH_HELMET.get(), ModArmorMaterials.BISMUTH, ItemModelGenerators.TRIM_PREFIX_HELMET, false);
 //        itemModels.generateTrimmableItem(AtomicItems.BISMUTH_CHESTPLATE.get(), ModArmorMaterials.BISMUTH, ItemModelGenerators.TRIM_PREFIX_CHESTPLATE, false);

@@ -83,9 +83,26 @@
   "item.atomiccompression.bungerite_alloy_axe": "Bungerite Alloy Axe",
   "item.atomiccompression.bungerite_alloy_hoe": "Bungerite Alloy Hoe",
 
+  "item.atomiccompression.refined_bungerite_machine_casing": "Refined Bungerite Machine Casing",
+
+  "general.atomiccompression.refined_bungerite": "Refined Bungerite",
+  "general.atomiccompression.bungerite_alloy": "Bungerite Alloy",
+
   "tooltip.atomiccompression.machines.fuel": "Ignitable Fuel",
   "tooltip.atomiccompression.machines.ignition_source": "Ignition Source",
   "tooltip.atomiccompression.machines.casing_upgrade": "Machine Upgrade",
+
+  "tooltip.atomiccompression.machines.info": "Machine Info:",
+  "tooltip.atomiccompression.machines.info.casing": "Machine Casing: ",
+  "tooltip.atomiccompression.machines.info.casing.none": "None",
+  "tooltip.atomiccompression.machines.info.fuel_tank_capacity": "Fuel Tank Capacity: ",
+  "tooltip.atomiccompression.machines.info.ignition": "Ignition Source: ",
+  "tooltip.atomiccompression.machines.info.ignition.none": "None",
+  "tooltip.atomiccompression.machines.info.ignition.basic": "Basic",
+  "tooltip.atomiccompression.machines.info.ignition.broken": "Broken",
+  "tooltip.atomiccompression.machines.info.crafting_duration_modifier": "Crafting Duration Modifier: ",
+  "tooltip.atomiccompression.machines.info.chance_save_ignition": "Chance to Save Ignition Source Durability: ",
+  "tooltip.atomiccompression.machines.info.chance_save_fuel": "Chance to Save Fuel: ",
 
   "entity.minecraft.villager.atomiccompression.compressionist": "Compressionist",
 
@@ -97,7 +114,15 @@
   "atomiccompression.configuration.fuelConversion_Gunpowders": "Gunpowder > Fuel Conversion Amount",
   "atomiccompression.configuration.craftingFuelCost_Base": "Base Crafting Fuel Cost",
 
+  "atomiccompression.configuration.machine": "Machines Config",
   "atomiccompression.configuration.explosive_compactor": "Explosive Compactor",
   "atomiccompression.configuration.craftingDurationTicks_Base": "Base Crafting Duration (in ticks)",
-  "atomiccompression.configuration.craftingDurationModifier_base": "Base Crafting Duration Modifier"
+  "atomiccompression.configuration.craftingDurationModifier_base": "Crafting Duration Modifier (Base)",
+  "atomiccompression.configuration.craftingDurationModifier_RefinedBungerite": "Crafting Duration Modifier (Refined Bungerite)",
+  "atomiccompression.configuration.chanceToSaveIgnitionSource_base": "Chance to Save Ignition Source Durability (Base)",
+  "atomiccompression.configuration.chanceToSaveIgnitionSource_RefinedBungerite": "Chance to Save Ignition Source Durability (Refined Bungerite)",
+  "atomiccompression.configuration.chanceToSaveFuel_base": "Chance to Save Fuel (Base)",
+  "atomiccompression.configuration.chanceToSaveFuel_RefinedBungerite": "Chance to Save Fuel (Refined Bungerite)",
+  "atomiccompression.configuration.fuelTankCapacity_base": "Fuel Tank Capacity (Base)",
+  "atomiccompression.configuration.fuelTankCapacity_RefinedBungerite": "Fuel Tank Capacity (Refined Bungerite)"
 }

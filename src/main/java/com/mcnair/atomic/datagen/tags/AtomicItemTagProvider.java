@@ -61,5 +61,11 @@ public class AtomicItemTagProvider extends ItemTagsProvider {
         tag(AtomicTags.Items.MACHINE_IGNITION)
                 .add(Items.FLINT_AND_STEEL);
 
+        tag(AtomicTags.Items.MACHINE_CASING)
+                .add(AtomicItems.REFINED_BUNGERITE_MACHINE_CASING.asItem());
+
+        tag(AtomicTags.Items.MACHINE_CASING_REFINED_BUNGERITE)
+                .add(AtomicItems.REFINED_BUNGERITE_MACHINE_CASING.asItem());
+
     }
 }
