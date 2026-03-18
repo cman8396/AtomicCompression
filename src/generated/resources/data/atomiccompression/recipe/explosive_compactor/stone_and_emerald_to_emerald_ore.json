@@ -1,0 +1,29 @@
+{
+  "type": "atomiccompression:explosive_compactor",
+  "cost": 0,
+  "ingredients": [
+    {
+      "count": 9,
+      "ingredient": "minecraft:stone"
+    },
+    {
+      "count": 3,
+      "ingredient": "minecraft:emerald"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:emerald_ore"
+  },
+  "secondaryResult": {
+    "percentages": [
+      1.0,
+      0.5,
+      0.1
+    ],
+    "result": {
+      "count": 1,
+      "id": "minecraft:cobblestone"
+    }
+  }
+}

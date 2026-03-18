@@ -4,20 +4,28 @@ import com.mcnair.atomic.AtomicCompression;
 import com.mcnair.atomic.block.AtomicBlocks;
 import com.mcnair.atomic.datagen.extensions.AtomicBlockFamilies;
 import com.mcnair.atomic.item.AtomicItems;
+import com.mcnair.atomic.recipe.base.input.InputItemWithCount;
+import com.mcnair.atomic.recipe.base.output.OutputItemWithPercent;
+import com.mcnair.atomic.recipe.recipes.ExplosiveCompactorRecipe;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.BlockFamily;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
+import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.flag.FeatureFlags;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
@@ -176,10 +184,14 @@ public class AtomicRecipeProvider extends RecipeProvider {
         generateRecipesForBlockFamilies(FeatureFlagSet.of(FeatureFlags.VANILLA)); //generates all recipes for wood block families
         woodBlockProcessing(output, AtomicBlocks.ASHENWOOD_PLANKS, AtomicBlocks.ASHENWOOD_LOG, AtomicBlocks.ASHENWOOD_WOOD);
 
-//        addCrystalGrowthChamberRecipe(output, ingredientOf(Tags.Items.GEMS_AMETHYST),
-//                new OutputItemStackWithPercentages(new ItemStack(Items.AMETHYST_SHARD), new double[] {
-//                        1., 1., .67, .5, .25, .125
-//                }), 16000);
+
+        /* EXPLOSIVE COMPACTOR */
+        createExplosiveCompactorOreRecipe(output, Items.DIAMOND, 3, Blocks.DIAMOND_ORE.asItem());
+        createExplosiveCompactorOreRecipe(output, Items.EMERALD, 3, Blocks.EMERALD_ORE.asItem());
+        createExplosiveCompactorOreRecipe(output, Items.REDSTONE, 16, Blocks.REDSTONE_ORE.asItem());
+        createExplosiveCompactorOreRecipe(output, Items.LAPIS_LAZULI, 20, Blocks.LAPIS_ORE.asItem());
+
+
 
 //        allWoodenObjects(output, "ashenwood", AtomicBlocks.ASHENWOOD_PLANKS, AtomicBlocks.ASHENWOOD_STAIRS, AtomicBlocks.ASHENWOOD_SLAB, AtomicBlocks.ASHENWOOD_BUTTON, AtomicBlocks.ASHENWOOD_PRESSURE_PLATE, AtomicBlocks.ASHENWOOD_FENCE, AtomicBlocks.ASHENWOOD_FENCE_GATE, AtomicBlocks.ASHENWOOD_WALL, AtomicBlocks.ASHENWOOD_DOOR, AtomicBlocks.ASHENWOOD_TRAPDOOR);
 
@@ -188,19 +200,6 @@ public class AtomicRecipeProvider extends RecipeProvider {
         // trimSmithing(AtomicItems.KAUPEN_SMITHING_TEMPLATE.get(), ResourceKey.create(Registries.TRIM_PATTERN, Identifier.fromNamespaceAndPath(TutorialMod.MOD_ID, "kaupen")),
         //         ResourceKey.create(Registries.RECIPE, Identifier.fromNamespaceAndPath(TutorialMod.MOD_ID, "kaupen")));
     }
-
-//    private void addCrystalGrowthChamberRecipe(RecipeOutput recipeOutput, Ingredient input, OutputItemStackWithPercentages output,
-//                                               int ticks) {
-//        addCrystalGrowthChamberRecipe(recipeOutput, new IngredientWithCount(input), output, ticks);
-//    }
-//    private void addCrystalGrowthChamberRecipe(RecipeOutput recipeOutput, IngredientWithCount input, OutputItemStackWithPercentages output,
-//                                               int ticks) {
-//        Identifier recipeId = EPAPI.id("crystal_growing/" +
-//                getItemName(output.output().getItem()));
-//
-//        CrystalGrowthChamberRecipe recipe = new CrystalGrowthChamberRecipe(output, input, ticks);
-//        recipeOutput.accept(getKey(recipeId), recipe, null);
-//    }
 
     protected void allTools(RecipeOutput recipeOutput, ItemLike ingotItem, ItemLike stickItem, ItemLike swordItem, ItemLike spearItem, ItemLike pickaxeItem, ItemLike axeItem, ItemLike shovelItem, ItemLike hoeItem) {
         shaped(RecipeCategory.COMBAT, swordItem).pattern("I").pattern("I").pattern("S").define('I', ingotItem).define('S', stickItem).unlockedBy("has_" + getItemName(ingotItem), has(ingotItem)).unlockedBy("has_" + getItemName(stickItem), has(stickItem)).save(recipeOutput);
@@ -299,10 +298,39 @@ public class AtomicRecipeProvider extends RecipeProvider {
                 pExperience, pCookingTime, pGroup, "_from_blasting");
     }
 
+    private void createExplosiveCompactorRecipe(RecipeOutput recipeOutput, InputItemWithCount[] inputs, ItemStack output, OutputItemWithPercent secondaryOutput, int cost) {
+        String[] nameParts = new String[inputs.length];
+        for (int i = 0; i < inputs.length; i++)
+            nameParts[i] = getItemName(inputs[i].input().getValues().get(0).value());
+
+        String recipeName = String.join("_and_", nameParts) + "_to_" + getItemName(output.getItem());
+        Identifier recipeId = Identifier.fromNamespaceAndPath(AtomicCompression.MOD_ID, "explosive_compactor/" + recipeName);
+
+        ExplosiveCompactorRecipe recipe = new ExplosiveCompactorRecipe(output, secondaryOutput, inputs, cost);
+        recipeOutput.accept(getKey(recipeId), recipe, null);
+    }
+
+    private void createExplosiveCompactorOreRecipe(RecipeOutput recipeOutput, ItemLike input, int inputCount, ItemLike output){
+        createExplosiveCompactorRecipe(
+                recipeOutput,
+                new InputItemWithCount[]{
+                        new InputItemWithCount(Ingredient.of(Blocks.STONE.asItem()), 9),
+                        new InputItemWithCount(Ingredient.of(input), inputCount),
+                },
+                new ItemStack(output),
+                new OutputItemWithPercent(new ItemStack(Blocks.COBBLESTONE.asItem()), new double[]{1.0, 0.5, 0.1}),
+                0
+        );
+    }
+
     protected <T extends AbstractCookingRecipe> void oreCooking(RecipeOutput recipeOutput, RecipeSerializer<T> pCookingSerializer, AbstractCookingRecipe.Factory<T> factory, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTime, String pGroup, String pRecipeName) {
         for (ItemLike itemlike : pIngredients) {
             SimpleCookingRecipeBuilder.generic(Ingredient.of(itemlike), pCategory, pResult, pExperience, pCookingTime, pCookingSerializer, factory).group(pGroup).unlockedBy(getHasName(itemlike), has(itemlike))
                     .save(recipeOutput, AtomicCompression.MOD_ID + ":" + getItemName(pResult) + pRecipeName + "_" + getItemName(itemlike));
         }
+    }
+
+    private static ResourceKey<Recipe<?>> getKey(Identifier recipeId) {
+        return ResourceKey.create(Registries.RECIPE, recipeId);
     }
 }

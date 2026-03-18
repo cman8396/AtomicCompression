@@ -1,0 +1,29 @@
+{
+  "type": "atomiccompression:explosive_compactor",
+  "cost": 0,
+  "ingredients": [
+    {
+      "count": 9,
+      "ingredient": "minecraft:stone"
+    },
+    {
+      "count": 20,
+      "ingredient": "minecraft:lapis_lazuli"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:lapis_ore"
+  },
+  "secondaryResult": {
+    "percentages": [
+      1.0,
+      0.5,
+      0.1
+    ],
+    "result": {
+      "count": 1,
+      "id": "minecraft:cobblestone"
+    }
+  }
+}

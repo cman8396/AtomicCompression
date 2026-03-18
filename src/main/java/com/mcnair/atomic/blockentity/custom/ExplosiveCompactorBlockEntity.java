@@ -1,6 +1,5 @@
 package com.mcnair.atomic.blockentity.custom;
 
-import com.mcnair.atomic.AtomicCompression;
 import com.mcnair.atomic.AtomicConfig;
 import com.mcnair.atomic.blockentity.AtomicBlockEntities;
 import com.mcnair.atomic.recipe.AtomicRecipes;
@@ -19,7 +18,6 @@ import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.Container;
 import net.minecraft.world.Containers;
 import net.minecraft.world.MenuProvider;
@@ -40,11 +38,6 @@ import net.minecraft.world.level.storage.ValueOutput;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
-
-/*
- * Inspiration for recipes from EnergizedPower <3
- * https://github.com/JDDev0/EnergizedPower
- */
 
 public class ExplosiveCompactorBlockEntity extends BlockEntity implements MenuProvider {
     public final AtomicItemStackProvider itemHandler = new AtomicItemStackProvider(8) {
