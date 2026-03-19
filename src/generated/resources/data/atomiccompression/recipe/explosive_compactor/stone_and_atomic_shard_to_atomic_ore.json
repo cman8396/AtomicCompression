@@ -7,13 +7,13 @@
       "ingredient": "minecraft:stone"
     },
     {
-      "count": 16,
-      "ingredient": "minecraft:redstone"
+      "count": 4,
+      "ingredient": "atomiccompression:atomic_shard"
     }
   ],
   "result": {
     "count": 1,
-    "id": "minecraft:redstone_ore"
+    "id": "atomiccompression:atomic_ore"
   },
   "secondaryResult": {
     "percentages": [

@@ -4,26 +4,25 @@
   "ingredients": [
     {
       "count": 4,
-      "ingredient": "minecraft:stone"
+      "ingredient": "minecraft:netherrack"
     },
     {
-      "count": 16,
-      "ingredient": "minecraft:redstone"
+      "count": 12,
+      "ingredient": "minecraft:quartz"
     }
   ],
   "result": {
     "count": 1,
-    "id": "minecraft:redstone_ore"
+    "id": "minecraft:nether_quartz_ore"
   },
   "secondaryResult": {
     "percentages": [
-      1.0,
       0.5,
       0.1
     ],
     "result": {
       "count": 1,
-      "id": "minecraft:cobblestone"
+      "id": "minecraft:netherrack"
     }
   }
 }

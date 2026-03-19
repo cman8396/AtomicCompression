@@ -25,7 +25,6 @@ import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
@@ -186,30 +185,35 @@ public class AtomicRecipeProvider extends RecipeProvider {
 
 
         /* EXPLOSIVE COMPACTOR */
-        createExplosiveCompactorOreRecipe(output, Items.DIAMOND, 3, Blocks.DIAMOND_ORE.asItem());
-        createExplosiveCompactorOreRecipe(output, Items.EMERALD, 3, Blocks.EMERALD_ORE.asItem());
-        createExplosiveCompactorOreRecipe(output, Items.REDSTONE, 16, Blocks.REDSTONE_ORE.asItem());
-        createExplosiveCompactorOreRecipe(output, Items.LAPIS_LAZULI, 20, Blocks.LAPIS_ORE.asItem());
+        ExplosiveCompactor.createStoneOreRecipe(output, Items.RAW_GOLD, 8, Blocks.GOLD_ORE.asItem(), Blocks.DEEPSLATE_GOLD_ORE.asItem());
+        ExplosiveCompactor.createStoneOreRecipe(output, Items.RAW_IRON, 8, Blocks.IRON_ORE.asItem(), Blocks.DEEPSLATE_IRON_ORE.asItem());
+        ExplosiveCompactor.createStoneOreRecipe(output, Items.RAW_COPPER, 8, Blocks.COPPER_ORE.asItem(), Blocks.DEEPSLATE_COPPER_ORE.asItem());
+        ExplosiveCompactor.createStoneOreRecipe(output, Items.REDSTONE, 16, Blocks.REDSTONE_ORE.asItem(), Blocks.DEEPSLATE_REDSTONE_ORE.asItem());
+        ExplosiveCompactor.createStoneOreRecipe(output, Items.LAPIS_LAZULI, 24, Blocks.LAPIS_ORE.asItem(), Blocks.DEEPSLATE_LAPIS_ORE.asItem());
+        ExplosiveCompactor.createStoneOreRecipe(output, Items.EMERALD, 5, Blocks.EMERALD_ORE.asItem(), Blocks.DEEPSLATE_EMERALD_ORE.asItem());
+        ExplosiveCompactor.createStoneOreRecipe(output, Items.DIAMOND, 5, Blocks.DIAMOND_ORE.asItem(), Blocks.DEEPSLATE_DIAMOND_ORE.asItem());
+        ExplosiveCompactor.createStoneOreRecipe(output, Items.COAL, 8, Blocks.COAL_ORE.asItem(), Blocks.DEEPSLATE_COAL_ORE.asItem());
+        ExplosiveCompactor.createStoneOreRecipe(output, AtomicItems.RAW_LEAD, 8, AtomicBlocks.LEAD_ORE.asItem(), AtomicBlocks.DEEPSLATE_LEAD_ORE.asItem());
+        ExplosiveCompactor.createStoneOreRecipe(output, AtomicItems.RAW_SULFUR, 8, AtomicBlocks.LEAD_ORE.asItem(), AtomicBlocks.DEEPSLATE_SULFUR_ORE.asItem());
+        ExplosiveCompactor.createStoneOreRecipe(output, AtomicItems.RAW_SALTPETER, 8, AtomicBlocks.LEAD_ORE.asItem(), AtomicBlocks.DEEPSLATE_SALTPETER_ORE.asItem());
+        ExplosiveCompactor.createStoneOreRecipe(output, AtomicItems.ATOMIC_SHARD, 4, AtomicBlocks.ATOMIC_ORE.asItem(), AtomicBlocks.DEEPSLATE_ATOMIC_ORE.asItem());
+
+        ExplosiveCompactor.createNetherOreRecipe(output, AtomicItems.RAW_BUNGERITE, 8, AtomicBlocks.BUNGERITE_ORE.asItem());
+        ExplosiveCompactor.createNetherOreRecipe(output, Items.QUARTZ, 12, Blocks.NETHER_QUARTZ_ORE.asItem());
+        ExplosiveCompactor.createNetherOreRecipe(output, AtomicItems.ATOMIC_SHARD, 4, AtomicBlocks.NETHER_ATOMIC_ORE.asItem());
+
+        ExplosiveCompactor.createEndOreRecipe(output, AtomicItems.ATOMIC_SHARD, 4, AtomicBlocks.END_ATOMIC_ORE.asItem());
+
 
 
 
 //        allWoodenObjects(output, "ashenwood", AtomicBlocks.ASHENWOOD_PLANKS, AtomicBlocks.ASHENWOOD_STAIRS, AtomicBlocks.ASHENWOOD_SLAB, AtomicBlocks.ASHENWOOD_BUTTON, AtomicBlocks.ASHENWOOD_PRESSURE_PLATE, AtomicBlocks.ASHENWOOD_FENCE, AtomicBlocks.ASHENWOOD_FENCE_GATE, AtomicBlocks.ASHENWOOD_WALL, AtomicBlocks.ASHENWOOD_DOOR, AtomicBlocks.ASHENWOOD_TRAPDOOR);
-
 
         // Throws error
         // trimSmithing(AtomicItems.KAUPEN_SMITHING_TEMPLATE.get(), ResourceKey.create(Registries.TRIM_PATTERN, Identifier.fromNamespaceAndPath(TutorialMod.MOD_ID, "kaupen")),
         //         ResourceKey.create(Registries.RECIPE, Identifier.fromNamespaceAndPath(TutorialMod.MOD_ID, "kaupen")));
     }
 
-    protected void allTools(RecipeOutput recipeOutput, ItemLike ingotItem, ItemLike stickItem, ItemLike swordItem, ItemLike spearItem, ItemLike pickaxeItem, ItemLike axeItem, ItemLike shovelItem, ItemLike hoeItem) {
-        shaped(RecipeCategory.COMBAT, swordItem).pattern("I").pattern("I").pattern("S").define('I', ingotItem).define('S', stickItem).unlockedBy("has_" + getItemName(ingotItem), has(ingotItem)).unlockedBy("has_" + getItemName(stickItem), has(stickItem)).save(recipeOutput);
-        shaped(RecipeCategory.COMBAT, spearItem).pattern("  I").pattern(" S ").pattern("S  ").define('I', ingotItem).define('S', stickItem).unlockedBy("has_" + getItemName(ingotItem), has(ingotItem)).unlockedBy("has_" + getItemName(stickItem), has(stickItem)).save(recipeOutput);
-
-        shaped(RecipeCategory.TOOLS, pickaxeItem).pattern("III").pattern(" S ").pattern(" S ").define('I', ingotItem).define('S', stickItem).unlockedBy("has_" + getItemName(ingotItem), has(ingotItem)).unlockedBy("has_" + getItemName(stickItem), has(stickItem)).save(recipeOutput);
-        shaped(RecipeCategory.TOOLS, axeItem).pattern("I").pattern("S").pattern("S").define('I', ingotItem).define('S', stickItem).unlockedBy("has_" + getItemName(ingotItem), has(ingotItem)).unlockedBy("has_" + getItemName(stickItem), has(stickItem)).save(recipeOutput);
-        shaped(RecipeCategory.TOOLS, shovelItem).pattern("II").pattern("IS").pattern(" S").define('I', ingotItem).define('S', stickItem).unlockedBy("has_" + getItemName(ingotItem), has(ingotItem)).unlockedBy("has_" + getItemName(stickItem), has(stickItem)).save(recipeOutput);
-        shaped(RecipeCategory.TOOLS, hoeItem).pattern("II").pattern(" S").pattern(" S").define('I', ingotItem).define('S', stickItem).unlockedBy("has_" + getItemName(ingotItem), has(ingotItem)).unlockedBy("has_" + getItemName(stickItem), has(stickItem)).save(recipeOutput);
-    }
 
     protected void oneToOneRecipe(RecipeOutput recipeOutput, ItemLike inputItem, ItemLike outputItem) {
         shapeless(RecipeCategory.MISC, outputItem, 1)
@@ -227,21 +231,21 @@ public class AtomicRecipeProvider extends RecipeProvider {
                 .save(recipeOutput);
     }
 
+    protected void allTools(RecipeOutput recipeOutput, ItemLike ingotItem, ItemLike stickItem, ItemLike swordItem, ItemLike spearItem, ItemLike pickaxeItem, ItemLike axeItem, ItemLike shovelItem, ItemLike hoeItem) {
+        shaped(RecipeCategory.COMBAT, swordItem).pattern("I").pattern("I").pattern("S").define('I', ingotItem).define('S', stickItem).unlockedBy("has_" + getItemName(ingotItem), has(ingotItem)).unlockedBy("has_" + getItemName(stickItem), has(stickItem)).save(recipeOutput);
+        shaped(RecipeCategory.COMBAT, spearItem).pattern("  I").pattern(" S ").pattern("S  ").define('I', ingotItem).define('S', stickItem).unlockedBy("has_" + getItemName(ingotItem), has(ingotItem)).unlockedBy("has_" + getItemName(stickItem), has(stickItem)).save(recipeOutput);
+
+        shaped(RecipeCategory.TOOLS, pickaxeItem).pattern("III").pattern(" S ").pattern(" S ").define('I', ingotItem).define('S', stickItem).unlockedBy("has_" + getItemName(ingotItem), has(ingotItem)).unlockedBy("has_" + getItemName(stickItem), has(stickItem)).save(recipeOutput);
+        shaped(RecipeCategory.TOOLS, axeItem).pattern("I").pattern("S").pattern("S").define('I', ingotItem).define('S', stickItem).unlockedBy("has_" + getItemName(ingotItem), has(ingotItem)).unlockedBy("has_" + getItemName(stickItem), has(stickItem)).save(recipeOutput);
+        shaped(RecipeCategory.TOOLS, shovelItem).pattern("II").pattern("IS").pattern(" S").define('I', ingotItem).define('S', stickItem).unlockedBy("has_" + getItemName(ingotItem), has(ingotItem)).unlockedBy("has_" + getItemName(stickItem), has(stickItem)).save(recipeOutput);
+        shaped(RecipeCategory.TOOLS, hoeItem).pattern("II").pattern(" S").pattern(" S").define('I', ingotItem).define('S', stickItem).unlockedBy("has_" + getItemName(ingotItem), has(ingotItem)).unlockedBy("has_" + getItemName(stickItem), has(stickItem)).save(recipeOutput);
+    }
+
     // Thanks to BiomesOPlenty <3
     protected void generateRecipesForBlockFamilies(FeatureFlagSet flags) {
         AtomicBlockFamilies.getAllFamilies().filter(BlockFamily::shouldGenerateRecipe).forEach((family) -> generateRecipes(family, flags));
     }
-
-    protected void woodBlockProcessing(RecipeOutput recipeOutput, ItemLike plankItem, ItemLike logItem, ItemLike woodItem) {
-        shapeless(RecipeCategory.BUILDING_BLOCKS, plankItem, 4)
-                .requires(logItem)
-                .unlockedBy("has_logs", has(logItem))
-                .group("planks")
-                .save(recipeOutput);
-
-        woodFromLogs(woodItem, logItem);
-    }
-
+    // Old way
     protected void allWoodenObjects(RecipeOutput recipeOutput, String group, ItemLike plankItem, ItemLike stairItem, ItemLike slabItem, ItemLike buttonItem, ItemLike pressurePlateItem, ItemLike fenceItem, ItemLike fenceGateItem, ItemLike wallItem, ItemLike doorItem, ItemLike trapdoorItem) {
         stairBuilder(stairItem, Ingredient.of(plankItem)).group(group).unlockedBy("has_planks", has(plankItem)).save(recipeOutput);
         slab(RecipeCategory.BUILDING_BLOCKS, slabItem, plankItem);
@@ -252,6 +256,16 @@ public class AtomicRecipeProvider extends RecipeProvider {
         wall(RecipeCategory.BUILDING_BLOCKS, wallItem, plankItem);
         doorBuilder(doorItem, Ingredient.of(plankItem)).group(group).unlockedBy("has_planks", has(plankItem)).save(recipeOutput);
         trapdoorBuilder(trapdoorItem, Ingredient.of(plankItem)).group(group).unlockedBy("has_planks", has(plankItem)).save(recipeOutput);
+    }
+
+    protected void woodBlockProcessing(RecipeOutput recipeOutput, ItemLike plankItem, ItemLike logItem, ItemLike woodItem) {
+        shapeless(RecipeCategory.BUILDING_BLOCKS, plankItem, 4)
+                .requires(logItem)
+                .unlockedBy("has_logs", has(logItem))
+                .group("planks")
+                .save(recipeOutput);
+
+        woodFromLogs(woodItem, logItem);
     }
 
     protected void ingotBlockRecipe(RecipeOutput recipeOutput, ItemLike ingotItem, ItemLike blockItem, RecipeCategory pCategory) {
@@ -298,30 +312,6 @@ public class AtomicRecipeProvider extends RecipeProvider {
                 pExperience, pCookingTime, pGroup, "_from_blasting");
     }
 
-    private void createExplosiveCompactorRecipe(RecipeOutput recipeOutput, InputItemWithCount[] inputs, ItemStack output, OutputItemWithPercent secondaryOutput, int cost) {
-        String[] nameParts = new String[inputs.length];
-        for (int i = 0; i < inputs.length; i++)
-            nameParts[i] = getItemName(inputs[i].input().getValues().get(0).value());
-
-        String recipeName = String.join("_and_", nameParts) + "_to_" + getItemName(output.getItem());
-        Identifier recipeId = Identifier.fromNamespaceAndPath(AtomicCompression.MOD_ID, "explosive_compactor/" + recipeName);
-
-        ExplosiveCompactorRecipe recipe = new ExplosiveCompactorRecipe(output, secondaryOutput, inputs, cost);
-        recipeOutput.accept(getKey(recipeId), recipe, null);
-    }
-
-    private void createExplosiveCompactorOreRecipe(RecipeOutput recipeOutput, ItemLike input, int inputCount, ItemLike output){
-        createExplosiveCompactorRecipe(
-                recipeOutput,
-                new InputItemWithCount[]{
-                        new InputItemWithCount(Ingredient.of(Blocks.STONE.asItem()), 9),
-                        new InputItemWithCount(Ingredient.of(input), inputCount),
-                },
-                new ItemStack(output),
-                new OutputItemWithPercent(new ItemStack(Blocks.COBBLESTONE.asItem()), new double[]{1.0, 0.5, 0.1}),
-                0
-        );
-    }
 
     protected <T extends AbstractCookingRecipe> void oreCooking(RecipeOutput recipeOutput, RecipeSerializer<T> pCookingSerializer, AbstractCookingRecipe.Factory<T> factory, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTime, String pGroup, String pRecipeName) {
         for (ItemLike itemlike : pIngredients) {
@@ -332,5 +322,70 @@ public class AtomicRecipeProvider extends RecipeProvider {
 
     private static ResourceKey<Recipe<?>> getKey(Identifier recipeId) {
         return ResourceKey.create(Registries.RECIPE, recipeId);
+    }
+
+
+    private static class ExplosiveCompactor {
+        public static void createRecipe(RecipeOutput recipeOutput, InputItemWithCount[] inputs, ItemStack output, OutputItemWithPercent secondaryOutput, int cost) {
+            String[] nameParts = new String[inputs.length];
+            for (int i = 0; i < inputs.length; i++)
+                nameParts[i] = getItemName(inputs[i].input().getValues().get(0).value());
+
+            String recipeName = String.join("_and_", nameParts) + "_to_" + getItemName(output.getItem());
+            Identifier recipeId = Identifier.fromNamespaceAndPath(AtomicCompression.MOD_ID, "explosive_compactor/" + recipeName);
+
+            ExplosiveCompactorRecipe recipe = new ExplosiveCompactorRecipe(output, secondaryOutput, inputs, cost);
+            recipeOutput.accept(getKey(recipeId), recipe, null);
+        }
+
+        public static void createStoneOreRecipe(RecipeOutput recipeOutput, ItemLike inputItem, int inputCount, ItemLike outputStone, ItemLike outputDeepslate) {
+            createRecipe(
+                    recipeOutput,
+                    new InputItemWithCount[]{
+                            new InputItemWithCount(Ingredient.of(Blocks.STONE.asItem()), 4),
+                            new InputItemWithCount(Ingredient.of(inputItem), inputCount),
+                    },
+                    new ItemStack(outputStone),
+                    new OutputItemWithPercent(new ItemStack(Blocks.COBBLESTONE.asItem()), new double[]{1.0, 0.5, 0.1}),
+                    0
+            );
+
+            createRecipe(
+                    recipeOutput,
+                    new InputItemWithCount[]{
+                            new InputItemWithCount(Ingredient.of(Blocks.DEEPSLATE.asItem()), 4),
+                            new InputItemWithCount(Ingredient.of(inputItem), inputCount),
+                    },
+                    new ItemStack(outputDeepslate),
+                    new OutputItemWithPercent(new ItemStack(Blocks.DEEPSLATE.asItem()), new double[]{0.8, 0.4, 0.2}),
+                    0
+            );
+        }
+
+        public static void createNetherOreRecipe(RecipeOutput recipeOutput, ItemLike inputItem, int inputCount, ItemLike output) {
+            createRecipe(
+                    recipeOutput,
+                    new InputItemWithCount[]{
+                            new InputItemWithCount(Ingredient.of(Blocks.NETHERRACK.asItem()), 4),
+                            new InputItemWithCount(Ingredient.of(inputItem), inputCount),
+                    },
+                    new ItemStack(output),
+                    new OutputItemWithPercent(new ItemStack(Blocks.NETHERRACK.asItem()), new double[]{0.5, 0.1}),
+                    0
+            );
+        }
+
+        public static void createEndOreRecipe(RecipeOutput recipeOutput, ItemLike inputItem, int inputCount, ItemLike output) {
+            createRecipe(
+                    recipeOutput,
+                    new InputItemWithCount[]{
+                            new InputItemWithCount(Ingredient.of(Blocks.END_STONE.asItem()), 4),
+                            new InputItemWithCount(Ingredient.of(inputItem), inputCount),
+                    },
+                    new ItemStack(output),
+                    new OutputItemWithPercent(new ItemStack(Blocks.END_STONE.asItem()), new double[]{0.4, 0.2}),
+                    0
+            );
+        }
     }
 }

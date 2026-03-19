@@ -7,13 +7,13 @@
       "ingredient": "minecraft:stone"
     },
     {
-      "count": 16,
-      "ingredient": "minecraft:redstone"
+      "count": 8,
+      "ingredient": "minecraft:raw_copper"
     }
   ],
   "result": {
     "count": 1,
-    "id": "minecraft:redstone_ore"
+    "id": "minecraft:copper_ore"
   },
   "secondaryResult": {
     "percentages": [

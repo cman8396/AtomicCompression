@@ -7,13 +7,13 @@
       "ingredient": "minecraft:stone"
     },
     {
-      "count": 16,
-      "ingredient": "minecraft:redstone"
+      "count": 8,
+      "ingredient": "atomiccompression:raw_sulfur"
     }
   ],
   "result": {
     "count": 1,
-    "id": "minecraft:redstone_ore"
+    "id": "atomiccompression:lead_ore"
   },
   "secondaryResult": {
     "percentages": [

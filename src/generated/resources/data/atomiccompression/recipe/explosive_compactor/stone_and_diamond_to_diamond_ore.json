@@ -3,11 +3,11 @@
   "cost": 0,
   "ingredients": [
     {
-      "count": 9,
+      "count": 4,
       "ingredient": "minecraft:stone"
     },
     {
-      "count": 3,
+      "count": 5,
       "ingredient": "minecraft:diamond"
     }
   ],

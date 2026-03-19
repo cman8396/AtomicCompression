@@ -4,26 +4,26 @@
   "ingredients": [
     {
       "count": 4,
-      "ingredient": "minecraft:stone"
+      "ingredient": "minecraft:deepslate"
     },
     {
-      "count": 16,
-      "ingredient": "minecraft:redstone"
+      "count": 24,
+      "ingredient": "minecraft:lapis_lazuli"
     }
   ],
   "result": {
     "count": 1,
-    "id": "minecraft:redstone_ore"
+    "id": "minecraft:deepslate_lapis_ore"
   },
   "secondaryResult": {
     "percentages": [
-      1.0,
-      0.5,
-      0.1
+      0.8,
+      0.4,
+      0.2
     ],
     "result": {
       "count": 1,
-      "id": "minecraft:cobblestone"
+      "id": "minecraft:deepslate"
     }
   }
 }
