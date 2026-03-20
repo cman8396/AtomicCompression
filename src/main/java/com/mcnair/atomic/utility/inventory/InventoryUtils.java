@@ -1,15 +1,18 @@
 package com.mcnair.atomic.utility.inventory;
 
 import com.mcnair.atomic.recipe.recipes.ExplosiveCompactorRecipe;
+import com.mcnair.atomic.utility.AtomicTags;
+import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeHolder;
+import net.minecraft.world.level.Level;
+
+import javax.annotation.Nullable;
 
 public final class InventoryUtils {
     private InventoryUtils() {}
 
-    public static boolean canOutputSlotsAcceptRecipeOutput(RecipeHolder<ExplosiveCompactorRecipe> recipe, AtomicItemStackProvider itemHandler, int[] availableOutputSlots) {
-        ItemStack[] recipeOutputItems = recipe.value().getMaxOutputCounts();
-
+    public static boolean canOutputSlotsAcceptRecipeOutput(ItemStack[] recipeOutputItems, AtomicItemStackProvider itemHandler, int[] availableOutputSlots) {
         // Loop through the outputs of the recipe and check if the output slots can take them.
         for (int i = 0; i < recipeOutputItems.length; i++) {
             ItemStack output = recipeOutputItems[i];
@@ -28,7 +31,31 @@ public final class InventoryUtils {
                 }
             }
         }
-
         return true;
+    }
+
+    public static String getCasingType(int casingSlot, AtomicItemStackProvider itemHandler) {
+        ItemStack stackInCasingSlot = itemHandler.getStackInSlot(casingSlot);
+        if (AtomicTags.Helpers.doesItemStackTagMatch(AtomicTags.Values.MACHINE_CASING_REFINED_BUNGERITE, stackInCasingSlot))
+            return "refined_bungerite";
+        else
+            return "none";
+    }
+
+    public static boolean rollForChance(@Nullable Level level, double percentage) {
+        assert level != null;
+        return (level.random.nextDouble() <= percentage);
+    }
+
+    public static SimpleContainer parseInventory(int[] inputSlots, AtomicItemStackProvider itemHandler) {
+        /*
+         * Converts the actual block entity inventory to a new inventory that only contains the input slots.
+         * This is used to find the recipe we're working with.
+         */
+        SimpleContainer inventory = new SimpleContainer(inputSlots.length);
+        for (int i = 0; i < inputSlots.length; i++)
+            inventory.setItem(i, itemHandler.getStackInSlot(inputSlots[i]));
+
+        return inventory;
     }
 }

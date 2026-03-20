@@ -29,13 +29,11 @@ public class ExplosiveCompactorRecipe implements MachineBasicRecipe<RecipeInput>
     private final ItemStack output;
     private final OutputItemWithPercent secondaryOutput;
     private final InputItemWithCount[] inputs;
-    private final int cost;
 
-    public ExplosiveCompactorRecipe(ItemStack output, OutputItemWithPercent secondaryOutput, InputItemWithCount[] inputs, int cost) {
+    public ExplosiveCompactorRecipe(ItemStack output, OutputItemWithPercent secondaryOutput, InputItemWithCount[] inputs) {
         this.output = output;
         this.secondaryOutput = secondaryOutput;
         this.inputs = inputs;
-        this.cost = cost;
     }
 
     public ItemStack getOutput() {
@@ -48,10 +46,6 @@ public class ExplosiveCompactorRecipe implements MachineBasicRecipe<RecipeInput>
 
     public InputItemWithCount[] getInputs() {
         return inputs;
-    }
-
-    public int getCost() {
-        return cost;
     }
 
     public ItemStack[] getMaxOutputCounts() {
@@ -189,11 +183,9 @@ public class ExplosiveCompactorRecipe implements MachineBasicRecipe<RecipeInput>
                         return Optional.ofNullable(recipe.secondaryOutput.isEmpty() ? null : recipe.secondaryOutput);
                     }), new ArrayCodec<>(InputItemWithCount.CODEC, InputItemWithCount[]::new).fieldOf("ingredients").forGetter((recipe) -> {
                         return recipe.inputs;
-                    }), ExtraCodecs.NON_NEGATIVE_INT.fieldOf("cost").forGetter((recipe) -> {
-                        return recipe.cost;
                     })
-            ).apply(instance, (output, secondaryOutput, inputs, cost) -> new ExplosiveCompactorRecipe(output,
-                    secondaryOutput.orElse(OutputItemWithPercent.EMPTY), inputs, cost));
+            ).apply(instance, (output, secondaryOutput, inputs) -> new ExplosiveCompactorRecipe(output,
+                    secondaryOutput.orElse(OutputItemWithPercent.EMPTY), inputs));
         });
 
         private final StreamCodec<RegistryFriendlyByteBuf, ExplosiveCompactorRecipe> STREAM_CODEC = StreamCodec.of(
@@ -221,15 +213,13 @@ public class ExplosiveCompactorRecipe implements MachineBasicRecipe<RecipeInput>
 
             OutputItemWithPercent secondaryOutput = OutputItemWithPercent.OPTIONAL_STREAM_CODEC.decode(buffer);
 
-            return new ExplosiveCompactorRecipe(output, secondaryOutput, inputs, cost);
+            return new ExplosiveCompactorRecipe(output, secondaryOutput, inputs);
         }
 
         private static void write(RegistryFriendlyByteBuf buffer, ExplosiveCompactorRecipe recipe) {
             buffer.writeInt(recipe.inputs.length);
             for (int i = 0; i < recipe.inputs.length; i++)
                 InputItemWithCount.STREAM_CODEC.encode(buffer, recipe.inputs[i]);
-
-            buffer.writeInt(recipe.cost);
 
             ItemStack.OPTIONAL_STREAM_CODEC.encode(buffer, recipe.output);
 

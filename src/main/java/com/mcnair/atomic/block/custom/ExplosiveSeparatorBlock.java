@@ -2,7 +2,6 @@ package com.mcnair.atomic.block.custom;
 
 import com.mcnair.atomic.block.extensions.entity.AbstractMachineBlock;
 import com.mcnair.atomic.blockentity.AtomicBlockEntities;
-import com.mcnair.atomic.blockentity.custom.ExplosiveCompactorBlockEntity;
 import com.mcnair.atomic.blockentity.custom.ExplosiveSeparatorBlockEntity;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
@@ -76,7 +75,6 @@ public class ExplosiveSeparatorBlock extends AbstractMachineBlock {
             return null;
         }
 
-        return createTickerHelper(blockEntityType, AtomicBlockEntities.EXPLOSIVE_SEPARATOR.get(),
-                (level1, blockPos, blockState, blockEntity) -> blockEntity.tick(level1, blockPos, blockState));
+        return createTickerHelper(blockEntityType, AtomicBlockEntities.EXPLOSIVE_SEPARATOR.get(), ExplosiveSeparatorBlockEntity::tick);
     }
 }

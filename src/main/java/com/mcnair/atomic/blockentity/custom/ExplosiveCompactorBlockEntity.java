@@ -147,6 +147,9 @@ public class ExplosiveCompactorBlockEntity extends BlockEntity implements MenuPr
         maxProgress = 0;
     }
 
+
+    /* MACHINE CONFIG */
+
     private void loadMachineConfigData() {
         fuelCapacity = getCasingDataFuelTankCapacity();
 
@@ -158,7 +161,7 @@ public class ExplosiveCompactorBlockEntity extends BlockEntity implements MenuPr
     }
 
     private int getCasingDataFuelTankCapacity() {
-        if (getCasingType() == "refined_bungerite") {
+        if (InventoryUtils.getCasingType(UTILITY_SLOTS[2], itemHandler) == "refined_bungerite") {
             return AtomicConfig.machineExplosiveCompactor_FuelTankCapacity_RefinedBungerite.getAsInt();
         } else {
             return AtomicConfig.machineExplosiveCompactor_FuelTankCapacity_Base.getAsInt();
@@ -166,7 +169,7 @@ public class ExplosiveCompactorBlockEntity extends BlockEntity implements MenuPr
     }
 
     public double getCasingDataCraftingDurationModifier() {
-        if (getCasingType() == "refined_bungerite") {
+        if (InventoryUtils.getCasingType(UTILITY_SLOTS[2], itemHandler) == "refined_bungerite") {
             return AtomicConfig.machineExplosiveCompactor_CraftingDurationModifier_RefinedBungerite.getAsDouble();
         } else {
             return AtomicConfig.machineExplosiveCompactor_CraftingDurationModifier_Base.getAsDouble();
@@ -174,7 +177,7 @@ public class ExplosiveCompactorBlockEntity extends BlockEntity implements MenuPr
     }
 
     public double getCasingDataChanceToSaveIgnitionSource() {
-        if (getCasingType() == "refined_bungerite") {
+        if (InventoryUtils.getCasingType(UTILITY_SLOTS[2], itemHandler) == "refined_bungerite") {
             return AtomicConfig.machineExplosiveCompactor_ChanceToSaveIgnitionSource_RefinedBungerite.getAsDouble();
         } else {
             return AtomicConfig.machineExplosiveCompactor_ChanceToSaveIgnitionSource_Base.getAsDouble();
@@ -182,20 +185,15 @@ public class ExplosiveCompactorBlockEntity extends BlockEntity implements MenuPr
     }
 
     public double getCasingDataChanceToSaveFuel() {
-        if (getCasingType() == "refined_bungerite") {
+        if (InventoryUtils.getCasingType(UTILITY_SLOTS[2], itemHandler) == "refined_bungerite") {
             return AtomicConfig.machineExplosiveCompactor_ChanceToSaveFuel_RefinedBungerite.getAsDouble();
         } else {
             return AtomicConfig.machineExplosiveCompactor_ChanceToSaveFuel_Base.getAsDouble();
         }
     }
 
-    public String getCasingType() {
-        ItemStack stackInCasingSlot = itemHandler.getStackInSlot(UTILITY_SLOTS[2]);
-        if (AtomicTags.Helpers.doesItemStackTagMatch(AtomicTags.Values.MACHINE_CASING_REFINED_BUNGERITE, stackInCasingSlot))
-            return "refined_bungerite";
-        else
-            return "none";
-    }
+
+    /* TICKS AND CRAFTING */
 
     public static void tick(Level level, BlockPos blockPos, BlockState state, ExplosiveCompactorBlockEntity blockEntity) {
         if (level.isClientSide())
@@ -211,7 +209,7 @@ public class ExplosiveCompactorBlockEntity extends BlockEntity implements MenuPr
                 return;
 
             // Check if there is enough fuel for the recipe to complete.
-            if (blockEntity.hasIgnitionSource(false) && blockEntity.hasEnoughFuel(blockEntity.fuel, recipe.get().value().getCost())) {
+            if (blockEntity.hasIgnitionSource(false) && blockEntity.hasEnoughFuel(blockEntity.fuel)) {
 
                 //Reset progress for invalid values
                 if (blockEntity.progress < 0 || blockEntity.maxProgress < 0) {
@@ -223,7 +221,7 @@ public class ExplosiveCompactorBlockEntity extends BlockEntity implements MenuPr
                 // If current progress is at limit, craft the item, if not increase progress.
                 if (blockEntity.progress >= blockEntity.maxProgress) {
                     blockEntity.hasIgnitionSource(true);
-                    blockEntity.reduceFuelForCraft(blockEntity, recipe.get().value().getCost());
+                    blockEntity.reduceFuelForCraft(blockEntity);
 
                     setChanged(level, blockPos, state);
 
@@ -250,50 +248,6 @@ public class ExplosiveCompactorBlockEntity extends BlockEntity implements MenuPr
         }
     }
 
-    private boolean hasEnoughFuel(int currentFuel, int recipeCost) {
-        int cost = recipeCost > 0 ? recipeCost : AtomicConfig.machineAll_CraftingFuelCost_Base.getAsInt();
-        return (currentFuel >= cost);
-    }
-
-    private boolean hasIgnitionSource(boolean applyDamage) {
-        // Get item stack in the ignition slot.
-        ItemStack itemStack = itemHandler.getStackInSlot(UTILITY_SLOTS[1]);
-        if (!itemStack.isEmpty() && AtomicTags.Helpers.doesItemStackTagMatch(AtomicTags.Values.MACHINE_IGNITION, itemStack)) {
-            // If the item in the slot is damageable, damage it.
-            if (applyDamage && itemStack.isDamageableItem()) {
-                if (!rollForChance(getCasingDataChanceToSaveIgnitionSource())) {
-                    int newDamageValue = itemStack.getDamageValue() + 1;
-
-                    if (newDamageValue >= itemStack.getMaxDamage()) {
-                        itemHandler.setStackInSlot(UTILITY_SLOTS[1], ItemStack.EMPTY);
-                    } else {
-                        itemStack.setDamageValue(newDamageValue);
-                        itemHandler.setStackInSlot(1, itemStack);
-                    }
-                }
-            }
-
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    private void onBlockActive() {
-        if (level.getBlockState(getBlockPos()).hasProperty(BlockStateProperties.LIT) &&
-                !level.getBlockState(getBlockPos()).getValue(BlockStateProperties.LIT)) {
-            level.setBlock(getBlockPos(), getBlockState().setValue(BlockStateProperties.LIT, true), 3);
-        }
-    }
-
-    private void onBlockInactive() {
-        if (level.getBlockState(getBlockPos()).hasProperty(BlockStateProperties.LIT) &&
-                level.getBlockState(getBlockPos()).getValue(BlockStateProperties.LIT)) {
-            level.setBlock(getBlockPos(), getBlockState().setValue(BlockStateProperties.LIT, false), 3);
-        }
-    }
-
-
     /*
      * Note: Might refactor to use the INPUT_SLOTS array instead of standard loop for, as this isn't very readable.
      */
@@ -308,7 +262,7 @@ public class ExplosiveCompactorBlockEntity extends BlockEntity implements MenuPr
         InputItemWithCount[] inputs = recipe.value().getInputs();
 
         // Check if the output slots can accept the recipe result
-        if (!InventoryUtils.canOutputSlotsAcceptRecipeOutput(recipe, itemHandler, OUTPUT_SLOTS))
+        if (!InventoryUtils.canOutputSlotsAcceptRecipeOutput(recipe.value().getMaxOutputCounts(), itemHandler, OUTPUT_SLOTS))
             return;
 
         // Get the number of ingredients for the recipe, as they could be different. Might be redundant?
@@ -390,14 +344,34 @@ public class ExplosiveCompactorBlockEntity extends BlockEntity implements MenuPr
         resetProgress();
     }
 
+
+    /* MODEL STATE CHANGE */
+
+    private void onBlockActive() {
+        if (level.getBlockState(getBlockPos()).hasProperty(BlockStateProperties.LIT) &&
+                !level.getBlockState(getBlockPos()).getValue(BlockStateProperties.LIT)) {
+            level.setBlock(getBlockPos(), getBlockState().setValue(BlockStateProperties.LIT, true), 3);
+        }
+    }
+
+    private void onBlockInactive() {
+        if (level.getBlockState(getBlockPos()).hasProperty(BlockStateProperties.LIT) &&
+                level.getBlockState(getBlockPos()).getValue(BlockStateProperties.LIT)) {
+            level.setBlock(getBlockPos(), getBlockState().setValue(BlockStateProperties.LIT, false), 3);
+        }
+    }
+
+
+    /* RECIPE HANDLING */
+
     private boolean validRecipe() {
         if (level == null)
             return false;
 
-        SimpleContainer inventory = parseInventory();
+        SimpleContainer inventory = InventoryUtils.parseInventory(INPUT_SLOTS, itemHandler);
         Optional<RecipeHolder<ExplosiveCompactorRecipe>> recipe = getRecipeFor(inventory);
 
-        return recipe.isPresent() && InventoryUtils.canOutputSlotsAcceptRecipeOutput(recipe.get(), itemHandler, OUTPUT_SLOTS);
+        return recipe.isPresent() && InventoryUtils.canOutputSlotsAcceptRecipeOutput(recipe.get().value().getMaxOutputCounts(), itemHandler, OUTPUT_SLOTS);
     }
 
     private RecipeInput getRecipeInput(Container inventory) {
@@ -412,26 +386,14 @@ public class ExplosiveCompactorBlockEntity extends BlockEntity implements MenuPr
     }
 
     private Optional<RecipeHolder<ExplosiveCompactorRecipe>> getCurrentRecipe() {
-        return getRecipeFor(parseInventory());
+        return getRecipeFor(InventoryUtils.parseInventory(INPUT_SLOTS, itemHandler));
     }
 
-    private SimpleContainer parseInventory() {
-        /*
-         * Converts the actual block entity inventory to a new inventory that only contains the input slots.
-         * This is used to find the recipe we're working with.
-         */
-        SimpleContainer inventory = new SimpleContainer(INPUT_SLOTS.length);
-        for (int i = 0; i < INPUT_SLOTS.length; i++)
-            inventory.setItem(i, itemHandler.getStackInSlot(INPUT_SLOTS[i]));
+    /* FUEL HANDLING */
 
-        return inventory;
-    }
-
-
-    private void reduceFuelForCraft(ExplosiveCompactorBlockEntity blockEntity, int recipeCost) {
-        if (!rollForChance(getCasingDataChanceToSaveFuel())) {
-            int cost = recipeCost > 0 ? recipeCost : AtomicConfig.machineAll_CraftingFuelCost_Base.getAsInt();
-            blockEntity.fuel = blockEntity.fuel - cost;
+    private void reduceFuelForCraft(ExplosiveCompactorBlockEntity blockEntity) {
+        if (!InventoryUtils.rollForChance(level, getCasingDataChanceToSaveFuel())) {
+            blockEntity.fuel = blockEntity.fuel - AtomicConfig.machineAll_CraftingFuelCost_Base.getAsInt();
         }
     }
 
@@ -452,9 +414,32 @@ public class ExplosiveCompactorBlockEntity extends BlockEntity implements MenuPr
         }
     }
 
-    public boolean rollForChance(double percentage) {
-        assert level != null;
-        return (level.random.nextDouble() <= percentage);
+    private boolean hasEnoughFuel(int currentFuel) {
+        return (currentFuel >= AtomicConfig.machineAll_CraftingFuelCost_Base.getAsInt());
+    }
+
+    private boolean hasIgnitionSource(boolean applyDamage) {
+        // Get item stack in the ignition slot.
+        ItemStack itemStack = itemHandler.getStackInSlot(UTILITY_SLOTS[1]);
+        if (!itemStack.isEmpty() && AtomicTags.Helpers.doesItemStackTagMatch(AtomicTags.Values.MACHINE_IGNITION, itemStack)) {
+            // If the item in the slot is damageable, damage it.
+            if (applyDamage && itemStack.isDamageableItem()) {
+                if (!InventoryUtils.rollForChance(level, getCasingDataChanceToSaveIgnitionSource())) {
+                    int newDamageValue = itemStack.getDamageValue() + 1;
+
+                    if (newDamageValue >= itemStack.getMaxDamage()) {
+                        itemHandler.setStackInSlot(UTILITY_SLOTS[1], ItemStack.EMPTY);
+                    } else {
+                        itemStack.setDamageValue(newDamageValue);
+                        itemHandler.setStackInSlot(1, itemStack);
+                    }
+                }
+            }
+
+            return true;
+        } else {
+            return false;
+        }
     }
 
 

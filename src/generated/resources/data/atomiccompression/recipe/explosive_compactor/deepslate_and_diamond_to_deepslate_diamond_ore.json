@@ -1,6 +1,5 @@
 {
   "type": "atomiccompression:explosive_compactor",
-  "cost": 0,
   "ingredients": [
     {
       "count": 4,

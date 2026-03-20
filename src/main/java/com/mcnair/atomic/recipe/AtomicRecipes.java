@@ -20,22 +20,17 @@ public class AtomicRecipes {
 
     public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<ExplosiveCompactorRecipe>> EXPLOSIVE_COMPACTOR_SERIALIZER =
             SERIALIZERS.register(Types.EXPLOSIVE_COMPACTOR, () -> ExplosiveCompactorRecipe.Serializer.INSTANCE);
-
     public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<ExplosiveSeparatorRecipe>> EXPLOSIVE_SEPARATOR_SERIALIZER =
-            SERIALIZERS.register("explosive_separator", ExplosiveSeparatorRecipe.Serializer::new);
+            SERIALIZERS.register(Types.EXPLOSIVE_SEPARATOR, () -> ExplosiveSeparatorRecipe.Serializer.INSTANCE);
+
     public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<ExplosiveRefinerRecipe>> EXPLOSIVE_REFINER_SERIALIZER =
             SERIALIZERS.register("explosive_refiner", ExplosiveRefinerRecipe.Serializer::new);
 
     public static final DeferredHolder<RecipeType<?>, RecipeType<ExplosiveCompactorRecipe>> EXPLOSIVE_COMPACTOR_TYPE =
             TYPES.register(Types.EXPLOSIVE_COMPACTOR, () -> ExplosiveCompactorRecipe.Type.INSTANCE);
-
     public static final DeferredHolder<RecipeType<?>, RecipeType<ExplosiveSeparatorRecipe>> EXPLOSIVE_SEPARATOR_TYPE =
-            TYPES.register("explosive_separator", () -> new RecipeType<ExplosiveSeparatorRecipe>() {
-                @Override
-                public String toString() {
-                    return "explosive_separator";
-                }
-            });
+            TYPES.register(Types.EXPLOSIVE_SEPARATOR, () -> ExplosiveSeparatorRecipe.Type.INSTANCE);
+
     public static final DeferredHolder<RecipeType<?>, RecipeType<ExplosiveRefinerRecipe>> EXPLOSIVE_REFINER_TYPE =
             TYPES.register("explosive_refiner", () -> new RecipeType<ExplosiveRefinerRecipe>() {
                 @Override
@@ -53,5 +48,7 @@ public class AtomicRecipes {
 
     public class Types {
         public static String EXPLOSIVE_COMPACTOR = "explosive_compactor";
+        public static String EXPLOSIVE_SEPARATOR = "explosive_separator";
+        public static String EXPLOSIVE_REFINER = "explosive_refiner";
     }
 }

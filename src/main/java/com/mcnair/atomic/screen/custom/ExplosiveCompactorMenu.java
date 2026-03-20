@@ -5,6 +5,7 @@ import com.mcnair.atomic.blockentity.custom.ExplosiveCompactorBlockEntity;
 import com.mcnair.atomic.screen.AtomicMenuTypes;
 import com.mcnair.atomic.screen.helpers.MenuHelpers;
 import com.mcnair.atomic.utility.AtomicTags;
+import com.mcnair.atomic.utility.inventory.InventoryUtils;
 import com.mcnair.atomic.utility.inventory.slot.OutputOnlySlot;
 import com.mcnair.atomic.utility.inventory.slot.TagLimitedSlot;
 import net.minecraft.network.FriendlyByteBuf;
@@ -82,15 +83,13 @@ public class ExplosiveCompactorMenu extends AbstractContainerMenu {
     }
 
     public String getCasingType(){
-        return blockEntity.getCasingType();
+        return InventoryUtils.getCasingType(2, blockEntity.itemHandler);
     }
 
     public double[] getModifierValues() {
         return new double[]{blockEntity.getCasingDataCraftingDurationModifier(), blockEntity.getCasingDataChanceToSaveIgnitionSource(), blockEntity.getCasingDataChanceToSaveFuel()};
     }
 
-
-    // THIS YOU HAVE TO DEFINE!
     private static final int THIS_INVENTORY_SLOT_COUNT = 7;  // must be the number of slots you have!
 
     @Override

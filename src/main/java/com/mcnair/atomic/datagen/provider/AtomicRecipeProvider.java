@@ -7,6 +7,7 @@ import com.mcnair.atomic.item.AtomicItems;
 import com.mcnair.atomic.recipe.base.input.InputItemWithCount;
 import com.mcnair.atomic.recipe.base.output.OutputItemWithPercent;
 import com.mcnair.atomic.recipe.recipes.ExplosiveCompactorRecipe;
+import com.mcnair.atomic.recipe.recipes.ExplosiveSeparatorRecipe;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.BlockFamily;
@@ -25,6 +26,7 @@ import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 
+import javax.annotation.Nullable;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
@@ -204,8 +206,10 @@ public class AtomicRecipeProvider extends RecipeProvider {
 
         ExplosiveCompactor.createEndOreRecipe(output, AtomicItems.ATOMIC_SHARD, 4, AtomicBlocks.END_ATOMIC_ORE.asItem());
 
-
-
+        /* EXPLOSIVE_SEPARATOR */
+        ExplosiveSeparator.createStoneOreRecipe(output, Blocks.GOLD_ORE, Blocks.DEEPSLATE_GOLD_ORE, Items.RAW_GOLD, 2);
+        ExplosiveSeparator.createStoneOreRecipe(output, Blocks.IRON_ORE, Blocks.DEEPSLATE_IRON_ORE, Items.RAW_IRON, 2);
+        ExplosiveSeparator.createStoneOreRecipe(output, Blocks.COPPER_ORE, Blocks.DEEPSLATE_COPPER_ORE, Items.RAW_COPPER, 2);
 
 //        allWoodenObjects(output, "ashenwood", AtomicBlocks.ASHENWOOD_PLANKS, AtomicBlocks.ASHENWOOD_STAIRS, AtomicBlocks.ASHENWOOD_SLAB, AtomicBlocks.ASHENWOOD_BUTTON, AtomicBlocks.ASHENWOOD_PRESSURE_PLATE, AtomicBlocks.ASHENWOOD_FENCE, AtomicBlocks.ASHENWOOD_FENCE_GATE, AtomicBlocks.ASHENWOOD_WALL, AtomicBlocks.ASHENWOOD_DOOR, AtomicBlocks.ASHENWOOD_TRAPDOOR);
 
@@ -245,6 +249,7 @@ public class AtomicRecipeProvider extends RecipeProvider {
     protected void generateRecipesForBlockFamilies(FeatureFlagSet flags) {
         AtomicBlockFamilies.getAllFamilies().filter(BlockFamily::shouldGenerateRecipe).forEach((family) -> generateRecipes(family, flags));
     }
+
     // Old way
     protected void allWoodenObjects(RecipeOutput recipeOutput, String group, ItemLike plankItem, ItemLike stairItem, ItemLike slabItem, ItemLike buttonItem, ItemLike pressurePlateItem, ItemLike fenceItem, ItemLike fenceGateItem, ItemLike wallItem, ItemLike doorItem, ItemLike trapdoorItem) {
         stairBuilder(stairItem, Ingredient.of(plankItem)).group(group).unlockedBy("has_planks", has(plankItem)).save(recipeOutput);
@@ -326,15 +331,15 @@ public class AtomicRecipeProvider extends RecipeProvider {
 
 
     private static class ExplosiveCompactor {
-        public static void createRecipe(RecipeOutput recipeOutput, InputItemWithCount[] inputs, ItemStack output, OutputItemWithPercent secondaryOutput, int cost) {
-            String[] nameParts = new String[inputs.length];
+        public static void createRecipe(RecipeOutput recipeOutput, InputItemWithCount[] inputs, ItemStack output, OutputItemWithPercent secondaryOutput) {
+            String[] inputNameParts = new String[inputs.length];
             for (int i = 0; i < inputs.length; i++)
-                nameParts[i] = getItemName(inputs[i].input().getValues().get(0).value());
+                inputNameParts[i] = getItemName(inputs[i].input().getValues().get(0).value());
 
-            String recipeName = String.join("_and_", nameParts) + "_to_" + getItemName(output.getItem());
+            String recipeName = String.join("_and_", inputNameParts) + "_to_" + getItemName(output.getItem());
             Identifier recipeId = Identifier.fromNamespaceAndPath(AtomicCompression.MOD_ID, "explosive_compactor/" + recipeName);
 
-            ExplosiveCompactorRecipe recipe = new ExplosiveCompactorRecipe(output, secondaryOutput, inputs, cost);
+            ExplosiveCompactorRecipe recipe = new ExplosiveCompactorRecipe(output, secondaryOutput, inputs);
             recipeOutput.accept(getKey(recipeId), recipe, null);
         }
 
@@ -346,8 +351,7 @@ public class AtomicRecipeProvider extends RecipeProvider {
                             new InputItemWithCount(Ingredient.of(inputItem), inputCount),
                     },
                     new ItemStack(outputStone),
-                    new OutputItemWithPercent(new ItemStack(Blocks.COBBLESTONE.asItem()), new double[]{1.0, 0.5, 0.1}),
-                    0
+                    new OutputItemWithPercent(new ItemStack(Blocks.COBBLESTONE.asItem()), new double[]{1.0, 0.5, 0.1})
             );
 
             createRecipe(
@@ -357,8 +361,7 @@ public class AtomicRecipeProvider extends RecipeProvider {
                             new InputItemWithCount(Ingredient.of(inputItem), inputCount),
                     },
                     new ItemStack(outputDeepslate),
-                    new OutputItemWithPercent(new ItemStack(Blocks.DEEPSLATE.asItem()), new double[]{0.8, 0.4, 0.2}),
-                    0
+                    new OutputItemWithPercent(new ItemStack(Blocks.DEEPSLATE.asItem()), new double[]{0.8, 0.4, 0.2})
             );
         }
 
@@ -370,8 +373,7 @@ public class AtomicRecipeProvider extends RecipeProvider {
                             new InputItemWithCount(Ingredient.of(inputItem), inputCount),
                     },
                     new ItemStack(output),
-                    new OutputItemWithPercent(new ItemStack(Blocks.NETHERRACK.asItem()), new double[]{0.5, 0.1}),
-                    0
+                    new OutputItemWithPercent(new ItemStack(Blocks.NETHERRACK.asItem()), new double[]{0.5, 0.1})
             );
         }
 
@@ -383,8 +385,61 @@ public class AtomicRecipeProvider extends RecipeProvider {
                             new InputItemWithCount(Ingredient.of(inputItem), inputCount),
                     },
                     new ItemStack(output),
-                    new OutputItemWithPercent(new ItemStack(Blocks.END_STONE.asItem()), new double[]{0.4, 0.2}),
-                    0
+                    new OutputItemWithPercent(new ItemStack(Blocks.END_STONE.asItem()), new double[]{0.4, 0.2})
+            );
+        }
+    }
+
+    private static class ExplosiveSeparator {
+        public static void createRecipe(RecipeOutput recipeOutput, Ingredient input, ItemStack output, @Nullable OutputItemWithPercent secondaryOutput, @Nullable OutputItemWithPercent tertiaryOutput) {
+            String recipeName = getItemName(input.getValues().get(0).value()) + "_to_" + getItemName(output.getItem());
+            if (!secondaryOutput.isEmpty())
+                recipeName += "_and_" + getItemName(secondaryOutput.output().getItem());
+            if (!tertiaryOutput.isEmpty())
+                recipeName += "_and_" + getItemName(tertiaryOutput.output().getItem());
+
+
+            Identifier recipeId = Identifier.fromNamespaceAndPath(AtomicCompression.MOD_ID, "explosive_separator/" + recipeName);
+
+            ExplosiveSeparatorRecipe recipe = new ExplosiveSeparatorRecipe(output, secondaryOutput, tertiaryOutput, input);
+            recipeOutput.accept(getKey(recipeId), recipe, null);
+        }
+
+        public static void createStoneOreRecipe(RecipeOutput recipeOutput, ItemLike inputItemStone, ItemLike inputItemDeepslate, ItemLike outputItem, int outputCount) {
+            createRecipe(
+                    recipeOutput,
+                    Ingredient.of(inputItemStone),
+                    new ItemStack(outputItem, outputCount),
+                    new OutputItemWithPercent(new ItemStack(Blocks.COBBLESTONE.asItem()), new double[]{0.25, 0.05}),
+                    new OutputItemWithPercent(new ItemStack(Blocks.GRAVEL.asItem()), new double[]{0.1})
+            );
+
+            createRecipe(
+                    recipeOutput,
+                    Ingredient.of(inputItemDeepslate),
+                    new ItemStack(outputItem, outputCount),
+                    new OutputItemWithPercent(new ItemStack(Blocks.DEEPSLATE.asItem()), new double[]{0.4}),
+                    new OutputItemWithPercent(new ItemStack(Blocks.GRAVEL.asItem()), new double[]{0.15, 0.05})
+            );
+        }
+
+        public static void createNetherOreRecipe(RecipeOutput recipeOutput, ItemLike inputItem, ItemLike outputItem, int outputCount) {
+            createRecipe(
+                    recipeOutput,
+                    Ingredient.of(inputItem),
+                    new ItemStack(outputItem, outputCount),
+                    new OutputItemWithPercent(new ItemStack(Blocks.NETHERRACK.asItem()), new double[]{0.2, 0.02}),
+                    null
+            );
+        }
+
+        public static void createEndOreRecipe(RecipeOutput recipeOutput, ItemLike inputItem, ItemLike outputItem, int outputCount) {
+            createRecipe(
+                    recipeOutput,
+                    Ingredient.of(inputItem),
+                    new ItemStack(outputItem, outputCount),
+                    new OutputItemWithPercent(new ItemStack(Blocks.END_STONE.asItem()), new double[]{0.2, 0.02}),
+                    null
             );
         }
     }
