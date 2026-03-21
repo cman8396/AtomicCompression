@@ -170,12 +170,18 @@ public class AtomicBlocks {
 
 
     /* ENTITIES */
+//    public static final DeferredBlock<Block> EXPLOSIVE_MILL = registerBlock("explosive_mill",
+//            (properties) -> new ExplosiveMillBlock(properties.strength(3.5F).requiresCorrectToolForDrops().sound(SoundType.STONE)));
     public static final DeferredBlock<Block> EXPLOSIVE_COMPACTOR = registerBlock("explosive_compactor",
             (properties) -> new ExplosiveCompactorBlock(properties.strength(3.5F).requiresCorrectToolForDrops().sound(SoundType.STONE)));
     public static final DeferredBlock<Block> EXPLOSIVE_SEPARATOR = registerBlock("explosive_separator",
             (properties) -> new ExplosiveSeparatorBlock(properties.strength(3.5F).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+//    public static final DeferredBlock<Block> EXPLOSIVE_SMELTER = registerBlock("explosive_smelter",
+//            (properties) -> new ExplosiveSmelterBlock(properties.strength(3.5F).requiresCorrectToolForDrops().sound(SoundType.STONE)));
     public static final DeferredBlock<Block> EXPLOSIVE_REFINER = registerBlock("explosive_refiner",
             (properties) -> new ExplosiveRefinerBlock(properties.strength(3.5F).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+//    public static final DeferredBlock<Block> EXPLOSIVE_INFUSER = registerBlock("explosive_infuser",
+//            (properties) -> new ExplosiveInfuserBlock(properties.strength(3.5F).requiresCorrectToolForDrops().sound(SoundType.STONE)));
 
 
 
