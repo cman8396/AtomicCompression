@@ -20,6 +20,7 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.flag.FeatureFlags;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
@@ -261,7 +262,6 @@ public class AtomicRecipeProvider extends RecipeProvider {
         ExSeparator.createOneToOne(output, Blocks.CHISELED_POLISHED_BLACKSTONE.asItem(), Blocks.BLACKSTONE.asItem(), 1);
         ExSeparator.createOneToOne(output, Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS.asItem(), Blocks.BLACKSTONE.asItem(), 1);
         ExSeparator.createOneToOne(output, Blocks.POLISHED_BLACKSTONE_BRICKS.asItem(), Blocks.BLACKSTONE.asItem(), 1);
-        ExSeparator.createOneToOne(output, Blocks.CRACKED_DEEPSLATE_BRICKS.asItem(), Blocks.DEEPSLATE.asItem(), 1);
         ExSeparator.createOneToOne(output, Blocks.DEEPSLATE_BRICKS.asItem(), Blocks.DEEPSLATE.asItem(), 1);
         ExSeparator.createOneToOne(output, Blocks.DEEPSLATE_TILES.asItem(), Blocks.DEEPSLATE.asItem(), 1);
         ExSeparator.createOneToOne(output, Blocks.CRACKED_DEEPSLATE_BRICKS.asItem(), Blocks.DEEPSLATE.asItem(), 1);
@@ -473,7 +473,7 @@ public class AtomicRecipeProvider extends RecipeProvider {
                             new InputItemWithCount(Ingredient.of(input), inputCount)
                     },
                     new ItemStack(output, outputCount),
-                    null
+                    new OutputItemWithPercent(ItemStack.EMPTY)
             );
         }
 
@@ -510,7 +510,7 @@ public class AtomicRecipeProvider extends RecipeProvider {
                             new InputItemWithCount(Ingredient.of(inputItemTwo), inputTwoCount)
                     },
                     new ItemStack(output, outputCount),
-                    null
+                    new OutputItemWithPercent(ItemStack.EMPTY)
             );
         }
 
@@ -543,7 +543,7 @@ public class AtomicRecipeProvider extends RecipeProvider {
     }
 
     private static class ExSeparator {
-        public static void createRecipe(RecipeOutput recipeOutput, Ingredient input, ItemStack output, @Nullable OutputItemWithPercent secondaryOutput, @Nullable OutputItemWithPercent tertiaryOutput) {
+        public static void createRecipe(RecipeOutput recipeOutput, Ingredient input, ItemStack output, OutputItemWithPercent secondaryOutput, OutputItemWithPercent tertiaryOutput) {
             String recipeName = getItemName(input.getValues().get(0).value()) + "_to_" + getItemName(output.getItem());
             if (!secondaryOutput.isEmpty())
                 recipeName += "_and_" + getItemName(secondaryOutput.output().getItem());
@@ -581,7 +581,7 @@ public class AtomicRecipeProvider extends RecipeProvider {
                     Ingredient.of(inputItem),
                     new ItemStack(outputItem, outputCount),
                     new OutputItemWithPercent(new ItemStack(Blocks.NETHERRACK.asItem()), new double[]{0.2, 0.02}),
-                    null
+                    new OutputItemWithPercent(ItemStack.EMPTY)
             );
         }
 
@@ -591,7 +591,7 @@ public class AtomicRecipeProvider extends RecipeProvider {
                     Ingredient.of(inputItem),
                     new ItemStack(outputItem, outputCount),
                     new OutputItemWithPercent(new ItemStack(Blocks.END_STONE.asItem()), new double[]{0.2, 0.02}),
-                    null
+                    new OutputItemWithPercent(ItemStack.EMPTY)
             );
         }
 
@@ -600,8 +600,8 @@ public class AtomicRecipeProvider extends RecipeProvider {
                     recipeOutput,
                     Ingredient.of(input),
                     new ItemStack(output, outputCount),
-                    null,
-                    null
+                    new OutputItemWithPercent(ItemStack.EMPTY),
+                    new OutputItemWithPercent(ItemStack.EMPTY)
             );
         }
 
@@ -614,7 +614,7 @@ public class AtomicRecipeProvider extends RecipeProvider {
                     Ingredient.of(input),
                     new ItemStack(outputOne, outputOneCount),
                     new OutputItemWithPercent(new ItemStack(outputTwo), arr),
-                    null
+                    new OutputItemWithPercent(ItemStack.EMPTY)
             );
         }
 
@@ -624,7 +624,7 @@ public class AtomicRecipeProvider extends RecipeProvider {
                     Ingredient.of(input),
                     new ItemStack(outputOne, outputOneCount),
                     new OutputItemWithPercent(new ItemStack(outputTwo), outputTwoPercentages),
-                    null
+                    new OutputItemWithPercent(ItemStack.EMPTY)
             );
         }
 

@@ -1,0 +1,13 @@
+{
+  "type": "atomiccompression:explosive_compactor",
+  "ingredients": [
+    {
+      "count": 4,
+      "ingredient": "atomiccompression:obsidian_chunk"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:obsidian"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "type": "atomiccompression:explosive_separator",
+  "ingredient": "minecraft:stone",
+  "result": {
+    "count": 1,
+    "id": "minecraft:cobblestone"
+  }
+}

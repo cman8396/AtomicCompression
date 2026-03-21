@@ -1,0 +1,8 @@
+{
+  "type": "atomiccompression:explosive_separator",
+  "ingredient": "minecraft:obsidian",
+  "result": {
+    "count": 1,
+    "id": "atomiccompression:obsidian_chunk"
+  }
+}

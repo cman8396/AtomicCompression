@@ -1,0 +1,16 @@
+{
+  "type": "atomiccompression:explosive_compactor",
+  "ingredients": [
+    {
+      "ingredient": "minecraft:dirt"
+    },
+    {
+      "count": 2,
+      "ingredient": "minecraft:hanging_roots"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:rooted_dirt"
+  }
+}

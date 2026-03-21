@@ -1,0 +1,8 @@
+{
+  "type": "atomiccompression:explosive_separator",
+  "ingredient": "minecraft:polished_andesite",
+  "result": {
+    "count": 1,
+    "id": "minecraft:andesite"
+  }
+}

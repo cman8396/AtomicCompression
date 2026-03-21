@@ -1,0 +1,8 @@
+{
+  "type": "atomiccompression:explosive_separator",
+  "ingredient": "minecraft:smooth_quartz",
+  "result": {
+    "count": 1,
+    "id": "minecraft:quartz_block"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "atomiccompression:explosive_compactor",
+  "ingredients": [
+    {
+      "count": 4,
+      "ingredient": "minecraft:blaze_powder"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:blaze_rod"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "atomiccompression:explosive_separator",
+  "ingredient": "atomiccompression:end_atomic_ore",
+  "result": {
+    "count": 2,
+    "id": "atomiccompression:atomic_shard"
+  },
+  "secondaryResult": {
+    "percentages": [
+      0.2,
+      0.02
+    ],
+    "result": {
+      "count": 1,
+      "id": "minecraft:netherrack"
+    }
+  }
+}

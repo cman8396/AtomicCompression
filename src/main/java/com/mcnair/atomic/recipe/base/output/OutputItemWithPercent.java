@@ -24,7 +24,7 @@ public record OutputItemWithPercent(ItemStack output, double[] percentages) {
     }
 
     public OutputItemWithPercent(ItemStack output) {
-        this(output, 1.);
+        this(output, 1.0);
     }
 
     public boolean isEmpty() {

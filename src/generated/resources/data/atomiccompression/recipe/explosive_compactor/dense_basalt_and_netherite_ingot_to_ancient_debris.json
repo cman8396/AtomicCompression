@@ -1,0 +1,16 @@
+{
+  "type": "atomiccompression:explosive_compactor",
+  "ingredients": [
+    {
+      "ingredient": "atomiccompression:dense_basalt"
+    },
+    {
+      "count": 2,
+      "ingredient": "minecraft:netherite_ingot"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:ancient_debris"
+  }
+}

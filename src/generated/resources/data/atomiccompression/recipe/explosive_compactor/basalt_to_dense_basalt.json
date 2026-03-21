@@ -1,0 +1,13 @@
+{
+  "type": "atomiccompression:explosive_compactor",
+  "ingredients": [
+    {
+      "count": 9,
+      "ingredient": "minecraft:basalt"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "atomiccompression:dense_basalt"
+  }
+}

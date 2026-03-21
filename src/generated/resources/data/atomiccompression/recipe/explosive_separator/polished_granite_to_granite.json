@@ -1,0 +1,8 @@
+{
+  "type": "atomiccompression:explosive_separator",
+  "ingredient": "minecraft:polished_granite",
+  "result": {
+    "count": 1,
+    "id": "minecraft:granite"
+  }
+}

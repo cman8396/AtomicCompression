@@ -6,7 +6,7 @@
       "ingredient": "minecraft:deepslate"
     },
     {
-      "count": 24,
+      "count": 16,
       "ingredient": "minecraft:lapis_lazuli"
     }
   ],
@@ -22,7 +22,7 @@
     ],
     "result": {
       "count": 1,
-      "id": "minecraft:deepslate"
+      "id": "minecraft:cobbled_deepslate"
     }
   }
 }

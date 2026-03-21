@@ -1,0 +1,8 @@
+{
+  "type": "atomiccompression:explosive_separator",
+  "ingredient": "minecraft:bone",
+  "result": {
+    "count": 6,
+    "id": "minecraft:bone_meal"
+  }
+}

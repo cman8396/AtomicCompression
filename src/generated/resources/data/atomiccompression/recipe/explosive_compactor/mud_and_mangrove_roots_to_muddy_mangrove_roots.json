@@ -1,0 +1,15 @@
+{
+  "type": "atomiccompression:explosive_compactor",
+  "ingredients": [
+    {
+      "ingredient": "minecraft:mud"
+    },
+    {
+      "ingredient": "minecraft:mangrove_roots"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:muddy_mangrove_roots"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "atomiccompression:explosive_compactor",
+  "ingredients": [
+    {
+      "ingredient": "minecraft:mud"
+    },
+    {
+      "ingredient": "minecraft:wheat"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:packed_mud"
+  }
+}

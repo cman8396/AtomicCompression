@@ -1,0 +1,27 @@
+{
+  "type": "atomiccompression:explosive_separator",
+  "ingredient": "minecraft:lapis_ore",
+  "result": {
+    "count": 8,
+    "id": "minecraft:lapis_lazuli"
+  },
+  "secondaryResult": {
+    "percentages": [
+      0.25,
+      0.05
+    ],
+    "result": {
+      "count": 1,
+      "id": "minecraft:cobblestone"
+    }
+  },
+  "tertiaryResult": {
+    "percentages": [
+      0.1
+    ],
+    "result": {
+      "count": 1,
+      "id": "minecraft:gravel"
+    }
+  }
+}
