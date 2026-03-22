@@ -2,7 +2,6 @@ package com.mcnair.atomic.block.custom;
 
 import com.mcnair.atomic.block.extensions.entity.AbstractMachineBlock;
 import com.mcnair.atomic.blockentity.AtomicBlockEntities;
-import com.mcnair.atomic.blockentity.custom.ExplosiveCompactorBlockEntity;
 import com.mcnair.atomic.blockentity.custom.ExplosiveRefinerBlockEntity;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
@@ -50,7 +49,7 @@ public class ExplosiveRefinerBlock extends AbstractMachineBlock {
     protected void openContainer(Level level, BlockPos pos, Player player) {
         BlockEntity blockentity = level.getBlockEntity(pos);
         if (blockentity instanceof ExplosiveRefinerBlockEntity) {
-            player.openMenu((MenuProvider)blockentity);
+            player.openMenu((MenuProvider) blockentity);
         }
     }
 
@@ -59,7 +58,7 @@ public class ExplosiveRefinerBlock extends AbstractMachineBlock {
                                           Player pPlayer, InteractionHand pHand, BlockHitResult pHitResult) {
         if (!pLevel.isClientSide()) {
             BlockEntity entity = pLevel.getBlockEntity(pPos);
-            if(entity instanceof ExplosiveRefinerBlockEntity ExplosiveRefinerBlockEntity) {
+            if (entity instanceof ExplosiveRefinerBlockEntity ExplosiveRefinerBlockEntity) {
                 ((ServerPlayer) pPlayer).openMenu(new SimpleMenuProvider(ExplosiveRefinerBlockEntity, Component.literal("Explosive Refiner")), pPos);
             } else {
                 throw new IllegalStateException("Container provider missing!");
@@ -72,11 +71,11 @@ public class ExplosiveRefinerBlock extends AbstractMachineBlock {
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> blockEntityType) {
-        if(level.isClientSide()) {
+        if (level.isClientSide()) {
             return null;
         }
 
-        return createTickerHelper(blockEntityType, AtomicBlockEntities.EXPLOSIVE_REFINER.get(),
-                (level1, blockPos, blockState, blockEntity) -> blockEntity.tick(level1, blockPos, blockState));
+        return createTickerHelper(blockEntityType, AtomicBlockEntities.EXPLOSIVE_REFINER.get(), ExplosiveRefinerBlockEntity::tick);
     }
 }
+

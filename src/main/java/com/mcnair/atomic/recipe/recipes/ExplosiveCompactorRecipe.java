@@ -207,8 +207,6 @@ public class ExplosiveCompactorRecipe implements MachineBasicRecipe<RecipeInput>
             for (int i = 0; i < len; i++)
                 inputs[i] = InputItemWithCount.STREAM_CODEC.decode(buffer);
 
-            int cost = buffer.readInt();
-
             ItemStack output = ItemStack.OPTIONAL_STREAM_CODEC.decode(buffer);
 
             OutputItemWithPercent secondaryOutput = OutputItemWithPercent.OPTIONAL_STREAM_CODEC.decode(buffer);

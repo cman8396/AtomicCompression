@@ -4,6 +4,10 @@ import com.mcnair.atomic.block.AtomicBlocks;
 import com.mcnair.atomic.blockentity.custom.ExplosiveRefinerBlockEntity;
 import com.mcnair.atomic.screen.AtomicMenuTypes;
 import com.mcnair.atomic.screen.helpers.MenuHelpers;
+import com.mcnair.atomic.utility.AtomicTags;
+import com.mcnair.atomic.utility.inventory.InventoryUtils;
+import com.mcnair.atomic.utility.inventory.slot.OutputOnlySlot;
+import com.mcnair.atomic.utility.inventory.slot.TagLimitedSlot;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -11,7 +15,7 @@ import net.minecraft.world.inventory.*;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.neoforged.neoforge.items.SlotItemHandler;
+import net.neoforged.neoforge.transfer.item.ResourceHandlerSlot;
 
 public class ExplosiveRefinerMenu extends AbstractContainerMenu {
     public final ExplosiveRefinerBlockEntity blockEntity;
@@ -33,22 +37,19 @@ public class ExplosiveRefinerMenu extends AbstractContainerMenu {
         addPlayerHotbar(inv);
 
         /* UTILITY SLOTS */
-        // Powder
-        this.addSlot(new SlotItemHandler(blockEntity.itemHandler, 0, 152, 55));
-        // Ignition
-        this.addSlot(new SlotItemHandler(blockEntity.itemHandler, 1, 152, 35));
-        // Casing
-        this.addSlot(new SlotItemHandler(blockEntity.itemHandler, 2, 152, 15));
+        this.addSlot(new TagLimitedSlot(blockEntity.itemHandler, blockEntity.itemHandler::set, 0, 152, 60, AtomicTags.Values.GUNPOWDERS));
+        this.addSlot(new TagLimitedSlot(blockEntity.itemHandler, blockEntity.itemHandler::set, 1, 8, 36, AtomicTags.Values.MACHINE_IGNITION));
+        this.addSlot(new TagLimitedSlot(blockEntity.itemHandler, blockEntity.itemHandler::set, 2, 8, 16, AtomicTags.Values.MACHINE_CASING));
 
         /* PROCESSING SLOTS */
         // Input Left
-        this.addSlot(new SlotItemHandler(blockEntity.itemHandler, 3, 54, 34));
+        this.addSlot(new ResourceHandlerSlot(blockEntity.itemHandler, blockEntity.itemHandler::set, 3, 43, 36));
         // Input Right
-        this.addSlot(new SlotItemHandler(blockEntity.itemHandler, 4, 34, 34));
+        this.addSlot(new ResourceHandlerSlot(blockEntity.itemHandler, blockEntity.itemHandler::set, 4, 63, 36));
         // Output Primary
-        this.addSlot(new SlotItemHandler(blockEntity.itemHandler, 5, 104, 34));
+        this.addSlot(new OutputOnlySlot(blockEntity.itemHandler, blockEntity.itemHandler::set, 5, 113, 36));
         // Output Secondary
-        this.addSlot(new SlotItemHandler(blockEntity.itemHandler, 6, 104, 58));
+        this.addSlot(new OutputOnlySlot(blockEntity.itemHandler, blockEntity.itemHandler::set, 6, 113, 60));
 
         addDataSlots(data);
     }
@@ -65,8 +66,32 @@ public class ExplosiveRefinerMenu extends AbstractContainerMenu {
         return maxProgress != 0 && progress != 0 ? progress * arrowPixelSize / maxProgress : 0;
     }
 
-    // THIS YOU HAVE TO DEFINE!
+    public int getScaledStoragePowder() {
+        int powder = this.data.get(2);
+        int maxPowder = this.data.get(3);
+        int texturePixelSize = 48;
+
+        return texturePixelSize - (maxPowder != 0 && powder != 0 ? powder * texturePixelSize / maxPowder : 0);
+    }
+
+    public int getCurrentFuel() {
+        return this.data.get(2);
+    }
+
+    public int getCurrentFuelCapacity() {
+        return this.data.get(3);
+    }
+
+    public String getCasingType(){
+        return InventoryUtils.getCasingType(2, blockEntity.itemHandler);
+    }
+
+    public double[] getModifierValues() {
+        return new double[]{blockEntity.getCasingDataCraftingDurationModifier(), blockEntity.getCasingDataChanceToSaveIgnitionSource(), blockEntity.getCasingDataChanceToSaveFuel()};
+    }
+
     private static final int THIS_INVENTORY_SLOT_COUNT = 7;  // must be the number of slots you have!
+
     @Override
     public ItemStack quickMoveStack(Player playerIn, int pIndex) {
         Slot sourceSlot = slots.get(pIndex);
@@ -106,7 +131,7 @@ public class ExplosiveRefinerMenu extends AbstractContainerMenu {
                 pPlayer, AtomicBlocks.EXPLOSIVE_REFINER.get());
     }
 
-    private void addPlayerInventory(Inventory playerInventory) {
+    public void addPlayerInventory(Inventory playerInventory) {
         for (int i = 0; i < 3; ++i) {
             for (int l = 0; l < 9; ++l) {
                 this.addSlot(new Slot(playerInventory, l + i * 9 + 9, 8 + l * 18, 84 + i * 18));
@@ -114,7 +139,7 @@ public class ExplosiveRefinerMenu extends AbstractContainerMenu {
         }
     }
 
-    private void addPlayerHotbar(Inventory playerInventory) {
+    public void addPlayerHotbar(Inventory playerInventory) {
         for (int i = 0; i < 9; ++i) {
             this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 142));
         }

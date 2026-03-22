@@ -22,23 +22,16 @@ public class AtomicRecipes {
             SERIALIZERS.register(Types.EXPLOSIVE_COMPACTOR, () -> ExplosiveCompactorRecipe.Serializer.INSTANCE);
     public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<ExplosiveSeparatorRecipe>> EXPLOSIVE_SEPARATOR_SERIALIZER =
             SERIALIZERS.register(Types.EXPLOSIVE_SEPARATOR, () -> ExplosiveSeparatorRecipe.Serializer.INSTANCE);
-
     public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<ExplosiveRefinerRecipe>> EXPLOSIVE_REFINER_SERIALIZER =
-            SERIALIZERS.register("explosive_refiner", ExplosiveRefinerRecipe.Serializer::new);
+            SERIALIZERS.register(Types.EXPLOSIVE_REFINER, () -> ExplosiveRefinerRecipe.Serializer.INSTANCE);
+
 
     public static final DeferredHolder<RecipeType<?>, RecipeType<ExplosiveCompactorRecipe>> EXPLOSIVE_COMPACTOR_TYPE =
             TYPES.register(Types.EXPLOSIVE_COMPACTOR, () -> ExplosiveCompactorRecipe.Type.INSTANCE);
     public static final DeferredHolder<RecipeType<?>, RecipeType<ExplosiveSeparatorRecipe>> EXPLOSIVE_SEPARATOR_TYPE =
             TYPES.register(Types.EXPLOSIVE_SEPARATOR, () -> ExplosiveSeparatorRecipe.Type.INSTANCE);
-
     public static final DeferredHolder<RecipeType<?>, RecipeType<ExplosiveRefinerRecipe>> EXPLOSIVE_REFINER_TYPE =
-            TYPES.register("explosive_refiner", () -> new RecipeType<ExplosiveRefinerRecipe>() {
-                @Override
-                public String toString() {
-                    return "explosive_refiner";
-                }
-            });
-
+            TYPES.register(Types.EXPLOSIVE_REFINER, () -> ExplosiveRefinerRecipe.Type.INSTANCE);
 
 
     public static void register(IEventBus eventBus) {

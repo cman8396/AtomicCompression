@@ -7,6 +7,7 @@ import com.mcnair.atomic.item.AtomicItems;
 import com.mcnair.atomic.recipe.base.input.InputItemWithCount;
 import com.mcnair.atomic.recipe.base.output.OutputItemWithPercent;
 import com.mcnair.atomic.recipe.recipes.ExplosiveCompactorRecipe;
+import com.mcnair.atomic.recipe.recipes.ExplosiveRefinerRecipe;
 import com.mcnair.atomic.recipe.recipes.ExplosiveSeparatorRecipe;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
@@ -20,16 +21,13 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.flag.FeatureFlags;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 
-import javax.annotation.Nullable;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
@@ -226,7 +224,7 @@ public class AtomicRecipeProvider extends RecipeProvider {
 
         // Future compactor recipes for alloys and such.
 
-        /* EXPLOSIVE_SEPARATOR */
+        /* EXPLOSIVE SEPARATOR */
         ExSeparator.createStoneOreRecipe(output, Blocks.GOLD_ORE.asItem(), Blocks.DEEPSLATE_GOLD_ORE.asItem(), Items.RAW_GOLD, 2);
         ExSeparator.createStoneOreRecipe(output, Blocks.IRON_ORE.asItem(), Blocks.DEEPSLATE_IRON_ORE.asItem(), Items.RAW_IRON, 2);
         ExSeparator.createStoneOreRecipe(output, Blocks.COPPER_ORE.asItem(), Blocks.DEEPSLATE_COPPER_ORE.asItem(), Items.RAW_COPPER, 2);
@@ -289,6 +287,13 @@ public class AtomicRecipeProvider extends RecipeProvider {
         ExSeparator.createOneToOne(output, Items.BLAZE_ROD, Items.BLAZE_POWDER, 4);
 
 
+        /* EXPLOSIVE REFINER */
+        // Test Recipe
+        ExRefiner.createOneToOne(output, Blocks.STONE.asItem(), 1, Blocks.GRAVEL.asItem(), 2);
+
+        // Vanilla Recipes
+
+
 //        allWoodenObjects(output, "ashenwood", AtomicBlocks.ASHENWOOD_PLANKS, AtomicBlocks.ASHENWOOD_STAIRS, AtomicBlocks.ASHENWOOD_SLAB, AtomicBlocks.ASHENWOOD_BUTTON, AtomicBlocks.ASHENWOOD_PRESSURE_PLATE, AtomicBlocks.ASHENWOOD_FENCE, AtomicBlocks.ASHENWOOD_FENCE_GATE, AtomicBlocks.ASHENWOOD_WALL, AtomicBlocks.ASHENWOOD_DOOR, AtomicBlocks.ASHENWOOD_TRAPDOOR);
 
         // Throws error
@@ -327,6 +332,7 @@ public class AtomicRecipeProvider extends RecipeProvider {
     protected void generateRecipesForBlockFamilies(FeatureFlagSet flags) {
         AtomicBlockFamilies.getAllFamilies().filter(BlockFamily::shouldGenerateRecipe).forEach((family) -> generateRecipes(family, flags));
     }
+
     // Old way
     protected void allWoodenObjects(RecipeOutput recipeOutput, String group, ItemLike plankItem, ItemLike stairItem, ItemLike slabItem, ItemLike buttonItem, ItemLike pressurePlateItem, ItemLike fenceItem, ItemLike fenceGateItem, ItemLike wallItem, ItemLike doorItem, ItemLike trapdoorItem) {
         stairBuilder(stairItem, Ingredient.of(plankItem)).group(group).unlockedBy("has_planks", has(plankItem)).save(recipeOutput);
@@ -649,6 +655,141 @@ public class AtomicRecipeProvider extends RecipeProvider {
                     new ItemStack(outputOne, outputOneCount),
                     new OutputItemWithPercent(new ItemStack(outputTwo), outputTwoPercentages),
                     new OutputItemWithPercent(new ItemStack(outputThree), outputThreePercentages)
+            );
+        }
+    }
+
+    private static class ExRefiner {
+        public static void createRecipe(RecipeOutput recipeOutput, InputItemWithCount[] inputs, ItemStack output, OutputItemWithPercent secondaryOutput) {
+            String[] inputNameParts = new String[inputs.length];
+            for (int i = 0; i < inputs.length; i++)
+                inputNameParts[i] = getItemName(inputs[i].input().getValues().get(0).value());
+
+            String recipeName = String.join("_and_", inputNameParts) + "_to_" + getItemName(output.getItem());
+            Identifier recipeId = Identifier.fromNamespaceAndPath(AtomicCompression.MOD_ID, "explosive_refiner/" + recipeName);
+
+            ExplosiveRefinerRecipe recipe = new ExplosiveRefinerRecipe(output, secondaryOutput, inputs);
+            recipeOutput.accept(getKey(recipeId), recipe, null);
+        }
+
+        public static void createStoneOreRecipe(RecipeOutput recipeOutput, ItemLike inputItem, int inputCount, ItemLike outputStone, ItemLike outputDeepslate) {
+            createRecipe(
+                    recipeOutput,
+                    new InputItemWithCount[]{
+                            new InputItemWithCount(Ingredient.of(Blocks.STONE.asItem()), 4),
+                            new InputItemWithCount(Ingredient.of(inputItem), inputCount),
+                    },
+                    new ItemStack(outputStone),
+                    new OutputItemWithPercent(new ItemStack(Blocks.COBBLESTONE.asItem()), new double[]{1.0, 0.5, 0.1})
+            );
+
+            createRecipe(
+                    recipeOutput,
+                    new InputItemWithCount[]{
+                            new InputItemWithCount(Ingredient.of(Blocks.DEEPSLATE.asItem()), 4),
+                            new InputItemWithCount(Ingredient.of(inputItem), inputCount),
+                    },
+                    new ItemStack(outputDeepslate),
+                    new OutputItemWithPercent(new ItemStack(Blocks.COBBLED_DEEPSLATE.asItem()), new double[]{0.8, 0.4, 0.2})
+            );
+        }
+
+        public static void createNetherOreRecipe(RecipeOutput recipeOutput, ItemLike inputItem, int inputCount, ItemLike output) {
+            createRecipe(
+                    recipeOutput,
+                    new InputItemWithCount[]{
+                            new InputItemWithCount(Ingredient.of(Blocks.NETHERRACK.asItem()), 4),
+                            new InputItemWithCount(Ingredient.of(inputItem), inputCount),
+                    },
+                    new ItemStack(output),
+                    new OutputItemWithPercent(new ItemStack(Blocks.NETHERRACK.asItem()), new double[]{0.5, 0.1})
+            );
+        }
+
+        public static void createEndOreRecipe(RecipeOutput recipeOutput, ItemLike inputItem, int inputCount, ItemLike output) {
+            createRecipe(
+                    recipeOutput,
+                    new InputItemWithCount[]{
+                            new InputItemWithCount(Ingredient.of(Blocks.END_STONE.asItem()), 4),
+                            new InputItemWithCount(Ingredient.of(inputItem), inputCount),
+                    },
+                    new ItemStack(output),
+                    new OutputItemWithPercent(new ItemStack(Blocks.END_STONE.asItem()), new double[]{0.4, 0.2})
+            );
+        }
+
+        public static void createOneToOne(RecipeOutput recipeOutput, ItemLike input, int inputCount, ItemLike output, int outputCount) {
+            createRecipe(
+                    recipeOutput,
+                    new InputItemWithCount[]{
+                            new InputItemWithCount(Ingredient.of(input), inputCount)
+                    },
+                    new ItemStack(output, outputCount),
+                    new OutputItemWithPercent(ItemStack.EMPTY)
+            );
+        }
+
+        public static void createOneToTwo(RecipeOutput recipeOutput, ItemLike inputItem, int inputCount, ItemLike outputOne, int outputOneCount, ItemLike outputTwo, int outputTwoCount) {
+            double[] arr = new double[outputTwoCount];
+            Arrays.fill(arr, 1.0);
+
+            createRecipe(
+                    recipeOutput,
+                    new InputItemWithCount[]{
+                            new InputItemWithCount(Ingredient.of(inputItem), inputCount)
+                    },
+                    new ItemStack(outputOne, outputOneCount),
+                    new OutputItemWithPercent(new ItemStack(outputTwo), arr)
+            );
+        }
+
+        public static void createOneToTwo(RecipeOutput recipeOutput, ItemLike inputItem, int inputCount, ItemLike outputOne, int outputOneCount, ItemLike outputTwo, double[] outputTwoPercentages) {
+            createRecipe(
+                    recipeOutput,
+                    new InputItemWithCount[]{
+                            new InputItemWithCount(Ingredient.of(inputItem), inputCount)
+                    },
+                    new ItemStack(outputOne, outputOneCount),
+                    new OutputItemWithPercent(new ItemStack(outputTwo), outputTwoPercentages)
+            );
+        }
+
+        public static void createTwoToOne(RecipeOutput recipeOutput, ItemLike inputItemOne, int inputOneCount, ItemLike inputItemTwo, int inputTwoCount, ItemLike output, int outputCount) {
+            createRecipe(
+                    recipeOutput,
+                    new InputItemWithCount[]{
+                            new InputItemWithCount(Ingredient.of(inputItemOne), inputOneCount),
+                            new InputItemWithCount(Ingredient.of(inputItemTwo), inputTwoCount)
+                    },
+                    new ItemStack(output, outputCount),
+                    new OutputItemWithPercent(ItemStack.EMPTY)
+            );
+        }
+
+        public static void createTwoToTwo(RecipeOutput recipeOutput, ItemLike inputItemOne, int inputOneCount, ItemLike inputItemTwo, int inputTwoCount, ItemLike outputOne, int outputOneCount, ItemLike outputTwo, int outputTwoCount) {
+            double[] arr = new double[outputTwoCount];
+            Arrays.fill(arr, 1.0);
+
+            createRecipe(
+                    recipeOutput,
+                    new InputItemWithCount[]{
+                            new InputItemWithCount(Ingredient.of(inputItemOne), inputOneCount),
+                            new InputItemWithCount(Ingredient.of(inputItemTwo), inputTwoCount)
+                    },
+                    new ItemStack(outputOne, outputOneCount),
+                    new OutputItemWithPercent(new ItemStack(outputTwo), arr)
+            );
+        }
+
+        public static void createTwoToTwo(RecipeOutput recipeOutput, ItemLike inputItemOne, int inputOneCount, ItemLike inputItemTwo, int inputTwoCount, ItemLike outputOne, int outputOneCount, ItemLike outputTwo, double[] outputTwoPercentages) {
+            createRecipe(
+                    recipeOutput,
+                    new InputItemWithCount[]{
+                            new InputItemWithCount(Ingredient.of(inputItemOne), inputOneCount),
+                            new InputItemWithCount(Ingredient.of(inputItemTwo), inputTwoCount)
+                    },
+                    new ItemStack(outputOne, outputOneCount),
+                    new OutputItemWithPercent(new ItemStack(outputTwo), outputTwoPercentages)
             );
         }
     }
