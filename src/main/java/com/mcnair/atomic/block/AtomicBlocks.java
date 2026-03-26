@@ -178,8 +178,8 @@ public class AtomicBlocks {
             (properties) -> new ExplosiveSmelterBlock(properties.strength(3.5F).requiresCorrectToolForDrops().sound(SoundType.STONE)));
     public static final DeferredBlock<Block> EXPLOSIVE_REFINER = registerBlock("explosive_refiner",
             (properties) -> new ExplosiveRefinerBlock(properties.strength(3.5F).requiresCorrectToolForDrops().sound(SoundType.STONE)));
-//    public static final DeferredBlock<Block> EXPLOSIVE_INFUSER = registerBlock("explosive_infuser",
-//            (properties) -> new ExplosiveInfuserBlock(properties.strength(3.5F).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> EXPLOSIVE_INFUSER = registerBlock("explosive_infuser",
+            (properties) -> new ExplosiveInfuserBlock(properties.strength(3.5F).requiresCorrectToolForDrops().sound(SoundType.STONE)));
 
 
 

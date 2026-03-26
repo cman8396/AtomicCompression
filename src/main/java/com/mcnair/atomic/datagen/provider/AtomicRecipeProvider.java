@@ -188,11 +188,9 @@ public class AtomicRecipeProvider extends RecipeProvider {
 
 
         /* EXPLOSIVE MILL */
-        // Test Recipe
-        ExMill.createOneToOne(output, Blocks.STONE.asItem(), Blocks.GRAVEL.asItem(), 2);
 
         // Vanilla Recipes
-//        ExMill.createOneToOne(output, Blocks.STONE.asItem(), Blocks.GRAVEL.asItem(), 2);
+
 
 
         /* EXPLOSIVE COMPACTOR */
@@ -299,14 +297,22 @@ public class AtomicRecipeProvider extends RecipeProvider {
         ExSmelter.createOneToOne(output, Blocks.GOLD_ORE.asItem(), Items.GOLD_INGOT, 1);
 
         // Vanilla Recipes
-//        ExMill.createOneToOne(output, Blocks.STONE.asItem(), Blocks.GRAVEL.asItem(), 2);
+
 
 
         /* EXPLOSIVE REFINER */
-        // Test Recipe
-        ExRefiner.createOneToOne(output, Blocks.STONE.asItem(), 1, Blocks.GRAVEL.asItem(), 2);
+
 
         // Vanilla Recipes
+
+
+
+        /* EXPLOSIVE INFUSER */
+
+
+        // Vanilla Recipes
+
+
 
 
 //        allWoodenObjects(output, "ashenwood", AtomicBlocks.ASHENWOOD_PLANKS, AtomicBlocks.ASHENWOOD_STAIRS, AtomicBlocks.ASHENWOOD_SLAB, AtomicBlocks.ASHENWOOD_BUTTON, AtomicBlocks.ASHENWOOD_PRESSURE_PLATE, AtomicBlocks.ASHENWOOD_FENCE, AtomicBlocks.ASHENWOOD_FENCE_GATE, AtomicBlocks.ASHENWOOD_WALL, AtomicBlocks.ASHENWOOD_DOOR, AtomicBlocks.ASHENWOOD_TRAPDOOR);
@@ -894,4 +900,48 @@ public class AtomicRecipeProvider extends RecipeProvider {
             );
         }
     }
+
+    private static class ExInfuser {
+        public static void createRecipe(RecipeOutput recipeOutput, Ingredient input, ItemStack output, OutputItemWithPercent secondaryOutput) {
+            String recipeName = getItemName(input.getValues().get(0).value()) + "_to_" + getItemName(output.getItem());
+            if (!secondaryOutput.isEmpty())
+                recipeName += "_and_" + getItemName(secondaryOutput.output().getItem());
+
+            Identifier recipeId = Identifier.fromNamespaceAndPath(AtomicCompression.MOD_ID, "explosive_infuser/" + recipeName);
+
+            ExplosiveInfuserRecipe recipe = new ExplosiveInfuserRecipe(output, secondaryOutput, input);
+            recipeOutput.accept(getKey(recipeId), recipe, null);
+        }
+
+        public static void createOneToOne(RecipeOutput recipeOutput, ItemLike input, ItemLike output, int outputCount) {
+            createRecipe(
+                    recipeOutput,
+                    Ingredient.of(input),
+                    new ItemStack(output, outputCount),
+                    new OutputItemWithPercent(ItemStack.EMPTY)
+            );
+        }
+
+        public static void createOneToTwo(RecipeOutput recipeOutput, ItemLike input, ItemLike outputOne, int outputOneCount, ItemLike outputTwo, int outputTwoCount) {
+            double[] arr = new double[outputTwoCount];
+            Arrays.fill(arr, 1.0);
+
+            createRecipe(
+                    recipeOutput,
+                    Ingredient.of(input),
+                    new ItemStack(outputOne, outputOneCount),
+                    new OutputItemWithPercent(new ItemStack(outputTwo), arr)
+            );
+        }
+
+        public static void createOneToTwo(RecipeOutput recipeOutput, ItemLike input, ItemLike outputOne, int outputOneCount, ItemLike outputTwo, double[] outputTwoPercentages) {
+            createRecipe(
+                    recipeOutput,
+                    Ingredient.of(input),
+                    new ItemStack(outputOne, outputOneCount),
+                    new OutputItemWithPercent(new ItemStack(outputTwo), outputTwoPercentages)
+            );
+        }
+    }
+
 }

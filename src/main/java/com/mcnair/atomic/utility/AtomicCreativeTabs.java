@@ -109,6 +109,7 @@ public class AtomicCreativeTabs {
                         output.accept(AtomicBlocks.EXPLOSIVE_SEPARATOR.get());
                         output.accept(AtomicBlocks.EXPLOSIVE_SMELTER.get());
                         output.accept(AtomicBlocks.EXPLOSIVE_REFINER.get());
+                        output.accept(AtomicBlocks.EXPLOSIVE_INFUSER.get());
 
 
                     }).build()

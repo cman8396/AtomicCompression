@@ -96,7 +96,8 @@ public class AtomicBlockTagProvider extends BlockTagsProvider {
                 .add(AtomicBlocks.EXPLOSIVE_COMPACTOR.get())
                 .add(AtomicBlocks.EXPLOSIVE_SEPARATOR.get())
                 .add(AtomicBlocks.EXPLOSIVE_SMELTER.get())
-                .add(AtomicBlocks.EXPLOSIVE_REFINER.get());
+                .add(AtomicBlocks.EXPLOSIVE_REFINER.get())
+                .add(AtomicBlocks.EXPLOSIVE_INFUSER.get());
 
 //        tag(AtomicTags.Blocks.NEEDS_BISMUTH_TOOL)
 //                .add(AtomicBlocks.BISMUTH_LAMP.get())

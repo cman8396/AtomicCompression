@@ -1,0 +1,10 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "back": "atomiccompression:block/explosive_infuser/back",
+    "bottom": "atomiccompression:block/explosive_infuser/bottom",
+    "front": "atomiccompression:block/explosive_infuser/front_on",
+    "side": "atomiccompression:block/explosive_infuser/side",
+    "top": "atomiccompression:block/explosive_infuser/top"
+  }
+}

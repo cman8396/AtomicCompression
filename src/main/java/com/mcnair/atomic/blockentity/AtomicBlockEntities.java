@@ -31,6 +31,9 @@ import java.util.function.Supplier;
         public static final Supplier<BlockEntityType<ExplosiveRefinerBlockEntity>> EXPLOSIVE_REFINER =
                 BLOCK_ENTITIES.register("explosive_refiner", () -> new BlockEntityType<>(
                         ExplosiveRefinerBlockEntity::new, AtomicBlocks.EXPLOSIVE_REFINER.get()));
+        public static final Supplier<BlockEntityType<ExplosiveInfuserBlockEntity>> EXPLOSIVE_INFUSER =
+                BLOCK_ENTITIES.register("explosive_infuser", () -> new BlockEntityType<>(
+                        ExplosiveInfuserBlockEntity::new, AtomicBlocks.EXPLOSIVE_INFUSER.get()));
 
 
         public static void register(IEventBus modEventBus) {

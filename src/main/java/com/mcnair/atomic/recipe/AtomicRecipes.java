@@ -26,6 +26,8 @@ public class AtomicRecipes {
             SERIALIZERS.register(Types.EXPLOSIVE_SMELTER, () -> ExplosiveSmelterRecipe.Serializer.INSTANCE);
     public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<ExplosiveRefinerRecipe>> EXPLOSIVE_REFINER_SERIALIZER =
             SERIALIZERS.register(Types.EXPLOSIVE_REFINER, () -> ExplosiveRefinerRecipe.Serializer.INSTANCE);
+    public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<ExplosiveInfuserRecipe>> EXPLOSIVE_INFUSER_SERIALIZER =
+            SERIALIZERS.register(Types.EXPLOSIVE_INFUSER, () -> ExplosiveInfuserRecipe.Serializer.INSTANCE);
 
 
     public static final DeferredHolder<RecipeType<?>, RecipeType<ExplosiveMillRecipe>> EXPLOSIVE_MILL_TYPE =
@@ -38,6 +40,8 @@ public class AtomicRecipes {
             TYPES.register(Types.EXPLOSIVE_SMELTER, () -> ExplosiveSmelterRecipe.Type.INSTANCE);
     public static final DeferredHolder<RecipeType<?>, RecipeType<ExplosiveRefinerRecipe>> EXPLOSIVE_REFINER_TYPE =
             TYPES.register(Types.EXPLOSIVE_REFINER, () -> ExplosiveRefinerRecipe.Type.INSTANCE);
+    public static final DeferredHolder<RecipeType<?>, RecipeType<ExplosiveInfuserRecipe>> EXPLOSIVE_INFUSER_TYPE =
+            TYPES.register(Types.EXPLOSIVE_INFUSER, () -> ExplosiveInfuserRecipe.Type.INSTANCE);
 
 
     public static void register(IEventBus eventBus) {
@@ -51,5 +55,6 @@ public class AtomicRecipes {
         public static String EXPLOSIVE_SEPARATOR = "explosive_separator";
         public static String EXPLOSIVE_SMELTER = "explosive_smelter";
         public static String EXPLOSIVE_REFINER = "explosive_refiner";
+        public static String EXPLOSIVE_INFUSER = "explosive_infuser";
     }
 }

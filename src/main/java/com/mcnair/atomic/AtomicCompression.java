@@ -106,6 +106,7 @@ public class AtomicCompression {
             event.register(AtomicMenuTypes.EXPLOSIVE_SEPARATOR_MENU.get(), ExplosiveSeparatorScreen::new);
             event.register(AtomicMenuTypes.EXPLOSIVE_SMELTER_MENU.get(), ExplosiveSmelterScreen::new);
             event.register(AtomicMenuTypes.EXPLOSIVE_REFINER_MENU.get(), ExplosiveRefinerScreen::new);
+            event.register(AtomicMenuTypes.EXPLOSIVE_INFUSER_MENU.get(), ExplosiveInfuserScreen::new);
         }
     }
 
