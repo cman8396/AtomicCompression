@@ -2,10 +2,7 @@ package com.mcnair.atomic.blockentity;
 
 import com.mcnair.atomic.AtomicCompression;
 import com.mcnair.atomic.block.AtomicBlocks;
-import com.mcnair.atomic.blockentity.custom.ExplosiveCompactorBlockEntity;
-import com.mcnair.atomic.blockentity.custom.ExplosiveMillBlockEntity;
-import com.mcnair.atomic.blockentity.custom.ExplosiveRefinerBlockEntity;
-import com.mcnair.atomic.blockentity.custom.ExplosiveSeparatorBlockEntity;
+import com.mcnair.atomic.blockentity.custom.*;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.entity.SmokerBlockEntity;
@@ -28,6 +25,9 @@ import java.util.function.Supplier;
         public static final Supplier<BlockEntityType<ExplosiveSeparatorBlockEntity>> EXPLOSIVE_SEPARATOR =
                 BLOCK_ENTITIES.register("explosive_separator", () -> new BlockEntityType<>(
                         ExplosiveSeparatorBlockEntity::new, AtomicBlocks.EXPLOSIVE_SEPARATOR.get()));
+        public static final Supplier<BlockEntityType<ExplosiveSmelterBlockEntity>> EXPLOSIVE_SMELTER =
+                BLOCK_ENTITIES.register("explosive_smelter", () -> new BlockEntityType<>(
+                        ExplosiveSmelterBlockEntity::new, AtomicBlocks.EXPLOSIVE_SMELTER.get()));
         public static final Supplier<BlockEntityType<ExplosiveRefinerBlockEntity>> EXPLOSIVE_REFINER =
                 BLOCK_ENTITIES.register("explosive_refiner", () -> new BlockEntityType<>(
                         ExplosiveRefinerBlockEntity::new, AtomicBlocks.EXPLOSIVE_REFINER.get()));

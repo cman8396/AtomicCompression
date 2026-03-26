@@ -3,6 +3,7 @@
     "atomiccompression:explosive_mill",
     "atomiccompression:explosive_compactor",
     "atomiccompression:explosive_separator",
+    "atomiccompression:explosive_smelter",
     "atomiccompression:explosive_refiner"
   ]
 }

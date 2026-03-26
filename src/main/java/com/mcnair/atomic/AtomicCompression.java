@@ -6,10 +6,7 @@ import com.mcnair.atomic.particle.particles.ShardParticles;
 import com.mcnair.atomic.particle.AtomicParticles;
 import com.mcnair.atomic.recipe.AtomicRecipes;
 import com.mcnair.atomic.screen.AtomicMenuTypes;
-import com.mcnair.atomic.screen.custom.ExplosiveCompactorScreen;
-import com.mcnair.atomic.screen.custom.ExplosiveMillScreen;
-import com.mcnair.atomic.screen.custom.ExplosiveRefinerScreen;
-import com.mcnair.atomic.screen.custom.ExplosiveSeparatorScreen;
+import com.mcnair.atomic.screen.custom.*;
 import com.mcnair.atomic.utility.AtomicCreativeTabs;
 import com.mcnair.atomic.block.AtomicBlocks;
 import com.mcnair.atomic.item.AtomicItems;
@@ -21,7 +18,6 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
-import net.neoforged.neoforge.common.ModConfigSpec;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -108,6 +104,7 @@ public class AtomicCompression {
             event.register(AtomicMenuTypes.EXPLOSIVE_MILL_MENU.get(), ExplosiveMillScreen::new);
             event.register(AtomicMenuTypes.EXPLOSIVE_COMPACTOR_MENU.get(), ExplosiveCompactorScreen::new);
             event.register(AtomicMenuTypes.EXPLOSIVE_SEPARATOR_MENU.get(), ExplosiveSeparatorScreen::new);
+            event.register(AtomicMenuTypes.EXPLOSIVE_SMELTER_MENU.get(), ExplosiveSmelterScreen::new);
             event.register(AtomicMenuTypes.EXPLOSIVE_REFINER_MENU.get(), ExplosiveRefinerScreen::new);
         }
     }

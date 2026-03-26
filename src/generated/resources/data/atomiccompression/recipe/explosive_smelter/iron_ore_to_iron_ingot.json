@@ -1,0 +1,8 @@
+{
+  "type": "atomiccompression:explosive_smelter",
+  "ingredient": "minecraft:iron_ore",
+  "result": {
+    "count": 1,
+    "id": "minecraft:iron_ingot"
+  }
+}

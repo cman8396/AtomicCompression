@@ -1,10 +1,7 @@
 package com.mcnair.atomic.recipe;
 
 import com.mcnair.atomic.AtomicCompression;
-import com.mcnair.atomic.recipe.recipes.ExplosiveCompactorRecipe;
-import com.mcnair.atomic.recipe.recipes.ExplosiveMillRecipe;
-import com.mcnair.atomic.recipe.recipes.ExplosiveRefinerRecipe;
-import com.mcnair.atomic.recipe.recipes.ExplosiveSeparatorRecipe;
+import com.mcnair.atomic.recipe.recipes.*;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
@@ -25,6 +22,8 @@ public class AtomicRecipes {
             SERIALIZERS.register(Types.EXPLOSIVE_COMPACTOR, () -> ExplosiveCompactorRecipe.Serializer.INSTANCE);
     public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<ExplosiveSeparatorRecipe>> EXPLOSIVE_SEPARATOR_SERIALIZER =
             SERIALIZERS.register(Types.EXPLOSIVE_SEPARATOR, () -> ExplosiveSeparatorRecipe.Serializer.INSTANCE);
+    public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<ExplosiveSmelterRecipe>> EXPLOSIVE_SMELTER_SERIALIZER =
+            SERIALIZERS.register(Types.EXPLOSIVE_SMELTER, () -> ExplosiveSmelterRecipe.Serializer.INSTANCE);
     public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<ExplosiveRefinerRecipe>> EXPLOSIVE_REFINER_SERIALIZER =
             SERIALIZERS.register(Types.EXPLOSIVE_REFINER, () -> ExplosiveRefinerRecipe.Serializer.INSTANCE);
 
@@ -35,6 +34,8 @@ public class AtomicRecipes {
             TYPES.register(Types.EXPLOSIVE_COMPACTOR, () -> ExplosiveCompactorRecipe.Type.INSTANCE);
     public static final DeferredHolder<RecipeType<?>, RecipeType<ExplosiveSeparatorRecipe>> EXPLOSIVE_SEPARATOR_TYPE =
             TYPES.register(Types.EXPLOSIVE_SEPARATOR, () -> ExplosiveSeparatorRecipe.Type.INSTANCE);
+    public static final DeferredHolder<RecipeType<?>, RecipeType<ExplosiveSmelterRecipe>> EXPLOSIVE_SMELTER_TYPE =
+            TYPES.register(Types.EXPLOSIVE_SMELTER, () -> ExplosiveSmelterRecipe.Type.INSTANCE);
     public static final DeferredHolder<RecipeType<?>, RecipeType<ExplosiveRefinerRecipe>> EXPLOSIVE_REFINER_TYPE =
             TYPES.register(Types.EXPLOSIVE_REFINER, () -> ExplosiveRefinerRecipe.Type.INSTANCE);
 
@@ -48,6 +49,7 @@ public class AtomicRecipes {
         public static String EXPLOSIVE_MILL = "explosive_mill";
         public static String EXPLOSIVE_COMPACTOR = "explosive_compactor";
         public static String EXPLOSIVE_SEPARATOR = "explosive_separator";
+        public static String EXPLOSIVE_SMELTER = "explosive_smelter";
         public static String EXPLOSIVE_REFINER = "explosive_refiner";
     }
 }

@@ -6,10 +6,7 @@ import com.mcnair.atomic.datagen.extensions.AtomicBlockFamilies;
 import com.mcnair.atomic.item.AtomicItems;
 import com.mcnair.atomic.recipe.base.input.InputItemWithCount;
 import com.mcnair.atomic.recipe.base.output.OutputItemWithPercent;
-import com.mcnair.atomic.recipe.recipes.ExplosiveCompactorRecipe;
-import com.mcnair.atomic.recipe.recipes.ExplosiveMillRecipe;
-import com.mcnair.atomic.recipe.recipes.ExplosiveRefinerRecipe;
-import com.mcnair.atomic.recipe.recipes.ExplosiveSeparatorRecipe;
+import com.mcnair.atomic.recipe.recipes.*;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.BlockFamily;
@@ -297,6 +294,14 @@ public class AtomicRecipeProvider extends RecipeProvider {
         ExSeparator.createOneToOne(output, Items.BLAZE_ROD, Items.BLAZE_POWDER, 4);
 
 
+        /* EXPLOSIVE SMELTER */
+        ExSmelter.createOneToOne(output, Blocks.IRON_ORE.asItem(), Items.IRON_INGOT, 1);
+        ExSmelter.createOneToOne(output, Blocks.GOLD_ORE.asItem(), Items.GOLD_INGOT, 1);
+
+        // Vanilla Recipes
+//        ExMill.createOneToOne(output, Blocks.STONE.asItem(), Blocks.GRAVEL.asItem(), 2);
+
+
         /* EXPLOSIVE REFINER */
         // Test Recipe
         ExRefiner.createOneToOne(output, Blocks.STONE.asItem(), 1, Blocks.GRAVEL.asItem(), 2);
@@ -428,7 +433,6 @@ public class AtomicRecipeProvider extends RecipeProvider {
             String recipeName = getItemName(input.getValues().get(0).value()) + "_to_" + getItemName(output.getItem());
             if (!secondaryOutput.isEmpty())
                 recipeName += "_and_" + getItemName(secondaryOutput.output().getItem());
-
 
             Identifier recipeId = Identifier.fromNamespaceAndPath(AtomicCompression.MOD_ID, "explosive_mill/" + recipeName);
 
@@ -709,6 +713,49 @@ public class AtomicRecipeProvider extends RecipeProvider {
                     new ItemStack(outputOne, outputOneCount),
                     new OutputItemWithPercent(new ItemStack(outputTwo), outputTwoPercentages),
                     new OutputItemWithPercent(new ItemStack(outputThree), outputThreePercentages)
+            );
+        }
+    }
+
+    private static class ExSmelter {
+        public static void createRecipe(RecipeOutput recipeOutput, Ingredient input, ItemStack output, OutputItemWithPercent secondaryOutput) {
+            String recipeName = getItemName(input.getValues().get(0).value()) + "_to_" + getItemName(output.getItem());
+            if (!secondaryOutput.isEmpty())
+                recipeName += "_and_" + getItemName(secondaryOutput.output().getItem());
+
+            Identifier recipeId = Identifier.fromNamespaceAndPath(AtomicCompression.MOD_ID, "explosive_smelter/" + recipeName);
+
+            ExplosiveSmelterRecipe recipe = new ExplosiveSmelterRecipe(output, secondaryOutput, input);
+            recipeOutput.accept(getKey(recipeId), recipe, null);
+        }
+
+        public static void createOneToOne(RecipeOutput recipeOutput, ItemLike input, ItemLike output, int outputCount) {
+            createRecipe(
+                    recipeOutput,
+                    Ingredient.of(input),
+                    new ItemStack(output, outputCount),
+                    new OutputItemWithPercent(ItemStack.EMPTY)
+            );
+        }
+
+        public static void createOneToTwo(RecipeOutput recipeOutput, ItemLike input, ItemLike outputOne, int outputOneCount, ItemLike outputTwo, int outputTwoCount) {
+            double[] arr = new double[outputTwoCount];
+            Arrays.fill(arr, 1.0);
+
+            createRecipe(
+                    recipeOutput,
+                    Ingredient.of(input),
+                    new ItemStack(outputOne, outputOneCount),
+                    new OutputItemWithPercent(new ItemStack(outputTwo), arr)
+            );
+        }
+
+        public static void createOneToTwo(RecipeOutput recipeOutput, ItemLike input, ItemLike outputOne, int outputOneCount, ItemLike outputTwo, double[] outputTwoPercentages) {
+            createRecipe(
+                    recipeOutput,
+                    Ingredient.of(input),
+                    new ItemStack(outputOne, outputOneCount),
+                    new OutputItemWithPercent(new ItemStack(outputTwo), outputTwoPercentages)
             );
         }
     }
