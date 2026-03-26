@@ -47,7 +47,7 @@ public class ExplosiveMillBlockEntity extends BlockEntity implements MenuProvide
 
     private static final int[] UTILITY_SLOTS = new int[]{0, 1, 2};
     private static final int[] INPUT_SLOTS = new int[]{3};
-    private static final int[] OUTPUT_SLOTS = new int[]{4, 5, 6};
+    private static final int[] OUTPUT_SLOTS = new int[]{4, 5};
 
     protected final ContainerData data;
     private int progress = 0;
@@ -274,7 +274,6 @@ public class ExplosiveMillBlockEntity extends BlockEntity implements MenuProvide
         // Get the slot index for the primary and secondary slots.
         int primarySlotIndex = OUTPUT_SLOTS[0];
         int secondarySlotIndex = OUTPUT_SLOTS[1];
-        int tertiarySlotIndex = OUTPUT_SLOTS[1];
 
         // Update the primary slot with thew
         itemHandler.setStackInSlot(
@@ -287,13 +286,6 @@ public class ExplosiveMillBlockEntity extends BlockEntity implements MenuProvide
             itemHandler.setStackInSlot(
                     secondarySlotIndex,
                     recipeOutputItems[1].copyWithCount(itemHandler.getStackInSlot(secondarySlotIndex).getCount() + recipeOutputItems[1].getCount())
-            );
-
-        // Do the same for the secondary slot only if the recipe output allows.
-        if (!recipeOutputItems[2].isEmpty())
-            itemHandler.setStackInSlot(
-                    tertiarySlotIndex,
-                    recipeOutputItems[2].copyWithCount(itemHandler.getStackInSlot(tertiarySlotIndex).getCount() + recipeOutputItems[2].getCount())
             );
 
         // Reset the progress, ready for the next crafting cycle.

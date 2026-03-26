@@ -46,7 +46,7 @@ public class ExplosiveMillRecipe implements MachineBasicRecipe<RecipeInput> {
     }
 
     public ItemStack[] getMaxOutputCounts() {
-        ItemStack[] generatedOutputs = new ItemStack[3];
+        ItemStack[] generatedOutputs = new ItemStack[2];
 
         generatedOutputs[0] = output.copyWithCount(output.getCount());
         generatedOutputs[1] = secondaryOutput.output().copyWithCount(secondaryOutput.percentages().length);

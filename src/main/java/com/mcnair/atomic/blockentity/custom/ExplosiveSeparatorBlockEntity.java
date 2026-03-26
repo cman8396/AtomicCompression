@@ -274,7 +274,7 @@ public class ExplosiveSeparatorBlockEntity extends BlockEntity implements MenuPr
         // Get the slot index for the primary and secondary slots.
         int primarySlotIndex = OUTPUT_SLOTS[0];
         int secondarySlotIndex = OUTPUT_SLOTS[1];
-        int tertiarySlotIndex = OUTPUT_SLOTS[1];
+        int tertiarySlotIndex = OUTPUT_SLOTS[2];
 
         // Update the primary slot with thew
         itemHandler.setStackInSlot(

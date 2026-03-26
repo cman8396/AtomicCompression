@@ -7,6 +7,7 @@ import com.mcnair.atomic.item.AtomicItems;
 import com.mcnair.atomic.recipe.base.input.InputItemWithCount;
 import com.mcnair.atomic.recipe.base.output.OutputItemWithPercent;
 import com.mcnair.atomic.recipe.recipes.ExplosiveCompactorRecipe;
+import com.mcnair.atomic.recipe.recipes.ExplosiveMillRecipe;
 import com.mcnair.atomic.recipe.recipes.ExplosiveRefinerRecipe;
 import com.mcnair.atomic.recipe.recipes.ExplosiveSeparatorRecipe;
 import net.minecraft.core.HolderLookup;
@@ -187,6 +188,16 @@ public class AtomicRecipeProvider extends RecipeProvider {
         woodBlockProcessing(output, AtomicBlocks.ASHENWOOD_PLANKS, AtomicBlocks.ASHENWOOD_LOG, AtomicBlocks.ASHENWOOD_WOOD);
 
 
+
+
+        /* EXPLOSIVE MILL */
+        // Test Recipe
+        ExMill.createOneToOne(output, Blocks.STONE.asItem(), Blocks.GRAVEL.asItem(), 2);
+
+        // Vanilla Recipes
+//        ExMill.createOneToOne(output, Blocks.STONE.asItem(), Blocks.GRAVEL.asItem(), 2);
+
+
         /* EXPLOSIVE COMPACTOR */
         ExCompactor.createStoneOreRecipe(output, Items.RAW_GOLD, 8, Blocks.GOLD_ORE.asItem(), Blocks.DEEPSLATE_GOLD_ORE.asItem());
         ExCompactor.createStoneOreRecipe(output, Items.RAW_IRON, 8, Blocks.IRON_ORE.asItem(), Blocks.DEEPSLATE_IRON_ORE.asItem());
@@ -202,7 +213,6 @@ public class AtomicRecipeProvider extends RecipeProvider {
 
         ExCompactor.createNetherOreRecipe(output, AtomicItems.RAW_BUNGERITE, 8, AtomicBlocks.BUNGERITE_ORE.asItem());
         ExCompactor.createNetherOreRecipe(output, Items.QUARTZ, 12, Blocks.NETHER_QUARTZ_ORE.asItem());
-
 
         // Vanilla Recipes
         ExCompactor.createOneToOne(output, Blocks.BASALT.asItem(), 9, AtomicBlocks.DENSE_BASALT.asItem(), 1);
@@ -412,6 +422,50 @@ public class AtomicRecipeProvider extends RecipeProvider {
         return ResourceKey.create(Registries.RECIPE, recipeId);
     }
 
+
+    private static class ExMill {
+        public static void createRecipe(RecipeOutput recipeOutput, Ingredient input, ItemStack output, OutputItemWithPercent secondaryOutput) {
+            String recipeName = getItemName(input.getValues().get(0).value()) + "_to_" + getItemName(output.getItem());
+            if (!secondaryOutput.isEmpty())
+                recipeName += "_and_" + getItemName(secondaryOutput.output().getItem());
+
+
+            Identifier recipeId = Identifier.fromNamespaceAndPath(AtomicCompression.MOD_ID, "explosive_mill/" + recipeName);
+
+            ExplosiveMillRecipe recipe = new ExplosiveMillRecipe(output, secondaryOutput, input);
+            recipeOutput.accept(getKey(recipeId), recipe, null);
+        }
+
+        public static void createOneToOne(RecipeOutput recipeOutput, ItemLike input, ItemLike output, int outputCount) {
+            createRecipe(
+                    recipeOutput,
+                    Ingredient.of(input),
+                    new ItemStack(output, outputCount),
+                    new OutputItemWithPercent(ItemStack.EMPTY)
+            );
+        }
+
+        public static void createOneToTwo(RecipeOutput recipeOutput, ItemLike input, ItemLike outputOne, int outputOneCount, ItemLike outputTwo, int outputTwoCount) {
+            double[] arr = new double[outputTwoCount];
+            Arrays.fill(arr, 1.0);
+
+            createRecipe(
+                    recipeOutput,
+                    Ingredient.of(input),
+                    new ItemStack(outputOne, outputOneCount),
+                    new OutputItemWithPercent(new ItemStack(outputTwo), arr)
+            );
+        }
+
+        public static void createOneToTwo(RecipeOutput recipeOutput, ItemLike input, ItemLike outputOne, int outputOneCount, ItemLike outputTwo, double[] outputTwoPercentages) {
+            createRecipe(
+                    recipeOutput,
+                    Ingredient.of(input),
+                    new ItemStack(outputOne, outputOneCount),
+                    new OutputItemWithPercent(new ItemStack(outputTwo), outputTwoPercentages)
+            );
+        }
+    }
 
     private static class ExCompactor {
         public static void createRecipe(RecipeOutput recipeOutput, InputItemWithCount[] inputs, ItemStack output, OutputItemWithPercent secondaryOutput) {
