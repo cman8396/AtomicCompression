@@ -4,8 +4,8 @@ import com.mcnair.atomic.AtomicConfig;
 import com.mcnair.atomic.blockentity.AtomicBlockEntities;
 import com.mcnair.atomic.recipe.AtomicRecipes;
 import com.mcnair.atomic.recipe.base.MachineBaseRecipeInputHelper;
-import com.mcnair.atomic.recipe.recipes.ExplosiveSeparatorRecipe;
-import com.mcnair.atomic.screen.custom.ExplosiveSeparatorMenu;
+import com.mcnair.atomic.recipe.recipes.ExplosiveMillRecipe;
+import com.mcnair.atomic.screen.custom.ExplosiveMillMenu;
 import com.mcnair.atomic.utility.AtomicTags;
 import com.mcnair.atomic.utility.inventory.AtomicItemStackProvider;
 import com.mcnair.atomic.utility.inventory.InventoryUtils;
@@ -39,7 +39,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 
-public class ExplosiveSeparatorBlockEntity extends BlockEntity implements MenuProvider {
+public class ExplosiveMillBlockEntity extends BlockEntity implements MenuProvider {
     public final AtomicItemStackProvider itemHandler = new AtomicItemStackProvider(8) {
     };
 
@@ -55,17 +55,17 @@ public class ExplosiveSeparatorBlockEntity extends BlockEntity implements MenuPr
     private int fuel = 0;
     private int fuelCapacity = 256;
 
-    public ExplosiveSeparatorBlockEntity(BlockPos pos, BlockState blockState) {
-        super(AtomicBlockEntities.EXPLOSIVE_SEPARATOR.get(), pos, blockState);
+    public ExplosiveMillBlockEntity(BlockPos pos, BlockState blockState) {
+        super(AtomicBlockEntities.EXPLOSIVE_MILL.get(), pos, blockState);
 
         data = new ContainerData() {
             @Override
             public int get(int i) {
                 return switch (i) {
-                    case 0 -> ExplosiveSeparatorBlockEntity.this.progress;
-                    case 1 -> ExplosiveSeparatorBlockEntity.this.maxProgress;
-                    case 2 -> ExplosiveSeparatorBlockEntity.this.fuel;
-                    case 3 -> ExplosiveSeparatorBlockEntity.this.fuelCapacity;
+                    case 0 -> ExplosiveMillBlockEntity.this.progress;
+                    case 1 -> ExplosiveMillBlockEntity.this.maxProgress;
+                    case 2 -> ExplosiveMillBlockEntity.this.fuel;
+                    case 3 -> ExplosiveMillBlockEntity.this.fuelCapacity;
                     default -> 0;
                 };
             }
@@ -74,13 +74,13 @@ public class ExplosiveSeparatorBlockEntity extends BlockEntity implements MenuPr
             public void set(int i, int value) {
                 switch (i) {
                     case 0:
-                        ExplosiveSeparatorBlockEntity.this.progress = value;
+                        ExplosiveMillBlockEntity.this.progress = value;
                     case 1:
-                        ExplosiveSeparatorBlockEntity.this.maxProgress = value;
+                        ExplosiveMillBlockEntity.this.maxProgress = value;
                     case 2:
-                        ExplosiveSeparatorBlockEntity.this.fuel = value;
+                        ExplosiveMillBlockEntity.this.fuel = value;
                     case 3:
-                        ExplosiveSeparatorBlockEntity.this.fuelCapacity = value;
+                        ExplosiveMillBlockEntity.this.fuelCapacity = value;
                 }
             }
 
@@ -116,13 +116,13 @@ public class ExplosiveSeparatorBlockEntity extends BlockEntity implements MenuPr
 
     @Override
     public Component getDisplayName() {
-        return Component.translatable("block.atomiccompression.explosive_separator");
+        return Component.translatable("block.atomiccompression.explosive_mill");
     }
 
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int i, Inventory inventory, Player player) {
-        return new ExplosiveSeparatorMenu(i, inventory, this, this.data);
+        return new ExplosiveMillMenu(i, inventory, this, this.data);
     }
 
     @Override
@@ -195,7 +195,7 @@ public class ExplosiveSeparatorBlockEntity extends BlockEntity implements MenuPr
 
     /* TICKS AND CRAFTING */
 
-    public static void tick(Level level, BlockPos blockPos, BlockState state, ExplosiveSeparatorBlockEntity blockEntity) {
+    public static void tick(Level level, BlockPos blockPos, BlockState state, ExplosiveMillBlockEntity blockEntity) {
         if (level.isClientSide())
             return;
 
@@ -204,7 +204,7 @@ public class ExplosiveSeparatorBlockEntity extends BlockEntity implements MenuPr
 
         // Ensure the block has an actual recipe before attempting anything else.
         if (blockEntity.validRecipe()) {
-            Optional<RecipeHolder<ExplosiveSeparatorRecipe>> recipe = blockEntity.getCurrentRecipe();
+            Optional<RecipeHolder<ExplosiveMillRecipe>> recipe = blockEntity.getCurrentRecipe();
             if (recipe.isEmpty())
                 return;
 
@@ -251,7 +251,7 @@ public class ExplosiveSeparatorBlockEntity extends BlockEntity implements MenuPr
     /*
      * Note: Might refactor to use the INPUT_SLOTS array instead of standard loop for, as this isn't very readable.
      */
-    protected void craftItem(RecipeHolder<ExplosiveSeparatorRecipe> recipe) {
+    protected void craftItem(RecipeHolder<ExplosiveMillRecipe> recipe) {
         if (level == null || !validRecipe())
             return;
 
@@ -325,7 +325,7 @@ public class ExplosiveSeparatorBlockEntity extends BlockEntity implements MenuPr
             return false;
 
         SimpleContainer inventory = InventoryUtils.parseInventory(INPUT_SLOTS, itemHandler);
-        Optional<RecipeHolder<ExplosiveSeparatorRecipe>> recipe = getRecipeFor(inventory);
+        Optional<RecipeHolder<ExplosiveMillRecipe>> recipe = getRecipeFor(inventory);
 
         return recipe.isPresent() && InventoryUtils.canOutputSlotsAcceptRecipeOutput(recipe.get().value().getMaxOutputCounts(), itemHandler, OUTPUT_SLOTS);
     }
@@ -334,21 +334,21 @@ public class ExplosiveSeparatorBlockEntity extends BlockEntity implements MenuPr
         return new MachineBaseRecipeInputHelper(inventory);
     }
 
-    private Optional<RecipeHolder<ExplosiveSeparatorRecipe>> getRecipeFor(Container inventory) {
+    private Optional<RecipeHolder<ExplosiveMillRecipe>> getRecipeFor(Container inventory) {
         if (!(level instanceof ServerLevel serverLevel))
             return Optional.empty();
 
-        return serverLevel.recipeAccess().getRecipeFor(AtomicRecipes.EXPLOSIVE_SEPARATOR_TYPE.get(), getRecipeInput(inventory), level);
+        return serverLevel.recipeAccess().getRecipeFor(AtomicRecipes.EXPLOSIVE_MILL_TYPE.get(), getRecipeInput(inventory), level);
     }
 
-    private Optional<RecipeHolder<ExplosiveSeparatorRecipe>> getCurrentRecipe() {
+    private Optional<RecipeHolder<ExplosiveMillRecipe>> getCurrentRecipe() {
         return getRecipeFor(InventoryUtils.parseInventory(INPUT_SLOTS, itemHandler));
     }
 
 
     /* FUEL HANDLING */
 
-    private void reduceFuelForCraft(ExplosiveSeparatorBlockEntity blockEntity) {
+    private void reduceFuelForCraft(ExplosiveMillBlockEntity blockEntity) {
         if (!InventoryUtils.rollForChance(level, getCasingDataChanceToSaveFuel())) {
             blockEntity.fuel = blockEntity.fuel - AtomicConfig.machineAll_CraftingFuelCost_Base.getAsInt();
         }

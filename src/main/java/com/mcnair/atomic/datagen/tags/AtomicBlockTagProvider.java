@@ -92,6 +92,7 @@ public class AtomicBlockTagProvider extends BlockTagsProvider {
                 .add(AtomicBlocks.ASHENWOOD_DOOR.get());
 
         tag(AtomicTags.Blocks.MACHINE)
+                .add(AtomicBlocks.EXPLOSIVE_MILL.get())
                 .add(AtomicBlocks.EXPLOSIVE_COMPACTOR.get())
                 .add(AtomicBlocks.EXPLOSIVE_SEPARATOR.get())
                 .add(AtomicBlocks.EXPLOSIVE_REFINER.get());

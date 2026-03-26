@@ -85,6 +85,7 @@ public class AtomicBlockModelGenerators extends BlockModelGenerators {
                 .forEach(blockFamily -> this.family(blockFamily.getBaseBlock()).generateFor(blockFamily));
 
         /* ENTITIES */
+        createMachine(AtomicBlocks.EXPLOSIVE_MILL.get(), AtomicBlockModelGeneratorsTemplates.MACHINE.TEXTURED_MODEL);
         createMachine(AtomicBlocks.EXPLOSIVE_COMPACTOR.get(), AtomicBlockModelGeneratorsTemplates.MACHINE.TEXTURED_MODEL);
         createMachine(AtomicBlocks.EXPLOSIVE_SEPARATOR.get(), AtomicBlockModelGeneratorsTemplates.MACHINE.TEXTURED_MODEL);
         createMachine(AtomicBlocks.EXPLOSIVE_REFINER.get(), AtomicBlockModelGeneratorsTemplates.MACHINE.TEXTURED_MODEL);

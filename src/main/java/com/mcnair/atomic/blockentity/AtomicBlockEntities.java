@@ -3,6 +3,7 @@ package com.mcnair.atomic.blockentity;
 import com.mcnair.atomic.AtomicCompression;
 import com.mcnair.atomic.block.AtomicBlocks;
 import com.mcnair.atomic.blockentity.custom.ExplosiveCompactorBlockEntity;
+import com.mcnair.atomic.blockentity.custom.ExplosiveMillBlockEntity;
 import com.mcnair.atomic.blockentity.custom.ExplosiveRefinerBlockEntity;
 import com.mcnair.atomic.blockentity.custom.ExplosiveSeparatorBlockEntity;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -18,6 +19,9 @@ import java.util.function.Supplier;
 
         public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(BuiltInRegistries.BLOCK_ENTITY_TYPE, AtomicCompression.MOD_ID);
 
+        public static final Supplier<BlockEntityType<ExplosiveMillBlockEntity>> EXPLOSIVE_MILL =
+                BLOCK_ENTITIES.register("explosive_mill", () -> new BlockEntityType<>(
+                        ExplosiveMillBlockEntity::new, AtomicBlocks.EXPLOSIVE_MILL.get()));
         public static final Supplier<BlockEntityType<ExplosiveCompactorBlockEntity>> EXPLOSIVE_COMPACTOR =
                 BLOCK_ENTITIES.register("explosive_compactor", () -> new BlockEntityType<>(
                         ExplosiveCompactorBlockEntity::new, AtomicBlocks.EXPLOSIVE_COMPACTOR.get()));

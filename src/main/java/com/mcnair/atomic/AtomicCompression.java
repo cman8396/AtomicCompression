@@ -7,6 +7,7 @@ import com.mcnair.atomic.particle.AtomicParticles;
 import com.mcnair.atomic.recipe.AtomicRecipes;
 import com.mcnair.atomic.screen.AtomicMenuTypes;
 import com.mcnair.atomic.screen.custom.ExplosiveCompactorScreen;
+import com.mcnair.atomic.screen.custom.ExplosiveMillScreen;
 import com.mcnair.atomic.screen.custom.ExplosiveRefinerScreen;
 import com.mcnair.atomic.screen.custom.ExplosiveSeparatorScreen;
 import com.mcnair.atomic.utility.AtomicCreativeTabs;
@@ -104,6 +105,7 @@ public class AtomicCompression {
 
         @SubscribeEvent
         public static void registerScreens(RegisterMenuScreensEvent event) {
+            event.register(AtomicMenuTypes.EXPLOSIVE_MILL_MENU.get(), ExplosiveMillScreen::new);
             event.register(AtomicMenuTypes.EXPLOSIVE_COMPACTOR_MENU.get(), ExplosiveCompactorScreen::new);
             event.register(AtomicMenuTypes.EXPLOSIVE_SEPARATOR_MENU.get(), ExplosiveSeparatorScreen::new);
             event.register(AtomicMenuTypes.EXPLOSIVE_REFINER_MENU.get(), ExplosiveRefinerScreen::new);

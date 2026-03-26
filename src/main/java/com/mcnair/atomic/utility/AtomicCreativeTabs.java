@@ -104,6 +104,7 @@ public class AtomicCreativeTabs {
 
                         output.accept(AtomicItems.REFINED_BUNGERITE_MACHINE_CASING.get());
 
+                        output.accept(AtomicBlocks.EXPLOSIVE_MILL.get());
                         output.accept(AtomicBlocks.EXPLOSIVE_COMPACTOR.get());
                         output.accept(AtomicBlocks.EXPLOSIVE_SEPARATOR.get());
                         output.accept(AtomicBlocks.EXPLOSIVE_REFINER.get());

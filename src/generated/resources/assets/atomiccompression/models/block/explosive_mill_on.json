@@ -1,0 +1,10 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "back": "atomiccompression:block/explosive_mill/back",
+    "bottom": "atomiccompression:block/explosive_mill/bottom",
+    "front": "atomiccompression:block/explosive_mill/front_on",
+    "side": "atomiccompression:block/explosive_mill/side",
+    "top": "atomiccompression:block/explosive_mill/top"
+  }
+}

@@ -1,4 +1,4 @@
-// 1.21.11	2026-03-07T17:54:21.6306794	Loot Tables
+// 1.21.11	2026-03-26T20:19:09.1036026	Loot Tables
 4e8fe8bf5396393b0261cc13f80722abd76257f4 data/atomiccompression/loot_table/blocks/ashenwood_button.json
 16d3480bfd6a273f23bb6ccbcdd772357bc54a16 data/atomiccompression/loot_table/blocks/ashenwood_door.json
 2e47b7842f7e3c21fc04f29a2feb8a3254353b12 data/atomiccompression/loot_table/blocks/ashenwood_fence.json
@@ -28,6 +28,7 @@ ae15ba577ff1de2b45c82e33b52dbfd0cd201997 data/atomiccompression/loot_table/block
 de9ce73a232a2da6890e5a09f259f9951742202b data/atomiccompression/loot_table/blocks/empowered_atomic_block.json
 2c16ed9d1cc7dd5e05dfbf43a3a8e810047575c5 data/atomiccompression/loot_table/blocks/end_atomic_ore.json
 9e344e5bd094ee8708a0b82cd5d46f9e725dd3a8 data/atomiccompression/loot_table/blocks/explosive_compactor.json
+e1ee9ec80572f079525e9ed36b97f29c4de1270b data/atomiccompression/loot_table/blocks/explosive_mill.json
 005554c308ea8c5fde703c39075106cdffa7ff76 data/atomiccompression/loot_table/blocks/explosive_refiner.json
 e0a08f0cd5e99cc470a97def430af8220e6f3cfe data/atomiccompression/loot_table/blocks/explosive_separator.json
 b888c4dfea310cef3d27e0b5f4b756ca802b9d44 data/atomiccompression/loot_table/blocks/gunpowder_block.json

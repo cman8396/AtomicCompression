@@ -2,6 +2,7 @@ package com.mcnair.atomic.screen;
 
 import com.mcnair.atomic.AtomicCompression;
 import com.mcnair.atomic.screen.custom.ExplosiveCompactorMenu;
+import com.mcnair.atomic.screen.custom.ExplosiveMillMenu;
 import com.mcnair.atomic.screen.custom.ExplosiveRefinerMenu;
 import com.mcnair.atomic.screen.custom.ExplosiveSeparatorMenu;
 import net.minecraft.core.registries.Registries;
@@ -18,6 +19,8 @@ public class AtomicMenuTypes {
             DeferredRegister.create(Registries.MENU, AtomicCompression.MOD_ID);
 
 
+    public static final DeferredHolder<MenuType<?>, MenuType<ExplosiveMillMenu>> EXPLOSIVE_MILL_MENU =
+            registerMenuType("explosive_mill_menu", ExplosiveMillMenu::new);
     public static final DeferredHolder<MenuType<?>, MenuType<ExplosiveCompactorMenu>> EXPLOSIVE_COMPACTOR_MENU =
             registerMenuType("explosive_compactor_menu", ExplosiveCompactorMenu::new);
     public static final DeferredHolder<MenuType<?>, MenuType<ExplosiveSeparatorMenu>> EXPLOSIVE_SEPARATOR_MENU =

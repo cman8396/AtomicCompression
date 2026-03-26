@@ -2,6 +2,7 @@ package com.mcnair.atomic.block;
 
 import com.mcnair.atomic.AtomicCompression;
 import com.mcnair.atomic.block.custom.ExplosiveCompactorBlock;
+import com.mcnair.atomic.block.custom.ExplosiveMillBlock;
 import com.mcnair.atomic.block.custom.ExplosiveRefinerBlock;
 import com.mcnair.atomic.block.custom.ExplosiveSeparatorBlock;
 import com.mcnair.atomic.block.extensions.*;
@@ -170,8 +171,8 @@ public class AtomicBlocks {
 
 
     /* ENTITIES */
-//    public static final DeferredBlock<Block> EXPLOSIVE_MILL = registerBlock("explosive_mill",
-//            (properties) -> new ExplosiveMillBlock(properties.strength(3.5F).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> EXPLOSIVE_MILL = registerBlock("explosive_mill",
+            (properties) -> new ExplosiveMillBlock(properties.strength(3.5F).requiresCorrectToolForDrops().sound(SoundType.STONE)));
     public static final DeferredBlock<Block> EXPLOSIVE_COMPACTOR = registerBlock("explosive_compactor",
             (properties) -> new ExplosiveCompactorBlock(properties.strength(3.5F).requiresCorrectToolForDrops().sound(SoundType.STONE)));
     public static final DeferredBlock<Block> EXPLOSIVE_SEPARATOR = registerBlock("explosive_separator",
