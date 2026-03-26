@@ -58,8 +58,8 @@ public class ExplosiveRefinerBlock extends AbstractMachineBlock {
                                           Player pPlayer, InteractionHand pHand, BlockHitResult pHitResult) {
         if (!pLevel.isClientSide()) {
             BlockEntity entity = pLevel.getBlockEntity(pPos);
-            if (entity instanceof ExplosiveRefinerBlockEntity ExplosiveRefinerBlockEntity) {
-                ((ServerPlayer) pPlayer).openMenu(new SimpleMenuProvider(ExplosiveRefinerBlockEntity, Component.literal("Explosive Refiner")), pPos);
+            if (entity instanceof ExplosiveRefinerBlockEntity explosiveRefinerBlockEntity) {
+                ((ServerPlayer) pPlayer).openMenu(new SimpleMenuProvider(explosiveRefinerBlockEntity, Component.literal("Explosive Refiner")), pPos);
             } else {
                 throw new IllegalStateException("Container provider missing!");
             }

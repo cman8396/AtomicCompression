@@ -58,8 +58,8 @@ public class ExplosiveSeparatorBlock extends AbstractMachineBlock {
                                           Player pPlayer, InteractionHand pHand, BlockHitResult pHitResult) {
         if (!pLevel.isClientSide()) {
             BlockEntity entity = pLevel.getBlockEntity(pPos);
-            if(entity instanceof ExplosiveSeparatorBlockEntity ExplosiveSeparatorBlockEntity) {
-                ((ServerPlayer) pPlayer).openMenu(new SimpleMenuProvider(ExplosiveSeparatorBlockEntity, Component.literal("Explosive Separator")), pPos);
+            if(entity instanceof ExplosiveSeparatorBlockEntity explosiveSeparatorBlockEntity) {
+                ((ServerPlayer) pPlayer).openMenu(new SimpleMenuProvider(explosiveSeparatorBlockEntity, Component.literal("Explosive Separator")), pPos);
             } else {
                 throw new IllegalStateException("Container provider missing!");
             }
