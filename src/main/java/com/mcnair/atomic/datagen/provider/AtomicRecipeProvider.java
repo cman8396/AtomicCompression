@@ -17,13 +17,16 @@ import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.flag.FeatureFlags;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
+import net.neoforged.neoforge.common.Tags;
 
 import java.util.Arrays;
 import java.util.List;
@@ -194,14 +197,6 @@ public class AtomicRecipeProvider extends RecipeProvider {
 
 
         /* EXPLOSIVE COMPACTOR */
-        ExCompactor.createStoneOreRecipe(output, Items.RAW_GOLD, 8, Blocks.GOLD_ORE.asItem(), Blocks.DEEPSLATE_GOLD_ORE.asItem());
-        ExCompactor.createStoneOreRecipe(output, Items.RAW_IRON, 8, Blocks.IRON_ORE.asItem(), Blocks.DEEPSLATE_IRON_ORE.asItem());
-        ExCompactor.createStoneOreRecipe(output, Items.RAW_COPPER, 8, Blocks.COPPER_ORE.asItem(), Blocks.DEEPSLATE_COPPER_ORE.asItem());
-        ExCompactor.createStoneOreRecipe(output, Items.REDSTONE, 16, Blocks.REDSTONE_ORE.asItem(), Blocks.DEEPSLATE_REDSTONE_ORE.asItem());
-        ExCompactor.createStoneOreRecipe(output, Items.LAPIS_LAZULI, 16, Blocks.LAPIS_ORE.asItem(), Blocks.DEEPSLATE_LAPIS_ORE.asItem());
-        ExCompactor.createStoneOreRecipe(output, Items.EMERALD, 5, Blocks.EMERALD_ORE.asItem(), Blocks.DEEPSLATE_EMERALD_ORE.asItem());
-        ExCompactor.createStoneOreRecipe(output, Items.DIAMOND, 5, Blocks.DIAMOND_ORE.asItem(), Blocks.DEEPSLATE_DIAMOND_ORE.asItem());
-        ExCompactor.createStoneOreRecipe(output, Items.COAL, 8, Blocks.COAL_ORE.asItem(), Blocks.DEEPSLATE_COAL_ORE.asItem());
         ExCompactor.createStoneOreRecipe(output, AtomicItems.RAW_LEAD, 8, AtomicBlocks.LEAD_ORE.asItem(), AtomicBlocks.DEEPSLATE_LEAD_ORE.asItem());
         ExCompactor.createStoneOreRecipe(output, AtomicItems.RAW_SULFUR, 8, AtomicBlocks.LEAD_ORE.asItem(), AtomicBlocks.DEEPSLATE_SULFUR_ORE.asItem());
         ExCompactor.createStoneOreRecipe(output, AtomicItems.RAW_SALTPETER, 8, AtomicBlocks.LEAD_ORE.asItem(), AtomicBlocks.DEEPSLATE_SALTPETER_ORE.asItem());
@@ -210,6 +205,15 @@ public class AtomicRecipeProvider extends RecipeProvider {
         ExCompactor.createNetherOreRecipe(output, Items.QUARTZ, 12, Blocks.NETHER_QUARTZ_ORE.asItem());
 
         // Vanilla Recipes
+        ExCompactor.createStoneOreRecipe(output, Items.RAW_GOLD, 8, Blocks.GOLD_ORE.asItem(), Blocks.DEEPSLATE_GOLD_ORE.asItem());
+        ExCompactor.createStoneOreRecipe(output, Items.RAW_IRON, 8, Blocks.IRON_ORE.asItem(), Blocks.DEEPSLATE_IRON_ORE.asItem());
+        ExCompactor.createStoneOreRecipe(output, Items.RAW_COPPER, 8, Blocks.COPPER_ORE.asItem(), Blocks.DEEPSLATE_COPPER_ORE.asItem());
+        ExCompactor.createStoneOreRecipe(output, Items.REDSTONE, 16, Blocks.REDSTONE_ORE.asItem(), Blocks.DEEPSLATE_REDSTONE_ORE.asItem());
+        ExCompactor.createStoneOreRecipe(output, Items.LAPIS_LAZULI, 16, Blocks.LAPIS_ORE.asItem(), Blocks.DEEPSLATE_LAPIS_ORE.asItem());
+        ExCompactor.createStoneOreRecipe(output, Items.EMERALD, 5, Blocks.EMERALD_ORE.asItem(), Blocks.DEEPSLATE_EMERALD_ORE.asItem());
+        ExCompactor.createStoneOreRecipe(output, Items.DIAMOND, 5, Blocks.DIAMOND_ORE.asItem(), Blocks.DEEPSLATE_DIAMOND_ORE.asItem());
+        ExCompactor.createStoneOreRecipe(output, Items.COAL, 8, Blocks.COAL_ORE.asItem(), Blocks.DEEPSLATE_COAL_ORE.asItem());
+
         ExCompactor.createOneToOne(output, Blocks.BASALT.asItem(), 9, AtomicBlocks.DENSE_BASALT.asItem(), 1);
         ExCompactor.createOneToOne(output, AtomicItems.OBSIDIAN_CHUNK, 4, Blocks.OBSIDIAN.asItem(), 1);
         ExCompactor.createOneToOne(output, Items.PRISMARINE_SHARD, 4, Blocks.PRISMARINE.asItem(), 1);
@@ -227,30 +231,23 @@ public class AtomicRecipeProvider extends RecipeProvider {
         ExCompactor.createTwoToOne(output, AtomicBlocks.DENSE_BASALT.asItem(), 1, Items.NETHERITE_INGOT, 2, Blocks.ANCIENT_DEBRIS.asItem(), 1);
 
 
-        // Future compactor recipes for alloys and such.
-
         /* EXPLOSIVE SEPARATOR */
-        ExSeparator.createStoneOreRecipe(output, Blocks.GOLD_ORE.asItem(), Blocks.DEEPSLATE_GOLD_ORE.asItem(), Items.RAW_GOLD, 2);
-        ExSeparator.createStoneOreRecipe(output, Blocks.IRON_ORE.asItem(), Blocks.DEEPSLATE_IRON_ORE.asItem(), Items.RAW_IRON, 2);
-        ExSeparator.createStoneOreRecipe(output, Blocks.COPPER_ORE.asItem(), Blocks.DEEPSLATE_COPPER_ORE.asItem(), Items.RAW_COPPER, 2);
-        ExSeparator.createStoneOreRecipe(output, Blocks.REDSTONE_ORE.asItem(), Blocks.DEEPSLATE_REDSTONE_ORE.asItem(), Items.REDSTONE, 10);
-        ExSeparator.createStoneOreRecipe(output, Blocks.LAPIS_ORE.asItem(), Blocks.DEEPSLATE_LAPIS_ORE.asItem(), Items.LAPIS_LAZULI, 8);
-        ExSeparator.createStoneOreRecipe(output, Blocks.EMERALD_ORE.asItem(), Blocks.DEEPSLATE_EMERALD_ORE.asItem(), Items.EMERALD, 2);
-        ExSeparator.createStoneOreRecipe(output, Blocks.DIAMOND_ORE.asItem(), Blocks.DEEPSLATE_EMERALD_ORE.asItem(), Items.DIAMOND, 2);
-        ExSeparator.createStoneOreRecipe(output, Blocks.COAL_ORE.asItem(), Blocks.DEEPSLATE_COAL_ORE.asItem(), Items.COAL, 2);
-        ExSeparator.createStoneOreRecipe(output, AtomicBlocks.LEAD_ORE.asItem(), AtomicBlocks.DEEPSLATE_LEAD_ORE.asItem(), AtomicItems.RAW_LEAD, 2);
         ExSeparator.createStoneOreRecipe(output, AtomicBlocks.SULFUR_ORE.asItem(), AtomicBlocks.DEEPSLATE_SULFUR_ORE.asItem(), AtomicItems.RAW_SULFUR, 2);
         ExSeparator.createStoneOreRecipe(output, AtomicBlocks.SALTPETER_ORE.asItem(), AtomicBlocks.DEEPSLATE_SALTPETER_ORE.asItem(), AtomicItems.RAW_SALTPETER, 2);
+
         ExSeparator.createStoneOreRecipe(output, AtomicBlocks.ATOMIC_ORE.asItem(), AtomicBlocks.DEEPSLATE_ATOMIC_ORE.asItem(), AtomicItems.ATOMIC_SHARD, 2);
-
-        ExSeparator.createNetherOreRecipe(output, AtomicBlocks.BUNGERITE_ORE.asItem(), AtomicItems.RAW_BUNGERITE, 2);
         ExSeparator.createNetherOreRecipe(output, AtomicBlocks.NETHER_ATOMIC_ORE.asItem(), AtomicItems.ATOMIC_SHARD, 2);
-
         ExSeparator.createNetherOreRecipe(output, AtomicBlocks.END_ATOMIC_ORE.asItem(), AtomicItems.ATOMIC_SHARD, 2);
 
         ExSeparator.createOneToOne(output, AtomicBlocks.DENSE_BASALT.asItem(), Blocks.BASALT.asItem(), 9);
 
         // Vanilla Recipes
+        ExSeparator.createStoneOreRecipe(output, Blocks.REDSTONE_ORE.asItem(), Blocks.DEEPSLATE_REDSTONE_ORE.asItem(), Items.REDSTONE, 10);
+        ExSeparator.createStoneOreRecipe(output, Blocks.LAPIS_ORE.asItem(), Blocks.DEEPSLATE_LAPIS_ORE.asItem(), Items.LAPIS_LAZULI, 8);
+        ExSeparator.createStoneOreRecipe(output, Blocks.EMERALD_ORE.asItem(), Blocks.DEEPSLATE_EMERALD_ORE.asItem(), Items.EMERALD, 2);
+        ExSeparator.createStoneOreRecipe(output, Blocks.DIAMOND_ORE.asItem(), Blocks.DEEPSLATE_EMERALD_ORE.asItem(), Items.DIAMOND, 2);
+        ExSeparator.createStoneOreRecipe(output, Blocks.COAL_ORE.asItem(), Blocks.DEEPSLATE_COAL_ORE.asItem(), Items.COAL, 2);
+
         ExSeparator.createOneToOne(output, Blocks.ANCIENT_DEBRIS.asItem(), Items.NETHERITE_SCRAP, 1);
         ExSeparator.createOneToOne(output, Blocks.SMOOTH_BASALT.asItem(), Blocks.BASALT.asItem(), 1);
         ExSeparator.createOneToOne(output, Blocks.POLISHED_BASALT.asItem(), Blocks.BASALT.asItem(), 1);
@@ -293,26 +290,29 @@ public class AtomicRecipeProvider extends RecipeProvider {
 
 
         /* EXPLOSIVE SMELTER */
-        ExSmelter.createOneToOne(output, Blocks.IRON_ORE.asItem(), Items.IRON_INGOT, 1);
-        ExSmelter.createOneToOne(output, Blocks.GOLD_ORE.asItem(), Items.GOLD_INGOT, 1);
+        ExSmelter.createOreRecipe(output, AtomicBlocks.LEAD_ORE.asItem(), AtomicBlocks.DEEPSLATE_LEAD_ORE.asItem(), AtomicItems.RAW_LEAD, 1);
+        ExSmelter.createOneToOne(output, AtomicBlocks.BUNGERITE_ORE.asItem(), AtomicItems.RAW_BUNGERITE, 1);
 
         // Vanilla Recipes
-
+        ExSmelter.createOreRecipe(output, Blocks.GOLD_ORE.asItem(), Blocks.DEEPSLATE_GOLD_ORE.asItem(), Items.RAW_GOLD, 1);
+        ExSmelter.createOreRecipe(output, Blocks.IRON_ORE.asItem(), Blocks.DEEPSLATE_IRON_ORE.asItem(), Items.RAW_IRON, 1);
+        ExSmelter.createOreRecipe(output, Blocks.COPPER_ORE.asItem(), Blocks.DEEPSLATE_COPPER_ORE.asItem(), Items.RAW_COPPER, 1);
 
 
         /* EXPLOSIVE REFINER */
-
+        ExRefiner.createStoneOreRecipe(output, AtomicBlocks.LEAD_ORE.asItem(), AtomicBlocks.DEEPSLATE_LEAD_ORE.asItem(), 1, AtomicItems.RAW_LEAD, 2);
+        ExRefiner.createNetherOreRecipe(output, AtomicBlocks.BUNGERITE_ORE.asItem(), 1, AtomicItems.RAW_BUNGERITE, 2);
 
         // Vanilla Recipes
+        ExRefiner.createStoneOreRecipe(output, Blocks.GOLD_ORE.asItem(), Blocks.DEEPSLATE_GOLD_ORE.asItem(), 1, Items.RAW_GOLD, 2);
+        ExRefiner.createStoneOreRecipe(output, Blocks.IRON_ORE.asItem(), Blocks.DEEPSLATE_IRON_ORE.asItem(), 1, Items.RAW_IRON, 2);
+        ExRefiner.createStoneOreRecipe(output, Blocks.COPPER_ORE.asItem(), Blocks.DEEPSLATE_COPPER_ORE.asItem(), 1, Items.RAW_COPPER, 2);
 
 
 
         /* EXPLOSIVE INFUSER */
 
-
         // Vanilla Recipes
-
-
 
 
 //        allWoodenObjects(output, "ashenwood", AtomicBlocks.ASHENWOOD_PLANKS, AtomicBlocks.ASHENWOOD_STAIRS, AtomicBlocks.ASHENWOOD_SLAB, AtomicBlocks.ASHENWOOD_BUTTON, AtomicBlocks.ASHENWOOD_PRESSURE_PLATE, AtomicBlocks.ASHENWOOD_FENCE, AtomicBlocks.ASHENWOOD_FENCE_GATE, AtomicBlocks.ASHENWOOD_WALL, AtomicBlocks.ASHENWOOD_DOOR, AtomicBlocks.ASHENWOOD_TRAPDOOR);
@@ -422,6 +422,19 @@ public class AtomicRecipeProvider extends RecipeProvider {
     }
 
 
+
+    private Ingredient ingredientOf(ItemLike item) {
+        return Ingredient.of(item);
+    }
+
+    private Ingredient ingredientOf(ItemLike... items) {
+        return Ingredient.of(items);
+    }
+
+    private Ingredient ingredientOf(TagKey<Item> tagKey) {
+        return Ingredient.of(registries.lookupOrThrow(Registries.ITEM).getOrThrow(tagKey));
+    }
+
     protected <T extends AbstractCookingRecipe> void oreCooking(RecipeOutput recipeOutput, RecipeSerializer<T> pCookingSerializer, AbstractCookingRecipe.Factory<T> factory, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTime, String pGroup, String pRecipeName) {
         for (ItemLike itemlike : pIngredients) {
             SimpleCookingRecipeBuilder.generic(Ingredient.of(itemlike), pCategory, pResult, pExperience, pCookingTime, pCookingSerializer, factory).group(pGroup).unlockedBy(getHasName(itemlike), has(itemlike))
@@ -432,6 +445,7 @@ public class AtomicRecipeProvider extends RecipeProvider {
     private static ResourceKey<Recipe<?>> getKey(Identifier recipeId) {
         return ResourceKey.create(Registries.RECIPE, recipeId);
     }
+
 
 
     private static class ExMill {
@@ -735,6 +749,22 @@ public class AtomicRecipeProvider extends RecipeProvider {
             recipeOutput.accept(getKey(recipeId), recipe, null);
         }
 
+        public static void createOreRecipe(RecipeOutput recipeOutput, ItemLike inputItemStone, ItemLike inputItemDeepslate, ItemLike outputItem, int outputCount) {
+            createRecipe(
+                    recipeOutput,
+                    Ingredient.of(inputItemStone),
+                    new ItemStack(outputItem, outputCount),
+                    new OutputItemWithPercent(ItemStack.EMPTY)
+            );
+
+            createRecipe(
+                    recipeOutput,
+                    Ingredient.of(inputItemDeepslate),
+                    new ItemStack(outputItem, outputCount),
+                    new OutputItemWithPercent(ItemStack.EMPTY)
+            );
+        }
+
         public static void createOneToOne(RecipeOutput recipeOutput, ItemLike input, ItemLike output, int outputCount) {
             createRecipe(
                     recipeOutput,
@@ -779,49 +809,45 @@ public class AtomicRecipeProvider extends RecipeProvider {
             recipeOutput.accept(getKey(recipeId), recipe, null);
         }
 
-        public static void createStoneOreRecipe(RecipeOutput recipeOutput, ItemLike inputItem, int inputCount, ItemLike outputStone, ItemLike outputDeepslate) {
+        public static void createStoneOreRecipe(RecipeOutput recipeOutput, ItemLike inputItemStone, ItemLike inputItemDeepslate, int inputCount, ItemLike outputItem, int outputCount) {
             createRecipe(
                     recipeOutput,
                     new InputItemWithCount[]{
-                            new InputItemWithCount(Ingredient.of(Blocks.STONE.asItem()), 4),
-                            new InputItemWithCount(Ingredient.of(inputItem), inputCount),
+                            new InputItemWithCount(Ingredient.of(inputItemStone), inputCount)
                     },
-                    new ItemStack(outputStone),
-                    new OutputItemWithPercent(new ItemStack(Blocks.COBBLESTONE.asItem()), new double[]{1.0, 0.5, 0.1})
+                    new ItemStack(outputItem, outputCount),
+                    new OutputItemWithPercent(ItemStack.EMPTY)
             );
 
             createRecipe(
                     recipeOutput,
                     new InputItemWithCount[]{
-                            new InputItemWithCount(Ingredient.of(Blocks.DEEPSLATE.asItem()), 4),
-                            new InputItemWithCount(Ingredient.of(inputItem), inputCount),
+                            new InputItemWithCount(Ingredient.of(inputItemDeepslate), inputCount)
                     },
-                    new ItemStack(outputDeepslate),
-                    new OutputItemWithPercent(new ItemStack(Blocks.COBBLED_DEEPSLATE.asItem()), new double[]{0.8, 0.4, 0.2})
+                    new ItemStack(outputItem, outputCount),
+                    new OutputItemWithPercent(ItemStack.EMPTY)
             );
         }
 
-        public static void createNetherOreRecipe(RecipeOutput recipeOutput, ItemLike inputItem, int inputCount, ItemLike output) {
+        public static void createNetherOreRecipe(RecipeOutput recipeOutput, ItemLike inputItem, int inputCount, ItemLike outputItem, int outputCount) {
             createRecipe(
                     recipeOutput,
                     new InputItemWithCount[]{
-                            new InputItemWithCount(Ingredient.of(Blocks.NETHERRACK.asItem()), 4),
-                            new InputItemWithCount(Ingredient.of(inputItem), inputCount),
+                            new InputItemWithCount(Ingredient.of(inputItem), inputCount)
                     },
-                    new ItemStack(output),
-                    new OutputItemWithPercent(new ItemStack(Blocks.NETHERRACK.asItem()), new double[]{0.5, 0.1})
+                    new ItemStack(outputItem, outputCount),
+                    new OutputItemWithPercent(ItemStack.EMPTY)
             );
         }
 
-        public static void createEndOreRecipe(RecipeOutput recipeOutput, ItemLike inputItem, int inputCount, ItemLike output) {
+        public static void createEndOreRecipe(RecipeOutput recipeOutput, ItemLike inputItem, int inputCount, ItemLike outputItem, int outputCount) {
             createRecipe(
                     recipeOutput,
                     new InputItemWithCount[]{
-                            new InputItemWithCount(Ingredient.of(Blocks.END_STONE.asItem()), 4),
-                            new InputItemWithCount(Ingredient.of(inputItem), inputCount),
+                            new InputItemWithCount(Ingredient.of(inputItem), inputCount)
                     },
-                    new ItemStack(output),
-                    new OutputItemWithPercent(new ItemStack(Blocks.END_STONE.asItem()), new double[]{0.4, 0.2})
+                    new ItemStack(outputItem, outputCount),
+                    new OutputItemWithPercent(ItemStack.EMPTY)
             );
         }
 

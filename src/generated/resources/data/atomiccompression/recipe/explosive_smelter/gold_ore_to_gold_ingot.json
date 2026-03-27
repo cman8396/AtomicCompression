@@ -1,8 +1,0 @@
-{
-  "type": "atomiccompression:explosive_smelter",
-  "ingredient": "minecraft:gold_ore",
-  "result": {
-    "count": 1,
-    "id": "minecraft:gold_ingot"
-  }
-}

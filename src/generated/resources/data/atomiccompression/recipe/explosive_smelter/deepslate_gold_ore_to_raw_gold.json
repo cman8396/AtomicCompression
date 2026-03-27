@@ -1,0 +1,8 @@
+{
+  "type": "atomiccompression:explosive_smelter",
+  "ingredient": "minecraft:deepslate_gold_ore",
+  "result": {
+    "count": 1,
+    "id": "minecraft:raw_gold"
+  }
+}

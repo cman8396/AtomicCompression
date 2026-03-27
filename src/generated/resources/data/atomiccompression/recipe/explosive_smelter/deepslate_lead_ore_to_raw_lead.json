@@ -1,0 +1,8 @@
+{
+  "type": "atomiccompression:explosive_smelter",
+  "ingredient": "atomiccompression:deepslate_lead_ore",
+  "result": {
+    "count": 1,
+    "id": "atomiccompression:raw_lead"
+  }
+}

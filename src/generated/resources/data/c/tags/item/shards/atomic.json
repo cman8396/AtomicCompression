@@ -1,0 +1,6 @@
+{
+  "values": [
+    "atomiccompression:atomic_shard",
+    "atomiccompression:empowered_atomic_shard"
+  ]
+}
