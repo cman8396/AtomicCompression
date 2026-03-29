@@ -11,25 +11,25 @@ public class AtomicConfig {
                     Amount of fuel a single Tier 1 machine fuel item is converted to.
                     Eg. Gunpowder
                     """)
-            .defineInRange("machine.fuelConversion_Gunpowders", 4, 0, Integer.MAX_VALUE);
+            .defineInRange("machine.fuelConversion_Tier1", 4, 0, Integer.MAX_VALUE);
     public static final ModConfigSpec.IntValue machineAll_FuelConversion_Tier2 = BUILDER
             .comment("""
                     Amount of fuel a single Tier 2 machine fuel item is converted to.
                     Eg. Blaze Powder
                     """)
-            .defineInRange("machine.fuelConversion_Gunpowders", 8, 0, Integer.MAX_VALUE);
+            .defineInRange("machine.fuelConversion_Tier2", 8, 0, Integer.MAX_VALUE);
     public static final ModConfigSpec.IntValue machineAll_FuelConversion_Tier3 = BUILDER
             .comment("""
                     Amount of fuel a single Tier 3 machine fuel item is converted to.
                     Eg. Unknown
                     """)
-            .defineInRange("machine.fuelConversion_Gunpowders", 24, 0, Integer.MAX_VALUE);
+            .defineInRange("machine.fuelConversion_Tier3", 24, 0, Integer.MAX_VALUE);
     public static final ModConfigSpec.IntValue machineAll_FuelConversion_Tier4 = BUILDER
             .comment("""
                     Amount of fuel a single Tier 4 machine fuel item is converted to.
                     Eg. Unknown
                     """)
-            .defineInRange("machine.fuelConversion_Gunpowders", 64, 0, Integer.MAX_VALUE);
+            .defineInRange("machine.fuelConversion_Tier4", 64, 0, Integer.MAX_VALUE);
 
     public static final ModConfigSpec.IntValue machineAll_CraftingFuelCost_Base = BUILDER
             .comment("""
