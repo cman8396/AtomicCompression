@@ -1,27 +1,35 @@
 package com.mcnair.atomic;
 
-import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
-
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.Identifier;
-import net.minecraft.world.item.Item;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.fml.event.config.ModConfigEvent;
 import net.neoforged.neoforge.common.ModConfigSpec;
 
 public class AtomicConfig {
     private static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
 
     /* ALL MACHINES */
-    public static final ModConfigSpec.IntValue machineAll_FuelConversion_Gunpowders = BUILDER
+    public static final ModConfigSpec.IntValue machineAll_FuelConversion_Tier1 = BUILDER
             .comment("""
-                    Amount of fuel a single item of Gunpowder is converted to.
-                    Applies to item tag/s: "c:gunpowders".
+                    Amount of fuel a single Tier 1 machine fuel item is converted to.
+                    Eg. Gunpowder
                     """)
             .defineInRange("machine.fuelConversion_Gunpowders", 4, 0, Integer.MAX_VALUE);
+    public static final ModConfigSpec.IntValue machineAll_FuelConversion_Tier2 = BUILDER
+            .comment("""
+                    Amount of fuel a single Tier 2 machine fuel item is converted to.
+                    Eg. Blaze Powder
+                    """)
+            .defineInRange("machine.fuelConversion_Gunpowders", 8, 0, Integer.MAX_VALUE);
+    public static final ModConfigSpec.IntValue machineAll_FuelConversion_Tier3 = BUILDER
+            .comment("""
+                    Amount of fuel a single Tier 3 machine fuel item is converted to.
+                    Eg. Unknown
+                    """)
+            .defineInRange("machine.fuelConversion_Gunpowders", 24, 0, Integer.MAX_VALUE);
+    public static final ModConfigSpec.IntValue machineAll_FuelConversion_Tier4 = BUILDER
+            .comment("""
+                    Amount of fuel a single Tier 4 machine fuel item is converted to.
+                    Eg. Unknown
+                    """)
+            .defineInRange("machine.fuelConversion_Gunpowders", 64, 0, Integer.MAX_VALUE);
 
     public static final ModConfigSpec.IntValue machineAll_CraftingFuelCost_Base = BUILDER
             .comment("""

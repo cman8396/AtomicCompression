@@ -70,9 +70,16 @@ public class AtomicItemTagProvider extends ItemTagsProvider {
                 .add(AtomicBlocks.EXPLOSIVE_REFINER.asItem())
                 .add(AtomicBlocks.EXPLOSIVE_INFUSER.asItem());
 
-        tag(AtomicTags.Items.MACHINE_FUEL)
-                .add(Items.GUNPOWDER)
+//        tag(AtomicTags.Items.MACHINE_FUEL)
+//                .add(Items.GUNPOWDER)
+//                .add(Items.BLAZE_POWDER);
+
+        tag(AtomicTags.Items.MACHINE_FUEL_T1)
+                .add(Items.GUNPOWDER);
+        tag(AtomicTags.Items.MACHINE_FUEL_T2)
                 .add(Items.BLAZE_POWDER);
+//        tag(AtomicTags.Items.MACHINE_FUEL_T3);
+//        tag(AtomicTags.Items.MACHINE_FUEL_T4);
 
         tag(AtomicTags.Items.MACHINE_CASING)
                 .addTag(AtomicTags.Items.MACHINE_CASING_REFINED_BUNGERITE);

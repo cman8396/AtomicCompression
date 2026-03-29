@@ -28,6 +28,11 @@ public class AtomicTags {
         public static final TagKey<Item> MACHINE = createTag("machine");
 
         public static final TagKey<Item> MACHINE_FUEL = createTag("machine_fuel");
+        public static final TagKey<Item> MACHINE_FUEL_T1 = createTag("machine_fuel/t1");
+        public static final TagKey<Item> MACHINE_FUEL_T2 = createTag("machine_fuel/t2");
+        public static final TagKey<Item> MACHINE_FUEL_T3 = createTag("machine_fuel/t3");
+        public static final TagKey<Item> MACHINE_FUEL_T4 = createTag("machine_fuel/t4");
+
         public static final TagKey<Item> MACHINE_CASING = createTag("machine_casing");
         public static final TagKey<Item> MACHINE_CASING_REFINED_BUNGERITE = createTag("machine_casing/refined_bungerite");
         public static final TagKey<Item> MACHINE_IGNITION = createTag("machine_ignition");
@@ -39,7 +44,6 @@ public class AtomicTags {
 
     public static class Helpers {
         public static boolean doesTagMatch(String name, TagKey<?> tag) {
-//            AtomicCompression.LOGGER.info(tag.location().toString().toLowerCase() + " - " + name);
             if (tag != null && tag.location() != null) {
                 return tag.location().toString().toLowerCase().contains(name);
             }
@@ -53,6 +57,11 @@ public class AtomicTags {
 
     public static class Values {
         public static String MACHINE_FUEL = "atomiccompression:machine_fuel";
+        public static String MACHINE_FUEL_T1 = "atomiccompression:machine_fuel/t1";
+        public static String MACHINE_FUEL_T2 = "atomiccompression:machine_fuel/t2";
+        public static String MACHINE_FUEL_T3 = "atomiccompression:machine_fuel/t3";
+        public static String MACHINE_FUEL_T4 = "atomiccompression:machine_fuel/t4";
+
         public static String MACHINE_CASING = "atomiccompression:machine_casing";
         public static String MACHINE_CASING_REFINED_BUNGERITE = "atomiccompression:machine_casing/refined_bungerite";
         public static String MACHINE_IGNITION = "atomiccompression:machine_ignition";

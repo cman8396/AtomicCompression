@@ -1,9 +1,10 @@
-// 1.21.11	2026-03-29T17:24:06.9706854	Tags for minecraft:item mod id atomiccompression
+// 1.21.11	2026-03-29T19:32:04.768491	Tags for minecraft:item mod id atomiccompression
 b2aff78501eff51e23253dc8530d02056b395777 data/atomiccompression/tags/item/bungerite_alloy_repairable.json
 c61f60129fef9bb8e546fcd06a55e283e845cf54 data/atomiccompression/tags/item/machine.json
 4399df9ef31d9afc7287f55acad893ae0290c383 data/atomiccompression/tags/item/machine_casing.json
 98a4cc04d3ace53bcc0c4f9d5df5dfa6870d8da3 data/atomiccompression/tags/item/machine_casing/refined_bungerite.json
-caf2674c3584fbaede30bc47757a65c499ecddfb data/atomiccompression/tags/item/machine_fuel.json
+92a0e8cf12f15341cd2d07e7a517ec9ea22502fd data/atomiccompression/tags/item/machine_fuel/t1.json
+9798d67e68f1fc1fcbc41d664432a3a37ba63beb data/atomiccompression/tags/item/machine_fuel/t2.json
 ea5453bb23292a045408ae8581a1bcde5230ac72 data/atomiccompression/tags/item/machine_ignition.json
 84e0d5f236e885ee0eb980d4866762a46b3626c3 data/c/tags/item/chunks.json
 b6baa3f4cded2e7acf153dd926e4771ec4b7ff74 data/c/tags/item/chunks/obsidian.json
