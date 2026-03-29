@@ -126,7 +126,12 @@
   "atomiccompression.configuration.craftingFuelCost_Base": "Base Crafting Fuel Cost",
 
   "atomiccompression.configuration.machine": "Machines Config",
-  "atomiccompression.configuration.explosive_compactor": "Explosive Compactor",
+  "atomiccompression.configuration.explosive_mill": "Explosive Mill Config",
+  "atomiccompression.configuration.explosive_compactor": "Explosive Compactor Config",
+  "atomiccompression.configuration.explosive_separator": "Explosive Separator Config",
+  "atomiccompression.configuration.explosive_smelter": "Explosive Smelter Config",
+  "atomiccompression.configuration.explosive_refiner": "Explosive Refiner Config",
+  "atomiccompression.configuration.explosive_infuser": "Explosive Infuser Config",
   "atomiccompression.configuration.craftingDurationTicks_Base": "Base Crafting Duration (in ticks)",
   "atomiccompression.configuration.craftingDurationModifier_base": "Crafting Duration Modifier (Base)",
   "atomiccompression.configuration.craftingDurationModifier_RefinedBungerite": "Crafting Duration Modifier (Refined Bungerite)",

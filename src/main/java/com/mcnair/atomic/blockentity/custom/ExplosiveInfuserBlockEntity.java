@@ -154,7 +154,7 @@ public class ExplosiveInfuserBlockEntity extends BlockEntity implements MenuProv
     private void loadMachineConfigData() {
         fuelCapacity = getCasingDataFuelTankCapacity();
 
-        int ticks = AtomicConfig.machineExplosiveCompactor_CraftingDurationTicks_Base.getAsInt();
+        int ticks = AtomicConfig.machineExplosiveInfuser_CraftingDurationTicks_Base.getAsInt();
         double modifier = getCasingDataCraftingDurationModifier();
         int tickDeduction = (int) Math.abs(ticks * modifier);
 
@@ -163,33 +163,33 @@ public class ExplosiveInfuserBlockEntity extends BlockEntity implements MenuProv
 
     private int getCasingDataFuelTankCapacity() {
         if (InventoryUtils.getCasingType(UTILITY_SLOTS[2], itemHandler) == "refined_bungerite") {
-            return AtomicConfig.machineExplosiveCompactor_FuelTankCapacity_RefinedBungerite.getAsInt();
+            return AtomicConfig.machineExplosiveInfuser_FuelTankCapacity_RefinedBungerite.getAsInt();
         } else {
-            return AtomicConfig.machineExplosiveCompactor_FuelTankCapacity_Base.getAsInt();
+            return AtomicConfig.machineExplosiveInfuser_FuelTankCapacity_Base.getAsInt();
         }
     }
 
     public double getCasingDataCraftingDurationModifier() {
         if (InventoryUtils.getCasingType(UTILITY_SLOTS[2], itemHandler) == "refined_bungerite") {
-            return AtomicConfig.machineExplosiveCompactor_CraftingDurationModifier_RefinedBungerite.getAsDouble();
+            return AtomicConfig.machineExplosiveInfuser_CraftingDurationModifier_RefinedBungerite.getAsDouble();
         } else {
-            return AtomicConfig.machineExplosiveCompactor_CraftingDurationModifier_Base.getAsDouble();
+            return AtomicConfig.machineExplosiveInfuser_CraftingDurationModifier_Base.getAsDouble();
         }
     }
 
     public double getCasingDataChanceToSaveIgnitionSource() {
         if (InventoryUtils.getCasingType(UTILITY_SLOTS[2], itemHandler) == "refined_bungerite") {
-            return AtomicConfig.machineExplosiveCompactor_ChanceToSaveIgnitionSource_RefinedBungerite.getAsDouble();
+            return AtomicConfig.machineExplosiveInfuser_ChanceToSaveIgnitionSource_RefinedBungerite.getAsDouble();
         } else {
-            return AtomicConfig.machineExplosiveCompactor_ChanceToSaveIgnitionSource_Base.getAsDouble();
+            return AtomicConfig.machineExplosiveInfuser_ChanceToSaveIgnitionSource_Base.getAsDouble();
         }
     }
 
     public double getCasingDataChanceToSaveFuel() {
         if (InventoryUtils.getCasingType(UTILITY_SLOTS[2], itemHandler) == "refined_bungerite") {
-            return AtomicConfig.machineExplosiveCompactor_ChanceToSaveFuel_RefinedBungerite.getAsDouble();
+            return AtomicConfig.machineExplosiveInfuser_ChanceToSaveFuel_RefinedBungerite.getAsDouble();
         } else {
-            return AtomicConfig.machineExplosiveCompactor_ChanceToSaveFuel_Base.getAsDouble();
+            return AtomicConfig.machineExplosiveInfuser_ChanceToSaveFuel_Base.getAsDouble();
         }
     }
 
