@@ -94,6 +94,7 @@ public class AtomicBlockTagProvider extends BlockTagsProvider {
         tag(BlockTags.WOODEN_DOORS)
                 .add(AtomicBlocks.ASHENWOOD_DOOR.get());
 
+        // Machines
         tag(AtomicTags.Blocks.MACHINE)
                 .add(AtomicBlocks.EXPLOSIVE_MILL.get())
                 .add(AtomicBlocks.EXPLOSIVE_COMPACTOR.get())

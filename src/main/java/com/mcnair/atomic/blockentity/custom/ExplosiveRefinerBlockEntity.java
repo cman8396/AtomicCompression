@@ -401,7 +401,7 @@ public class ExplosiveRefinerBlockEntity extends BlockEntity implements MenuProv
     private void fuelSlotToInternalTank() {
         // Get item stack in the fuel slot.
         ItemStack itemStack = itemHandler.getStackInSlot(UTILITY_SLOTS[0]);
-        if (!itemStack.isEmpty() && AtomicTags.Helpers.doesItemStackTagMatch(AtomicTags.Values.GUNPOWDERS, itemStack)) {
+        if (!itemStack.isEmpty() && AtomicTags.Helpers.doesItemStackTagMatch(AtomicTags.Values.MACHINE_FUEL, itemStack)) {
 
             int fuelPerGunpowder = AtomicConfig.machineAll_FuelConversion_Gunpowders.getAsInt();
             int remainingCapacity = (fuelCapacity - fuel) / fuelPerGunpowder;

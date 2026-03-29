@@ -91,7 +91,7 @@
   "general.atomiccompression.refined_bungerite": "Refined Bungerite",
   "general.atomiccompression.bungerite_alloy": "Bungerite Alloy",
 
-  "tooltip.atomiccompression.machines.fuel": "Ignitable Fuel",
+  "tooltip.atomiccompression.machines.fuel": "Explosive Fuel",
   "tooltip.atomiccompression.machines.ignition_source": "Ignition Source",
   "tooltip.atomiccompression.machines.casing_upgrade": "Machine Upgrade",
 
@@ -106,6 +106,11 @@
   "tooltip.atomiccompression.machines.info.crafting_duration_modifier": "Crafting Duration Modifier: ",
   "tooltip.atomiccompression.machines.info.chance_save_ignition": "Chance to Save Ignition Source Durability: ",
   "tooltip.atomiccompression.machines.info.chance_save_fuel": "Chance to Save Fuel: ",
+
+  "tooltip.atomiccompression.jei.output_percentages": "Chance for Additional Outputs:",
+  "tooltip.atomiccompression.jei.machine_fuel_help": "Machines require explosive fuel to operate.",
+  "tooltip.atomiccompression.jei.machine_ignition_help": "Machines require an ignition source to operate.",
+  "tooltip.atomiccompression.jei.machine_casing_help": "Machine casings are used to upgrade machines.",
 
   "entity.minecraft.villager.atomiccompression.compressionist": "Compressionist",
 

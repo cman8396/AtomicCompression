@@ -1,0 +1,16 @@
+{
+  "type": "atomiccompression:explosive_infuser",
+  "ingredients": [
+    {
+      "ingredient": "atomiccompression:atomic_shard"
+    },
+    {
+      "count": 2,
+      "ingredient": "minecraft:diamond"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "atomiccompression:empowered_atomic_shard"
+  }
+}

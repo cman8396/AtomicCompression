@@ -37,17 +37,19 @@ public class ExplosiveInfuserMenu extends AbstractContainerMenu {
         addPlayerHotbar(inv);
 
         /* UTILITY SLOTS */
-        this.addSlot(new TagLimitedSlot(blockEntity.itemHandler, blockEntity.itemHandler::set, 0, 152, 60, AtomicTags.Values.GUNPOWDERS));
+        this.addSlot(new TagLimitedSlot(blockEntity.itemHandler, blockEntity.itemHandler::set, 0, 152, 60, AtomicTags.Values.MACHINE_FUEL));
         this.addSlot(new TagLimitedSlot(blockEntity.itemHandler, blockEntity.itemHandler::set, 1, 8, 36, AtomicTags.Values.MACHINE_IGNITION));
         this.addSlot(new TagLimitedSlot(blockEntity.itemHandler, blockEntity.itemHandler::set, 2, 8, 16, AtomicTags.Values.MACHINE_CASING));
 
         /* PROCESSING SLOTS */
-        // Input
-        this.addSlot(new ResourceHandlerSlot(blockEntity.itemHandler, blockEntity.itemHandler::set, 3, 51, 36));
+        // Input Left
+        this.addSlot(new ResourceHandlerSlot(blockEntity.itemHandler, blockEntity.itemHandler::set, 3, 43, 36));
+        // Input Right
+        this.addSlot(new ResourceHandlerSlot(blockEntity.itemHandler, blockEntity.itemHandler::set, 4, 63, 36));
         // Output Primary
-        this.addSlot(new OutputOnlySlot(blockEntity.itemHandler, blockEntity.itemHandler::set, 4, 101, 36));
+        this.addSlot(new OutputOnlySlot(blockEntity.itemHandler, blockEntity.itemHandler::set, 5, 113, 36));
         // Output Secondary
-        this.addSlot(new OutputOnlySlot(blockEntity.itemHandler, blockEntity.itemHandler::set, 5, 101, 60));
+        this.addSlot(new OutputOnlySlot(blockEntity.itemHandler, blockEntity.itemHandler::set, 6, 113, 60));
 
         addDataSlots(data);
     }

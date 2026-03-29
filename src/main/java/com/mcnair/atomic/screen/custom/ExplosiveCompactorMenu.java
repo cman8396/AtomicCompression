@@ -37,7 +37,7 @@ public class ExplosiveCompactorMenu extends AbstractContainerMenu {
         addPlayerHotbar(inv);
 
         /* UTILITY SLOTS */
-        this.addSlot(new TagLimitedSlot(blockEntity.itemHandler, blockEntity.itemHandler::set, 0, 152, 60, AtomicTags.Values.GUNPOWDERS));
+        this.addSlot(new TagLimitedSlot(blockEntity.itemHandler, blockEntity.itemHandler::set, 0, 152, 60, AtomicTags.Values.MACHINE_FUEL));
         this.addSlot(new TagLimitedSlot(blockEntity.itemHandler, blockEntity.itemHandler::set, 1, 8, 36, AtomicTags.Values.MACHINE_IGNITION));
         this.addSlot(new TagLimitedSlot(blockEntity.itemHandler, blockEntity.itemHandler::set, 2, 8, 16, AtomicTags.Values.MACHINE_CASING));
 

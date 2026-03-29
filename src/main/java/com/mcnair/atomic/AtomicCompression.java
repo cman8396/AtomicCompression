@@ -4,7 +4,10 @@ import com.mcnair.atomic.blockentity.AtomicBlockEntities;
 import com.mcnair.atomic.particle.particles.BadParticles;
 import com.mcnair.atomic.particle.particles.ShardParticles;
 import com.mcnair.atomic.particle.AtomicParticles;
+import com.mcnair.atomic.plugin.JEIAtomicUtility;
+import com.mcnair.atomic.plugin.JEIAtomicPlugin;
 import com.mcnair.atomic.recipe.AtomicRecipes;
+import com.mcnair.atomic.recipe.recipes.*;
 import com.mcnair.atomic.screen.AtomicMenuTypes;
 import com.mcnair.atomic.screen.custom.*;
 import com.mcnair.atomic.utility.AtomicCreativeTabs;
@@ -16,8 +19,10 @@ import net.minecraft.client.renderer.chunk.ChunkSectionLayer;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.client.event.RecipesReceivedEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
+import net.neoforged.neoforge.event.OnDatapackSyncEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -61,6 +66,17 @@ public class AtomicCompression {
         AtomicMenuTypes.register(modEventBus);
 
         AtomicRecipes.register(modEventBus);
+
+        if(JEIAtomicUtility.isJEIInstalled()) {
+            NeoForge.EVENT_BUS.addListener(false, OnDatapackSyncEvent.class, e -> e.sendRecipes(
+                    ExplosiveMillRecipe.Type.INSTANCE,
+                    ExplosiveCompactorRecipe.Type.INSTANCE,
+                    ExplosiveSeparatorRecipe.Type.INSTANCE,
+                    ExplosiveSmelterRecipe.Type.INSTANCE,
+                    ExplosiveRefinerRecipe.Type.INSTANCE,
+                    ExplosiveInfuserRecipe.Type.INSTANCE
+            ));
+        }
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
@@ -107,6 +123,16 @@ public class AtomicCompression {
             event.register(AtomicMenuTypes.EXPLOSIVE_SMELTER_MENU.get(), ExplosiveSmelterScreen::new);
             event.register(AtomicMenuTypes.EXPLOSIVE_REFINER_MENU.get(), ExplosiveRefinerScreen::new);
             event.register(AtomicMenuTypes.EXPLOSIVE_INFUSER_MENU.get(), ExplosiveInfuserScreen::new);
+        }
+    }
+
+    @EventBusSubscriber(modid = MOD_ID, value = Dist.CLIENT)
+    public static class ClientGameEvents {
+        @SubscribeEvent
+        public static void onRecipesReceived(RecipesReceivedEvent event) {
+            if(JEIAtomicUtility.isJEIInstalled()) {
+                JEIAtomicPlugin.recipeMap = event.getRecipeMap();
+            }
         }
     }
 

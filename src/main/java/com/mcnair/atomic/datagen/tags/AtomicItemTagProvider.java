@@ -60,14 +60,28 @@ public class AtomicItemTagProvider extends ItemTagsProvider {
         tag(ItemTags.WOODEN_DOORS)
                 .add(AtomicBlocks.ASHENWOOD_DOOR.asItem());
 
-        tag(AtomicTags.Items.MACHINE_IGNITION)
-                .add(Items.FLINT_AND_STEEL);
+
+        // Machine
+        tag(AtomicTags.Items.MACHINE)
+                .add(AtomicBlocks.EXPLOSIVE_MILL.asItem())
+                .add(AtomicBlocks.EXPLOSIVE_COMPACTOR.asItem())
+                .add(AtomicBlocks.EXPLOSIVE_SEPARATOR.asItem())
+                .add(AtomicBlocks.EXPLOSIVE_SMELTER.asItem())
+                .add(AtomicBlocks.EXPLOSIVE_REFINER.asItem())
+                .add(AtomicBlocks.EXPLOSIVE_INFUSER.asItem());
+
+        tag(AtomicTags.Items.MACHINE_FUEL)
+                .add(Items.GUNPOWDER)
+                .add(Items.BLAZE_POWDER);
 
         tag(AtomicTags.Items.MACHINE_CASING)
-                .add(AtomicItems.REFINED_BUNGERITE_MACHINE_CASING.asItem());
-
+                .addTag(AtomicTags.Items.MACHINE_CASING_REFINED_BUNGERITE);
+//                .add(AtomicItems.REFINED_BUNGERITE_MACHINE_CASING.asItem());
         tag(AtomicTags.Items.MACHINE_CASING_REFINED_BUNGERITE)
                 .add(AtomicItems.REFINED_BUNGERITE_MACHINE_CASING.asItem());
+
+        tag(AtomicTags.Items.MACHINE_IGNITION)
+                .add(Items.FLINT_AND_STEEL);
 
         // Storage Blocks
         tag(Tags.Items.STORAGE_BLOCKS)

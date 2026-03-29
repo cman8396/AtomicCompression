@@ -25,10 +25,12 @@ public class AtomicTags {
         public static final TagKey<Item> TRANSFORMABLE_ITEMS = createTag("transformable_items");
         public static final TagKey<Item> BUNGERITE_ALLOY_REPAIRABLE = createTag("bungerite_alloy_repairable");
 
-        public static final TagKey<Item> MACHINE_CASING = createTag("machine_casing");
-        public static final TagKey<Item> MACHINE_CASING_REFINED_BUNGERITE = createTag("machine_casing_refined_bungerite");
-        public static final TagKey<Item> MACHINE_IGNITION = createTag("machine_ignition");
+        public static final TagKey<Item> MACHINE = createTag("machine");
 
+        public static final TagKey<Item> MACHINE_FUEL = createTag("machine_fuel");
+        public static final TagKey<Item> MACHINE_CASING = createTag("machine_casing");
+        public static final TagKey<Item> MACHINE_CASING_REFINED_BUNGERITE = createTag("machine_casing/refined_bungerite");
+        public static final TagKey<Item> MACHINE_IGNITION = createTag("machine_ignition");
 
         private static TagKey<Item> createTag(String name) {
             return ItemTags.create(Identifier.fromNamespaceAndPath(AtomicCompression.MOD_ID, name));
@@ -50,9 +52,9 @@ public class AtomicTags {
     }
 
     public static class Values {
-        public static String GUNPOWDERS = "c:gunpowders";
+        public static String MACHINE_FUEL = "atomiccompression:machine_fuel";
         public static String MACHINE_CASING = "atomiccompression:machine_casing";
-        public static String MACHINE_CASING_REFINED_BUNGERITE = "atomiccompression:machine_casing_refined_bungerite";
+        public static String MACHINE_CASING_REFINED_BUNGERITE = "atomiccompression:machine_casing/refined_bungerite";
         public static String MACHINE_IGNITION = "atomiccompression:machine_ignition";
     }
 }

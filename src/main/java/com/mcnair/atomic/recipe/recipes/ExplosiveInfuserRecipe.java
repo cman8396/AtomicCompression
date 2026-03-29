@@ -3,7 +3,9 @@ package com.mcnair.atomic.recipe.recipes;
 import com.mcnair.atomic.AtomicCompression;
 import com.mcnair.atomic.recipe.AtomicRecipes;
 import com.mcnair.atomic.recipe.base.MachineBasicRecipe;
+import com.mcnair.atomic.recipe.base.input.InputItemWithCount;
 import com.mcnair.atomic.recipe.base.output.OutputItemWithPercent;
+import com.mcnair.atomic.utility.external.ArrayCodec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.HolderLookup;
@@ -15,6 +17,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -22,12 +25,12 @@ import java.util.Optional;
 public class ExplosiveInfuserRecipe implements MachineBasicRecipe<RecipeInput> {
     private final ItemStack output;
     private final OutputItemWithPercent secondaryOutput;
-    private final Ingredient input;
+    private final InputItemWithCount[] inputs;
 
-    public ExplosiveInfuserRecipe(ItemStack output, OutputItemWithPercent secondaryOutput, Ingredient input) {
+    public ExplosiveInfuserRecipe(ItemStack output, OutputItemWithPercent secondaryOutput, InputItemWithCount[] inputs) {
         this.output = output;
         this.secondaryOutput = secondaryOutput;
-        this.input = input;
+        this.inputs = inputs;
     }
 
     public ItemStack getOutput() {
@@ -38,8 +41,8 @@ public class ExplosiveInfuserRecipe implements MachineBasicRecipe<RecipeInput> {
         return secondaryOutput;
     }
 
-    public Ingredient getInput() {
-        return input;
+    public InputItemWithCount[] getInputs() {
+        return inputs;
     }
 
     public ItemStack[] getMaxOutputCounts() {
@@ -68,10 +71,44 @@ public class ExplosiveInfuserRecipe implements MachineBasicRecipe<RecipeInput> {
 
     @Override
     public boolean matches(RecipeInput container, Level level) {
-        if(level.isClientSide())
+        if (level.isClientSide())
             return false;
 
-        return input.test(container.getItem(0));
+        boolean[] usedIndices = new boolean[3];
+        for (int i = 0; i < 3; i++)
+            usedIndices[i] = container.getItem(i).isEmpty();
+
+        int len = Math.min(inputs.length, 3);
+        for (int i = 0; i < len; i++) {
+            InputItemWithCount input = inputs[i];
+
+            int indexMinCount = -1;
+            int minCount = Integer.MAX_VALUE;
+
+            for (int j = 0; j < 3; j++) {
+                if (usedIndices[j])
+                    continue;
+
+                ItemStack item = container.getItem(j);
+
+                if ((indexMinCount == -1 || item.getCount() < minCount) && input.input().test(item) &&
+                        item.getCount() >= input.count()) {
+                    indexMinCount = j;
+                    minCount = item.getCount();
+                }
+            }
+
+            if (indexMinCount == -1)
+                return false; //Ingredient did not match any item
+
+            usedIndices[indexMinCount] = true;
+        }
+
+        for (boolean usedIndex : usedIndices)
+            if (!usedIndex) //Unused items present
+                return false;
+
+        return true;
     }
 
     @Override
@@ -106,13 +143,14 @@ public class ExplosiveInfuserRecipe implements MachineBasicRecipe<RecipeInput> {
 
     @Override
     public List<Ingredient> getIngredients() {
-        return List.of(input);
+        return Arrays.stream(inputs).map(InputItemWithCount::input).toList();
     }
 
     @Override
     public boolean isIngredient(ItemStack itemStack) {
-        return input.test(itemStack);
+        return Arrays.stream(inputs).map(InputItemWithCount::input).anyMatch(ingredient -> ingredient.test(itemStack));
     }
+
 
     @Override
     public boolean isResult(ItemStack itemStack) {
@@ -141,8 +179,8 @@ public class ExplosiveInfuserRecipe implements MachineBasicRecipe<RecipeInput> {
                         return recipe.output;
                     }), OutputItemWithPercent.CODEC_NONEMPTY.optionalFieldOf("secondaryResult").forGetter((recipe) -> {
                         return Optional.ofNullable(recipe.secondaryOutput.isEmpty() ? null : recipe.secondaryOutput);
-                    }),   Ingredient.CODEC.fieldOf("ingredient").forGetter((recipe) -> {
-                        return recipe.input;
+                    }), new ArrayCodec<>(InputItemWithCount.CODEC, InputItemWithCount[]::new).fieldOf("ingredients").forGetter((recipe) -> {
+                        return recipe.inputs;
                     })
             ).apply(instance, (output, secondaryOutput, input) -> new ExplosiveInfuserRecipe(output,
                     secondaryOutput.orElse(OutputItemWithPercent.EMPTY), input));
@@ -162,17 +200,22 @@ public class ExplosiveInfuserRecipe implements MachineBasicRecipe<RecipeInput> {
         }
 
         private static ExplosiveInfuserRecipe read(RegistryFriendlyByteBuf buffer) {
-            Ingredient input = Ingredient.CONTENTS_STREAM_CODEC.decode(buffer);
+            int len = buffer.readInt();
+            InputItemWithCount[] inputs = new InputItemWithCount[len];
+            for (int i = 0; i < len; i++)
+                inputs[i] = InputItemWithCount.STREAM_CODEC.decode(buffer);
 
             ItemStack output = ItemStack.OPTIONAL_STREAM_CODEC.decode(buffer);
 
             OutputItemWithPercent secondaryOutput = OutputItemWithPercent.OPTIONAL_STREAM_CODEC.decode(buffer);
 
-            return new ExplosiveInfuserRecipe(output, secondaryOutput, input);
+            return new ExplosiveInfuserRecipe(output, secondaryOutput, inputs);
         }
 
         private static void write(RegistryFriendlyByteBuf buffer, ExplosiveInfuserRecipe recipe) {
-            Ingredient.CONTENTS_STREAM_CODEC.encode(buffer, recipe.input);
+            buffer.writeInt(recipe.inputs.length);
+            for (int i = 0; i < recipe.inputs.length; i++)
+                InputItemWithCount.STREAM_CODEC.encode(buffer, recipe.inputs[i]);
 
             ItemStack.OPTIONAL_STREAM_CODEC.encode(buffer, recipe.output);
 

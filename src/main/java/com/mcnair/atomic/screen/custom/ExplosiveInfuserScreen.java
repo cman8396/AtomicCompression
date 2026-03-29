@@ -42,7 +42,7 @@ public class ExplosiveInfuserScreen extends AbstractContainerScreen<ExplosiveInf
 
     private void renderProgressArrow(GuiGraphics guiGraphics, int x, int y) {
         if (menu.isCrafting()) {
-            guiGraphics.blit(RenderPipelines.GUI_TEXTURED, ARROW_TEXTURE, x + 70, y + 37, 0, 0, menu.getScaledArrowProgress(), 16, 24, 16);
+            guiGraphics.blit(RenderPipelines.GUI_TEXTURED, ARROW_TEXTURE, x + 82, y + 37, 0, 0, menu.getScaledArrowProgress(), 16, 24, 16);
             guiGraphics.blit(RenderPipelines.GUI_TEXTURED, PROCESS_ICON, x + 51, y + 56, 0, 0, 16, 16, 16, 16);
         }
     }

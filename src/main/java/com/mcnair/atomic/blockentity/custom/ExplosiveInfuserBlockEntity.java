@@ -4,6 +4,7 @@ import com.mcnair.atomic.AtomicConfig;
 import com.mcnair.atomic.blockentity.AtomicBlockEntities;
 import com.mcnair.atomic.recipe.AtomicRecipes;
 import com.mcnair.atomic.recipe.base.MachineBaseRecipeInputHelper;
+import com.mcnair.atomic.recipe.base.input.InputItemWithCount;
 import com.mcnair.atomic.recipe.recipes.ExplosiveInfuserRecipe;
 import com.mcnair.atomic.screen.custom.ExplosiveInfuserMenu;
 import com.mcnair.atomic.utility.AtomicTags;
@@ -26,7 +27,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.RecipeInput;
 import net.minecraft.world.level.Level;
@@ -46,8 +46,8 @@ public class ExplosiveInfuserBlockEntity extends BlockEntity implements MenuProv
     public static final float RECIPE_DURATION_MULTIPLIER = 1;
 
     private static final int[] UTILITY_SLOTS = new int[]{0, 1, 2};
-    private static final int[] INPUT_SLOTS = new int[]{3};
-    private static final int[] OUTPUT_SLOTS = new int[]{4, 5};
+    private static final int[] INPUT_SLOTS = new int[]{3, 4};
+    private static final int[] OUTPUT_SLOTS = new int[]{5, 6};
 
     protected final ContainerData data;
     private int progress = 0;
@@ -259,14 +259,66 @@ public class ExplosiveInfuserBlockEntity extends BlockEntity implements MenuProv
         int slotOffset = INPUT_SLOTS[0];
 
         // Get the allowed inputs for the recipe.
-        Ingredient input = recipe.value().getInput();
+        InputItemWithCount[] inputs = recipe.value().getInputs();
 
         // Check if the output slots can accept the recipe result
         if (!InventoryUtils.canOutputSlotsAcceptRecipeOutput(recipe.value().getMaxOutputCounts(), itemHandler, OUTPUT_SLOTS))
             return;
 
-        // Extract the number of items in the recipe from the correct slot.
-        itemHandler.extractItem(INPUT_SLOTS[0], 1);
+        // Get the number of ingredients for the recipe, as they could be different. Might be redundant?
+        int ingredientCount = 0;
+        for (InputItemWithCount inputItem : inputs)
+            ingredientCount += inputItem.input().getValues().size();
+
+
+        boolean[] slotHasItem = new boolean[ingredientCount];
+        // Array to indicate whether an input slot has items in.
+        for (int i = 0; i < ingredientCount; i++)
+            slotHasItem[i] = itemHandler.getStackInSlot(slotOffset + i).isEmpty();
+
+
+        int len = Math.min(inputs.length, ingredientCount);
+        // Loop through each recipe input item...
+        for (int i = 0; i < len; i++) {
+
+            // Get this input item.
+            InputItemWithCount input = inputs[i];
+
+            int slotCheckIndex = -1;
+            int countToRemove = Integer.MAX_VALUE;
+
+            // Loop through each ingredient...
+            for (int j = 0; j < ingredientCount; j++) {
+
+                // If the slot is empty, skip the slot.
+                if (slotHasItem[j])
+                    continue;
+
+                // Get item in slot.
+                ItemStack item = itemHandler.getStackInSlot(slotOffset + j);
+
+                // Check and set the slot to remove from, and the count to remove.
+                if (
+                        (slotCheckIndex == -1 || item.getCount() < countToRemove) &&
+                                input.input().test(item) &&
+                                item.getCount() >= input.count()
+                ) {
+                    slotCheckIndex = j;
+                    countToRemove = item.getCount();
+                }
+            }
+
+            // The ingredient didn't match the item in the slot.
+            // This should never be true!
+            if (slotCheckIndex == -1)
+                return;
+
+            // Set the slot has an item in.
+            slotHasItem[slotCheckIndex] = true;
+
+            // Extract the number of items in the recipe from the correct slot.
+            itemHandler.extractItem(slotOffset + slotCheckIndex, input.count());
+        }
 
         // Get the output items from the recipe.
         ItemStack[] recipeOutputItems = recipe.value().generateOutputs(level.random);
@@ -349,7 +401,7 @@ public class ExplosiveInfuserBlockEntity extends BlockEntity implements MenuProv
     private void fuelSlotToInternalTank() {
         // Get item stack in the fuel slot.
         ItemStack itemStack = itemHandler.getStackInSlot(UTILITY_SLOTS[0]);
-        if (!itemStack.isEmpty() && AtomicTags.Helpers.doesItemStackTagMatch(AtomicTags.Values.GUNPOWDERS, itemStack)) {
+        if (!itemStack.isEmpty() && AtomicTags.Helpers.doesItemStackTagMatch(AtomicTags.Values.MACHINE_FUEL, itemStack)) {
 
             int fuelPerGunpowder = AtomicConfig.machineAll_FuelConversion_Gunpowders.getAsInt();
             int remainingCapacity = (fuelCapacity - fuel) / fuelPerGunpowder;
