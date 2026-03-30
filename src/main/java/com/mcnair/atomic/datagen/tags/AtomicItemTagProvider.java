@@ -9,7 +9,6 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.ItemTagsProvider;
 
@@ -83,7 +82,6 @@ public class AtomicItemTagProvider extends ItemTagsProvider {
 
         tag(AtomicTags.Items.MACHINE_CASING)
                 .addTag(AtomicTags.Items.MACHINE_CASING_REFINED_BUNGERITE);
-//                .add(AtomicItems.REFINED_BUNGERITE_MACHINE_CASING.asItem());
         tag(AtomicTags.Items.MACHINE_CASING_REFINED_BUNGERITE)
                 .add(AtomicItems.REFINED_BUNGERITE_MACHINE_CASING.asItem());
 
@@ -231,10 +229,17 @@ public class AtomicItemTagProvider extends ItemTagsProvider {
 //                .add(AtomicItems.BUNGERITE_ALLOY_PLATE.get());
 
         // Rods
-        tag(CommonItemTags.RODS)
-                .addTag(CommonItemTags.RODS_LEAD)
-                .addTag(CommonItemTags.RODS_REFINED_BUNGERITE)
-                .addTag(CommonItemTags.RODS_BUNGERITE_ALLOY);
+        tag(CommonItemTags.TOOL_SHAFTS)
+                .addTag(CommonItemTags.TOOL_SHAFTS_BASALT)
+                .addTag(CommonItemTags.TOOL_SHAFTS_BUNGERITE_ALLOY)
+                .addTag(CommonItemTags.TOOL_SHAFTS_ATOMIC);
+
+        tag(CommonItemTags.TOOL_SHAFTS_BASALT)
+                .add(AtomicItems.BASALT_TOOL_SHAFT.get());
+//        tag(CommonItemTags.TOOL_SHAFTS_BUNGERITE_ALLOY)
+//                .add(AtomicItems.BUNGERITE_ALLOY_TOOL_SHAFT.get());
+        tag(CommonItemTags.TOOL_SHAFTS_ATOMIC)
+                .add(AtomicItems.ATOMIC_TOOL_SHAFT.get());
 
     }
 }

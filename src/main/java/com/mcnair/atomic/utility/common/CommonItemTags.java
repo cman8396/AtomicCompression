@@ -4,7 +4,6 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
 
 public final class CommonItemTags {
     private CommonItemTags() {}
@@ -106,14 +105,14 @@ public final class CommonItemTags {
     public static final TagKey<Item> PLATES_BUNGERITE_ALLOY = TagKey.create(Registries.ITEM,
             Identifier.fromNamespaceAndPath("c", "plates/bungerite_alloy"));
 
-    public static final TagKey<Item> RODS = TagKey.create(Registries.ITEM,
-            Identifier.fromNamespaceAndPath("c", "rods"));
-    public static final TagKey<Item> RODS_LEAD = TagKey.create(Registries.ITEM,
-            Identifier.fromNamespaceAndPath("c", "rods/lead"));
-    public static final TagKey<Item> RODS_REFINED_BUNGERITE = TagKey.create(Registries.ITEM,
-            Identifier.fromNamespaceAndPath("c", "rods/refined_bungerite"));
-    public static final TagKey<Item> RODS_BUNGERITE_ALLOY = TagKey.create(Registries.ITEM,
-            Identifier.fromNamespaceAndPath("c", "rods/bungerite_alloy"));
+    public static final TagKey<Item> TOOL_SHAFTS = TagKey.create(Registries.ITEM,
+            Identifier.fromNamespaceAndPath("c", "tool_shafts"));
+    public static final TagKey<Item> TOOL_SHAFTS_BASALT = TagKey.create(Registries.ITEM,
+            Identifier.fromNamespaceAndPath("c", "tool_shafts/basalt"));
+    public static final TagKey<Item> TOOL_SHAFTS_BUNGERITE_ALLOY = TagKey.create(Registries.ITEM,
+            Identifier.fromNamespaceAndPath("c", "tool_shafts/bungerite_alloy"));
+    public static final TagKey<Item> TOOL_SHAFTS_ATOMIC = TagKey.create(Registries.ITEM,
+            Identifier.fromNamespaceAndPath("c", "tool_shafts/atomic"));
 
 //    public static final TagKey<Item> GEARS = TagKey.create(Registries.ITEM,
 //            Identifier.fromNamespaceAndPath("c", "gears"));
