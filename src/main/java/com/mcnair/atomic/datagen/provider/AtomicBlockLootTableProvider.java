@@ -35,15 +35,19 @@ public class AtomicBlockLootTableProvider extends BlockLootSubProvider {
         add(AtomicBlocks.SALTPETER_ORE.get(),
                 block -> createMultipleOreDrops(AtomicBlocks.SALTPETER_ORE.get(), AtomicItems.RAW_SALTPETER.get(), 3, 5));
         add(AtomicBlocks.DEEPSLATE_SALTPETER_ORE.get(),
-                block -> createMultipleOreDrops(AtomicBlocks.DEEPSLATE_SALTPETER_ORE.get(), AtomicItems.RAW_SULFUR.get(), 3, 5));
+                block -> createMultipleOreDrops(AtomicBlocks.DEEPSLATE_SALTPETER_ORE.get(), AtomicItems.RAW_SALTPETER.get(), 3, 5));
         add(AtomicBlocks.LEAD_ORE.get(),
                 block -> createSingleItemTableWithSilkTouch(AtomicBlocks.LEAD_ORE.get(), AtomicItems.RAW_LEAD.get()));
         add(AtomicBlocks.DEEPSLATE_LEAD_ORE.get(),
-                block -> createMultipleOreDrops(AtomicBlocks.DEEPSLATE_LEAD_ORE.get(), AtomicItems.RAW_SULFUR.get(), 3, 5));
+                block -> createSingleItemTableWithSilkTouch(AtomicBlocks.DEEPSLATE_LEAD_ORE.get(), AtomicItems.RAW_LEAD.get()));
+        add(AtomicBlocks.BRIGHTSILVER_ORE.get(),
+                block -> createSingleItemTableWithSilkTouch(AtomicBlocks.BRIGHTSILVER_ORE.get(), AtomicItems.RAW_LEAD.get()));
+        add(AtomicBlocks.DEEPSLATE_BRIGHTSILVER_ORE.get(),
+                block -> createSingleItemTableWithSilkTouch(AtomicBlocks.DEEPSLATE_BRIGHTSILVER_ORE.get(), AtomicItems.RAW_LEAD.get()));
         add(AtomicBlocks.ATOMIC_ORE.get(),
                 block -> createSingleItemTableWithSilkTouch(AtomicBlocks.ATOMIC_ORE.get(), AtomicItems.ATOMIC_SHARD.get()));
         add(AtomicBlocks.DEEPSLATE_ATOMIC_ORE.get(),
-                block -> createMultipleOreDrops(AtomicBlocks.DEEPSLATE_ATOMIC_ORE.get(), AtomicItems.RAW_SULFUR.get(), 3, 5));
+                block -> createSingleItemTableWithSilkTouch(AtomicBlocks.DEEPSLATE_ATOMIC_ORE.get(), AtomicItems.ATOMIC_SHARD.get()));
 
 
         /* NETHER ORES */
@@ -66,10 +70,12 @@ public class AtomicBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(AtomicBlocks.RAW_SULFUR_BLOCK.get());
         dropSelf(AtomicBlocks.RAW_SALTPETER_BLOCK.get());
         dropSelf(AtomicBlocks.RAW_LEAD_BLOCK.get());
+        dropSelf(AtomicBlocks.RAW_BRIGHTSILVER_BLOCK.get());
         dropSelf(AtomicBlocks.RAW_BUNGERITE_BLOCK.get());
         dropSelf(AtomicBlocks.SULFUR_DUST_BLOCK.get());
         dropSelf(AtomicBlocks.SALTPETER_DUST_BLOCK.get());
         dropSelf(AtomicBlocks.LEAD_BLOCK.get());
+        dropSelf(AtomicBlocks.BRIGHTSILVER_BLOCK.get());
         dropSelf(AtomicBlocks.REFINED_BUNGERITE_BLOCK.get());
         dropSelf(AtomicBlocks.BUNGERITE_ALLOY_BLOCK.get());
         dropSelf(AtomicBlocks.ATOMIC_BLOCK.get());

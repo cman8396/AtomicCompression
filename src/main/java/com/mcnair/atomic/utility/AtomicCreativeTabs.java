@@ -33,9 +33,11 @@ public class AtomicCreativeTabs {
                         output.accept(AtomicBlocks.DEEPSLATE_SALTPETER_ORE.get());
                         output.accept(AtomicBlocks.LEAD_ORE.get());
                         output.accept(AtomicBlocks.DEEPSLATE_LEAD_ORE.get());
+                        output.accept(AtomicBlocks.BRIGHTSILVER_ORE.get());
+                        output.accept(AtomicBlocks.DEEPSLATE_BRIGHTSILVER_ORE.get());
+                        output.accept(AtomicBlocks.BUNGERITE_ORE.get());
                         output.accept(AtomicBlocks.ATOMIC_ORE.get());
                         output.accept(AtomicBlocks.DEEPSLATE_ATOMIC_ORE.get());
-                        output.accept(AtomicBlocks.BUNGERITE_ORE.get());
                         output.accept(AtomicBlocks.NETHER_ATOMIC_ORE.get());
                         output.accept(AtomicBlocks.END_ATOMIC_ORE.get());
 
@@ -43,10 +45,12 @@ public class AtomicCreativeTabs {
                         output.accept(AtomicBlocks.RAW_SULFUR_BLOCK.get());
                         output.accept(AtomicBlocks.RAW_SALTPETER_BLOCK.get());
                         output.accept(AtomicBlocks.RAW_LEAD_BLOCK.get());
+                        output.accept(AtomicBlocks.RAW_BRIGHTSILVER_BLOCK.get());
                         output.accept(AtomicBlocks.RAW_BUNGERITE_BLOCK.get());
                         output.accept(AtomicBlocks.SULFUR_DUST_BLOCK.get());
                         output.accept(AtomicBlocks.SALTPETER_DUST_BLOCK.get());
                         output.accept(AtomicBlocks.LEAD_BLOCK.get());
+                        output.accept(AtomicBlocks.BRIGHTSILVER_BLOCK.get());
                         output.accept(AtomicBlocks.REFINED_BUNGERITE_BLOCK.get());
                         output.accept(AtomicBlocks.BUNGERITE_ALLOY_BLOCK.get());
                         output.accept(AtomicBlocks.ATOMIC_BLOCK.get());

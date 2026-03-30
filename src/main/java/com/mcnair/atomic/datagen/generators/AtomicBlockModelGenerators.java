@@ -50,9 +50,11 @@ public class AtomicBlockModelGenerators extends BlockModelGenerators {
         this.createTrivialCube(AtomicBlocks.DEEPSLATE_SALTPETER_ORE.get());
         this.createTrivialCube(AtomicBlocks.LEAD_ORE.get());
         this.createTrivialCube(AtomicBlocks.DEEPSLATE_LEAD_ORE.get());
+        this.createTrivialCube(AtomicBlocks.BRIGHTSILVER_ORE.get());
+        this.createTrivialCube(AtomicBlocks.DEEPSLATE_BRIGHTSILVER_ORE.get());
+        this.createTrivialCube(AtomicBlocks.BUNGERITE_ORE.get());
         this.createTrivialCube(AtomicBlocks.ATOMIC_ORE.get());
         this.createTrivialCube(AtomicBlocks.DEEPSLATE_ATOMIC_ORE.get());
-        this.createTrivialCube(AtomicBlocks.BUNGERITE_ORE.get());
         this.createTrivialCube(AtomicBlocks.NETHER_ATOMIC_ORE.get());
         this.createTrivialCube(AtomicBlocks.END_ATOMIC_ORE.get());
 
@@ -64,9 +66,11 @@ public class AtomicBlockModelGenerators extends BlockModelGenerators {
         this.createTrivialCube(AtomicBlocks.RAW_SALTPETER_BLOCK.get());
         this.createTrivialCube(AtomicBlocks.RAW_LEAD_BLOCK.get());
         this.createTrivialCube(AtomicBlocks.RAW_BUNGERITE_BLOCK.get());
+        this.createTrivialCube(AtomicBlocks.BRIGHTSILVER_BLOCK.get());
         this.createTrivialCube(AtomicBlocks.SULFUR_DUST_BLOCK.get());
         this.createTrivialCube(AtomicBlocks.SALTPETER_DUST_BLOCK.get());
         this.createTrivialCube(AtomicBlocks.LEAD_BLOCK.get());
+        this.createTrivialCube(AtomicBlocks.RAW_BRIGHTSILVER_BLOCK.get());
         this.createTrivialCube(AtomicBlocks.REFINED_BUNGERITE_BLOCK.get());
         this.createTrivialCube(AtomicBlocks.BUNGERITE_ALLOY_BLOCK.get());
         this.createTrivialCube(AtomicBlocks.ATOMIC_BLOCK.get());

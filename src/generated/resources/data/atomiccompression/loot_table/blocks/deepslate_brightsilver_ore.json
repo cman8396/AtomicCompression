@@ -26,7 +26,7 @@
                   }
                 }
               ],
-              "name": "atomiccompression:deepslate_atomic_ore"
+              "name": "atomiccompression:deepslate_brightsilver_ore"
             },
             {
               "type": "minecraft:item",
@@ -35,7 +35,7 @@
                   "condition": "minecraft:survives_explosion"
                 }
               ],
-              "name": "atomiccompression:atomic_shard"
+              "name": "atomiccompression:raw_lead"
             }
           ]
         }
@@ -43,5 +43,5 @@
       "rolls": 1.0
     }
   ],
-  "random_sequence": "atomiccompression:blocks/deepslate_atomic_ore"
+  "random_sequence": "atomiccompression:blocks/deepslate_brightsilver_ore"
 }

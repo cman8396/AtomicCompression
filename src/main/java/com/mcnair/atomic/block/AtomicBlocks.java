@@ -36,28 +36,34 @@ public class AtomicBlocks {
                     properties.strength(1.5f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
     public static final DeferredBlock<Block> DEEPSLATE_SULFUR_ORE = registerBlock("deepslate_sulfur_ore",
             (properties) -> new DropExperienceBlock(UniformInt.of(1, 3),
-                    properties.strength(2f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+                    properties.strength(2f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
     public static final DeferredBlock<Block> SALTPETER_ORE = registerBlock("saltpeter_ore",
             (properties) -> new DropExperienceBlock(UniformInt.of(1, 3),
                     properties.strength(1.5f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
     public static final DeferredBlock<Block> DEEPSLATE_SALTPETER_ORE = registerBlock("deepslate_saltpeter_ore",
             (properties) -> new DropExperienceBlock(UniformInt.of(1, 3),
-                    properties.strength(2f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+                    properties.strength(2f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
     public static final DeferredBlock<Block> LEAD_ORE = registerBlock("lead_ore",
             (properties) -> new DropExperienceBlock(UniformInt.of(1, 3),
                     properties.strength(1.5f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
     public static final DeferredBlock<Block> DEEPSLATE_LEAD_ORE = registerBlock("deepslate_lead_ore",
             (properties) -> new DropExperienceBlock(UniformInt.of(1, 3),
+                    properties.strength(2f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
+    public static final DeferredBlock<Block> BRIGHTSILVER_ORE = registerBlock("brightsilver_ore",
+            (properties) -> new DropExperienceBlock(UniformInt.of(3, 6),
                     properties.strength(2f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> DEEPSLATE_BRIGHTSILVER_ORE = registerBlock("deepslate_brightsilver_ore",
+            (properties) -> new DropExperienceBlock(UniformInt.of(3, 6),
+                    properties.strength(2.5f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
+    public static final DeferredBlock<Block> BUNGERITE_ORE = registerBlock("bungerite_ore",
+            (properties) -> new DropExperienceBlock(UniformInt.of(3, 6),
+                    properties.strength(9f, 1000f).requiresCorrectToolForDrops().ignitedByLava().sound(SoundType.NETHER_GOLD_ORE)));
     public static final DeferredBlock<Block> ATOMIC_ORE = registerBlock("atomic_ore",
             (properties) -> new DropExperienceBlock(UniformInt.of(5, 7),
                     properties.strength(9f, 1000f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
     public static final DeferredBlock<Block> DEEPSLATE_ATOMIC_ORE = registerBlock("deepslate_atomic_ore",
             (properties) -> new DropExperienceBlock(UniformInt.of(5, 7),
-                    properties.strength(10f, 1000f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
-    public static final DeferredBlock<Block> BUNGERITE_ORE = registerBlock("bungerite_ore",
-            (properties) -> new DropExperienceBlock(UniformInt.of(3, 6),
-                    properties.strength(9f, 1000f).requiresCorrectToolForDrops().ignitedByLava().sound(SoundType.NETHER_GOLD_ORE)));
+                    properties.strength(10f, 1000f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
     public static final DeferredBlock<Block> NETHER_ATOMIC_ORE = registerBlock("nether_atomic_ore",
             (properties) -> new DropExperienceBlock(UniformInt.of(5, 7),
                     properties.strength(9f, 1000f).requiresCorrectToolForDrops().sound(SoundType.NETHER_GOLD_ORE)));
@@ -103,9 +109,15 @@ public class AtomicBlocks {
     public static final DeferredBlock<Block> REFINED_BUNGERITE_BLOCK = registerBlock("refined_bungerite_block",
             (properties) -> new Block(
                     properties.strength(5f, 6f).sound(SoundType.IRON)));
+    public static final DeferredBlock<Block> BRIGHTSILVER_BLOCK = registerBlock("brightsilver_block",
+            (properties) -> new Block(
+                    properties.strength(5f, 6f).sound(SoundType.IRON)));
+    public static final DeferredBlock<Block> RAW_BRIGHTSILVER_BLOCK = registerBlock("raw_brightsilver_block",
+            (properties) -> new Block(
+                    properties.strength(5f, 6f).sound(SoundType.IRON)));
     public static final DeferredBlock<Block> BUNGERITE_ALLOY_BLOCK = registerBlock("bungerite_alloy_block",
             (properties) -> new Block(
-                    properties.strength(50f, 1200f).sound(SoundType.NETHERITE_BLOCK)));
+                    properties.strength(10f, 1200f).sound(SoundType.NETHERITE_BLOCK)));
     public static final DeferredBlock<Block> ATOMIC_BLOCK = registerBlock("atomic_block",
             (properties) -> new Block(
                     properties.strength(5f, 6f).sound(SoundType.STONE)));
@@ -180,7 +192,6 @@ public class AtomicBlocks {
             (properties) -> new ExplosiveRefinerBlock(properties.strength(3.5F).requiresCorrectToolForDrops().sound(SoundType.STONE)));
     public static final DeferredBlock<Block> EXPLOSIVE_INFUSER = registerBlock("explosive_infuser",
             (properties) -> new ExplosiveInfuserBlock(properties.strength(3.5F).requiresCorrectToolForDrops().sound(SoundType.STONE)));
-
 
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Function<BlockBehaviour.Properties, T> function) {
