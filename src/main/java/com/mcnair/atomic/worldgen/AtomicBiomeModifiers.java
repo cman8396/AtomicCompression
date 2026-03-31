@@ -20,12 +20,14 @@ public class AtomicBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_DEEPSLATE_SALTPETER_ORE = registerKey("add_deepslate_saltpeter_ore");
     public static final ResourceKey<BiomeModifier> ADD_LEAD_ORE = registerKey("add_lead_ore");
     public static final ResourceKey<BiomeModifier> ADD_DEEPSLATE_LEAD_ORE = registerKey("add_deepslate_lead_ore");
+    public static final ResourceKey<BiomeModifier> ADD_BRIGHTSILVER_ORE = registerKey("add_brightsilver_ore");
+    public static final ResourceKey<BiomeModifier> ADD_DEEPSLATE_BRIGHTSILVER_ORE = registerKey("add_deepslate_brightsilver_ore");
+    public static final ResourceKey<BiomeModifier> ADD_BUNGERITE_ORE = registerKey("add_bungerite_ore");
+    public static final ResourceKey<BiomeModifier> ADD_SOULSTEEL_ORE = registerKey("add_soulsteel_ore");
+
     public static final ResourceKey<BiomeModifier> ADD_ATOMIC_ORE = registerKey("add_atomic_ore");
     public static final ResourceKey<BiomeModifier> ADD_DEEPSLATE_ATOMIC_ORE = registerKey("add_deepslate_atomic_ore");
-
-    public static final ResourceKey<BiomeModifier> ADD_BUNGERITE_ORE = registerKey("add_bungerite_ore");
     public static final ResourceKey<BiomeModifier> ADD_NETHER_ATOMIC_ORE = registerKey("add_nether_atomic_ore");
-
     public static final ResourceKey<BiomeModifier> ADD_END_ATOMIC_ORE = registerKey("add_end_atomic_ore");
 
 
@@ -65,6 +67,23 @@ public class AtomicBiomeModifiers {
                 biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
                 HolderSet.direct(placedFeatures.getOrThrow(AtomicPlacedFeatures.DEEPSLATE_LEAD_ORE_PLACED_KEY)),
                 GenerationStep.Decoration.UNDERGROUND_ORES));
+        context.register(ADD_BRIGHTSILVER_ORE, new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
+                HolderSet.direct(placedFeatures.getOrThrow(AtomicPlacedFeatures.BRIGHTSILVER_ORE_PLACED_KEY)),
+                GenerationStep.Decoration.UNDERGROUND_ORES));
+        context.register(ADD_DEEPSLATE_BRIGHTSILVER_ORE, new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
+                HolderSet.direct(placedFeatures.getOrThrow(AtomicPlacedFeatures.DEEPSLATE_BRIGHTSILVER_ORE_PLACED_KEY)),
+                GenerationStep.Decoration.UNDERGROUND_ORES));
+        context.register(ADD_BUNGERITE_ORE, new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_NETHER),
+                HolderSet.direct(placedFeatures.getOrThrow(AtomicPlacedFeatures.BUNGERITE_ORE_PLACED_KEY)),
+                GenerationStep.Decoration.UNDERGROUND_ORES));
+        context.register(ADD_SOULSTEEL_ORE, new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_END),
+                HolderSet.direct(placedFeatures.getOrThrow(AtomicPlacedFeatures.SOULSTEEL_ORE_PLACED_KEY)),
+                GenerationStep.Decoration.UNDERGROUND_ORES));
+
         context.register(ADD_ATOMIC_ORE, new BiomeModifiers.AddFeaturesBiomeModifier(
                 biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
                 HolderSet.direct(placedFeatures.getOrThrow(AtomicPlacedFeatures.ATOMIC_ORE_PLACED_KEY)),
@@ -73,18 +92,10 @@ public class AtomicBiomeModifiers {
                 biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
                 HolderSet.direct(placedFeatures.getOrThrow(AtomicPlacedFeatures.DEEPSLATE_ATOMIC_ORE_PLACED_KEY)),
                 GenerationStep.Decoration.UNDERGROUND_ORES));
-
-
-        context.register(ADD_BUNGERITE_ORE, new BiomeModifiers.AddFeaturesBiomeModifier(
-                biomes.getOrThrow(BiomeTags.IS_NETHER),
-                HolderSet.direct(placedFeatures.getOrThrow(AtomicPlacedFeatures.BUNGERITE_ORE_PLACED_KEY)),
-                GenerationStep.Decoration.UNDERGROUND_ORES));
         context.register(ADD_NETHER_ATOMIC_ORE, new BiomeModifiers.AddFeaturesBiomeModifier(
                 biomes.getOrThrow(BiomeTags.IS_NETHER),
                 HolderSet.direct(placedFeatures.getOrThrow(AtomicPlacedFeatures.NETHER_ATOMIC_ORE_PLACED_KEY)),
                 GenerationStep.Decoration.UNDERGROUND_ORES));
-
-
         context.register(ADD_END_ATOMIC_ORE, new BiomeModifiers.AddFeaturesBiomeModifier(
                 biomes.getOrThrow(BiomeTags.IS_END),
                 HolderSet.direct(placedFeatures.getOrThrow(AtomicPlacedFeatures.END_ATOMIC_ORE_PLACED_KEY)),

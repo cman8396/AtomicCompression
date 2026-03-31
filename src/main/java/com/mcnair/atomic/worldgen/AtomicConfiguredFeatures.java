@@ -37,12 +37,14 @@ public class AtomicConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> DEEPSLATE_SALTPETER_ORE_KEY = registerKey("deepslate_saltpeter_ore_placed");
     public static final ResourceKey<ConfiguredFeature<?, ?>> LEAD_ORE_KEY = registerKey("lead_ore_placed");
     public static final ResourceKey<ConfiguredFeature<?, ?>> DEEPSLATE_LEAD_ORE_KEY = registerKey("deepslate_lead_ore_placed");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> BRIGHTSILVER_ORE_KEY = registerKey("brightsilver_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> DEEPSLATE_BRIGHTSILVER_ORE_KEY = registerKey("deepslate_brightsilver_ore_placed");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> BUNGERITE_ORE_KEY = registerKey("bungerite_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> SOULSTEEL_ORE_KEY = registerKey("soulsteel_ore");
+
     public static final ResourceKey<ConfiguredFeature<?, ?>> ATOMIC_ORE_KEY = registerKey("atomic_ore_placed");
     public static final ResourceKey<ConfiguredFeature<?, ?>> DEEPSLATE_ATOMIC_ORE_KEY = registerKey("deepslate_atomic_ore_placed");
-
-    public static final ResourceKey<ConfiguredFeature<?, ?>> BUNGERITE_ORE_KEY = registerKey("bungerite_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> NETHER_ATOMIC_ORE_KEY = registerKey("nether_atomic_ore_placed");
-
     public static final ResourceKey<ConfiguredFeature<?, ?>> END_ATOMIC_ORE_KEY = registerKey("end_atomic_ore_placed");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> ASHENWOOD_KEY = registerKey("ashenwood_placed");
@@ -68,16 +70,21 @@ public class AtomicConfiguredFeatures {
                 AtomicBlocks.LEAD_ORE.get().defaultBlockState(), 9));
         register(context, DEEPSLATE_LEAD_ORE_KEY, Feature.ORE, new OreConfiguration(deepslateReplaceables,
                 AtomicBlocks.DEEPSLATE_LEAD_ORE.get().defaultBlockState(), 9));
+        register(context, BRIGHTSILVER_ORE_KEY, Feature.ORE, new OreConfiguration(stoneReplaceables,
+                AtomicBlocks.BRIGHTSILVER_ORE.get().defaultBlockState(), 7));
+        register(context, DEEPSLATE_BRIGHTSILVER_ORE_KEY, Feature.ORE, new OreConfiguration(deepslateReplaceables,
+                AtomicBlocks.DEEPSLATE_BRIGHTSILVER_ORE.get().defaultBlockState(), 7));
+        register(context, BUNGERITE_ORE_KEY, Feature.ORE, new OreConfiguration(netherrackReplaceables,
+                AtomicBlocks.BUNGERITE_ORE.get().defaultBlockState(), 6));
+        register(context, SOULSTEEL_ORE_KEY, Feature.ORE, new OreConfiguration(endReplaceables,
+                AtomicBlocks.SOULSTEEL_ORE.get().defaultBlockState(), 4));
+
         register(context, ATOMIC_ORE_KEY, Feature.ORE, new OreConfiguration(stoneReplaceables,
                 AtomicBlocks.ATOMIC_ORE.get().defaultBlockState(), 2));
         register(context, DEEPSLATE_ATOMIC_ORE_KEY, Feature.ORE, new OreConfiguration(deepslateReplaceables,
                 AtomicBlocks.DEEPSLATE_ATOMIC_ORE.get().defaultBlockState(), 2));
-
-        register(context, BUNGERITE_ORE_KEY, Feature.ORE, new OreConfiguration(netherrackReplaceables,
-                AtomicBlocks.BUNGERITE_ORE.get().defaultBlockState(), 6));
         register(context, NETHER_ATOMIC_ORE_KEY, Feature.ORE, new OreConfiguration(netherrackReplaceables,
                 AtomicBlocks.NETHER_ATOMIC_ORE.get().defaultBlockState(), 2));
-
         register(context, END_ATOMIC_ORE_KEY, Feature.ORE, new OreConfiguration(endReplaceables,
                 AtomicBlocks.END_ATOMIC_ORE.get().defaultBlockState(), 2));
 

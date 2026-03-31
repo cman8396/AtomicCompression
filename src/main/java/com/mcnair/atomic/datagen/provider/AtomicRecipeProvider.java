@@ -128,9 +128,6 @@ public class AtomicRecipeProvider extends RecipeProvider {
         oneToManyRecipe(output, AtomicBlocks.DENSE_BASALT, Items.BASALT, 9);
         oneToManyRecipe(output, Items.OBSIDIAN, AtomicItems.OBSIDIAN_CHUNK, 4);
 
-        oneToOneRecipe(output, AtomicItems.RAW_SULFUR, AtomicItems.SULFUR_DUST);
-        oneToOneRecipe(output, AtomicItems.RAW_SALTPETER, AtomicItems.SALTPETER_DUST);
-
         shapeless(RecipeCategory.MISC, Items.GUNPOWDER, 3)
                 .requires(AtomicItems.SULFUR_DUST)
                 .requires(AtomicItems.SALTPETER_DUST)
@@ -147,9 +144,16 @@ public class AtomicRecipeProvider extends RecipeProvider {
                 .save(output);
 
 
+        /* DUST CONVERSION */
+        oneToOneRecipe(output, AtomicItems.RAW_SULFUR, AtomicItems.SULFUR_DUST);
+        oneToOneRecipe(output, AtomicItems.RAW_SALTPETER, AtomicItems.SALTPETER_DUST);
+
+
         /* NUGGET CONVERSION */
         nuggetIngotRecipe(output, AtomicItems.LEAD_NUGGET, AtomicItems.LEAD_INGOT, RecipeCategory.MISC);
+        nuggetIngotRecipe(output, AtomicItems.BRIGHTSILVER_NUGGET, AtomicItems.BRIGHTSILVER_INGOT, RecipeCategory.MISC);
         nuggetIngotRecipe(output, AtomicItems.BUNGERITE_NUGGET, AtomicItems.BUNGERITE_INGOT, RecipeCategory.MISC);
+        nuggetIngotRecipe(output, AtomicItems.SOULSTEEL_NUGGET, AtomicItems.SOULSTEEL_INGOT, RecipeCategory.MISC);
         nuggetIngotRecipe(output, AtomicItems.BUNGERITE_ALLOY_NUGGET, AtomicItems.BUNGERITE_ALLOY_INGOT, RecipeCategory.MISC);
 
 
@@ -158,24 +162,31 @@ public class AtomicRecipeProvider extends RecipeProvider {
         ingotBlockRecipe(output, AtomicItems.RAW_SULFUR, AtomicBlocks.RAW_SULFUR_BLOCK, RecipeCategory.MISC);
         ingotBlockRecipe(output, AtomicItems.RAW_SALTPETER, AtomicBlocks.RAW_SALTPETER_BLOCK, RecipeCategory.MISC);
         ingotBlockRecipe(output, AtomicItems.RAW_LEAD, AtomicBlocks.RAW_LEAD_BLOCK, RecipeCategory.MISC);
+        ingotBlockRecipe(output, AtomicItems.RAW_BRIGHTSILVER, AtomicBlocks.RAW_BRIGHTSILVER_BLOCK, RecipeCategory.MISC);
         ingotBlockRecipe(output, AtomicItems.RAW_BUNGERITE, AtomicBlocks.RAW_BUNGERITE_BLOCK, RecipeCategory.MISC);
+        ingotBlockRecipe(output, AtomicItems.RAW_SOULSTEEL, AtomicBlocks.RAW_SOULSTEEL_BLOCK, RecipeCategory.MISC);
         ingotBlockRecipe(output, AtomicItems.SULFUR_DUST, AtomicBlocks.SULFUR_DUST_BLOCK, RecipeCategory.MISC);
         ingotBlockRecipe(output, AtomicItems.SALTPETER_DUST, AtomicBlocks.SALTPETER_DUST_BLOCK, RecipeCategory.MISC);
         ingotBlockRecipe(output, AtomicItems.LEAD_INGOT, AtomicBlocks.LEAD_BLOCK, RecipeCategory.MISC);
+        ingotBlockRecipe(output, AtomicItems.BRIGHTSILVER_INGOT, AtomicBlocks.BRIGHTSILVER_BLOCK, RecipeCategory.MISC);
         ingotBlockRecipe(output, AtomicItems.BUNGERITE_INGOT, AtomicBlocks.BUNGERITE_BLOCK, RecipeCategory.MISC);
+        ingotBlockRecipe(output, AtomicItems.SOULSTEEL_INGOT, AtomicBlocks.SOULSTEEL_BLOCK, RecipeCategory.MISC);
         ingotBlockRecipe(output, AtomicItems.BUNGERITE_ALLOY_INGOT, AtomicBlocks.BUNGERITE_ALLOY_BLOCK, RecipeCategory.MISC);
         ingotBlockRecipe(output, AtomicItems.ATOMIC_SHARD, AtomicBlocks.ATOMIC_BLOCK, RecipeCategory.MISC);
         ingotBlockRecipe(output, AtomicItems.EMPOWERED_ATOMIC_SHARD, AtomicBlocks.EMPOWERED_ATOMIC_BLOCK, RecipeCategory.MISC);
 
 
-        /* SMELTING RECIPES */
+        /* VANILLA SMELTING RECIPES */
         List<ItemLike> leadSmeltables = List.of(AtomicItems.RAW_LEAD, AtomicBlocks.LEAD_ORE, AtomicBlocks.DEEPSLATE_LEAD_ORE);
         oreSmelting(output, leadSmeltables, RecipeCategory.MISC, AtomicItems.LEAD_INGOT.get(), 0.2f, 200, "lead");
         oreBlasting(output, leadSmeltables, RecipeCategory.MISC, AtomicItems.LEAD_INGOT.get(), 0.2f, 100, "lead");
-
+        List<ItemLike> brightsilverSmeltables = List.of(AtomicItems.RAW_BRIGHTSILVER, AtomicBlocks.BRIGHTSILVER_ORE, AtomicBlocks.DEEPSLATE_BRIGHTSILVER_ORE);
+        oreSmelting(output, brightsilverSmeltables, RecipeCategory.MISC, AtomicItems.LEAD_INGOT.get(), 0.3f, 200, "brightsilver");
+        oreBlasting(output, brightsilverSmeltables, RecipeCategory.MISC, AtomicItems.LEAD_INGOT.get(), 0.3f, 100, "brightsilver");
         List<ItemLike> bungeriteSmeltables = List.of(AtomicItems.RAW_BUNGERITE, AtomicBlocks.BUNGERITE_ORE);
-        oreSmelting(output, bungeriteSmeltables, RecipeCategory.MISC, AtomicItems.BUNGERITE_INGOT.get(), 0.3f, 200, "bungerite");
-        oreBlasting(output, bungeriteSmeltables, RecipeCategory.MISC, AtomicItems.BUNGERITE_INGOT.get(), 0.3f, 100, "bungerite");
+        oreSmelting(output, bungeriteSmeltables, RecipeCategory.MISC, AtomicItems.BUNGERITE_INGOT.get(), 0.35f, 200, "bungerite");
+        oreBlasting(output, bungeriteSmeltables, RecipeCategory.MISC, AtomicItems.BUNGERITE_INGOT.get(), 0.35f, 100, "bungerite");
+        // No normal smelting for soulsteel
 
 
         /* TOOLS */
@@ -419,30 +430,6 @@ public class AtomicRecipeProvider extends RecipeProvider {
     protected void oreBlasting(RecipeOutput recipeOutput, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTime, String pGroup) {
         oreCooking(recipeOutput, RecipeSerializer.BLASTING_RECIPE, BlastingRecipe::new, pIngredients, pCategory, pResult,
                 pExperience, pCookingTime, pGroup, "_from_blasting");
-    }
-
-
-    private Ingredient ingredientOf(ItemLike item) {
-        return Ingredient.of(item);
-    }
-
-    private Ingredient ingredientOf(ItemLike... items) {
-        return Ingredient.of(items);
-    }
-
-    private Ingredient ingredientOf(TagKey<Item> tagKey) {
-        return Ingredient.of(registries.lookupOrThrow(Registries.ITEM).getOrThrow(tagKey));
-    }
-
-    protected <T extends AbstractCookingRecipe> void oreCooking(RecipeOutput recipeOutput, RecipeSerializer<T> pCookingSerializer, AbstractCookingRecipe.Factory<T> factory, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTime, String pGroup, String pRecipeName) {
-        for (ItemLike itemlike : pIngredients) {
-            SimpleCookingRecipeBuilder.generic(Ingredient.of(itemlike), pCategory, pResult, pExperience, pCookingTime, pCookingSerializer, factory).group(pGroup).unlockedBy(getHasName(itemlike), has(itemlike))
-                    .save(recipeOutput, AtomicCompression.MOD_ID + ":" + getItemName(pResult) + pRecipeName + "_" + getItemName(itemlike));
-        }
-    }
-
-    private static ResourceKey<Recipe<?>> getKey(Identifier recipeId) {
-        return ResourceKey.create(Registries.RECIPE, recipeId);
     }
 
 
@@ -1014,5 +1001,28 @@ public class AtomicRecipeProvider extends RecipeProvider {
         }
     }
 
+
+    private Ingredient ingredientOf(ItemLike item) {
+        return Ingredient.of(item);
+    }
+
+    private Ingredient ingredientOf(ItemLike... items) {
+        return Ingredient.of(items);
+    }
+
+    private Ingredient ingredientOf(TagKey<Item> tagKey) {
+        return Ingredient.of(registries.lookupOrThrow(Registries.ITEM).getOrThrow(tagKey));
+    }
+
+    protected <T extends AbstractCookingRecipe> void oreCooking(RecipeOutput recipeOutput, RecipeSerializer<T> pCookingSerializer, AbstractCookingRecipe.Factory<T> factory, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTime, String pGroup, String pRecipeName) {
+        for (ItemLike itemlike : pIngredients) {
+            SimpleCookingRecipeBuilder.generic(Ingredient.of(itemlike), pCategory, pResult, pExperience, pCookingTime, pCookingSerializer, factory).group(pGroup).unlockedBy(getHasName(itemlike), has(itemlike))
+                    .save(recipeOutput, AtomicCompression.MOD_ID + ":" + getItemName(pResult) + pRecipeName + "_" + getItemName(itemlike));
+        }
+    }
+
+    private static ResourceKey<Recipe<?>> getKey(Identifier recipeId) {
+        return ResourceKey.create(Registries.RECIPE, recipeId);
+    }
 
 }
