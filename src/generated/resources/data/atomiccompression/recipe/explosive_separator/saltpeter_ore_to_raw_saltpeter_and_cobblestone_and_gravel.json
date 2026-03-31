@@ -2,7 +2,7 @@
   "type": "atomiccompression:explosive_separator",
   "ingredient": "atomiccompression:saltpeter_ore",
   "result": {
-    "count": 2,
+    "count": 6,
     "id": "atomiccompression:raw_saltpeter"
   },
   "secondaryResult": {

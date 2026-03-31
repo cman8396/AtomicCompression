@@ -14,6 +14,7 @@ public class AtomicItems {
 
 
     /* ORE DROPS */
+    public static final DeferredItem<Item> DEEPCOAL = ITEMS.register("deepcoal", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
     public static final DeferredItem<Item> ATOMIC_SHARD = ITEMS.register("atomic_shard", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
     public static final DeferredItem<Item> RAW_SULFUR = ITEMS.register("raw_sulfur", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
     public static final DeferredItem<Item> RAW_SALTPETER = ITEMS.register("raw_saltpeter", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
@@ -24,6 +25,7 @@ public class AtomicItems {
 
     /* DUSTS */
     public static final DeferredItem<Item> SAWDUST = ITEMS.register("sawdust", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
+    public static final DeferredItem<Item> DEEPCOAL_DUST = ITEMS.register("deepcoal_dust", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
     public static final DeferredItem<Item> ATOMIC_DUST = ITEMS.register("atomic_dust", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
     public static final DeferredItem<Item> SULFUR_DUST = ITEMS.register("sulfur_dust", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
     public static final DeferredItem<Item> SALTPETER_DUST = ITEMS.register("saltpeter_dust", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));

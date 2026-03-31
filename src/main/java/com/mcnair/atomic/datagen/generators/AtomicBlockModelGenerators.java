@@ -44,6 +44,8 @@ public class AtomicBlockModelGenerators extends BlockModelGenerators {
     public void run() {
 
         /* ORE BLOCKS */
+        this.createTrivialCube(AtomicBlocks.DEEPCOAL_ORE.get());
+        this.createTrivialCube(AtomicBlocks.DEEPSLATE_DEEPCOAL_ORE.get());
         this.createTrivialCube(AtomicBlocks.SULFUR_ORE.get());
         this.createTrivialCube(AtomicBlocks.DEEPSLATE_SULFUR_ORE.get());
         this.createTrivialCube(AtomicBlocks.SALTPETER_ORE.get());
@@ -63,6 +65,7 @@ public class AtomicBlockModelGenerators extends BlockModelGenerators {
         this.createGlassBlocks(AtomicBlocks.ATOMIC_GLASS.get(), AtomicBlocks.ATOMIC_GLASS_PANE.get());
         this.createAxisAlignedPillarBlock(AtomicBlocks.DENSE_BASALT.get(), TexturedModel.COLUMN);
         this.createTrivialCube(AtomicBlocks.GUNPOWDER_BLOCK.get());
+        this.createTrivialCube(AtomicBlocks.DEEPCOAL_BLOCK.get());
         this.createTrivialCube(AtomicBlocks.RAW_SULFUR_BLOCK.get());
         this.createTrivialCube(AtomicBlocks.RAW_SALTPETER_BLOCK.get());
         this.createTrivialCube(AtomicBlocks.RAW_LEAD_BLOCK.get());

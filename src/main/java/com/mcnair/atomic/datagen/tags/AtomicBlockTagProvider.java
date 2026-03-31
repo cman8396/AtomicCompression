@@ -26,6 +26,8 @@ public class AtomicBlockTagProvider extends BlockTagsProvider {
                 .add(AtomicBlocks.SALTPETER_DUST_BLOCK.get());
 
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
+                .add(AtomicBlocks.DEEPCOAL_ORE.get())
+                .add(AtomicBlocks.DEEPSLATE_DEEPCOAL_ORE.get())
                 .add(AtomicBlocks.SULFUR_ORE.get())
                 .add(AtomicBlocks.DEEPSLATE_SULFUR_ORE.get())
                 .add(AtomicBlocks.SALTPETER_ORE.get())
@@ -41,6 +43,7 @@ public class AtomicBlockTagProvider extends BlockTagsProvider {
                 .add(AtomicBlocks.NETHER_ATOMIC_ORE.get())
                 .add(AtomicBlocks.END_ATOMIC_ORE.get())
                 .add(AtomicBlocks.DENSE_BASALT.get())
+                .add(AtomicBlocks.DEEPCOAL_BLOCK.get())
                 .add(AtomicBlocks.RAW_SULFUR_BLOCK.get())
                 .add(AtomicBlocks.RAW_SALTPETER_BLOCK.get())
                 .add(AtomicBlocks.RAW_LEAD_BLOCK.get())
@@ -55,6 +58,8 @@ public class AtomicBlockTagProvider extends BlockTagsProvider {
                 .add(AtomicBlocks.EMPOWERED_ATOMIC_BLOCK.get());
 
         tag(BlockTags.NEEDS_STONE_TOOL)
+                .add(AtomicBlocks.DEEPCOAL_ORE.get())
+                .add(AtomicBlocks.DEEPSLATE_DEEPCOAL_ORE.get())
                 .add(AtomicBlocks.SULFUR_ORE.get())
                 .add(AtomicBlocks.DEEPSLATE_SULFUR_ORE.get())
                 .add(AtomicBlocks.RAW_SULFUR_BLOCK.get())
@@ -125,6 +130,7 @@ public class AtomicBlockTagProvider extends BlockTagsProvider {
 
         // Storage Blocks
         tag(Tags.Blocks.STORAGE_BLOCKS)
+                .addTag(CommonBlockTags.STORAGE_BLOCKS_DEEPCOAL)
                 .addTag(CommonBlockTags.STORAGE_BLOCKS_RAW_SULFUR)
                 .addTag(CommonBlockTags.STORAGE_BLOCKS_RAW_SALTPETER)
                 .addTag(CommonBlockTags.STORAGE_BLOCKS_RAW_LEAD)
@@ -141,6 +147,8 @@ public class AtomicBlockTagProvider extends BlockTagsProvider {
                 .addTag(CommonBlockTags.STORAGE_BLOCKS_BUNGERITE_ALLOY)
                 .addTag(CommonBlockTags.STORAGE_BLOCKS_ATOMIC)
                 .addTag(CommonBlockTags.STORAGE_BLOCKS_EMPOWERED_ATOMIC);
+        tag(CommonBlockTags.STORAGE_BLOCKS_DEEPCOAL)
+                .add(AtomicBlocks.DEEPCOAL_BLOCK.get());
         tag(CommonBlockTags.STORAGE_BLOCKS_RAW_SULFUR)
                 .add(AtomicBlocks.RAW_SULFUR_BLOCK.get());
         tag(CommonBlockTags.STORAGE_BLOCKS_RAW_SALTPETER)
@@ -172,6 +180,7 @@ public class AtomicBlockTagProvider extends BlockTagsProvider {
 
         // Ores
         tag(Tags.Blocks.ORES)
+                .addTag(CommonBlockTags.ORES_DEEPCOAL)
                 .addTag(CommonBlockTags.ORES_SULFUR)
                 .addTag(CommonBlockTags.ORES_SALTPETER)
                 .addTag(CommonBlockTags.ORES_LEAD)
@@ -181,6 +190,8 @@ public class AtomicBlockTagProvider extends BlockTagsProvider {
                 .addTag(CommonBlockTags.ORES_ATOMIC);
         tag(CommonBlockTags.ORES_SULFUR)
                 .add(AtomicBlocks.SULFUR_ORE.get(), AtomicBlocks.DEEPSLATE_SULFUR_ORE.get());
+        tag(CommonBlockTags.ORES_DEEPCOAL)
+                .add(AtomicBlocks.DEEPCOAL_ORE.get(), AtomicBlocks.DEEPSLATE_DEEPCOAL_ORE.get());
         tag(CommonBlockTags.ORES_SALTPETER)
                 .add(AtomicBlocks.SALTPETER_ORE.get(), AtomicBlocks.DEEPSLATE_SALTPETER_ORE.get());
         tag(CommonBlockTags.ORES_LEAD)
@@ -193,10 +204,7 @@ public class AtomicBlockTagProvider extends BlockTagsProvider {
         tag(CommonBlockTags.ORES_SOULSTEEL)
                 .add(AtomicBlocks.SOULSTEEL_ORE.get());
         tag(CommonBlockTags.ORES_ATOMIC)
-                .add(AtomicBlocks.ATOMIC_ORE.get(),
-                        AtomicBlocks.DEEPSLATE_ATOMIC_ORE.get(),
-                        AtomicBlocks.NETHER_ATOMIC_ORE.get(),
-                        AtomicBlocks.END_ATOMIC_ORE.get());
+                .add(AtomicBlocks.ATOMIC_ORE.get(), AtomicBlocks.DEEPSLATE_ATOMIC_ORE.get(), AtomicBlocks.NETHER_ATOMIC_ORE.get(), AtomicBlocks.END_ATOMIC_ORE.get());
 
     }
 }

@@ -1,0 +1,17 @@
+{
+  "type": "atomiccompression:explosive_separator",
+  "ingredient": "atomiccompression:lead_ingot",
+  "result": {
+    "count": 1,
+    "id": "atomiccompression:lead_dust"
+  },
+  "secondaryResult": {
+    "percentages": [
+      0.5
+    ],
+    "result": {
+      "count": 1,
+      "id": "atomiccompression:lead_dust"
+    }
+  }
+}

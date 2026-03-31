@@ -19,6 +19,8 @@ import java.util.List;
 public class AtomicPlacedFeatures {
     public static final ResourceKey<PlacedFeature> SULFUR_ORE_PLACED_KEY = registerKey("sulfur_ore_placed");
     public static final ResourceKey<PlacedFeature> DEEPSLATE_SULFUR_ORE_PLACED_KEY = registerKey("deepslate_sulfur_ore_placed");
+    public static final ResourceKey<PlacedFeature> DEEPCOAL_ORE_PLACED_KEY = registerKey("deepcoal_ore_placed");
+    public static final ResourceKey<PlacedFeature> DEEPSLATE_DEEPCOAL_ORE_PLACED_KEY = registerKey("deepslate_deepcoal_ore_placed");
     public static final ResourceKey<PlacedFeature> SALTPETER_ORE_PLACED_KEY = registerKey("saltpeter_ore_placed");
     public static final ResourceKey<PlacedFeature> DEEPSLATE_SALTPETER_ORE_PLACED_KEY = registerKey("deepslate_saltpeter_ore_placed");
     public static final ResourceKey<PlacedFeature> LEAD_ORE_PLACED_KEY = registerKey("lead_ore_placed");
@@ -44,6 +46,10 @@ public class AtomicPlacedFeatures {
         var endFullHeightSpawnRange = HeightRangePlacement.uniform(VerticalAnchor.absolute(7), VerticalAnchor.absolute(120));
 
 
+        register(context, DEEPCOAL_ORE_PLACED_KEY, configuredFeatures.getOrThrow(AtomicConfiguredFeatures.DEEPCOAL_ORE_KEY),
+                AtomicOrePlacement.commonOrePlacement(10, HeightRangePlacement.uniform(VerticalAnchor.absolute(-50), VerticalAnchor.absolute(90))));
+        register(context, DEEPSLATE_DEEPCOAL_ORE_PLACED_KEY, configuredFeatures.getOrThrow(AtomicConfiguredFeatures.DEEPSLATE_DEEPCOAL_ORE_KEY),
+                AtomicOrePlacement.commonOrePlacement(10, HeightRangePlacement.uniform(VerticalAnchor.absolute(-50), VerticalAnchor.absolute(90))));
         register(context, SULFUR_ORE_PLACED_KEY, configuredFeatures.getOrThrow(AtomicConfiguredFeatures.SULFUR_ORE_KEY),
                 AtomicOrePlacement.commonOrePlacement(9, HeightRangePlacement.uniform(VerticalAnchor.absolute(-50), VerticalAnchor.absolute(90))));
         register(context, DEEPSLATE_SULFUR_ORE_PLACED_KEY, configuredFeatures.getOrThrow(AtomicConfiguredFeatures.DEEPSLATE_SULFUR_ORE_KEY),

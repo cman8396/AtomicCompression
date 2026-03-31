@@ -1,5 +1,7 @@
 {
   "values": [
+    "atomiccompression:deepcoal_ore",
+    "atomiccompression:deepslate_deepcoal_ore",
     "atomiccompression:sulfur_ore",
     "atomiccompression:deepslate_sulfur_ore",
     "atomiccompression:saltpeter_ore",
@@ -15,6 +17,7 @@
     "atomiccompression:nether_atomic_ore",
     "atomiccompression:end_atomic_ore",
     "atomiccompression:dense_basalt",
+    "atomiccompression:deepcoal_block",
     "atomiccompression:raw_sulfur_block",
     "atomiccompression:raw_saltpeter_block",
     "atomiccompression:raw_lead_block",

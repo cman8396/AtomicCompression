@@ -8,6 +8,8 @@ import net.minecraft.world.level.block.Block;
 public final class CommonBlockTags {
     private CommonBlockTags() {}
 
+    public static final TagKey<Block> ORES_DEEPCOAL = TagKey.create(Registries.BLOCK,
+            Identifier.fromNamespaceAndPath("c", "ores/deepcoal"));
     public static final TagKey<Block> ORES_SULFUR = TagKey.create(Registries.BLOCK,
             Identifier.fromNamespaceAndPath("c", "ores/sulfur"));
     public static final TagKey<Block> ORES_SALTPETER = TagKey.create(Registries.BLOCK,
@@ -23,6 +25,8 @@ public final class CommonBlockTags {
     public static final TagKey<Block> ORES_ATOMIC = TagKey.create(Registries.BLOCK,
             Identifier.fromNamespaceAndPath("c", "ores/atomic"));
 
+    public static final TagKey<Block> STORAGE_BLOCKS_DEEPCOAL = TagKey.create(Registries.BLOCK,
+            Identifier.fromNamespaceAndPath("c", "storage_blocks/deepcoal"));
     public static final TagKey<Block> STORAGE_BLOCKS_RAW_SULFUR = TagKey.create(Registries.BLOCK,
             Identifier.fromNamespaceAndPath("c", "storage_blocks/raw_sulfur"));
     public static final TagKey<Block> STORAGE_BLOCKS_RAW_SALTPETER = TagKey.create(Registries.BLOCK,

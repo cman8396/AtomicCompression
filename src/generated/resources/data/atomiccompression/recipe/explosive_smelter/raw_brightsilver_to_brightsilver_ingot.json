@@ -1,0 +1,8 @@
+{
+  "type": "atomiccompression:explosive_smelter",
+  "ingredient": "atomiccompression:raw_brightsilver",
+  "result": {
+    "count": 1,
+    "id": "atomiccompression:brightsilver_ingot"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "type": "atomiccompression:explosive_separator",
+  "ingredient": "atomiccompression:deepcoal_ore",
+  "result": {
+    "count": 6,
+    "id": "atomiccompression:deepcoal"
+  },
+  "secondaryResult": {
+    "percentages": [
+      0.25,
+      0.05
+    ],
+    "result": {
+      "count": 1,
+      "id": "minecraft:cobblestone"
+    }
+  },
+  "tertiaryResult": {
+    "percentages": [
+      0.1
+    ],
+    "result": {
+      "count": 1,
+      "id": "minecraft:gravel"
+    }
+  }
+}

@@ -16,6 +16,8 @@ import net.neoforged.neoforge.registries.NeoForgeRegistries;
 public class AtomicBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_SULFUR_ORE = registerKey("add_sulfur_ore");
     public static final ResourceKey<BiomeModifier> ADD_DEEPSLATE_SULFUR_ORE = registerKey("add_deepslate_sulfur_ore");
+    public static final ResourceKey<BiomeModifier> ADD_DEEPCOAL_ORE = registerKey("add_deepcoal_ore");
+    public static final ResourceKey<BiomeModifier> ADD_DEEPSLATE_DEEPCOAL_ORE = registerKey("add_deepslate_deepcoal_ore");
     public static final ResourceKey<BiomeModifier> ADD_SALTPETER_ORE = registerKey("add_saltpeter_ore");
     public static final ResourceKey<BiomeModifier> ADD_DEEPSLATE_SALTPETER_ORE = registerKey("add_deepslate_saltpeter_ore");
     public static final ResourceKey<BiomeModifier> ADD_LEAD_ORE = registerKey("add_lead_ore");
@@ -43,6 +45,14 @@ public class AtomicBiomeModifiers {
         var biomes = context.lookup(Registries.BIOME);
 
 
+        context.register(ADD_DEEPCOAL_ORE, new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
+                HolderSet.direct(placedFeatures.getOrThrow(AtomicPlacedFeatures.DEEPCOAL_ORE_PLACED_KEY)),
+                GenerationStep.Decoration.UNDERGROUND_ORES));
+        context.register(ADD_DEEPSLATE_DEEPCOAL_ORE, new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
+                HolderSet.direct(placedFeatures.getOrThrow(AtomicPlacedFeatures.DEEPSLATE_DEEPCOAL_ORE_PLACED_KEY)),
+                GenerationStep.Decoration.UNDERGROUND_ORES));
         context.register(ADD_SULFUR_ORE, new BiomeModifiers.AddFeaturesBiomeModifier(
                 biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
                 HolderSet.direct(placedFeatures.getOrThrow(AtomicPlacedFeatures.SULFUR_ORE_PLACED_KEY)),

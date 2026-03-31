@@ -28,6 +28,10 @@ public class AtomicBlockLootTableProvider extends BlockLootSubProvider {
     protected void generate() {
 
         /* ORES */
+        add(AtomicBlocks.DEEPCOAL_ORE.get(),
+                block -> createMultipleOreDrops(AtomicBlocks.DEEPCOAL_ORE.get(), AtomicItems.DEEPCOAL.get(), 3, 5));
+        add(AtomicBlocks.DEEPSLATE_DEEPCOAL_ORE.get(),
+                block -> createMultipleOreDrops(AtomicBlocks.DEEPSLATE_DEEPCOAL_ORE.get(), AtomicItems.DEEPCOAL.get(), 3, 5));
         add(AtomicBlocks.SULFUR_ORE.get(),
                 block -> createMultipleOreDrops(AtomicBlocks.SULFUR_ORE.get(), AtomicItems.RAW_SULFUR.get(), 3, 5));
         add(AtomicBlocks.DEEPSLATE_SULFUR_ORE.get(),
@@ -65,6 +69,7 @@ public class AtomicBlockLootTableProvider extends BlockLootSubProvider {
 
         dropSelf(AtomicBlocks.DENSE_BASALT.get());
         dropSelf(AtomicBlocks.GUNPOWDER_BLOCK.get());
+        dropSelf(AtomicBlocks.DEEPCOAL_BLOCK.get());
         dropSelf(AtomicBlocks.RAW_SULFUR_BLOCK.get());
         dropSelf(AtomicBlocks.RAW_SALTPETER_BLOCK.get());
         dropSelf(AtomicBlocks.RAW_LEAD_BLOCK.get());

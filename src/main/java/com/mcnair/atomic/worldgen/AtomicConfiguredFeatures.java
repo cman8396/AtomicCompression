@@ -31,8 +31,10 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
 
 public class AtomicConfiguredFeatures {
 
-    public static final ResourceKey<ConfiguredFeature<?, ?>> SULFUR_ORE_KEY = registerKey("sulfurc_ore_placed");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> DEEPSLATE_SULFUR_ORE_KEY = registerKey("deepslate_sulfurc_ore_placed");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> DEEPCOAL_ORE_KEY = registerKey("deepcoal_ore_placed");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> DEEPSLATE_DEEPCOAL_ORE_KEY = registerKey("deepslate_deepcoal_ore_placed");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> SULFUR_ORE_KEY = registerKey("sulfur_ore_placed");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> DEEPSLATE_SULFUR_ORE_KEY = registerKey("deepslate_sulfur_ore_placed");
     public static final ResourceKey<ConfiguredFeature<?, ?>> SALTPETER_ORE_KEY = registerKey("saltpeter_ore_placed");
     public static final ResourceKey<ConfiguredFeature<?, ?>> DEEPSLATE_SALTPETER_ORE_KEY = registerKey("deepslate_saltpeter_ore_placed");
     public static final ResourceKey<ConfiguredFeature<?, ?>> LEAD_ORE_KEY = registerKey("lead_ore_placed");
@@ -58,6 +60,10 @@ public class AtomicConfiguredFeatures {
         RuleTest endReplaceables = new BlockMatchTest(Blocks.END_STONE);
 
         /* ORES */
+        register(context, DEEPCOAL_ORE_KEY, Feature.ORE, new OreConfiguration(stoneReplaceables,
+                AtomicBlocks.DEEPCOAL_ORE.get().defaultBlockState(), 10));
+        register(context, DEEPSLATE_DEEPCOAL_ORE_KEY, Feature.ORE, new OreConfiguration(deepslateReplaceables,
+                AtomicBlocks.DEEPSLATE_DEEPCOAL_ORE.get().defaultBlockState(), 10));
         register(context, SULFUR_ORE_KEY, Feature.ORE, new OreConfiguration(stoneReplaceables,
                 AtomicBlocks.SULFUR_ORE.get().defaultBlockState(), 9));
         register(context, DEEPSLATE_SULFUR_ORE_KEY, Feature.ORE, new OreConfiguration(deepslateReplaceables,

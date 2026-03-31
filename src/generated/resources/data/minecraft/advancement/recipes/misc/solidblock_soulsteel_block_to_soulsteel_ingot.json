@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:solidblock_soulsteel_block_to_soulsteel_ingot"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_translation{key='block.atomiccompression.soulsteel_block', args=[]}": {
+      "conditions": {
+        "items": [
+          {
+            "items": "atomiccompression:soulsteel_block"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_translation{key='block.atomiccompression.soulsteel_block', args=[]}"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:solidblock_soulsteel_block_to_soulsteel_ingot"
+    ]
+  }
+}

@@ -1,6 +1,8 @@
 {
   "itemGroup.atomiccompression.title": "Atomic Compression",
 
+  "block.atomiccompression.deepcoal_ore": "Deepcoal Ore",
+  "block.atomiccompression.deepslate_deepcoal_ore": "Deepslate Deepcoal Ore",
   "block.atomiccompression.sulfur_ore": "Sulfur Ore",
   "block.atomiccompression.deepslate_sulfur_ore": "Deepslate Sulfur Ore",
   "block.atomiccompression.saltpeter_ore": "Saltpeter Ore",
@@ -21,18 +23,18 @@
   "block.atomiccompression.atomic_glass_pane": "Atomic Glass Pane",
   "block.atomiccompression.dense_basalt": "Dense Basalt",
   "block.atomiccompression.gunpowder_block": "Block of Gunpowder",
-  "block.atomiccompression.raw_sulfur_block": "Block of Raw Sulfur",
+  "block.atomiccompression.deepcoal_block": "Block of Deepcoal",
   "block.atomiccompression.raw_saltpeter_block": "Block of Raw Saltpeter",
   "block.atomiccompression.raw_lead_block": "Block of Raw Lead",
-  "block.atomiccompression.raw_brightsilver_block": "Raw Brightsilver Block",
+  "block.atomiccompression.raw_brightsilver_block": "Block of Raw Brightsilver",
   "block.atomiccompression.raw_bungerite_block": "Block of Raw Bungerite",
   "block.atomiccompression.raw_soulsteel_block": "Raw Soulsteel Block",
   "block.atomiccompression.sulfur_dust_block": "Block of Sulfur Dust",
   "block.atomiccompression.saltpeter_dust_block": "Block of Saltpeter Dust",
   "block.atomiccompression.lead_block": "Block of Lead",
-  "block.atomiccompression.brightsilver_block": "Brightsilver Block",
+  "block.atomiccompression.brightsilver_block": "Block of Brightsilver",
   "block.atomiccompression.bungerite_block": "Block of Bungerite",
-  "block.atomiccompression.soulsteel_block": "Soulsteel Block",
+  "block.atomiccompression.soulsteel_block": "Block of Soulsteel",
   "block.atomiccompression.bungerite_alloy_block": "Block of Bungerite Alloy",
   "block.atomiccompression.atomic_block": "Atomic Block",
   "block.atomiccompression.empowered_atomic_block": "Empowered Atomic Block",
@@ -66,6 +68,7 @@
 
 
   "item.atomiccompression.atomic_shard": "Atomic Shard",
+  "item.atomiccompression.deepcoal": "Deepcoal",
   "item.atomiccompression.raw_sulfur": "Raw Sulfur",
   "item.atomiccompression.raw_saltpeter": "Raw Saltpeter",
   "item.atomiccompression.raw_lead": "Raw Lead",
@@ -75,6 +78,7 @@
 
   "item.atomiccompression.sawdust": "Sawdust",
   "item.atomiccompression.atomic_dust": "Atomic Dust",
+  "item.atomiccompression.deepcoal_dust": "Deepcoal Dust",
   "item.atomiccompression.sulfur_dust": "Sulfur Dust",
   "item.atomiccompression.saltpeter_dust": "Saltpeter Dust",
   "item.atomiccompression.lead_dust": "Lead Dust",

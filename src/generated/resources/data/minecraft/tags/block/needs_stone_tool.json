@@ -1,5 +1,7 @@
 {
   "values": [
+    "atomiccompression:deepcoal_ore",
+    "atomiccompression:deepslate_deepcoal_ore",
     "atomiccompression:sulfur_ore",
     "atomiccompression:deepslate_sulfur_ore",
     "atomiccompression:raw_sulfur_block",

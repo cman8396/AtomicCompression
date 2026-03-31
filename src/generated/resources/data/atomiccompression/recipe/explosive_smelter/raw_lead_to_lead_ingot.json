@@ -1,0 +1,8 @@
+{
+  "type": "atomiccompression:explosive_smelter",
+  "ingredient": "atomiccompression:raw_lead",
+  "result": {
+    "count": 1,
+    "id": "atomiccompression:lead_ingot"
+  }
+}

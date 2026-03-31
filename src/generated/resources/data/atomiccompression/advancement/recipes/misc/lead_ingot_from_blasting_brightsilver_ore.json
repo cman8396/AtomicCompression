@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_brightsilver_ore": {
+      "conditions": {
+        "items": [
+          {
+            "items": "atomiccompression:brightsilver_ore"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "atomiccompression:lead_ingot_from_blasting_brightsilver_ore"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_brightsilver_ore"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "atomiccompression:lead_ingot_from_blasting_brightsilver_ore"
+    ]
+  }
+}

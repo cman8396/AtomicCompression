@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.3,
+  "group": "brightsilver",
+  "ingredient": "atomiccompression:deepslate_brightsilver_ore",
+  "result": {
+    "count": 1,
+    "id": "atomiccompression:lead_ingot"
+  }
+}

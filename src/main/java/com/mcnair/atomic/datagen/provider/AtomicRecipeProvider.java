@@ -145,6 +145,7 @@ public class AtomicRecipeProvider extends RecipeProvider {
 
 
         /* DUST CONVERSION */
+        oneToOneRecipe(output, AtomicItems.DEEPCOAL, AtomicItems.DEEPCOAL_DUST);
         oneToOneRecipe(output, AtomicItems.RAW_SULFUR, AtomicItems.SULFUR_DUST);
         oneToOneRecipe(output, AtomicItems.RAW_SALTPETER, AtomicItems.SALTPETER_DUST);
 
@@ -159,6 +160,7 @@ public class AtomicRecipeProvider extends RecipeProvider {
 
         /* SOLID BLOCK CONVERSION */
         ingotBlockRecipe(output, Items.GUNPOWDER, AtomicBlocks.GUNPOWDER_BLOCK, RecipeCategory.MISC);
+        ingotBlockRecipe(output, AtomicItems.DEEPCOAL, AtomicBlocks.DEEPCOAL_BLOCK, RecipeCategory.MISC);
         ingotBlockRecipe(output, AtomicItems.RAW_SULFUR, AtomicBlocks.RAW_SULFUR_BLOCK, RecipeCategory.MISC);
         ingotBlockRecipe(output, AtomicItems.RAW_SALTPETER, AtomicBlocks.RAW_SALTPETER_BLOCK, RecipeCategory.MISC);
         ingotBlockRecipe(output, AtomicItems.RAW_LEAD, AtomicBlocks.RAW_LEAD_BLOCK, RecipeCategory.MISC);
@@ -207,11 +209,14 @@ public class AtomicRecipeProvider extends RecipeProvider {
 
 
         /* EXPLOSIVE COMPACTOR */
+        ExCompactor.createStoneOreRecipe(output, AtomicItems.DEEPCOAL, 8, AtomicBlocks.DEEPCOAL_ORE.asItem(), AtomicBlocks.DEEPSLATE_DEEPCOAL_ORE.asItem());
         ExCompactor.createStoneOreRecipe(output, AtomicItems.RAW_LEAD, 8, AtomicBlocks.LEAD_ORE.asItem(), AtomicBlocks.DEEPSLATE_LEAD_ORE.asItem());
-        ExCompactor.createStoneOreRecipe(output, AtomicItems.RAW_SULFUR, 8, AtomicBlocks.LEAD_ORE.asItem(), AtomicBlocks.DEEPSLATE_SULFUR_ORE.asItem());
-        ExCompactor.createStoneOreRecipe(output, AtomicItems.RAW_SALTPETER, 8, AtomicBlocks.LEAD_ORE.asItem(), AtomicBlocks.DEEPSLATE_SALTPETER_ORE.asItem());
+        ExCompactor.createStoneOreRecipe(output, AtomicItems.RAW_SULFUR, 8, AtomicBlocks.SULFUR_ORE.asItem(), AtomicBlocks.DEEPSLATE_SULFUR_ORE.asItem());
+        ExCompactor.createStoneOreRecipe(output, AtomicItems.RAW_SALTPETER, 8, AtomicBlocks.SALTPETER_ORE.asItem(), AtomicBlocks.DEEPSLATE_SALTPETER_ORE.asItem());
 
+        ExCompactor.createNetherOreRecipe(output, AtomicItems.RAW_BRIGHTSILVER, 8, AtomicBlocks.BRIGHTSILVER_ORE.asItem());
         ExCompactor.createNetherOreRecipe(output, AtomicItems.RAW_BUNGERITE, 8, AtomicBlocks.BUNGERITE_ORE.asItem());
+        ExCompactor.createNetherOreRecipe(output, AtomicItems.RAW_SOULSTEEL, 8, AtomicBlocks.SOULSTEEL_ORE.asItem());
         ExCompactor.createNetherOreRecipe(output, Items.QUARTZ, 12, Blocks.NETHER_QUARTZ_ORE.asItem());
 
         // Vanilla Recipes
@@ -242,14 +247,26 @@ public class AtomicRecipeProvider extends RecipeProvider {
 
 
         /* EXPLOSIVE SEPARATOR */
-        ExSeparator.createStoneOreRecipe(output, AtomicBlocks.SULFUR_ORE.asItem(), AtomicBlocks.DEEPSLATE_SULFUR_ORE.asItem(), AtomicItems.RAW_SULFUR, 2);
-        ExSeparator.createStoneOreRecipe(output, AtomicBlocks.SALTPETER_ORE.asItem(), AtomicBlocks.DEEPSLATE_SALTPETER_ORE.asItem(), AtomicItems.RAW_SALTPETER, 2);
+        ExSeparator.createStoneOreRecipe(output, AtomicBlocks.DEEPCOAL_ORE.asItem(), AtomicBlocks.DEEPSLATE_DEEPCOAL_ORE.asItem(), AtomicItems.DEEPCOAL, 6);
+        ExSeparator.createStoneOreRecipe(output, AtomicBlocks.SULFUR_ORE.asItem(), AtomicBlocks.DEEPSLATE_SULFUR_ORE.asItem(), AtomicItems.RAW_SULFUR, 6);
+        ExSeparator.createStoneOreRecipe(output, AtomicBlocks.SALTPETER_ORE.asItem(), AtomicBlocks.DEEPSLATE_SALTPETER_ORE.asItem(), AtomicItems.RAW_SALTPETER, 6);
 
         ExSeparator.createStoneOreRecipe(output, AtomicBlocks.ATOMIC_ORE.asItem(), AtomicBlocks.DEEPSLATE_ATOMIC_ORE.asItem(), AtomicItems.ATOMIC_SHARD, 2);
         ExSeparator.createNetherOreRecipe(output, AtomicBlocks.NETHER_ATOMIC_ORE.asItem(), AtomicItems.ATOMIC_SHARD, 2);
         ExSeparator.createNetherOreRecipe(output, AtomicBlocks.END_ATOMIC_ORE.asItem(), AtomicItems.ATOMIC_SHARD, 2);
 
         ExSeparator.createOneToOne(output, AtomicBlocks.DENSE_BASALT.asItem(), Blocks.BASALT.asItem(), 9);
+
+        // Dusts
+        ExSeparator.createOneToTwo(output, AtomicItems.ATOMIC_SHARD, AtomicItems.ATOMIC_DUST, 1, AtomicItems.ATOMIC_DUST, new double[]{0.25, 0.02});
+        ExSeparator.createOneToTwo(output, AtomicItems.LEAD_INGOT, AtomicItems.LEAD_DUST, 1, AtomicItems.LEAD_DUST, new double[]{0.50});
+        ExSeparator.createOneToTwo(output, AtomicItems.BRIGHTSILVER_INGOT, AtomicItems.BRIGHTSILVER_DUST, 1, AtomicItems.BRIGHTSILVER_DUST, new double[]{0.50});
+        ExSeparator.createOneToTwo(output, AtomicItems.BUNGERITE_INGOT, AtomicItems.BUNGERITE_DUST, 1, AtomicItems.BUNGERITE_DUST, new double[]{0.50});
+        ExSeparator.createOneToTwo(output, AtomicItems.SOULSTEEL_INGOT, AtomicItems.SOULSTEEL_DUST, 1, AtomicItems.SOULSTEEL_DUST, new double[]{0.50});
+        ExSeparator.createOneToTwo(output, Items.ENDER_PEARL, AtomicItems.ENDER_DUST, 1, AtomicItems.ENDER_DUST, new double[]{0.33, 0.05});
+        ExSeparator.createOneToTwo(output, Items.DIAMOND, AtomicItems.DIAMOND_DUST, 1, AtomicItems.DIAMOND_DUST, new double[]{0.33, 0.05});
+        ExSeparator.createOneToTwo(output, Items.EMERALD, AtomicItems.EMERALD_DUST, 1, AtomicItems.EMERALD_DUST, new double[]{0.33, 0.05});
+        ExSeparator.createOneToTwo(output, Items.ECHO_SHARD, AtomicItems.ECHO_DUST, 1, AtomicItems.ECHO_DUST, new double[]{0.33, 0.05});
 
         // Vanilla Recipes
         ExSeparator.createStoneOreRecipe(output, Blocks.REDSTONE_ORE.asItem(), Blocks.DEEPSLATE_REDSTONE_ORE.asItem(), Items.REDSTONE, 10);
@@ -300,8 +317,18 @@ public class AtomicRecipeProvider extends RecipeProvider {
 
 
         /* EXPLOSIVE SMELTER */
+        ExSmelter.createOreRecipe(output, AtomicBlocks.DEEPCOAL_ORE.asItem(), AtomicBlocks.DEEPSLATE_DEEPCOAL_ORE.asItem(), AtomicItems.DEEPCOAL, 3);
         ExSmelter.createOreRecipe(output, AtomicBlocks.LEAD_ORE.asItem(), AtomicBlocks.DEEPSLATE_LEAD_ORE.asItem(), AtomicItems.RAW_LEAD, 1);
+        ExSmelter.createOreRecipe(output, AtomicBlocks.BRIGHTSILVER_ORE.asItem(), AtomicBlocks.DEEPSLATE_BRIGHTSILVER_ORE.asItem(), AtomicItems.RAW_BRIGHTSILVER, 1);
         ExSmelter.createOneToOne(output, AtomicBlocks.BUNGERITE_ORE.asItem(), AtomicItems.RAW_BUNGERITE, 1);
+        ExSmelter.createOneToOne(output, AtomicBlocks.SOULSTEEL_ORE.asItem(), AtomicItems.RAW_SOULSTEEL, 1);
+
+        ExSmelter.createOneToOne(output, AtomicItems.RAW_LEAD.asItem(), AtomicItems.LEAD_INGOT, 1);
+        ExSmelter.createOneToOne(output, AtomicItems.RAW_BRIGHTSILVER.asItem(), AtomicItems.BRIGHTSILVER_INGOT, 1);
+        ExSmelter.createOneToOne(output, AtomicItems.RAW_BUNGERITE.asItem(), AtomicItems.BUNGERITE_INGOT, 1);
+
+        ExSmelter.createOneToOne(output, AtomicItems.LEAD_DUST.asItem(), AtomicItems.LEAD_INGOT, 1);
+        ExSmelter.createOneToOne(output, AtomicItems.BUNGERITE_DUST.asItem(), AtomicItems.BUNGERITE_INGOT, 1);
 
         // Vanilla Recipes
         ExSmelter.createOreRecipe(output, Blocks.GOLD_ORE.asItem(), Blocks.DEEPSLATE_GOLD_ORE.asItem(), Items.RAW_GOLD, 1);
@@ -311,7 +338,11 @@ public class AtomicRecipeProvider extends RecipeProvider {
 
         /* EXPLOSIVE REFINER */
         ExRefiner.createStoneOreRecipe(output, AtomicBlocks.LEAD_ORE.asItem(), AtomicBlocks.DEEPSLATE_LEAD_ORE.asItem(), 1, AtomicItems.RAW_LEAD, 2);
+        ExRefiner.createStoneOreRecipe(output, AtomicBlocks.BRIGHTSILVER_ORE.asItem(), AtomicBlocks.DEEPSLATE_BRIGHTSILVER_ORE.asItem(), 1, AtomicItems.RAW_BRIGHTSILVER, 2);
         ExRefiner.createNetherOreRecipe(output, AtomicBlocks.BUNGERITE_ORE.asItem(), 1, AtomicItems.RAW_BUNGERITE, 2);
+        ExRefiner.createEndOreRecipe(output, AtomicBlocks.SOULSTEEL_ORE.asItem(), 1, AtomicItems.RAW_SOULSTEEL, 2);
+
+        ExRefiner.createTwoToOne(output, AtomicItems.SOULSTEEL_DUST, 1, AtomicItems.ECHO_DUST, 1, AtomicItems.SOULSTEEL_INGOT, 1);
 
         // Vanilla Recipes
         ExRefiner.createStoneOreRecipe(output, Blocks.GOLD_ORE.asItem(), Blocks.DEEPSLATE_GOLD_ORE.asItem(), 1, Items.RAW_GOLD, 2);
@@ -321,7 +352,9 @@ public class AtomicRecipeProvider extends RecipeProvider {
 
 
         /* EXPLOSIVE INFUSER */
-        ExInfuser.createTwoToOne(output, AtomicItems.ATOMIC_SHARD.asItem(), 1, Items.DIAMOND.asItem(), 2, AtomicItems.EMPOWERED_ATOMIC_SHARD.asItem(), 1);
+        ExInfuser.createTwoToOne(output, AtomicItems.ATOMIC_SHARD.asItem(), 1, AtomicItems.DIAMOND_DUST.asItem(), 2, AtomicItems.EMPOWERED_ATOMIC_SHARD.asItem(), 1);
+        ExInfuser.createTwoToOne(output, AtomicItems.ATOMIC_SHARD.asItem(), 1, AtomicItems.EMERALD_DUST.asItem(), 2, AtomicItems.EMPOWERED_ATOMIC_SHARD.asItem(), 1);
+        ExInfuser.createTwoToOne(output, AtomicItems.RAW_SOULSTEEL.asItem(), 2, AtomicItems.ECHO_DUST.asItem(), 1, AtomicItems.SOULSTEEL_INGOT.asItem(), 1);
 
         // Vanilla Recipes
 

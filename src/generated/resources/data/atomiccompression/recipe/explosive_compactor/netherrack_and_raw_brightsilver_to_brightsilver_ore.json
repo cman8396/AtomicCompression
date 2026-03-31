@@ -3,26 +3,25 @@
   "ingredients": [
     {
       "count": 4,
-      "ingredient": "minecraft:stone"
+      "ingredient": "minecraft:netherrack"
     },
     {
       "count": 8,
-      "ingredient": "atomiccompression:raw_saltpeter"
+      "ingredient": "atomiccompression:raw_brightsilver"
     }
   ],
   "result": {
     "count": 1,
-    "id": "atomiccompression:lead_ore"
+    "id": "atomiccompression:brightsilver_ore"
   },
   "secondaryResult": {
     "percentages": [
-      1.0,
       0.5,
       0.1
     ],
     "result": {
       "count": 1,
-      "id": "minecraft:cobblestone"
+      "id": "minecraft:netherrack"
     }
   }
 }

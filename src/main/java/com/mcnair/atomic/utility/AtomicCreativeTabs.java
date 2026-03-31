@@ -27,6 +27,8 @@ public class AtomicCreativeTabs {
                         output.accept(AtomicBlocks.ATOMIC_GLASS_PANE.get());
                         output.accept(AtomicBlocks.DENSE_BASALT.get());
 
+                        output.accept(AtomicBlocks.DEEPCOAL_ORE.get());
+                        output.accept(AtomicBlocks.DEEPSLATE_DEEPCOAL_ORE.get());
                         output.accept(AtomicBlocks.SULFUR_ORE.get());
                         output.accept(AtomicBlocks.DEEPSLATE_SULFUR_ORE.get());
                         output.accept(AtomicBlocks.SALTPETER_ORE.get());
@@ -43,6 +45,7 @@ public class AtomicCreativeTabs {
                         output.accept(AtomicBlocks.END_ATOMIC_ORE.get());
 
                         output.accept(AtomicBlocks.GUNPOWDER_BLOCK.get());
+                        output.accept(AtomicBlocks.DEEPCOAL_BLOCK.get());
                         output.accept(AtomicBlocks.RAW_SULFUR_BLOCK.get());
                         output.accept(AtomicBlocks.RAW_SALTPETER_BLOCK.get());
                         output.accept(AtomicBlocks.RAW_LEAD_BLOCK.get());
@@ -78,6 +81,7 @@ public class AtomicCreativeTabs {
                         output.accept(AtomicBlocks.ASHENWOOD_TRAPDOOR.get());
 
                         /* ADD ITEMS */
+                        output.accept(AtomicItems.DEEPCOAL.get());
                         output.accept(AtomicItems.RAW_SULFUR.get());
                         output.accept(AtomicItems.RAW_SALTPETER.get());
                         output.accept(AtomicItems.RAW_LEAD.get());
@@ -92,6 +96,7 @@ public class AtomicCreativeTabs {
                         output.accept(AtomicItems.BUNGERITE_ALLOY_INGOT.get());
 
                         output.accept(AtomicItems.SAWDUST.get());
+                        output.accept(AtomicItems.DEEPCOAL_DUST.get());
                         output.accept(AtomicItems.ATOMIC_DUST.get());
                         output.accept(AtomicItems.SULFUR_DUST.get());
                         output.accept(AtomicItems.SALTPETER_DUST.get());

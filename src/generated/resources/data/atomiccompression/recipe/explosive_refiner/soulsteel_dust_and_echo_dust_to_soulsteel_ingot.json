@@ -1,0 +1,15 @@
+{
+  "type": "atomiccompression:explosive_refiner",
+  "ingredients": [
+    {
+      "ingredient": "atomiccompression:soulsteel_dust"
+    },
+    {
+      "ingredient": "atomiccompression:echo_dust"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "atomiccompression:soulsteel_ingot"
+  }
+}

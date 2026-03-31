@@ -26,6 +26,12 @@ public class AtomicBlocks {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(AtomicCompression.MOD_ID);
 
     /* ORE BLOCKS */
+    public static final DeferredBlock<Block> DEEPCOAL_ORE = registerBlock("deepcoal_ore",
+            (properties) -> new DropExperienceBlock(UniformInt.of(1, 2),
+                    properties.strength(3.0F, 3.0F).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> DEEPSLATE_DEEPCOAL_ORE = registerBlock("deepslate_deepcoal_ore",
+            (properties) -> new DropExperienceBlock(UniformInt.of(1, 2),
+                    properties.strength(4.5F, 3.0F).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
     public static final DeferredBlock<Block> SULFUR_ORE = registerBlock("sulfur_ore",
             (properties) -> new DropExperienceBlock(UniformInt.of(1, 3),
                     properties.strength(1.5f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
@@ -40,10 +46,10 @@ public class AtomicBlocks {
                     properties.strength(2f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
     public static final DeferredBlock<Block> LEAD_ORE = registerBlock("lead_ore",
             (properties) -> new DropExperienceBlock(UniformInt.of(1, 3),
-                    properties.strength(1.5f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+                    properties.strength(3F, 3.0F).requiresCorrectToolForDrops().sound(SoundType.STONE)));
     public static final DeferredBlock<Block> DEEPSLATE_LEAD_ORE = registerBlock("deepslate_lead_ore",
             (properties) -> new DropExperienceBlock(UniformInt.of(1, 3),
-                    properties.strength(2f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
+                    properties.strength(4.5F, 3.0F).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
     public static final DeferredBlock<Block> BRIGHTSILVER_ORE = registerBlock("brightsilver_ore",
             (properties) -> new DropExperienceBlock(UniformInt.of(3, 6),
                     properties.strength(2f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
@@ -83,6 +89,9 @@ public class AtomicBlocks {
     public static final DeferredBlock<Block> GUNPOWDER_BLOCK = registerBlock("gunpowder_block",
             (properties) -> new ColoredFallingBlock(new ColorRGBA(-8356741),
                     properties.strength(0.6f).sound(SoundType.SAND)));
+    public static final DeferredBlock<Block> DEEPCOAL_BLOCK = registerBlock("deepcoal_block",
+            (properties) -> new Block(
+                    properties.strength(4f, 6f).sound(SoundType.STONE)));
     public static final DeferredBlock<Block> RAW_SULFUR_BLOCK = registerBlock("raw_sulfur_block",
             (properties) -> new Block(
                     properties.strength(4f, 6f).sound(SoundType.STONE)));

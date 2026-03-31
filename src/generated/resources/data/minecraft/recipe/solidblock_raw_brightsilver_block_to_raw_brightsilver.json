@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "atomiccompression:raw_brightsilver_block"
+  ],
+  "result": {
+    "count": 9,
+    "id": "atomiccompression:raw_brightsilver"
+  }
+}

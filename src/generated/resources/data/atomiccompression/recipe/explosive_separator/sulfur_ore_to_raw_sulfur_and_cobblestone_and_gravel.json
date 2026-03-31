@@ -2,7 +2,7 @@
   "type": "atomiccompression:explosive_separator",
   "ingredient": "atomiccompression:sulfur_ore",
   "result": {
-    "count": 2,
+    "count": 6,
     "id": "atomiccompression:raw_sulfur"
   },
   "secondaryResult": {

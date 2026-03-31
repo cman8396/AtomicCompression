@@ -2,7 +2,7 @@
   "type": "minecraft:blasting",
   "category": "misc",
   "cookingtime": 100,
-  "experience": 0.3,
+  "experience": 0.35,
   "group": "bungerite",
   "ingredient": "atomiccompression:raw_bungerite",
   "result": {

@@ -6,7 +6,7 @@
     },
     {
       "count": 2,
-      "ingredient": "minecraft:diamond"
+      "ingredient": "atomiccompression:diamond_dust"
     }
   ],
   "result": {

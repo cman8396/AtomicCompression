@@ -1,0 +1,16 @@
+{
+  "type": "atomiccompression:explosive_infuser",
+  "ingredients": [
+    {
+      "count": 2,
+      "ingredient": "atomiccompression:raw_soulsteel"
+    },
+    {
+      "ingredient": "atomiccompression:echo_dust"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "atomiccompression:soulsteel_ingot"
+  }
+}

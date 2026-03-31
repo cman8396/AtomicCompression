@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "atomiccompression:deepcoal"
+  ],
+  "result": {
+    "count": 1,
+    "id": "atomiccompression:deepcoal_dust"
+  }
+}

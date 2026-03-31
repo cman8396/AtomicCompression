@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:solidblock_deepcoal_block_to_deepcoal"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_translation{key='block.atomiccompression.deepcoal_block', args=[]}": {
+      "conditions": {
+        "items": [
+          {
+            "items": "atomiccompression:deepcoal_block"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_translation{key='block.atomiccompression.deepcoal_block', args=[]}"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:solidblock_deepcoal_block_to_deepcoal"
+    ]
+  }
+}

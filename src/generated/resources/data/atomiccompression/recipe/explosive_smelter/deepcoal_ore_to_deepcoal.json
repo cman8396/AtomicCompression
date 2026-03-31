@@ -1,0 +1,8 @@
+{
+  "type": "atomiccompression:explosive_smelter",
+  "ingredient": "atomiccompression:deepcoal_ore",
+  "result": {
+    "count": 3,
+    "id": "atomiccompression:deepcoal"
+  }
+}

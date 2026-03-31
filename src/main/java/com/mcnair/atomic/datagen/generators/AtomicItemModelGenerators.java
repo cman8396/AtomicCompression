@@ -29,6 +29,7 @@ public class AtomicItemModelGenerators extends ItemModelGenerators {
         this.generateFlatItem(AtomicItems.RAW_BRIGHTSILVER.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(AtomicItems.RAW_BUNGERITE.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(AtomicItems.RAW_SOULSTEEL.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(AtomicItems.DEEPCOAL.get(), ModelTemplates.FLAT_ITEM);
 
         /* DUSTS */
         this.generateFlatItem(AtomicItems.SAWDUST.get(), ModelTemplates.FLAT_ITEM);
@@ -39,6 +40,7 @@ public class AtomicItemModelGenerators extends ItemModelGenerators {
         this.generateFlatItem(AtomicItems.BRIGHTSILVER_DUST.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(AtomicItems.BUNGERITE_DUST.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(AtomicItems.SOULSTEEL_DUST.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(AtomicItems.DEEPCOAL_DUST.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(AtomicItems.ENDER_DUST.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(AtomicItems.DIAMOND_DUST.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(AtomicItems.EMERALD_DUST.get(), ModelTemplates.FLAT_ITEM);

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:solidblock_raw_brightsilver_to_raw_brightsilver_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_translation{key='item.atomiccompression.raw_brightsilver', args=[]}": {
+      "conditions": {
+        "items": [
+          {
+            "items": "atomiccompression:raw_brightsilver"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_translation{key='item.atomiccompression.raw_brightsilver', args=[]}"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:solidblock_raw_brightsilver_to_raw_brightsilver_block"
+    ]
+  }
+}

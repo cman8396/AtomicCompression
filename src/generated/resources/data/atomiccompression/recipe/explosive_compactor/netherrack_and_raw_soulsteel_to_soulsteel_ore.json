@@ -1,0 +1,27 @@
+{
+  "type": "atomiccompression:explosive_compactor",
+  "ingredients": [
+    {
+      "count": 4,
+      "ingredient": "minecraft:netherrack"
+    },
+    {
+      "count": 8,
+      "ingredient": "atomiccompression:raw_soulsteel"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "atomiccompression:soulsteel_ore"
+  },
+  "secondaryResult": {
+    "percentages": [
+      0.5,
+      0.1
+    ],
+    "result": {
+      "count": 1,
+      "id": "minecraft:netherrack"
+    }
+  }
+}

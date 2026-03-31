@@ -1,5 +1,5 @@
 {
-  "feature": "atomiccompression:deepslate_sulfurc_ore_placed",
+  "feature": "atomiccompression:deepslate_sulfur_ore_placed",
   "placement": [
     {
       "type": "minecraft:count",
