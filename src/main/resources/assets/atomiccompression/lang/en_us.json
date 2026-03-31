@@ -7,8 +7,11 @@
   "block.atomiccompression.deepslate_saltpeter_ore": "Deepslate Saltpeter Ore",
   "block.atomiccompression.lead_ore": "Lead Ore",
   "block.atomiccompression.deepslate_lead_ore": "Deepslate Lead Ore",
+  "block.atomiccompression.brightsilver_ore": "Brightsilver Ore",
+  "block.atomiccompression.brightsilver_deepslate_ore": "Brightsilver Deepslate Ore",
   "block.atomiccompression.bungerite_ore": "Bungerite Ore",
   "block.atomiccompression.deepslate_bungerite_ore": "Deepslate Bungerite Ore",
+  "block.atomiccompression.soulsteel_ore": "Soulsteel Ore",
   "block.atomiccompression.atomic_ore": "Atomic Ore",
   "block.atomiccompression.deepslate_atomic_ore": "Deepslate Atomic Ore",
   "block.atomiccompression.nether_atomic_ore": "Nether Atomic Ore",
@@ -21,11 +24,15 @@
   "block.atomiccompression.raw_sulfur_block": "Block of Raw Sulfur",
   "block.atomiccompression.raw_saltpeter_block": "Block of Raw Saltpeter",
   "block.atomiccompression.raw_lead_block": "Block of Raw Lead",
+  "block.atomiccompression.raw_brightsilver_block": "Raw Brightsilver Block",
   "block.atomiccompression.raw_bungerite_block": "Block of Raw Bungerite",
+  "block.atomiccompression.raw_soulsteel_block": "Raw Soulsteel Block",
   "block.atomiccompression.sulfur_dust_block": "Block of Sulfur Dust",
   "block.atomiccompression.saltpeter_dust_block": "Block of Saltpeter Dust",
   "block.atomiccompression.lead_block": "Block of Lead",
+  "block.atomiccompression.brightsilver_block": "Brightsilver Block",
   "block.atomiccompression.refined_bungerite_block": "Block of Refined Bungerite",
+  "block.atomiccompression.soulsteel_block": "Soulsteel Block",
   "block.atomiccompression.bungerite_alloy_block": "Block of Bungerite Alloy",
   "block.atomiccompression.atomic_block": "Atomic Block",
   "block.atomiccompression.empowered_atomic_block": "Empowered Atomic Block",
@@ -36,9 +43,9 @@
   "block.atomiccompression.stripped_ashenwood_wood": "Stripped Ashenwood Wood",
   "block.atomiccompression.ashenwood_leaves": "Ashenwood Leaves",
   "block.atomiccompression.ashenwood_leaves_flowering": "Flowering Ashenwood Leaves",
-  
+
   "block.atomiccompression.ashenwood_sapling": "Ashenwood Sapling",
-  
+
   "block.atomiccompression.ashenwood_planks": "Ashenwood Planks",
   "block.atomiccompression.ashenwood_stairs": "Ashenwood Stairs",
   "block.atomiccompression.ashenwood_slab": "Ashenwood Slab",
@@ -58,21 +65,38 @@
   "block.atomiccompression.explosive_infuser": "Explosive Infuser",
 
 
-
   "item.atomiccompression.atomic_shard": "Atomic Shard",
   "item.atomiccompression.raw_sulfur": "Raw Sulfur",
   "item.atomiccompression.raw_saltpeter": "Raw Saltpeter",
   "item.atomiccompression.raw_lead": "Raw Lead",
+  "item.atomiccompression.raw_brightsilver": "Raw Brightsilver",
   "item.atomiccompression.raw_bungerite": "Raw Bungerite",
+  "item.atomiccompression.raw_soulsteel": "Raw Soulsteel",
+
+  "item.atomiccompression.sawdust": "Sawdust",
+  "item.atomiccompression.atomic_dust": "Atomic Dust",
   "item.atomiccompression.sulfur_dust": "Sulfur Dust",
   "item.atomiccompression.saltpeter_dust": "Saltpeter Dust",
+  "item.atomiccompression.lead_dust": "Lead Dust",
+  "item.atomiccompression.brightsilver_dust": "Brightsilver Dust",
+  "item.atomiccompression.bungerite_dust": "Bungerite Dust",
+  "item.atomiccompression.soulsteel_dust": "Soulsteel Dust",
+  "item.atomiccompression.ender_dust": "Ender Dust",
+  "item.atomiccompression.diamond_dust": "Diamond Dust",
+  "item.atomiccompression.emerald_dust": "Emerald Dust",
+  "item.atomiccompression.echo_dust": "Echo Dust",
+
   "item.atomiccompression.empowered_atomic_shard": "Empowered Atomic Shard",
   "item.atomiccompression.lead_ingot": "Lead Ingot",
   "item.atomiccompression.lead_nugget": "Lead Nugget",
+  "item.atomiccompression.brightsilver_ingot": "Brightsilver Ingot",
+  "item.atomiccompression.brightsilver_nugget": "Brightsilver Nugget",
   "item.atomiccompression.refined_bungerite": "Refined Bungerite",
   "item.atomiccompression.refined_bungerite_nugget": "Refined Bungerite Nugget",
   "item.atomiccompression.bungerite_alloy_ingot": "Bungerite Alloy Ingot",
   "item.atomiccompression.bungerite_alloy_nugget": "Bungerite Alloy Nugget",
+  "item.atomiccompression.soulsteel_ingot": "Soulsteel Ingot",
+  "item.atomiccompression.soulsteel_nugget": "Soulsteel Nugget",
 
   "item.atomiccompression.obsidian_chunk": "Obsidian Chunk",
   "item.atomiccompression.basalt_tool_shaft": "Basalt Tool Shaft",
@@ -86,9 +110,14 @@
   "item.atomiccompression.bungerite_alloy_axe": "Bungerite Alloy Axe",
   "item.atomiccompression.bungerite_alloy_hoe": "Bungerite Alloy Hoe",
 
-  "item.atomiccompression.refined_bungerite_machine_casing": "Refined Bungerite Machine Casing",
 
+  "item.atomiccompression.brightsilver_machine_casing": "Brightsilver Machine Casing",
+  "item.atomiccompression.refined_bungerite_machine_casing": "Refined Bungerite Machine Casing",
+  "item.atomiccompression.soulsteel_machine_casing": "Soulsteel Machine Casing",
+
+  "general.atomiccompression.brightsilver": "Brightsilver",
   "general.atomiccompression.refined_bungerite": "Refined Bungerite",
+  "general.atomiccompression.soulsteel": "Soulsteel",
   "general.atomiccompression.bungerite_alloy": "Bungerite Alloy",
 
   "tooltip.atomiccompression.machines.fuel": "Explosive Fuel",
@@ -134,11 +163,19 @@
   "atomiccompression.configuration.explosive_infuser": "Explosive Infuser Config",
   "atomiccompression.configuration.craftingDurationTicks_Base": "Base Crafting Duration (in ticks)",
   "atomiccompression.configuration.craftingDurationModifier_base": "Crafting Duration Modifier (Base)",
+  "atomiccompression.configuration.craftingDurationModifier_Brightsilver": "Crafting Duration Modifier (Brightsilver)",
   "atomiccompression.configuration.craftingDurationModifier_RefinedBungerite": "Crafting Duration Modifier (Refined Bungerite)",
+  "atomiccompression.configuration.craftingDurationModifier_Soulsteel": "Crafting Duration Modifier (Soulsteel)",
   "atomiccompression.configuration.chanceToSaveIgnitionSource_base": "Chance to Save Ignition Source Durability (Base)",
+  "atomiccompression.configuration.chanceToSaveIgnitionSource_Brightsilver": "Chance to Save Ignition Source Durability (Brightsilver)",
   "atomiccompression.configuration.chanceToSaveIgnitionSource_RefinedBungerite": "Chance to Save Ignition Source Durability (Refined Bungerite)",
+  "atomiccompression.configuration.chanceToSaveIgnitionSource_Soulsteel": "Chance to Save Ignition Source Durability (Soulsteel)",
   "atomiccompression.configuration.chanceToSaveFuel_base": "Chance to Save Fuel (Base)",
+  "atomiccompression.configuration.chanceToSaveFuel_Brightsilver": "Chance to Save Fuel (Brightsilver)",
   "atomiccompression.configuration.chanceToSaveFuel_RefinedBungerite": "Chance to Save Fuel (Refined Bungerite)",
+  "atomiccompression.configuration.chanceToSaveFuel_Soulsteel": "Chance to Save Fuel (Soulsteel)",
   "atomiccompression.configuration.fuelTankCapacity_base": "Fuel Tank Capacity (Base)",
-  "atomiccompression.configuration.fuelTankCapacity_RefinedBungerite": "Fuel Tank Capacity (Refined Bungerite)"
+  "atomiccompression.configuration.fuelTankCapacity_Brightsilver": "Fuel Tank Capacity (Brightsilver)",
+  "atomiccompression.configuration.fuelTankCapacity_RefinedBungerite": "Fuel Tank Capacity (Refined Bungerite)",
+  "atomiccompression.configuration.fuelTankCapacity_Soulsteel": "Fuel Tank Capacity (Soulsteel)"
 }

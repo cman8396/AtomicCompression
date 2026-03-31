@@ -1,6 +1,16 @@
 {
   "values": [
+    "#c:dusts/wood",
+    "#c:dusts/atomic",
     "#c:dusts/sulfur",
-    "#c:dusts/saltpeter"
+    "#c:dusts/saltpeter",
+    "#c:dusts/lead",
+    "#c:dusts/brightsilver",
+    "#c:dusts/refined_bungerite",
+    "#c:dusts/soulsteel",
+    "#c:dusts/ender",
+    "#c:dusts/diamond",
+    "#c:dusts/emerald",
+    "#c:dusts/echo"
   ]
 }

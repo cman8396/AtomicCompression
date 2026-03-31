@@ -12,25 +12,42 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 public class AtomicItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(AtomicCompression.MOD_ID);
 
-    /* BLOCK DROPS */
+
+    /* ORE DROPS */
     public static final DeferredItem<Item> ATOMIC_SHARD = ITEMS.register("atomic_shard", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
     public static final DeferredItem<Item> RAW_SULFUR = ITEMS.register("raw_sulfur", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
     public static final DeferredItem<Item> RAW_SALTPETER = ITEMS.register("raw_saltpeter", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
     public static final DeferredItem<Item> RAW_LEAD = ITEMS.register("raw_lead", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
+    public static final DeferredItem<Item> RAW_BRIGHTSILVER = ITEMS.register("raw_brightsilver", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
     public static final DeferredItem<Item> RAW_BUNGERITE = ITEMS.register("raw_bungerite", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
+    public static final DeferredItem<Item> RAW_SOULSTEEL = ITEMS.register("raw_soulsteel", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
 
-    /* BLOCK DROPS - INTERMEDIATE ITEMS */
+    /* DUSTS */
+    public static final DeferredItem<Item> SAWDUST = ITEMS.register("sawdust", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
+    public static final DeferredItem<Item> ATOMIC_DUST = ITEMS.register("atomic_dust", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
     public static final DeferredItem<Item> SULFUR_DUST = ITEMS.register("sulfur_dust", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
     public static final DeferredItem<Item> SALTPETER_DUST = ITEMS.register("saltpeter_dust", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
+    public static final DeferredItem<Item> LEAD_DUST = ITEMS.register("lead_dust", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
+    public static final DeferredItem<Item> BRIGHTSILVER_DUST = ITEMS.register("brightsilver_dust", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
+    public static final DeferredItem<Item> BUNGERITE_DUST = ITEMS.register("bungerite_dust", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
+    public static final DeferredItem<Item> SOULSTEEL_DUST = ITEMS.register("soulsteel_dust", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
+    public static final DeferredItem<Item> ENDER_DUST = ITEMS.register("ender_dust", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
+    public static final DeferredItem<Item> DIAMOND_DUST = ITEMS.register("diamond_dust", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
+    public static final DeferredItem<Item> EMERALD_DUST = ITEMS.register("emerald_dust", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
+    public static final DeferredItem<Item> ECHO_DUST = ITEMS.register("echo_dust", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
 
-    /* BLOCK DROPS - FINISHED ITEMS */
+    /* PROCESSED ITEMS */
     public static final DeferredItem<Item> EMPOWERED_ATOMIC_SHARD = ITEMS.register("empowered_atomic_shard", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
     public static final DeferredItem<Item> LEAD_INGOT = ITEMS.register("lead_ingot", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
     public static final DeferredItem<Item> LEAD_NUGGET = ITEMS.register("lead_nugget", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
+    public static final DeferredItem<Item> BRIGHTSILVER_INGOT = ITEMS.register("brightsilver_ingot", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
+    public static final DeferredItem<Item> BRIGHTSILVER_NUGGET = ITEMS.register("brightsilver_nugget", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
     public static final DeferredItem<Item> REFINED_BUNGERITE = ITEMS.register("refined_bungerite", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
     public static final DeferredItem<Item> REFINED_BUNGERITE_NUGGET = ITEMS.register("refined_bungerite_nugget", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
     public static final DeferredItem<Item> BUNGERITE_ALLOY_INGOT = ITEMS.register("bungerite_alloy_ingot", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
     public static final DeferredItem<Item> BUNGERITE_ALLOY_NUGGET = ITEMS.register("bungerite_alloy_nugget", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
+    public static final DeferredItem<Item> SOULSTEEL_INGOT = ITEMS.register("soulsteel_ingot", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
+    public static final DeferredItem<Item> SOULSTEEL_NUGGET = ITEMS.register("soulsteel_nugget", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
 
     /* CRAFTING INGREDIENTS */
     public static final DeferredItem<Item> OBSIDIAN_CHUNK = ITEMS.register("obsidian_chunk", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
@@ -47,7 +64,9 @@ public class AtomicItems {
     public static final DeferredItem<HoeItem> BUNGERITE_ALLOY_HOE = ITEMS.register("bungerite_alloy_hoe", registryName -> new HoeItem(AtomicToolTiers.BUNGERITE_ALLOY, -4.0f, 0.0f, new ShovelItem.Properties().rarity(Rarity.RARE).setId(ResourceKey.create(Registries.ITEM, registryName))));
 
     /* MACHINE CASINGS */
+    public static final DeferredItem<Item> BRIGHTSILVER_MACHINE_CASING = ITEMS.register("brightsilver_machine_casing", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
     public static final DeferredItem<Item> REFINED_BUNGERITE_MACHINE_CASING = ITEMS.register("refined_bungerite_machine_casing", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
+    public static final DeferredItem<Item> SOULSTEEL_MACHINE_CASING = ITEMS.register("soulsteel_machine_casing", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
 
 
 //    public static final DeferredItem<HammerItem> BISMUTH_HAMMER = ITEMS.registerItem("bungerite_alloy_hammer",

@@ -33,19 +33,25 @@ public class AtomicBlockTagProvider extends BlockTagsProvider {
                 .add(AtomicBlocks.DEEPSLATE_SALTPETER_ORE.get())
                 .add(AtomicBlocks.LEAD_ORE.get())
                 .add(AtomicBlocks.DEEPSLATE_LEAD_ORE.get())
+                .add(AtomicBlocks.BRIGHTSILVER_ORE.get())
+                .add(AtomicBlocks.DEEPSLATE_BRIGHTSILVER_ORE.get())
+                .add(AtomicBlocks.BUNGERITE_ORE.get())
+                .add(AtomicBlocks.SOULSTEEL_ORE.get())
                 .add(AtomicBlocks.ATOMIC_ORE.get())
                 .add(AtomicBlocks.DEEPSLATE_ATOMIC_ORE.get())
-                .add(AtomicBlocks.BUNGERITE_ORE.get())
                 .add(AtomicBlocks.NETHER_ATOMIC_ORE.get())
                 .add(AtomicBlocks.END_ATOMIC_ORE.get())
                 .add(AtomicBlocks.DENSE_BASALT.get())
                 .add(AtomicBlocks.RAW_SULFUR_BLOCK.get())
                 .add(AtomicBlocks.RAW_SALTPETER_BLOCK.get())
                 .add(AtomicBlocks.RAW_LEAD_BLOCK.get())
+                .add(AtomicBlocks.RAW_BRIGHTSILVER_BLOCK.get())
                 .add(AtomicBlocks.RAW_BUNGERITE_BLOCK.get())
+                .add(AtomicBlocks.RAW_SOULSTEEL_BLOCK.get())
                 .add(AtomicBlocks.LEAD_BLOCK.get())
+                .add(AtomicBlocks.BRIGHTSILVER_BLOCK.get())
                 .add(AtomicBlocks.REFINED_BUNGERITE_BLOCK.get())
-                .add(AtomicBlocks.BUNGERITE_ALLOY_BLOCK.get())
+                .add(AtomicBlocks.SOULSTEEL_BLOCK.get())
                 .add(AtomicBlocks.ATOMIC_BLOCK.get())
                 .add(AtomicBlocks.EMPOWERED_ATOMIC_BLOCK.get());
 
@@ -70,9 +76,16 @@ public class AtomicBlockTagProvider extends BlockTagsProvider {
                 .add(AtomicBlocks.EMPOWERED_ATOMIC_BLOCK.get());
 
         tag(BlockTags.NEEDS_DIAMOND_TOOL)
+                .add(AtomicBlocks.DEEPSLATE_BRIGHTSILVER_ORE.get())
+                .add(AtomicBlocks.BRIGHTSILVER_ORE.get())
                 .add(AtomicBlocks.BUNGERITE_ORE.get())
+                .add(AtomicBlocks.SOULSTEEL_ORE.get())
+                .add(AtomicBlocks.RAW_BRIGHTSILVER_BLOCK.get())
                 .add(AtomicBlocks.RAW_BUNGERITE_BLOCK.get())
+                .add(AtomicBlocks.RAW_SOULSTEEL_BLOCK.get())
+                .add(AtomicBlocks.BRIGHTSILVER_BLOCK.get())
                 .add(AtomicBlocks.REFINED_BUNGERITE_BLOCK.get())
+                .add(AtomicBlocks.SOULSTEEL_BLOCK.get())
                 .add(AtomicBlocks.BUNGERITE_ALLOY_BLOCK.get());
 
         tag(BlockTags.FENCES).
@@ -116,12 +129,16 @@ public class AtomicBlockTagProvider extends BlockTagsProvider {
                 .addTag(CommonBlockTags.STORAGE_BLOCKS_RAW_SULFUR)
                 .addTag(CommonBlockTags.STORAGE_BLOCKS_RAW_SALTPETER)
                 .addTag(CommonBlockTags.STORAGE_BLOCKS_RAW_LEAD)
+                .addTag(CommonBlockTags.STORAGE_BLOCKS_RAW_BRIGHTSILVER)
                 .addTag(CommonBlockTags.STORAGE_BLOCKS_RAW_BUNGERITE)
+                .addTag(CommonBlockTags.STORAGE_BLOCKS_RAW_SOULSTEEL)
                 .addTag(CommonBlockTags.STORAGE_BLOCKS_GUNPOWDER)
                 .addTag(CommonBlockTags.STORAGE_BLOCKS_SULFUR_DUST)
                 .addTag(CommonBlockTags.STORAGE_BLOCKS_SALTPETER_DUST)
                 .addTag(CommonBlockTags.STORAGE_BLOCKS_LEAD)
+                .addTag(CommonBlockTags.STORAGE_BLOCKS_BRIGHTSILVER)
                 .addTag(CommonBlockTags.STORAGE_BLOCKS_REFINED_BUNGERITE)
+                .addTag(CommonBlockTags.STORAGE_BLOCKS_SOULSTEEL)
                 .addTag(CommonBlockTags.STORAGE_BLOCKS_BUNGERITE_ALLOY)
                 .addTag(CommonBlockTags.STORAGE_BLOCKS_ATOMIC)
                 .addTag(CommonBlockTags.STORAGE_BLOCKS_EMPOWERED_ATOMIC);
@@ -131,8 +148,12 @@ public class AtomicBlockTagProvider extends BlockTagsProvider {
                 .add(AtomicBlocks.RAW_SALTPETER_BLOCK.get());
         tag(CommonBlockTags.STORAGE_BLOCKS_RAW_LEAD)
                 .add(AtomicBlocks.RAW_LEAD_BLOCK.get());
+        tag(CommonBlockTags.STORAGE_BLOCKS_RAW_BRIGHTSILVER)
+                .add(AtomicBlocks.RAW_BRIGHTSILVER_BLOCK.get());
         tag(CommonBlockTags.STORAGE_BLOCKS_RAW_BUNGERITE)
                 .add(AtomicBlocks.RAW_BUNGERITE_BLOCK.get());
+        tag(CommonBlockTags.STORAGE_BLOCKS_RAW_SOULSTEEL)
+                .add(AtomicBlocks.RAW_SOULSTEEL_BLOCK.get());
         tag(CommonBlockTags.STORAGE_BLOCKS_GUNPOWDER)
                 .add(AtomicBlocks.GUNPOWDER_BLOCK.get());
         tag(CommonBlockTags.STORAGE_BLOCKS_SULFUR_DUST)
@@ -155,7 +176,9 @@ public class AtomicBlockTagProvider extends BlockTagsProvider {
                 .addTag(CommonBlockTags.ORES_SULFUR)
                 .addTag(CommonBlockTags.ORES_SALTPETER)
                 .addTag(CommonBlockTags.ORES_LEAD)
+                .addTag(CommonBlockTags.ORES_BRIGHTSILVER)
                 .addTag(CommonBlockTags.ORES_BUNGERITE)
+                .addTag(CommonBlockTags.ORES_SOULSTEEL)
                 .addTag(CommonBlockTags.ORES_ATOMIC);
         tag(CommonBlockTags.ORES_SULFUR)
                 .add(AtomicBlocks.SULFUR_ORE.get(), AtomicBlocks.DEEPSLATE_SULFUR_ORE.get());
@@ -163,8 +186,13 @@ public class AtomicBlockTagProvider extends BlockTagsProvider {
                 .add(AtomicBlocks.SALTPETER_ORE.get(), AtomicBlocks.DEEPSLATE_SALTPETER_ORE.get());
         tag(CommonBlockTags.ORES_LEAD)
                 .add(AtomicBlocks.LEAD_ORE.get(), AtomicBlocks.DEEPSLATE_LEAD_ORE.get());
+        tag(CommonBlockTags.ORES_BRIGHTSILVER)
+                .add(AtomicBlocks.BRIGHTSILVER_ORE.get())
+                .add(AtomicBlocks.DEEPSLATE_BRIGHTSILVER_ORE.get());
         tag(CommonBlockTags.ORES_BUNGERITE)
                 .add(AtomicBlocks.BUNGERITE_ORE.get());
+        tag(CommonBlockTags.ORES_SOULSTEEL)
+                .add(AtomicBlocks.SOULSTEEL_ORE.get());
         tag(CommonBlockTags.ORES_ATOMIC)
                 .add(AtomicBlocks.ATOMIC_ORE.get(),
                         AtomicBlocks.DEEPSLATE_ATOMIC_ORE.get(),

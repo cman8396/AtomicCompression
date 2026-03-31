@@ -1,8 +1,15 @@
 {
   "values": [
+    "atomiccompression:deepslate_brightsilver_ore",
+    "atomiccompression:brightsilver_ore",
     "atomiccompression:bungerite_ore",
+    "atomiccompression:soulsteel_ore",
+    "atomiccompression:raw_brightsilver_block",
     "atomiccompression:raw_bungerite_block",
+    "atomiccompression:raw_soulsteel_block",
+    "atomiccompression:brightsilver_block",
     "atomiccompression:refined_bungerite_block",
+    "atomiccompression:soulsteel_block",
     "atomiccompression:bungerite_alloy_block"
   ]
 }

@@ -36,6 +36,7 @@ public class AtomicCreativeTabs {
                         output.accept(AtomicBlocks.BRIGHTSILVER_ORE.get());
                         output.accept(AtomicBlocks.DEEPSLATE_BRIGHTSILVER_ORE.get());
                         output.accept(AtomicBlocks.BUNGERITE_ORE.get());
+                        output.accept(AtomicBlocks.SOULSTEEL_ORE.get());
                         output.accept(AtomicBlocks.ATOMIC_ORE.get());
                         output.accept(AtomicBlocks.DEEPSLATE_ATOMIC_ORE.get());
                         output.accept(AtomicBlocks.NETHER_ATOMIC_ORE.get());
@@ -47,11 +48,13 @@ public class AtomicCreativeTabs {
                         output.accept(AtomicBlocks.RAW_LEAD_BLOCK.get());
                         output.accept(AtomicBlocks.RAW_BRIGHTSILVER_BLOCK.get());
                         output.accept(AtomicBlocks.RAW_BUNGERITE_BLOCK.get());
+                        output.accept(AtomicBlocks.RAW_SOULSTEEL_BLOCK.get());
                         output.accept(AtomicBlocks.SULFUR_DUST_BLOCK.get());
                         output.accept(AtomicBlocks.SALTPETER_DUST_BLOCK.get());
                         output.accept(AtomicBlocks.LEAD_BLOCK.get());
                         output.accept(AtomicBlocks.BRIGHTSILVER_BLOCK.get());
                         output.accept(AtomicBlocks.REFINED_BUNGERITE_BLOCK.get());
+                        output.accept(AtomicBlocks.SOULSTEEL_BLOCK.get());
                         output.accept(AtomicBlocks.BUNGERITE_ALLOY_BLOCK.get());
                         output.accept(AtomicBlocks.ATOMIC_BLOCK.get());
                         output.accept(AtomicBlocks.EMPOWERED_ATOMIC_BLOCK.get());
@@ -78,17 +81,33 @@ public class AtomicCreativeTabs {
                         output.accept(AtomicItems.RAW_SULFUR.get());
                         output.accept(AtomicItems.RAW_SALTPETER.get());
                         output.accept(AtomicItems.RAW_LEAD.get());
+                        output.accept(AtomicItems.RAW_BRIGHTSILVER.get());
                         output.accept(AtomicItems.RAW_BUNGERITE.get());
-
-                        output.accept(AtomicItems.SULFUR_DUST.get());
-                        output.accept(AtomicItems.SALTPETER_DUST.get());
+                        output.accept(AtomicItems.RAW_SOULSTEEL.get());
 
                         output.accept(AtomicItems.LEAD_INGOT.get());
+                        output.accept(AtomicItems.BRIGHTSILVER_INGOT.get());
                         output.accept(AtomicItems.REFINED_BUNGERITE.get());
+                        output.accept(AtomicItems.SOULSTEEL_INGOT.get());
                         output.accept(AtomicItems.BUNGERITE_ALLOY_INGOT.get());
 
+                        output.accept(AtomicItems.SAWDUST.get());
+                        output.accept(AtomicItems.ATOMIC_DUST.get());
+                        output.accept(AtomicItems.SULFUR_DUST.get());
+                        output.accept(AtomicItems.SALTPETER_DUST.get());
+                        output.accept(AtomicItems.LEAD_DUST.get());
+                        output.accept(AtomicItems.BRIGHTSILVER_DUST.get());
+                        output.accept(AtomicItems.BUNGERITE_DUST.get());
+                        output.accept(AtomicItems.SOULSTEEL_DUST.get());
+                        output.accept(AtomicItems.ENDER_DUST.get());
+                        output.accept(AtomicItems.DIAMOND_DUST.get());
+                        output.accept(AtomicItems.EMERALD_DUST.get());
+                        output.accept(AtomicItems.ECHO_DUST.get());
+
                         output.accept(AtomicItems.LEAD_NUGGET.get());
+                        output.accept(AtomicItems.BRIGHTSILVER_NUGGET.get());
                         output.accept(AtomicItems.REFINED_BUNGERITE_NUGGET.get());
+                        output.accept(AtomicItems.SOULSTEEL_NUGGET.get());
                         output.accept(AtomicItems.BUNGERITE_ALLOY_NUGGET.get());
 
                         output.accept(AtomicItems.ATOMIC_SHARD.get());
@@ -106,7 +125,9 @@ public class AtomicCreativeTabs {
                         output.accept(AtomicItems.BUNGERITE_ALLOY_AXE.get());
                         output.accept(AtomicItems.BUNGERITE_ALLOY_HOE.get());
 
+                        output.accept(AtomicItems.BRIGHTSILVER_MACHINE_CASING.get());
                         output.accept(AtomicItems.REFINED_BUNGERITE_MACHINE_CASING.get());
+                        output.accept(AtomicItems.SOULSTEEL_MACHINE_CASING.get());
 
                         output.accept(AtomicBlocks.EXPLOSIVE_MILL.get());
                         output.accept(AtomicBlocks.EXPLOSIVE_COMPACTOR.get());

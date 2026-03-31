@@ -22,6 +22,7 @@ public class AtomicItemTagProvider extends ItemTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
 
+        // Tools and Armour
         tag(AtomicTags.Items.BUNGERITE_ALLOY_REPAIRABLE)
                 .add(AtomicItems.BUNGERITE_ALLOY_INGOT.get());
 
@@ -47,6 +48,8 @@ public class AtomicItemTagProvider extends ItemTagsProvider {
         tag(ItemTags.TRIM_MATERIALS)
                 .add(AtomicItems.BUNGERITE_ALLOY_INGOT.get());
 
+
+        // Wood
         tag(ItemTags.LOGS_THAT_BURN)
                 .add(AtomicBlocks.ASHENWOOD_LOG.get().asItem())
                 .add(AtomicBlocks.ASHENWOOD_WOOD.get().asItem())
@@ -81,9 +84,15 @@ public class AtomicItemTagProvider extends ItemTagsProvider {
 //        tag(AtomicTags.Items.MACHINE_FUEL_T4);
 
         tag(AtomicTags.Items.MACHINE_CASING)
-                .addTag(AtomicTags.Items.MACHINE_CASING_REFINED_BUNGERITE);
+                .addTag(AtomicTags.Items.MACHINE_CASING_BRIGHTSILVER)
+                .addTag(AtomicTags.Items.MACHINE_CASING_REFINED_BUNGERITE)
+                .addTag(AtomicTags.Items.MACHINE_CASING_SOULSTEEL);
+        tag(AtomicTags.Items.MACHINE_CASING_BRIGHTSILVER)
+                .add(AtomicItems.BRIGHTSILVER_MACHINE_CASING.asItem());
         tag(AtomicTags.Items.MACHINE_CASING_REFINED_BUNGERITE)
                 .add(AtomicItems.REFINED_BUNGERITE_MACHINE_CASING.asItem());
+        tag(AtomicTags.Items.MACHINE_CASING_SOULSTEEL)
+                .add(AtomicItems.SOULSTEEL_MACHINE_CASING.asItem());
 
         tag(AtomicTags.Items.MACHINE_IGNITION)
                 .add(Items.FLINT_AND_STEEL);
@@ -93,12 +102,16 @@ public class AtomicItemTagProvider extends ItemTagsProvider {
                 .addTag(CommonItemTags.STORAGE_BLOCKS_RAW_SULFUR)
                 .addTag(CommonItemTags.STORAGE_BLOCKS_RAW_SALTPETER)
                 .addTag(CommonItemTags.STORAGE_BLOCKS_RAW_LEAD)
+                .addTag(CommonItemTags.STORAGE_BLOCKS_RAW_BRIGHTSILVER)
                 .addTag(CommonItemTags.STORAGE_BLOCKS_RAW_BUNGERITE)
+                .addTag(CommonItemTags.STORAGE_BLOCKS_RAW_SOULSTEEL)
                 .addTag(CommonItemTags.STORAGE_BLOCKS_GUNPOWDER)
                 .addTag(CommonItemTags.STORAGE_BLOCKS_SULFUR_DUST)
                 .addTag(CommonItemTags.STORAGE_BLOCKS_SALTPETER_DUST)
                 .addTag(CommonItemTags.STORAGE_BLOCKS_LEAD)
+                .addTag(CommonItemTags.STORAGE_BLOCKS_BRIGHTSILVER)
                 .addTag(CommonItemTags.STORAGE_BLOCKS_REFINED_BUNGERITE)
+                .addTag(CommonItemTags.STORAGE_BLOCKS_SOULSTEEL)
                 .addTag(CommonItemTags.STORAGE_BLOCKS_BUNGERITE_ALLOY)
                 .addTag(CommonItemTags.STORAGE_BLOCKS_ATOMIC)
                 .addTag(CommonItemTags.STORAGE_BLOCKS_EMPOWERED_ATOMIC);
@@ -108,8 +121,12 @@ public class AtomicItemTagProvider extends ItemTagsProvider {
                 .add(AtomicBlocks.RAW_SALTPETER_BLOCK.asItem());
         tag(CommonItemTags.STORAGE_BLOCKS_RAW_LEAD)
                 .add(AtomicBlocks.RAW_LEAD_BLOCK.asItem());
+        tag(CommonItemTags.STORAGE_BLOCKS_BRIGHTSILVER)
+                .add(AtomicBlocks.RAW_BRIGHTSILVER_BLOCK.asItem());
         tag(CommonItemTags.STORAGE_BLOCKS_RAW_BUNGERITE)
                 .add(AtomicBlocks.RAW_BUNGERITE_BLOCK.asItem());
+        tag(CommonItemTags.STORAGE_BLOCKS_RAW_SOULSTEEL)
+                .add(AtomicBlocks.RAW_SOULSTEEL_BLOCK.asItem());
         tag(CommonItemTags.STORAGE_BLOCKS_GUNPOWDER)
                 .add(AtomicBlocks.GUNPOWDER_BLOCK.asItem());
         tag(CommonItemTags.STORAGE_BLOCKS_SULFUR_DUST)
@@ -118,8 +135,12 @@ public class AtomicItemTagProvider extends ItemTagsProvider {
                 .add(AtomicBlocks.SALTPETER_DUST_BLOCK.asItem());
         tag(CommonItemTags.STORAGE_BLOCKS_LEAD)
                 .add(AtomicBlocks.LEAD_BLOCK.asItem());
+        tag(CommonItemTags.STORAGE_BLOCKS_BRIGHTSILVER)
+                .add(AtomicBlocks.BRIGHTSILVER_BLOCK.asItem());
         tag(CommonItemTags.STORAGE_BLOCKS_REFINED_BUNGERITE)
                 .add(AtomicBlocks.REFINED_BUNGERITE_BLOCK.asItem());
+        tag(CommonItemTags.STORAGE_BLOCKS_SOULSTEEL)
+                .add(AtomicBlocks.SOULSTEEL_BLOCK.asItem());
         tag(CommonItemTags.STORAGE_BLOCKS_BUNGERITE_ALLOY)
                 .add(AtomicBlocks.BUNGERITE_ALLOY_BLOCK.asItem());
         tag(CommonItemTags.STORAGE_BLOCKS_ATOMIC)
@@ -132,7 +153,9 @@ public class AtomicItemTagProvider extends ItemTagsProvider {
                 .addTag(CommonItemTags.ORES_SULFUR)
                 .addTag(CommonItemTags.ORES_SALTPETER)
                 .addTag(CommonItemTags.ORES_LEAD)
+                .addTag(CommonItemTags.ORES_BRIGHTSILVER)
                 .addTag(CommonItemTags.ORES_BUNGERITE)
+                .addTag(CommonItemTags.ORES_SOULSTEEL)
                 .addTag(CommonItemTags.ORES_ATOMIC);
         tag(CommonItemTags.ORES_SULFUR)
                 .add(AtomicBlocks.SULFUR_ORE.asItem(), AtomicBlocks.DEEPSLATE_SULFUR_ORE.asItem());
@@ -140,8 +163,12 @@ public class AtomicItemTagProvider extends ItemTagsProvider {
                 .add(AtomicBlocks.SALTPETER_ORE.asItem(), AtomicBlocks.DEEPSLATE_SALTPETER_ORE.asItem());
         tag(CommonItemTags.ORES_LEAD)
                 .add(AtomicBlocks.LEAD_ORE.asItem(), AtomicBlocks.DEEPSLATE_LEAD_ORE.asItem());
+        tag(CommonItemTags.ORES_BRIGHTSILVER)
+                .add(AtomicBlocks.BRIGHTSILVER_ORE.asItem());
         tag(CommonItemTags.ORES_BUNGERITE)
                 .add(AtomicBlocks.BUNGERITE_ORE.asItem());
+        tag(CommonItemTags.ORES_SOULSTEEL)
+                .add(AtomicBlocks.SOULSTEEL_ORE.asItem());
         tag(CommonItemTags.ORES_ATOMIC)
                 .add(AtomicBlocks.ATOMIC_ORE.asItem(),
                         AtomicBlocks.DEEPSLATE_ATOMIC_ORE.asItem(),
@@ -153,34 +180,76 @@ public class AtomicItemTagProvider extends ItemTagsProvider {
                 .addTag(CommonItemTags.RAW_MATERIALS_SULFUR)
                 .addTag(CommonItemTags.RAW_MATERIALS_SALTPETER)
                 .addTag(CommonItemTags.RAW_MATERIALS_LEAD)
-                .addTag(CommonItemTags.RAW_MATERIALS_BUNGERITE);
+                .addTag(CommonItemTags.RAW_MATERIALS_BRIGHTSILVER)
+                .addTag(CommonItemTags.RAW_MATERIALS_BUNGERITE)
+                .addTag(CommonItemTags.RAW_MATERIALS_SOULSTEEL);
         tag(CommonItemTags.RAW_MATERIALS_SULFUR).
                 add(AtomicItems.RAW_SULFUR.get());
         tag(CommonItemTags.RAW_MATERIALS_SALTPETER).
                 add(AtomicItems.RAW_SALTPETER.get());
         tag(CommonItemTags.RAW_MATERIALS_LEAD).
                 add(AtomicItems.RAW_LEAD.get());
+        tag(CommonItemTags.RAW_MATERIALS_BRIGHTSILVER).
+                add(AtomicItems.RAW_BRIGHTSILVER.get());
         tag(CommonItemTags.RAW_MATERIALS_BUNGERITE).
                 add(AtomicItems.RAW_BUNGERITE.get());
+        tag(CommonItemTags.RAW_MATERIALS_SOULSTEEL).
+                add(AtomicItems.RAW_SOULSTEEL.get());
 
         // Dusts
         tag(Tags.Items.DUSTS)
+                .addTag(CommonItemTags.DUSTS_WOOD)
+                .addTag(CommonItemTags.DUSTS_ATOMIC)
                 .addTag(CommonItemTags.DUSTS_SULFUR)
-                .addTag(CommonItemTags.DUSTS_SALTPETER);
+                .addTag(CommonItemTags.DUSTS_SALTPETER)
+                .addTag(CommonItemTags.DUSTS_LEAD)
+                .addTag(CommonItemTags.DUSTS_BRIGHTSILVER)
+                .addTag(CommonItemTags.DUSTS_REFINED_BUNGERITE)
+                .addTag(CommonItemTags.DUSTS_SOULSTEEL)
+                .addTag(CommonItemTags.DUSTS_ENDER)
+                .addTag(CommonItemTags.DUSTS_DIAMOND)
+                .addTag(CommonItemTags.DUSTS_EMERALD)
+                .addTag(CommonItemTags.DUSTS_ECHO);
+        tag(CommonItemTags.DUSTS_WOOD)
+                .add(AtomicItems.SAWDUST.get());
+        tag(CommonItemTags.DUSTS_ATOMIC)
+                .add(AtomicItems.ATOMIC_DUST.get());
         tag(CommonItemTags.DUSTS_SULFUR)
                 .add(AtomicItems.SULFUR_DUST.get());
         tag(CommonItemTags.DUSTS_SALTPETER)
                 .add(AtomicItems.SALTPETER_DUST.get());
+        tag(CommonItemTags.DUSTS_LEAD)
+                .add(AtomicItems.LEAD_DUST.get());
+        tag(CommonItemTags.DUSTS_BRIGHTSILVER)
+                .add(AtomicItems.BRIGHTSILVER_DUST.get());
+        tag(CommonItemTags.DUSTS_REFINED_BUNGERITE)
+                .add(AtomicItems.BUNGERITE_DUST.get());
+        tag(CommonItemTags.DUSTS_SOULSTEEL)
+                .add(AtomicItems.SOULSTEEL_DUST.get());
+        tag(CommonItemTags.DUSTS_ENDER)
+                .add(AtomicItems.ENDER_DUST.get());
+        tag(CommonItemTags.DUSTS_DIAMOND)
+                .add(AtomicItems.DIAMOND_DUST.get());
+        tag(CommonItemTags.DUSTS_EMERALD)
+                .add(AtomicItems.EMERALD_DUST.get());
+        tag(CommonItemTags.DUSTS_ECHO)
+                .add(AtomicItems.ECHO_DUST.get());
 
         //Nuggets
         tag(Tags.Items.NUGGETS)
                 .addTag(CommonItemTags.NUGGETS_LEAD)
+                .addTag(CommonItemTags.NUGGETS_BRIGHTSILVER)
                 .addTag(CommonItemTags.NUGGETS_REFINED_BUNGERITE)
+                .addTag(CommonItemTags.NUGGETS_SOULSTEEL)
                 .addTag(CommonItemTags.NUGGETS_BUNGERITE_ALLOY);
         tag(CommonItemTags.NUGGETS_LEAD)
                 .add(AtomicItems.LEAD_NUGGET.get());
+        tag(CommonItemTags.NUGGETS_BRIGHTSILVER)
+                .add(AtomicItems.BRIGHTSILVER_NUGGET.get());
         tag(CommonItemTags.NUGGETS_REFINED_BUNGERITE)
                 .add(AtomicItems.REFINED_BUNGERITE_NUGGET.get());
+        tag(CommonItemTags.NUGGETS_SOULSTEEL)
+                .add(AtomicItems.SOULSTEEL_NUGGET.get());
         tag(CommonItemTags.NUGGETS_BUNGERITE_ALLOY)
                 .add(AtomicItems.BUNGERITE_ALLOY_NUGGET.get());
 
@@ -207,19 +276,27 @@ public class AtomicItemTagProvider extends ItemTagsProvider {
         // Ingots
         tag(Tags.Items.INGOTS)
                 .addTag(CommonItemTags.INGOTS_LEAD)
+                .addTag(CommonItemTags.INGOTS_BRIGHTSILVER)
                 .addTag(CommonItemTags.INGOTS_REFINED_BUNGERITE)
+                .addTag(CommonItemTags.INGOTS_SOULSTEEL)
                 .addTag(CommonItemTags.INGOTS_BUNGERITE_ALLOY);
         tag(CommonItemTags.INGOTS_LEAD)
                 .add(AtomicItems.LEAD_INGOT.get());
+        tag(CommonItemTags.INGOTS_BRIGHTSILVER)
+                .add(AtomicItems.BRIGHTSILVER_INGOT.get());
         tag(CommonItemTags.INGOTS_REFINED_BUNGERITE)
                 .add(AtomicItems.REFINED_BUNGERITE.get());
+        tag(CommonItemTags.INGOTS_SOULSTEEL)
+                .add(AtomicItems.SOULSTEEL_INGOT.get());
         tag(CommonItemTags.INGOTS_BUNGERITE_ALLOY)
                 .add(AtomicItems.BUNGERITE_ALLOY_INGOT.get());
 
         // Plates
         tag(CommonItemTags.PLATES)
                 .addTag(CommonItemTags.PLATES_LEAD)
+                .addTag(CommonItemTags.PLATES_BRIGHTSILVER)
                 .addTag(CommonItemTags.PLATES_REFINED_BUNGERITE)
+                .addTag(CommonItemTags.PLATES_SOULSTEEL)
                 .addTag(CommonItemTags.PLATES_BUNGERITE_ALLOY);
 //        tag(CommonItemTags.PLATES_LEAD)
 //                .add(AtomicItems.LEAD_PLATE.get());

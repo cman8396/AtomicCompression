@@ -34,7 +34,10 @@ public class AtomicTags {
         public static final TagKey<Item> MACHINE_FUEL_T4 = createTag("machine_fuel/t4");
 
         public static final TagKey<Item> MACHINE_CASING = createTag("machine_casing");
+        public static final TagKey<Item> MACHINE_CASING_BRIGHTSILVER = createTag("machine_casing/brightsilver");
         public static final TagKey<Item> MACHINE_CASING_REFINED_BUNGERITE = createTag("machine_casing/refined_bungerite");
+        public static final TagKey<Item> MACHINE_CASING_SOULSTEEL = createTag("machine_casing/soulsteel");
+
         public static final TagKey<Item> MACHINE_IGNITION = createTag("machine_ignition");
 
         private static TagKey<Item> createTag(String name) {

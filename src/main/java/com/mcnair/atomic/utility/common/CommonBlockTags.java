@@ -14,8 +14,12 @@ public final class CommonBlockTags {
             Identifier.fromNamespaceAndPath("c", "ores/saltpeter"));
     public static final TagKey<Block> ORES_LEAD = TagKey.create(Registries.BLOCK,
             Identifier.fromNamespaceAndPath("c", "ores/lead"));
+    public static final TagKey<Block> ORES_BRIGHTSILVER = TagKey.create(Registries.BLOCK,
+            Identifier.fromNamespaceAndPath("c", "ores/brightsilver"));
     public static final TagKey<Block> ORES_BUNGERITE = TagKey.create(Registries.BLOCK,
             Identifier.fromNamespaceAndPath("c", "ores/bungerite"));
+    public static final TagKey<Block> ORES_SOULSTEEL = TagKey.create(Registries.BLOCK,
+            Identifier.fromNamespaceAndPath("c", "ores/soulsteel"));
     public static final TagKey<Block> ORES_ATOMIC = TagKey.create(Registries.BLOCK,
             Identifier.fromNamespaceAndPath("c", "ores/atomic"));
 
@@ -25,8 +29,12 @@ public final class CommonBlockTags {
             Identifier.fromNamespaceAndPath("c", "storage_blocks/raw_saltpeter"));
     public static final TagKey<Block> STORAGE_BLOCKS_RAW_LEAD = TagKey.create(Registries.BLOCK,
             Identifier.fromNamespaceAndPath("c", "storage_blocks/raw_lead"));
+    public static final TagKey<Block> STORAGE_BLOCKS_RAW_BRIGHTSILVER = TagKey.create(Registries.BLOCK,
+            Identifier.fromNamespaceAndPath("c", "storage_blocks/raw_brightsilver"));
     public static final TagKey<Block> STORAGE_BLOCKS_RAW_BUNGERITE = TagKey.create(Registries.BLOCK,
             Identifier.fromNamespaceAndPath("c", "storage_blocks/raw_bungerite"));
+    public static final TagKey<Block> STORAGE_BLOCKS_RAW_SOULSTEEL = TagKey.create(Registries.BLOCK,
+            Identifier.fromNamespaceAndPath("c", "storage_blocks/raw_soulsteel"));
 
     public static final TagKey<Block> STORAGE_BLOCKS_GUNPOWDER = TagKey.create(Registries.BLOCK,
             Identifier.fromNamespaceAndPath("c", "storage_blocks/gunpowder"));
@@ -37,8 +45,12 @@ public final class CommonBlockTags {
 
     public static final TagKey<Block> STORAGE_BLOCKS_LEAD = TagKey.create(Registries.BLOCK,
             Identifier.fromNamespaceAndPath("c", "storage_blocks/lead"));
+    public static final TagKey<Block> STORAGE_BLOCKS_BRIGHTSILVER = TagKey.create(Registries.BLOCK,
+            Identifier.fromNamespaceAndPath("c", "storage_blocks/brightsilver"));
     public static final TagKey<Block> STORAGE_BLOCKS_REFINED_BUNGERITE = TagKey.create(Registries.BLOCK,
             Identifier.fromNamespaceAndPath("c", "storage_blocks/refined_bungerite"));
+    public static final TagKey<Block> STORAGE_BLOCKS_SOULSTEEL = TagKey.create(Registries.BLOCK,
+            Identifier.fromNamespaceAndPath("c", "storage_blocks/soulsteel"));
     public static final TagKey<Block> STORAGE_BLOCKS_BUNGERITE_ALLOY = TagKey.create(Registries.BLOCK,
             Identifier.fromNamespaceAndPath("c", "storage_blocks/bungerite_alloy"));
     public static final TagKey<Block> STORAGE_BLOCKS_ATOMIC = TagKey.create(Registries.BLOCK,

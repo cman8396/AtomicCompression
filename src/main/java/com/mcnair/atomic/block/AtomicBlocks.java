@@ -56,8 +56,11 @@ public class AtomicBlocks {
             (properties) -> new DropExperienceBlock(UniformInt.of(3, 6),
                     properties.strength(2.5f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
     public static final DeferredBlock<Block> BUNGERITE_ORE = registerBlock("bungerite_ore",
-            (properties) -> new DropExperienceBlock(UniformInt.of(3, 6),
-                    properties.strength(9f, 1000f).requiresCorrectToolForDrops().ignitedByLava().sound(SoundType.NETHER_GOLD_ORE)));
+            (properties) -> new DropExperienceBlock(UniformInt.of(3, 7),
+                    properties.strength(9f, 1200f).requiresCorrectToolForDrops().ignitedByLava().sound(SoundType.NETHER_GOLD_ORE)));
+    public static final DeferredBlock<Block> SOULSTEEL_ORE = registerBlock("soulsteel_ore",
+            (properties) -> new DropExperienceBlock(UniformInt.of(3, 8),
+                    properties.strength(10f, 1200f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
     public static final DeferredBlock<Block> ATOMIC_ORE = registerBlock("atomic_ore",
             (properties) -> new DropExperienceBlock(UniformInt.of(5, 7),
                     properties.strength(9f, 1000f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
@@ -94,7 +97,13 @@ public class AtomicBlocks {
     public static final DeferredBlock<Block> RAW_LEAD_BLOCK = registerBlock("raw_lead_block",
             (properties) -> new Block(
                     properties.strength(5f, 6f).sound(SoundType.IRON)));
+    public static final DeferredBlock<Block> RAW_BRIGHTSILVER_BLOCK = registerBlock("raw_brightsilver_block",
+            (properties) -> new Block(
+                    properties.strength(5f, 6f).sound(SoundType.IRON)));
     public static final DeferredBlock<Block> RAW_BUNGERITE_BLOCK = registerBlock("raw_bungerite_block",
+            (properties) -> new Block(
+                    properties.strength(5f, 6f).sound(SoundType.IRON)));
+    public static final DeferredBlock<Block> RAW_SOULSTEEL_BLOCK = registerBlock("raw_soulsteel_block",
             (properties) -> new Block(
                     properties.strength(5f, 6f).sound(SoundType.IRON)));
     public static final DeferredBlock<Block> SULFUR_DUST_BLOCK = registerBlock("sulfur_dust_block",
@@ -106,15 +115,15 @@ public class AtomicBlocks {
     public static final DeferredBlock<Block> LEAD_BLOCK = registerBlock("lead_block",
             (properties) -> new Block(
                     properties.strength(5f, 6f).sound(SoundType.IRON)));
-    public static final DeferredBlock<Block> REFINED_BUNGERITE_BLOCK = registerBlock("refined_bungerite_block",
-            (properties) -> new Block(
-                    properties.strength(5f, 6f).sound(SoundType.IRON)));
     public static final DeferredBlock<Block> BRIGHTSILVER_BLOCK = registerBlock("brightsilver_block",
             (properties) -> new Block(
                     properties.strength(5f, 6f).sound(SoundType.IRON)));
-    public static final DeferredBlock<Block> RAW_BRIGHTSILVER_BLOCK = registerBlock("raw_brightsilver_block",
+    public static final DeferredBlock<Block> REFINED_BUNGERITE_BLOCK = registerBlock("refined_bungerite_block",
             (properties) -> new Block(
                     properties.strength(5f, 6f).sound(SoundType.IRON)));
+    public static final DeferredBlock<Block> SOULSTEEL_BLOCK = registerBlock("soulsteel_block",
+            (properties) -> new Block(
+                    properties.strength(5f, 6f).sound(SoundType.NETHERITE_BLOCK)));
     public static final DeferredBlock<Block> BUNGERITE_ALLOY_BLOCK = registerBlock("bungerite_alloy_block",
             (properties) -> new Block(
                     properties.strength(10f, 1200f).sound(SoundType.NETHERITE_BLOCK)));
@@ -123,7 +132,7 @@ public class AtomicBlocks {
                     properties.strength(5f, 6f).sound(SoundType.STONE)));
     public static final DeferredBlock<Block> EMPOWERED_ATOMIC_BLOCK = registerBlock("empowered_atomic_block",
             (properties) -> new Block(
-                    properties.strength(5f, 6f).sound(SoundType.STONE)));
+                    properties.strength(5f, 6f).sound(SoundType.NETHERITE_BLOCK)));
 
 
     /* ASHENWOOD BLOCKS */

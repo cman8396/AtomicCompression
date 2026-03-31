@@ -27,7 +27,7 @@ public class AtomicBlockLootTableProvider extends BlockLootSubProvider {
     @Override
     protected void generate() {
 
-        /* OVERWORLD ORES */
+        /* ORES */
         add(AtomicBlocks.SULFUR_ORE.get(),
                 block -> createMultipleOreDrops(AtomicBlocks.SULFUR_ORE.get(), AtomicItems.RAW_SULFUR.get(), 3, 5));
         add(AtomicBlocks.DEEPSLATE_SULFUR_ORE.get(),
@@ -41,23 +41,20 @@ public class AtomicBlockLootTableProvider extends BlockLootSubProvider {
         add(AtomicBlocks.DEEPSLATE_LEAD_ORE.get(),
                 block -> createSingleItemTableWithSilkTouch(AtomicBlocks.DEEPSLATE_LEAD_ORE.get(), AtomicItems.RAW_LEAD.get()));
         add(AtomicBlocks.BRIGHTSILVER_ORE.get(),
-                block -> createSingleItemTableWithSilkTouch(AtomicBlocks.BRIGHTSILVER_ORE.get(), AtomicItems.RAW_LEAD.get()));
+                block -> createSingleItemTableWithSilkTouch(AtomicBlocks.BRIGHTSILVER_ORE.get(), AtomicItems.RAW_BRIGHTSILVER.get()));
         add(AtomicBlocks.DEEPSLATE_BRIGHTSILVER_ORE.get(),
-                block -> createSingleItemTableWithSilkTouch(AtomicBlocks.DEEPSLATE_BRIGHTSILVER_ORE.get(), AtomicItems.RAW_LEAD.get()));
+                block -> createSingleItemTableWithSilkTouch(AtomicBlocks.DEEPSLATE_BRIGHTSILVER_ORE.get(), AtomicItems.RAW_BRIGHTSILVER.get()));
+        add(AtomicBlocks.BUNGERITE_ORE.get(),
+                block -> createSingleItemTableWithSilkTouch(AtomicBlocks.BUNGERITE_ORE.get(), AtomicItems.RAW_BUNGERITE.get()));
+        add(AtomicBlocks.SOULSTEEL_ORE.get(),
+                block -> createMultipleOreDrops(AtomicBlocks.BRIGHTSILVER_ORE.get(), AtomicItems.RAW_SOULSTEEL.get(), 1,3));
+
         add(AtomicBlocks.ATOMIC_ORE.get(),
                 block -> createSingleItemTableWithSilkTouch(AtomicBlocks.ATOMIC_ORE.get(), AtomicItems.ATOMIC_SHARD.get()));
         add(AtomicBlocks.DEEPSLATE_ATOMIC_ORE.get(),
                 block -> createSingleItemTableWithSilkTouch(AtomicBlocks.DEEPSLATE_ATOMIC_ORE.get(), AtomicItems.ATOMIC_SHARD.get()));
-
-
-        /* NETHER ORES */
-        add(AtomicBlocks.BUNGERITE_ORE.get(),
-                block -> createSingleItemTableWithSilkTouch(AtomicBlocks.BUNGERITE_ORE.get(), AtomicItems.RAW_BUNGERITE.get()));
         add(AtomicBlocks.NETHER_ATOMIC_ORE.get(),
                 block -> createSingleItemTableWithSilkTouch(AtomicBlocks.NETHER_ATOMIC_ORE.get(), AtomicItems.ATOMIC_SHARD.get()));
-
-
-        /* END ORES */
         add(AtomicBlocks.END_ATOMIC_ORE.get(),
                 block -> createSingleItemTableWithSilkTouch(AtomicBlocks.END_ATOMIC_ORE.get(), AtomicItems.ATOMIC_SHARD.get()));
 
@@ -65,6 +62,7 @@ public class AtomicBlockLootTableProvider extends BlockLootSubProvider {
         /* UTILITY BLOCKS */
         dropWhenSilkTouch(AtomicBlocks.ATOMIC_GLASS.get());
         dropWhenSilkTouch(AtomicBlocks.ATOMIC_GLASS_PANE.get());
+
         dropSelf(AtomicBlocks.DENSE_BASALT.get());
         dropSelf(AtomicBlocks.GUNPOWDER_BLOCK.get());
         dropSelf(AtomicBlocks.RAW_SULFUR_BLOCK.get());
@@ -72,11 +70,14 @@ public class AtomicBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(AtomicBlocks.RAW_LEAD_BLOCK.get());
         dropSelf(AtomicBlocks.RAW_BRIGHTSILVER_BLOCK.get());
         dropSelf(AtomicBlocks.RAW_BUNGERITE_BLOCK.get());
+        dropSelf(AtomicBlocks.RAW_SOULSTEEL_BLOCK.get());
+
         dropSelf(AtomicBlocks.SULFUR_DUST_BLOCK.get());
         dropSelf(AtomicBlocks.SALTPETER_DUST_BLOCK.get());
         dropSelf(AtomicBlocks.LEAD_BLOCK.get());
         dropSelf(AtomicBlocks.BRIGHTSILVER_BLOCK.get());
         dropSelf(AtomicBlocks.REFINED_BUNGERITE_BLOCK.get());
+        dropSelf(AtomicBlocks.SOULSTEEL_BLOCK.get());
         dropSelf(AtomicBlocks.BUNGERITE_ALLOY_BLOCK.get());
         dropSelf(AtomicBlocks.ATOMIC_BLOCK.get());
         dropSelf(AtomicBlocks.EMPOWERED_ATOMIC_BLOCK.get());
