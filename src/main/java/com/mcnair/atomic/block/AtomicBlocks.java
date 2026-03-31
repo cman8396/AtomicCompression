@@ -12,10 +12,7 @@ import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
@@ -23,9 +20,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-import javax.annotation.Nullable;
 import java.util.function.Function;
-import java.util.function.ToIntFunction;
 
 public class AtomicBlocks {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(AtomicCompression.MOD_ID);
@@ -118,7 +113,7 @@ public class AtomicBlocks {
     public static final DeferredBlock<Block> BRIGHTSILVER_BLOCK = registerBlock("brightsilver_block",
             (properties) -> new Block(
                     properties.strength(5f, 6f).sound(SoundType.IRON)));
-    public static final DeferredBlock<Block> REFINED_BUNGERITE_BLOCK = registerBlock("refined_bungerite_block",
+    public static final DeferredBlock<Block> BUNGERITE_BLOCK = registerBlock("bungerite_block",
             (properties) -> new Block(
                     properties.strength(5f, 6f).sound(SoundType.IRON)));
     public static final DeferredBlock<Block> SOULSTEEL_BLOCK = registerBlock("soulsteel_block",

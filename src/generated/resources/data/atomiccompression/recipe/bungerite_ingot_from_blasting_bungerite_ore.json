@@ -7,6 +7,6 @@
   "ingredient": "atomiccompression:bungerite_ore",
   "result": {
     "count": 1,
-    "id": "atomiccompression:refined_bungerite"
+    "id": "atomiccompression:bungerite_ingot"
   }
 }

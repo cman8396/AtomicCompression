@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "atomiccompression:refined_bungerite_from_blasting_raw_bungerite"
+        "recipe": "atomiccompression:bungerite_ingot_from_blasting_raw_bungerite"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "atomiccompression:refined_bungerite_from_blasting_raw_bungerite"
+      "atomiccompression:bungerite_ingot_from_blasting_raw_bungerite"
     ]
   }
 }

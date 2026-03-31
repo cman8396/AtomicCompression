@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.3,
+  "group": "bungerite",
+  "ingredient": "atomiccompression:raw_bungerite",
+  "result": {
+    "count": 1,
+    "id": "atomiccompression:bungerite_ingot"
+  }
+}

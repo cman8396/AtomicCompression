@@ -162,7 +162,7 @@ public class ExplosiveMillBlockEntity extends BlockEntity implements MenuProvide
     }
 
     private int getCasingDataFuelTankCapacity() {
-        if (InventoryUtils.getCasingType(UTILITY_SLOTS[2], itemHandler) == "refined_bungerite") {
+        if (InventoryUtils.getCasingType(UTILITY_SLOTS[2], itemHandler) == "bungerite") {
             return AtomicConfig.machineExplosiveMill_FuelTankCapacity_RefinedBungerite.getAsInt();
         } else {
             return AtomicConfig.machineExplosiveMill_FuelTankCapacity_Base.getAsInt();
@@ -170,7 +170,7 @@ public class ExplosiveMillBlockEntity extends BlockEntity implements MenuProvide
     }
 
     public double getCasingDataCraftingDurationModifier() {
-        if (InventoryUtils.getCasingType(UTILITY_SLOTS[2], itemHandler) == "refined_bungerite") {
+        if (InventoryUtils.getCasingType(UTILITY_SLOTS[2], itemHandler) == "bungerite") {
             return AtomicConfig.machineExplosiveMill_CraftingDurationModifier_RefinedBungerite.getAsDouble();
         } else {
             return AtomicConfig.machineExplosiveMill_CraftingDurationModifier_Base.getAsDouble();
@@ -178,7 +178,7 @@ public class ExplosiveMillBlockEntity extends BlockEntity implements MenuProvide
     }
 
     public double getCasingDataChanceToSaveIgnitionSource() {
-        if (InventoryUtils.getCasingType(UTILITY_SLOTS[2], itemHandler) == "refined_bungerite") {
+        if (InventoryUtils.getCasingType(UTILITY_SLOTS[2], itemHandler) == "bungerite") {
             return AtomicConfig.machineExplosiveMill_ChanceToSaveIgnitionSource_RefinedBungerite.getAsDouble();
         } else {
             return AtomicConfig.machineExplosiveMill_ChanceToSaveIgnitionSource_Base.getAsDouble();
@@ -186,7 +186,7 @@ public class ExplosiveMillBlockEntity extends BlockEntity implements MenuProvide
     }
 
     public double getCasingDataChanceToSaveFuel() {
-        if (InventoryUtils.getCasingType(UTILITY_SLOTS[2], itemHandler) == "refined_bungerite") {
+        if (InventoryUtils.getCasingType(UTILITY_SLOTS[2], itemHandler) == "bungerite") {
             return AtomicConfig.machineExplosiveMill_ChanceToSaveFuel_RefinedBungerite.getAsDouble();
         } else {
             return AtomicConfig.machineExplosiveMill_ChanceToSaveFuel_Base.getAsDouble();

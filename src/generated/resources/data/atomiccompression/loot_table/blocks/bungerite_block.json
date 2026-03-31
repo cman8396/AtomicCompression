@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "atomiccompression:refined_bungerite_block"
+          "name": "atomiccompression:bungerite_block"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "atomiccompression:blocks/refined_bungerite_block"
+  "random_sequence": "atomiccompression:blocks/bungerite_block"
 }

@@ -4,7 +4,6 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
 
 public final class CommonItemTags {
     private CommonItemTags() {}
@@ -48,8 +47,8 @@ public final class CommonItemTags {
             Identifier.fromNamespaceAndPath("c", "storage_blocks/lead"));
     public static final TagKey<Item> STORAGE_BLOCKS_BRIGHTSILVER = TagKey.create(Registries.ITEM,
             Identifier.fromNamespaceAndPath("c", "storage_blocks/brightsilver"));
-    public static final TagKey<Item> STORAGE_BLOCKS_REFINED_BUNGERITE = TagKey.create(Registries.ITEM,
-            Identifier.fromNamespaceAndPath("c", "storage_blocks/refined_bungerite"));
+    public static final TagKey<Item> STORAGE_BLOCKS_BUNGERITE = TagKey.create(Registries.ITEM,
+            Identifier.fromNamespaceAndPath("c", "storage_blocks/bungerite"));
     public static final TagKey<Item> STORAGE_BLOCKS_SOULSTEEL = TagKey.create(Registries.ITEM,
             Identifier.fromNamespaceAndPath("c", "storage_blocks/soulsteel"));
     public static final TagKey<Item> STORAGE_BLOCKS_BUNGERITE_ALLOY = TagKey.create(Registries.ITEM,
@@ -85,8 +84,8 @@ public final class CommonItemTags {
             Identifier.fromNamespaceAndPath("c", "dusts/lead"));
     public static final TagKey<Item> DUSTS_BRIGHTSILVER = TagKey.create(Registries.ITEM,
             Identifier.fromNamespaceAndPath("c", "dusts/brightsilver"));
-    public static final TagKey<Item> DUSTS_REFINED_BUNGERITE = TagKey.create(Registries.ITEM,
-            Identifier.fromNamespaceAndPath("c", "dusts/refined_bungerite"));
+    public static final TagKey<Item> DUSTS_BUNGERITE = TagKey.create(Registries.ITEM,
+            Identifier.fromNamespaceAndPath("c", "dusts/bungerite"));
     public static final TagKey<Item> DUSTS_SOULSTEEL = TagKey.create(Registries.ITEM,
             Identifier.fromNamespaceAndPath("c", "dusts/soulsteel"));
     public static final TagKey<Item> DUSTS_ENDER = TagKey.create(Registries.ITEM,
@@ -102,8 +101,8 @@ public final class CommonItemTags {
             Identifier.fromNamespaceAndPath("c", "nuggets/lead"));
     public static final TagKey<Item> NUGGETS_BRIGHTSILVER = TagKey.create(Registries.ITEM,
             Identifier.fromNamespaceAndPath("c", "nuggets/brightsilver"));
-    public static final TagKey<Item> NUGGETS_REFINED_BUNGERITE = TagKey.create(Registries.ITEM,
-            Identifier.fromNamespaceAndPath("c", "nuggets/refined_bungerite"));
+    public static final TagKey<Item> NUGGETS_BUNGERITE = TagKey.create(Registries.ITEM,
+            Identifier.fromNamespaceAndPath("c", "nuggets/bungerite"));
     public static final TagKey<Item> NUGGETS_SOULSTEEL = TagKey.create(Registries.ITEM,
             Identifier.fromNamespaceAndPath("c", "nuggets/soulsteel"));
     public static final TagKey<Item> NUGGETS_BUNGERITE_ALLOY = TagKey.create(Registries.ITEM,
@@ -126,8 +125,8 @@ public final class CommonItemTags {
             Identifier.fromNamespaceAndPath("c", "ingots/lead"));
     public static final TagKey<Item> INGOTS_BRIGHTSILVER = TagKey.create(Registries.ITEM,
             Identifier.fromNamespaceAndPath("c", "ingots/brightsilver"));
-    public static final TagKey<Item> INGOTS_REFINED_BUNGERITE = TagKey.create(Registries.ITEM,
-            Identifier.fromNamespaceAndPath("c", "ingots/refined_bungerite"));
+    public static final TagKey<Item> INGOTS_BUNGERITE = TagKey.create(Registries.ITEM,
+            Identifier.fromNamespaceAndPath("c", "ingots/bungerite"));
     public static final TagKey<Item> INGOTS_SOULSTEEL = TagKey.create(Registries.ITEM,
             Identifier.fromNamespaceAndPath("c", "ingots/soulsteel"));
     public static final TagKey<Item> INGOTS_BUNGERITE_ALLOY = TagKey.create(Registries.ITEM,
@@ -139,8 +138,8 @@ public final class CommonItemTags {
             Identifier.fromNamespaceAndPath("c", "plates/lead"));
     public static final TagKey<Item> PLATES_BRIGHTSILVER = TagKey.create(Registries.ITEM,
             Identifier.fromNamespaceAndPath("c", "plates/brightsilver"));
-    public static final TagKey<Item> PLATES_REFINED_BUNGERITE = TagKey.create(Registries.ITEM,
-            Identifier.fromNamespaceAndPath("c", "plates/refined_bungerite"));
+    public static final TagKey<Item> PLATES_BUNGERITE = TagKey.create(Registries.ITEM,
+            Identifier.fromNamespaceAndPath("c", "plates/bungerite"));
     public static final TagKey<Item> PLATES_SOULSTEEL = TagKey.create(Registries.ITEM,
             Identifier.fromNamespaceAndPath("c", "plates/soulsteel"));
     public static final TagKey<Item> PLATES_BUNGERITE_ALLOY = TagKey.create(Registries.ITEM,

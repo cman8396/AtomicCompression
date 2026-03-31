@@ -2,15 +2,15 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "N": "atomiccompression:refined_bungerite_nugget"
+    "I": "atomiccompression:bungerite_ingot"
   },
   "pattern": [
-    "NNN",
-    "NNN",
-    "NNN"
+    "III",
+    "III",
+    "III"
   ],
   "result": {
     "count": 1,
-    "id": "atomiccompression:refined_bungerite"
+    "id": "atomiccompression:bungerite_block"
   }
 }

@@ -162,7 +162,7 @@ public class ExplosiveSmelterBlockEntity extends BlockEntity implements MenuProv
     }
 
     private int getCasingDataFuelTankCapacity() {
-        if (InventoryUtils.getCasingType(UTILITY_SLOTS[2], itemHandler) == "refined_bungerite") {
+        if (InventoryUtils.getCasingType(UTILITY_SLOTS[2], itemHandler) == "bungerite") {
             return AtomicConfig.machineExplosiveSmelter_FuelTankCapacity_RefinedBungerite.getAsInt();
         } else {
             return AtomicConfig.machineExplosiveSmelter_FuelTankCapacity_Base.getAsInt();
@@ -170,7 +170,7 @@ public class ExplosiveSmelterBlockEntity extends BlockEntity implements MenuProv
     }
 
     public double getCasingDataCraftingDurationModifier() {
-        if (InventoryUtils.getCasingType(UTILITY_SLOTS[2], itemHandler) == "refined_bungerite") {
+        if (InventoryUtils.getCasingType(UTILITY_SLOTS[2], itemHandler) == "bungerite") {
             return AtomicConfig.machineExplosiveSmelter_CraftingDurationModifier_RefinedBungerite.getAsDouble();
         } else {
             return AtomicConfig.machineExplosiveSmelter_CraftingDurationModifier_Base.getAsDouble();
@@ -178,7 +178,7 @@ public class ExplosiveSmelterBlockEntity extends BlockEntity implements MenuProv
     }
 
     public double getCasingDataChanceToSaveIgnitionSource() {
-        if (InventoryUtils.getCasingType(UTILITY_SLOTS[2], itemHandler) == "refined_bungerite") {
+        if (InventoryUtils.getCasingType(UTILITY_SLOTS[2], itemHandler) == "bungerite") {
             return AtomicConfig.machineExplosiveSmelter_ChanceToSaveIgnitionSource_RefinedBungerite.getAsDouble();
         } else {
             return AtomicConfig.machineExplosiveSmelter_ChanceToSaveIgnitionSource_Base.getAsDouble();
@@ -186,7 +186,7 @@ public class ExplosiveSmelterBlockEntity extends BlockEntity implements MenuProv
     }
 
     public double getCasingDataChanceToSaveFuel() {
-        if (InventoryUtils.getCasingType(UTILITY_SLOTS[2], itemHandler) == "refined_bungerite") {
+        if (InventoryUtils.getCasingType(UTILITY_SLOTS[2], itemHandler) == "bungerite") {
             return AtomicConfig.machineExplosiveSmelter_ChanceToSaveFuel_RefinedBungerite.getAsDouble();
         } else {
             return AtomicConfig.machineExplosiveSmelter_ChanceToSaveFuel_Base.getAsDouble();

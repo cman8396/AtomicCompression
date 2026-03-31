@@ -50,8 +50,8 @@ public class AtomicItemModelGenerators extends ItemModelGenerators {
         this.generateFlatItem(AtomicItems.LEAD_NUGGET.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(AtomicItems.BRIGHTSILVER_INGOT.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(AtomicItems.BRIGHTSILVER_NUGGET.get(), ModelTemplates.FLAT_ITEM);
-        this.generateFlatItem(AtomicItems.REFINED_BUNGERITE.get(), ModelTemplates.FLAT_ITEM);
-        this.generateFlatItem(AtomicItems.REFINED_BUNGERITE_NUGGET.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(AtomicItems.BUNGERITE_INGOT.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(AtomicItems.BUNGERITE_NUGGET.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(AtomicItems.BUNGERITE_ALLOY_INGOT.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(AtomicItems.BUNGERITE_ALLOY_NUGGET.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(AtomicItems.SOULSTEEL_INGOT.get(), ModelTemplates.FLAT_ITEM);
@@ -73,7 +73,7 @@ public class AtomicItemModelGenerators extends ItemModelGenerators {
 
         /* MACHINE CASINGS */
         this.generateFlatItem(AtomicItems.BRIGHTSILVER_MACHINE_CASING.get(), ModelTemplates.FLAT_ITEM);
-        this.generateFlatItem(AtomicItems.REFINED_BUNGERITE_MACHINE_CASING.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(AtomicItems.BUNGERITE_MACHINE_CASING.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(AtomicItems.SOULSTEEL_MACHINE_CASING.get(), ModelTemplates.FLAT_ITEM);
 
 

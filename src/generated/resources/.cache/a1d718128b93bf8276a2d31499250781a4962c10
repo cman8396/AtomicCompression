@@ -1,4 +1,4 @@
-// 1.21.11	2026-03-31T11:05:33.5684371	Tags for minecraft:block mod id atomiccompression
+// 1.21.11	2026-03-31T11:19:02.5510255	Tags for minecraft:block mod id atomiccompression
 c61f60129fef9bb8e546fcd06a55e283e845cf54 data/atomiccompression/tags/block/machine.json
 85ea8d6ed39eca6c3d859d10776dd4c7813ef7f4 data/c/tags/block/ores.json
 54eb6efb63719cbc3ab79b2ce4bbd8b55b3fc255 data/c/tags/block/ores/atomic.json
@@ -8,8 +8,9 @@ daa192ebd74d9be4f902463f9e5e832025c2dbff data/c/tags/block/ores/lead.json
 891eb0f6ed2df5509ef16a469666557c9a3d3592 data/c/tags/block/ores/saltpeter.json
 2c325e411416595361ea3001ee38621ba16a4fb8 data/c/tags/block/ores/soulsteel.json
 d5c63ecbf3f9a2b90036e7af5cd3150f0662a94f data/c/tags/block/ores/sulfur.json
-9d6bd301fe029ec8714eab451651db116a6d992d data/c/tags/block/storage_blocks.json
+5ce4d1f13ca93383efa09562f64153197f27bc13 data/c/tags/block/storage_blocks.json
 c1af16b42b85f04e9f823844faf6162a8abbfd0e data/c/tags/block/storage_blocks/atomic.json
+0bf443e5592a05322fcd1e90ece5aba8d6740cc0 data/c/tags/block/storage_blocks/bungerite.json
 089dd78402259847bbbd1607c388288255605486 data/c/tags/block/storage_blocks/bungerite_alloy.json
 61b724303d57bac993e5179b93456b7c4bed50f9 data/c/tags/block/storage_blocks/empowered_atomic.json
 697641a3b56241edb6729e1512d724c326c24066 data/c/tags/block/storage_blocks/gunpowder.json
@@ -20,15 +21,14 @@ e6c49aa98f3190b06b81628c9efd95546d0f201f data/c/tags/block/storage_blocks/raw_le
 ebae062aa17466e9ccb6113180ae87ee61886633 data/c/tags/block/storage_blocks/raw_saltpeter.json
 625a8f4f823b169d9c7771ffe94fefd35f955849 data/c/tags/block/storage_blocks/raw_soulsteel.json
 08cdc8becd7d58115aba8a8d2f9514483391bfe5 data/c/tags/block/storage_blocks/raw_sulfur.json
-d2bab69e07e5bcd38c00a29a4f4635437dadcb9d data/c/tags/block/storage_blocks/refined_bungerite.json
 cae8a13a91788676f7e5616776d30969d675eadc data/c/tags/block/storage_blocks/saltpeter.json
 e5357d1e14b5b9063a74a792b2618b0b88a6df03 data/c/tags/block/storage_blocks/sulfur.json
 9a7a1250d774f6cab78aac59d1a95f33cf6248b2 data/minecraft/tags/block/fences.json
 6ca499145b9f45117e4a1c01827f014419abaf58 data/minecraft/tags/block/fence_gates.json
 d9118eb20aca2e5bd35ea2d085dac5f7a44157ce data/minecraft/tags/block/logs_that_burn.json
-decdbe895220d01c9f734a5a62d30f003793c925 data/minecraft/tags/block/mineable/pickaxe.json
+6c9bb382a2869ca234397aeec62d54993cca26cf data/minecraft/tags/block/mineable/pickaxe.json
 9d9b196c79700e158ac070fc455dcdf889b5f83f data/minecraft/tags/block/mineable/shovel.json
-435e3ae51e465fc95ea3af5419e19967aada7a72 data/minecraft/tags/block/needs_diamond_tool.json
+0feabbe58669b6a1914ba19ab0b8b55a574a05d0 data/minecraft/tags/block/needs_diamond_tool.json
 5ec0472f73637808551954b572191c8a04c267f5 data/minecraft/tags/block/needs_iron_tool.json
 1b2e2fc9af5276da263c1b0213118f1d6763928f data/minecraft/tags/block/needs_stone_tool.json
 6989ac3827cf4352df4e4d80e709a58ec678e909 data/minecraft/tags/block/walls.json

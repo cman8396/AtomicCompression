@@ -35,7 +35,7 @@ public class AtomicTags {
 
         public static final TagKey<Item> MACHINE_CASING = createTag("machine_casing");
         public static final TagKey<Item> MACHINE_CASING_BRIGHTSILVER = createTag("machine_casing/brightsilver");
-        public static final TagKey<Item> MACHINE_CASING_REFINED_BUNGERITE = createTag("machine_casing/refined_bungerite");
+        public static final TagKey<Item> MACHINE_CASING_BUNGERITE = createTag("machine_casing/bungerite");
         public static final TagKey<Item> MACHINE_CASING_SOULSTEEL = createTag("machine_casing/soulsteel");
 
         public static final TagKey<Item> MACHINE_IGNITION = createTag("machine_ignition");
@@ -66,7 +66,9 @@ public class AtomicTags {
         public static String MACHINE_FUEL_T4 = "atomiccompression:machine_fuel/t4";
 
         public static String MACHINE_CASING = "atomiccompression:machine_casing";
-        public static String MACHINE_CASING_REFINED_BUNGERITE = "atomiccompression:machine_casing/refined_bungerite";
+        public static String MACHINE_CASING_BRIGHTSILVER = "atomiccompression:machine_casing/brightsilver";
+        public static String MACHINE_CASING_BUNGERITE = "atomiccompression:machine_casing/bungerite";
+        public static String MACHINE_CASING_SOULSTEEL = "atomiccompression:machine_casing/soulsteel";
         public static String MACHINE_IGNITION = "atomiccompression:machine_ignition";
     }
 }

@@ -73,7 +73,7 @@ public class AtomicBlockModelGenerators extends BlockModelGenerators {
         this.createTrivialCube(AtomicBlocks.SALTPETER_DUST_BLOCK.get());
         this.createTrivialCube(AtomicBlocks.LEAD_BLOCK.get());
         this.createTrivialCube(AtomicBlocks.BRIGHTSILVER_BLOCK.get());
-        this.createTrivialCube(AtomicBlocks.REFINED_BUNGERITE_BLOCK.get());
+        this.createTrivialCube(AtomicBlocks.BUNGERITE_BLOCK.get());
         this.createTrivialCube(AtomicBlocks.SOULSTEEL_BLOCK.get());
         this.createTrivialCube(AtomicBlocks.BUNGERITE_ALLOY_BLOCK.get());
         this.createTrivialCube(AtomicBlocks.ATOMIC_BLOCK.get());

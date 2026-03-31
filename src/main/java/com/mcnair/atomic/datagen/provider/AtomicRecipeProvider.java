@@ -26,7 +26,6 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
-import net.neoforged.neoforge.common.Tags;
 
 import java.util.Arrays;
 import java.util.List;
@@ -141,16 +140,16 @@ public class AtomicRecipeProvider extends RecipeProvider {
                 .save(output);
 
         shapeless(RecipeCategory.MISC, AtomicItems.BUNGERITE_ALLOY_INGOT, 1)
-                .requires(AtomicItems.REFINED_BUNGERITE)
+                .requires(AtomicItems.BUNGERITE_INGOT)
                 .requires(Items.NETHERITE_INGOT)
-                .unlockedBy("has_refined_bungerite", has(AtomicItems.REFINED_BUNGERITE))
+                .unlockedBy("has_bungerite_ingot", has(AtomicItems.BUNGERITE_INGOT))
                 .unlockedBy("has_netherite_ingot", has(Items.NETHERITE_INGOT))
                 .save(output);
 
 
         /* NUGGET CONVERSION */
         nuggetIngotRecipe(output, AtomicItems.LEAD_NUGGET, AtomicItems.LEAD_INGOT, RecipeCategory.MISC);
-        nuggetIngotRecipe(output, AtomicItems.REFINED_BUNGERITE_NUGGET, AtomicItems.REFINED_BUNGERITE, RecipeCategory.MISC);
+        nuggetIngotRecipe(output, AtomicItems.BUNGERITE_NUGGET, AtomicItems.BUNGERITE_INGOT, RecipeCategory.MISC);
         nuggetIngotRecipe(output, AtomicItems.BUNGERITE_ALLOY_NUGGET, AtomicItems.BUNGERITE_ALLOY_INGOT, RecipeCategory.MISC);
 
 
@@ -163,7 +162,7 @@ public class AtomicRecipeProvider extends RecipeProvider {
         ingotBlockRecipe(output, AtomicItems.SULFUR_DUST, AtomicBlocks.SULFUR_DUST_BLOCK, RecipeCategory.MISC);
         ingotBlockRecipe(output, AtomicItems.SALTPETER_DUST, AtomicBlocks.SALTPETER_DUST_BLOCK, RecipeCategory.MISC);
         ingotBlockRecipe(output, AtomicItems.LEAD_INGOT, AtomicBlocks.LEAD_BLOCK, RecipeCategory.MISC);
-        ingotBlockRecipe(output, AtomicItems.REFINED_BUNGERITE, AtomicBlocks.REFINED_BUNGERITE_BLOCK, RecipeCategory.MISC);
+        ingotBlockRecipe(output, AtomicItems.BUNGERITE_INGOT, AtomicBlocks.BUNGERITE_BLOCK, RecipeCategory.MISC);
         ingotBlockRecipe(output, AtomicItems.BUNGERITE_ALLOY_INGOT, AtomicBlocks.BUNGERITE_ALLOY_BLOCK, RecipeCategory.MISC);
         ingotBlockRecipe(output, AtomicItems.ATOMIC_SHARD, AtomicBlocks.ATOMIC_BLOCK, RecipeCategory.MISC);
         ingotBlockRecipe(output, AtomicItems.EMPOWERED_ATOMIC_SHARD, AtomicBlocks.EMPOWERED_ATOMIC_BLOCK, RecipeCategory.MISC);
@@ -175,8 +174,8 @@ public class AtomicRecipeProvider extends RecipeProvider {
         oreBlasting(output, leadSmeltables, RecipeCategory.MISC, AtomicItems.LEAD_INGOT.get(), 0.2f, 100, "lead");
 
         List<ItemLike> bungeriteSmeltables = List.of(AtomicItems.RAW_BUNGERITE, AtomicBlocks.BUNGERITE_ORE);
-        oreSmelting(output, bungeriteSmeltables, RecipeCategory.MISC, AtomicItems.REFINED_BUNGERITE.get(), 0.3f, 200, "bungerite");
-        oreBlasting(output, bungeriteSmeltables, RecipeCategory.MISC, AtomicItems.REFINED_BUNGERITE.get(), 0.3f, 100, "bungerite");
+        oreSmelting(output, bungeriteSmeltables, RecipeCategory.MISC, AtomicItems.BUNGERITE_INGOT.get(), 0.3f, 200, "bungerite");
+        oreBlasting(output, bungeriteSmeltables, RecipeCategory.MISC, AtomicItems.BUNGERITE_INGOT.get(), 0.3f, 100, "bungerite");
 
 
         /* TOOLS */

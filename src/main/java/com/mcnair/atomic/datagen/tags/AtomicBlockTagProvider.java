@@ -4,7 +4,6 @@ import com.mcnair.atomic.AtomicCompression;
 import com.mcnair.atomic.block.AtomicBlocks;
 import com.mcnair.atomic.utility.AtomicTags;
 import com.mcnair.atomic.utility.common.CommonBlockTags;
-import com.mcnair.atomic.utility.common.CommonBlockTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
@@ -50,7 +49,7 @@ public class AtomicBlockTagProvider extends BlockTagsProvider {
                 .add(AtomicBlocks.RAW_SOULSTEEL_BLOCK.get())
                 .add(AtomicBlocks.LEAD_BLOCK.get())
                 .add(AtomicBlocks.BRIGHTSILVER_BLOCK.get())
-                .add(AtomicBlocks.REFINED_BUNGERITE_BLOCK.get())
+                .add(AtomicBlocks.BUNGERITE_BLOCK.get())
                 .add(AtomicBlocks.SOULSTEEL_BLOCK.get())
                 .add(AtomicBlocks.ATOMIC_BLOCK.get())
                 .add(AtomicBlocks.EMPOWERED_ATOMIC_BLOCK.get());
@@ -84,7 +83,7 @@ public class AtomicBlockTagProvider extends BlockTagsProvider {
                 .add(AtomicBlocks.RAW_BUNGERITE_BLOCK.get())
                 .add(AtomicBlocks.RAW_SOULSTEEL_BLOCK.get())
                 .add(AtomicBlocks.BRIGHTSILVER_BLOCK.get())
-                .add(AtomicBlocks.REFINED_BUNGERITE_BLOCK.get())
+                .add(AtomicBlocks.BUNGERITE_BLOCK.get())
                 .add(AtomicBlocks.SOULSTEEL_BLOCK.get())
                 .add(AtomicBlocks.BUNGERITE_ALLOY_BLOCK.get());
 
@@ -137,7 +136,7 @@ public class AtomicBlockTagProvider extends BlockTagsProvider {
                 .addTag(CommonBlockTags.STORAGE_BLOCKS_SALTPETER_DUST)
                 .addTag(CommonBlockTags.STORAGE_BLOCKS_LEAD)
                 .addTag(CommonBlockTags.STORAGE_BLOCKS_BRIGHTSILVER)
-                .addTag(CommonBlockTags.STORAGE_BLOCKS_REFINED_BUNGERITE)
+                .addTag(CommonBlockTags.STORAGE_BLOCKS_BUNGERITE)
                 .addTag(CommonBlockTags.STORAGE_BLOCKS_SOULSTEEL)
                 .addTag(CommonBlockTags.STORAGE_BLOCKS_BUNGERITE_ALLOY)
                 .addTag(CommonBlockTags.STORAGE_BLOCKS_ATOMIC)
@@ -162,8 +161,8 @@ public class AtomicBlockTagProvider extends BlockTagsProvider {
                 .add(AtomicBlocks.SALTPETER_DUST_BLOCK.get());
         tag(CommonBlockTags.STORAGE_BLOCKS_LEAD)
                 .add(AtomicBlocks.LEAD_BLOCK.get());
-        tag(CommonBlockTags.STORAGE_BLOCKS_REFINED_BUNGERITE)
-                .add(AtomicBlocks.REFINED_BUNGERITE_BLOCK.get());
+        tag(CommonBlockTags.STORAGE_BLOCKS_BUNGERITE)
+                .add(AtomicBlocks.BUNGERITE_BLOCK.get());
         tag(CommonBlockTags.STORAGE_BLOCKS_BUNGERITE_ALLOY)
                 .add(AtomicBlocks.BUNGERITE_ALLOY_BLOCK.get());
         tag(CommonBlockTags.STORAGE_BLOCKS_ATOMIC)

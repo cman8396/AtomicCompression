@@ -34,8 +34,12 @@ public final class InventoryUtils {
 
     public static String getCasingType(int casingSlot, AtomicItemStackProvider itemHandler) {
         ItemStack stackInCasingSlot = itemHandler.getStackInSlot(casingSlot);
-        if (AtomicTags.Helpers.doesItemStackTagMatch(AtomicTags.Values.MACHINE_CASING_REFINED_BUNGERITE, stackInCasingSlot))
-            return "refined_bungerite";
+        if (AtomicTags.Helpers.doesItemStackTagMatch(AtomicTags.Values.MACHINE_CASING_BRIGHTSILVER, stackInCasingSlot))
+            return "brightsilver";
+        else if (AtomicTags.Helpers.doesItemStackTagMatch(AtomicTags.Values.MACHINE_CASING_BUNGERITE, stackInCasingSlot))
+            return "bungerite";
+        else if (AtomicTags.Helpers.doesItemStackTagMatch(AtomicTags.Values.MACHINE_CASING_SOULSTEEL, stackInCasingSlot))
+            return "soulsteel";
         else
             return "none";
     }

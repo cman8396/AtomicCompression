@@ -162,7 +162,7 @@ public class ExplosiveCompactorBlockEntity extends BlockEntity implements MenuPr
     }
 
     private int getCasingDataFuelTankCapacity() {
-        if (InventoryUtils.getCasingType(UTILITY_SLOTS[2], itemHandler) == "refined_bungerite") {
+        if (InventoryUtils.getCasingType(UTILITY_SLOTS[2], itemHandler) == "bungerite") {
             return AtomicConfig.machineExplosiveCompactor_FuelTankCapacity_RefinedBungerite.getAsInt();
         } else {
             return AtomicConfig.machineExplosiveCompactor_FuelTankCapacity_Base.getAsInt();
@@ -170,7 +170,7 @@ public class ExplosiveCompactorBlockEntity extends BlockEntity implements MenuPr
     }
 
     public double getCasingDataCraftingDurationModifier() {
-        if (InventoryUtils.getCasingType(UTILITY_SLOTS[2], itemHandler) == "refined_bungerite") {
+        if (InventoryUtils.getCasingType(UTILITY_SLOTS[2], itemHandler) == "bungerite") {
             return AtomicConfig.machineExplosiveCompactor_CraftingDurationModifier_RefinedBungerite.getAsDouble();
         } else {
             return AtomicConfig.machineExplosiveCompactor_CraftingDurationModifier_Base.getAsDouble();
@@ -178,7 +178,7 @@ public class ExplosiveCompactorBlockEntity extends BlockEntity implements MenuPr
     }
 
     public double getCasingDataChanceToSaveIgnitionSource() {
-        if (InventoryUtils.getCasingType(UTILITY_SLOTS[2], itemHandler) == "refined_bungerite") {
+        if (InventoryUtils.getCasingType(UTILITY_SLOTS[2], itemHandler) == "bungerite") {
             return AtomicConfig.machineExplosiveCompactor_ChanceToSaveIgnitionSource_RefinedBungerite.getAsDouble();
         } else {
             return AtomicConfig.machineExplosiveCompactor_ChanceToSaveIgnitionSource_Base.getAsDouble();
@@ -186,7 +186,7 @@ public class ExplosiveCompactorBlockEntity extends BlockEntity implements MenuPr
     }
 
     public double getCasingDataChanceToSaveFuel() {
-        if (InventoryUtils.getCasingType(UTILITY_SLOTS[2], itemHandler) == "refined_bungerite") {
+        if (InventoryUtils.getCasingType(UTILITY_SLOTS[2], itemHandler) == "bungerite") {
             return AtomicConfig.machineExplosiveCompactor_ChanceToSaveFuel_RefinedBungerite.getAsDouble();
         } else {
             return AtomicConfig.machineExplosiveCompactor_ChanceToSaveFuel_Base.getAsDouble();

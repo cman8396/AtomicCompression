@@ -76,7 +76,7 @@ public class AtomicBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(AtomicBlocks.SALTPETER_DUST_BLOCK.get());
         dropSelf(AtomicBlocks.LEAD_BLOCK.get());
         dropSelf(AtomicBlocks.BRIGHTSILVER_BLOCK.get());
-        dropSelf(AtomicBlocks.REFINED_BUNGERITE_BLOCK.get());
+        dropSelf(AtomicBlocks.BUNGERITE_BLOCK.get());
         dropSelf(AtomicBlocks.SOULSTEEL_BLOCK.get());
         dropSelf(AtomicBlocks.BUNGERITE_ALLOY_BLOCK.get());
         dropSelf(AtomicBlocks.ATOMIC_BLOCK.get());
