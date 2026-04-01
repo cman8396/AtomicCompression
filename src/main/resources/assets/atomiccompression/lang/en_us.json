@@ -1,5 +1,7 @@
 {
   "itemGroup.atomiccompression.title": "Atomic Compression",
+  "creative.atomiccompression.item": "Atomic Compression Items",
+  "creative.atomiccompression.block": "Atomic Compression Blocks",
 
   "block.atomiccompression.deepcoal_ore": "Deepcoal Ore",
   "block.atomiccompression.deepslate_deepcoal_ore": "Deepslate Deepcoal Ore",

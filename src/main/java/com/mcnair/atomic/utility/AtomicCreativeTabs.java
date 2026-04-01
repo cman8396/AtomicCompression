@@ -15,14 +15,75 @@ public class AtomicCreativeTabs {
 
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, AtomicCompression.MOD_ID);
 
-    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> ITEMS_TAB = CREATIVE_MODE_TABS.register("atomiccompression",
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> ITEMS_TAB = CREATIVE_MODE_TABS.register("atomiccompression.item",
             () -> CreativeModeTab.builder()
-                    .title(Component.translatable("itemGroup.atomiccompression.title"))
-                    .withTabsBefore(CreativeModeTabs.BUILDING_BLOCKS)
-                    .icon(() -> AtomicItems.BUNGERITE_ALLOY_INGOT.get().getDefaultInstance())
+                    .title(Component.translatable("creative.atomiccompression.item"))
+                    .icon(() -> AtomicItems.ATOMIC_SHARD.get().getDefaultInstance())
                     .displayItems((parameters, output) -> {
 
-                        /* ADD BLOCKS */
+                        output.accept(AtomicItems.DEEPCOAL.get());
+                        output.accept(AtomicItems.RAW_SULFUR.get());
+                        output.accept(AtomicItems.RAW_SALTPETER.get());
+                        output.accept(AtomicItems.RAW_LEAD.get());
+                        output.accept(AtomicItems.RAW_BRIGHTSILVER.get());
+                        output.accept(AtomicItems.RAW_BUNGERITE.get());
+                        output.accept(AtomicItems.RAW_SOULSTEEL.get());
+
+                        output.accept(AtomicItems.LEAD_INGOT.get());
+                        output.accept(AtomicItems.BRIGHTSILVER_INGOT.get());
+                        output.accept(AtomicItems.BUNGERITE_INGOT.get());
+                        output.accept(AtomicItems.SOULSTEEL_INGOT.get());
+                        output.accept(AtomicItems.BUNGERITE_ALLOY_INGOT.get());
+
+                        output.accept(AtomicItems.SAWDUST.get());
+                        output.accept(AtomicItems.DEEPCOAL_DUST.get());
+                        output.accept(AtomicItems.ATOMIC_DUST.get());
+                        output.accept(AtomicItems.SULFUR_DUST.get());
+                        output.accept(AtomicItems.SALTPETER_DUST.get());
+                        output.accept(AtomicItems.LEAD_DUST.get());
+                        output.accept(AtomicItems.BRIGHTSILVER_DUST.get());
+                        output.accept(AtomicItems.BUNGERITE_DUST.get());
+                        output.accept(AtomicItems.SOULSTEEL_DUST.get());
+                        output.accept(AtomicItems.ENDER_DUST.get());
+                        output.accept(AtomicItems.DIAMOND_DUST.get());
+                        output.accept(AtomicItems.EMERALD_DUST.get());
+                        output.accept(AtomicItems.ECHO_DUST.get());
+
+                        output.accept(AtomicItems.LEAD_NUGGET.get());
+                        output.accept(AtomicItems.BRIGHTSILVER_NUGGET.get());
+                        output.accept(AtomicItems.BUNGERITE_NUGGET.get());
+                        output.accept(AtomicItems.SOULSTEEL_NUGGET.get());
+                        output.accept(AtomicItems.BUNGERITE_ALLOY_NUGGET.get());
+
+                        output.accept(AtomicItems.ATOMIC_SHARD.get());
+                        output.accept(AtomicItems.EMPOWERED_ATOMIC_SHARD.get());
+
+                        output.accept(AtomicItems.OBSIDIAN_CHUNK.get());
+                        output.accept(AtomicItems.BASALT_TOOL_SHAFT.get());
+                        output.accept(AtomicItems.ATOMIC_TOOL_SHAFT.get());
+                        output.accept(AtomicItems.ATOMIC_STABILIZER.get());
+
+                        output.accept(AtomicItems.BUNGERITE_ALLOY_SWORD.get());
+                        output.accept(AtomicItems.BUNGERITE_ALLOY_SPEAR.get());
+                        output.accept(AtomicItems.BUNGERITE_ALLOY_SHOVEL.get());
+                        output.accept(AtomicItems.BUNGERITE_ALLOY_PICKAXE.get());
+                        output.accept(AtomicItems.BUNGERITE_ALLOY_AXE.get());
+                        output.accept(AtomicItems.BUNGERITE_ALLOY_HOE.get());
+
+                        output.accept(AtomicItems.BRIGHTSILVER_MACHINE_CASING.get());
+                        output.accept(AtomicItems.BUNGERITE_MACHINE_CASING.get());
+                        output.accept(AtomicItems.SOULSTEEL_MACHINE_CASING.get());
+
+                    }).build()
+    );
+
+
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> BLOCKS_TAB = CREATIVE_MODE_TABS.register("atomiccompression.block",
+            () -> CreativeModeTab.builder()
+                    .title(Component.translatable("creative.atomiccompression.block"))
+                    .icon(() -> AtomicBlocks.ATOMIC_BLOCK.asItem().getDefaultInstance())
+                    .displayItems((parameters, output) -> {
+
                         output.accept(AtomicBlocks.ATOMIC_GLASS.get());
                         output.accept(AtomicBlocks.ATOMIC_GLASS_PANE.get());
                         output.accept(AtomicBlocks.DENSE_BASALT.get());
@@ -80,67 +141,12 @@ public class AtomicCreativeTabs {
                         output.accept(AtomicBlocks.ASHENWOOD_DOOR.get());
                         output.accept(AtomicBlocks.ASHENWOOD_TRAPDOOR.get());
 
-                        /* ADD ITEMS */
-                        output.accept(AtomicItems.DEEPCOAL.get());
-                        output.accept(AtomicItems.RAW_SULFUR.get());
-                        output.accept(AtomicItems.RAW_SALTPETER.get());
-                        output.accept(AtomicItems.RAW_LEAD.get());
-                        output.accept(AtomicItems.RAW_BRIGHTSILVER.get());
-                        output.accept(AtomicItems.RAW_BUNGERITE.get());
-                        output.accept(AtomicItems.RAW_SOULSTEEL.get());
-
-                        output.accept(AtomicItems.LEAD_INGOT.get());
-                        output.accept(AtomicItems.BRIGHTSILVER_INGOT.get());
-                        output.accept(AtomicItems.BUNGERITE_INGOT.get());
-                        output.accept(AtomicItems.SOULSTEEL_INGOT.get());
-                        output.accept(AtomicItems.BUNGERITE_ALLOY_INGOT.get());
-
-                        output.accept(AtomicItems.SAWDUST.get());
-                        output.accept(AtomicItems.DEEPCOAL_DUST.get());
-                        output.accept(AtomicItems.ATOMIC_DUST.get());
-                        output.accept(AtomicItems.SULFUR_DUST.get());
-                        output.accept(AtomicItems.SALTPETER_DUST.get());
-                        output.accept(AtomicItems.LEAD_DUST.get());
-                        output.accept(AtomicItems.BRIGHTSILVER_DUST.get());
-                        output.accept(AtomicItems.BUNGERITE_DUST.get());
-                        output.accept(AtomicItems.SOULSTEEL_DUST.get());
-                        output.accept(AtomicItems.ENDER_DUST.get());
-                        output.accept(AtomicItems.DIAMOND_DUST.get());
-                        output.accept(AtomicItems.EMERALD_DUST.get());
-                        output.accept(AtomicItems.ECHO_DUST.get());
-
-                        output.accept(AtomicItems.LEAD_NUGGET.get());
-                        output.accept(AtomicItems.BRIGHTSILVER_NUGGET.get());
-                        output.accept(AtomicItems.BUNGERITE_NUGGET.get());
-                        output.accept(AtomicItems.SOULSTEEL_NUGGET.get());
-                        output.accept(AtomicItems.BUNGERITE_ALLOY_NUGGET.get());
-
-                        output.accept(AtomicItems.ATOMIC_SHARD.get());
-                        output.accept(AtomicItems.EMPOWERED_ATOMIC_SHARD.get());
-
-                        output.accept(AtomicItems.OBSIDIAN_CHUNK.get());
-                        output.accept(AtomicItems.BASALT_TOOL_SHAFT.get());
-                        output.accept(AtomicItems.ATOMIC_TOOL_SHAFT.get());
-                        output.accept(AtomicItems.ATOMIC_STABILIZER.get());
-
-                        output.accept(AtomicItems.BUNGERITE_ALLOY_SWORD.get());
-                        output.accept(AtomicItems.BUNGERITE_ALLOY_SPEAR.get());
-                        output.accept(AtomicItems.BUNGERITE_ALLOY_SHOVEL.get());
-                        output.accept(AtomicItems.BUNGERITE_ALLOY_PICKAXE.get());
-                        output.accept(AtomicItems.BUNGERITE_ALLOY_AXE.get());
-                        output.accept(AtomicItems.BUNGERITE_ALLOY_HOE.get());
-
-                        output.accept(AtomicItems.BRIGHTSILVER_MACHINE_CASING.get());
-                        output.accept(AtomicItems.BUNGERITE_MACHINE_CASING.get());
-                        output.accept(AtomicItems.SOULSTEEL_MACHINE_CASING.get());
-
                         output.accept(AtomicBlocks.EXPLOSIVE_MILL.get());
                         output.accept(AtomicBlocks.EXPLOSIVE_COMPACTOR.get());
                         output.accept(AtomicBlocks.EXPLOSIVE_SEPARATOR.get());
                         output.accept(AtomicBlocks.EXPLOSIVE_SMELTER.get());
                         output.accept(AtomicBlocks.EXPLOSIVE_REFINER.get());
                         output.accept(AtomicBlocks.EXPLOSIVE_INFUSER.get());
-
 
                     }).build()
     );
