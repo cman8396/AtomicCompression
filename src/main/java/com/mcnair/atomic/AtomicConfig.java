@@ -9,7 +9,7 @@ public class AtomicConfig {
     public static final ModConfigSpec.IntValue machineAll_FuelConversion_Tier1 = BUILDER
             .comment("""
                     Amount of fuel a single Tier 1 machine fuel item is converted to.
-                    Eg. Gunpowder
+                    Eg. Gunpowder, Deepcoal Dust
                     """)
             .defineInRange("machine.fuelConversion_Tier1", 4, 0, Integer.MAX_VALUE);
     public static final ModConfigSpec.IntValue machineAll_FuelConversion_Tier2 = BUILDER

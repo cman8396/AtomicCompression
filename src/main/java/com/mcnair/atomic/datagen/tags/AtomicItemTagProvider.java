@@ -73,10 +73,12 @@ public class AtomicItemTagProvider extends ItemTagsProvider {
                 .add(AtomicBlocks.EXPLOSIVE_INFUSER.asItem());
 
         tag(AtomicTags.Items.MACHINE_FUEL)
+                .add(AtomicItems.DEEPCOAL_DUST.asItem())
                 .add(Items.GUNPOWDER)
                 .add(Items.BLAZE_POWDER);
 
         tag(AtomicTags.Items.MACHINE_FUEL_T1)
+                .add(AtomicItems.DEEPCOAL_DUST.asItem())
                 .add(Items.GUNPOWDER);
         tag(AtomicTags.Items.MACHINE_FUEL_T2)
                 .add(Items.BLAZE_POWDER);

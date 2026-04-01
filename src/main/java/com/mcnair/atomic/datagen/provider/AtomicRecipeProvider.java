@@ -114,14 +114,6 @@ public class AtomicRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_empowered_atomic_shard", has(AtomicItems.EMPOWERED_ATOMIC_SHARD))
                 .unlockedBy("has_atomic_shard", has(AtomicItems.ATOMIC_SHARD))
                 .save(output);
-        shaped(RecipeCategory.MISC, AtomicItems.EMPOWERED_ATOMIC_SHARD.get())
-                .pattern("GGG")
-                .pattern("GAG")
-                .pattern("GGG")
-                .define('G', Items.GUNPOWDER)
-                .define('A', AtomicItems.ATOMIC_SHARD.get())
-                .unlockedBy("has_atomic_shard", has(AtomicItems.ATOMIC_SHARD))
-                .save(output);
 
 
         /* SHAPELESS RECIPES */
