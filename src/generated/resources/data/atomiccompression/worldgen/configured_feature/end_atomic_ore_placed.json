@@ -6,7 +6,10 @@
     "targets": [
       {
         "state": {
-          "Name": "atomiccompression:end_atomic_ore"
+          "Name": "atomiccompression:end_atomic_ore",
+          "Properties": {
+            "lit": "false"
+          }
         },
         "target": {
           "block": "minecraft:end_stone",

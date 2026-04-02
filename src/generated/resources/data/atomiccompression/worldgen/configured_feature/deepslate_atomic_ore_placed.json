@@ -6,7 +6,10 @@
     "targets": [
       {
         "state": {
-          "Name": "atomiccompression:deepslate_atomic_ore"
+          "Name": "atomiccompression:deepslate_atomic_ore",
+          "Properties": {
+            "lit": "false"
+          }
         },
         "target": {
           "predicate_type": "minecraft:tag_match",

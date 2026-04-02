@@ -15,8 +15,8 @@ import java.util.function.Supplier;
 public class AtomicParticles {
     public static final DeferredRegister<ParticleType<?>> PARTICLE_TYPES = DeferredRegister.create(BuiltInRegistries.PARTICLE_TYPE, AtomicCompression.MOD_ID);
 
-    public static final Supplier<SimpleParticleType> SHARD_PARTICLES = PARTICLE_TYPES.register("shard_particles", () -> new SimpleParticleType(true));
-    public static final Supplier<SimpleParticleType> BAD_PARTICLES = PARTICLE_TYPES.register("bad_particles", () -> new SimpleParticleType(true));
+    public static final Supplier<SimpleParticleType> SHARD_PARTICLES = PARTICLE_TYPES.register("shard_particles", () -> new SimpleParticleType(false));
+    public static final Supplier<SimpleParticleType> BAD_PARTICLES = PARTICLE_TYPES.register("bad_particles", () -> new SimpleParticleType(false));
 
     public static void register(IEventBus eventBus) {
         PARTICLE_TYPES.register(eventBus);

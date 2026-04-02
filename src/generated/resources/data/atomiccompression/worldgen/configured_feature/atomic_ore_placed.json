@@ -6,7 +6,10 @@
     "targets": [
       {
         "state": {
-          "Name": "atomiccompression:atomic_ore"
+          "Name": "atomiccompression:atomic_ore",
+          "Properties": {
+            "lit": "false"
+          }
         },
         "target": {
           "predicate_type": "minecraft:tag_match",

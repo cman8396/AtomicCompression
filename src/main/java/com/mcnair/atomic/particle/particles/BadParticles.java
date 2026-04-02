@@ -17,7 +17,7 @@ public class BadParticles extends SingleQuadParticle {
         this.gravity = -0.1F;
         this.friction = 0.9F;
 
-        this.lifetime = 80;
+        this.lifetime = 40;
         this.setSpriteFromAge(spriteSet);
 
         this.rCol = 1f;

@@ -2,8 +2,8 @@
   "feature": "atomiccompression:end_atomic_ore_placed",
   "placement": [
     {
-      "type": "minecraft:rarity_filter",
-      "chance": 32
+      "type": "minecraft:count",
+      "count": 3
     },
     {
       "type": "minecraft:in_square"

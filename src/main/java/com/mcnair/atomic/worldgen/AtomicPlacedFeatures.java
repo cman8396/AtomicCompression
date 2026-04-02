@@ -59,9 +59,9 @@ public class AtomicPlacedFeatures {
         register(context, DEEPSLATE_SALTPETER_ORE_PLACED_KEY, configuredFeatures.getOrThrow(AtomicConfiguredFeatures.DEEPSLATE_SALTPETER_ORE_KEY),
                 AtomicOrePlacement.commonOrePlacement(9, HeightRangePlacement.uniform(VerticalAnchor.absolute(-50), VerticalAnchor.absolute(90))));
         register(context, LEAD_ORE_PLACED_KEY, configuredFeatures.getOrThrow(AtomicConfiguredFeatures.LEAD_ORE_KEY),
-                AtomicOrePlacement.commonOrePlacement(16, HeightRangePlacement.uniform(VerticalAnchor.absolute(-50), VerticalAnchor.absolute(90))));
+                AtomicOrePlacement.commonOrePlacement(12, HeightRangePlacement.uniform(VerticalAnchor.absolute(-50), VerticalAnchor.absolute(90))));
         register(context, DEEPSLATE_LEAD_ORE_PLACED_KEY, configuredFeatures.getOrThrow(AtomicConfiguredFeatures.DEEPSLATE_LEAD_ORE_KEY),
-                AtomicOrePlacement.commonOrePlacement(16, HeightRangePlacement.uniform(VerticalAnchor.absolute(-50), VerticalAnchor.absolute(90))));
+                AtomicOrePlacement.commonOrePlacement(12, HeightRangePlacement.uniform(VerticalAnchor.absolute(-50), VerticalAnchor.absolute(90))));
         register(context, BRIGHTSILVER_ORE_PLACED_KEY, configuredFeatures.getOrThrow(AtomicConfiguredFeatures.BRIGHTSILVER_ORE_KEY),
                 AtomicOrePlacement.commonOrePlacement(7, HeightRangePlacement.uniform(VerticalAnchor.absolute(-50), VerticalAnchor.absolute(90))));
         register(context, DEEPSLATE_BRIGHTSILVER_ORE_PLACED_KEY, configuredFeatures.getOrThrow(AtomicConfiguredFeatures.DEEPSLATE_BRIGHTSILVER_ORE_KEY),
@@ -72,17 +72,17 @@ public class AtomicPlacedFeatures {
                 AtomicOrePlacement.commonOrePlacement(4, netherFullHeightSpawnRange));
 
         register(context, ATOMIC_ORE_PLACED_KEY, configuredFeatures.getOrThrow(AtomicConfiguredFeatures.ATOMIC_ORE_KEY),
-                AtomicOrePlacement.rareOrePlacement(32, HeightRangePlacement.uniform(VerticalAnchor.absolute(-50), VerticalAnchor.absolute(90))));
+                AtomicOrePlacement.commonOrePlacement(2, HeightRangePlacement.uniform(VerticalAnchor.absolute(-50), VerticalAnchor.absolute(90))));
         register(context, DEEPSLATE_ATOMIC_ORE_PLACED_KEY, configuredFeatures.getOrThrow(AtomicConfiguredFeatures.DEEPSLATE_ATOMIC_ORE_KEY),
-                AtomicOrePlacement.rareOrePlacement(32, HeightRangePlacement.uniform(VerticalAnchor.absolute(-50), VerticalAnchor.absolute(90))));
+                AtomicOrePlacement.commonOrePlacement(2, HeightRangePlacement.uniform(VerticalAnchor.absolute(-50), VerticalAnchor.absolute(90))));
         register(context, NETHER_ATOMIC_ORE_PLACED_KEY, configuredFeatures.getOrThrow(AtomicConfiguredFeatures.NETHER_ATOMIC_ORE_KEY),
-                AtomicOrePlacement.rareOrePlacement(32, netherFullHeightSpawnRange));
+                AtomicOrePlacement.commonOrePlacement(3, netherFullHeightSpawnRange));
         register(context, END_ATOMIC_ORE_PLACED_KEY, configuredFeatures.getOrThrow(AtomicConfiguredFeatures.END_ATOMIC_ORE_KEY),
-                AtomicOrePlacement.rareOrePlacement(32, endFullHeightSpawnRange));
+                AtomicOrePlacement.commonOrePlacement(3, endFullHeightSpawnRange));
 
 
         register(context, ASHENWOOD_PLACED_KEY, configuredFeatures.getOrThrow(AtomicConfiguredFeatures.ASHENWOOD_KEY),
-                VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.1f, 1),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.05f, 1),
                         AtomicBlocks.ASHENWOOD_SAPLING.get()));
 
 //        register(context, GOJI_BERRY_BUSH_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.GOJI_BERRY_BUSH_KEY),

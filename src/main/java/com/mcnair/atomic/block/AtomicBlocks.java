@@ -58,22 +58,18 @@ public class AtomicBlocks {
                     properties.strength(2.5f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
     public static final DeferredBlock<Block> BUNGERITE_ORE = registerBlock("bungerite_ore",
             (properties) -> new DropExperienceBlock(UniformInt.of(3, 7),
-                    properties.strength(9f, 1200f).requiresCorrectToolForDrops().ignitedByLava().sound(SoundType.NETHER_GOLD_ORE)));
+                    properties.strength(7f, 1200f).requiresCorrectToolForDrops().ignitedByLava().sound(SoundType.NETHER_GOLD_ORE)));
     public static final DeferredBlock<Block> SOULSTEEL_ORE = registerBlock("soulsteel_ore",
             (properties) -> new DropExperienceBlock(UniformInt.of(3, 8),
-                    properties.strength(10f, 1200f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+                    properties.strength(9f, 1200f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
     public static final DeferredBlock<Block> ATOMIC_ORE = registerBlock("atomic_ore",
-            (properties) -> new DropExperienceBlock(UniformInt.of(5, 7),
-                    properties.strength(9f, 1000f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+            (properties) -> new AtomicLitOreBlock(properties.strength(8f, 1000f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
     public static final DeferredBlock<Block> DEEPSLATE_ATOMIC_ORE = registerBlock("deepslate_atomic_ore",
-            (properties) -> new DropExperienceBlock(UniformInt.of(5, 7),
-                    properties.strength(10f, 1000f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
+            (properties) -> new AtomicLitOreBlock(properties.strength(8.5f, 1000f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
     public static final DeferredBlock<Block> NETHER_ATOMIC_ORE = registerBlock("nether_atomic_ore",
-            (properties) -> new DropExperienceBlock(UniformInt.of(5, 7),
-                    properties.strength(9f, 1000f).requiresCorrectToolForDrops().sound(SoundType.NETHER_GOLD_ORE)));
+            (properties) -> new AtomicLitOreBlock(properties.strength(8f, 1000f).requiresCorrectToolForDrops().sound(SoundType.NETHER_GOLD_ORE)));
     public static final DeferredBlock<Block> END_ATOMIC_ORE = registerBlock("end_atomic_ore",
-            (properties) -> new DropExperienceBlock(UniformInt.of(5, 7),
-                    properties.strength(9f, 1000f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+            (properties) -> new AtomicLitOreBlock(properties.strength(8f, 1000f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
 
 
     /* UTILITY BLOCKS */
