@@ -4,6 +4,7 @@ import com.mcnair.atomic.particle.AtomicParticles;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.particles.DustParticleOptions;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -30,6 +31,8 @@ import org.jspecify.annotations.Nullable;
 public class AtomicLitOreBlock extends Block {
     public static final MapCodec<AtomicLitOreBlock> CODEC = simpleCodec(AtomicLitOreBlock::new);
     public static final BooleanProperty LIT;
+
+    public static final DustParticleOptions ATOMIC_DUST = new DustParticleOptions(16753417, 1.0F);
 
     public MapCodec<AtomicLitOreBlock> codec() {
         return CODEC;
@@ -105,10 +108,10 @@ public class AtomicLitOreBlock extends Block {
             BlockPos blockpos = pos.relative(direction);
             if (!level.getBlockState(blockpos).isSolidRender()) {
                 Direction.Axis direction$axis = direction.getAxis();
-                double d1 = direction$axis == Direction.Axis.X ? (double) 0.1F + (double) 0.125F * (double) direction.getStepX() : (double) randomsource.nextFloat();
-                double d2 = direction$axis == Direction.Axis.Y ? (double) 0.1F + (double) 0.125F * (double) direction.getStepY() : (double) randomsource.nextFloat();
-                double d3 = direction$axis == Direction.Axis.Z ? (double) 0.1F + (double) 0.125F * (double) direction.getStepZ() : (double) randomsource.nextFloat();
-                level.addParticle(AtomicParticles.SHARD_PARTICLES.get(), (double) pos.getX() + d1, (double) pos.getY() + d2, (double) pos.getZ() + d3, (double) 0.0F, (double) 0.0F, (double) 0.0F);
+                double d1 = direction$axis == Direction.Axis.X ? 0.5 + 0.5625 * direction.getStepX() : randomsource.nextFloat();
+                double d2 = direction$axis == Direction.Axis.Y ? 0.5 + 0.5625 * direction.getStepY() : randomsource.nextFloat();
+                double d3 = direction$axis == Direction.Axis.Z ? 0.5 + 0.5625 * direction.getStepZ() : randomsource.nextFloat();
+                level.addParticle(ATOMIC_DUST, pos.getX() + d1, pos.getY() + d2, pos.getZ() + d3, 0.0, 0.0, 0.0);
             }
         }
 

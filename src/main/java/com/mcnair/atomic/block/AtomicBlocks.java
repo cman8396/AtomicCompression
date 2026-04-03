@@ -12,7 +12,9 @@ import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
@@ -21,6 +23,7 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Function;
+import java.util.function.ToIntFunction;
 
 public class AtomicBlocks {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(AtomicCompression.MOD_ID);
@@ -63,13 +66,13 @@ public class AtomicBlocks {
             (properties) -> new DropExperienceBlock(UniformInt.of(3, 8),
                     properties.strength(9f, 1200f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
     public static final DeferredBlock<Block> ATOMIC_ORE = registerBlock("atomic_ore",
-            (properties) -> new AtomicLitOreBlock(properties.strength(8f, 1000f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+            (properties) -> new AtomicLitOreBlock(properties.strength(8f, 1000f).requiresCorrectToolForDrops().randomTicks().lightLevel(litBlockEmission(9)).sound(SoundType.STONE)));
     public static final DeferredBlock<Block> DEEPSLATE_ATOMIC_ORE = registerBlock("deepslate_atomic_ore",
-            (properties) -> new AtomicLitOreBlock(properties.strength(8.5f, 1000f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
+            (properties) -> new AtomicLitOreBlock(properties.strength(8.5f, 1000f).requiresCorrectToolForDrops().randomTicks().lightLevel(litBlockEmission(9)).sound(SoundType.DEEPSLATE)));
     public static final DeferredBlock<Block> NETHER_ATOMIC_ORE = registerBlock("nether_atomic_ore",
-            (properties) -> new AtomicLitOreBlock(properties.strength(8f, 1000f).requiresCorrectToolForDrops().sound(SoundType.NETHER_GOLD_ORE)));
+            (properties) -> new AtomicLitOreBlock(properties.strength(8f, 1000f).requiresCorrectToolForDrops().randomTicks().lightLevel(litBlockEmission(9)).sound(SoundType.NETHER_GOLD_ORE)));
     public static final DeferredBlock<Block> END_ATOMIC_ORE = registerBlock("end_atomic_ore",
-            (properties) -> new AtomicLitOreBlock(properties.strength(8f, 1000f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+            (properties) -> new AtomicLitOreBlock(properties.strength(8f, 1000f).requiresCorrectToolForDrops().randomTicks().lightLevel(litBlockEmission(9)).sound(SoundType.STONE)));
 
 
     /* UTILITY BLOCKS */
@@ -202,6 +205,10 @@ public class AtomicBlocks {
     public static final DeferredBlock<Block> EXPLOSIVE_INFUSER = registerBlock("explosive_infuser",
             (properties) -> new ExplosiveInfuserBlock(properties.strength(3.5F).requiresCorrectToolForDrops().sound(SoundType.STONE)));
 
+
+    private static ToIntFunction<BlockState> litBlockEmission(int lightValue) {
+        return blockState -> blockState.getValue(BlockStateProperties.LIT) ? lightValue : 0;
+    }
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Function<BlockBehaviour.Properties, T> function) {
         DeferredBlock<T> toReturn = BLOCKS.registerBlock(name, function);
