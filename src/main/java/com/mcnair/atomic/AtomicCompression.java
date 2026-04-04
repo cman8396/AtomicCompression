@@ -13,9 +13,12 @@ import com.mcnair.atomic.screen.custom.*;
 import com.mcnair.atomic.utility.AtomicCreativeTabs;
 import com.mcnair.atomic.block.AtomicBlocks;
 import com.mcnair.atomic.item.AtomicItems;
+import com.mcnair.atomic.utility.AtomicTags;
 import com.mcnair.atomic.villager.AtomicVillagers;
+import net.minecraft.ChatFormatting;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.chunk.ChunkSectionLayer;
+import net.minecraft.network.chat.Component;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
@@ -23,6 +26,7 @@ import net.neoforged.neoforge.client.event.RecipesReceivedEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 import net.neoforged.neoforge.event.OnDatapackSyncEvent;
+import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -123,6 +127,19 @@ public class AtomicCompression {
             event.register(AtomicMenuTypes.EXPLOSIVE_SMELTER_MENU.get(), ExplosiveSmelterScreen::new);
             event.register(AtomicMenuTypes.EXPLOSIVE_REFINER_MENU.get(), ExplosiveRefinerScreen::new);
             event.register(AtomicMenuTypes.EXPLOSIVE_INFUSER_MENU.get(), ExplosiveInfuserScreen::new);
+        }
+
+        @SubscribeEvent
+        public static void onItemTooltip(ItemTooltipEvent event) {
+            if (event.getItemStack().getTags().anyMatch(x -> x.equals(AtomicTags.Items.MACHINE_FUEL_T1))) {
+                event.getToolTip().add(Component.translatable("tooltip.atomiccompression.item.fuel_t1").append(String.format(" - [%s]", AtomicConfig.machineAll_FuelConversion_Tier1.getAsInt())).withStyle(ChatFormatting.GRAY));
+            } else if (event.getItemStack().getTags().anyMatch(x -> x.equals(AtomicTags.Items.MACHINE_FUEL_T2))) {
+                event.getToolTip().add(Component.translatable("tooltip.atomiccompression.item.fuel_t2").append(String.format(" - [%s]", AtomicConfig.machineAll_FuelConversion_Tier2.getAsInt())).withStyle(ChatFormatting.GRAY));
+            } else if (event.getItemStack().getTags().anyMatch(x -> x.equals(AtomicTags.Items.MACHINE_FUEL_T3))) {
+                event.getToolTip().add(Component.translatable("tooltip.atomiccompression.item.fuel_t3").append(String.format(" - [%s]", AtomicConfig.machineAll_FuelConversion_Tier3.getAsInt())).withStyle(ChatFormatting.GRAY));
+            } else if (event.getItemStack().getTags().anyMatch(x -> x.equals(AtomicTags.Items.MACHINE_FUEL_T4))) {
+                event.getToolTip().add(Component.translatable("tooltip.atomiccompression.item.fuel_t4").append(String.format(" - [%s]", AtomicConfig.machineAll_FuelConversion_Tier4.getAsInt())).withStyle(ChatFormatting.GRAY));
+            }
         }
     }
 
