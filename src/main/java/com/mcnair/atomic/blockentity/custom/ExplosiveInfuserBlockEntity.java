@@ -154,7 +154,7 @@ public class ExplosiveInfuserBlockEntity extends BlockEntity implements MenuProv
     private void loadMachineConfigData() {
         fuelCapacity = getCasingDataFuelTankCapacity();
 
-        int ticks = AtomicConfig.machineExplosiveInfuser_CraftingDurationTicks_Base.getAsInt();
+        int ticks = AtomicConfig.machineExplosiveInfuser_CraftingDurationTicks.getAsInt();
         double modifier = getCasingDataCraftingDurationModifier();
         int tickDeduction = (int) Math.abs(ticks * modifier);
 
@@ -162,35 +162,39 @@ public class ExplosiveInfuserBlockEntity extends BlockEntity implements MenuProv
     }
 
     private int getCasingDataFuelTankCapacity() {
-        if (InventoryUtils.getCasingType(UTILITY_SLOTS[2], itemHandler) == "bungerite") {
-            return AtomicConfig.machineExplosiveInfuser_FuelTankCapacity_RefinedBungerite.getAsInt();
-        } else {
-            return AtomicConfig.machineExplosiveInfuser_FuelTankCapacity_Base.getAsInt();
-        }
+        return switch (InventoryUtils.getCasingType(UTILITY_SLOTS[2], itemHandler)) {
+            case "brightsilver" -> AtomicConfig.machineExplosiveInfuser_FuelTankCapacity_Brightsilver.getAsInt();
+            case "bungerite" -> AtomicConfig.machineExplosiveInfuser_FuelTankCapacity_Bungerite.getAsInt();
+            case "soulsteel" -> AtomicConfig.machineExplosiveInfuser_FuelTankCapacity_Soulsteel.getAsInt();
+            default -> AtomicConfig.machineExplosiveInfuser_FuelTankCapacity_Base.getAsInt();
+        };
     }
 
     public double getCasingDataCraftingDurationModifier() {
-        if (InventoryUtils.getCasingType(UTILITY_SLOTS[2], itemHandler) == "bungerite") {
-            return AtomicConfig.machineExplosiveInfuser_CraftingDurationModifier_RefinedBungerite.getAsDouble();
-        } else {
-            return AtomicConfig.machineExplosiveInfuser_CraftingDurationModifier_Base.getAsDouble();
-        }
+        return switch (InventoryUtils.getCasingType(UTILITY_SLOTS[2], itemHandler)) {
+            case "brightsilver" -> AtomicConfig.machineExplosiveInfuser_CraftingDurationModifier_Brightsilver.getAsDouble();
+            case "bungerite" -> AtomicConfig.machineExplosiveInfuser_CraftingDurationModifier_Bungerite.getAsDouble();
+            case "soulsteel" -> AtomicConfig.machineExplosiveInfuser_CraftingDurationModifier_Soulsteel.getAsDouble();
+            default -> AtomicConfig.machineExplosiveInfuser_CraftingDurationModifier_Base.getAsDouble();
+        };
     }
 
     public double getCasingDataChanceToSaveIgnitionSource() {
-        if (InventoryUtils.getCasingType(UTILITY_SLOTS[2], itemHandler) == "bungerite") {
-            return AtomicConfig.machineExplosiveInfuser_ChanceToSaveIgnitionSource_RefinedBungerite.getAsDouble();
-        } else {
-            return AtomicConfig.machineExplosiveInfuser_ChanceToSaveIgnitionSource_Base.getAsDouble();
-        }
+        return switch (InventoryUtils.getCasingType(UTILITY_SLOTS[2], itemHandler)) {
+            case "brightsilver" -> AtomicConfig.machineExplosiveInfuser_ChanceToSaveIgnitionSource_Brightsilver.getAsDouble();
+            case "bungerite" -> AtomicConfig.machineExplosiveInfuser_ChanceToSaveIgnitionSource_Bungerite.getAsDouble();
+            case "soulsteel" -> AtomicConfig.machineExplosiveInfuser_ChanceToSaveIgnitionSource_Soulsteel.getAsDouble();
+            default -> AtomicConfig.machineExplosiveInfuser_ChanceToSaveIgnitionSource_Base.getAsDouble();
+        };
     }
 
     public double getCasingDataChanceToSaveFuel() {
-        if (InventoryUtils.getCasingType(UTILITY_SLOTS[2], itemHandler) == "bungerite") {
-            return AtomicConfig.machineExplosiveInfuser_ChanceToSaveFuel_RefinedBungerite.getAsDouble();
-        } else {
-            return AtomicConfig.machineExplosiveInfuser_ChanceToSaveFuel_Base.getAsDouble();
-        }
+        return switch (InventoryUtils.getCasingType(UTILITY_SLOTS[2], itemHandler)) {
+            case "brightsilver" -> AtomicConfig.machineExplosiveInfuser_ChanceToSaveFuel_Brightsilver.getAsDouble();
+            case "bungerite" -> AtomicConfig.machineExplosiveInfuser_ChanceToSaveFuel_Bungerite.getAsDouble();
+            case "soulsteel" -> AtomicConfig.machineExplosiveInfuser_ChanceToSaveFuel_Soulsteel.getAsDouble();
+            default -> AtomicConfig.machineExplosiveInfuser_ChanceToSaveFuel_Base.getAsDouble();
+        };
     }
 
 
