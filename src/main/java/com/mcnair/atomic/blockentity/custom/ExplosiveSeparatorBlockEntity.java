@@ -37,6 +37,7 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
 import org.jetbrains.annotations.Nullable;
+import org.jspecify.annotations.NonNull;
 
 import java.util.Optional;
 
@@ -92,7 +93,7 @@ public class ExplosiveSeparatorBlockEntity extends BlockEntity implements MenuPr
     }
 
     @Override
-    protected void saveAdditional(ValueOutput output) {
+    protected void saveAdditional(@NonNull ValueOutput output) {
         itemHandler.serialize(output);
 
         output.putInt("entity.progress", progress);
@@ -104,7 +105,7 @@ public class ExplosiveSeparatorBlockEntity extends BlockEntity implements MenuPr
     }
 
     @Override
-    protected void loadAdditional(ValueInput input) {
+    protected void loadAdditional(@NonNull ValueInput input) {
         super.loadAdditional(input);
 
         itemHandler.deserialize(input);
@@ -115,18 +116,18 @@ public class ExplosiveSeparatorBlockEntity extends BlockEntity implements MenuPr
     }
 
     @Override
-    public Component getDisplayName() {
+    public @NonNull Component getDisplayName() {
         return Component.translatable("block.atomiccompression.explosive_separator");
     }
 
     @Nullable
     @Override
-    public AbstractContainerMenu createMenu(int i, Inventory inventory, Player player) {
+    public AbstractContainerMenu createMenu(int i, @NonNull Inventory inventory, @NonNull Player player) {
         return new ExplosiveSeparatorMenu(i, inventory, this, this.data);
     }
 
     @Override
-    public void preRemoveSideEffects(BlockPos pos, BlockState state) {
+    public void preRemoveSideEffects(@NonNull BlockPos pos, @NonNull BlockState state) {
         drops();
         super.preRemoveSideEffects(pos, state);
     }
@@ -138,6 +139,7 @@ public class ExplosiveSeparatorBlockEntity extends BlockEntity implements MenuPr
             inventory.setItem(i, itemHandler.getStackInSlot(i));
         }
 
+        assert this.level != null;
         Containers.dropContents(this.level, this.worldPosition, inventory);
     }
 
@@ -259,12 +261,6 @@ public class ExplosiveSeparatorBlockEntity extends BlockEntity implements MenuPr
         if (level == null || !validRecipe())
             return;
 
-        // Slot offset because utility slots could be before input slots.
-        int slotOffset = INPUT_SLOTS[0];
-
-        // Get the allowed inputs for the recipe.
-        Ingredient input = recipe.value().getInput();
-
         // Check if the output slots can accept the recipe result
         if (!InventoryUtils.canOutputSlotsAcceptRecipeOutput(recipe.value().getMaxOutputCounts(), itemHandler, OUTPUT_SLOTS))
             return;
@@ -308,6 +304,7 @@ public class ExplosiveSeparatorBlockEntity extends BlockEntity implements MenuPr
     /* MODEL STATE CHANGE */
 
     private void onBlockActive() {
+        assert level != null;
         if (level.getBlockState(getBlockPos()).hasProperty(BlockStateProperties.LIT) &&
                 !level.getBlockState(getBlockPos()).getValue(BlockStateProperties.LIT)) {
             level.setBlock(getBlockPos(), getBlockState().setValue(BlockStateProperties.LIT, true), 3);
@@ -315,6 +312,7 @@ public class ExplosiveSeparatorBlockEntity extends BlockEntity implements MenuPr
     }
 
     private void onBlockInactive() {
+        assert level != null;
         if (level.getBlockState(getBlockPos()).hasProperty(BlockStateProperties.LIT) &&
                 level.getBlockState(getBlockPos()).getValue(BlockStateProperties.LIT)) {
             level.setBlock(getBlockPos(), getBlockState().setValue(BlockStateProperties.LIT, false), 3);
@@ -405,7 +403,7 @@ public class ExplosiveSeparatorBlockEntity extends BlockEntity implements MenuPr
 
 
     @Override
-    public CompoundTag getUpdateTag(HolderLookup.Provider pRegistries) {
+    public @NonNull CompoundTag getUpdateTag(HolderLookup.@NonNull Provider pRegistries) {
         return saveWithoutMetadata(pRegistries);
     }
 

@@ -260,12 +260,6 @@ public class ExplosiveSmelterBlockEntity extends BlockEntity implements MenuProv
         if (level == null || !validRecipe())
             return;
 
-        // Slot offset because utility slots could be before input slots.
-        int slotOffset = INPUT_SLOTS[0];
-
-        // Get the allowed inputs for the recipe.
-        Ingredient input = recipe.value().getInput();
-
         // Check if the output slots can accept the recipe result
         if (!InventoryUtils.canOutputSlotsAcceptRecipeOutput(recipe.value().getMaxOutputCounts(), itemHandler, OUTPUT_SLOTS))
             return;
