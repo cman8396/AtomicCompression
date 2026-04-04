@@ -44,7 +44,6 @@ public class ExplosiveSeparatorBlockEntity extends BlockEntity implements MenuPr
     public final AtomicItemStackProvider itemHandler = new AtomicItemStackProvider(8) {
     };
 
-    public static final float RECIPE_DURATION_MULTIPLIER = 1;
 
     private static final int[] UTILITY_SLOTS = new int[]{0, 1, 2};
     private static final int[] INPUT_SLOTS = new int[]{3};

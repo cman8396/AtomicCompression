@@ -37,6 +37,7 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
 import org.jetbrains.annotations.Nullable;
+import org.jspecify.annotations.NonNull;
 
 import java.util.Optional;
 
@@ -44,8 +45,6 @@ import java.util.Optional;
 public class ExplosiveRefinerBlockEntity extends BlockEntity implements MenuProvider {
     public final AtomicItemStackProvider itemHandler = new AtomicItemStackProvider(8) {
     };
-
-    public static final float RECIPE_DURATION_MULTIPLIER = 1;
 
     private static final int[] UTILITY_SLOTS = new int[]{0, 1, 2};
     private static final int[] INPUT_SLOTS = new int[]{3, 4};
@@ -94,7 +93,7 @@ public class ExplosiveRefinerBlockEntity extends BlockEntity implements MenuProv
     }
 
     @Override
-    protected void saveAdditional(ValueOutput output) {
+    protected void saveAdditional(@NonNull ValueOutput output) {
         itemHandler.serialize(output);
 
         output.putInt("entity.progress", progress);
@@ -106,7 +105,7 @@ public class ExplosiveRefinerBlockEntity extends BlockEntity implements MenuProv
     }
 
     @Override
-    protected void loadAdditional(ValueInput input) {
+    protected void loadAdditional(@NonNull ValueInput input) {
         super.loadAdditional(input);
 
         itemHandler.deserialize(input);
@@ -117,18 +116,18 @@ public class ExplosiveRefinerBlockEntity extends BlockEntity implements MenuProv
     }
 
     @Override
-    public Component getDisplayName() {
+    public @NonNull Component getDisplayName() {
         return Component.translatable("block.atomiccompression.explosive_refiner");
     }
 
     @Nullable
     @Override
-    public AbstractContainerMenu createMenu(int i, Inventory inventory, Player player) {
+    public AbstractContainerMenu createMenu(int i, @NonNull Inventory inventory, @NonNull Player player) {
         return new ExplosiveRefinerMenu(i, inventory, this, this.data);
     }
 
     @Override
-    public void preRemoveSideEffects(BlockPos pos, BlockState state) {
+    public void preRemoveSideEffects(@NonNull BlockPos pos, @NonNull BlockState state) {
         drops();
         super.preRemoveSideEffects(pos, state);
     }
@@ -140,6 +139,7 @@ public class ExplosiveRefinerBlockEntity extends BlockEntity implements MenuProv
             inventory.setItem(i, itemHandler.getStackInSlot(i));
         }
 
+        assert this.level != null;
         Containers.dropContents(this.level, this.worldPosition, inventory);
     }
 
@@ -354,6 +354,7 @@ public class ExplosiveRefinerBlockEntity extends BlockEntity implements MenuProv
     /* MODEL STATE CHANGE */
 
     private void onBlockActive() {
+        assert level != null;
         if (level.getBlockState(getBlockPos()).hasProperty(BlockStateProperties.LIT) &&
                 !level.getBlockState(getBlockPos()).getValue(BlockStateProperties.LIT)) {
             level.setBlock(getBlockPos(), getBlockState().setValue(BlockStateProperties.LIT, true), 3);
@@ -361,6 +362,7 @@ public class ExplosiveRefinerBlockEntity extends BlockEntity implements MenuProv
     }
 
     private void onBlockInactive() {
+        assert level != null;
         if (level.getBlockState(getBlockPos()).hasProperty(BlockStateProperties.LIT) &&
                 level.getBlockState(getBlockPos()).getValue(BlockStateProperties.LIT)) {
             level.setBlock(getBlockPos(), getBlockState().setValue(BlockStateProperties.LIT, false), 3);
@@ -450,7 +452,7 @@ public class ExplosiveRefinerBlockEntity extends BlockEntity implements MenuProv
 
 
     @Override
-    public CompoundTag getUpdateTag(HolderLookup.Provider pRegistries) {
+    public @NonNull CompoundTag getUpdateTag(HolderLookup.@NonNull Provider pRegistries) {
         return saveWithoutMetadata(pRegistries);
     }
 
