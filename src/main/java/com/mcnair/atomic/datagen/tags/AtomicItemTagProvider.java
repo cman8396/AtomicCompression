@@ -76,15 +76,21 @@ public class AtomicItemTagProvider extends ItemTagsProvider {
         tag(AtomicTags.Items.MACHINE_FUEL)
                 .add(AtomicItems.DEEPCOAL_DUST.asItem())
                 .add(Items.GUNPOWDER)
-                .add(Items.BLAZE_POWDER);
+                .add(Items.BLAZE_POWDER)
+                .add(AtomicItems.ATOMIC_DUST.asItem())
+                .add(AtomicItems.ENDER_DUST.asItem())
+                .add(AtomicItems.ECHO_DUST.asItem());
 
         tag(AtomicTags.Items.MACHINE_FUEL_T1)
                 .add(AtomicItems.DEEPCOAL_DUST.asItem())
                 .add(Items.GUNPOWDER);
         tag(AtomicTags.Items.MACHINE_FUEL_T2)
-                .add(Items.BLAZE_POWDER);
-//        tag(AtomicTags.Items.MACHINE_FUEL_T3);
-//        tag(AtomicTags.Items.MACHINE_FUEL_T4);
+                .add(Items.BLAZE_POWDER)
+                .add(AtomicItems.ATOMIC_DUST.asItem());
+        tag(AtomicTags.Items.MACHINE_FUEL_T3)
+                .add(AtomicItems.ENDER_DUST.asItem());
+        tag(AtomicTags.Items.MACHINE_FUEL_T4)
+                .add(AtomicItems.ECHO_DUST.asItem());
 
         tag(AtomicTags.Items.MACHINE_CASING)
                 .addTag(AtomicTags.Items.MACHINE_CASING_BRIGHTSILVER)

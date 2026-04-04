@@ -1,13 +1,15 @@
-// 1.21.11	2026-04-01T20:55:45.443525	Tags for minecraft:item mod id atomiccompression
+// 1.21.11	2026-04-04T23:10:20.3269444	Tags for minecraft:item mod id atomiccompression
 b2aff78501eff51e23253dc8530d02056b395777 data/atomiccompression/tags/item/bungerite_alloy_repairable.json
 c61f60129fef9bb8e546fcd06a55e283e845cf54 data/atomiccompression/tags/item/machine.json
 c26aa83182291f81cd8427d39491a6e83fb862b6 data/atomiccompression/tags/item/machine_casing.json
 11e864d811df7c7a1e5ab52f2ceef3541246df72 data/atomiccompression/tags/item/machine_casing/brightsilver.json
 d730f12ba40a6bdf6021c91759531482a7f84286 data/atomiccompression/tags/item/machine_casing/bungerite.json
 cf9fa745751d6fe7fa41d76b4c1fa1479dff371e data/atomiccompression/tags/item/machine_casing/soulsteel.json
-f60dcb7d11bd133b9fbd2d42b4025d4ed1b367e2 data/atomiccompression/tags/item/machine_fuel.json
+62098fb24a8b68725bbe4e19968c2083d1f341df data/atomiccompression/tags/item/machine_fuel.json
 98e7dc062a870b1db5479c1ceea75e12ed39d205 data/atomiccompression/tags/item/machine_fuel/t1.json
-9798d67e68f1fc1fcbc41d664432a3a37ba63beb data/atomiccompression/tags/item/machine_fuel/t2.json
+366056d6e095532aa4510f6934c81cd978f69155 data/atomiccompression/tags/item/machine_fuel/t2.json
+d5951ecc458c1b9161a0eba7e57c63a3d3550f87 data/atomiccompression/tags/item/machine_fuel/t3.json
+581d115de42e9238dd05e9731f8db569d9ccff6f data/atomiccompression/tags/item/machine_fuel/t4.json
 ea5453bb23292a045408ae8581a1bcde5230ac72 data/atomiccompression/tags/item/machine_ignition.json
 84e0d5f236e885ee0eb980d4866762a46b3626c3 data/c/tags/item/chunks.json
 b6baa3f4cded2e7acf153dd926e4771ec4b7ff74 data/c/tags/item/chunks/obsidian.json
