@@ -147,6 +147,7 @@
   "tooltip.atomiccompression.jei.machine_ignition_help": "Machines require an ignition source to operate.",
   "tooltip.atomiccompression.jei.machine_casing_help": "Machine casings are used to upgrade machines.",
 
+  "tooltip.atomiccompression.item.hold_shift": "Hold SHIFT for info...",
   "tooltip.atomiccompression.item.fuel_t1": "Tier 1 Machine Fuel",
   "tooltip.atomiccompression.item.fuel_t2": "Tier 2 Machine Fuel",
   "tooltip.atomiccompression.item.fuel_t3": "Tier 3 Machine Fuel",

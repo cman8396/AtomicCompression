@@ -5,6 +5,11 @@ import net.neoforged.neoforge.common.ModConfigSpec;
 public class AtomicConfig {
     private static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
 
+    /* TOOLTIPS */
+    public static final ModConfigSpec.BooleanValue general_ShowMachineFuelTierTooltips = BUILDER
+            .comment("Should 'Machine Fuel Tier x' tooltips be visible for items.")
+            .define("general.show_machine_fuel_tier_tooltips",true);
+
     /* ALL MACHINES */
     public static final ModConfigSpec.IntValue machineAll_FuelConversion_Tier1 = BUILDER
             .comment("""
