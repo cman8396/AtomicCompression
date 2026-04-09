@@ -2,6 +2,7 @@ package com.mcnair.atomic.block;
 
 import com.mcnair.atomic.AtomicCompression;
 import com.mcnair.atomic.block.custom.*;
+import com.mcnair.atomic.block.custom.machine.*;
 import com.mcnair.atomic.block.extensions.*;
 import com.mcnair.atomic.item.AtomicItems;
 import com.mcnair.atomic.worldgen.tree.AtomicTreeGrower;
@@ -204,6 +205,15 @@ public class AtomicBlocks {
             (properties) -> new ExplosiveRefinerBlock(properties.strength(3.5F).requiresCorrectToolForDrops().sound(SoundType.STONE)));
     public static final DeferredBlock<Block> EXPLOSIVE_INFUSER = registerBlock("explosive_infuser",
             (properties) -> new ExplosiveInfuserBlock(properties.strength(3.5F).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+
+
+    /* MULTIBLOCK ENTITY PARTS */
+    public static final DeferredBlock<Block> ATOMIC_COMPRESSOR_CORE = registerBlock("atomic_compressor_core",
+            (properties) -> new Block(properties.strength(5f, 6f).noOcclusion().sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> ATOMIC_COMPRESSOR_CONNECTOR = registerBlock("atomic_compressor_connector",
+            (properties) -> new Block(properties.strength(5f, 6f).noOcclusion().sound(SoundType.STONE)));
+
+
 
 
     private static ToIntFunction<BlockState> litBlockEmission(int lightValue) {

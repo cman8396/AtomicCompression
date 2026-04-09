@@ -1,8 +1,8 @@
-package com.mcnair.atomic.block.custom;
+package com.mcnair.atomic.block.custom.machine;
 
 import com.mcnair.atomic.block.extensions.entity.AbstractMachineBlock;
 import com.mcnair.atomic.blockentity.AtomicBlockEntities;
-import com.mcnair.atomic.blockentity.custom.ExplosiveSmelterBlockEntity;
+import com.mcnair.atomic.blockentity.custom.ExplosiveCompactorBlockEntity;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -22,22 +22,22 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.Nullable;
 
-public class ExplosiveSmelterBlock extends AbstractMachineBlock {
-    public static final MapCodec<ExplosiveSmelterBlock> CODEC = simpleCodec(ExplosiveSmelterBlock::new);
+public class ExplosiveCompactorBlock extends AbstractMachineBlock {
+    public static final MapCodec<ExplosiveCompactorBlock> CODEC = simpleCodec(ExplosiveCompactorBlock::new);
 
-    public ExplosiveSmelterBlock(Properties properties) {
+    public ExplosiveCompactorBlock(Properties properties) {
         super(properties);
     }
 
     @Override
-    protected MapCodec<ExplosiveSmelterBlock> codec() {
+    protected MapCodec<ExplosiveCompactorBlock> codec() {
         return CODEC;
     }
 
     @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos blockPos, BlockState blockState) {
-        return new ExplosiveSmelterBlockEntity(blockPos, blockState);
+        return new ExplosiveCompactorBlockEntity(blockPos, blockState);
     }
 
     @Override
@@ -48,7 +48,7 @@ public class ExplosiveSmelterBlock extends AbstractMachineBlock {
     @Override
     protected void openContainer(Level level, BlockPos pos, Player player) {
         BlockEntity blockentity = level.getBlockEntity(pos);
-        if (blockentity instanceof ExplosiveSmelterBlockEntity) {
+        if (blockentity instanceof ExplosiveCompactorBlockEntity) {
             player.openMenu((MenuProvider)blockentity);
         }
     }
@@ -58,8 +58,8 @@ public class ExplosiveSmelterBlock extends AbstractMachineBlock {
                                           Player pPlayer, InteractionHand pHand, BlockHitResult pHitResult) {
         if (!pLevel.isClientSide()) {
             BlockEntity entity = pLevel.getBlockEntity(pPos);
-            if(entity instanceof ExplosiveSmelterBlockEntity explosiveSmelterBlockEntity) {
-                ((ServerPlayer) pPlayer).openMenu(new SimpleMenuProvider(explosiveSmelterBlockEntity, Component.literal("Explosive Smelter")), pPos);
+            if(entity instanceof ExplosiveCompactorBlockEntity explosiveCompactorBlockEntity) {
+                ((ServerPlayer) pPlayer).openMenu(new SimpleMenuProvider(explosiveCompactorBlockEntity, Component.literal("Explosive Compactor")), pPos);
             } else {
                 throw new IllegalStateException("Container provider missing!");
             }
@@ -75,6 +75,6 @@ public class ExplosiveSmelterBlock extends AbstractMachineBlock {
             return null;
         }
 
-        return createTickerHelper(blockEntityType, AtomicBlockEntities.EXPLOSIVE_SMELTER.get(), ExplosiveSmelterBlockEntity::tick);
+        return createTickerHelper(blockEntityType, AtomicBlockEntities.EXPLOSIVE_COMPACTOR.get(), ExplosiveCompactorBlockEntity::tick);
     }
 }

@@ -102,6 +102,9 @@ public class AtomicBlockModelGenerators extends BlockModelGenerators {
         createMachine(AtomicBlocks.EXPLOSIVE_REFINER.get(), AtomicBlockModelGeneratorsTemplates.MACHINE.TEXTURED_MODEL);
         createMachine(AtomicBlocks.EXPLOSIVE_INFUSER.get(), AtomicBlockModelGeneratorsTemplates.MACHINE.TEXTURED_MODEL);
 
+        /* MULTIBLOCK ENTITY PARTS */
+//        this.createTrivialCube(AtomicBlocks.ATOMIC_COMPRESSOR_CORE.get());
+
 
 //        this.createCropBlock(AtomicBlocks.RADISH_CROP.get(), RadishCropBlock.AGE,  0, 1, 2, 3);
 //        this.createCropBlock(AtomicBlocks.GOJI_BERRY_BUSH.get(), GojiBerryBushBlock.AGE,  0, 1, 2, 3);

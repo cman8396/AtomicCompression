@@ -1,8 +1,8 @@
-package com.mcnair.atomic.block.custom;
+package com.mcnair.atomic.block.custom.machine;
 
 import com.mcnair.atomic.block.extensions.entity.AbstractMachineBlock;
 import com.mcnair.atomic.blockentity.AtomicBlockEntities;
-import com.mcnair.atomic.blockentity.custom.ExplosiveRefinerBlockEntity;
+import com.mcnair.atomic.blockentity.custom.ExplosiveMillBlockEntity;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -22,22 +22,22 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.Nullable;
 
-public class ExplosiveRefinerBlock extends AbstractMachineBlock {
-    public static final MapCodec<ExplosiveRefinerBlock> CODEC = simpleCodec(ExplosiveRefinerBlock::new);
+public class ExplosiveMillBlock extends AbstractMachineBlock {
+    public static final MapCodec<ExplosiveMillBlock> CODEC = simpleCodec(ExplosiveMillBlock::new);
 
-    public ExplosiveRefinerBlock(Properties properties) {
+    public ExplosiveMillBlock(Properties properties) {
         super(properties);
     }
 
     @Override
-    protected MapCodec<ExplosiveRefinerBlock> codec() {
+    protected MapCodec<ExplosiveMillBlock> codec() {
         return CODEC;
     }
 
     @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos blockPos, BlockState blockState) {
-        return new ExplosiveRefinerBlockEntity(blockPos, blockState);
+        return new ExplosiveMillBlockEntity(blockPos, blockState);
     }
 
     @Override
@@ -48,8 +48,8 @@ public class ExplosiveRefinerBlock extends AbstractMachineBlock {
     @Override
     protected void openContainer(Level level, BlockPos pos, Player player) {
         BlockEntity blockentity = level.getBlockEntity(pos);
-        if (blockentity instanceof ExplosiveRefinerBlockEntity) {
-            player.openMenu((MenuProvider) blockentity);
+        if (blockentity instanceof ExplosiveMillBlockEntity) {
+            player.openMenu((MenuProvider)blockentity);
         }
     }
 
@@ -58,8 +58,8 @@ public class ExplosiveRefinerBlock extends AbstractMachineBlock {
                                           Player pPlayer, InteractionHand pHand, BlockHitResult pHitResult) {
         if (!pLevel.isClientSide()) {
             BlockEntity entity = pLevel.getBlockEntity(pPos);
-            if (entity instanceof ExplosiveRefinerBlockEntity explosiveRefinerBlockEntity) {
-                ((ServerPlayer) pPlayer).openMenu(new SimpleMenuProvider(explosiveRefinerBlockEntity, Component.literal("Explosive Refiner")), pPos);
+            if(entity instanceof ExplosiveMillBlockEntity explosiveMillBlockEntity) {
+                ((ServerPlayer) pPlayer).openMenu(new SimpleMenuProvider(explosiveMillBlockEntity, Component.literal("Explosive Mill")), pPos);
             } else {
                 throw new IllegalStateException("Container provider missing!");
             }
@@ -71,11 +71,10 @@ public class ExplosiveRefinerBlock extends AbstractMachineBlock {
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> blockEntityType) {
-        if (level.isClientSide()) {
+        if(level.isClientSide()) {
             return null;
         }
 
-        return createTickerHelper(blockEntityType, AtomicBlockEntities.EXPLOSIVE_REFINER.get(), ExplosiveRefinerBlockEntity::tick);
+        return createTickerHelper(blockEntityType, AtomicBlockEntities.EXPLOSIVE_MILL.get(), ExplosiveMillBlockEntity::tick);
     }
 }
-

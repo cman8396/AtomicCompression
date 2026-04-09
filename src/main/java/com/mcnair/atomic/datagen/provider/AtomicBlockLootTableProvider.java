@@ -117,6 +117,10 @@ public class AtomicBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(AtomicBlocks.EXPLOSIVE_REFINER.get());
         dropSelf(AtomicBlocks.EXPLOSIVE_INFUSER.get());
 
+        /* MULTIBLOCK ENTITY PARTS */
+        dropSelf(AtomicBlocks.ATOMIC_COMPRESSOR_CORE.get());
+        dropSelf(AtomicBlocks.ATOMIC_COMPRESSOR_CONNECTOR.get());
+
 //        dropSelf(ModBlocks.BISMUTH_BLOCK.get());
 //        // dropSelf(ModBlocks.MAGIC_BLOCK.get());
 //        add(ModBlocks.BISMUTH_DEEPSLATE_ORE.get(),

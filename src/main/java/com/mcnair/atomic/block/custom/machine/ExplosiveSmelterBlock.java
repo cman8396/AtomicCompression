@@ -1,8 +1,8 @@
-package com.mcnair.atomic.block.custom;
+package com.mcnair.atomic.block.custom.machine;
 
 import com.mcnair.atomic.block.extensions.entity.AbstractMachineBlock;
 import com.mcnair.atomic.blockentity.AtomicBlockEntities;
-import com.mcnair.atomic.blockentity.custom.ExplosiveMillBlockEntity;
+import com.mcnair.atomic.blockentity.custom.ExplosiveSmelterBlockEntity;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -22,22 +22,22 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.Nullable;
 
-public class ExplosiveMillBlock extends AbstractMachineBlock {
-    public static final MapCodec<ExplosiveMillBlock> CODEC = simpleCodec(ExplosiveMillBlock::new);
+public class ExplosiveSmelterBlock extends AbstractMachineBlock {
+    public static final MapCodec<ExplosiveSmelterBlock> CODEC = simpleCodec(ExplosiveSmelterBlock::new);
 
-    public ExplosiveMillBlock(Properties properties) {
+    public ExplosiveSmelterBlock(Properties properties) {
         super(properties);
     }
 
     @Override
-    protected MapCodec<ExplosiveMillBlock> codec() {
+    protected MapCodec<ExplosiveSmelterBlock> codec() {
         return CODEC;
     }
 
     @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos blockPos, BlockState blockState) {
-        return new ExplosiveMillBlockEntity(blockPos, blockState);
+        return new ExplosiveSmelterBlockEntity(blockPos, blockState);
     }
 
     @Override
@@ -48,7 +48,7 @@ public class ExplosiveMillBlock extends AbstractMachineBlock {
     @Override
     protected void openContainer(Level level, BlockPos pos, Player player) {
         BlockEntity blockentity = level.getBlockEntity(pos);
-        if (blockentity instanceof ExplosiveMillBlockEntity) {
+        if (blockentity instanceof ExplosiveSmelterBlockEntity) {
             player.openMenu((MenuProvider)blockentity);
         }
     }
@@ -58,8 +58,8 @@ public class ExplosiveMillBlock extends AbstractMachineBlock {
                                           Player pPlayer, InteractionHand pHand, BlockHitResult pHitResult) {
         if (!pLevel.isClientSide()) {
             BlockEntity entity = pLevel.getBlockEntity(pPos);
-            if(entity instanceof ExplosiveMillBlockEntity explosiveMillBlockEntity) {
-                ((ServerPlayer) pPlayer).openMenu(new SimpleMenuProvider(explosiveMillBlockEntity, Component.literal("Explosive Mill")), pPos);
+            if(entity instanceof ExplosiveSmelterBlockEntity explosiveSmelterBlockEntity) {
+                ((ServerPlayer) pPlayer).openMenu(new SimpleMenuProvider(explosiveSmelterBlockEntity, Component.literal("Explosive Smelter")), pPos);
             } else {
                 throw new IllegalStateException("Container provider missing!");
             }
@@ -75,6 +75,6 @@ public class ExplosiveMillBlock extends AbstractMachineBlock {
             return null;
         }
 
-        return createTickerHelper(blockEntityType, AtomicBlockEntities.EXPLOSIVE_MILL.get(), ExplosiveMillBlockEntity::tick);
+        return createTickerHelper(blockEntityType, AtomicBlockEntities.EXPLOSIVE_SMELTER.get(), ExplosiveSmelterBlockEntity::tick);
     }
 }

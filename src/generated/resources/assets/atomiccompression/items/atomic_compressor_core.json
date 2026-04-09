@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "atomiccompression:block/atomic_compressor_core"
+  }
+}

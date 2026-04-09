@@ -68,6 +68,9 @@
   "block.atomiccompression.explosive_refiner": "Explosive Refiner",
   "block.atomiccompression.explosive_infuser": "Explosive Infuser",
 
+  "block.atomiccompression.atomic_compressor_core": "Atomic Compressor Core",
+  "block.atomiccompression.atomic_compressor_connector": "Atomic Compressor Connector",
+
 
   "item.atomiccompression.atomic_shard": "Atomic Shard",
   "item.atomiccompression.deepcoal": "Deepcoal",

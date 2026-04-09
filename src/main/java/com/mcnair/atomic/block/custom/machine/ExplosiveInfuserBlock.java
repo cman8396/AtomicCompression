@@ -1,4 +1,4 @@
-package com.mcnair.atomic.block.custom;
+package com.mcnair.atomic.block.custom.machine;
 
 import com.mcnair.atomic.block.extensions.entity.AbstractMachineBlock;
 import com.mcnair.atomic.blockentity.AtomicBlockEntities;
