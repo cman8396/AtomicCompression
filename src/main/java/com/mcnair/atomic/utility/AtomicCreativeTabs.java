@@ -148,7 +148,9 @@ public class AtomicCreativeTabs {
                         output.accept(AtomicBlocks.EXPLOSIVE_REFINER.get());
                         output.accept(AtomicBlocks.EXPLOSIVE_INFUSER.get());
 
-                        output.accept(AtomicBlocks.ATOMIC_COMPRESSOR_CORE.get());
+                        output.accept(AtomicBlocks.ATOMIC_COMPRESSOR_GLASS_HOUSING.get());
+                        output.accept(AtomicBlocks.ATOMIC_COMPRESSOR_HOUSING.get());
+                        output.accept(AtomicBlocks.ATOMIC_COMPRESSOR_PRESSURE_CHAMBER.get());
                         output.accept(AtomicBlocks.ATOMIC_COMPRESSOR_CONNECTOR.get());
 
                     }).build()

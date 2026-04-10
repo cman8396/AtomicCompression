@@ -3,8 +3,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
-		"1": "atomiccompression:block/atomic_compressor/core",
-		"particle": "atomiccompression:block/atomic_compressor/core"
+		"1": "atomiccompression:block/atomic_compressor/pressure_chamber",
+		"particle": "atomiccompression:block/atomic_compressor/pressure_chamber"
 	},
 	"elements": [
 		{

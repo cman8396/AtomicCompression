@@ -68,8 +68,14 @@
   "block.atomiccompression.explosive_refiner": "Explosive Refiner",
   "block.atomiccompression.explosive_infuser": "Explosive Infuser",
 
-  "block.atomiccompression.atomic_compressor_core": "Atomic Compressor Core",
+  "block.atomiccompression.atomic_compressor_housing": "Atomic Compressor Housing",
+  "block.atomiccompression.atomic_compressor_glass_housing": "Atomic Compressor Glass Housing",
+  "block.atomiccompression.atomic_compressor_injection_stabiliser": "Atomic Compressor Injection Stabiliser",
+  "block.atomiccompression.atomic_compressor_pressure_chamber": "Atomic Compressor Pressure Chamber",
   "block.atomiccompression.atomic_compressor_connector": "Atomic Compressor Connector",
+  "block.atomiccompression.atomic_compressor_controller": "Atomic Compressor Controller",
+  "block.atomiccompression.atomic_compressor_input": "Atomic Compressor Input",
+  "block.atomiccompression.atomic_compressor_output": "Atomic Compressor Output",
 
 
   "item.atomiccompression.atomic_shard": "Atomic Shard",

@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "atomiccompression:atomic_compressor_core"
+          "name": "atomiccompression:atomic_compressor_pressure_chamber"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "atomiccompression:blocks/atomic_compressor_core"
+  "random_sequence": "atomiccompression:blocks/atomic_compressor_pressure_chamber"
 }

@@ -1,4 +1,4 @@
-// 1.21.11	2026-04-09T23:55:56.1761019	Loot Tables
+// 1.21.11	2026-04-10T23:59:19.8187796	Loot Tables
 4e8fe8bf5396393b0261cc13f80722abd76257f4 data/atomiccompression/loot_table/blocks/ashenwood_button.json
 16d3480bfd6a273f23bb6ccbcdd772357bc54a16 data/atomiccompression/loot_table/blocks/ashenwood_door.json
 2e47b7842f7e3c21fc04f29a2feb8a3254353b12 data/atomiccompression/loot_table/blocks/ashenwood_fence.json
@@ -16,7 +16,9 @@ b425ef8d1311db7c559ca8c8f6f77b1777c67e05 data/atomiccompression/loot_table/block
 f6e61decf3447abb13bcdf83ed8974eb09061e11 data/atomiccompression/loot_table/blocks/ashenwood_wood.json
 41b56c99ad35080f674e3ad897174315f68818a4 data/atomiccompression/loot_table/blocks/atomic_block.json
 c4b90c829b318819a3d3e17b7dd8ad89f16e756f data/atomiccompression/loot_table/blocks/atomic_compressor_connector.json
-5a25912cfacdaa333f43a447658fd7b23ea5350c data/atomiccompression/loot_table/blocks/atomic_compressor_core.json
+3d431c0206a67c9cd1d862a49aac841ab44c8265 data/atomiccompression/loot_table/blocks/atomic_compressor_glass_housing.json
+fd0943affa7c826f6a186151a7b177e7beb92dc5 data/atomiccompression/loot_table/blocks/atomic_compressor_housing.json
+28ecad00863a0305b5564f3e65c43035f538941b data/atomiccompression/loot_table/blocks/atomic_compressor_pressure_chamber.json
 62990d01a8eee03dc17add882d7c131fc2b1efe9 data/atomiccompression/loot_table/blocks/atomic_glass.json
 c984aa2412b1b1f6d510f70bf1852b7e0657d8f2 data/atomiccompression/loot_table/blocks/atomic_glass_pane.json
 058cdff29d7ddaf5041cd2a92e67ab12d606bd8f data/atomiccompression/loot_table/blocks/atomic_ore.json

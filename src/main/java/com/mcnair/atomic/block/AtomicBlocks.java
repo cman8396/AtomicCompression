@@ -2,6 +2,7 @@ package com.mcnair.atomic.block;
 
 import com.mcnair.atomic.AtomicCompression;
 import com.mcnair.atomic.block.custom.*;
+import com.mcnair.atomic.block.custom.compressor.AtomicCompressorConnectorBlock;
 import com.mcnair.atomic.block.custom.machine.*;
 import com.mcnair.atomic.block.extensions.*;
 import com.mcnair.atomic.item.AtomicItems;
@@ -208,10 +209,14 @@ public class AtomicBlocks {
 
 
     /* MULTIBLOCK ENTITY PARTS */
-    public static final DeferredBlock<Block> ATOMIC_COMPRESSOR_CORE = registerBlock("atomic_compressor_core",
+    public static final DeferredBlock<Block> ATOMIC_COMPRESSOR_GLASS_HOUSING = registerBlock("atomic_compressor_glass_housing",
+            (properties) -> new Block(properties.strength(5f, 6f).noOcclusion().sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> ATOMIC_COMPRESSOR_HOUSING = registerBlock("atomic_compressor_housing",
+            (properties) -> new Block(properties.strength(5f, 6f).noOcclusion().sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> ATOMIC_COMPRESSOR_PRESSURE_CHAMBER = registerBlock("atomic_compressor_pressure_chamber",
             (properties) -> new Block(properties.strength(5f, 6f).noOcclusion().sound(SoundType.STONE)));
     public static final DeferredBlock<Block> ATOMIC_COMPRESSOR_CONNECTOR = registerBlock("atomic_compressor_connector",
-            (properties) -> new Block(properties.strength(5f, 6f).noOcclusion().sound(SoundType.STONE)));
+            (properties) -> new AtomicCompressorConnectorBlock(properties.strength(5f, 6f).noOcclusion().sound(SoundType.STONE)));
 
 
 

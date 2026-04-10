@@ -1,7 +1,19 @@
 {
   "variants": {
-    "": {
+    "facing=north": {
       "model": "atomiccompression:block/atomic_compressor_connector"
+    },
+    "facing=south": {
+      "model": "atomiccompression:block/atomic_compressor_connector",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "atomiccompression:block/atomic_compressor_connector",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "atomiccompression:block/atomic_compressor_connector",
+      "y": 270
     }
   }
 }
