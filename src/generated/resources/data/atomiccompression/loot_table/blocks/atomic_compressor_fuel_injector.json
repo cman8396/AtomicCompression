@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "atomiccompression:atomic_compressor_fuel_injector"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "atomiccompression:blocks/atomic_compressor_fuel_injector"
+}

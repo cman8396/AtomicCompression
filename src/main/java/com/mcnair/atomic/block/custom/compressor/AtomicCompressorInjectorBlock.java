@@ -15,32 +15,31 @@ import org.jspecify.annotations.NonNull;
 
 import javax.annotation.Nullable;
 
-public class AtomicCompressorConnectorBlock extends HorizontalDirectionalBlock {
-    public static final MapCodec<AtomicCompressorConnectorBlock> CODEC = simpleCodec(AtomicCompressorConnectorBlock::new);
+public class AtomicCompressorInjectorBlock extends HorizontalDirectionalBlock {
+    public static final MapCodec<AtomicCompressorInjectorBlock> CODEC = simpleCodec(AtomicCompressorInjectorBlock::new);
 
-    public AtomicCompressorConnectorBlock(Properties properties) {
+    public AtomicCompressorInjectorBlock(Properties properties) {
         super(properties);
     }
 
     @Override
     protected @NonNull VoxelShape getShape(@NonNull BlockState state, @NonNull BlockGetter level, @NonNull BlockPos pos, @NonNull CollisionContext context) {
+        VoxelShape port = AtomicVoxelHelper.FULL_BLOCK;
         switch (state.getValue(FACING)) {
             case NORTH -> {
-                return AtomicVoxelHelper.CONNECTOR_NORTH;
+                port = AtomicVoxelHelper.INJECTOR_PORT_NORTH;
             }
             case SOUTH -> {
-                return AtomicVoxelHelper.CONNECTOR_SOUTH;
+                port = AtomicVoxelHelper.INJECTOR_PORT_SOUTH;
             }
             case EAST -> {
-                return AtomicVoxelHelper.CONNECTOR_EAST;
+                port = AtomicVoxelHelper.INJECTOR_PORT_WEST;
             }
             case WEST -> {
-                return AtomicVoxelHelper.CONNECTOR_WEST;
-            }
-            default -> {
-                return AtomicVoxelHelper.CONNECTOR_NONE;
+                port = AtomicVoxelHelper.INJECTOR_PORT_EAST;
             }
         }
+        return AtomicVoxelHelper.combine(AtomicVoxelHelper.INJECTOR_BASE, port);
     }
 
     @Override
