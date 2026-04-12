@@ -151,10 +151,13 @@ public class AtomicCreativeTabs {
                         output.accept(AtomicBlocks.ATOMIC_COMPRESSOR_GLASS_HOUSING.get());
                         output.accept(AtomicBlocks.ATOMIC_COMPRESSOR_HOUSING.get());
                         output.accept(AtomicBlocks.ATOMIC_COMPRESSOR_PRESSURE_CHAMBER.get());
-                        output.accept(AtomicBlocks.ATOMIC_COMPRESSOR_CONNECTOR.get());
+                        output.accept(AtomicBlocks.ATOMIC_COMPRESSOR_CONTROLLER.get());
                         output.accept(AtomicBlocks.ATOMIC_COMPRESSOR_INPUT.get());
+                        output.accept(AtomicBlocks.ATOMIC_COMPRESSOR_OUTPUT.get());
+                        output.accept(AtomicBlocks.ATOMIC_COMPRESSOR_CONNECTOR.get());
                         output.accept(AtomicBlocks.ATOMIC_COMPRESSOR_FUEL_INJECTOR.get());
                         output.accept(AtomicBlocks.ATOMIC_COMPRESSOR_RECIPE_INJECTOR.get());
+                        output.accept(AtomicBlocks.ATOMIC_COMPRESSOR_INJECTION_STABILISER.get());
 
                     }).build()
     );

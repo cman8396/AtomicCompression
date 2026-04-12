@@ -20,6 +20,12 @@ public class AtomicVoxelHelper {
     public static final VoxelShape INJECTOR_PORT_WEST = Block.box(15D, 4D, 4D, 16D, 12D, 12D);
     public static final VoxelShape INJECTOR_BASE = Block.box(1D, 0D, 1D, 15D, 14D, 15D);
 
+    public static final VoxelShape CONTROLLER_PORT_NORTH = Block.box(4D, 4D, 0D, 12D, 12D, 1D);
+    public static final VoxelShape CONTROLLER_PORT_SOUTH = Block.box(4D, 4D, 15D, 12D, 12D, 16D);
+    public static final VoxelShape CONTROLLER_PORT_EAST = Block.box(0D, 4D, 4D, 1D, 12D, 12D);
+    public static final VoxelShape CONTROLLER_PORT_WEST = Block.box(15D, 4D, 4D, 16D, 12D, 12D);
+    public static final VoxelShape CONTROLLER_BASE = Block.box(0D, 0D, 1D, 16D, 16D, 16D);
+
 
     // Courtesy of "henkelmax/corelib" ... https://github.com/henkelmax/corelib/tree/master
     public static VoxelShape combine(VoxelShape... shapes) {

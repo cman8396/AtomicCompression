@@ -3,6 +3,7 @@ package com.mcnair.atomic.block;
 import com.mcnair.atomic.AtomicCompression;
 import com.mcnair.atomic.block.custom.*;
 import com.mcnair.atomic.block.custom.compressor.AtomicCompressorConnectorBlock;
+import com.mcnair.atomic.block.custom.compressor.AtomicCompressorControllerBlock;
 import com.mcnair.atomic.block.custom.compressor.AtomicCompressorDirectionalBlock;
 import com.mcnair.atomic.block.custom.compressor.AtomicCompressorInjectorBlock;
 import com.mcnair.atomic.block.custom.machine.*;
@@ -217,15 +218,20 @@ public class AtomicBlocks {
             (properties) -> new Block(properties.strength(5f, 6f).noOcclusion().sound(SoundType.STONE)));
     public static final DeferredBlock<Block> ATOMIC_COMPRESSOR_PRESSURE_CHAMBER = registerBlock("atomic_compressor_pressure_chamber",
             (properties) -> new Block(properties.strength(5f, 6f).noOcclusion().sound(SoundType.STONE)));
-    public static final DeferredBlock<Block> ATOMIC_COMPRESSOR_CONNECTOR = registerBlock("atomic_compressor_connector",
-            (properties) -> new AtomicCompressorConnectorBlock(properties.strength(5f, 6f).noOcclusion().sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> ATOMIC_COMPRESSOR_CONTROLLER = registerBlock("atomic_compressor_controller",
+            (properties) -> new AtomicCompressorControllerBlock(properties.strength(5f, 6f).noOcclusion().sound(SoundType.STONE)));
     public static final DeferredBlock<Block> ATOMIC_COMPRESSOR_INPUT = registerBlock("atomic_compressor_input",
             (properties) -> new AtomicCompressorDirectionalBlock(properties.strength(5f, 6f).noOcclusion().sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> ATOMIC_COMPRESSOR_OUTPUT = registerBlock("atomic_compressor_output",
+            (properties) -> new AtomicCompressorDirectionalBlock(properties.strength(5f, 6f).noOcclusion().sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> ATOMIC_COMPRESSOR_CONNECTOR = registerBlock("atomic_compressor_connector",
+            (properties) -> new AtomicCompressorConnectorBlock(properties.strength(5f, 6f).noOcclusion().sound(SoundType.STONE)));
     public static final DeferredBlock<Block> ATOMIC_COMPRESSOR_FUEL_INJECTOR = registerBlock("atomic_compressor_fuel_injector",
             (properties) -> new AtomicCompressorInjectorBlock(properties.strength(5f, 6f).noOcclusion().sound(SoundType.STONE)));
     public static final DeferredBlock<Block> ATOMIC_COMPRESSOR_RECIPE_INJECTOR = registerBlock("atomic_compressor_recipe_injector",
             (properties) -> new AtomicCompressorInjectorBlock(properties.strength(5f, 6f).noOcclusion().sound(SoundType.STONE)));
-
+    public static final DeferredBlock<Block> ATOMIC_COMPRESSOR_INJECTION_STABILISER = registerBlock("atomic_compressor_injection_stabiliser",
+            (properties) -> new Block(properties.strength(5f, 6f).noOcclusion().sound(SoundType.STONE)));
 
 
 

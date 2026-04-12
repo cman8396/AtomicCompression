@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "atomiccompression:block/atomic_compressor_injection_stabiliser"
+    }
+  }
+}

@@ -121,10 +121,13 @@ public class AtomicBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(AtomicBlocks.ATOMIC_COMPRESSOR_GLASS_HOUSING.get());
         dropSelf(AtomicBlocks.ATOMIC_COMPRESSOR_HOUSING.get());
         dropSelf(AtomicBlocks.ATOMIC_COMPRESSOR_PRESSURE_CHAMBER.get());
-        dropSelf(AtomicBlocks.ATOMIC_COMPRESSOR_CONNECTOR.get());
+        dropSelf(AtomicBlocks.ATOMIC_COMPRESSOR_CONTROLLER.get());
         dropSelf(AtomicBlocks.ATOMIC_COMPRESSOR_INPUT.get());
+        dropSelf(AtomicBlocks.ATOMIC_COMPRESSOR_OUTPUT.get());
+        dropSelf(AtomicBlocks.ATOMIC_COMPRESSOR_CONNECTOR.get());
         dropSelf(AtomicBlocks.ATOMIC_COMPRESSOR_FUEL_INJECTOR.get());
         dropSelf(AtomicBlocks.ATOMIC_COMPRESSOR_RECIPE_INJECTOR.get());
+        dropSelf(AtomicBlocks.ATOMIC_COMPRESSOR_INJECTION_STABILISER.get());
 
 //        dropSelf(ModBlocks.BISMUTH_BLOCK.get());
 //        // dropSelf(ModBlocks.MAGIC_BLOCK.get());
