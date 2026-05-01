@@ -33,7 +33,9 @@ public class AtomicCreativeTabs {
                         output.accept(AtomicItems.BRIGHTSILVER_INGOT.get());
                         output.accept(AtomicItems.BUNGERITE_INGOT.get());
                         output.accept(AtomicItems.SOULSTEEL_INGOT.get());
+                        output.accept(AtomicItems.BRIGHTSILVER_ALLOY_INGOT.get());
                         output.accept(AtomicItems.BUNGERITE_ALLOY_INGOT.get());
+                        output.accept(AtomicItems.SOULSTEEL_ALLOY_INGOT.get());
 
                         output.accept(AtomicItems.SAWDUST.get());
                         output.accept(AtomicItems.DEEPCOAL_DUST.get());
@@ -53,7 +55,9 @@ public class AtomicCreativeTabs {
                         output.accept(AtomicItems.BRIGHTSILVER_NUGGET.get());
                         output.accept(AtomicItems.BUNGERITE_NUGGET.get());
                         output.accept(AtomicItems.SOULSTEEL_NUGGET.get());
+                        output.accept(AtomicItems.BRIGHTSILVER_ALLOY_NUGGET.get());
                         output.accept(AtomicItems.BUNGERITE_ALLOY_NUGGET.get());
+                        output.accept(AtomicItems.SOULSTEEL_ALLOY_NUGGET.get());
 
                         output.accept(AtomicItems.ATOMIC_SHARD.get());
                         output.accept(AtomicItems.EMPOWERED_ATOMIC_SHARD.get());

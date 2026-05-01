@@ -54,10 +54,14 @@ public class AtomicItemModelGenerators extends ItemModelGenerators {
         this.generateFlatItem(AtomicItems.BRIGHTSILVER_NUGGET.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(AtomicItems.BUNGERITE_INGOT.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(AtomicItems.BUNGERITE_NUGGET.get(), ModelTemplates.FLAT_ITEM);
-        this.generateFlatItem(AtomicItems.BUNGERITE_ALLOY_INGOT.get(), ModelTemplates.FLAT_ITEM);
-        this.generateFlatItem(AtomicItems.BUNGERITE_ALLOY_NUGGET.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(AtomicItems.SOULSTEEL_INGOT.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(AtomicItems.SOULSTEEL_NUGGET.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(AtomicItems.BRIGHTSILVER_ALLOY_INGOT.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(AtomicItems.BRIGHTSILVER_ALLOY_NUGGET.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(AtomicItems.BUNGERITE_ALLOY_INGOT.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(AtomicItems.BUNGERITE_ALLOY_NUGGET.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(AtomicItems.SOULSTEEL_ALLOY_INGOT.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(AtomicItems.SOULSTEEL_ALLOY_NUGGET.get(), ModelTemplates.FLAT_ITEM);
 
         /* CRAFTING INGREDIENTS */
         this.generateFlatItem(AtomicItems.OBSIDIAN_CHUNK.get(), ModelTemplates.FLAT_ITEM);

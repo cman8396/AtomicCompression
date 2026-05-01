@@ -4,6 +4,8 @@
     "#c:ingots/brightsilver",
     "#c:ingots/bungerite",
     "#c:ingots/soulsteel",
-    "#c:ingots/bungerite_alloy"
+    "#c:ingots/brightsilver_alloy",
+    "#c:ingots/bungerite_alloy",
+    "#c:ingots/soulsteel_alloy"
   ]
 }

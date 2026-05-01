@@ -1,4 +1,4 @@
-// 1.21.11	2026-05-01T23:47:11.876789	Tags for minecraft:item mod id atomiccompression
+// 1.21.11	2026-05-02T00:19:36.3848587	Tags for minecraft:item mod id atomiccompression
 b2aff78501eff51e23253dc8530d02056b395777 data/atomiccompression/tags/item/bungerite_alloy_repairable.json
 c61f60129fef9bb8e546fcd06a55e283e845cf54 data/atomiccompression/tags/item/machine.json
 c26aa83182291f81cd8427d39491a6e83fb862b6 data/atomiccompression/tags/item/machine_casing.json
@@ -28,18 +28,22 @@ fbfcb28f7bad94cbf93ecf4f1288a628c5f6bbdb data/c/tags/item/dusts/lead.json
 0277f86083d479a0bc5c5943cb3a5029187939df data/c/tags/item/dusts/wood.json
 a95aaf9710f77eedd8adbd7a3529470a047cef78 data/c/tags/item/gems.json
 1b2b34650b1320cdb97be497efeec73d20e2c9ac data/c/tags/item/gems/atomic.json
-6dee20e4d8026ac4be422d887f8e78824171be66 data/c/tags/item/ingots.json
+1e73889cebe46c11078aaf910f7d33a31827c4f4 data/c/tags/item/ingots.json
 01ad6aad7cd5c0c819e9394c6a24a4beb2628d80 data/c/tags/item/ingots/brightsilver.json
+e37bfe5e8c117d226b24940ac3037fb05fc44dbb data/c/tags/item/ingots/brightsilver_alloy.json
 81b59187556a2c27dbad2f86624efac3d84d777b data/c/tags/item/ingots/bungerite.json
 b2aff78501eff51e23253dc8530d02056b395777 data/c/tags/item/ingots/bungerite_alloy.json
 4f14ffab1aa387a2c852ebcc31344edafa007237 data/c/tags/item/ingots/lead.json
 93257ed696612306e3a4e38646acc0fecab938eb data/c/tags/item/ingots/soulsteel.json
-7c52f35cf70809496cb183f82ea7925eccb71206 data/c/tags/item/nuggets.json
+cdc2fa121705929e7b4f4783d2a2ead291677fa3 data/c/tags/item/ingots/soulsteel_alloy.json
+70c729a2df5519e32edf12266d61305d81c38a49 data/c/tags/item/nuggets.json
 bcc66ef7dc45a63768bed80143f5a9b80a33bf13 data/c/tags/item/nuggets/brightsilver.json
+f87e1f844865a915a86b4f883a6b10ee05dbb657 data/c/tags/item/nuggets/brightsilver_alloy.json
 5a2910ee8028b5b8564d9b2700967cd063d7f643 data/c/tags/item/nuggets/bungerite.json
 97a5cc8c3150d8df1a7d41bc04860e8e601ca0fb data/c/tags/item/nuggets/bungerite_alloy.json
 5c24b9364219820187bc7b7650d814fed69a4a21 data/c/tags/item/nuggets/lead.json
 69c594cd241b65187d58f52ccde5ae3fe24bce33 data/c/tags/item/nuggets/soulsteel.json
+e84efcb6b9c6599b01fd90298f69e2a3c4545b34 data/c/tags/item/nuggets/soulsteel_alloy.json
 85ea8d6ed39eca6c3d859d10776dd4c7813ef7f4 data/c/tags/item/ores.json
 54eb6efb63719cbc3ab79b2ce4bbd8b55b3fc255 data/c/tags/item/ores/atomic.json
 1e136ee66bbdfd18da1a00b73eae293e8d099f04 data/c/tags/item/ores/brightsilver.json
@@ -48,7 +52,7 @@ daa192ebd74d9be4f902463f9e5e832025c2dbff data/c/tags/item/ores/lead.json
 891eb0f6ed2df5509ef16a469666557c9a3d3592 data/c/tags/item/ores/saltpeter.json
 2c325e411416595361ea3001ee38621ba16a4fb8 data/c/tags/item/ores/soulsteel.json
 d5c63ecbf3f9a2b90036e7af5cd3150f0662a94f data/c/tags/item/ores/sulfur.json
-66cc28d545d30b8c8ff2330c2d0712341eb419b8 data/c/tags/item/plates.json
+aaf666d0ef1af5defc24899a0e58c1cce241a887 data/c/tags/item/plates.json
 35074f1f76a7d105d3e037cdf7e6be4a5ab0e630 data/c/tags/item/raw_materials.json
 571f36ef03e845a631bb90a0fb5a4b6e263ad585 data/c/tags/item/raw_materials/brightsilver.json
 54f8175038466543ae533d726f9e2167b916c931 data/c/tags/item/raw_materials/bungerite.json

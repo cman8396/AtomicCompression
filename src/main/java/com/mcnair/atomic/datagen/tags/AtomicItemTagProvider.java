@@ -250,7 +250,9 @@ public class AtomicItemTagProvider extends ItemTagsProvider {
                 .addTag(CommonItemTags.NUGGETS_BRIGHTSILVER)
                 .addTag(CommonItemTags.NUGGETS_BUNGERITE)
                 .addTag(CommonItemTags.NUGGETS_SOULSTEEL)
-                .addTag(CommonItemTags.NUGGETS_BUNGERITE_ALLOY);
+                .addTag(CommonItemTags.NUGGETS_BRIGHTSILVER_ALLOY)
+                .addTag(CommonItemTags.NUGGETS_BUNGERITE_ALLOY)
+                .addTag(CommonItemTags.NUGGETS_SOULSTEEL_ALLOY);
         tag(CommonItemTags.NUGGETS_LEAD)
                 .add(AtomicItems.LEAD_NUGGET.get());
         tag(CommonItemTags.NUGGETS_BRIGHTSILVER)
@@ -259,8 +261,12 @@ public class AtomicItemTagProvider extends ItemTagsProvider {
                 .add(AtomicItems.BUNGERITE_NUGGET.get());
         tag(CommonItemTags.NUGGETS_SOULSTEEL)
                 .add(AtomicItems.SOULSTEEL_NUGGET.get());
+        tag(CommonItemTags.NUGGETS_BRIGHTSILVER_ALLOY)
+                .add(AtomicItems.BRIGHTSILVER_ALLOY_NUGGET.get());
         tag(CommonItemTags.NUGGETS_BUNGERITE_ALLOY)
                 .add(AtomicItems.BUNGERITE_ALLOY_NUGGET.get());
+        tag(CommonItemTags.NUGGETS_SOULSTEEL_ALLOY)
+                .add(AtomicItems.SOULSTEEL_ALLOY_NUGGET.get());
 
         // Chunks
         tag(CommonItemTags.CHUNKS)
@@ -288,7 +294,9 @@ public class AtomicItemTagProvider extends ItemTagsProvider {
                 .addTag(CommonItemTags.INGOTS_BRIGHTSILVER)
                 .addTag(CommonItemTags.INGOTS_BUNGERITE)
                 .addTag(CommonItemTags.INGOTS_SOULSTEEL)
-                .addTag(CommonItemTags.INGOTS_BUNGERITE_ALLOY);
+                .addTag(CommonItemTags.INGOTS_BRIGHTSILVER_ALLOY)
+                .addTag(CommonItemTags.INGOTS_BUNGERITE_ALLOY)
+                .addTag(CommonItemTags.INGOTS_SOULSTEEL_ALLOY);
         tag(CommonItemTags.INGOTS_LEAD)
                 .add(AtomicItems.LEAD_INGOT.get());
         tag(CommonItemTags.INGOTS_BRIGHTSILVER)
@@ -297,8 +305,12 @@ public class AtomicItemTagProvider extends ItemTagsProvider {
                 .add(AtomicItems.BUNGERITE_INGOT.get());
         tag(CommonItemTags.INGOTS_SOULSTEEL)
                 .add(AtomicItems.SOULSTEEL_INGOT.get());
+        tag(CommonItemTags.INGOTS_BRIGHTSILVER_ALLOY)
+                .add(AtomicItems.BRIGHTSILVER_ALLOY_INGOT.get());
         tag(CommonItemTags.INGOTS_BUNGERITE_ALLOY)
                 .add(AtomicItems.BUNGERITE_ALLOY_INGOT.get());
+        tag(CommonItemTags.INGOTS_SOULSTEEL_ALLOY)
+                .add(AtomicItems.SOULSTEEL_ALLOY_INGOT.get());
 
         // Plates
         tag(CommonItemTags.PLATES)
@@ -306,13 +318,9 @@ public class AtomicItemTagProvider extends ItemTagsProvider {
                 .addTag(CommonItemTags.PLATES_BRIGHTSILVER)
                 .addTag(CommonItemTags.PLATES_BUNGERITE)
                 .addTag(CommonItemTags.PLATES_SOULSTEEL)
-                .addTag(CommonItemTags.PLATES_BUNGERITE_ALLOY);
-//        tag(CommonItemTags.PLATES_LEAD)
-//                .add(AtomicItems.LEAD_PLATE.get());
-//        tag(CommonItemTags.PLATES_BUNGERITE)
-//                .add(AtomicItems.BUNGERITE_PLATE.get());
-//        tag(CommonItemTags.PLATES_BUNGERITE_ALLOY)
-//                .add(AtomicItems.BUNGERITE_ALLOY_PLATE.get());
+                .addTag(CommonItemTags.PLATES_BRIGHTSILVER_ALLOY)
+                .addTag(CommonItemTags.PLATES_BUNGERITE_ALLOY)
+                .addTag(CommonItemTags.PLATES_SOULSTEEL_ALLOY);
 
         // Rods
         tag(CommonItemTags.TOOL_SHAFTS)
@@ -320,7 +328,6 @@ public class AtomicItemTagProvider extends ItemTagsProvider {
                 .addTag(CommonItemTags.TOOL_SHAFTS_BASALT)
                 .addTag(CommonItemTags.TOOL_SHAFTS_OBSIDIAN)
                 .addTag(CommonItemTags.TOOL_SHAFTS_INFUSED);
-
         tag(CommonItemTags.TOOL_SHAFTS_ASHENWOOD)
                 .add(AtomicItems.ASHENWOOD_TOOL_SHAFT.get())
                 .add(AtomicItems.INFUSED_ASHENWOOD_TOOL_SHAFT.get());

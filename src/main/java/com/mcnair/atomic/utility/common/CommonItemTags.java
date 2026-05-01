@@ -105,8 +105,12 @@ public final class CommonItemTags {
             Identifier.fromNamespaceAndPath("c", "nuggets/bungerite"));
     public static final TagKey<Item> NUGGETS_SOULSTEEL = TagKey.create(Registries.ITEM,
             Identifier.fromNamespaceAndPath("c", "nuggets/soulsteel"));
+    public static final TagKey<Item> NUGGETS_BRIGHTSILVER_ALLOY = TagKey.create(Registries.ITEM,
+            Identifier.fromNamespaceAndPath("c", "nuggets/brightsilver_alloy"));
     public static final TagKey<Item> NUGGETS_BUNGERITE_ALLOY = TagKey.create(Registries.ITEM,
             Identifier.fromNamespaceAndPath("c", "nuggets/bungerite_alloy"));
+    public static final TagKey<Item> NUGGETS_SOULSTEEL_ALLOY = TagKey.create(Registries.ITEM,
+            Identifier.fromNamespaceAndPath("c", "nuggets/soulsteel_alloy"));
 
     public static final TagKey<Item> CHUNKS = TagKey.create(Registries.ITEM,
             Identifier.fromNamespaceAndPath("c", "chunks"));
@@ -129,8 +133,12 @@ public final class CommonItemTags {
             Identifier.fromNamespaceAndPath("c", "ingots/bungerite"));
     public static final TagKey<Item> INGOTS_SOULSTEEL = TagKey.create(Registries.ITEM,
             Identifier.fromNamespaceAndPath("c", "ingots/soulsteel"));
+    public static final TagKey<Item> INGOTS_BRIGHTSILVER_ALLOY = TagKey.create(Registries.ITEM,
+            Identifier.fromNamespaceAndPath("c", "ingots/brightsilver_alloy"));
     public static final TagKey<Item> INGOTS_BUNGERITE_ALLOY = TagKey.create(Registries.ITEM,
             Identifier.fromNamespaceAndPath("c", "ingots/bungerite_alloy"));
+    public static final TagKey<Item> INGOTS_SOULSTEEL_ALLOY = TagKey.create(Registries.ITEM,
+            Identifier.fromNamespaceAndPath("c", "ingots/soulsteel_alloy"));
 
     public static final TagKey<Item> PLATES = TagKey.create(Registries.ITEM,
             Identifier.fromNamespaceAndPath("c", "plates"));
@@ -142,8 +150,12 @@ public final class CommonItemTags {
             Identifier.fromNamespaceAndPath("c", "plates/bungerite"));
     public static final TagKey<Item> PLATES_SOULSTEEL = TagKey.create(Registries.ITEM,
             Identifier.fromNamespaceAndPath("c", "plates/soulsteel"));
+    public static final TagKey<Item> PLATES_BRIGHTSILVER_ALLOY = TagKey.create(Registries.ITEM,
+            Identifier.fromNamespaceAndPath("c", "plates/brightsilver_alloy"));
     public static final TagKey<Item> PLATES_BUNGERITE_ALLOY = TagKey.create(Registries.ITEM,
             Identifier.fromNamespaceAndPath("c", "plates/bungerite_alloy"));
+    public static final TagKey<Item> PLATES_SOULSTEEL_ALLOY = TagKey.create(Registries.ITEM,
+            Identifier.fromNamespaceAndPath("c", "plates/soulsteel_alloy"));
 
     public static final TagKey<Item> TOOL_SHAFTS = TagKey.create(Registries.ITEM,
             Identifier.fromNamespaceAndPath("c", "tool_shafts"));

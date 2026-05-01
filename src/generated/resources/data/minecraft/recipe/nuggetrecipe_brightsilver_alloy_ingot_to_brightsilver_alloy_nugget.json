@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "atomiccompression:brightsilver_alloy_ingot"
+  ],
+  "result": {
+    "count": 9,
+    "id": "atomiccompression:brightsilver_alloy_nugget"
+  }
+}

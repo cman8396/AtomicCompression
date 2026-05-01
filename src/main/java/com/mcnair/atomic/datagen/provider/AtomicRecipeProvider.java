@@ -188,7 +188,9 @@ public class AtomicRecipeProvider extends RecipeProvider {
         nuggetIngotRecipe(output, AtomicItems.BRIGHTSILVER_NUGGET, AtomicItems.BRIGHTSILVER_INGOT, RecipeCategory.MISC);
         nuggetIngotRecipe(output, AtomicItems.BUNGERITE_NUGGET, AtomicItems.BUNGERITE_INGOT, RecipeCategory.MISC);
         nuggetIngotRecipe(output, AtomicItems.SOULSTEEL_NUGGET, AtomicItems.SOULSTEEL_INGOT, RecipeCategory.MISC);
+        nuggetIngotRecipe(output, AtomicItems.BRIGHTSILVER_ALLOY_NUGGET, AtomicItems.BRIGHTSILVER_ALLOY_INGOT, RecipeCategory.MISC);
         nuggetIngotRecipe(output, AtomicItems.BUNGERITE_ALLOY_NUGGET, AtomicItems.BUNGERITE_ALLOY_INGOT, RecipeCategory.MISC);
+        nuggetIngotRecipe(output, AtomicItems.SOULSTEEL_ALLOY_NUGGET, AtomicItems.SOULSTEEL_ALLOY_INGOT, RecipeCategory.MISC);
 
 
         /* SOLID BLOCK CONVERSION */
