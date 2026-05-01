@@ -316,16 +316,24 @@ public class AtomicItemTagProvider extends ItemTagsProvider {
 
         // Rods
         tag(CommonItemTags.TOOL_SHAFTS)
+                .addTag(CommonItemTags.TOOL_SHAFTS_ASHENWOOD)
                 .addTag(CommonItemTags.TOOL_SHAFTS_BASALT)
-                .addTag(CommonItemTags.TOOL_SHAFTS_BUNGERITE_ALLOY)
-                .addTag(CommonItemTags.TOOL_SHAFTS_ATOMIC);
+                .addTag(CommonItemTags.TOOL_SHAFTS_OBSIDIAN)
+                .addTag(CommonItemTags.TOOL_SHAFTS_INFUSED);
 
+        tag(CommonItemTags.TOOL_SHAFTS_ASHENWOOD)
+                .add(AtomicItems.ASHENWOOD_TOOL_SHAFT.get())
+                .add(AtomicItems.INFUSED_ASHENWOOD_TOOL_SHAFT.get());
         tag(CommonItemTags.TOOL_SHAFTS_BASALT)
-                .add(AtomicItems.BASALT_TOOL_SHAFT.get());
-//        tag(CommonItemTags.TOOL_SHAFTS_BUNGERITE_ALLOY)
-//                .add(AtomicItems.BUNGERITE_ALLOY_TOOL_SHAFT.get());
-        tag(CommonItemTags.TOOL_SHAFTS_ATOMIC)
-                .add(AtomicItems.ATOMIC_TOOL_SHAFT.get());
+                .add(AtomicItems.BASALT_TOOL_SHAFT.get())
+                .add(AtomicItems.INFUSED_BASALT_TOOL_SHAFT.get());
+        tag(CommonItemTags.TOOL_SHAFTS_OBSIDIAN)
+                .add(AtomicItems.OBSIDIAN_TOOL_SHAFT.get())
+                .add(AtomicItems.INFUSED_OBSIDIAN_TOOL_SHAFT.get());
+        tag(CommonItemTags.TOOL_SHAFTS_INFUSED)
+                .add(AtomicItems.INFUSED_ASHENWOOD_TOOL_SHAFT.get())
+                .add(AtomicItems.INFUSED_BASALT_TOOL_SHAFT.get())
+                .add(AtomicItems.INFUSED_OBSIDIAN_TOOL_SHAFT.get());
 
     }
 }

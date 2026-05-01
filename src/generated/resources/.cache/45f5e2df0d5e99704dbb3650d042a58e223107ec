@@ -1,4 +1,4 @@
-// 1.21.11	2026-04-04T23:10:20.3269444	Tags for minecraft:item mod id atomiccompression
+// 1.21.11	2026-05-01T23:47:11.876789	Tags for minecraft:item mod id atomiccompression
 b2aff78501eff51e23253dc8530d02056b395777 data/atomiccompression/tags/item/bungerite_alloy_repairable.json
 c61f60129fef9bb8e546fcd06a55e283e845cf54 data/atomiccompression/tags/item/machine.json
 c26aa83182291f81cd8427d39491a6e83fb862b6 data/atomiccompression/tags/item/machine_casing.json
@@ -74,9 +74,11 @@ ebae062aa17466e9ccb6113180ae87ee61886633 data/c/tags/item/storage_blocks/raw_sal
 cae8a13a91788676f7e5616776d30969d675eadc data/c/tags/item/storage_blocks/saltpeter.json
 f22d11fd72ae616ca37d72fbc849c6854d2f5a94 data/c/tags/item/storage_blocks/soulsteel.json
 e5357d1e14b5b9063a74a792b2618b0b88a6df03 data/c/tags/item/storage_blocks/sulfur.json
-93199edb4bb5f87594123e29555e9fc270233a38 data/c/tags/item/tool_shafts.json
-10f1d0c31779cd352ff4c9ae6e00137f84f7952a data/c/tags/item/tool_shafts/atomic.json
-1e09f179e51191f787a3e451330f98316745827a data/c/tags/item/tool_shafts/basalt.json
+8c187af9b971481c7fea64e8bb28f4292af67d66 data/c/tags/item/tool_shafts.json
+11549bff6d302431b37b68cf0b57aa6dcaffcb06 data/c/tags/item/tool_shafts/ashenwood.json
+37f7ca452f3b66c1ecbcf382189e64f6900621fa data/c/tags/item/tool_shafts/basalt.json
+4928dbc0053449edaec4d73acd83274125914219 data/c/tags/item/tool_shafts/infused.json
+b8c4b6500c769070fc466ecfcd6df54d345d22a1 data/c/tags/item/tool_shafts/obsidian.json
 365f817a877a234063d623305d49526133afd168 data/minecraft/tags/item/axes.json
 548de33cab10a9f092d5f757ae7051ad336cf411 data/minecraft/tags/item/hoes.json
 d9118eb20aca2e5bd35ea2d085dac5f7a44157ce data/minecraft/tags/item/logs_that_burn.json

@@ -85,13 +85,6 @@ public class AtomicRecipeProvider extends RecipeProvider {
                 .define('B', Items.BASALT)
                 .unlockedBy("has_basalt", has(Items.BASALT))
                 .save(output);
-        shaped(RecipeCategory.MISC, AtomicItems.BASALT_TOOL_SHAFT.get())
-                .pattern("D")
-                .pattern("D")
-                .pattern("D")
-                .define('D', AtomicBlocks.DENSE_BASALT.get())
-                .unlockedBy("has_dense_basalt", has(AtomicBlocks.DENSE_BASALT))
-                .save(output);
         shaped(RecipeCategory.MISC, AtomicItems.ATOMIC_STABILIZER.get())
                 .pattern("OLO")
                 .pattern("L L")
@@ -102,14 +95,61 @@ public class AtomicRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_obsidian_chunk", has(AtomicItems.OBSIDIAN_CHUNK))
                 .unlockedBy("has_lead_ingot", has(AtomicItems.LEAD_INGOT))
                 .save(output);
-        shaped(RecipeCategory.MISC, AtomicItems.ATOMIC_TOOL_SHAFT.get())
-                .pattern(" B ")
+        shaped(RecipeCategory.MISC, AtomicItems.ASHENWOOD_TOOL_SHAFT.get())
+                .pattern("L")
+                .pattern("L")
+                .pattern("L")
+                .define('L', AtomicBlocks.ASHENWOOD_LOG.get())
+                .unlockedBy("has_ashenwood_log", has(AtomicBlocks.ASHENWOOD_LOG))
+                .save(output);
+        shaped(RecipeCategory.MISC, AtomicItems.BASALT_TOOL_SHAFT.get())
+                .pattern("D")
+                .pattern("D")
+                .pattern("D")
+                .define('D', AtomicBlocks.DENSE_BASALT.get())
+                .unlockedBy("has_dense_basalt", has(AtomicBlocks.DENSE_BASALT))
+                .save(output);
+        shaped(RecipeCategory.MISC, AtomicItems.OBSIDIAN_TOOL_SHAFT.get())
+                .pattern("O")
+                .pattern("O")
+                .pattern("O")
+                .define('O', Blocks.OBSIDIAN)
+                .unlockedBy("has_obsidian", has(Blocks.OBSIDIAN))
+                .save(output);
+        shaped(RecipeCategory.MISC, AtomicItems.INFUSED_ASHENWOOD_TOOL_SHAFT.get())
+                .pattern(" S ")
                 .pattern("AEA")
-                .pattern(" B ")
-                .define('B', AtomicItems.BASALT_TOOL_SHAFT.get())
+                .pattern(" S ")
+                .define('S', AtomicItems.ASHENWOOD_TOOL_SHAFT.get())
+                .define('A', AtomicItems.ATOMIC_STABILIZER.get())
+                .define('E', AtomicItems.EMPOWERED_ATOMIC_SHARD.get())
+                .unlockedBy("has_ashenwood_log", has(AtomicBlocks.ASHENWOOD_LOG))
+                .unlockedBy("has_lead_ingot", has(AtomicItems.LEAD_INGOT))
+                .unlockedBy("has_obsidian_chunk", has(AtomicItems.OBSIDIAN_CHUNK))
+                .unlockedBy("has_empowered_atomic_shard", has(AtomicItems.EMPOWERED_ATOMIC_SHARD))
+                .unlockedBy("has_atomic_shard", has(AtomicItems.ATOMIC_SHARD))
+                .save(output);
+        shaped(RecipeCategory.MISC, AtomicItems.INFUSED_BASALT_TOOL_SHAFT.get())
+                .pattern(" S ")
+                .pattern("AEA")
+                .pattern(" S ")
+                .define('S', AtomicItems.BASALT_TOOL_SHAFT.get())
                 .define('A', AtomicItems.ATOMIC_STABILIZER.get())
                 .define('E', AtomicItems.EMPOWERED_ATOMIC_SHARD.get())
                 .unlockedBy("has_dense_basalt", has(AtomicBlocks.DENSE_BASALT))
+                .unlockedBy("has_lead_ingot", has(AtomicItems.LEAD_INGOT))
+                .unlockedBy("has_obsidian_chunk", has(AtomicItems.OBSIDIAN_CHUNK))
+                .unlockedBy("has_empowered_atomic_shard", has(AtomicItems.EMPOWERED_ATOMIC_SHARD))
+                .unlockedBy("has_atomic_shard", has(AtomicItems.ATOMIC_SHARD))
+                .save(output);
+        shaped(RecipeCategory.MISC, AtomicItems.INFUSED_OBSIDIAN_TOOL_SHAFT.get())
+                .pattern(" S ")
+                .pattern("AEA")
+                .pattern(" S ")
+                .define('S', AtomicItems.OBSIDIAN_TOOL_SHAFT.get())
+                .define('A', AtomicItems.ATOMIC_STABILIZER.get())
+                .define('E', AtomicItems.EMPOWERED_ATOMIC_SHARD.get())
+                .unlockedBy("has_obsidian", has(Blocks.OBSIDIAN))
                 .unlockedBy("has_lead_ingot", has(AtomicItems.LEAD_INGOT))
                 .unlockedBy("has_obsidian_chunk", has(AtomicItems.OBSIDIAN_CHUNK))
                 .unlockedBy("has_empowered_atomic_shard", has(AtomicItems.EMPOWERED_ATOMIC_SHARD))
@@ -185,7 +225,7 @@ public class AtomicRecipeProvider extends RecipeProvider {
 
 
         /* TOOLS */
-        allTools(output, AtomicItems.BUNGERITE_ALLOY_INGOT, AtomicItems.ATOMIC_TOOL_SHAFT, AtomicItems.BUNGERITE_ALLOY_SWORD, AtomicItems.BUNGERITE_ALLOY_SPEAR, AtomicItems.BUNGERITE_ALLOY_PICKAXE, AtomicItems.BUNGERITE_ALLOY_AXE, AtomicItems.BUNGERITE_ALLOY_SHOVEL, AtomicItems.BUNGERITE_ALLOY_HOE);
+        allTools(output, AtomicItems.BUNGERITE_ALLOY_INGOT, AtomicItems.INFUSED_BASALT_TOOL_SHAFT, AtomicItems.BUNGERITE_ALLOY_SWORD, AtomicItems.BUNGERITE_ALLOY_SPEAR, AtomicItems.BUNGERITE_ALLOY_PICKAXE, AtomicItems.BUNGERITE_ALLOY_AXE, AtomicItems.BUNGERITE_ALLOY_SHOVEL, AtomicItems.BUNGERITE_ALLOY_HOE);
 
 
         /* WOODEN ITEMS */

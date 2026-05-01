@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "atomiccompression:atomic_stabilizer",
+    "E": "atomiccompression:empowered_atomic_shard",
+    "S": "atomiccompression:basalt_tool_shaft"
+  },
+  "pattern": [
+    " S ",
+    "AEA",
+    " S "
+  ],
+  "result": {
+    "count": 1,
+    "id": "atomiccompression:infused_basalt_tool_shaft"
+  }
+}

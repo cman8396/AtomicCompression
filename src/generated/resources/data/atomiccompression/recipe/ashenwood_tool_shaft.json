@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "L": "atomiccompression:ashenwood_log"
+  },
+  "pattern": [
+    "L",
+    "L",
+    "L"
+  ],
+  "result": {
+    "count": 1,
+    "id": "atomiccompression:ashenwood_tool_shaft"
+  }
+}

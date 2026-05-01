@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "O": "minecraft:obsidian"
+  },
+  "pattern": [
+    "O",
+    "O",
+    "O"
+  ],
+  "result": {
+    "count": 1,
+    "id": "atomiccompression:obsidian_tool_shaft"
+  }
+}

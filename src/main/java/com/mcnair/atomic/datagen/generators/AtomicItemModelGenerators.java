@@ -61,9 +61,13 @@ public class AtomicItemModelGenerators extends ItemModelGenerators {
 
         /* CRAFTING INGREDIENTS */
         this.generateFlatItem(AtomicItems.OBSIDIAN_CHUNK.get(), ModelTemplates.FLAT_ITEM);
-        this.generateFlatItem(AtomicItems.BASALT_TOOL_SHAFT.get(), ModelTemplates.FLAT_ITEM);
-        this.generateFlatItem(AtomicItems.ATOMIC_TOOL_SHAFT.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(AtomicItems.ATOMIC_STABILIZER.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(AtomicItems.ASHENWOOD_TOOL_SHAFT.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(AtomicItems.BASALT_TOOL_SHAFT.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(AtomicItems.OBSIDIAN_TOOL_SHAFT.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(AtomicItems.INFUSED_ASHENWOOD_TOOL_SHAFT.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(AtomicItems.INFUSED_BASALT_TOOL_SHAFT.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(AtomicItems.INFUSED_OBSIDIAN_TOOL_SHAFT.get(), ModelTemplates.FLAT_ITEM);
 
         /* TOOLS */
         this.generateFlatItem(AtomicItems.BUNGERITE_ALLOY_SWORD.get(), ModelTemplates.FLAT_HANDHELD_ITEM);

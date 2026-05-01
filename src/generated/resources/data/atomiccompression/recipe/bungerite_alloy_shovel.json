@@ -3,7 +3,7 @@
   "category": "equipment",
   "key": {
     "I": "atomiccompression:bungerite_alloy_ingot",
-    "S": "atomiccompression:atomic_tool_shaft"
+    "S": "atomiccompression:infused_basalt_tool_shaft"
   },
   "pattern": [
     "II",

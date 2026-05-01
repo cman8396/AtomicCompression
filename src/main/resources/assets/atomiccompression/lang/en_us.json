@@ -116,9 +116,13 @@
   "item.atomiccompression.soulsteel_nugget": "Soulsteel Nugget",
 
   "item.atomiccompression.obsidian_chunk": "Obsidian Chunk",
-  "item.atomiccompression.basalt_tool_shaft": "Basalt Tool Shaft",
-  "item.atomiccompression.atomic_tool_shaft": "Atomic Tool Shaft",
   "item.atomiccompression.atomic_stabilizer": "Atomic Stabilizer",
+  "item.atomiccompression.ashenwood_tool_shaft": "Ashenwood Tool Shaft",
+  "item.atomiccompression.basalt_tool_shaft": "Basalt Tool Shaft",
+  "item.atomiccompression.obsidian_tool_shaft": "Obsidian Tool Shaft",
+  "item.atomiccompression.infused_ashenwood_tool_shaft": "Infused Ashenwood Tool Shaft",
+  "item.atomiccompression.infused_basalt_tool_shaft": "Infused Basalt Tool Shaft",
+  "item.atomiccompression.infused_obsidian_tool_shaft": "Infused Obsidian Tool Shaft",
 
   "item.atomiccompression.bungerite_alloy_sword": "Bungerite Alloy Sword",
   "item.atomiccompression.bungerite_alloy_spear": "Bungerite Alloy Spear",

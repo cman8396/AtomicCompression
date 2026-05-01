@@ -53,9 +53,13 @@ public class AtomicItems {
 
     /* CRAFTING INGREDIENTS */
     public static final DeferredItem<Item> OBSIDIAN_CHUNK = ITEMS.register("obsidian_chunk", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
-    public static final DeferredItem<Item> BASALT_TOOL_SHAFT = ITEMS.register("basalt_tool_shaft", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
-    public static final DeferredItem<Item> ATOMIC_TOOL_SHAFT = ITEMS.register("atomic_tool_shaft", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
     public static final DeferredItem<Item> ATOMIC_STABILIZER = ITEMS.register("atomic_stabilizer", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
+    public static final DeferredItem<Item> ASHENWOOD_TOOL_SHAFT = ITEMS.register("ashenwood_tool_shaft", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
+    public static final DeferredItem<Item> BASALT_TOOL_SHAFT = ITEMS.register("basalt_tool_shaft", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
+    public static final DeferredItem<Item> OBSIDIAN_TOOL_SHAFT = ITEMS.register("obsidian_tool_shaft", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
+    public static final DeferredItem<Item> INFUSED_ASHENWOOD_TOOL_SHAFT = ITEMS.register("infused_ashenwood_tool_shaft", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
+    public static final DeferredItem<Item> INFUSED_BASALT_TOOL_SHAFT = ITEMS.register("infused_basalt_tool_shaft", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
+    public static final DeferredItem<Item> INFUSED_OBSIDIAN_TOOL_SHAFT = ITEMS.register("infused_obsidian_tool_shaft", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
 
     /* TOOLS */
     public static final DeferredItem<Item> BUNGERITE_ALLOY_SWORD = ITEMS.register("bungerite_alloy_sword", registryName -> new Item(new Item.Properties().sword(AtomicToolTiers.BUNGERITE_ALLOY, 4f, -2.6f).rarity(Rarity.RARE).setId(ResourceKey.create(Registries.ITEM, registryName))));

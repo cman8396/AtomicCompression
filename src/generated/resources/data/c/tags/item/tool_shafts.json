@@ -1,7 +1,8 @@
 {
   "values": [
+    "#c:tool_shafts/ashenwood",
     "#c:tool_shafts/basalt",
-    "#c:tool_shafts/bungerite_alloy",
-    "#c:tool_shafts/atomic"
+    "#c:tool_shafts/obsidian",
+    "#c:tool_shafts/infused"
   ]
 }

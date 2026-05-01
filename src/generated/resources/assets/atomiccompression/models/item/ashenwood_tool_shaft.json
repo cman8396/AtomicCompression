@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "atomiccompression:item/atomic_tool_shaft"
+    "layer0": "atomiccompression:item/ashenwood_tool_shaft"
   }
 }

@@ -59,9 +59,17 @@ public class AtomicCreativeTabs {
                         output.accept(AtomicItems.EMPOWERED_ATOMIC_SHARD.get());
 
                         output.accept(AtomicItems.OBSIDIAN_CHUNK.get());
-                        output.accept(AtomicItems.BASALT_TOOL_SHAFT.get());
-                        output.accept(AtomicItems.ATOMIC_TOOL_SHAFT.get());
                         output.accept(AtomicItems.ATOMIC_STABILIZER.get());
+                        output.accept(AtomicItems.ASHENWOOD_TOOL_SHAFT.get());
+                        output.accept(AtomicItems.INFUSED_ASHENWOOD_TOOL_SHAFT.get());
+                        output.accept(AtomicItems.BASALT_TOOL_SHAFT.get());
+                        output.accept(AtomicItems.INFUSED_BASALT_TOOL_SHAFT.get());
+                        output.accept(AtomicItems.OBSIDIAN_TOOL_SHAFT.get());
+                        output.accept(AtomicItems.INFUSED_OBSIDIAN_TOOL_SHAFT.get());
+
+                        output.accept(AtomicItems.BRIGHTSILVER_MACHINE_CASING.get());
+                        output.accept(AtomicItems.BUNGERITE_MACHINE_CASING.get());
+                        output.accept(AtomicItems.SOULSTEEL_MACHINE_CASING.get());
 
                         output.accept(AtomicItems.BUNGERITE_ALLOY_SWORD.get());
                         output.accept(AtomicItems.BUNGERITE_ALLOY_SPEAR.get());
@@ -70,9 +78,6 @@ public class AtomicCreativeTabs {
                         output.accept(AtomicItems.BUNGERITE_ALLOY_AXE.get());
                         output.accept(AtomicItems.BUNGERITE_ALLOY_HOE.get());
 
-                        output.accept(AtomicItems.BRIGHTSILVER_MACHINE_CASING.get());
-                        output.accept(AtomicItems.BUNGERITE_MACHINE_CASING.get());
-                        output.accept(AtomicItems.SOULSTEEL_MACHINE_CASING.get());
 
                     }).build()
     );

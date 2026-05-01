@@ -1,21 +1,21 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_atomic_tool_shaft": {
-      "conditions": {
-        "items": [
-          {
-            "items": "atomiccompression:atomic_tool_shaft"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
     "has_bungerite_alloy_ingot": {
       "conditions": {
         "items": [
           {
             "items": "atomiccompression:bungerite_alloy_ingot"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_infused_basalt_tool_shaft": {
+      "conditions": {
+        "items": [
+          {
+            "items": "atomiccompression:infused_basalt_tool_shaft"
           }
         ]
       },
@@ -32,7 +32,7 @@
     [
       "has_the_recipe",
       "has_bungerite_alloy_ingot",
-      "has_atomic_tool_shaft"
+      "has_infused_basalt_tool_shaft"
     ]
   ],
   "rewards": {

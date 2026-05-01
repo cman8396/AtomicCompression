@@ -3,16 +3,16 @@
   "category": "misc",
   "key": {
     "A": "atomiccompression:atomic_stabilizer",
-    "B": "atomiccompression:basalt_tool_shaft",
-    "E": "atomiccompression:empowered_atomic_shard"
+    "E": "atomiccompression:empowered_atomic_shard",
+    "S": "atomiccompression:obsidian_tool_shaft"
   },
   "pattern": [
-    " B ",
+    " S ",
     "AEA",
-    " B "
+    " S "
   ],
   "result": {
     "count": 1,
-    "id": "atomiccompression:atomic_tool_shaft"
+    "id": "atomiccompression:infused_obsidian_tool_shaft"
   }
 }

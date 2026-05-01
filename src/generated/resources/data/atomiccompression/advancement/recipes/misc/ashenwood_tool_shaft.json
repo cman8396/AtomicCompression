@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_ashenwood_log": {
+      "conditions": {
+        "items": [
+          {
+            "items": "atomiccompression:ashenwood_log"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "atomiccompression:ashenwood_tool_shaft"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_ashenwood_log"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "atomiccompression:ashenwood_tool_shaft"
+    ]
+  }
+}

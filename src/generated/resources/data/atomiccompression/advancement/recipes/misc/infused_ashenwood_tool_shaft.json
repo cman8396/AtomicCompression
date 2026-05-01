@@ -1,21 +1,21 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_atomic_shard": {
+    "has_ashenwood_log": {
       "conditions": {
         "items": [
           {
-            "items": "atomiccompression:atomic_shard"
+            "items": "atomiccompression:ashenwood_log"
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_dense_basalt": {
+    "has_atomic_shard": {
       "conditions": {
         "items": [
           {
-            "items": "atomiccompression:dense_basalt"
+            "items": "atomiccompression:atomic_shard"
           }
         ]
       },
@@ -53,7 +53,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "atomiccompression:atomic_tool_shaft"
+        "recipe": "atomiccompression:infused_ashenwood_tool_shaft"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -61,7 +61,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_dense_basalt",
+      "has_ashenwood_log",
       "has_lead_ingot",
       "has_obsidian_chunk",
       "has_empowered_atomic_shard",
@@ -70,7 +70,7 @@
   ],
   "rewards": {
     "recipes": [
-      "atomiccompression:atomic_tool_shaft"
+      "atomiccompression:infused_ashenwood_tool_shaft"
     ]
   }
 }
