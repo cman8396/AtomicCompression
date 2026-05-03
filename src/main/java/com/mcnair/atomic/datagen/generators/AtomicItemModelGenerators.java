@@ -86,6 +86,12 @@ public class AtomicItemModelGenerators extends ItemModelGenerators {
         this.generateFlatItem(AtomicItems.BUNGERITE_ALLOY_PICKAXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         this.generateFlatItem(AtomicItems.BUNGERITE_ALLOY_AXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         this.generateFlatItem(AtomicItems.BUNGERITE_ALLOY_HOE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        this.generateFlatItem(AtomicItems.SOULSTEEL_ALLOY_SWORD.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        this.generateSpear(AtomicItems.SOULSTEEL_ALLOY_SPEAR.get());
+        this.generateFlatItem(AtomicItems.SOULSTEEL_ALLOY_SHOVEL.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        this.generateFlatItem(AtomicItems.SOULSTEEL_ALLOY_PICKAXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        this.generateFlatItem(AtomicItems.SOULSTEEL_ALLOY_AXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        this.generateFlatItem(AtomicItems.SOULSTEEL_ALLOY_HOE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
 
         /* MACHINE CASINGS */
         this.generateFlatItem(AtomicItems.BRIGHTSILVER_MACHINE_CASING.get(), ModelTemplates.FLAT_ITEM);

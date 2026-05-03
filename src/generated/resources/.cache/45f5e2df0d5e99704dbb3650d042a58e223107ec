@@ -1,4 +1,4 @@
-// 1.21.11	2026-05-03T01:03:03.5443263	Tags for minecraft:item mod id atomiccompression
+// 1.21.11	2026-05-03T01:08:28.7178455	Tags for minecraft:item mod id atomiccompression
 e37bfe5e8c117d226b24940ac3037fb05fc44dbb data/atomiccompression/tags/item/brightsilver_alloy_repairable.json
 b2aff78501eff51e23253dc8530d02056b395777 data/atomiccompression/tags/item/bungerite_alloy_repairable.json
 c61f60129fef9bb8e546fcd06a55e283e845cf54 data/atomiccompression/tags/item/machine.json
@@ -85,13 +85,13 @@ e5357d1e14b5b9063a74a792b2618b0b88a6df03 data/c/tags/item/storage_blocks/sulfur.
 37f7ca452f3b66c1ecbcf382189e64f6900621fa data/c/tags/item/tool_shafts/basalt.json
 4928dbc0053449edaec4d73acd83274125914219 data/c/tags/item/tool_shafts/infused.json
 b8c4b6500c769070fc466ecfcd6df54d345d22a1 data/c/tags/item/tool_shafts/obsidian.json
-2e91df8bf10d4687daf50a4aeefcfb7312a44f4b data/minecraft/tags/item/axes.json
-02691f953adebe0699326662b92cf25105a9cefd data/minecraft/tags/item/hoes.json
+8b30a9ebd6c9121dc9e500fdb0c3c946fe82e21f data/minecraft/tags/item/axes.json
+dc39721a973f81c74191575d05574a98b73ca49a data/minecraft/tags/item/hoes.json
 d9118eb20aca2e5bd35ea2d085dac5f7a44157ce data/minecraft/tags/item/logs_that_burn.json
-6f54d392b077b93317cf3c90b484a941bcdb1218 data/minecraft/tags/item/pickaxes.json
+9c18ee570abbef794c2e1403bd2601a3cfdeb27a data/minecraft/tags/item/pickaxes.json
 9366751260f59abaad2a059daedbe1e75650b5ea data/minecraft/tags/item/planks.json
-36dda04f9d22676c3fe12fdc6fbeb48117d2721d data/minecraft/tags/item/shovels.json
-1eb832bc60d3957d534ff87e0bf7fe991f0a3e6b data/minecraft/tags/item/spears.json
-5d9e19329ffa21eb3b478bd6b20e1b9dfb4a6c37 data/minecraft/tags/item/swords.json
+4db5833020f079f5d95f86675c4d60043140324b data/minecraft/tags/item/shovels.json
+3c67e9f42d93d31f1c953879f8a140aadb76e27a data/minecraft/tags/item/spears.json
+0744db950ed9025b1e3d81b0a4bb6814f31fa412 data/minecraft/tags/item/swords.json
 9ae0b2e05e52853390b76c9b99e6b5db1368a1b3 data/minecraft/tags/item/trim_materials.json
 bbdaa54be42b37a9e017e621d750982fdfdc0635 data/minecraft/tags/item/wooden_doors.json
