@@ -11,8 +11,12 @@ import net.minecraft.world.level.block.Block;
 
 public class AtomicTags {
     public static class Blocks {
+        public static final TagKey<Block> NEEDS_BRIGHTSILVER_ALLOY_TOOL = createTag("needs_brightsilver_alloy_tool");
+        public static final TagKey<Block> INCORRECT_FOR_BRIGHTSILVER_ALLOY_TOOL = createTag("incorrect_for_brightsilver_alloy_tool");
         public static final TagKey<Block> NEEDS_BUNGERITE_ALLOY_TOOL = createTag("needs_bungerite_alloy_tool");
         public static final TagKey<Block> INCORRECT_FOR_BUNGERITE_ALLOY_TOOL = createTag("incorrect_for_bungerite_alloy_tool");
+        public static final TagKey<Block> NEEDS_SOULSTEEL_ALLOY_TOOL = createTag("needs_soulsteel_alloy_tool");
+        public static final TagKey<Block> INCORRECT_FOR_SOULSTEEL_ALLOY_TOOL = createTag("incorrect_for_soulsteel_alloy_tool");
 
         public static final TagKey<Block> MACHINE = createTag("machine");
 
@@ -23,7 +27,9 @@ public class AtomicTags {
 
     public static class Items {
         public static final TagKey<Item> TRANSFORMABLE_ITEMS = createTag("transformable_items");
+        public static final TagKey<Item> BRIGHTSILVER_ALLOY_REPAIRABLE = createTag("brightsilver_alloy_repairable");
         public static final TagKey<Item> BUNGERITE_ALLOY_REPAIRABLE = createTag("bungerite_alloy_repairable");
+        public static final TagKey<Item> SOULSTEEL_ALLOY_REPAIRABLE = createTag("soulsteel_alloy_repairable");
 
         public static final TagKey<Item> MACHINE = createTag("machine");
 

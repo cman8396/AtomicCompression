@@ -4,8 +4,12 @@ import com.mcnair.atomic.utility.AtomicTags;
 import net.minecraft.world.item.ToolMaterial;
 
 public class AtomicToolTiers {
+    public static final ToolMaterial BRIGHTSILVER_ALLOY = new ToolMaterial(AtomicTags.Blocks.INCORRECT_FOR_BRIGHTSILVER_ALLOY_TOOL,
+            1916, 9.5f, 4.0f, 13, AtomicTags.Items.BRIGHTSILVER_ALLOY_REPAIRABLE);
     public static final ToolMaterial BUNGERITE_ALLOY = new ToolMaterial(AtomicTags.Blocks.INCORRECT_FOR_BUNGERITE_ALLOY_TOOL,
-            2401, 10f, 4.5f, 26, AtomicTags.Items.BUNGERITE_ALLOY_REPAIRABLE);
+            2608, 10.5f, 6.5f, 20, AtomicTags.Items.BUNGERITE_ALLOY_REPAIRABLE);
+    public static final ToolMaterial SOULSTEEL_ALLOY = new ToolMaterial(AtomicTags.Blocks.INCORRECT_FOR_SOULSTEEL_ALLOY_TOOL,
+            4180, 14.5f, 9.5f, 28, AtomicTags.Items.SOULSTEEL_ALLOY_REPAIRABLE);
 }
 
 // VANILLA VALUES

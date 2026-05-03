@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "I": "atomiccompression:brightsilver_alloy_ingot",
+    "S": "atomiccompression:infused_basalt_tool_shaft"
+  },
+  "pattern": [
+    "I",
+    "S",
+    "S"
+  ],
+  "result": {
+    "count": 1,
+    "id": "atomiccompression:brightsilver_alloy_axe"
+  }
+}

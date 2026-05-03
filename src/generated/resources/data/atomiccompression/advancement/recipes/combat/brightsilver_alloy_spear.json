@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_brightsilver_alloy_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": "atomiccompression:brightsilver_alloy_ingot"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_infused_basalt_tool_shaft": {
+      "conditions": {
+        "items": [
+          {
+            "items": "atomiccompression:infused_basalt_tool_shaft"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "atomiccompression:brightsilver_alloy_spear"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_brightsilver_alloy_ingot",
+      "has_infused_basalt_tool_shaft"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "atomiccompression:brightsilver_alloy_spear"
+    ]
+  }
+}

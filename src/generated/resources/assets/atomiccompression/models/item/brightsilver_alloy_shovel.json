@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "atomiccompression:item/brightsilver_alloy_shovel"
+  }
+}

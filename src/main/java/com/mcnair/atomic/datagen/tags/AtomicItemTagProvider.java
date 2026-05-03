@@ -24,20 +24,30 @@ public class AtomicItemTagProvider extends ItemTagsProvider {
     protected void addTags(HolderLookup.@NonNull Provider provider) {
 
         // Tools and Armour
+        tag(AtomicTags.Items.BRIGHTSILVER_ALLOY_REPAIRABLE)
+                .add(AtomicItems.BRIGHTSILVER_ALLOY_INGOT.get());
         tag(AtomicTags.Items.BUNGERITE_ALLOY_REPAIRABLE)
                 .add(AtomicItems.BUNGERITE_ALLOY_INGOT.get());
+        tag(AtomicTags.Items.SOULSTEEL_ALLOY_REPAIRABLE)
+                .add(AtomicItems.SOULSTEEL_ALLOY_INGOT.get());
 
         tag(ItemTags.SWORDS)
+                .add(AtomicItems.BRIGHTSILVER_ALLOY_SWORD.get())
                 .add(AtomicItems.BUNGERITE_ALLOY_SWORD.get());
         tag(ItemTags.SPEARS)
+                .add(AtomicItems.BRIGHTSILVER_ALLOY_SPEAR.get())
                 .add(AtomicItems.BUNGERITE_ALLOY_SPEAR.get());
         tag(ItemTags.PICKAXES)
+                .add(AtomicItems.BRIGHTSILVER_ALLOY_PICKAXE.get())
                 .add(AtomicItems.BUNGERITE_ALLOY_PICKAXE.get());
         tag(ItemTags.SHOVELS)
+                .add(AtomicItems.BRIGHTSILVER_ALLOY_SHOVEL.get())
                 .add(AtomicItems.BUNGERITE_ALLOY_SHOVEL.get());
         tag(ItemTags.AXES)
+                .add(AtomicItems.BRIGHTSILVER_ALLOY_AXE.get())
                 .add(AtomicItems.BUNGERITE_ALLOY_AXE.get());
         tag(ItemTags.HOES)
+                .add(AtomicItems.BRIGHTSILVER_ALLOY_HOE.get())
                 .add(AtomicItems.BUNGERITE_ALLOY_HOE.get());
 
 //        tag(ItemTags.TRIMMABLE_ARMOR)
@@ -47,7 +57,9 @@ public class AtomicItemTagProvider extends ItemTagsProvider {
 //                .add(AtomicItems.BISMUTH_BOOTS.get());
 
         tag(ItemTags.TRIM_MATERIALS)
-                .add(AtomicItems.BUNGERITE_ALLOY_INGOT.get());
+                .add(AtomicItems.BRIGHTSILVER_ALLOY_INGOT.get())
+                .add(AtomicItems.BUNGERITE_ALLOY_INGOT.get())
+                .add(AtomicItems.SOULSTEEL_ALLOY_INGOT.get());
 
 
         // Wood

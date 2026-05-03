@@ -1,5 +1,7 @@
 {
   "values": [
-    "atomiccompression:bungerite_alloy_ingot"
+    "atomiccompression:brightsilver_alloy_ingot",
+    "atomiccompression:bungerite_alloy_ingot",
+    "atomiccompression:soulsteel_alloy_ingot"
   ]
 }

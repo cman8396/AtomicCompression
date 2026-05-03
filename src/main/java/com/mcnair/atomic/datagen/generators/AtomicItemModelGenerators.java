@@ -74,6 +74,12 @@ public class AtomicItemModelGenerators extends ItemModelGenerators {
         this.generateFlatItem(AtomicItems.INFUSED_OBSIDIAN_TOOL_SHAFT.get(), ModelTemplates.FLAT_ITEM);
 
         /* TOOLS */
+        this.generateFlatItem(AtomicItems.BRIGHTSILVER_ALLOY_SWORD.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        this.generateSpear(AtomicItems.BRIGHTSILVER_ALLOY_SPEAR.get());
+        this.generateFlatItem(AtomicItems.BRIGHTSILVER_ALLOY_SHOVEL.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        this.generateFlatItem(AtomicItems.BRIGHTSILVER_ALLOY_PICKAXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        this.generateFlatItem(AtomicItems.BRIGHTSILVER_ALLOY_AXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        this.generateFlatItem(AtomicItems.BRIGHTSILVER_ALLOY_HOE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         this.generateFlatItem(AtomicItems.BUNGERITE_ALLOY_SWORD.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         this.generateSpear(AtomicItems.BUNGERITE_ALLOY_SPEAR.get());
         this.generateFlatItem(AtomicItems.BUNGERITE_ALLOY_SHOVEL.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
