@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "atomiccompression:soulsteel_ingot",
+    "atomiccompression:blazing_obsidian_ingot"
+  ],
+  "result": {
+    "count": 1,
+    "id": "atomiccompression:soulsteel_alloy_ingot"
+  }
+}

@@ -309,6 +309,7 @@ public class AtomicItemTagProvider extends ItemTagsProvider {
         // Ingots
         tag(Tags.Items.INGOTS)
                 .addTag(CommonItemTags.INGOTS_LEAD)
+                .addTag(CommonItemTags.INGOTS_BLAZING_OBSIDIAN)
                 .addTag(CommonItemTags.INGOTS_BRIGHTSILVER)
                 .addTag(CommonItemTags.INGOTS_BUNGERITE)
                 .addTag(CommonItemTags.INGOTS_SOULSTEEL)
@@ -317,6 +318,8 @@ public class AtomicItemTagProvider extends ItemTagsProvider {
                 .addTag(CommonItemTags.INGOTS_SOULSTEEL_ALLOY);
         tag(CommonItemTags.INGOTS_LEAD)
                 .add(AtomicItems.LEAD_INGOT.get());
+        tag(CommonItemTags.INGOTS_BLAZING_OBSIDIAN)
+                .add(AtomicItems.BLAZING_OBSIDIAN_INGOT.get());
         tag(CommonItemTags.INGOTS_BRIGHTSILVER)
                 .add(AtomicItems.BRIGHTSILVER_INGOT.get());
         tag(CommonItemTags.INGOTS_BUNGERITE)

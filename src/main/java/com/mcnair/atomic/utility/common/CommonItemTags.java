@@ -127,6 +127,8 @@ public final class CommonItemTags {
 
     public static final TagKey<Item> INGOTS_LEAD = TagKey.create(Registries.ITEM,
             Identifier.fromNamespaceAndPath("c", "ingots/lead"));
+    public static final TagKey<Item> INGOTS_BLAZING_OBSIDIAN = TagKey.create(Registries.ITEM,
+            Identifier.fromNamespaceAndPath("c", "ingots/blazing_obsidian"));
     public static final TagKey<Item> INGOTS_BRIGHTSILVER = TagKey.create(Registries.ITEM,
             Identifier.fromNamespaceAndPath("c", "ingots/brightsilver"));
     public static final TagKey<Item> INGOTS_BUNGERITE = TagKey.create(Registries.ITEM,

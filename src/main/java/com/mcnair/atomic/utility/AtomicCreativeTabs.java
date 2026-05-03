@@ -30,6 +30,7 @@ public class AtomicCreativeTabs {
                         output.accept(AtomicItems.RAW_SOULSTEEL.get());
 
                         output.accept(AtomicItems.LEAD_INGOT.get());
+                        output.accept(AtomicItems.BLAZING_OBSIDIAN_INGOT.get());
                         output.accept(AtomicItems.BRIGHTSILVER_INGOT.get());
                         output.accept(AtomicItems.BUNGERITE_INGOT.get());
                         output.accept(AtomicItems.SOULSTEEL_INGOT.get());

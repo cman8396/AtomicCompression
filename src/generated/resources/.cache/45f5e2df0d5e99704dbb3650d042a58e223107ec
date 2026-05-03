@@ -1,4 +1,4 @@
-// 1.21.11	2026-05-03T01:08:28.7178455	Tags for minecraft:item mod id atomiccompression
+// 1.21.11	2026-05-03T18:23:58.4678401	Tags for minecraft:item mod id atomiccompression
 e37bfe5e8c117d226b24940ac3037fb05fc44dbb data/atomiccompression/tags/item/brightsilver_alloy_repairable.json
 b2aff78501eff51e23253dc8530d02056b395777 data/atomiccompression/tags/item/bungerite_alloy_repairable.json
 c61f60129fef9bb8e546fcd06a55e283e845cf54 data/atomiccompression/tags/item/machine.json
@@ -30,7 +30,8 @@ fbfcb28f7bad94cbf93ecf4f1288a628c5f6bbdb data/c/tags/item/dusts/lead.json
 0277f86083d479a0bc5c5943cb3a5029187939df data/c/tags/item/dusts/wood.json
 a95aaf9710f77eedd8adbd7a3529470a047cef78 data/c/tags/item/gems.json
 1b2b34650b1320cdb97be497efeec73d20e2c9ac data/c/tags/item/gems/atomic.json
-1e73889cebe46c11078aaf910f7d33a31827c4f4 data/c/tags/item/ingots.json
+53e8731120c289a4ab3c3d2726923ed566f3d043 data/c/tags/item/ingots.json
+a02849f9f615a823e8c174ae5c3afa89697b74f3 data/c/tags/item/ingots/blazing_obsidian.json
 01ad6aad7cd5c0c819e9394c6a24a4beb2628d80 data/c/tags/item/ingots/brightsilver.json
 e37bfe5e8c117d226b24940ac3037fb05fc44dbb data/c/tags/item/ingots/brightsilver_alloy.json
 81b59187556a2c27dbad2f86624efac3d84d777b data/c/tags/item/ingots/bungerite.json

@@ -1,0 +1,27 @@
+{
+  "type": "atomiccompression:explosive_infuser",
+  "ingredients": [
+    {
+      "count": 2,
+      "ingredient": "minecraft:obsidian"
+    },
+    {
+      "count": 8,
+      "ingredient": "minecraft:blaze_powder"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "atomiccompression:blazing_obsidian_ingot"
+  },
+  "secondaryResult": {
+    "percentages": [
+      0.25,
+      0.05
+    ],
+    "result": {
+      "count": 1,
+      "id": "atomiccompression:obsidian_chunk"
+    }
+  }
+}

@@ -57,6 +57,7 @@ public class AtomicItems {
 
     /* CRAFTING INGREDIENTS */
     public static final DeferredItem<Item> OBSIDIAN_CHUNK = ITEMS.register("obsidian_chunk", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
+    public static final DeferredItem<Item> BLAZING_OBSIDIAN_INGOT = ITEMS.register("blazing_obsidian_ingot", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
     public static final DeferredItem<Item> ATOMIC_STABILIZER = ITEMS.register("atomic_stabilizer", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
     public static final DeferredItem<Item> ASHENWOOD_TOOL_SHAFT = ITEMS.register("ashenwood_tool_shaft", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
     public static final DeferredItem<Item> BASALT_TOOL_SHAFT = ITEMS.register("basalt_tool_shaft", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));

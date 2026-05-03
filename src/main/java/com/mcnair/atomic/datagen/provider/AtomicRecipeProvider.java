@@ -169,17 +169,26 @@ public class AtomicRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_saltpeter_dust", has(AtomicItems.SALTPETER_DUST))
                 .save(output);
 
+        // Temp shapeless
         shapeless(RecipeCategory.MISC, AtomicItems.BRIGHTSILVER_ALLOY_INGOT, 1)
                 .requires(AtomicItems.BRIGHTSILVER_INGOT)
                 .requires(Items.GOLD_INGOT)
                 .unlockedBy("has_brightsilver_ingot", has(AtomicItems.BRIGHTSILVER_INGOT))
                 .unlockedBy("has_gold_ingot", has(Items.GOLD_INGOT))
                 .save(output);
+        // Temp shapeless
         shapeless(RecipeCategory.MISC, AtomicItems.BUNGERITE_ALLOY_INGOT, 1)
                 .requires(AtomicItems.BUNGERITE_INGOT)
                 .requires(Items.NETHERITE_INGOT)
                 .unlockedBy("has_bungerite_ingot", has(AtomicItems.BUNGERITE_INGOT))
                 .unlockedBy("has_netherite_ingot", has(Items.NETHERITE_INGOT))
+                .save(output);
+        // Temp shapeless
+        shapeless(RecipeCategory.MISC, AtomicItems.SOULSTEEL_ALLOY_INGOT, 1)
+                .requires(AtomicItems.SOULSTEEL_INGOT)
+                .requires(AtomicItems.BLAZING_OBSIDIAN_INGOT)
+                .unlockedBy("has_soulsteel_ingot", has(AtomicItems.SOULSTEEL_INGOT))
+                .unlockedBy("has_blazing_obsidian_ingot", has(AtomicItems.BLAZING_OBSIDIAN_INGOT))
                 .save(output);
 
 
@@ -400,6 +409,10 @@ public class AtomicRecipeProvider extends RecipeProvider {
         /* EXPLOSIVE INFUSER */
         ExInfuser.createTwoToOne(output, AtomicItems.ATOMIC_SHARD.asItem(), 1, AtomicItems.DIAMOND_DUST.asItem(), 2, AtomicItems.EMPOWERED_ATOMIC_SHARD.asItem(), 1);
         ExInfuser.createTwoToOne(output, AtomicItems.ATOMIC_SHARD.asItem(), 1, AtomicItems.EMERALD_DUST.asItem(), 2, AtomicItems.EMPOWERED_ATOMIC_SHARD.asItem(), 1);
+        ExInfuser.createTwoToTwo(output, Items.OBSIDIAN.asItem(), 2, Items.BLAZE_ROD.asItem(), 2,AtomicItems.BLAZING_OBSIDIAN_INGOT.asItem(), 1,AtomicItems.OBSIDIAN_CHUNK, new double[]{0.25, 0.05});
+        ExInfuser.createTwoToTwo(output, Items.OBSIDIAN.asItem(), 2, Items.BLAZE_POWDER.asItem(), 8,AtomicItems.BLAZING_OBSIDIAN_INGOT.asItem(), 1,AtomicItems.OBSIDIAN_CHUNK, new double[]{0.25, 0.05});
+        ExInfuser.createTwoToTwo(output, AtomicItems.OBSIDIAN_CHUNK.asItem(), 8, Items.BLAZE_ROD.asItem(), 2,AtomicItems.BLAZING_OBSIDIAN_INGOT.asItem(), 1,AtomicItems.OBSIDIAN_CHUNK, new double[]{0.25, 0.05});
+        ExInfuser.createTwoToTwo(output, AtomicItems.OBSIDIAN_CHUNK.asItem(), 8, Items.BLAZE_POWDER.asItem(), 8,AtomicItems.BLAZING_OBSIDIAN_INGOT.asItem(), 1,AtomicItems.OBSIDIAN_CHUNK, new double[]{0.25, 0.05});
         ExInfuser.createTwoToOne(output, AtomicItems.RAW_SOULSTEEL.asItem(), 3, AtomicItems.ECHO_DUST.asItem(), 1, AtomicItems.SOULSTEEL_INGOT.asItem(), 1);
 
         // Vanilla Recipes

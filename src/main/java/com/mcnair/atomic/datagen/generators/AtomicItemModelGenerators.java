@@ -65,6 +65,7 @@ public class AtomicItemModelGenerators extends ItemModelGenerators {
 
         /* CRAFTING INGREDIENTS */
         this.generateFlatItem(AtomicItems.OBSIDIAN_CHUNK.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(AtomicItems.BLAZING_OBSIDIAN_INGOT.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(AtomicItems.ATOMIC_STABILIZER.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(AtomicItems.ASHENWOOD_TOOL_SHAFT.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(AtomicItems.BASALT_TOOL_SHAFT.get(), ModelTemplates.FLAT_ITEM);
