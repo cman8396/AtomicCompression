@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_infused_basalt_tool_shaft": {
+    "has_infused_obsidian_tool_shaft": {
       "conditions": {
         "items": [
           {
-            "items": "atomiccompression:infused_basalt_tool_shaft"
+            "items": "atomiccompression:infused_obsidian_tool_shaft"
           }
         ]
       },
@@ -32,7 +32,7 @@
     [
       "has_the_recipe",
       "has_soulsteel_alloy_ingot",
-      "has_infused_basalt_tool_shaft"
+      "has_infused_obsidian_tool_shaft"
     ]
   ],
   "rewards": {

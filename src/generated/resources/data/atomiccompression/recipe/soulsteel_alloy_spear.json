@@ -3,7 +3,7 @@
   "category": "equipment",
   "key": {
     "I": "atomiccompression:soulsteel_alloy_ingot",
-    "S": "atomiccompression:infused_basalt_tool_shaft"
+    "S": "atomiccompression:infused_obsidian_tool_shaft"
   },
   "pattern": [
     "  I",

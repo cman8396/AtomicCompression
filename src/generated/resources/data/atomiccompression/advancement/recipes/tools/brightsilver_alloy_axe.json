@@ -11,11 +11,11 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_infused_basalt_tool_shaft": {
+    "has_infused_ashenwood_tool_shaft": {
       "conditions": {
         "items": [
           {
-            "items": "atomiccompression:infused_basalt_tool_shaft"
+            "items": "atomiccompression:infused_ashenwood_tool_shaft"
           }
         ]
       },
@@ -32,7 +32,7 @@
     [
       "has_the_recipe",
       "has_brightsilver_alloy_ingot",
-      "has_infused_basalt_tool_shaft"
+      "has_infused_ashenwood_tool_shaft"
     ]
   ],
   "rewards": {
