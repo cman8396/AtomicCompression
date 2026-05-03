@@ -1,0 +1,17 @@
+{
+  "type": "atomiccompression:explosive_separator",
+  "ingredient": "atomiccompression:raw_soulsteel",
+  "result": {
+    "count": 1,
+    "id": "atomiccompression:soulsteel_dust"
+  },
+  "secondaryResult": {
+    "percentages": [
+      0.33
+    ],
+    "result": {
+      "count": 1,
+      "id": "atomiccompression:soulsteel_dust"
+    }
+  }
+}

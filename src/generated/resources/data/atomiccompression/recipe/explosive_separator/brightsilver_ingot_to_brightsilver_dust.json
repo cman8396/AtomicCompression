@@ -1,0 +1,8 @@
+{
+  "type": "atomiccompression:explosive_separator",
+  "ingredient": "atomiccompression:brightsilver_ingot",
+  "result": {
+    "count": 1,
+    "id": "atomiccompression:brightsilver_dust"
+  }
+}
