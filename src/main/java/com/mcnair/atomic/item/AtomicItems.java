@@ -59,12 +59,12 @@ public class AtomicItems {
     public static final DeferredItem<Item> OBSIDIAN_CHUNK = ITEMS.register("obsidian_chunk", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
     public static final DeferredItem<Item> BLAZING_OBSIDIAN_INGOT = ITEMS.register("blazing_obsidian_ingot", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
     public static final DeferredItem<Item> ATOMIC_STABILIZER = ITEMS.register("atomic_stabilizer", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
-    public static final DeferredItem<Item> ASHENWOOD_TOOL_SHAFT = ITEMS.register("ashenwood_tool_shaft", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
-    public static final DeferredItem<Item> BASALT_TOOL_SHAFT = ITEMS.register("basalt_tool_shaft", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
-    public static final DeferredItem<Item> OBSIDIAN_TOOL_SHAFT = ITEMS.register("obsidian_tool_shaft", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
-    public static final DeferredItem<Item> INFUSED_ASHENWOOD_TOOL_SHAFT = ITEMS.register("infused_ashenwood_tool_shaft", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
-    public static final DeferredItem<Item> INFUSED_BASALT_TOOL_SHAFT = ITEMS.register("infused_basalt_tool_shaft", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
-    public static final DeferredItem<Item> INFUSED_OBSIDIAN_TOOL_SHAFT = ITEMS.register("infused_obsidian_tool_shaft", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
+    public static final DeferredItem<Item> WOODEN_TOOL_SHAFT = ITEMS.register("wooden_tool_shaft", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
+    public static final DeferredItem<Item> DENSE_TOOL_SHAFT = ITEMS.register("dense_tool_shaft", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
+    public static final DeferredItem<Item> ELEMENTAL_TOOL_SHAFT = ITEMS.register("elemental_tool_shaft", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
+    public static final DeferredItem<Item> INFUSED_WOODEN_TOOL_SHAFT = ITEMS.register("infused_wooden_tool_shaft", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
+    public static final DeferredItem<Item> INFUSED_DENSE_TOOL_SHAFT = ITEMS.register("infused_dense_tool_shaft", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
+    public static final DeferredItem<Item> INFUSED_ELEMENTAL_TOOL_SHAFT = ITEMS.register("infused_elemental_tool_shaft", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
 
     /* TOOLS */
     // BRIGHTSILVER

@@ -4,15 +4,15 @@
   "key": {
     "A": "atomiccompression:atomic_stabilizer",
     "E": "atomiccompression:empowered_atomic_shard",
-    "S": "atomiccompression:ashenwood_tool_shaft"
+    "S": "atomiccompression:elemental_tool_shaft"
   },
   "pattern": [
-    " S ",
-    "AEA",
-    " S "
+    "S",
+    "E",
+    "A"
   ],
   "result": {
     "count": 1,
-    "id": "atomiccompression:infused_ashenwood_tool_shaft"
+    "id": "atomiccompression:infused_elemental_tool_shaft"
   }
 }

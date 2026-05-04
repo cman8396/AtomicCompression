@@ -161,12 +161,12 @@ public final class CommonItemTags {
 
     public static final TagKey<Item> TOOL_SHAFTS = TagKey.create(Registries.ITEM,
             Identifier.fromNamespaceAndPath("c", "tool_shafts"));
-    public static final TagKey<Item> TOOL_SHAFTS_ASHENWOOD = TagKey.create(Registries.ITEM,
-            Identifier.fromNamespaceAndPath("c", "tool_shafts/ashenwood"));
-    public static final TagKey<Item> TOOL_SHAFTS_BASALT = TagKey.create(Registries.ITEM,
-            Identifier.fromNamespaceAndPath("c", "tool_shafts/basalt"));
-    public static final TagKey<Item> TOOL_SHAFTS_OBSIDIAN = TagKey.create(Registries.ITEM,
-            Identifier.fromNamespaceAndPath("c", "tool_shafts/obsidian"));
+    public static final TagKey<Item> TOOL_SHAFTS_WOODEN = TagKey.create(Registries.ITEM,
+            Identifier.fromNamespaceAndPath("c", "tool_shafts/wooden"));
+    public static final TagKey<Item> TOOL_SHAFTS_DENSE = TagKey.create(Registries.ITEM,
+            Identifier.fromNamespaceAndPath("c", "tool_shafts/dense"));
+    public static final TagKey<Item> TOOL_SHAFTS_ELEMENTAL = TagKey.create(Registries.ITEM,
+            Identifier.fromNamespaceAndPath("c", "tool_shafts/elemental"));
     public static final TagKey<Item> TOOL_SHAFTS_INFUSED = TagKey.create(Registries.ITEM,
             Identifier.fromNamespaceAndPath("c", "tool_shafts/infused"));
 

@@ -65,12 +65,12 @@ public class AtomicCreativeTabs {
 
                         output.accept(AtomicItems.OBSIDIAN_CHUNK.get());
                         output.accept(AtomicItems.ATOMIC_STABILIZER.get());
-                        output.accept(AtomicItems.ASHENWOOD_TOOL_SHAFT.get());
-                        output.accept(AtomicItems.INFUSED_ASHENWOOD_TOOL_SHAFT.get());
-                        output.accept(AtomicItems.BASALT_TOOL_SHAFT.get());
-                        output.accept(AtomicItems.INFUSED_BASALT_TOOL_SHAFT.get());
-                        output.accept(AtomicItems.OBSIDIAN_TOOL_SHAFT.get());
-                        output.accept(AtomicItems.INFUSED_OBSIDIAN_TOOL_SHAFT.get());
+                        output.accept(AtomicItems.WOODEN_TOOL_SHAFT.get());
+                        output.accept(AtomicItems.INFUSED_WOODEN_TOOL_SHAFT.get());
+                        output.accept(AtomicItems.DENSE_TOOL_SHAFT.get());
+                        output.accept(AtomicItems.INFUSED_DENSE_TOOL_SHAFT.get());
+                        output.accept(AtomicItems.ELEMENTAL_TOOL_SHAFT.get());
+                        output.accept(AtomicItems.INFUSED_ELEMENTAL_TOOL_SHAFT.get());
 
                         output.accept(AtomicItems.BRIGHTSILVER_MACHINE_CASING.get());
                         output.accept(AtomicItems.BUNGERITE_MACHINE_CASING.get());

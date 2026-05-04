@@ -53,7 +53,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "atomiccompression:infused_basalt_tool_shaft"
+        "recipe": "atomiccompression:infused_dense_tool_shaft"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -70,7 +70,7 @@
   ],
   "rewards": {
     "recipes": [
-      "atomiccompression:infused_basalt_tool_shaft"
+      "atomiccompression:infused_dense_tool_shaft"
     ]
   }
 }

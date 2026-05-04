@@ -2,15 +2,15 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "D": "atomiccompression:dense_basalt"
+    "O": "minecraft:obsidian"
   },
   "pattern": [
-    "D",
-    "D",
-    "D"
+    "O",
+    "O",
+    "O"
   ],
   "result": {
     "count": 1,
-    "id": "atomiccompression:basalt_tool_shaft"
+    "id": "atomiccompression:elemental_tool_shaft"
   }
 }

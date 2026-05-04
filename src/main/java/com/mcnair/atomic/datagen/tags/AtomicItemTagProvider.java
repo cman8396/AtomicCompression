@@ -345,23 +345,23 @@ public class AtomicItemTagProvider extends ItemTagsProvider {
 
         // Rods
         tag(CommonItemTags.TOOL_SHAFTS)
-                .addTag(CommonItemTags.TOOL_SHAFTS_ASHENWOOD)
-                .addTag(CommonItemTags.TOOL_SHAFTS_BASALT)
-                .addTag(CommonItemTags.TOOL_SHAFTS_OBSIDIAN)
+                .addTag(CommonItemTags.TOOL_SHAFTS_WOODEN)
+                .addTag(CommonItemTags.TOOL_SHAFTS_DENSE)
+                .addTag(CommonItemTags.TOOL_SHAFTS_ELEMENTAL)
                 .addTag(CommonItemTags.TOOL_SHAFTS_INFUSED);
-        tag(CommonItemTags.TOOL_SHAFTS_ASHENWOOD)
-                .add(AtomicItems.ASHENWOOD_TOOL_SHAFT.get())
-                .add(AtomicItems.INFUSED_ASHENWOOD_TOOL_SHAFT.get());
-        tag(CommonItemTags.TOOL_SHAFTS_BASALT)
-                .add(AtomicItems.BASALT_TOOL_SHAFT.get())
-                .add(AtomicItems.INFUSED_BASALT_TOOL_SHAFT.get());
-        tag(CommonItemTags.TOOL_SHAFTS_OBSIDIAN)
-                .add(AtomicItems.OBSIDIAN_TOOL_SHAFT.get())
-                .add(AtomicItems.INFUSED_OBSIDIAN_TOOL_SHAFT.get());
+        tag(CommonItemTags.TOOL_SHAFTS_WOODEN)
+                .add(AtomicItems.WOODEN_TOOL_SHAFT.get())
+                .add(AtomicItems.INFUSED_WOODEN_TOOL_SHAFT.get());
+        tag(CommonItemTags.TOOL_SHAFTS_DENSE)
+                .add(AtomicItems.DENSE_TOOL_SHAFT.get())
+                .add(AtomicItems.INFUSED_DENSE_TOOL_SHAFT.get());
+        tag(CommonItemTags.TOOL_SHAFTS_ELEMENTAL)
+                .add(AtomicItems.ELEMENTAL_TOOL_SHAFT.get())
+                .add(AtomicItems.INFUSED_ELEMENTAL_TOOL_SHAFT.get());
         tag(CommonItemTags.TOOL_SHAFTS_INFUSED)
-                .add(AtomicItems.INFUSED_ASHENWOOD_TOOL_SHAFT.get())
-                .add(AtomicItems.INFUSED_BASALT_TOOL_SHAFT.get())
-                .add(AtomicItems.INFUSED_OBSIDIAN_TOOL_SHAFT.get());
+                .add(AtomicItems.INFUSED_WOODEN_TOOL_SHAFT.get())
+                .add(AtomicItems.INFUSED_DENSE_TOOL_SHAFT.get())
+                .add(AtomicItems.INFUSED_ELEMENTAL_TOOL_SHAFT.get());
 
     }
 }

@@ -67,12 +67,12 @@ public class AtomicItemModelGenerators extends ItemModelGenerators {
         this.generateFlatItem(AtomicItems.OBSIDIAN_CHUNK.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(AtomicItems.BLAZING_OBSIDIAN_INGOT.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(AtomicItems.ATOMIC_STABILIZER.get(), ModelTemplates.FLAT_ITEM);
-        this.generateFlatItem(AtomicItems.ASHENWOOD_TOOL_SHAFT.get(), ModelTemplates.FLAT_ITEM);
-        this.generateFlatItem(AtomicItems.BASALT_TOOL_SHAFT.get(), ModelTemplates.FLAT_ITEM);
-        this.generateFlatItem(AtomicItems.OBSIDIAN_TOOL_SHAFT.get(), ModelTemplates.FLAT_ITEM);
-        this.generateFlatItem(AtomicItems.INFUSED_ASHENWOOD_TOOL_SHAFT.get(), ModelTemplates.FLAT_ITEM);
-        this.generateFlatItem(AtomicItems.INFUSED_BASALT_TOOL_SHAFT.get(), ModelTemplates.FLAT_ITEM);
-        this.generateFlatItem(AtomicItems.INFUSED_OBSIDIAN_TOOL_SHAFT.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(AtomicItems.WOODEN_TOOL_SHAFT.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(AtomicItems.DENSE_TOOL_SHAFT.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(AtomicItems.ELEMENTAL_TOOL_SHAFT.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(AtomicItems.INFUSED_WOODEN_TOOL_SHAFT.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(AtomicItems.INFUSED_DENSE_TOOL_SHAFT.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(AtomicItems.INFUSED_ELEMENTAL_TOOL_SHAFT.get(), ModelTemplates.FLAT_ITEM);
 
         /* TOOLS */
         this.generateFlatItem(AtomicItems.BRIGHTSILVER_ALLOY_SWORD.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
