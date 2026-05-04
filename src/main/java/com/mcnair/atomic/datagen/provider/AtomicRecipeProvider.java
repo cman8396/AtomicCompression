@@ -95,6 +95,16 @@ public class AtomicRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_obsidian_chunk", has(AtomicItems.OBSIDIAN_CHUNK))
                 .unlockedBy("has_lead_ingot", has(AtomicItems.LEAD_INGOT))
                 .save(output);
+        shaped(RecipeCategory.MISC, AtomicItems.ATOMIC_STABILIZER.get())
+                .pattern("LOL")
+                .pattern("O O")
+                .pattern("LOL")
+                .define('L', AtomicItems.LEAD_INGOT.get())
+                .define('O', AtomicItems.OBSIDIAN_CHUNK.get())
+                .unlockedBy("has_dense_basalt", has(AtomicBlocks.DENSE_BASALT))
+                .unlockedBy("has_obsidian_chunk", has(AtomicItems.OBSIDIAN_CHUNK))
+                .unlockedBy("has_lead_ingot", has(AtomicItems.LEAD_INGOT))
+                .save(output);
         shaped(RecipeCategory.MISC, AtomicItems.WOODEN_TOOL_SHAFT.get())
                 .pattern("L")
                 .pattern("L")
@@ -109,12 +119,26 @@ public class AtomicRecipeProvider extends RecipeProvider {
                 .define('D', AtomicBlocks.DENSE_BASALT.get())
                 .unlockedBy("has_dense_basalt", has(AtomicBlocks.DENSE_BASALT))
                 .save(output);
+        shaped(RecipeCategory.MISC, AtomicItems.DENSE_TOOL_SHAFT.get())
+                .pattern("D")
+                .pattern("D")
+                .pattern("D")
+                .define('D', AtomicBlocks.DENSE_DEEPSLATE.get())
+                .unlockedBy("has_dense_deepslate", has(AtomicBlocks.DENSE_DEEPSLATE))
+                .save(output);
         shaped(RecipeCategory.MISC, AtomicItems.ELEMENTAL_TOOL_SHAFT.get())
                 .pattern("O")
                 .pattern("O")
                 .pattern("O")
                 .define('O', Blocks.OBSIDIAN)
                 .unlockedBy("has_obsidian", has(Blocks.OBSIDIAN))
+                .save(output);
+        shaped(RecipeCategory.MISC, AtomicItems.ELEMENTAL_TOOL_SHAFT.get())
+                .pattern("O")
+                .pattern("O")
+                .pattern("O")
+                .define('O', Blocks.CRYING_OBSIDIAN)
+                .unlockedBy("has_crying_obsidian", has(Blocks.CRYING_OBSIDIAN))
                 .save(output);
         shaped(RecipeCategory.MISC, AtomicItems.INFUSED_WOODEN_TOOL_SHAFT.get())
                 .pattern("S")
