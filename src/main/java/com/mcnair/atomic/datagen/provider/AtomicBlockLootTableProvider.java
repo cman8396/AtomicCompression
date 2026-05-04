@@ -68,6 +68,8 @@ public class AtomicBlockLootTableProvider extends BlockLootSubProvider {
         dropWhenSilkTouch(AtomicBlocks.ATOMIC_GLASS_PANE.get());
 
         dropSelf(AtomicBlocks.DENSE_BASALT.get());
+        dropSelf(AtomicBlocks.DENSE_DEEPSLATE.get());
+
         dropSelf(AtomicBlocks.GUNPOWDER_BLOCK.get());
         dropSelf(AtomicBlocks.DEEPCOAL_BLOCK.get());
         dropSelf(AtomicBlocks.RAW_SULFUR_BLOCK.get());

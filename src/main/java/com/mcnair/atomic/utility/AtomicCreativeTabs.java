@@ -110,6 +110,7 @@ public class AtomicCreativeTabs {
                         output.accept(AtomicBlocks.ATOMIC_GLASS.get());
                         output.accept(AtomicBlocks.ATOMIC_GLASS_PANE.get());
                         output.accept(AtomicBlocks.DENSE_BASALT.get());
+                        output.accept(AtomicBlocks.DENSE_DEEPSLATE.get());
 
                         output.accept(AtomicBlocks.DEEPCOAL_ORE.get());
                         output.accept(AtomicBlocks.DEEPSLATE_DEEPCOAL_ORE.get());

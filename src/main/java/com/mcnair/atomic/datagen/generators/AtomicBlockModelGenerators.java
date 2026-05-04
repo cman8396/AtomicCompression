@@ -64,6 +64,7 @@ public class AtomicBlockModelGenerators extends BlockModelGenerators {
         /* UTILITY BLOCKS */
         this.createGlassBlocks(AtomicBlocks.ATOMIC_GLASS.get(), AtomicBlocks.ATOMIC_GLASS_PANE.get());
         this.createAxisAlignedPillarBlock(AtomicBlocks.DENSE_BASALT.get(), TexturedModel.COLUMN);
+        this.createTrivialCube(AtomicBlocks.DENSE_DEEPSLATE.get());
         this.createTrivialCube(AtomicBlocks.GUNPOWDER_BLOCK.get());
         this.createTrivialCube(AtomicBlocks.DEEPCOAL_BLOCK.get());
         this.createTrivialCube(AtomicBlocks.RAW_SULFUR_BLOCK.get());

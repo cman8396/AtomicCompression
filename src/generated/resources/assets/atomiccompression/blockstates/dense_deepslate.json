@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "atomiccompression:block/dense_deepslate"
+    }
+  }
+}

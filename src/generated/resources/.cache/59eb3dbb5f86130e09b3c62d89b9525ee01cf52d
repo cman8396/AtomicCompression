@@ -1,4 +1,4 @@
-// 1.21.11	2026-04-12T22:23:07.4774526	Loot Tables
+// 1.21.11	2026-05-04T20:55:09.7560234	Loot Tables
 4e8fe8bf5396393b0261cc13f80722abd76257f4 data/atomiccompression/loot_table/blocks/ashenwood_button.json
 16d3480bfd6a273f23bb6ccbcdd772357bc54a16 data/atomiccompression/loot_table/blocks/ashenwood_door.json
 2e47b7842f7e3c21fc04f29a2feb8a3254353b12 data/atomiccompression/loot_table/blocks/ashenwood_fence.json
@@ -42,6 +42,7 @@ f3a8637e6830bc9fdf9eb7f5b9a6e6e1daf57546 data/atomiccompression/loot_table/block
 b80ae9d46b0bfccf8be13b3ae0d29158e1d648d7 data/atomiccompression/loot_table/blocks/deepslate_saltpeter_ore.json
 f3402fc303bbfe8136e578c408ab6ffe2b176917 data/atomiccompression/loot_table/blocks/deepslate_sulfur_ore.json
 ae15ba577ff1de2b45c82e33b52dbfd0cd201997 data/atomiccompression/loot_table/blocks/dense_basalt.json
+4875f4ecdf86798b200ccc13fa4617a0744f27f5 data/atomiccompression/loot_table/blocks/dense_deepslate.json
 de9ce73a232a2da6890e5a09f259f9951742202b data/atomiccompression/loot_table/blocks/empowered_atomic_block.json
 2c16ed9d1cc7dd5e05dfbf43a3a8e810047575c5 data/atomiccompression/loot_table/blocks/end_atomic_ore.json
 9e344e5bd094ee8708a0b82cd5d46f9e725dd3a8 data/atomiccompression/loot_table/blocks/explosive_compactor.json

@@ -87,9 +87,6 @@ public class AtomicBlocks {
     public static final DeferredBlock<Block> ATOMIC_GLASS_PANE = registerBlock("atomic_glass_pane",
             (properties) -> new IronBarsBlock(
                     properties.strength(0.3f).noOcclusion().sound(SoundType.GLASS)));
-    public static final DeferredBlock<Block> DENSE_BASALT = registerBlock("dense_basalt",
-            (properties) -> new RotatedPillarBlock(
-                    properties.strength(1.75f, 6f).requiresCorrectToolForDrops().sound(SoundType.BASALT)));
     public static final DeferredBlock<Block> GUNPOWDER_BLOCK = registerBlock("gunpowder_block",
             (properties) -> new ColoredFallingBlock(new ColorRGBA(-8356741),
                     properties.strength(0.6f).sound(SoundType.SAND)));
@@ -142,6 +139,13 @@ public class AtomicBlocks {
             (properties) -> new Block(
                     properties.strength(5f, 6f).sound(SoundType.NETHERITE_BLOCK)));
 
+    /* STONE BLOCKS */
+    public static final DeferredBlock<Block> DENSE_BASALT = registerBlock("dense_basalt",
+            (properties) -> new RotatedPillarBlock(
+                    properties.strength(1.75f, 6f).requiresCorrectToolForDrops().sound(SoundType.BASALT)));
+    public static final DeferredBlock<Block> DENSE_DEEPSLATE = registerBlock("dense_deepslate",
+            (properties) -> new Block(
+                    properties.strength(1.65f, 5f).requiresCorrectToolForDrops().sound(SoundType.BASALT)));
 
     /* ASHENWOOD BLOCKS */
     public static final DeferredBlock<Block> ASHENWOOD_LOG = registerBlock("ashenwood_log",

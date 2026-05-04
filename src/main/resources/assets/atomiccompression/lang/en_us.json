@@ -23,7 +23,6 @@
 
   "block.atomiccompression.atomic_glass": "Atomic Glass",
   "block.atomiccompression.atomic_glass_pane": "Atomic Glass Pane",
-  "block.atomiccompression.dense_basalt": "Dense Basalt",
   "block.atomiccompression.gunpowder_block": "Block of Gunpowder",
   "block.atomiccompression.deepcoal_block": "Block of Deepcoal",
   "block.atomiccompression.raw_saltpeter_block": "Block of Raw Saltpeter",
@@ -40,6 +39,9 @@
   "block.atomiccompression.bungerite_alloy_block": "Block of Bungerite Alloy",
   "block.atomiccompression.atomic_block": "Atomic Block",
   "block.atomiccompression.empowered_atomic_block": "Empowered Atomic Block",
+
+  "block.atomiccompression.dense_basalt": "Dense Basalt",
+  "block.atomiccompression.dense_deepslate": "Dense Deepslate",
 
   "block.atomiccompression.ashenwood_log": "Ashenwood Log",
   "block.atomiccompression.ashenwood_wood": "Ashenwood Wood",
