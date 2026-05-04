@@ -1,4 +1,4 @@
-// 1.21.11	2026-03-31T16:46:07.6913267	Tags for minecraft:block mod id atomiccompression
+// 1.21.11	2026-05-04T21:03:48.9461997	Tags for minecraft:block mod id atomiccompression
 c61f60129fef9bb8e546fcd06a55e283e845cf54 data/atomiccompression/tags/block/machine.json
 734110c69dd9cb00157e7eb9ab6c7d88ebc8b894 data/c/tags/block/ores.json
 54eb6efb63719cbc3ab79b2ce4bbd8b55b3fc255 data/c/tags/block/ores/atomic.json
@@ -28,10 +28,10 @@ e5357d1e14b5b9063a74a792b2618b0b88a6df03 data/c/tags/block/storage_blocks/sulfur
 9a7a1250d774f6cab78aac59d1a95f33cf6248b2 data/minecraft/tags/block/fences.json
 6ca499145b9f45117e4a1c01827f014419abaf58 data/minecraft/tags/block/fence_gates.json
 d9118eb20aca2e5bd35ea2d085dac5f7a44157ce data/minecraft/tags/block/logs_that_burn.json
-0a9f842c2574b532af9d8f6ac8f2ed04c64f1740 data/minecraft/tags/block/mineable/pickaxe.json
+04533f0dc6df7aec643e383baf643f66db333608 data/minecraft/tags/block/mineable/pickaxe.json
 9d9b196c79700e158ac070fc455dcdf889b5f83f data/minecraft/tags/block/mineable/shovel.json
-0feabbe58669b6a1914ba19ab0b8b55a574a05d0 data/minecraft/tags/block/needs_diamond_tool.json
-5ec0472f73637808551954b572191c8a04c267f5 data/minecraft/tags/block/needs_iron_tool.json
+a8a18e0957e0ac35f5b653e255296f10a93c487b data/minecraft/tags/block/needs_diamond_tool.json
+0e976c16b94001a9cf16411e4f0a60332f27f2de data/minecraft/tags/block/needs_iron_tool.json
 f67f752432e8caf2bb2573940037af0666807c4c data/minecraft/tags/block/needs_stone_tool.json
 6989ac3827cf4352df4e4d80e709a58ec678e909 data/minecraft/tags/block/walls.json
 bbdaa54be42b37a9e017e621d750982fdfdc0635 data/minecraft/tags/block/wooden_doors.json

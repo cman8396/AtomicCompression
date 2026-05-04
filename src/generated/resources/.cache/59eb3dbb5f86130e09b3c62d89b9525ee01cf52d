@@ -1,4 +1,4 @@
-// 1.21.11	2026-05-04T20:55:09.7560234	Loot Tables
+// 1.21.11	2026-05-04T21:03:48.9553417	Loot Tables
 4e8fe8bf5396393b0261cc13f80722abd76257f4 data/atomiccompression/loot_table/blocks/ashenwood_button.json
 16d3480bfd6a273f23bb6ccbcdd772357bc54a16 data/atomiccompression/loot_table/blocks/ashenwood_door.json
 2e47b7842f7e3c21fc04f29a2feb8a3254353b12 data/atomiccompression/loot_table/blocks/ashenwood_fence.json
@@ -54,6 +54,7 @@ a1ef7dead07a006ccbf39d66dab36eeccf85b7a6 data/atomiccompression/loot_table/block
 b888c4dfea310cef3d27e0b5f4b756ca802b9d44 data/atomiccompression/loot_table/blocks/gunpowder_block.json
 54f2752486af2285fa2359ba95b1f404751a70bb data/atomiccompression/loot_table/blocks/lead_block.json
 406912e5212a5b1ee83d09f8a76c87c0bbc1b234 data/atomiccompression/loot_table/blocks/lead_ore.json
+a40f92990e89dfc27d092b44bb433d43d5dd49df data/atomiccompression/loot_table/blocks/machine_base.json
 c432357ac6919ef68a5c691899cf21cdc07e07ba data/atomiccompression/loot_table/blocks/nether_atomic_ore.json
 c60fe232f4837077f8bb5c9469f73c0df9760f8e data/atomiccompression/loot_table/blocks/raw_brightsilver_block.json
 461917bf59340403319a98721fe19ba07cc961d2 data/atomiccompression/loot_table/blocks/raw_bungerite_block.json

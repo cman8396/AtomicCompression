@@ -64,6 +64,7 @@ public class AtomicBlockLootTableProvider extends BlockLootSubProvider {
 
 
         /* UTILITY BLOCKS */
+        dropSelf(AtomicBlocks.MACHINE_BASE.get());
         dropWhenSilkTouch(AtomicBlocks.ATOMIC_GLASS.get());
         dropWhenSilkTouch(AtomicBlocks.ATOMIC_GLASS_PANE.get());
 

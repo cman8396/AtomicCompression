@@ -81,6 +81,9 @@ public class AtomicBlocks {
 
 
     /* UTILITY BLOCKS */
+    public static final DeferredBlock<Block> MACHINE_BASE = registerBlock("machine_base",
+            (properties) -> new Block(
+                    properties.strength(1f).sound(SoundType.STONE)));
     public static final DeferredBlock<Block> ATOMIC_GLASS = registerBlock("atomic_glass",
             (properties) -> new TransparentBlock(
                     properties.strength(0.3f).noOcclusion().sound(SoundType.GLASS)));
@@ -145,7 +148,7 @@ public class AtomicBlocks {
                     properties.strength(1.75f, 6f).requiresCorrectToolForDrops().sound(SoundType.BASALT)));
     public static final DeferredBlock<Block> DENSE_DEEPSLATE = registerBlock("dense_deepslate",
             (properties) -> new Block(
-                    properties.strength(1.65f, 5f).requiresCorrectToolForDrops().sound(SoundType.BASALT)));
+                    properties.strength(1.65f, 5f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
 
     /* ASHENWOOD BLOCKS */
     public static final DeferredBlock<Block> ASHENWOOD_LOG = registerBlock("ashenwood_log",

@@ -42,7 +42,9 @@ public class AtomicBlockTagProvider extends BlockTagsProvider {
                 .add(AtomicBlocks.DEEPSLATE_ATOMIC_ORE.get())
                 .add(AtomicBlocks.NETHER_ATOMIC_ORE.get())
                 .add(AtomicBlocks.END_ATOMIC_ORE.get())
+                .add(AtomicBlocks.MACHINE_BASE.get())
                 .add(AtomicBlocks.DENSE_BASALT.get())
+                .add(AtomicBlocks.DENSE_DEEPSLATE.get())
                 .add(AtomicBlocks.DEEPCOAL_BLOCK.get())
                 .add(AtomicBlocks.RAW_SULFUR_BLOCK.get())
                 .add(AtomicBlocks.RAW_SALTPETER_BLOCK.get())
@@ -72,16 +74,18 @@ public class AtomicBlockTagProvider extends BlockTagsProvider {
                 .add(AtomicBlocks.RAW_LEAD_BLOCK.get());
 
         tag(BlockTags.NEEDS_IRON_TOOL)
+                .add(AtomicBlocks.BRIGHTSILVER_ORE.get())
                 .add(AtomicBlocks.ATOMIC_ORE.get())
                 .add(AtomicBlocks.DEEPSLATE_ATOMIC_ORE.get())
                 .add(AtomicBlocks.NETHER_ATOMIC_ORE.get())
                 .add(AtomicBlocks.END_ATOMIC_ORE.get())
                 .add(AtomicBlocks.ATOMIC_BLOCK.get())
-                .add(AtomicBlocks.EMPOWERED_ATOMIC_BLOCK.get());
+                .add(AtomicBlocks.EMPOWERED_ATOMIC_BLOCK.get())
+                .add(AtomicBlocks.MACHINE_BASE.get())
+                .add(AtomicBlocks.DENSE_BASALT.get());
 
         tag(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(AtomicBlocks.DEEPSLATE_BRIGHTSILVER_ORE.get())
-                .add(AtomicBlocks.BRIGHTSILVER_ORE.get())
                 .add(AtomicBlocks.BUNGERITE_ORE.get())
                 .add(AtomicBlocks.SOULSTEEL_ORE.get())
                 .add(AtomicBlocks.RAW_BRIGHTSILVER_BLOCK.get())

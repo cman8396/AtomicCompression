@@ -107,6 +107,7 @@ public class AtomicCreativeTabs {
                     .icon(() -> AtomicBlocks.ATOMIC_BLOCK.asItem().getDefaultInstance())
                     .displayItems((parameters, output) -> {
 
+                        output.accept(AtomicBlocks.MACHINE_BASE.get());
                         output.accept(AtomicBlocks.ATOMIC_GLASS.get());
                         output.accept(AtomicBlocks.ATOMIC_GLASS_PANE.get());
                         output.accept(AtomicBlocks.DENSE_BASALT.get());
