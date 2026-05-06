@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "atomiccompression:block/glowthorn_slab"
+    },
+    "type=double": {
+      "model": "atomiccompression:block/glowthorn_planks"
+    },
+    "type=top": {
+      "model": "atomiccompression:block/glowthorn_slab_top"
+    }
+  }
+}

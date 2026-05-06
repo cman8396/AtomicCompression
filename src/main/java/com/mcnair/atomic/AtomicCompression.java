@@ -104,9 +104,12 @@ public class AtomicCompression {
             ItemBlockRenderTypes.setRenderLayer(AtomicBlocks.ATOMIC_GLASS_PANE.get(),ChunkSectionLayer.CUTOUT);
 
             ItemBlockRenderTypes.setRenderLayer(AtomicBlocks.ASHENWOOD_SAPLING.get(), ChunkSectionLayer.CUTOUT);
-
             ItemBlockRenderTypes.setRenderLayer(AtomicBlocks.ASHENWOOD_DOOR.get(), ChunkSectionLayer.CUTOUT);
             ItemBlockRenderTypes.setRenderLayer(AtomicBlocks.ASHENWOOD_TRAPDOOR.get(), ChunkSectionLayer.CUTOUT);
+
+            ItemBlockRenderTypes.setRenderLayer(AtomicBlocks.GLOWTHORN_SAPLING.get(), ChunkSectionLayer.CUTOUT);
+            ItemBlockRenderTypes.setRenderLayer(AtomicBlocks.GLOWTHORN_DOOR.get(), ChunkSectionLayer.CUTOUT);
+            ItemBlockRenderTypes.setRenderLayer(AtomicBlocks.GLOWTHORN_TRAPDOOR.get(), ChunkSectionLayer.CUTOUT);
         }
 
         @SubscribeEvent

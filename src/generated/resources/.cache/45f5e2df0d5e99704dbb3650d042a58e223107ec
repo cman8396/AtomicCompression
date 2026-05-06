@@ -1,4 +1,4 @@
-// 1.21.11	2026-05-04T21:29:12.2963608	Tags for minecraft:item mod id atomiccompression
+// 1.21.11	2026-05-06T23:03:10.826312	Tags for minecraft:item mod id atomiccompression
 e37bfe5e8c117d226b24940ac3037fb05fc44dbb data/atomiccompression/tags/item/brightsilver_alloy_repairable.json
 b2aff78501eff51e23253dc8530d02056b395777 data/atomiccompression/tags/item/bungerite_alloy_repairable.json
 c61f60129fef9bb8e546fcd06a55e283e845cf54 data/atomiccompression/tags/item/machine.json
@@ -39,6 +39,8 @@ b2aff78501eff51e23253dc8530d02056b395777 data/c/tags/item/ingots/bungerite_alloy
 4f14ffab1aa387a2c852ebcc31344edafa007237 data/c/tags/item/ingots/lead.json
 93257ed696612306e3a4e38646acc0fecab938eb data/c/tags/item/ingots/soulsteel.json
 cdc2fa121705929e7b4f4783d2a2ead291677fa3 data/c/tags/item/ingots/soulsteel_alloy.json
+24633462330af237de2e65e951e14c38c2321882 data/c/tags/item/logs/atomic.json
+1d8f76e3086a9ec7977233bda7d15f75c3b46d77 data/c/tags/item/natural_logs.json
 70c729a2df5519e32edf12266d61305d81c38a49 data/c/tags/item/nuggets.json
 bcc66ef7dc45a63768bed80143f5a9b80a33bf13 data/c/tags/item/nuggets/brightsilver.json
 f87e1f844865a915a86b4f883a6b10ee05dbb657 data/c/tags/item/nuggets/brightsilver_alloy.json
@@ -65,6 +67,8 @@ d3e54b8119bba3b24e5ae636d4b59543600ff263 data/c/tags/item/raw_materials/saltpete
 291f022c24669cccaba829ef11039118083689ef data/c/tags/item/raw_materials/sulfur.json
 fc08f38dfa4ae5cab18481d3a13d76999f233a27 data/c/tags/item/shards.json
 1b2b34650b1320cdb97be497efeec73d20e2c9ac data/c/tags/item/shards/atomic.json
+4d727414438036453a19ce72f255308012de33b1 data/c/tags/item/stones.json
+71ad78f76e2d9b85363e3dd2813b3f8ddd859c61 data/c/tags/item/stones/dense.json
 5ce4d1f13ca93383efa09562f64153197f27bc13 data/c/tags/item/storage_blocks.json
 c1af16b42b85f04e9f823844faf6162a8abbfd0e data/c/tags/item/storage_blocks/atomic.json
 94219d403e974436ef9c07221b6a4e01b6eaeabe data/c/tags/item/storage_blocks/brightsilver.json
@@ -88,11 +92,11 @@ abd303db78acbc5f57ba9fcea56aaa8e78d77397 data/c/tags/item/tool_shafts/elemental.
 9e694ea224c2a8dfc680195b0b8917c619829c00 data/c/tags/item/tool_shafts/wooden.json
 8b30a9ebd6c9121dc9e500fdb0c3c946fe82e21f data/minecraft/tags/item/axes.json
 dc39721a973f81c74191575d05574a98b73ca49a data/minecraft/tags/item/hoes.json
-d9118eb20aca2e5bd35ea2d085dac5f7a44157ce data/minecraft/tags/item/logs_that_burn.json
+0bdd43ff4767c5674354acc0c4f877aa4b04c4c1 data/minecraft/tags/item/logs_that_burn.json
 9c18ee570abbef794c2e1403bd2601a3cfdeb27a data/minecraft/tags/item/pickaxes.json
-9366751260f59abaad2a059daedbe1e75650b5ea data/minecraft/tags/item/planks.json
+1e7eb54c573e8816b2a63041a99b0edc528b1130 data/minecraft/tags/item/planks.json
 4db5833020f079f5d95f86675c4d60043140324b data/minecraft/tags/item/shovels.json
 3c67e9f42d93d31f1c953879f8a140aadb76e27a data/minecraft/tags/item/spears.json
 0744db950ed9025b1e3d81b0a4bb6814f31fa412 data/minecraft/tags/item/swords.json
 9ae0b2e05e52853390b76c9b99e6b5db1368a1b3 data/minecraft/tags/item/trim_materials.json
-bbdaa54be42b37a9e017e621d750982fdfdc0635 data/minecraft/tags/item/wooden_doors.json
+ab2b68e6d843cb2677e35bfdccf1d816e38f598b data/minecraft/tags/item/wooden_doors.json

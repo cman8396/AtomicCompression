@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "wooden_wall",
+  "key": {
+    "#": "atomiccompression:glowthorn_planks"
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "id": "atomiccompression:glowthorn_wall"
+  }
+}

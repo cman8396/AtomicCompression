@@ -14,7 +14,7 @@ public class AtomicBlockFamilies {
     private static final String GROUP_PREFIX_WOODEN = "wooden";
     private static final String UNLOCKED_BY_WOODEN = "has_planks";
 
-    public static final BlockFamily FIR_PLANKS = familyBuilder(AtomicBlocks.ASHENWOOD_PLANKS.get())
+    public static final BlockFamily ASHENWOOD_PLANKS = familyBuilder(AtomicBlocks.ASHENWOOD_PLANKS.get())
             .stairs(AtomicBlocks.ASHENWOOD_STAIRS.get())
             .slab(AtomicBlocks.ASHENWOOD_SLAB.get())
             .pressurePlate(AtomicBlocks.ASHENWOOD_PRESSURE_PLATE.get())
@@ -24,6 +24,19 @@ public class AtomicBlockFamilies {
             .wall(AtomicBlocks.ASHENWOOD_WALL.get())
             .door(AtomicBlocks.ASHENWOOD_DOOR.get())
             .trapdoor(AtomicBlocks.ASHENWOOD_TRAPDOOR.get())
+            .recipeGroupPrefix(GROUP_PREFIX_WOODEN)
+            .recipeUnlockedBy(UNLOCKED_BY_WOODEN)
+            .getFamily();
+    public static final BlockFamily GLOWTHORN_PLANKS = familyBuilder(AtomicBlocks.GLOWTHORN_PLANKS.get())
+            .stairs(AtomicBlocks.GLOWTHORN_STAIRS.get())
+            .slab(AtomicBlocks.GLOWTHORN_SLAB.get())
+            .pressurePlate(AtomicBlocks.GLOWTHORN_PRESSURE_PLATE.get())
+            .button(AtomicBlocks.GLOWTHORN_BUTTON.get())
+            .fence(AtomicBlocks.GLOWTHORN_FENCE.get())
+            .fenceGate(AtomicBlocks.GLOWTHORN_FENCE_GATE.get())
+            .wall(AtomicBlocks.GLOWTHORN_WALL.get())
+            .door(AtomicBlocks.GLOWTHORN_DOOR.get())
+            .trapdoor(AtomicBlocks.GLOWTHORN_TRAPDOOR.get())
             .recipeGroupPrefix(GROUP_PREFIX_WOODEN)
             .recipeUnlockedBy(UNLOCKED_BY_WOODEN)
             .getFamily();

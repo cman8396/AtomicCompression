@@ -37,6 +37,7 @@ public class AtomicPlacedFeatures {
 
 
     public static final ResourceKey<PlacedFeature> ASHENWOOD_PLACED_KEY = registerKey("ashenwood_placed");
+    public static final ResourceKey<PlacedFeature> GLOWTHORN_PLACED_KEY = registerKey("glowthorn_placed");
 
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
@@ -84,6 +85,9 @@ public class AtomicPlacedFeatures {
         register(context, ASHENWOOD_PLACED_KEY, configuredFeatures.getOrThrow(AtomicConfiguredFeatures.ASHENWOOD_KEY),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.05f, 1),
                         AtomicBlocks.ASHENWOOD_SAPLING.get()));
+        register(context, GLOWTHORN_PLACED_KEY, configuredFeatures.getOrThrow(AtomicConfiguredFeatures.GLOWTHORN_KEY),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.05f, 1),
+                        AtomicBlocks.GLOWTHORN_SAPLING.get()));
 
 //        register(context, GOJI_BERRY_BUSH_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.GOJI_BERRY_BUSH_KEY),
 //                List.of(RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome()));

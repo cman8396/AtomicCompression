@@ -1,17 +1,13 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_obsidian": {
+    "has_the_recipe": {
       "conditions": {
-        "items": [
-          {
-            "items": "minecraft:obsidian"
-          }
-        ]
+        "recipe": "minecraft:obsidian"
       },
-      "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:recipe_unlocked"
     },
-    "has_obsidian_chunk": {
+    "has_translation{key='item.atomiccompression.obsidian_chunk', args=[]}": {
       "conditions": {
         "items": [
           {
@@ -20,19 +16,12 @@
         ]
       },
       "trigger": "minecraft:inventory_changed"
-    },
-    "has_the_recipe": {
-      "conditions": {
-        "recipe": "minecraft:obsidian"
-      },
-      "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
       "has_the_recipe",
-      "has_obsidian",
-      "has_obsidian_chunk"
+      "has_translation{key='item.atomiccompression.obsidian_chunk', args=[]}"
     ]
   ],
   "rewards": {

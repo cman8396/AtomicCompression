@@ -7,14 +7,13 @@ import com.mcnair.atomic.item.AtomicItems;
 import com.mcnair.atomic.recipe.base.input.InputItemWithCount;
 import com.mcnair.atomic.recipe.base.output.OutputItemWithPercent;
 import com.mcnair.atomic.recipe.recipes.*;
+import com.mcnair.atomic.utility.common.CommonBlockTags;
+import com.mcnair.atomic.utility.common.CommonItemTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.BlockFamily;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.recipes.RecipeCategory;
-import net.minecraft.data.recipes.RecipeOutput;
-import net.minecraft.data.recipes.RecipeProvider;
-import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
+import net.minecraft.data.recipes.*;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.TagKey;
@@ -26,6 +25,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
+import net.neoforged.neoforge.common.Tags;
 import org.jspecify.annotations.NonNull;
 
 import java.util.Arrays;
@@ -57,13 +57,6 @@ public class AtomicRecipeProvider extends RecipeProvider {
     protected void buildRecipes() {
 
         /* SHAPED RECIPES */
-        shaped(RecipeCategory.MISC, Blocks.OBSIDIAN)
-                .pattern("CC")
-                .pattern("CC")
-                .define('C', AtomicItems.OBSIDIAN_CHUNK.get())
-                .unlockedBy("has_obsidian", has(Blocks.OBSIDIAN))
-                .unlockedBy("has_obsidian_chunk", has(AtomicItems.OBSIDIAN_CHUNK))
-                .save(output);
         shaped(RecipeCategory.MISC, AtomicBlocks.ATOMIC_GLASS.get(), 8)
                 .pattern("GGG")
                 .pattern("GEG")
@@ -78,13 +71,6 @@ public class AtomicRecipeProvider extends RecipeProvider {
                 .define('G', AtomicBlocks.ATOMIC_GLASS)
                 .unlockedBy("has_empowered_atomic_shard", has(AtomicItems.EMPOWERED_ATOMIC_SHARD))
                 .save(output);
-        shaped(RecipeCategory.MISC, AtomicBlocks.DENSE_BASALT.get())
-                .pattern("BBB")
-                .pattern("BBB")
-                .pattern("BBB")
-                .define('B', Items.BASALT)
-                .unlockedBy("has_basalt", has(Items.BASALT))
-                .save(output);
         shaped(RecipeCategory.MISC, AtomicItems.ATOMIC_STABILIZER.get())
                 .pattern("OLO")
                 .pattern("L L")
@@ -95,50 +81,26 @@ public class AtomicRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_obsidian_chunk", has(AtomicItems.OBSIDIAN_CHUNK))
                 .unlockedBy("has_lead_ingot", has(AtomicItems.LEAD_INGOT))
                 .save(output);
-        shaped(RecipeCategory.MISC, AtomicItems.ATOMIC_STABILIZER.get())
-                .pattern("LOL")
-                .pattern("O O")
-                .pattern("LOL")
-                .define('L', AtomicItems.LEAD_INGOT.get())
-                .define('O', AtomicItems.OBSIDIAN_CHUNK.get())
-                .unlockedBy("has_dense_basalt", has(AtomicBlocks.DENSE_BASALT))
-                .unlockedBy("has_obsidian_chunk", has(AtomicItems.OBSIDIAN_CHUNK))
-                .unlockedBy("has_lead_ingot", has(AtomicItems.LEAD_INGOT))
-                .save(output);
         shaped(RecipeCategory.MISC, AtomicItems.WOODEN_TOOL_SHAFT.get())
                 .pattern("L")
                 .pattern("L")
                 .pattern("L")
-                .define('L', AtomicBlocks.ASHENWOOD_LOG.get())
-                .unlockedBy("has_ashenwood_log", has(AtomicBlocks.ASHENWOOD_LOG))
+                .define('L', CommonItemTags.LOGS_ATOMIC)
+                .unlockedBy("has_atomic_log", has(CommonItemTags.LOGS_ATOMIC))
                 .save(output);
         shaped(RecipeCategory.MISC, AtomicItems.DENSE_TOOL_SHAFT.get())
                 .pattern("D")
                 .pattern("D")
                 .pattern("D")
-                .define('D', AtomicBlocks.DENSE_BASALT.get())
-                .unlockedBy("has_dense_basalt", has(AtomicBlocks.DENSE_BASALT))
-                .save(output);
-        shaped(RecipeCategory.MISC, AtomicItems.DENSE_TOOL_SHAFT.get())
-                .pattern("D")
-                .pattern("D")
-                .pattern("D")
-                .define('D', AtomicBlocks.DENSE_DEEPSLATE.get())
-                .unlockedBy("has_dense_deepslate", has(AtomicBlocks.DENSE_DEEPSLATE))
+                .define('D', CommonItemTags.DENSE_STONE)
+                .unlockedBy("has_dense_stone", has(CommonItemTags.DENSE_STONE))
                 .save(output);
         shaped(RecipeCategory.MISC, AtomicItems.ELEMENTAL_TOOL_SHAFT.get())
                 .pattern("O")
                 .pattern("O")
                 .pattern("O")
-                .define('O', Blocks.OBSIDIAN)
-                .unlockedBy("has_obsidian", has(Blocks.OBSIDIAN))
-                .save(output);
-        shaped(RecipeCategory.MISC, AtomicItems.ELEMENTAL_TOOL_SHAFT.get())
-                .pattern("O")
-                .pattern("O")
-                .pattern("O")
-                .define('O', Blocks.CRYING_OBSIDIAN)
-                .unlockedBy("has_crying_obsidian", has(Blocks.CRYING_OBSIDIAN))
+                .define('O', Tags.Items.OBSIDIANS)
+                .unlockedBy("has_obsidian", has(Tags.Items.OBSIDIANS))
                 .save(output);
         shaped(RecipeCategory.MISC, AtomicItems.INFUSED_WOODEN_TOOL_SHAFT.get())
                 .pattern("S")
@@ -147,7 +109,7 @@ public class AtomicRecipeProvider extends RecipeProvider {
                 .define('S', AtomicItems.WOODEN_TOOL_SHAFT.get())
                 .define('E', AtomicItems.EMPOWERED_ATOMIC_SHARD.get())
                 .define('A', AtomicItems.ATOMIC_STABILIZER.get())
-                .unlockedBy("has_ashenwood_log", has(AtomicBlocks.ASHENWOOD_LOG))
+                .unlockedBy("has_atomic_log", has(CommonItemTags.LOGS_ATOMIC))
                 .unlockedBy("has_lead_ingot", has(AtomicItems.LEAD_INGOT))
                 .unlockedBy("has_obsidian_chunk", has(AtomicItems.OBSIDIAN_CHUNK))
                 .unlockedBy("has_empowered_atomic_shard", has(AtomicItems.EMPOWERED_ATOMIC_SHARD))
@@ -160,7 +122,7 @@ public class AtomicRecipeProvider extends RecipeProvider {
                 .define('S', AtomicItems.DENSE_TOOL_SHAFT.get())
                 .define('E', AtomicItems.EMPOWERED_ATOMIC_SHARD.get())
                 .define('A', AtomicItems.ATOMIC_STABILIZER.get())
-                .unlockedBy("has_dense_basalt", has(AtomicBlocks.DENSE_BASALT))
+                .unlockedBy("has_dense_stone", has(CommonItemTags.DENSE_STONE))
                 .unlockedBy("has_lead_ingot", has(AtomicItems.LEAD_INGOT))
                 .unlockedBy("has_obsidian_chunk", has(AtomicItems.OBSIDIAN_CHUNK))
                 .unlockedBy("has_empowered_atomic_shard", has(AtomicItems.EMPOWERED_ATOMIC_SHARD))
@@ -173,7 +135,7 @@ public class AtomicRecipeProvider extends RecipeProvider {
                 .define('S', AtomicItems.ELEMENTAL_TOOL_SHAFT.get())
                 .define('E', AtomicItems.EMPOWERED_ATOMIC_SHARD.get())
                 .define('A', AtomicItems.ATOMIC_STABILIZER.get())
-                .unlockedBy("has_obsidian", has(Blocks.OBSIDIAN))
+                .unlockedBy("has_obsidians", has(Tags.Items.OBSIDIANS))
                 .unlockedBy("has_lead_ingot", has(AtomicItems.LEAD_INGOT))
                 .unlockedBy("has_obsidian_chunk", has(AtomicItems.OBSIDIAN_CHUNK))
                 .unlockedBy("has_empowered_atomic_shard", has(AtomicItems.EMPOWERED_ATOMIC_SHARD))
@@ -183,7 +145,11 @@ public class AtomicRecipeProvider extends RecipeProvider {
 
         /* SHAPELESS RECIPES */
         oneToManyRecipe(output, AtomicBlocks.DENSE_BASALT, Items.BASALT, 9);
-        oneToManyRecipe(output, Items.OBSIDIAN, AtomicItems.OBSIDIAN_CHUNK, 4);
+        shapedThreeGridToOneRecipe(output, Blocks.BASALT, AtomicBlocks.DENSE_BASALT);
+        oneToManyRecipe(output, AtomicBlocks.DENSE_DEEPSLATE, Items.DEEPSLATE, 9);
+        shapedThreeGridToOneRecipe(output, Blocks.DEEPSLATE, AtomicBlocks.DENSE_DEEPSLATE);
+        oneToManyRecipe(output, Tags.Items.OBSIDIANS, AtomicItems.OBSIDIAN_CHUNK, 4);
+        shapedTwoGridToOneRecipe(output, AtomicItems.OBSIDIAN_CHUNK, Blocks.OBSIDIAN);
 
         shapeless(RecipeCategory.MISC, Items.GUNPOWDER, 3)
                 .requires(AtomicItems.SULFUR_DUST)
@@ -272,8 +238,9 @@ public class AtomicRecipeProvider extends RecipeProvider {
 
 
         /* WOODEN ITEMS */
-        generateRecipesForBlockFamilies(FeatureFlagSet.of(FeatureFlags.VANILLA)); //generates all recipes for wood block families
+        generateRecipesForBlockFamilies(FeatureFlagSet.of(FeatureFlags.VANILLA)); //generates all recipes for wood block families XD
         woodBlockProcessing(output, AtomicBlocks.ASHENWOOD_PLANKS, AtomicBlocks.ASHENWOOD_LOG, AtomicBlocks.ASHENWOOD_WOOD);
+        woodBlockProcessing(output, AtomicBlocks.GLOWTHORN_PLANKS, AtomicBlocks.GLOWTHORN_LOG, AtomicBlocks.GLOWTHORN_WOOD);
 
 
 
@@ -433,22 +400,38 @@ public class AtomicRecipeProvider extends RecipeProvider {
         /* EXPLOSIVE INFUSER */
         ExInfuser.createTwoToOne(output, AtomicItems.ATOMIC_SHARD.asItem(), 1, AtomicItems.DIAMOND_DUST.asItem(), 2, AtomicItems.EMPOWERED_ATOMIC_SHARD.asItem(), 1);
         ExInfuser.createTwoToOne(output, AtomicItems.ATOMIC_SHARD.asItem(), 1, AtomicItems.EMERALD_DUST.asItem(), 2, AtomicItems.EMPOWERED_ATOMIC_SHARD.asItem(), 1);
-        ExInfuser.createTwoToTwo(output, Items.OBSIDIAN.asItem(), 2, Items.BLAZE_ROD.asItem(), 2,AtomicItems.BLAZING_OBSIDIAN_INGOT.asItem(), 1,AtomicItems.OBSIDIAN_CHUNK, new double[]{0.25, 0.05});
-        ExInfuser.createTwoToTwo(output, Items.OBSIDIAN.asItem(), 2, Items.BLAZE_POWDER.asItem(), 8,AtomicItems.BLAZING_OBSIDIAN_INGOT.asItem(), 1,AtomicItems.OBSIDIAN_CHUNK, new double[]{0.25, 0.05});
-        ExInfuser.createTwoToTwo(output, AtomicItems.OBSIDIAN_CHUNK.asItem(), 8, Items.BLAZE_ROD.asItem(), 2,AtomicItems.BLAZING_OBSIDIAN_INGOT.asItem(), 1,AtomicItems.OBSIDIAN_CHUNK, new double[]{0.25, 0.05});
-        ExInfuser.createTwoToTwo(output, AtomicItems.OBSIDIAN_CHUNK.asItem(), 8, Items.BLAZE_POWDER.asItem(), 8,AtomicItems.BLAZING_OBSIDIAN_INGOT.asItem(), 1,AtomicItems.OBSIDIAN_CHUNK, new double[]{0.25, 0.05});
+        ExInfuser.createTwoToTwo(output, Items.OBSIDIAN.asItem(), 2, Items.BLAZE_ROD.asItem(), 2, AtomicItems.BLAZING_OBSIDIAN_INGOT.asItem(), 1, AtomicItems.OBSIDIAN_CHUNK, new double[]{0.25, 0.05});
+        ExInfuser.createTwoToTwo(output, Items.OBSIDIAN.asItem(), 2, Items.BLAZE_POWDER.asItem(), 8, AtomicItems.BLAZING_OBSIDIAN_INGOT.asItem(), 1, AtomicItems.OBSIDIAN_CHUNK, new double[]{0.25, 0.05});
+        ExInfuser.createTwoToTwo(output, AtomicItems.OBSIDIAN_CHUNK.asItem(), 8, Items.BLAZE_ROD.asItem(), 2, AtomicItems.BLAZING_OBSIDIAN_INGOT.asItem(), 1, AtomicItems.OBSIDIAN_CHUNK, new double[]{0.25, 0.05});
+        ExInfuser.createTwoToTwo(output, AtomicItems.OBSIDIAN_CHUNK.asItem(), 8, Items.BLAZE_POWDER.asItem(), 8, AtomicItems.BLAZING_OBSIDIAN_INGOT.asItem(), 1, AtomicItems.OBSIDIAN_CHUNK, new double[]{0.25, 0.05});
         ExInfuser.createTwoToOne(output, AtomicItems.RAW_SOULSTEEL.asItem(), 3, AtomicItems.ECHO_DUST.asItem(), 1, AtomicItems.SOULSTEEL_INGOT.asItem(), 1);
 
         // Vanilla Recipes
 
-
-//        allWoodenObjects(output, "ashenwood", AtomicBlocks.ASHENWOOD_PLANKS, AtomicBlocks.ASHENWOOD_STAIRS, AtomicBlocks.ASHENWOOD_SLAB, AtomicBlocks.ASHENWOOD_BUTTON, AtomicBlocks.ASHENWOOD_PRESSURE_PLATE, AtomicBlocks.ASHENWOOD_FENCE, AtomicBlocks.ASHENWOOD_FENCE_GATE, AtomicBlocks.ASHENWOOD_WALL, AtomicBlocks.ASHENWOOD_DOOR, AtomicBlocks.ASHENWOOD_TRAPDOOR);
 
         // Throws error
         // trimSmithing(AtomicItems.KAUPEN_SMITHING_TEMPLATE.get(), ResourceKey.create(Registries.TRIM_PATTERN, Identifier.fromNamespaceAndPath(TutorialMod.MOD_ID, "kaupen")),
         //         ResourceKey.create(Registries.RECIPE, Identifier.fromNamespaceAndPath(TutorialMod.MOD_ID, "kaupen")));
     }
 
+    protected void shapedThreeGridToOneRecipe(RecipeOutput recipeOutput, ItemLike inputItem, ItemLike outputItem) {
+        shaped(RecipeCategory.MISC, outputItem)
+                .pattern("III")
+                .pattern("III")
+                .pattern("III")
+                .define('I', inputItem)
+                .unlockedBy("has_" + inputItem.asItem().getName(), has(inputItem))
+                .save(recipeOutput);
+    }
+
+    protected void shapedTwoGridToOneRecipe(RecipeOutput recipeOutput, ItemLike inputItem, ItemLike outputItem) {
+        shaped(RecipeCategory.MISC, outputItem)
+                .pattern("II")
+                .pattern("II")
+                .define('I', inputItem)
+                .unlockedBy("has_" + inputItem.asItem().getName(), has(inputItem))
+                .save(recipeOutput);
+    }
 
     protected void oneToOneRecipe(RecipeOutput recipeOutput, ItemLike inputItem, ItemLike outputItem) {
         shapeless(RecipeCategory.MISC, outputItem, 1)
@@ -458,10 +441,26 @@ public class AtomicRecipeProvider extends RecipeProvider {
                 .save(recipeOutput);
     }
 
+    protected void oneToOneRecipe(RecipeOutput recipeOutput, TagKey<Item> inputItemTag, ItemLike outputItem) {
+        shapeless(RecipeCategory.MISC, outputItem, 1)
+                .requires(inputItemTag)
+                .unlockedBy("has_input", has(inputItemTag))
+                .unlockedBy("has_" + outputItem.asItem().getName(), has(outputItem))
+                .save(recipeOutput);
+    }
+
     protected void oneToManyRecipe(RecipeOutput recipeOutput, ItemLike inputItem, ItemLike outputItem, int resultCount) {
         shapeless(RecipeCategory.MISC, outputItem, resultCount)
                 .requires(inputItem)
                 .unlockedBy("has_" + inputItem.asItem().getName(), has(inputItem))
+                .unlockedBy("has_" + outputItem.asItem().getName(), has(outputItem))
+                .save(recipeOutput);
+    }
+
+    protected void oneToManyRecipe(RecipeOutput recipeOutput, TagKey<Item> inputItemTag, ItemLike outputItem, int resultCount) {
+        shapeless(RecipeCategory.MISC, outputItem, resultCount)
+                .requires(inputItemTag)
+                .unlockedBy("has_input", has(inputItemTag))
                 .unlockedBy("has_" + outputItem.asItem().getName(), has(outputItem))
                 .save(recipeOutput);
     }

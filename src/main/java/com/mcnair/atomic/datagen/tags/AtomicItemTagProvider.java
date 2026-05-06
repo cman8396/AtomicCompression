@@ -4,6 +4,7 @@ import com.mcnair.atomic.AtomicCompression;
 import com.mcnair.atomic.block.AtomicBlocks;
 import com.mcnair.atomic.item.AtomicItems;
 import com.mcnair.atomic.utility.AtomicTags;
+import com.mcnair.atomic.utility.common.CommonBlockTags;
 import com.mcnair.atomic.utility.common.CommonItemTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -69,17 +70,31 @@ public class AtomicItemTagProvider extends ItemTagsProvider {
 
 
         // Wood
+        tag(Tags.Items.NATURAL_LOGS)
+                .addTag(CommonItemTags.LOGS_ATOMIC);
+        tag(CommonItemTags.LOGS_ATOMIC)
+                .add(AtomicBlocks.ASHENWOOD_LOG.get().asItem())
+                .add(AtomicBlocks.STRIPPED_ASHENWOOD_LOG.get().asItem())
+                .add(AtomicBlocks.GLOWTHORN_LOG.get().asItem())
+                .add(AtomicBlocks.STRIPPED_GLOWTHORN_LOG.get().asItem());
+
         tag(ItemTags.LOGS_THAT_BURN)
                 .add(AtomicBlocks.ASHENWOOD_LOG.get().asItem())
                 .add(AtomicBlocks.ASHENWOOD_WOOD.get().asItem())
                 .add(AtomicBlocks.STRIPPED_ASHENWOOD_LOG.get().asItem())
-                .add(AtomicBlocks.STRIPPED_ASHENWOOD_WOOD.get().asItem());
+                .add(AtomicBlocks.STRIPPED_ASHENWOOD_WOOD.get().asItem())
+                .add(AtomicBlocks.GLOWTHORN_LOG.get().asItem())
+                .add(AtomicBlocks.GLOWTHORN_WOOD.get().asItem())
+                .add(AtomicBlocks.STRIPPED_GLOWTHORN_LOG.get().asItem())
+                .add(AtomicBlocks.STRIPPED_GLOWTHORN_WOOD.get().asItem());
 
         tag(ItemTags.PLANKS)
-                .add(AtomicBlocks.ASHENWOOD_PLANKS.asItem());
+                .add(AtomicBlocks.ASHENWOOD_PLANKS.asItem())
+                .add(AtomicBlocks.GLOWTHORN_PLANKS.asItem());
 
         tag(ItemTags.WOODEN_DOORS)
-                .add(AtomicBlocks.ASHENWOOD_DOOR.asItem());
+                .add(AtomicBlocks.ASHENWOOD_DOOR.asItem())
+                .add(AtomicBlocks.GLOWTHORN_DOOR.asItem());
 
 
         // Machine
@@ -174,6 +189,13 @@ public class AtomicItemTagProvider extends ItemTagsProvider {
                 .add(AtomicBlocks.ATOMIC_BLOCK.asItem());
         tag(CommonItemTags.STORAGE_BLOCKS_EMPOWERED_ATOMIC)
                 .add(AtomicBlocks.EMPOWERED_ATOMIC_BLOCK.asItem());
+
+        // Dense Stones
+        tag(Tags.Items.STONES)
+                .addTag(CommonItemTags.DENSE_STONE);
+        tag(CommonItemTags.DENSE_STONE)
+                .add(AtomicBlocks.DENSE_BASALT.get().asItem())
+                .add(AtomicBlocks.DENSE_DEEPSLATE.get().asItem());
 
         // Ores
         tag(Tags.Items.ORES)

@@ -110,6 +110,24 @@ public class AtomicBlockLootTableProvider extends BlockLootSubProvider {
         add(AtomicBlocks.ASHENWOOD_DOOR.get(), block -> createDoorTable(AtomicBlocks.ASHENWOOD_DOOR.get()));
         dropSelf(AtomicBlocks.ASHENWOOD_TRAPDOOR.get());
 
+        /* GLOWTHORN BLOCKS */
+        dropSelf(AtomicBlocks.GLOWTHORN_LOG.get());
+        dropSelf(AtomicBlocks.GLOWTHORN_WOOD.get());
+        dropSelf(AtomicBlocks.STRIPPED_GLOWTHORN_LOG.get());
+        dropSelf(AtomicBlocks.STRIPPED_GLOWTHORN_WOOD.get());
+        dropSelf(AtomicBlocks.GLOWTHORN_SAPLING.get());
+        add(AtomicBlocks.GLOWTHORN_LEAVES.get(), block -> createLeavesDrops(block, AtomicBlocks.GLOWTHORN_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        add(AtomicBlocks.GLOWTHORN_LEAVES_FLOWERING.get(), block -> createLeavesDrops(block, AtomicBlocks.GLOWTHORN_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        dropSelf(AtomicBlocks.GLOWTHORN_PLANKS.get());
+        dropSelf(AtomicBlocks.GLOWTHORN_STAIRS.get());
+        add(AtomicBlocks.GLOWTHORN_SLAB.get(), block -> createSlabItemTable(AtomicBlocks.GLOWTHORN_SLAB.get()));
+        dropSelf(AtomicBlocks.GLOWTHORN_PRESSURE_PLATE.get());
+        dropSelf(AtomicBlocks.GLOWTHORN_BUTTON.get());
+        dropSelf(AtomicBlocks.GLOWTHORN_FENCE.get());
+        dropSelf(AtomicBlocks.GLOWTHORN_FENCE_GATE.get());
+        dropSelf(AtomicBlocks.GLOWTHORN_WALL.get());
+        add(AtomicBlocks.GLOWTHORN_DOOR.get(), block -> createDoorTable(AtomicBlocks.GLOWTHORN_DOOR.get()));
+        dropSelf(AtomicBlocks.GLOWTHORN_TRAPDOOR.get());
 
 
         /* ENTITIES */

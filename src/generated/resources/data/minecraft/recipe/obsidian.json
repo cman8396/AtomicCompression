@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "C": "atomiccompression:obsidian_chunk"
+    "I": "atomiccompression:obsidian_chunk"
   },
   "pattern": [
-    "CC",
-    "CC"
+    "II",
+    "II"
   ],
   "result": {
     "count": 1,

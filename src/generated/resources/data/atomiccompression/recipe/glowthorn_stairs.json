@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "wooden_stairs",
+  "key": {
+    "#": "atomiccompression:glowthorn_planks"
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "id": "atomiccompression:glowthorn_stairs"
+  }
+}

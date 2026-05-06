@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_dense_basalt": {
+    "has_dense_stone": {
       "conditions": {
         "items": [
           {
-            "items": "atomiccompression:dense_basalt"
+            "items": "#c:stones/dense"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_dense_basalt"
+      "has_dense_stone"
     ]
   ],
   "rewards": {

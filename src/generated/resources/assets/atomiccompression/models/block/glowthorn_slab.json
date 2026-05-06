@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "atomiccompression:block/glowthorn_planks",
+    "side": "atomiccompression:block/glowthorn_planks",
+    "top": "atomiccompression:block/glowthorn_planks"
+  }
+}

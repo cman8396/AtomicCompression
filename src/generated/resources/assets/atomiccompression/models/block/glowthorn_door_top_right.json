@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_right",
+  "textures": {
+    "bottom": "atomiccompression:block/glowthorn_door_bottom",
+    "top": "atomiccompression:block/glowthorn_door_top"
+  }
+}

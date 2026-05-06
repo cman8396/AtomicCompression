@@ -34,6 +34,7 @@ public class AtomicBiomeModifiers {
 
 
     public static final ResourceKey<BiomeModifier> ADD_TREE_ASHENWOOD = registerKey("add_tree_ashenwood");
+    public static final ResourceKey<BiomeModifier> ADD_TREE_GLOWTHORN = registerKey("add_tree_glowthorn");
 
 
 //    public static final ResourceKey<BiomeModifier> ADD_GOJI_BERRY_BUSH = registerKey("add_goji_berry_bush");
@@ -121,6 +122,17 @@ public class AtomicBiomeModifiers {
                         biomes.getOrThrow(Biomes.CHERRY_GROVE),
                         biomes.getOrThrow(Biomes.SAVANNA)
                 ), HolderSet.direct(placedFeatures.getOrThrow(AtomicPlacedFeatures.ASHENWOOD_PLACED_KEY)),
+                GenerationStep.Decoration.VEGETAL_DECORATION));
+        context.register(ADD_TREE_GLOWTHORN, new BiomeModifiers.AddFeaturesBiomeModifier(
+                HolderSet.direct(
+                        biomes.getOrThrow(Biomes.BEACH),
+                        biomes.getOrThrow(Biomes.BADLANDS),
+                        biomes.getOrThrow(Biomes.DARK_FOREST),
+                        biomes.getOrThrow(Biomes.DESERT),
+                        biomes.getOrThrow(Biomes.JUNGLE),
+                        biomes.getOrThrow(Biomes.SWAMP),
+                        biomes.getOrThrow(Biomes.JAGGED_PEAKS)
+                ), HolderSet.direct(placedFeatures.getOrThrow(AtomicPlacedFeatures.GLOWTHORN_PLACED_KEY)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
 
 

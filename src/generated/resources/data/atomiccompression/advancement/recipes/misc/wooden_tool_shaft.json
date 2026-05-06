@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_ashenwood_log": {
+    "has_atomic_log": {
       "conditions": {
         "items": [
           {
-            "items": "atomiccompression:ashenwood_log"
+            "items": "#c:logs/atomic"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_ashenwood_log"
+      "has_atomic_log"
     ]
   ],
   "rewards": {

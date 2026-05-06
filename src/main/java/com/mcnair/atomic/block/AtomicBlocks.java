@@ -142,6 +142,7 @@ public class AtomicBlocks {
             (properties) -> new Block(
                     properties.strength(5f, 6f).sound(SoundType.NETHERITE_BLOCK)));
 
+
     /* STONE BLOCKS */
     public static final DeferredBlock<Block> DENSE_BASALT = registerBlock("dense_basalt",
             (properties) -> new RotatedPillarBlock(
@@ -149,6 +150,7 @@ public class AtomicBlocks {
     public static final DeferredBlock<Block> DENSE_DEEPSLATE = registerBlock("dense_deepslate",
             (properties) -> new Block(
                     properties.strength(1.65f, 5f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
+
 
     /* ASHENWOOD BLOCKS */
     public static final DeferredBlock<Block> ASHENWOOD_LOG = registerBlock("ashenwood_log",
@@ -202,6 +204,55 @@ public class AtomicBlocks {
     public static final DeferredBlock<TrapDoorBlock> ASHENWOOD_TRAPDOOR = registerBlock("ashenwood_trapdoor",
             (properties) -> new TrapDoorBlock(BlockSetType.OAK, properties.strength(2f).requiresCorrectToolForDrops().noOcclusion()));
 
+    public static final DeferredBlock<Block> GLOWTHORN_LOG = registerBlock("glowthorn_log",
+            (properties) -> new AtomicLogsBlock(
+                    properties.strength(2.0f).sound(SoundType.CHERRY_WOOD).ignitedByLava()));
+    public static final DeferredBlock<Block> GLOWTHORN_WOOD = registerBlock("glowthorn_wood",
+            (properties) -> new AtomicLogsBlock(
+                    properties.strength(2.0f).sound(SoundType.CHERRY_WOOD).ignitedByLava()));
+    public static final DeferredBlock<Block> STRIPPED_GLOWTHORN_LOG = registerBlock("stripped_glowthorn_log",
+            (properties) -> new AtomicLogsBlock(
+                    properties.strength(2.0f).sound(SoundType.CHERRY_WOOD).ignitedByLava()));
+    public static final DeferredBlock<Block> STRIPPED_GLOWTHORN_WOOD = registerBlock("stripped_glowthorn_wood",
+            (properties) -> new AtomicLogsBlock(
+                    properties.strength(2.0f).sound(SoundType.CHERRY_WOOD).ignitedByLava()));
+    public static final DeferredBlock<Block> GLOWTHORN_LEAVES = registerBlock("glowthorn_leaves",
+            (properties) -> new AtomicLeavesBlock(0.05f, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 118f, 127f, 118f),
+                    properties.strength(0.2F).sound(SoundType.CHERRY_LEAVES).ignitedByLava()
+                            .mapColor(MapColor.PLANT).randomTicks().noOcclusion().pushReaction(PushReaction.DESTROY)));
+    public static final DeferredBlock<Block> GLOWTHORN_LEAVES_FLOWERING = registerBlock("glowthorn_leaves_flowering",
+            (properties) -> new AtomicLeavesBlock(0.05f, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 118f, 127f, 118f),
+                    properties.strength(0.2F).sound(SoundType.CHERRY_LEAVES).ignitedByLava()
+                            .mapColor(MapColor.PLANT).randomTicks().noOcclusion().pushReaction(PushReaction.DESTROY)));
+    public static final DeferredBlock<Block> GLOWTHORN_SAPLING = registerBlock("glowthorn_sapling",
+            (properties) -> new AtomicSaplingBlock(AtomicTreeGrower.GLOWTHORN,
+                    properties.instabreak().sound(SoundType.GRASS)
+                            .mapColor(MapColor.PLANT).randomTicks().noCollision()
+                            .pushReaction(PushReaction.DESTROY)));
+
+    public static final DeferredBlock<Block> GLOWTHORN_PLANKS = registerBlock("glowthorn_planks",
+            (properties) -> new AtomicPlanksBlock(
+                    properties.strength(2f).sound(SoundType.CHERRY_WOOD).ignitedByLava()));
+    public static final DeferredBlock<StairBlock> GLOWTHORN_STAIRS = registerBlock("glowthorn_stairs",
+            (properties) -> new StairBlock(AtomicBlocks.GLOWTHORN_PLANKS.get().defaultBlockState(),
+                    properties.strength(2f).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<SlabBlock> GLOWTHORN_SLAB = registerBlock("glowthorn_slab",
+            (properties) -> new SlabBlock(properties.strength(2f).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<PressurePlateBlock> GLOWTHORN_PRESSURE_PLATE = registerBlock("glowthorn_pressure_plate",
+            (properties) -> new PressurePlateBlock(BlockSetType.OAK, properties.strength(2f).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<ButtonBlock> GLOWTHORN_BUTTON = registerBlock("glowthorn_button",
+            (properties) -> new ButtonBlock(BlockSetType.OAK, 20, properties.strength(2f).requiresCorrectToolForDrops().noCollision()));
+    public static final DeferredBlock<FenceBlock> GLOWTHORN_FENCE = registerBlock("glowthorn_fence",
+            (properties) -> new FenceBlock(properties.strength(2f).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<FenceGateBlock> GLOWTHORN_FENCE_GATE = registerBlock("glowthorn_fence_gate",
+            (properties) -> new FenceGateBlock(WoodType.OAK, properties.strength(2f).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<WallBlock> GLOWTHORN_WALL = registerBlock("glowthorn_wall",
+            (properties) -> new WallBlock(properties.strength(2f).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<DoorBlock> GLOWTHORN_DOOR = registerBlock("glowthorn_door",
+            (properties) -> new DoorBlock(BlockSetType.OAK, properties.strength(2f).requiresCorrectToolForDrops().noOcclusion()));
+    public static final DeferredBlock<TrapDoorBlock> GLOWTHORN_TRAPDOOR = registerBlock("glowthorn_trapdoor",
+            (properties) -> new TrapDoorBlock(BlockSetType.OAK, properties.strength(2f).requiresCorrectToolForDrops().noOcclusion()));
+
 
     /* ENTITIES */
     public static final DeferredBlock<Block> EXPLOSIVE_MILL = registerBlock("explosive_mill",
@@ -239,7 +290,6 @@ public class AtomicBlocks {
             (properties) -> new AtomicCompressorInjectorBlock(properties.strength(5f, 6f).noOcclusion().sound(SoundType.STONE)));
     public static final DeferredBlock<Block> ATOMIC_COMPRESSOR_INJECTION_STABILISER = registerBlock("atomic_compressor_injection_stabiliser",
             (properties) -> new Block(properties.strength(5f, 6f).noOcclusion().sound(SoundType.STONE)));
-
 
 
     private static ToIntFunction<BlockState> litBlockEmission(int lightValue) {

@@ -2,12 +2,12 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "B": "minecraft:basalt"
+    "I": "minecraft:basalt"
   },
   "pattern": [
-    "BBB",
-    "BBB",
-    "BBB"
+    "III",
+    "III",
+    "III"
   ],
   "result": {
     "count": 1,

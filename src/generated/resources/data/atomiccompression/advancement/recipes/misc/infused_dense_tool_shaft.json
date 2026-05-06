@@ -11,11 +11,11 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_dense_basalt": {
+    "has_dense_stone": {
       "conditions": {
         "items": [
           {
-            "items": "atomiccompression:dense_basalt"
+            "items": "#c:stones/dense"
           }
         ]
       },
@@ -61,7 +61,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_dense_basalt",
+      "has_dense_stone",
       "has_lead_ingot",
       "has_obsidian_chunk",
       "has_empowered_atomic_shard",

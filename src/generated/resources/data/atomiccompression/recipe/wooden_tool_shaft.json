@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "L": "atomiccompression:ashenwood_log"
+    "L": "#c:logs/atomic"
   },
   "pattern": [
     "L",

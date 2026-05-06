@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "D": "atomiccompression:dense_basalt"
+    "D": "#c:stones/dense"
   },
   "pattern": [
     "D",

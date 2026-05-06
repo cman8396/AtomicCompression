@@ -4,6 +4,7 @@ import com.mcnair.atomic.AtomicCompression;
 import com.mcnair.atomic.block.AtomicBlocks;
 import com.mcnair.atomic.utility.AtomicTags;
 import com.mcnair.atomic.utility.common.CommonBlockTags;
+import com.mcnair.atomic.utility.common.CommonItemTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
@@ -96,24 +97,39 @@ public class AtomicBlockTagProvider extends BlockTagsProvider {
                 .add(AtomicBlocks.SOULSTEEL_BLOCK.get())
                 .add(AtomicBlocks.BUNGERITE_ALLOY_BLOCK.get());
 
-        tag(BlockTags.FENCES).
-                add(AtomicBlocks.ASHENWOOD_FENCE.get());
+        tag(Tags.Blocks.NATURAL_LOGS)
+                .addTag(CommonBlockTags.LOGS_ATOMIC);
+        tag(CommonBlockTags.LOGS_ATOMIC)
+                .add(AtomicBlocks.ASHENWOOD_LOG.get())
+                .add(AtomicBlocks.STRIPPED_ASHENWOOD_LOG.get())
+                .add(AtomicBlocks.GLOWTHORN_LOG.get())
+                .add(AtomicBlocks.STRIPPED_GLOWTHORN_LOG.get());
+
+        tag(BlockTags.FENCES)
+                .add(AtomicBlocks.ASHENWOOD_FENCE.get())
+                .add(AtomicBlocks.GLOWTHORN_FENCE.get());
 
         tag(BlockTags.FENCE_GATES)
-                .add(AtomicBlocks.ASHENWOOD_FENCE_GATE.get());
+                .add(AtomicBlocks.ASHENWOOD_FENCE_GATE.get())
+                .add(AtomicBlocks.GLOWTHORN_FENCE_GATE.get());
 
         tag(BlockTags.WALLS)
-                .add(AtomicBlocks.ASHENWOOD_WALL.get());
-
+                .add(AtomicBlocks.ASHENWOOD_WALL.get())
+                .add(AtomicBlocks.GLOWTHORN_WALL.get());
 
         tag(BlockTags.LOGS_THAT_BURN)
                 .add(AtomicBlocks.ASHENWOOD_LOG.get())
                 .add(AtomicBlocks.ASHENWOOD_WOOD.get())
                 .add(AtomicBlocks.STRIPPED_ASHENWOOD_LOG.get())
-                .add(AtomicBlocks.STRIPPED_ASHENWOOD_WOOD.get());
+                .add(AtomicBlocks.STRIPPED_ASHENWOOD_WOOD.get())
+                .add(AtomicBlocks.GLOWTHORN_LOG.get())
+                .add(AtomicBlocks.GLOWTHORN_WOOD.get())
+                .add(AtomicBlocks.STRIPPED_GLOWTHORN_LOG.get())
+                .add(AtomicBlocks.STRIPPED_GLOWTHORN_WOOD.get());
 
         tag(BlockTags.WOODEN_DOORS)
-                .add(AtomicBlocks.ASHENWOOD_DOOR.get());
+                .add(AtomicBlocks.ASHENWOOD_DOOR.get())
+                .add(AtomicBlocks.GLOWTHORN_DOOR.get());
 
         // Machines
         tag(AtomicTags.Blocks.MACHINE)
@@ -181,6 +197,13 @@ public class AtomicBlockTagProvider extends BlockTagsProvider {
                 .add(AtomicBlocks.ATOMIC_BLOCK.get());
         tag(CommonBlockTags.STORAGE_BLOCKS_EMPOWERED_ATOMIC)
                 .add(AtomicBlocks.EMPOWERED_ATOMIC_BLOCK.get());
+
+        // Dense Stones
+        tag(Tags.Blocks.STONES)
+                .addTag(CommonBlockTags.DENSE_STONE);
+        tag(CommonBlockTags.DENSE_STONE)
+                .add(AtomicBlocks.DENSE_BASALT.get())
+                .add(AtomicBlocks.DENSE_DEEPSLATE.get());
 
         // Ores
         tag(Tags.Blocks.ORES)

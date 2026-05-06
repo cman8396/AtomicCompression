@@ -4,9 +4,15 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 
 public final class CommonItemTags {
     private CommonItemTags() {}
+
+    public static final TagKey<Item> LOGS_ATOMIC = TagKey.create(Registries.ITEM,
+            Identifier.fromNamespaceAndPath("c", "logs/atomic"));
+    public static final TagKey<Item> DENSE_STONE = TagKey.create(Registries.ITEM,
+            Identifier.fromNamespaceAndPath("c", "stones/dense"));
 
     public static final TagKey<Item> ORES_SULFUR = TagKey.create(Registries.ITEM,
             Identifier.fromNamespaceAndPath("c", "ores/sulfur"));

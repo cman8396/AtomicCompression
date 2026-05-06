@@ -166,6 +166,24 @@ public class AtomicCreativeTabs {
                         output.accept(AtomicBlocks.ASHENWOOD_DOOR.get());
                         output.accept(AtomicBlocks.ASHENWOOD_TRAPDOOR.get());
 
+                        output.accept(AtomicBlocks.GLOWTHORN_LOG.get());
+                        output.accept(AtomicBlocks.GLOWTHORN_WOOD.get());
+                        output.accept(AtomicBlocks.STRIPPED_GLOWTHORN_LOG.get());
+                        output.accept(AtomicBlocks.STRIPPED_GLOWTHORN_WOOD.get());
+                        output.accept(AtomicBlocks.GLOWTHORN_SAPLING.get());
+                        output.accept(AtomicBlocks.GLOWTHORN_LEAVES.get());
+                        output.accept(AtomicBlocks.GLOWTHORN_LEAVES_FLOWERING.get());
+                        output.accept(AtomicBlocks.GLOWTHORN_PLANKS.get());
+                        output.accept(AtomicBlocks.GLOWTHORN_STAIRS.get());
+                        output.accept(AtomicBlocks.GLOWTHORN_SLAB.get());
+                        output.accept(AtomicBlocks.GLOWTHORN_PRESSURE_PLATE.get());
+                        output.accept(AtomicBlocks.GLOWTHORN_BUTTON.get());
+                        output.accept(AtomicBlocks.GLOWTHORN_FENCE.get());
+                        output.accept(AtomicBlocks.GLOWTHORN_FENCE_GATE.get());
+                        output.accept(AtomicBlocks.GLOWTHORN_WALL.get());
+                        output.accept(AtomicBlocks.GLOWTHORN_DOOR.get());
+                        output.accept(AtomicBlocks.GLOWTHORN_TRAPDOOR.get());
+
                         output.accept(AtomicBlocks.EXPLOSIVE_MILL.get());
                         output.accept(AtomicBlocks.EXPLOSIVE_COMPACTOR.get());
                         output.accept(AtomicBlocks.EXPLOSIVE_SEPARATOR.get());

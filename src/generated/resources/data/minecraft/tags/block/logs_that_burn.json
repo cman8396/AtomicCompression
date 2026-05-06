@@ -3,6 +3,10 @@
     "atomiccompression:ashenwood_log",
     "atomiccompression:ashenwood_wood",
     "atomiccompression:stripped_ashenwood_log",
-    "atomiccompression:stripped_ashenwood_wood"
+    "atomiccompression:stripped_ashenwood_wood",
+    "atomiccompression:glowthorn_log",
+    "atomiccompression:glowthorn_wood",
+    "atomiccompression:stripped_glowthorn_log",
+    "atomiccompression:stripped_glowthorn_wood"
   ]
 }

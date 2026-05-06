@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button_inventory",
+  "textures": {
+    "texture": "atomiccompression:block/glowthorn_planks"
+  }
+}

@@ -61,6 +61,7 @@ public class AtomicBlockModelGenerators extends BlockModelGenerators {
         this.createTrivialCube(AtomicBlocks.NETHER_ATOMIC_ORE.get());
         this.createTrivialCube(AtomicBlocks.END_ATOMIC_ORE.get());
 
+
         /* UTILITY BLOCKS */
         this.createTrivialCube(AtomicBlocks.MACHINE_BASE.get());
         this.createGlassBlocks(AtomicBlocks.ATOMIC_GLASS.get(), AtomicBlocks.ATOMIC_GLASS_PANE.get());
@@ -84,6 +85,7 @@ public class AtomicBlockModelGenerators extends BlockModelGenerators {
         this.createTrivialCube(AtomicBlocks.ATOMIC_BLOCK.get());
         this.createTrivialCube(AtomicBlocks.EMPOWERED_ATOMIC_BLOCK.get());
 
+
         /* ASHENWOOD BLOCKS */
         this.woodProvider(AtomicBlocks.ASHENWOOD_LOG.get()).logWithHorizontal(AtomicBlocks.ASHENWOOD_LOG.get()).wood(AtomicBlocks.ASHENWOOD_WOOD.get());
         this.woodProvider(AtomicBlocks.STRIPPED_ASHENWOOD_LOG.get()).logWithHorizontal(AtomicBlocks.STRIPPED_ASHENWOOD_LOG.get()).wood(AtomicBlocks.STRIPPED_ASHENWOOD_WOOD.get());
@@ -91,10 +93,19 @@ public class AtomicBlockModelGenerators extends BlockModelGenerators {
         this.createTintedLeaves(AtomicBlocks.ASHENWOOD_LEAVES.get(), TexturedModel.LEAVES, -12012264);
         this.createTintedLeaves(AtomicBlocks.ASHENWOOD_LEAVES_FLOWERING.get(), TexturedModel.LEAVES, -12012264);
 
+        /* GLOWTHORN BLOCKS */
+        this.woodProvider(AtomicBlocks.GLOWTHORN_LOG.get()).logWithHorizontal(AtomicBlocks.GLOWTHORN_LOG.get()).wood(AtomicBlocks.GLOWTHORN_WOOD.get());
+        this.woodProvider(AtomicBlocks.STRIPPED_GLOWTHORN_LOG.get()).logWithHorizontal(AtomicBlocks.STRIPPED_GLOWTHORN_LOG.get()).wood(AtomicBlocks.STRIPPED_GLOWTHORN_WOOD.get());
+        this.createCrossBlock(AtomicBlocks.GLOWTHORN_SAPLING.get(), BlockModelGenerators.PlantType.TINTED);
+        this.createTintedLeaves(AtomicBlocks.GLOWTHORN_LEAVES.get(), TexturedModel.LEAVES, -12012264);
+        this.createTintedLeaves(AtomicBlocks.GLOWTHORN_LEAVES_FLOWERING.get(), TexturedModel.LEAVES, -12012264);
+
+
         /* BLOCK FAMILIES */
         AtomicBlockFamilies.getAllFamilies()
                 .filter(BlockFamily::shouldGenerateModel)
                 .forEach(blockFamily -> this.family(blockFamily.getBaseBlock()).generateFor(blockFamily));
+
 
         /* ENTITIES */
         createMachine(AtomicBlocks.EXPLOSIVE_MILL.get(), AtomicBlockModelGeneratorsTemplates.MACHINE.TEXTURED_MODEL);

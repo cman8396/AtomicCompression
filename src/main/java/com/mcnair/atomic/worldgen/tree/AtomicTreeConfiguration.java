@@ -38,4 +38,17 @@ public class AtomicTreeConfiguration {
                 new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4))
         );
     }
+
+    public static TreeConfiguration.TreeConfigurationBuilder createGlowthorn() {
+        return new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(AtomicBlocks.GLOWTHORN_LOG.get()),
+                new FancyTrunkPlacer(3, 11, 0),
+                new WeightedStateProvider(
+                        WeightedList.<BlockState>builder()
+                                .add(AtomicBlocks.GLOWTHORN_LEAVES.get().defaultBlockState(), 4)
+                                .add(AtomicBlocks.GLOWTHORN_LEAVES_FLOWERING.get().defaultBlockState(), 1)),
+                new FancyFoliagePlacer(ConstantInt.of(2), ConstantInt.of(4), 4),
+                new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4))
+        );
+    }
 }

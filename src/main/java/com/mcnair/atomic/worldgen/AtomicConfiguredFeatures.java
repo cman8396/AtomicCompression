@@ -50,6 +50,7 @@ public class AtomicConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> END_ATOMIC_ORE_KEY = registerKey("end_atomic_ore_placed");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> ASHENWOOD_KEY = registerKey("ashenwood_placed");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> GLOWTHORN_KEY = registerKey("glowthorn_placed");
 //    public static final ResourceKey<ConfiguredFeature<?, ?>> GOJI_BERRY_BUSH_KEY = registerKey("goji_berry_bush");
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
@@ -97,6 +98,8 @@ public class AtomicConfiguredFeatures {
 
         /* TREES */
         register(context, ASHENWOOD_KEY, Feature.TREE,
+                AtomicTreeConfiguration.createAshenwood().forceDirt().build());
+        register(context, GLOWTHORN_KEY, Feature.TREE,
                 AtomicTreeConfiguration.createAshenwood().forceDirt().build());
 
 

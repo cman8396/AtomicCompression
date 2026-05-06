@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "minecraft:obsidian"
+            "items": "#c:obsidians"
           }
         ]
       },
