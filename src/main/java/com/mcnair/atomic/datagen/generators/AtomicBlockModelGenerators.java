@@ -90,15 +90,15 @@ public class AtomicBlockModelGenerators extends BlockModelGenerators {
         this.woodProvider(AtomicBlocks.ASHENWOOD_LOG.get()).logWithHorizontal(AtomicBlocks.ASHENWOOD_LOG.get()).wood(AtomicBlocks.ASHENWOOD_WOOD.get());
         this.woodProvider(AtomicBlocks.STRIPPED_ASHENWOOD_LOG.get()).logWithHorizontal(AtomicBlocks.STRIPPED_ASHENWOOD_LOG.get()).wood(AtomicBlocks.STRIPPED_ASHENWOOD_WOOD.get());
         this.createCrossBlock(AtomicBlocks.ASHENWOOD_SAPLING.get(), BlockModelGenerators.PlantType.TINTED);
-        this.createTintedLeaves(AtomicBlocks.ASHENWOOD_LEAVES.get(), TexturedModel.LEAVES, -12012264);
-        this.createTintedLeaves(AtomicBlocks.ASHENWOOD_LEAVES_FLOWERING.get(), TexturedModel.LEAVES, -12012264);
+        this.createTintedLeaves(AtomicBlocks.ASHENWOOD_LEAVES.get(), TexturedModel.LEAVES, 8946250);
+        this.createTintedLeaves(AtomicBlocks.ASHENWOOD_LEAVES_FLOWERING.get(), TexturedModel.LEAVES, 8946250);
 
         /* GLOWTHORN BLOCKS */
         this.woodProvider(AtomicBlocks.GLOWTHORN_LOG.get()).logWithHorizontal(AtomicBlocks.GLOWTHORN_LOG.get()).wood(AtomicBlocks.GLOWTHORN_WOOD.get());
         this.woodProvider(AtomicBlocks.STRIPPED_GLOWTHORN_LOG.get()).logWithHorizontal(AtomicBlocks.STRIPPED_GLOWTHORN_LOG.get()).wood(AtomicBlocks.STRIPPED_GLOWTHORN_WOOD.get());
         this.createCrossBlock(AtomicBlocks.GLOWTHORN_SAPLING.get(), BlockModelGenerators.PlantType.TINTED);
-        this.createTintedLeaves(AtomicBlocks.GLOWTHORN_LEAVES.get(), TexturedModel.LEAVES, -12012264);
-        this.createTintedLeaves(AtomicBlocks.GLOWTHORN_LEAVES_FLOWERING.get(), TexturedModel.LEAVES, -12012264);
+        this.createTintedLeaves(AtomicBlocks.GLOWTHORN_LEAVES.get(), TexturedModel.LEAVES, 9213324);
+        this.createTintedLeaves(AtomicBlocks.GLOWTHORN_LEAVES_FLOWERING.get(), TexturedModel.LEAVES, 9213324);
 
 
         /* BLOCK FAMILIES */

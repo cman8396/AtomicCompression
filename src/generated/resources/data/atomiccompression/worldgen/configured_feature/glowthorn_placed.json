@@ -19,7 +19,7 @@
       "entries": [
         {
           "data": {
-            "Name": "atomiccompression:ashenwood_leaves",
+            "Name": "atomiccompression:glowthorn_leaves",
             "Properties": {
               "distance": "7",
               "persistent": "false",
@@ -30,7 +30,7 @@
         },
         {
           "data": {
-            "Name": "atomiccompression:ashenwood_leaves_flowering",
+            "Name": "atomiccompression:glowthorn_leaves_flowering",
             "Properties": {
               "distance": "7",
               "persistent": "false",
@@ -59,7 +59,7 @@
     "trunk_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "atomiccompression:ashenwood_log",
+        "Name": "atomiccompression:glowthorn_log",
         "Properties": {
           "axis": "y"
         }

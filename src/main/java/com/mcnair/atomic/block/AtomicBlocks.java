@@ -71,13 +71,17 @@ public class AtomicBlocks {
             (properties) -> new DropExperienceBlock(UniformInt.of(3, 8),
                     properties.strength(9f, 1200f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
     public static final DeferredBlock<Block> ATOMIC_ORE = registerBlock("atomic_ore",
-            (properties) -> new AtomicLitOreBlock(properties.strength(8f, 1000f).requiresCorrectToolForDrops().randomTicks().lightLevel(litBlockEmission(9)).sound(SoundType.STONE)));
+            (properties) -> new AtomicLitOreBlock(
+                    properties.strength(8f, 1000f).requiresCorrectToolForDrops().randomTicks().lightLevel(litBlockEmission(9)).sound(SoundType.STONE)));
     public static final DeferredBlock<Block> DEEPSLATE_ATOMIC_ORE = registerBlock("deepslate_atomic_ore",
-            (properties) -> new AtomicLitOreBlock(properties.strength(8.5f, 1000f).requiresCorrectToolForDrops().randomTicks().lightLevel(litBlockEmission(9)).sound(SoundType.DEEPSLATE)));
+            (properties) -> new AtomicLitOreBlock(
+                    properties.strength(8.5f, 1000f).requiresCorrectToolForDrops().randomTicks().lightLevel(litBlockEmission(9)).sound(SoundType.DEEPSLATE)));
     public static final DeferredBlock<Block> NETHER_ATOMIC_ORE = registerBlock("nether_atomic_ore",
-            (properties) -> new AtomicLitOreBlock(properties.strength(8f, 1000f).requiresCorrectToolForDrops().randomTicks().lightLevel(litBlockEmission(9)).sound(SoundType.NETHER_GOLD_ORE)));
+            (properties) -> new AtomicLitOreBlock(
+                    properties.strength(8f, 1000f).requiresCorrectToolForDrops().randomTicks().lightLevel(litBlockEmission(9)).sound(SoundType.NETHER_GOLD_ORE)));
     public static final DeferredBlock<Block> END_ATOMIC_ORE = registerBlock("end_atomic_ore",
-            (properties) -> new AtomicLitOreBlock(properties.strength(8f, 1000f).requiresCorrectToolForDrops().randomTicks().lightLevel(litBlockEmission(9)).sound(SoundType.STONE)));
+            (properties) -> new AtomicLitOreBlock(
+                    properties.strength(8f, 1000f).requiresCorrectToolForDrops().randomTicks().lightLevel(litBlockEmission(9)).sound(SoundType.STONE)));
 
 
     /* UTILITY BLOCKS */
@@ -166,12 +170,13 @@ public class AtomicBlocks {
             (properties) -> new AtomicLogsBlock(
                     properties.strength(2.0f).sound(SoundType.CHERRY_WOOD).ignitedByLava()));
     public static final DeferredBlock<Block> ASHENWOOD_LEAVES = registerBlock("ashenwood_leaves",
-            (properties) -> new AtomicLeavesBlock(0.05f, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 118f, 127f, 118f),
+            (properties) -> new AtomicLeavesBlock(0.05f, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 9213324),
                     properties.strength(0.2F).sound(SoundType.CHERRY_LEAVES).ignitedByLava()
                             .mapColor(MapColor.PLANT).randomTicks().noOcclusion()
                             .isValidSpawn(Blocks::ocelotOrParrot).pushReaction(PushReaction.DESTROY)));
+    // 65536 * 140 + 256 * 149 + 140 = 9213324
     public static final DeferredBlock<Block> ASHENWOOD_LEAVES_FLOWERING = registerBlock("ashenwood_leaves_flowering",
-            (properties) -> new AtomicLeavesBlock(0.05f, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 118f, 127f, 118f),
+            (properties) -> new AtomicLeavesBlock(0.05f, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 9213324),
                     properties.strength(0.2F).sound(SoundType.CHERRY_LEAVES).ignitedByLava()
                             .mapColor(MapColor.PLANT).randomTicks().noOcclusion()
                             .isValidSpawn(Blocks::ocelotOrParrot).pushReaction(PushReaction.DESTROY)));
@@ -217,11 +222,12 @@ public class AtomicBlocks {
             (properties) -> new AtomicLogsBlock(
                     properties.strength(2.0f).sound(SoundType.CHERRY_WOOD).ignitedByLava()));
     public static final DeferredBlock<Block> GLOWTHORN_LEAVES = registerBlock("glowthorn_leaves",
-            (properties) -> new AtomicLeavesBlock(0.05f, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 118f, 127f, 118f),
+            (properties) -> new AtomicLeavesBlock(0.05f, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 9604694),
                     properties.strength(0.2F).sound(SoundType.CHERRY_LEAVES).ignitedByLava()
                             .mapColor(MapColor.PLANT).randomTicks().noOcclusion().pushReaction(PushReaction.DESTROY)));
+    // 65536 * 146 + 256 * 142 + 86 = 9604694
     public static final DeferredBlock<Block> GLOWTHORN_LEAVES_FLOWERING = registerBlock("glowthorn_leaves_flowering",
-            (properties) -> new AtomicLeavesBlock(0.05f, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 118f, 127f, 118f),
+            (properties) -> new AtomicLeavesBlock(0.05f, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 9604694),
                     properties.strength(0.2F).sound(SoundType.CHERRY_LEAVES).ignitedByLava()
                             .mapColor(MapColor.PLANT).randomTicks().noOcclusion().pushReaction(PushReaction.DESTROY)));
     public static final DeferredBlock<Block> GLOWTHORN_SAPLING = registerBlock("glowthorn_sapling",

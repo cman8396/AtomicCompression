@@ -100,7 +100,7 @@ public class AtomicConfiguredFeatures {
         register(context, ASHENWOOD_KEY, Feature.TREE,
                 AtomicTreeConfiguration.createAshenwood().forceDirt().build());
         register(context, GLOWTHORN_KEY, Feature.TREE,
-                AtomicTreeConfiguration.createAshenwood().forceDirt().build());
+                AtomicTreeConfiguration.createGlowthorn().forceDirt().build());
 
 
 //        List<OreConfiguration.TargetBlockState> overworldBismuthOres = List.of(
