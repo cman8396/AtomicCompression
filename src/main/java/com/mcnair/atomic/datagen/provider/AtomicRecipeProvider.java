@@ -247,7 +247,27 @@ public class AtomicRecipeProvider extends RecipeProvider {
 
         /* EXPLOSIVE MILL */
         ExMill.createOneToOne(output, Items.OAK_LOG, Items.OAK_PLANKS, 6);
-        // Vanilla Recipes
+        ExMill.createOneToOne(output, Items.ACACIA_LOG, Items.ACACIA_PLANKS, 6);
+        ExMill.createOneToOne(output, Items.BIRCH_LOG, Items.BIRCH_PLANKS, 6);
+        ExMill.createOneToOne(output, Items.CHERRY_LOG, Items.CHERRY_PLANKS, 6);
+        ExMill.createOneToOne(output, Items.JUNGLE_LOG, Items.JUNGLE_PLANKS, 6);
+        ExMill.createOneToOne(output, Items.DARK_OAK_LOG, Items.DARK_OAK_PLANKS, 6);
+        ExMill.createOneToOne(output, Items.MANGROVE_LOG, Items.MANGROVE_PLANKS, 6);
+        ExMill.createOneToOne(output, Items.PALE_OAK_LOG, Items.PALE_OAK_PLANKS, 6);
+        ExMill.createOneToOne(output, Items.SPRUCE_LOG, Items.SPRUCE_PLANKS, 6);
+        ExMill.createOneToOne(output, Items.CRIMSON_STEM, Items.CRIMSON_PLANKS, 6);
+        ExMill.createOneToOne(output, Items.WARPED_STEM, Items.WARPED_PLANKS, 6);
+        ExMill.createOneToOne(output, Items.STRIPPED_OAK_LOG, Items.OAK_PLANKS, 6);
+        ExMill.createOneToOne(output, Items.STRIPPED_ACACIA_LOG, Items.ACACIA_PLANKS, 6);
+        ExMill.createOneToOne(output, Items.STRIPPED_BIRCH_LOG, Items.BIRCH_PLANKS, 6);
+        ExMill.createOneToOne(output, Items.STRIPPED_CHERRY_LOG, Items.CHERRY_PLANKS, 6);
+        ExMill.createOneToOne(output, Items.STRIPPED_JUNGLE_LOG, Items.JUNGLE_PLANKS, 6);
+        ExMill.createOneToOne(output, Items.STRIPPED_DARK_OAK_LOG, Items.DARK_OAK_PLANKS, 6);
+        ExMill.createOneToOne(output, Items.STRIPPED_MANGROVE_LOG, Items.MANGROVE_PLANKS, 6);
+        ExMill.createOneToOne(output, Items.STRIPPED_PALE_OAK_LOG, Items.PALE_OAK_PLANKS, 6);
+        ExMill.createOneToOne(output, Items.STRIPPED_SPRUCE_LOG, Items.SPRUCE_PLANKS, 6);
+        ExMill.createOneToOne(output, Items.STRIPPED_CRIMSON_STEM, Items.CRIMSON_PLANKS, 6);
+        ExMill.createOneToOne(output, Items.STRIPPED_WARPED_STEM, Items.WARPED_PLANKS, 6);
 
 
 
