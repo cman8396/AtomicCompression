@@ -1,5 +1,7 @@
 {
   "values": [
+    "#c:plates/iron",
+    "#c:plates/gold",
     "#c:plates/lead",
     "#c:plates/brightsilver",
     "#c:plates/bungerite",

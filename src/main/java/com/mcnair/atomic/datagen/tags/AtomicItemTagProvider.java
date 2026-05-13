@@ -357,6 +357,8 @@ public class AtomicItemTagProvider extends ItemTagsProvider {
 
         // Plates
         tag(CommonItemTags.PLATES)
+                .addTag(CommonItemTags.PLATES_IRON)
+                .addTag(CommonItemTags.PLATES_GOLD)
                 .addTag(CommonItemTags.PLATES_LEAD)
                 .addTag(CommonItemTags.PLATES_BRIGHTSILVER)
                 .addTag(CommonItemTags.PLATES_BUNGERITE)
@@ -364,6 +366,24 @@ public class AtomicItemTagProvider extends ItemTagsProvider {
                 .addTag(CommonItemTags.PLATES_BRIGHTSILVER_ALLOY)
                 .addTag(CommonItemTags.PLATES_BUNGERITE_ALLOY)
                 .addTag(CommonItemTags.PLATES_SOULSTEEL_ALLOY);
+        tag(CommonItemTags.PLATES_IRON)
+                .add(AtomicItems.IRON_PLATE.get());
+        tag(CommonItemTags.PLATES_GOLD)
+                .add(AtomicItems.GOLD_PLATE.get());
+        tag(CommonItemTags.PLATES_LEAD)
+                .add(AtomicItems.LEAD_PLATE.get());
+        tag(CommonItemTags.PLATES_BRIGHTSILVER)
+                .add(AtomicItems.BRIGHTSILVER_PLATE.get());
+        tag(CommonItemTags.PLATES_BUNGERITE)
+                .add(AtomicItems.BUNGERITE_PLATE.get());
+        tag(CommonItemTags.PLATES_SOULSTEEL)
+                .add(AtomicItems.SOULSTEEL_PLATE.get());
+        tag(CommonItemTags.PLATES_BRIGHTSILVER_ALLOY)
+                .add(AtomicItems.BRIGHTSILVER_ALLOY_PLATE.get());
+        tag(CommonItemTags.PLATES_BUNGERITE_ALLOY)
+                .add(AtomicItems.BUNGERITE_ALLOY_PLATE.get());
+        tag(CommonItemTags.PLATES_SOULSTEEL_ALLOY)
+                .add(AtomicItems.SOULSTEEL_ALLOY_PLATE.get());
 
         // Rods
         tag(CommonItemTags.TOOL_SHAFTS)

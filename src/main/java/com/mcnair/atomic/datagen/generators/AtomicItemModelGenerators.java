@@ -63,6 +63,17 @@ public class AtomicItemModelGenerators extends ItemModelGenerators {
         this.generateFlatItem(AtomicItems.SOULSTEEL_ALLOY_INGOT.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(AtomicItems.SOULSTEEL_ALLOY_NUGGET.get(), ModelTemplates.FLAT_ITEM);
 
+        /* PLATES */
+        this.generateFlatItem(AtomicItems.IRON_PLATE.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(AtomicItems.GOLD_PLATE.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(AtomicItems.LEAD_PLATE.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(AtomicItems.BRIGHTSILVER_PLATE.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(AtomicItems.BRIGHTSILVER_ALLOY_PLATE.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(AtomicItems.BUNGERITE_PLATE.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(AtomicItems.BUNGERITE_ALLOY_PLATE.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(AtomicItems.SOULSTEEL_PLATE.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(AtomicItems.SOULSTEEL_ALLOY_PLATE.get(), ModelTemplates.FLAT_ITEM);
+
         /* CRAFTING INGREDIENTS */
         this.generateFlatItem(AtomicItems.OBSIDIAN_CHUNK.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(AtomicItems.BLAZING_OBSIDIAN_INGOT.get(), ModelTemplates.FLAT_ITEM);
@@ -73,6 +84,8 @@ public class AtomicItemModelGenerators extends ItemModelGenerators {
         this.generateFlatItem(AtomicItems.INFUSED_WOODEN_TOOL_SHAFT.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(AtomicItems.INFUSED_DENSE_TOOL_SHAFT.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(AtomicItems.INFUSED_ELEMENTAL_TOOL_SHAFT.get(), ModelTemplates.FLAT_ITEM);
+
+
 
         /* TOOLS */
         this.generateFlatItem(AtomicItems.BRIGHTSILVER_ALLOY_SWORD.get(), ModelTemplates.FLAT_HANDHELD_ITEM);

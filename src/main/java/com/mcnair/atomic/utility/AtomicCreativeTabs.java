@@ -60,6 +60,16 @@ public class AtomicCreativeTabs {
                         output.accept(AtomicItems.BUNGERITE_ALLOY_NUGGET.get());
                         output.accept(AtomicItems.SOULSTEEL_ALLOY_NUGGET.get());
 
+                        output.accept(AtomicItems.IRON_PLATE.get());
+                        output.accept(AtomicItems.GOLD_PLATE.get());
+                        output.accept(AtomicItems.LEAD_PLATE.get());
+                        output.accept(AtomicItems.BRIGHTSILVER_PLATE.get());
+                        output.accept(AtomicItems.BRIGHTSILVER_ALLOY_PLATE.get());
+                        output.accept(AtomicItems.BUNGERITE_PLATE.get());
+                        output.accept(AtomicItems.BUNGERITE_ALLOY_PLATE.get());
+                        output.accept(AtomicItems.SOULSTEEL_PLATE.get());
+                        output.accept(AtomicItems.SOULSTEEL_ALLOY_PLATE.get());
+
                         output.accept(AtomicItems.ATOMIC_SHARD.get());
                         output.accept(AtomicItems.EMPOWERED_ATOMIC_SHARD.get());
 

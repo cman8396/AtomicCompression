@@ -1,4 +1,4 @@
-// 1.21.11	2026-05-06T23:03:10.826312	Tags for minecraft:item mod id atomiccompression
+// 1.21.11	2026-05-13T22:48:10.0058641	Tags for minecraft:item mod id atomiccompression
 e37bfe5e8c117d226b24940ac3037fb05fc44dbb data/atomiccompression/tags/item/brightsilver_alloy_repairable.json
 b2aff78501eff51e23253dc8530d02056b395777 data/atomiccompression/tags/item/bungerite_alloy_repairable.json
 c61f60129fef9bb8e546fcd06a55e283e845cf54 data/atomiccompression/tags/item/machine.json
@@ -57,7 +57,16 @@ daa192ebd74d9be4f902463f9e5e832025c2dbff data/c/tags/item/ores/lead.json
 891eb0f6ed2df5509ef16a469666557c9a3d3592 data/c/tags/item/ores/saltpeter.json
 2c325e411416595361ea3001ee38621ba16a4fb8 data/c/tags/item/ores/soulsteel.json
 d5c63ecbf3f9a2b90036e7af5cd3150f0662a94f data/c/tags/item/ores/sulfur.json
-aaf666d0ef1af5defc24899a0e58c1cce241a887 data/c/tags/item/plates.json
+a159d3d4b6d9cd8814c5ba25467812974cc2b76e data/c/tags/item/plates.json
+2a5f949fc0a2957e63d187012b443e670c4862c9 data/c/tags/item/plates/brightsilver.json
+610f2663b521e28caa60cb27e117e92d8a099d65 data/c/tags/item/plates/brightsilver_alloy.json
+81300a103b297379028dffaa9be075c36f1015b2 data/c/tags/item/plates/bungerite.json
+a033f8e32b0eacdc234bff82016357e585a1c637 data/c/tags/item/plates/bungerite_alloy.json
+172475db63d4a235ea525e4cfc93b68c869b2793 data/c/tags/item/plates/gold.json
+9502ece489b47efad97619c2b16cad68a432cf88 data/c/tags/item/plates/iron.json
+0a67ec23bd4ed9e03567b1d512e9820110dafc07 data/c/tags/item/plates/lead.json
+adcf66f20752d7df5e42e7f8e3fa4556eb68e527 data/c/tags/item/plates/soulsteel.json
+ddb792916b1f7c88dcd1a4451a9335ad95381e11 data/c/tags/item/plates/soulsteel_alloy.json
 35074f1f76a7d105d3e037cdf7e6be4a5ab0e630 data/c/tags/item/raw_materials.json
 571f36ef03e845a631bb90a0fb5a4b6e263ad585 data/c/tags/item/raw_materials/brightsilver.json
 54f8175038466543ae533d726f9e2167b916c931 data/c/tags/item/raw_materials/bungerite.json

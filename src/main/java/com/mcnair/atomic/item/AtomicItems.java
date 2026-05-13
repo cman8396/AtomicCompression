@@ -54,6 +54,15 @@ public class AtomicItems {
     public static final DeferredItem<Item> BUNGERITE_ALLOY_NUGGET = ITEMS.register("bungerite_alloy_nugget", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
     public static final DeferredItem<Item> SOULSTEEL_ALLOY_INGOT = ITEMS.register("soulsteel_alloy_ingot", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
     public static final DeferredItem<Item> SOULSTEEL_ALLOY_NUGGET = ITEMS.register("soulsteel_alloy_nugget", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
+    public static final DeferredItem<Item> IRON_PLATE = ITEMS.register("iron_plate", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
+    public static final DeferredItem<Item> GOLD_PLATE = ITEMS.register("gold_plate", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
+    public static final DeferredItem<Item> LEAD_PLATE = ITEMS.register("lead_plate", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
+    public static final DeferredItem<Item> BRIGHTSILVER_PLATE = ITEMS.register("brightsilver_plate", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
+    public static final DeferredItem<Item> BRIGHTSILVER_ALLOY_PLATE = ITEMS.register("brightsilver_alloy_plate", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
+    public static final DeferredItem<Item> BUNGERITE_PLATE = ITEMS.register("bungerite_plate", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
+    public static final DeferredItem<Item> BUNGERITE_ALLOY_PLATE = ITEMS.register("bungerite_alloy_plate", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
+    public static final DeferredItem<Item> SOULSTEEL_PLATE = ITEMS.register("soulsteel_plate", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
+    public static final DeferredItem<Item> SOULSTEEL_ALLOY_PLATE = ITEMS.register("soulsteel_alloy_plate", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
 
     /* CRAFTING INGREDIENTS */
     public static final DeferredItem<Item> OBSIDIAN_CHUNK = ITEMS.register("obsidian_chunk", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));

@@ -150,6 +150,10 @@ public final class CommonItemTags {
 
     public static final TagKey<Item> PLATES = TagKey.create(Registries.ITEM,
             Identifier.fromNamespaceAndPath("c", "plates"));
+    public static final TagKey<Item> PLATES_IRON = TagKey.create(Registries.ITEM,
+            Identifier.fromNamespaceAndPath("c", "plates/iron"));
+    public static final TagKey<Item> PLATES_GOLD = TagKey.create(Registries.ITEM,
+            Identifier.fromNamespaceAndPath("c", "plates/gold"));
     public static final TagKey<Item> PLATES_LEAD = TagKey.create(Registries.ITEM,
             Identifier.fromNamespaceAndPath("c", "plates/lead"));
     public static final TagKey<Item> PLATES_BRIGHTSILVER = TagKey.create(Registries.ITEM,
