@@ -256,11 +256,10 @@ public class AtomicRecipeProvider extends RecipeProvider {
         ExCompactor.createStoneOreRecipe(output, AtomicItems.RAW_LEAD, 8, AtomicBlocks.LEAD_ORE.asItem(), AtomicBlocks.DEEPSLATE_LEAD_ORE.asItem());
         ExCompactor.createStoneOreRecipe(output, AtomicItems.RAW_SULFUR, 8, AtomicBlocks.SULFUR_ORE.asItem(), AtomicBlocks.DEEPSLATE_SULFUR_ORE.asItem());
         ExCompactor.createStoneOreRecipe(output, AtomicItems.RAW_SALTPETER, 8, AtomicBlocks.SALTPETER_ORE.asItem(), AtomicBlocks.DEEPSLATE_SALTPETER_ORE.asItem());
-
-        ExCompactor.createNetherOreRecipe(output, AtomicItems.RAW_BRIGHTSILVER, 8, AtomicBlocks.BRIGHTSILVER_ORE.asItem());
+        ExCompactor.createStoneOreRecipe(output, AtomicItems.RAW_BRIGHTSILVER, 8, AtomicBlocks.BRIGHTSILVER_ORE.asItem(), AtomicBlocks.DEEPSLATE_BRIGHTSILVER_ORE.asItem());
         ExCompactor.createNetherOreRecipe(output, AtomicItems.RAW_BUNGERITE, 8, AtomicBlocks.BUNGERITE_ORE.asItem());
-        ExCompactor.createNetherOreRecipe(output, AtomicItems.RAW_SOULSTEEL, 8, AtomicBlocks.SOULSTEEL_ORE.asItem());
         ExCompactor.createNetherOreRecipe(output, Items.QUARTZ, 12, Blocks.NETHER_QUARTZ_ORE.asItem());
+        ExCompactor.createEndOreRecipe(output, AtomicItems.RAW_SOULSTEEL, 8, AtomicBlocks.SOULSTEEL_ORE.asItem());
 
         // Vanilla Recipes
         ExCompactor.createStoneOreRecipe(output, Items.RAW_GOLD, 8, Blocks.GOLD_ORE.asItem(), Blocks.DEEPSLATE_GOLD_ORE.asItem());
