@@ -112,6 +112,10 @@ public class AtomicItemModelGenerators extends ItemModelGenerators {
         this.generateFlatItem(AtomicItems.BUNGERITE_MACHINE_CASING.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(AtomicItems.SOULSTEEL_MACHINE_CASING.get(), ModelTemplates.FLAT_ITEM);
 
+        /* IGNITERS */
+        this.generateFlatItem(AtomicItems.BRIGHTSILVER_IGNITER.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(AtomicItems.BUNGERITE_IGNITER.get(), ModelTemplates.FLAT_ITEM);
+        this.generateFlatItem(AtomicItems.SOULSTEEL_IGNITER.get(), ModelTemplates.FLAT_ITEM);
 
 //        itemModels.generateTrimmableItem(AtomicItems.BISMUTH_HELMET.get(), ModArmorMaterials.BISMUTH, ItemModelGenerators.TRIM_PREFIX_HELMET, false);
 //        itemModels.generateTrimmableItem(AtomicItems.BISMUTH_CHESTPLATE.get(), ModArmorMaterials.BISMUTH, ItemModelGenerators.TRIM_PREFIX_CHESTPLATE, false);

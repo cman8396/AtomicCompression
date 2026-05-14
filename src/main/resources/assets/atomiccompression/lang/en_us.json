@@ -181,6 +181,10 @@
   "item.atomiccompression.bungerite_machine_casing": "Bungerite Machine Casing",
   "item.atomiccompression.soulsteel_machine_casing": "Soulsteel Machine Casing",
 
+  "item.atomiccompression.brightsilver_igniter": "Brightsilver Igniter",
+  "item.atomiccompression.bungerite_igniter": "Bungerite Igniter",
+  "item.atomiccompression.soulsteel_igniter": "Soulsteel Igniter",
+
   "general.atomiccompression.brightsilver": "Brightsilver",
   "general.atomiccompression.bungerite": "Bungerite",
   "general.atomiccompression.soulsteel": "Soulsteel",

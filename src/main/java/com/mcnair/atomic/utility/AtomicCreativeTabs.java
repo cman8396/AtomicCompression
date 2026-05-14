@@ -86,6 +86,10 @@ public class AtomicCreativeTabs {
                         output.accept(AtomicItems.BUNGERITE_MACHINE_CASING.get());
                         output.accept(AtomicItems.SOULSTEEL_MACHINE_CASING.get());
 
+                        output.accept(AtomicItems.BRIGHTSILVER_IGNITER.get());
+                        output.accept(AtomicItems.BUNGERITE_IGNITER.get());
+                        output.accept(AtomicItems.SOULSTEEL_IGNITER.get());
+
                         output.accept(AtomicItems.BRIGHTSILVER_ALLOY_SWORD.get());
                         output.accept(AtomicItems.BRIGHTSILVER_ALLOY_SPEAR.get());
                         output.accept(AtomicItems.BRIGHTSILVER_ALLOY_SHOVEL.get());

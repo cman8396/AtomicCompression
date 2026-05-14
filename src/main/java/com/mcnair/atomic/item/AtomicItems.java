@@ -104,6 +104,11 @@ public class AtomicItems {
     public static final DeferredItem<Item> BUNGERITE_MACHINE_CASING = ITEMS.register("bungerite_machine_casing", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
     public static final DeferredItem<Item> SOULSTEEL_MACHINE_CASING = ITEMS.register("soulsteel_machine_casing", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
 
+    /* IGNITERS */
+    public static final DeferredItem<Item> BRIGHTSILVER_IGNITER = ITEMS.register("brightsilver_igniter", registryName -> new FlintAndSteelItem(new Item.Properties().durability(192).setId(ResourceKey.create(Registries.ITEM, registryName))));
+    public static final DeferredItem<Item> BUNGERITE_IGNITER = ITEMS.register("bungerite_igniter", registryName -> new FlintAndSteelItem(new Item.Properties().durability(512).setId(ResourceKey.create(Registries.ITEM, registryName))));
+    public static final DeferredItem<Item> SOULSTEEL_IGNITER = ITEMS.register("soulsteel_igniter", registryName -> new FlintAndSteelItem(new Item.Properties().durability(2048).setId(ResourceKey.create(Registries.ITEM, registryName))));
+
 
 //    public static final DeferredItem<HammerItem> BISMUTH_HAMMER = ITEMS.registerItem("bungerite_alloy_hammer",
 //            (properties) -> new HammerItem(properties.pickaxe(AtomicToolTiers.BISMUTH, 7F, -3.5f)));
