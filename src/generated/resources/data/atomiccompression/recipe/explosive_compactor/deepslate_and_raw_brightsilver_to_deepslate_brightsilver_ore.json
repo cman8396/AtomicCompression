@@ -3,7 +3,7 @@
   "ingredients": [
     {
       "count": 4,
-      "ingredient": "minecraft:netherrack"
+      "ingredient": "minecraft:deepslate"
     },
     {
       "count": 8,
@@ -12,16 +12,17 @@
   ],
   "result": {
     "count": 1,
-    "id": "atomiccompression:brightsilver_ore"
+    "id": "atomiccompression:deepslate_brightsilver_ore"
   },
   "secondaryResult": {
     "percentages": [
-      0.5,
-      0.1
+      0.8,
+      0.4,
+      0.2
     ],
     "result": {
       "count": 1,
-      "id": "minecraft:netherrack"
+      "id": "minecraft:cobbled_deepslate"
     }
   }
 }

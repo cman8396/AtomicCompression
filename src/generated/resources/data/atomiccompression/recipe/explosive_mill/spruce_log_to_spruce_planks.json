@@ -1,0 +1,8 @@
+{
+  "type": "atomiccompression:explosive_mill",
+  "ingredient": "minecraft:spruce_log",
+  "result": {
+    "count": 6,
+    "id": "minecraft:spruce_planks"
+  }
+}

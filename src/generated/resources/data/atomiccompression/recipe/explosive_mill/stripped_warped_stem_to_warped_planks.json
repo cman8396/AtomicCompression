@@ -1,0 +1,8 @@
+{
+  "type": "atomiccompression:explosive_mill",
+  "ingredient": "minecraft:stripped_warped_stem",
+  "result": {
+    "count": 6,
+    "id": "minecraft:warped_planks"
+  }
+}

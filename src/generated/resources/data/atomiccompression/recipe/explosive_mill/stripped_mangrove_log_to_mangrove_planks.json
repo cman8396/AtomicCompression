@@ -1,0 +1,8 @@
+{
+  "type": "atomiccompression:explosive_mill",
+  "ingredient": "minecraft:stripped_mangrove_log",
+  "result": {
+    "count": 6,
+    "id": "minecraft:mangrove_planks"
+  }
+}

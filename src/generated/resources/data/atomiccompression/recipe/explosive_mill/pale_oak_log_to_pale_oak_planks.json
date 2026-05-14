@@ -1,0 +1,8 @@
+{
+  "type": "atomiccompression:explosive_mill",
+  "ingredient": "minecraft:pale_oak_log",
+  "result": {
+    "count": 6,
+    "id": "minecraft:pale_oak_planks"
+  }
+}

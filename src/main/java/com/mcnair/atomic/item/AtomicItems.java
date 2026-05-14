@@ -1,6 +1,7 @@
 package com.mcnair.atomic.item;
 
 import com.mcnair.atomic.AtomicCompression;
+import com.mcnair.atomic.item.custom.FuelItem;
 import com.mcnair.atomic.item.extensions.PickaxeItem;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -14,7 +15,7 @@ public class AtomicItems {
 
 
     /* ORE DROPS */
-    public static final DeferredItem<Item> DEEPCOAL = ITEMS.register("deepcoal", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
+    public static final DeferredItem<Item> DEEPCOAL = ITEMS.register("deepcoal", registryName -> new FuelItem(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName)),1600));
     public static final DeferredItem<Item> ATOMIC_SHARD = ITEMS.register("atomic_shard", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
     public static final DeferredItem<Item> RAW_SULFUR = ITEMS.register("raw_sulfur", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
     public static final DeferredItem<Item> RAW_SALTPETER = ITEMS.register("raw_saltpeter", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
