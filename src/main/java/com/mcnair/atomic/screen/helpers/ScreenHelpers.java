@@ -42,8 +42,12 @@ public final class ScreenHelpers {
 
     private static String casingTypeToReadable(String type) {
         switch (type) {
+            case "brightsilver":
+                return Component.translatable("general.atomiccompression.brightsilver").getString();
             case "bungerite":
                 return Component.translatable("general.atomiccompression.bungerite").getString();
+            case "soulsteel":
+                return Component.translatable("general.atomiccompression.soulsteel").getString();
             default:
                 return Component.translatable("tooltip.atomiccompression.machines.info.casing.none").getString();
         }
