@@ -7,7 +7,6 @@ import com.mcnair.atomic.item.AtomicItems;
 import com.mcnair.atomic.recipe.base.input.InputItemWithCount;
 import com.mcnair.atomic.recipe.base.output.OutputItemWithPercent;
 import com.mcnair.atomic.recipe.recipes.*;
-import com.mcnair.atomic.utility.common.CommonBlockTags;
 import com.mcnair.atomic.utility.common.CommonItemTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
@@ -144,11 +143,11 @@ public class AtomicRecipeProvider extends RecipeProvider {
 
 
         /* SHAPELESS RECIPES */
-        oneToManyRecipe(output, AtomicBlocks.DENSE_BASALT, Items.BASALT, 9);
+        shapelessOneToManyRecipe(output, AtomicBlocks.DENSE_BASALT, Items.BASALT, 9);
         shapedThreeGridToOneRecipe(output, Blocks.BASALT, AtomicBlocks.DENSE_BASALT);
-        oneToManyRecipe(output, AtomicBlocks.DENSE_DEEPSLATE, Items.DEEPSLATE, 9);
+        shapelessOneToManyRecipe(output, AtomicBlocks.DENSE_DEEPSLATE, Items.DEEPSLATE, 9);
         shapedThreeGridToOneRecipe(output, Blocks.DEEPSLATE, AtomicBlocks.DENSE_DEEPSLATE);
-        oneToManyRecipe(output, Tags.Items.OBSIDIANS, AtomicItems.OBSIDIAN_CHUNK, 4);
+        shapelessOneToManyRecipe(output, Tags.Items.OBSIDIANS, AtomicItems.OBSIDIAN_CHUNK, 4);
         shapedTwoGridToOneRecipe(output, AtomicItems.OBSIDIAN_CHUNK, Blocks.OBSIDIAN);
 
         shapeless(RecipeCategory.MISC, Items.GUNPOWDER, 3)
@@ -161,38 +160,15 @@ public class AtomicRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_coal", has(Items.COAL))
                 .save(output);
 
-        easyShapeless(output, AtomicItems.BRIGHTSILVER_IGNITER, 1, AtomicItems.BRIGHTSILVER_INGOT, Items.FLINT);
-        easyShapeless(output, AtomicItems.BUNGERITE_IGNITER, 1, AtomicItems.BUNGERITE_INGOT, AtomicItems.OBSIDIAN_CHUNK);
-        easyShapeless(output, AtomicItems.SOULSTEEL_IGNITER, 1, AtomicItems.SOULSTEEL_INGOT, AtomicItems.DRAGON_SCALE);
-
-
-        // Temp shapeless
-        shapeless(RecipeCategory.MISC, AtomicItems.BRIGHTSILVER_ALLOY_INGOT, 1)
-                .requires(AtomicItems.BRIGHTSILVER_INGOT)
-                .requires(Items.GOLD_INGOT)
-                .unlockedBy("has_brightsilver_ingot", has(AtomicItems.BRIGHTSILVER_INGOT))
-                .unlockedBy("has_gold_ingot", has(Items.GOLD_INGOT))
-                .save(output);
-        // Temp shapeless
-        shapeless(RecipeCategory.MISC, AtomicItems.BUNGERITE_ALLOY_INGOT, 1)
-                .requires(AtomicItems.BUNGERITE_INGOT)
-                .requires(Items.NETHERITE_INGOT)
-                .unlockedBy("has_bungerite_ingot", has(AtomicItems.BUNGERITE_INGOT))
-                .unlockedBy("has_netherite_ingot", has(Items.NETHERITE_INGOT))
-                .save(output);
-        // Temp shapeless
-        shapeless(RecipeCategory.MISC, AtomicItems.SOULSTEEL_ALLOY_INGOT, 1)
-                .requires(AtomicItems.SOULSTEEL_INGOT)
-                .requires(AtomicItems.BLAZING_OBSIDIAN_INGOT)
-                .unlockedBy("has_soulsteel_ingot", has(AtomicItems.SOULSTEEL_INGOT))
-                .unlockedBy("has_blazing_obsidian_ingot", has(AtomicItems.BLAZING_OBSIDIAN_INGOT))
-                .save(output);
+        shapelessMultiToOneRecipe(output, AtomicItems.BRIGHTSILVER_IGNITER, 1, AtomicItems.BRIGHTSILVER_INGOT, Items.FLINT);
+        shapelessMultiToOneRecipe(output, AtomicItems.BUNGERITE_IGNITER, 1, AtomicItems.BUNGERITE_INGOT, AtomicItems.OBSIDIAN_CHUNK);
+        shapelessMultiToOneRecipe(output, AtomicItems.SOULSTEEL_IGNITER, 1, AtomicItems.SOULSTEEL_INGOT, AtomicItems.DRAGON_SCALE);
 
 
         /* DUST CONVERSION */
-        oneToOneRecipe(output, AtomicItems.DEEPCOAL, AtomicItems.DEEPCOAL_DUST);
-        oneToOneRecipe(output, AtomicItems.RAW_SULFUR, AtomicItems.SULFUR_DUST);
-        oneToOneRecipe(output, AtomicItems.RAW_SALTPETER, AtomicItems.SALTPETER_DUST);
+        shapelessOneToOneRecipe(output, AtomicItems.DEEPCOAL, AtomicItems.DEEPCOAL_DUST);
+        shapelessOneToOneRecipe(output, AtomicItems.RAW_SULFUR, AtomicItems.SULFUR_DUST);
+        shapelessOneToOneRecipe(output, AtomicItems.RAW_SALTPETER, AtomicItems.SALTPETER_DUST);
 
 
         /* NUGGET CONVERSION */
@@ -289,6 +265,10 @@ public class AtomicRecipeProvider extends RecipeProvider {
         ExCompactor.createNetherOreRecipe(output, AtomicItems.RAW_BUNGERITE, 8, AtomicBlocks.BUNGERITE_ORE.asItem());
         ExCompactor.createNetherOreRecipe(output, Items.QUARTZ, 12, Blocks.NETHER_QUARTZ_ORE.asItem());
         ExCompactor.createEndOreRecipe(output, AtomicItems.RAW_SOULSTEEL, 8, AtomicBlocks.SOULSTEEL_ORE.asItem());
+
+        ExCompactor.createTwoToOne(output, AtomicItems.BRIGHTSILVER_INGOT, 1, Items.GOLD_INGOT, 2, AtomicItems.BRIGHTSILVER_ALLOY_INGOT, 1);
+        ExCompactor.createTwoToOne(output, AtomicItems.BUNGERITE_INGOT, 1, Items.NETHERITE_INGOT, 2, AtomicItems.BUNGERITE_ALLOY_INGOT, 1);
+        ExCompactor.createTwoToOne(output, AtomicItems.SOULSTEEL_INGOT, 2, AtomicItems.BLAZING_OBSIDIAN_INGOT, 1, AtomicItems.SOULSTEEL_ALLOY_INGOT, 1);
 
         // Vanilla Recipes
         ExCompactor.createStoneOreRecipe(output, Items.RAW_GOLD, 8, Blocks.GOLD_ORE.asItem(), Blocks.DEEPSLATE_GOLD_ORE.asItem());
@@ -442,16 +422,6 @@ public class AtomicRecipeProvider extends RecipeProvider {
         //         ResourceKey.create(Registries.RECIPE, Identifier.fromNamespaceAndPath(TutorialMod.MOD_ID, "kaupen")));
     }
 
-
-    protected void easyShapeless(RecipeOutput recipeOutput, ItemLike outputItem, int outputQuantity, ItemLike... inputItems) {
-        ShapelessRecipeBuilder builder = shapeless(RecipeCategory.MISC, outputItem, outputQuantity);
-        Arrays.stream(inputItems).forEach(inputItem -> {
-            builder.requires(inputItem);
-            builder.unlockedBy("has_" + inputItem.asItem().getName(), has(inputItem));
-        });
-        builder.save(recipeOutput);
-    }
-
     protected void shapedThreeGridToOneRecipe(RecipeOutput recipeOutput, ItemLike inputItem, ItemLike outputItem) {
         shaped(RecipeCategory.MISC, outputItem)
                 .pattern("III")
@@ -471,7 +441,16 @@ public class AtomicRecipeProvider extends RecipeProvider {
                 .save(recipeOutput);
     }
 
-    protected void oneToOneRecipe(RecipeOutput recipeOutput, ItemLike inputItem, ItemLike outputItem) {
+    protected void shapelessMultiToOneRecipe(RecipeOutput recipeOutput, ItemLike outputItem, int outputQuantity, ItemLike... inputItems) {
+        ShapelessRecipeBuilder builder = shapeless(RecipeCategory.MISC, outputItem, outputQuantity);
+        Arrays.stream(inputItems).forEach(inputItem -> {
+            builder.requires(inputItem);
+            builder.unlockedBy("has_" + inputItem.asItem().getName(), has(inputItem));
+        });
+        builder.save(recipeOutput);
+    }
+
+    protected void shapelessOneToOneRecipe(RecipeOutput recipeOutput, ItemLike inputItem, ItemLike outputItem) {
         shapeless(RecipeCategory.MISC, outputItem, 1)
                 .requires(inputItem)
                 .unlockedBy("has_" + inputItem.asItem().getName(), has(inputItem))
@@ -479,7 +458,7 @@ public class AtomicRecipeProvider extends RecipeProvider {
                 .save(recipeOutput);
     }
 
-    protected void oneToOneRecipe(RecipeOutput recipeOutput, TagKey<Item> inputItemTag, ItemLike outputItem) {
+    protected void shapelessOneToOneRecipe(RecipeOutput recipeOutput, TagKey<Item> inputItemTag, ItemLike outputItem) {
         shapeless(RecipeCategory.MISC, outputItem, 1)
                 .requires(inputItemTag)
                 .unlockedBy("has_input", has(inputItemTag))
@@ -487,7 +466,7 @@ public class AtomicRecipeProvider extends RecipeProvider {
                 .save(recipeOutput);
     }
 
-    protected void oneToManyRecipe(RecipeOutput recipeOutput, ItemLike inputItem, ItemLike outputItem, int resultCount) {
+    protected void shapelessOneToManyRecipe(RecipeOutput recipeOutput, ItemLike inputItem, ItemLike outputItem, int resultCount) {
         shapeless(RecipeCategory.MISC, outputItem, resultCount)
                 .requires(inputItem)
                 .unlockedBy("has_" + inputItem.asItem().getName(), has(inputItem))
@@ -495,7 +474,7 @@ public class AtomicRecipeProvider extends RecipeProvider {
                 .save(recipeOutput);
     }
 
-    protected void oneToManyRecipe(RecipeOutput recipeOutput, TagKey<Item> inputItemTag, ItemLike outputItem, int resultCount) {
+    protected void shapelessOneToManyRecipe(RecipeOutput recipeOutput, TagKey<Item> inputItemTag, ItemLike outputItem, int resultCount) {
         shapeless(RecipeCategory.MISC, outputItem, resultCount)
                 .requires(inputItemTag)
                 .unlockedBy("has_input", has(inputItemTag))
