@@ -157,7 +157,14 @@ public class AtomicRecipeProvider extends RecipeProvider {
                 .requires(Ingredient.of(Items.CHARCOAL, Items.COAL))
                 .unlockedBy("has_sulfur_dust", has(AtomicItems.SULFUR_DUST))
                 .unlockedBy("has_saltpeter_dust", has(AtomicItems.SALTPETER_DUST))
+                .unlockedBy("has_charcoal", has(Items.CHARCOAL))
+                .unlockedBy("has_coal", has(Items.COAL))
                 .save(output);
+
+        easyShapeless(output, AtomicItems.BRIGHTSILVER_IGNITER, 1, AtomicItems.BRIGHTSILVER_INGOT, Items.FLINT);
+        easyShapeless(output, AtomicItems.BUNGERITE_IGNITER, 1, AtomicItems.BUNGERITE_INGOT, AtomicItems.OBSIDIAN_CHUNK);
+        easyShapeless(output, AtomicItems.SOULSTEEL_IGNITER, 1, AtomicItems.SOULSTEEL_INGOT, AtomicItems.DRAGON_SCALE);
+
 
         // Temp shapeless
         shapeless(RecipeCategory.MISC, AtomicItems.BRIGHTSILVER_ALLOY_INGOT, 1)
@@ -433,6 +440,16 @@ public class AtomicRecipeProvider extends RecipeProvider {
         // Throws error
         // trimSmithing(AtomicItems.KAUPEN_SMITHING_TEMPLATE.get(), ResourceKey.create(Registries.TRIM_PATTERN, Identifier.fromNamespaceAndPath(TutorialMod.MOD_ID, "kaupen")),
         //         ResourceKey.create(Registries.RECIPE, Identifier.fromNamespaceAndPath(TutorialMod.MOD_ID, "kaupen")));
+    }
+
+
+    protected void easyShapeless(RecipeOutput recipeOutput, ItemLike outputItem, int outputQuantity, ItemLike... inputItems) {
+        ShapelessRecipeBuilder builder = shapeless(RecipeCategory.MISC, outputItem, outputQuantity);
+        Arrays.stream(inputItems).forEach(inputItem -> {
+            builder.requires(inputItem);
+            builder.unlockedBy("has_" + inputItem.asItem().getName(), has(inputItem));
+        });
+        builder.save(recipeOutput);
     }
 
     protected void shapedThreeGridToOneRecipe(RecipeOutput recipeOutput, ItemLike inputItem, ItemLike outputItem) {
