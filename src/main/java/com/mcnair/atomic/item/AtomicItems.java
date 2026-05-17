@@ -66,9 +66,12 @@ public class AtomicItems {
     public static final DeferredItem<Item> SOULSTEEL_ALLOY_PLATE = ITEMS.register("soulsteel_alloy_plate", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
 
     /* CRAFTING INGREDIENTS */
+    public static final DeferredItem<Item> DRAGON_SCALE = ITEMS.register("dragon_scale", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
     public static final DeferredItem<Item> OBSIDIAN_CHUNK = ITEMS.register("obsidian_chunk", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
     public static final DeferredItem<Item> BLAZING_OBSIDIAN_INGOT = ITEMS.register("blazing_obsidian_ingot", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
     public static final DeferredItem<Item> ATOMIC_STABILIZER = ITEMS.register("atomic_stabilizer", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
+
+    /* TOOL SHAFTS */
     public static final DeferredItem<Item> WOODEN_TOOL_SHAFT = ITEMS.register("wooden_tool_shaft", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
     public static final DeferredItem<Item> DENSE_TOOL_SHAFT = ITEMS.register("dense_tool_shaft", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));
     public static final DeferredItem<Item> ELEMENTAL_TOOL_SHAFT = ITEMS.register("elemental_tool_shaft", registryName -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, registryName))));

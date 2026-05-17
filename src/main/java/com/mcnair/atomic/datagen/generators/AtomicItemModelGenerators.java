@@ -75,9 +75,12 @@ public class AtomicItemModelGenerators extends ItemModelGenerators {
         this.generateFlatItem(AtomicItems.SOULSTEEL_ALLOY_PLATE.get(), ModelTemplates.FLAT_ITEM);
 
         /* CRAFTING INGREDIENTS */
+        this.generateFlatItem(AtomicItems.DRAGON_SCALE.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(AtomicItems.OBSIDIAN_CHUNK.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(AtomicItems.BLAZING_OBSIDIAN_INGOT.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(AtomicItems.ATOMIC_STABILIZER.get(), ModelTemplates.FLAT_ITEM);
+
+        /* TOOL SHAFTS */
         this.generateFlatItem(AtomicItems.WOODEN_TOOL_SHAFT.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(AtomicItems.DENSE_TOOL_SHAFT.get(), ModelTemplates.FLAT_ITEM);
         this.generateFlatItem(AtomicItems.ELEMENTAL_TOOL_SHAFT.get(), ModelTemplates.FLAT_ITEM);

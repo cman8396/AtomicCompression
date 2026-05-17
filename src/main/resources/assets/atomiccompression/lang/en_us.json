@@ -151,8 +151,10 @@
   "item.atomiccompression.soulsteel_plate": "Soulsteel Plate",
   "item.atomiccompression.soulsteel_alloy_plate": "Soulsteel Alloy Plate",
 
+  "item.atomiccompression.dragon_scale": "Dragon Scale",
   "item.atomiccompression.obsidian_chunk": "Obsidian Chunk",
   "item.atomiccompression.atomic_stabilizer": "Atomic Stabilizer",
+
   "item.atomiccompression.wooden_tool_shaft": "Wooden Tool Shaft",
   "item.atomiccompression.dense_tool_shaft": "Dense Tool Shaft",
   "item.atomiccompression.elemental_tool_shaft": "Elemental Tool Shaft",

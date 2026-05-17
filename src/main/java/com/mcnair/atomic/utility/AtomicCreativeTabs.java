@@ -73,8 +73,10 @@ public class AtomicCreativeTabs {
                         output.accept(AtomicItems.ATOMIC_SHARD.get());
                         output.accept(AtomicItems.EMPOWERED_ATOMIC_SHARD.get());
 
+                        output.accept(AtomicItems.DRAGON_SCALE.get());
                         output.accept(AtomicItems.OBSIDIAN_CHUNK.get());
                         output.accept(AtomicItems.ATOMIC_STABILIZER.get());
+
                         output.accept(AtomicItems.WOODEN_TOOL_SHAFT.get());
                         output.accept(AtomicItems.INFUSED_WOODEN_TOOL_SHAFT.get());
                         output.accept(AtomicItems.DENSE_TOOL_SHAFT.get());
