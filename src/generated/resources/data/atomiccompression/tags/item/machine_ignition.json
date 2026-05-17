@@ -1,5 +1,8 @@
 {
   "values": [
-    "minecraft:flint_and_steel"
+    "minecraft:flint_and_steel",
+    "atomiccompression:brightsilver_igniter",
+    "atomiccompression:bungerite_igniter",
+    "atomiccompression:soulsteel_igniter"
   ]
 }

@@ -137,7 +137,10 @@ public class AtomicItemTagProvider extends ItemTagsProvider {
                 .add(AtomicItems.SOULSTEEL_MACHINE_CASING.asItem());
 
         tag(AtomicTags.Items.MACHINE_IGNITION)
-                .add(Items.FLINT_AND_STEEL);
+                .add(Items.FLINT_AND_STEEL)
+                .add(AtomicItems.BRIGHTSILVER_IGNITER.asItem())
+                .add(AtomicItems.BUNGERITE_IGNITER.asItem())
+                .add(AtomicItems.SOULSTEEL_IGNITER.asItem());
 
         // Storage Blocks
         tag(Tags.Items.STORAGE_BLOCKS)
