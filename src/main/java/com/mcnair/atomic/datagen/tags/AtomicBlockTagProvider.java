@@ -4,7 +4,6 @@ import com.mcnair.atomic.AtomicCompression;
 import com.mcnair.atomic.block.AtomicBlocks;
 import com.mcnair.atomic.utility.AtomicTags;
 import com.mcnair.atomic.utility.common.CommonBlockTags;
-import com.mcnair.atomic.utility.common.CommonItemTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
@@ -164,7 +163,9 @@ public class AtomicBlockTagProvider extends BlockTagsProvider {
                 .addTag(CommonBlockTags.STORAGE_BLOCKS_BRIGHTSILVER)
                 .addTag(CommonBlockTags.STORAGE_BLOCKS_BUNGERITE)
                 .addTag(CommonBlockTags.STORAGE_BLOCKS_SOULSTEEL)
+                .addTag(CommonBlockTags.STORAGE_BLOCKS_BRIGHTSILVER_ALLOY)
                 .addTag(CommonBlockTags.STORAGE_BLOCKS_BUNGERITE_ALLOY)
+                .addTag(CommonBlockTags.STORAGE_BLOCKS_SOULSTEEL_ALLOY)
                 .addTag(CommonBlockTags.STORAGE_BLOCKS_ATOMIC)
                 .addTag(CommonBlockTags.STORAGE_BLOCKS_EMPOWERED_ATOMIC);
         tag(CommonBlockTags.STORAGE_BLOCKS_DEEPCOAL)
@@ -191,8 +192,12 @@ public class AtomicBlockTagProvider extends BlockTagsProvider {
                 .add(AtomicBlocks.LEAD_BLOCK.get());
         tag(CommonBlockTags.STORAGE_BLOCKS_BUNGERITE)
                 .add(AtomicBlocks.BUNGERITE_BLOCK.get());
+        tag(CommonBlockTags.STORAGE_BLOCKS_BRIGHTSILVER_ALLOY)
+                .add(AtomicBlocks.BUNGERITE_ALLOY_BLOCK.get());
         tag(CommonBlockTags.STORAGE_BLOCKS_BUNGERITE_ALLOY)
                 .add(AtomicBlocks.BUNGERITE_ALLOY_BLOCK.get());
+        tag(CommonBlockTags.STORAGE_BLOCKS_SOULSTEEL_ALLOY)
+                .add(AtomicBlocks.SOULSTEEL_ALLOY_BLOCK.get());
         tag(CommonBlockTags.STORAGE_BLOCKS_ATOMIC)
                 .add(AtomicBlocks.ATOMIC_BLOCK.get());
         tag(CommonBlockTags.STORAGE_BLOCKS_EMPOWERED_ATOMIC)

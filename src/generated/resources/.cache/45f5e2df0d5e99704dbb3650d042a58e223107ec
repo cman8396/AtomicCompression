@@ -1,4 +1,4 @@
-// 1.21.11	2026-05-13T22:48:10.0058641	Tags for minecraft:item mod id atomiccompression
+// 1.21.11	2026-05-17T17:35:14.1188549	Tags for minecraft:item mod id atomiccompression
 e37bfe5e8c117d226b24940ac3037fb05fc44dbb data/atomiccompression/tags/item/brightsilver_alloy_repairable.json
 b2aff78501eff51e23253dc8530d02056b395777 data/atomiccompression/tags/item/bungerite_alloy_repairable.json
 c61f60129fef9bb8e546fcd06a55e283e845cf54 data/atomiccompression/tags/item/machine.json
@@ -81,6 +81,7 @@ fc08f38dfa4ae5cab18481d3a13d76999f233a27 data/c/tags/item/shards.json
 5ce4d1f13ca93383efa09562f64153197f27bc13 data/c/tags/item/storage_blocks.json
 c1af16b42b85f04e9f823844faf6162a8abbfd0e data/c/tags/item/storage_blocks/atomic.json
 94219d403e974436ef9c07221b6a4e01b6eaeabe data/c/tags/item/storage_blocks/brightsilver.json
+089dd78402259847bbbd1607c388288255605486 data/c/tags/item/storage_blocks/brightsilver_alloy.json
 0bf443e5592a05322fcd1e90ece5aba8d6740cc0 data/c/tags/item/storage_blocks/bungerite.json
 089dd78402259847bbbd1607c388288255605486 data/c/tags/item/storage_blocks/bungerite_alloy.json
 61b724303d57bac993e5179b93456b7c4bed50f9 data/c/tags/item/storage_blocks/empowered_atomic.json
@@ -93,6 +94,7 @@ ebae062aa17466e9ccb6113180ae87ee61886633 data/c/tags/item/storage_blocks/raw_sal
 08cdc8becd7d58115aba8a8d2f9514483391bfe5 data/c/tags/item/storage_blocks/raw_sulfur.json
 cae8a13a91788676f7e5616776d30969d675eadc data/c/tags/item/storage_blocks/saltpeter.json
 f22d11fd72ae616ca37d72fbc849c6854d2f5a94 data/c/tags/item/storage_blocks/soulsteel.json
+9bc6303db537340c69b925bc9aab00361d833615 data/c/tags/item/storage_blocks/soulsteel_alloy.json
 e5357d1e14b5b9063a74a792b2618b0b88a6df03 data/c/tags/item/storage_blocks/sulfur.json
 a7bee136cf6991250cc6ce0cce67068000366141 data/c/tags/item/tool_shafts.json
 2c349566f23e13e7b49154f04c11cba92b48791f data/c/tags/item/tool_shafts/dense.json

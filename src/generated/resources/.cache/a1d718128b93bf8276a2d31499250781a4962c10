@@ -1,4 +1,4 @@
-// 1.21.11	2026-05-06T23:03:10.8222492	Tags for minecraft:block mod id atomiccompression
+// 1.21.11	2026-05-17T17:35:14.1160111	Tags for minecraft:block mod id atomiccompression
 c61f60129fef9bb8e546fcd06a55e283e845cf54 data/atomiccompression/tags/block/machine.json
 24633462330af237de2e65e951e14c38c2321882 data/c/tags/block/logs/atomic.json
 1d8f76e3086a9ec7977233bda7d15f75c3b46d77 data/c/tags/block/natural_logs.json
@@ -13,8 +13,9 @@ daa192ebd74d9be4f902463f9e5e832025c2dbff data/c/tags/block/ores/lead.json
 d5c63ecbf3f9a2b90036e7af5cd3150f0662a94f data/c/tags/block/ores/sulfur.json
 4d727414438036453a19ce72f255308012de33b1 data/c/tags/block/stones.json
 71ad78f76e2d9b85363e3dd2813b3f8ddd859c61 data/c/tags/block/stones/dense.json
-93e37544487ee07876143e087d30334cc939917e data/c/tags/block/storage_blocks.json
+97e7abc2919aac53f289fb9e3822452af5bb668d data/c/tags/block/storage_blocks.json
 c1af16b42b85f04e9f823844faf6162a8abbfd0e data/c/tags/block/storage_blocks/atomic.json
+089dd78402259847bbbd1607c388288255605486 data/c/tags/block/storage_blocks/brightsilver_alloy.json
 0bf443e5592a05322fcd1e90ece5aba8d6740cc0 data/c/tags/block/storage_blocks/bungerite.json
 089dd78402259847bbbd1607c388288255605486 data/c/tags/block/storage_blocks/bungerite_alloy.json
 27ae807d2cbba14d119367330db2250fc8642877 data/c/tags/block/storage_blocks/deepcoal.json
@@ -28,6 +29,7 @@ ebae062aa17466e9ccb6113180ae87ee61886633 data/c/tags/block/storage_blocks/raw_sa
 625a8f4f823b169d9c7771ffe94fefd35f955849 data/c/tags/block/storage_blocks/raw_soulsteel.json
 08cdc8becd7d58115aba8a8d2f9514483391bfe5 data/c/tags/block/storage_blocks/raw_sulfur.json
 cae8a13a91788676f7e5616776d30969d675eadc data/c/tags/block/storage_blocks/saltpeter.json
+9bc6303db537340c69b925bc9aab00361d833615 data/c/tags/block/storage_blocks/soulsteel_alloy.json
 e5357d1e14b5b9063a74a792b2618b0b88a6df03 data/c/tags/block/storage_blocks/sulfur.json
 2f34cc7771fbe19d46e945a7fae8457099b40115 data/minecraft/tags/block/fences.json
 087f041eba7859da41e11b42182758fa8f07778b data/minecraft/tags/block/fence_gates.json

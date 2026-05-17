@@ -14,7 +14,9 @@
     "#c:storage_blocks/brightsilver",
     "#c:storage_blocks/bungerite",
     "#c:storage_blocks/soulsteel",
+    "#c:storage_blocks/brightsilver_alloy",
     "#c:storage_blocks/bungerite_alloy",
+    "#c:storage_blocks/soulsteel_alloy",
     "#c:storage_blocks/atomic",
     "#c:storage_blocks/empowered_atomic"
   ]

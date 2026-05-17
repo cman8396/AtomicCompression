@@ -213,7 +213,9 @@ public class AtomicRecipeProvider extends RecipeProvider {
         ingotBlockRecipe(output, AtomicItems.BRIGHTSILVER_INGOT, AtomicBlocks.BRIGHTSILVER_BLOCK, RecipeCategory.MISC);
         ingotBlockRecipe(output, AtomicItems.BUNGERITE_INGOT, AtomicBlocks.BUNGERITE_BLOCK, RecipeCategory.MISC);
         ingotBlockRecipe(output, AtomicItems.SOULSTEEL_INGOT, AtomicBlocks.SOULSTEEL_BLOCK, RecipeCategory.MISC);
+        ingotBlockRecipe(output, AtomicItems.BRIGHTSILVER_ALLOY_INGOT, AtomicBlocks.BRIGHTSILVER_ALLOY_BLOCK, RecipeCategory.MISC);
         ingotBlockRecipe(output, AtomicItems.BUNGERITE_ALLOY_INGOT, AtomicBlocks.BUNGERITE_ALLOY_BLOCK, RecipeCategory.MISC);
+        ingotBlockRecipe(output, AtomicItems.SOULSTEEL_ALLOY_INGOT, AtomicBlocks.SOULSTEEL_ALLOY_BLOCK, RecipeCategory.MISC);
         ingotBlockRecipe(output, AtomicItems.ATOMIC_SHARD, AtomicBlocks.ATOMIC_BLOCK, RecipeCategory.MISC);
         ingotBlockRecipe(output, AtomicItems.EMPOWERED_ATOMIC_SHARD, AtomicBlocks.EMPOWERED_ATOMIC_BLOCK, RecipeCategory.MISC);
 

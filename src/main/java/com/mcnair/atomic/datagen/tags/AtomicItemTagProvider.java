@@ -183,8 +183,12 @@ public class AtomicItemTagProvider extends ItemTagsProvider {
                 .add(AtomicBlocks.BUNGERITE_BLOCK.asItem());
         tag(CommonItemTags.STORAGE_BLOCKS_SOULSTEEL)
                 .add(AtomicBlocks.SOULSTEEL_BLOCK.asItem());
+        tag(CommonItemTags.STORAGE_BLOCKS_BRIGHTSILVER_ALLOY)
+                .add(AtomicBlocks.BUNGERITE_ALLOY_BLOCK.asItem());
         tag(CommonItemTags.STORAGE_BLOCKS_BUNGERITE_ALLOY)
                 .add(AtomicBlocks.BUNGERITE_ALLOY_BLOCK.asItem());
+        tag(CommonItemTags.STORAGE_BLOCKS_SOULSTEEL_ALLOY)
+                .add(AtomicBlocks.SOULSTEEL_ALLOY_BLOCK.asItem());
         tag(CommonItemTags.STORAGE_BLOCKS_ATOMIC)
                 .add(AtomicBlocks.ATOMIC_BLOCK.asItem());
         tag(CommonItemTags.STORAGE_BLOCKS_EMPOWERED_ATOMIC)

@@ -60,8 +60,12 @@ public final class CommonBlockTags {
             Identifier.fromNamespaceAndPath("c", "storage_blocks/bungerite"));
     public static final TagKey<Block> STORAGE_BLOCKS_SOULSTEEL = TagKey.create(Registries.BLOCK,
             Identifier.fromNamespaceAndPath("c", "storage_blocks/soulsteel"));
+    public static final TagKey<Block> STORAGE_BLOCKS_BRIGHTSILVER_ALLOY = TagKey.create(Registries.BLOCK,
+            Identifier.fromNamespaceAndPath("c", "storage_blocks/brightsilver_alloy"));
     public static final TagKey<Block> STORAGE_BLOCKS_BUNGERITE_ALLOY = TagKey.create(Registries.BLOCK,
             Identifier.fromNamespaceAndPath("c", "storage_blocks/bungerite_alloy"));
+    public static final TagKey<Block> STORAGE_BLOCKS_SOULSTEEL_ALLOY = TagKey.create(Registries.BLOCK,
+            Identifier.fromNamespaceAndPath("c", "storage_blocks/soulsteel_alloy"));
     public static final TagKey<Block> STORAGE_BLOCKS_ATOMIC = TagKey.create(Registries.BLOCK,
             Identifier.fromNamespaceAndPath("c", "storage_blocks/atomic"));
     public static final TagKey<Block> STORAGE_BLOCKS_EMPOWERED_ATOMIC = TagKey.create(Registries.BLOCK,
