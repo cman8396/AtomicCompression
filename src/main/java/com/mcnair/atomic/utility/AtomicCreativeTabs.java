@@ -158,7 +158,9 @@ public class AtomicCreativeTabs {
                         output.accept(AtomicBlocks.BRIGHTSILVER_BLOCK.get());
                         output.accept(AtomicBlocks.BUNGERITE_BLOCK.get());
                         output.accept(AtomicBlocks.SOULSTEEL_BLOCK.get());
+                        output.accept(AtomicBlocks.BRIGHTSILVER_ALLOY_BLOCK.get());
                         output.accept(AtomicBlocks.BUNGERITE_ALLOY_BLOCK.get());
+                        output.accept(AtomicBlocks.SOULSTEEL_ALLOY_BLOCK.get());
                         output.accept(AtomicBlocks.ATOMIC_BLOCK.get());
                         output.accept(AtomicBlocks.EMPOWERED_ATOMIC_BLOCK.get());
 

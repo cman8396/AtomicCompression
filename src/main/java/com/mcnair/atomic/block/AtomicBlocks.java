@@ -136,9 +136,15 @@ public class AtomicBlocks {
     public static final DeferredBlock<Block> SOULSTEEL_BLOCK = registerBlock("soulsteel_block",
             (properties) -> new Block(
                     properties.strength(5f, 6f).sound(SoundType.NETHERITE_BLOCK)));
+    public static final DeferredBlock<Block> BRIGHTSILVER_ALLOY_BLOCK = registerBlock("brightsilver_alloy_block",
+            (properties) -> new Block(
+                    properties.strength(6f, 900f).sound(SoundType.IRON)));
     public static final DeferredBlock<Block> BUNGERITE_ALLOY_BLOCK = registerBlock("bungerite_alloy_block",
             (properties) -> new Block(
-                    properties.strength(10f, 1200f).sound(SoundType.NETHERITE_BLOCK)));
+                    properties.strength(8f, 1300f).sound(SoundType.IRON)));
+    public static final DeferredBlock<Block> SOULSTEEL_ALLOY_BLOCK = registerBlock("soulsteel_alloy_block",
+            (properties) -> new Block(
+                    properties.strength(8f, 2000f).sound(SoundType.NETHERITE_BLOCK)));
     public static final DeferredBlock<Block> ATOMIC_BLOCK = registerBlock("atomic_block",
             (properties) -> new Block(
                     properties.strength(5f, 6f).sound(SoundType.STONE)));

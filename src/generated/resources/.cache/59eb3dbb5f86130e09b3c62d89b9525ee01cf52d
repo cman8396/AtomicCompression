@@ -1,4 +1,4 @@
-// 1.21.11	2026-05-06T22:31:28.1333719	Loot Tables
+// 1.21.11	2026-05-17T17:23:54.3660956	Loot Tables
 4e8fe8bf5396393b0261cc13f80722abd76257f4 data/atomiccompression/loot_table/blocks/ashenwood_button.json
 16d3480bfd6a273f23bb6ccbcdd772357bc54a16 data/atomiccompression/loot_table/blocks/ashenwood_door.json
 2e47b7842f7e3c21fc04f29a2feb8a3254353b12 data/atomiccompression/loot_table/blocks/ashenwood_fence.json
@@ -28,6 +28,7 @@ fd0943affa7c826f6a186151a7b177e7beb92dc5 data/atomiccompression/loot_table/block
 62990d01a8eee03dc17add882d7c131fc2b1efe9 data/atomiccompression/loot_table/blocks/atomic_glass.json
 c984aa2412b1b1f6d510f70bf1852b7e0657d8f2 data/atomiccompression/loot_table/blocks/atomic_glass_pane.json
 058cdff29d7ddaf5041cd2a92e67ab12d606bd8f data/atomiccompression/loot_table/blocks/atomic_ore.json
+32eeecd5d8694db03174f1f1cd8da2139cf87f0e data/atomiccompression/loot_table/blocks/brightsilver_alloy_block.json
 16a5ede1c2c6922b3c287431b169042478ec5846 data/atomiccompression/loot_table/blocks/brightsilver_block.json
 ecc72cc82ff1b7f26a01f70f5ead816be2fdca59 data/atomiccompression/loot_table/blocks/brightsilver_ore.json
 f14d5aecf5d3c081de31eff7f6733ea95bd0b699 data/atomiccompression/loot_table/blocks/bungerite_alloy_block.json
@@ -79,6 +80,7 @@ a1f3c5cec92f0795f24cd1d00f808b4d4887658b data/atomiccompression/loot_table/block
 d21d4854d84e3707c61a45e44678d80bd3f49cbb data/atomiccompression/loot_table/blocks/raw_sulfur_block.json
 f07257a48e775e190c1e0a686376cd607ade73f2 data/atomiccompression/loot_table/blocks/saltpeter_dust_block.json
 b9a1e04ee30db98f15f87734f61f0dda552ab67b data/atomiccompression/loot_table/blocks/saltpeter_ore.json
+5c132d85f3902a21f7d9173300fd45605284005e data/atomiccompression/loot_table/blocks/soulsteel_alloy_block.json
 4e912f01f818efe67ab57c55039fec325f74731a data/atomiccompression/loot_table/blocks/soulsteel_block.json
 515bb50acc397556a34e8e7b995429d0dd3869e2 data/atomiccompression/loot_table/blocks/soulsteel_ore.json
 aed0368767b0e3d1b97aab308c7b0151f15598a5 data/atomiccompression/loot_table/blocks/stripped_ashenwood_log.json

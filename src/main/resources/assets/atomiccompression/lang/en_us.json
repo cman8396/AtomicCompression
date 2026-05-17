@@ -36,7 +36,9 @@
   "block.atomiccompression.brightsilver_block": "Block of Brightsilver",
   "block.atomiccompression.bungerite_block": "Block of Bungerite",
   "block.atomiccompression.soulsteel_block": "Block of Soulsteel",
+  "block.atomiccompression.brightsilver_alloy_block": "Block of Brightsilver Alloy",
   "block.atomiccompression.bungerite_alloy_block": "Block of Bungerite Alloy",
+  "block.atomiccompression.soulsteel_alloy_block": "Block of Soulsteel Alloy",
   "block.atomiccompression.atomic_block": "Atomic Block",
   "block.atomiccompression.empowered_atomic_block": "Empowered Atomic Block",
 
