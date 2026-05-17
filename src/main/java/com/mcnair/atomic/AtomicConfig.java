@@ -9,6 +9,9 @@ public class AtomicConfig {
     public static final ModConfigSpec.BooleanValue general_ShowMachineFuelTierTooltips = BUILDER
             .comment("Should 'Machine Fuel Tier x' tooltips be visible for items.")
             .define("general.show_machine_fuel_tier_tooltips",true);
+    public static final ModConfigSpec.BooleanValue general_ShowMachineIgnitionSourceTooltips = BUILDER
+            .comment("Should 'Atomic Machine Ignition Source' tooltips be visible for items.")
+            .define("general.show_machine_ignition_source_tooltips",true);
 
     /* ALL MACHINES */
     public static final ModConfigSpec.IntValue machineAll_FuelConversion_Tier1 = BUILDER
